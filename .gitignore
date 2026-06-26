@@ -1,0 +1,21 @@
+# Obsidian personal workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Local/private folders
+cosas viejas/
+Cosas viejas/
+_old/
+_private/
+backup/
+backups/
