@@ -56,16 +56,9 @@ Capa de control de versiones del Core (no es producción). Modelo git: Core = `m
 
 ---
 
-## [[Indice Agentes]] — capa legacy en migración
+## Nota sobre los agentes legacy
 
-Los 7 "Agentes" son el modelo anterior (personas/modos). Se están **absorbiendo dentro de las áreas** que correspondan:
-
-- Programador / Auditor → Área de Programación.
-- Technical Game Designer → Área de Game Design.
-- Productor → Área de Producción.
-- Documentador / Arquitecto de Conocimiento → Área de Conocimiento.
-
-Se conserva su criterio como referencia; lo obsoleto se elimina a medida que se migra.
+Los 7 "Agentes" del modelo anterior (personas/modos) fueron **absorbidos por las áreas y eliminados**: Programador/Auditor → Programación, Technical Game Designer → Game Design, Productor → Producción, Documentador/Arquitecto de Conocimiento → Conocimiento. Si en el futuro hace falta un rol que no tenga área, se crea en ese momento.
 
 ---
 
