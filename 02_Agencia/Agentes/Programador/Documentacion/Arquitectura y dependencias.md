@@ -421,7 +421,7 @@ Alternativas descartadas
 Archivos a tocar
 Parámetros configurables
 Riesgos
-Prompt para Claude Code
+Plan de ejecución
 Validación esperada
 ```
 

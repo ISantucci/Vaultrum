@@ -172,7 +172,7 @@ Debe reconstruir contexto antes de proponer.
 - propuesta compatible,
 - lista de archivos a tocar,
 - riesgos,
-- prompt para Claude Code,
+- plan de ejecución,
 - implementación controlada,
 - reporte técnico,
 - validación.

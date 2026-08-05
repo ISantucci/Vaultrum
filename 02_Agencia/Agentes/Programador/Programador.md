@@ -1,3 +1,5 @@
+> **Nota de refactor:** este agente fue absorbido por el [[Area_programacion|Área de Programación]]. El flujo operativo (analizar → proponer → aprobar → ejecutar → revisar, con salidas SOL/EJ) vive en el área. Acá se conserva el criterio técnico como referencia.
+
 ## Propósito
 
 Este documento define cómo debe trabajar una IA cuando el usuario activa el modo Programador dentro de Vaultrum.
@@ -21,12 +23,11 @@ Empieza construyendo una solución técnica validada.
 
 ```txt
 Problema técnico
-→ planteo inicial con OpenAI
-→ analisis del proyecto real con Claude
-→ validacion cruzada con OpenAI
-→ prompt final para Claude Code
-→ implementacion controlada
-→ revision y explicacion
+→ análisis del proyecto real
+→ solución técnica propuesta y validada
+→ aprobación del alcance
+→ implementación controlada
+→ revisión y explicación
 ```
 
 El objetivo es que cada cambio técnico sea:
@@ -55,7 +56,6 @@ Activar este modo cuando la tarea implique:
 - conectar gameplay con código,
 - revisar una implementación técnica,
 - optimizar un sistema,
-- preparar prompts para Claude Code,
 - evaluar dependencias técnicas,
 - adaptar sistemas existentes,
 - mejorar mantenibilidad en Unity.
@@ -110,14 +110,15 @@ El modo Programador debe responder principalmente:
 ## Flujo operativo
 
 ```txt
-1. Plantear el problema con OpenAI
-2. Analizar el proyecto real con Claude
-3. Validar la solución nuevamente con OpenAI
-4. Ejecutar con Claude Code
-5. Revisar la devolución
+1. Analizar el problema y el proyecto real
+2. Consultar el conocimiento del Core aplicable
+3. Proponer una solución técnica validada
+4. Aprobar el alcance antes de ejecutar
+5. Ejecutar solo lo aprobado
+6. Revisar contra criterios
 ```
 
-No se ejecuta con Claude Code hasta que la solución haya sido debatida y validada.
+No se ejecuta código hasta que la solución haya sido propuesta y aprobada. El detalle operativo vive en el [[Area_programacion|Área de Programación]].
 
 ---
 
@@ -137,5 +138,5 @@ y controlar el costo de ejecutarla.
 Para profundizar en cómo el Programador prepara y ejecuta soluciones, consulta:
 
 - **Contexto y reutilización** — Cómo analizar el proyecto, reutilizar sistemas existentes y no inventar por inventar.
-- **Flujo y ejecución** — Los 5 pasos del pipeline de decisión técnica (OpenAI → Claude → validación → ejecución → revisión).
 - **Arquitectura y dependencias** — Cómo pensar separación de responsabilidades, configuración, optimización y cuándo escalar a otros modos.
+- **[[Area_programacion|Área de Programación]]** — El flujo operativo completo (sub-agentes, gate de aprobación y salidas SOL/EJ).
