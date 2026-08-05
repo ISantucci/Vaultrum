@@ -100,8 +100,9 @@ El Encargado de Commits actúa también como **seguro de vida**: prepara commits
 [ ] A `main` mergea SOLO la persona que usa el software. El área nunca mergea a main por su cuenta.
 [ ] Trabajando sobre `main`, NO crea branches nuevas ni commitea antes de que exista una implementación.
 [ ] El commit se prepara recién cuando hay algo implementado.
-[ ] El área puede: stagear, redactar el commit (título + resumen), preparar todo.
-[ ] El área NO puede: mergear a main, pushear, ni ramificar prematuramente.
+[ ] El área puede: stagear, commitear y pushear su branch de trabajo (título + resumen). Es su seguro de vida.
+[ ] El área NO puede: integrar a `main` (mergear ni pushear a main) — eso solo la persona.
+[ ] El área NO puede: ramificar prematuramente sobre `main` antes de una implementación.
 ```
 
 Ante la duda sobre tocar el árbol de git, se detiene y le pasa la decisión a la persona.

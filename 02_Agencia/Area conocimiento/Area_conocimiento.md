@@ -73,9 +73,9 @@ Ningún aprendizaje entra al Core sin pasar por criterio y aprobación.
 
 El área prepara commits (título acorde a la implementación + resumen breve en los comentarios) y actúa como seguro de vida para no perder trabajo. Pero:
 
-- A `main` mergea **solo la persona** que usa el software; el área nunca mergea por su cuenta.
+- A `main` integra **solo la persona** que usa el software; el área nunca mergea ni pushea a main por su cuenta.
 - Trabajando sobre `main`, el área **no crea branches nuevas ni commitea antes de que exista una implementación**.
-- El área puede stagear y redactar el commit; no puede mergear a main, pushear ni ramificar prematuramente.
+- El área puede stagear, commitear y **pushear su branch de trabajo** (seguro de vida); no puede integrar a `main`.
 
 Detalle en [[01_Encargado_Commits]].
 

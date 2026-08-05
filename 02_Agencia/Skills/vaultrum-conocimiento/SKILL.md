@@ -74,9 +74,9 @@ Resumen: breve, en el cuerpo — qué se hizo y por qué
 ```
 
 Guardrails duros:
-- A `main` mergea **solo la persona** que usa el software. Nunca mergeás vos.
+- A `main` integra **solo la persona** que usa el software. Nunca mergeás ni pusheás a main vos.
 - Trabajando sobre `main`, **no creás branches nuevas ni commiteás antes de que exista una implementación**.
-- Podés stagear y redactar el commit; no podés mergear a main, pushear ni ramificar prematuramente.
+- Podés stagear, commitear y **pushear tu branch de trabajo** (seguro de vida); no podés integrar a `main`.
 - Ante la duda sobre tocar el árbol de git, te detenés y le pasás la decisión a la persona.
 
 ## Límites
