@@ -1,6 +1,6 @@
 ## Propósito
 
-La Agencia reúne los agentes, flujos y criterios operativos que permiten trabajar con Vaultrum de forma asistida.
+La Agencia reúne las áreas, sub-agentes, flujos y salidas que permiten trabajar con Vaultrum de forma asistida.
 
 No reemplaza al Core.
 
@@ -16,39 +16,56 @@ Agencia
 
 ---
 
-## Responsabilidad de esta sección
+## Modelo de trabajo: Áreas
 
-La responsabilidad de esta sección es ordenar los sistemas de trabajo asistido dentro de Vaultrum.
+La Agencia se organiza en **Áreas**. Cada área tiene tres partes:
 
-Debe ayudar a responder:
+- **sub-agentes** con responsabilidad única y límites duros,
+- **flujos preseteados** con criterios de aceptación,
+- **salidas registrables**, numeradas e indexadas, que quedan escritas en el vault.
 
-```txt
-¿Qué agente corresponde usar?
-¿Qué responsabilidad tiene cada agente?
-¿Qué flujo debe seguirse?
-Qué parte del Core debe consultar?
-Cómo se evita que un agente invente o actúe fuera de criterio?
-```
+Las áreas se encadenan por sus salidas. Una idea entra como intención y se transforma en salidas registrables encadenadas hasta convertirse en algo construido con criterio Vaultrum.
 
-La Agencia no debe convertirse en una carpeta de prompts sueltos.
-
-Cada agente o flujo debe existir por una responsabilidad concreta.
+Ver el diseño completo del sistema en [[00_Blueprint_Refactor_Agencia|Blueprint del Refactor]].
 
 ---
 
-## [[Indice Agentes]]
+## [[00_Blueprint_Refactor_Agencia]]
 
-Índice dedicado a los agentes disponibles dentro de Vaultrum.
-
-Sirve para ubicar qué agente corresponde usar según el tipo de trabajo.
+Documento base del refactor. Define el modelo canónico, la columna vertebral de numeración (`TL → RQ → GDS → SOL → EJ`) y el contrato de cada área.
 
 ---
 
-## [[Area_produccion]]
+## Áreas
 
-Área orientada a producción, organización, planificación y seguimiento de trabajo.
+### [[Area_produccion]]
 
-Sirve cuando el problema requiere ordenar tareas, definir alcance, estructurar requerimientos o coordinar entregables.
+Convierte una intención en roadmap y requerimientos. Produce `TL` (timeline) + `RQ` (requerimientos). Define qué se hace, por qué, con qué alcance y prioridad.
+
+### [[Area_gamedesign]]
+
+Technical Game Design. Consume un `RQ` jugable y lo convierte en un sistema jugable claro, implementable y validable. Produce `GDS` (game design spec): reglas, feedback, estados, parámetros configurables.
+
+### [[Area_programacion]]
+
+Convierte un `RQ` (+ `GDS`) en una solución técnica construida con criterio Vaultrum. Produce `SOL` (solución técnica) + `EJ` (ejecución). Sus sub-agentes iteran hasta cumplir los criterios de aceptación.
+
+### [[Area_conocimiento]]
+
+Capa de control de versiones del Core (no es producción). Modelo git: Core = `main`, proyecto = `branch`, aprendizaje = `commit`, entrar al Core = `merge` con aprobación. Gestiona qué conocimiento vuelve al Core, con criterio y sin acumular historial.
+
+---
+
+## [[Indice Agentes]] — capa legacy en migración
+
+Los 7 "Agentes" son el modelo anterior (personas/modos). Se están **absorbiendo dentro de las áreas** que correspondan:
+
+- Programador / Auditor → Área de Programación.
+- Technical Game Designer → Área de Game Design.
+- Productor → Área de Producción.
+- Documentador / Arquitecto de Conocimiento → Área de Conocimiento.
+
+Se conserva su criterio como referencia; lo obsoleto se elimina a medida que se migra.
 
 ---
 
@@ -58,8 +75,4 @@ La Agencia no dirige al Core.
 
 La Agencia usa el Core.
 
-Primero criterio.
-
-Después agente.
-
-Después ejecución.
+Primero criterio. Después área. Después salida registrable.
