@@ -31,6 +31,7 @@ Esta organización responde a una lógica de niveles:
 - **01_VaultrumCore** es la capa base del sistema.
 - **02_Agencia** es la capa operativa e intermediaria.
 - **03_Comunidad** es la capa humana, colaborativa y de uso público.
+- **04_IA Operativa** es la capa transversal que cuida cómo una IA opera Vaultrum (tokens, prompteo y el pass de optimización de contexto).
 
 VaultrumCore contiene el conocimiento.
 
@@ -225,6 +226,10 @@ Para entender cómo trabajan los agentes y áreas operativas:
 Para aportar, corregir o revisar la parte comunitaria/open source:
 
 [[03_Indice Comunidad]]
+
+Para entender cómo una IA debe operar Vaultrum (tokens, prompteo, pass de contexto):
+
+[[04_Indice IA Operativa]]
 
 ---
 
