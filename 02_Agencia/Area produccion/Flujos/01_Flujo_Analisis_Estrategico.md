@@ -36,6 +36,7 @@ El flujo debe transformar la entrada inicial en una dirección evaluada.
 
 Para eso debe:
 
+- partir del Core: consultar identidad, principios y criterios aplicables (principio 1),
 - entender la intención del usuario,
 - identificar el problema real,
 - separar necesidad de solución propuesta,

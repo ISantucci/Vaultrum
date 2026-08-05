@@ -43,6 +43,8 @@ Se usa especialmente cuando hay que:
 
 ## Qué debe hacer
 
+El Consultor Estratégico debe partir del Core: revisar identidad, principios y criterios aplicables antes de evaluar la idea (principio 1).
+
 El Consultor Estratégico debe analizar la idea con criterio.
 
 Debe identificar qué quiere lograr el usuario, qué problema hay detrás, qué supuestos se están dando por válidos y qué riesgos podrían aparecer si se avanza demasiado rápido.
