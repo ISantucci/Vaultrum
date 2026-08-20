@@ -1,6 +1,6 @@
 ---
-name: vaultrum-programador
-description: Área de Programación de Vaultrum. Úsala cuando haya que resolver algo técnico en un proyecto de videojuego (Unity/C# u otro motor): implementar un requerimiento, tocar código, diseñar o revisar arquitectura, corregir bugs, crear scripts/managers/sistemas/UI funcional, integrar u optimizar. Consume un RQ (y GDS si existe) y produce solución técnica (SOL) + ejecución (EJ) registrables. No usar para teoría (VaultrumCore), definir alcance/prioridades (Área de Producción) ni reglas de gameplay (Área de Game Design).
+name: "vaultrum-programador"
+description: "Área de Programación de Vaultrum. Úsala cuando haya que resolver algo técnico en un proyecto de videojuego (Unity/C# u otro motor): implementar un requerimiento, tocar código, diseñar o revisar arquitectura, corregir bugs, crear scripts/managers/sistemas/UI funcional, integrar u optimizar. Consume un RQ (y GDS si existe) y produce solución técnica (SOL) + ejecución (EJ) registrables. No usar para teoría (VaultrumCore), definir alcance/prioridades (Área de Producción) ni reglas de gameplay (Área de Game Design)."
 ---
 
 # Área de Programación — Vaultrum (orquestador)

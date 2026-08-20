@@ -124,9 +124,9 @@ El timeline debe incluir links a los requerimientos asociados.
 Ejemplo:
 
 ```md
-- [[RQ-001.1_Crear_Estructura_Salidas]]
-- [[RQ-001.2_Crear_Indices_Salidas]]
-- [[RQ-001.3_Ajustar_Flujo_Planificador]]
+- [[RQ-001.1_Paletas_Controlables]]
+- [[RQ-001.2_Pelota_Rebote_Aceleracion]]
+- [[RQ-001.3_Score_Victoria]]
 ```
 
 ---

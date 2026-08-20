@@ -10,7 +10,11 @@ Cada `GDS-XXX.n` es un sistema jugable diseñado y validado para un `RQ-XXX.n`.
 
 | GDS | Requerimiento | Sistema | Estado |
 |-----|---------------|---------|--------|
-| — | — | (sin specs registradas todavía) | — |
+| [[GDS-001.1_Paletas]] | RQ-001.1 | Paletas controlables | Cerrada |
+| [[GDS-001.2_Pelota]] | RQ-001.2 | Pelota: rebote y aceleración | Cerrada |
+| [[GDS-001.3_Score_Victoria]] | RQ-001.3 | Score y victoria | Cerrada |
+| [[GDS-001.4_Estados]] | RQ-001.4 | Estados: menú/pausa/reinicio | Cerrada |
+| [[GDS-001.5_Game_Feel]] | RQ-001.5 | Game feel: feedback | Cerrada |
 
 ---
 

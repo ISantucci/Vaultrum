@@ -12,6 +12,10 @@ desktop.ini
 *.temp
 *.bak
 
+# Owner mode (secreto local, nunca se versiona)
+.owner.local.json
+**/.owner.local.json
+
 # Local/private folders
 cosas viejas/
 Cosas viejas/

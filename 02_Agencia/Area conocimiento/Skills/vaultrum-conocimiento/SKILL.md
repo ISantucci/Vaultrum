@@ -1,6 +1,6 @@
 ---
-name: vaultrum-conocimiento
-description: Área de Conocimiento de Vaultrum — control de versiones del Core. Úsala al cerrar un proyecto, branch o experimento para evaluar qué aprendizaje reutilizable debería volver a VaultrumCore. Modelo git: Core=main, proyecto=branch, aprendizaje=commit, entrar al Core=merge con aprobación. Escribe aprendizajes en Staging y los mergea al Core solo con aprobación del maintainer. No usar para producir trabajo (Producción/Game Design/Programación).
+name: "vaultrum-conocimiento"
+description: "Área de Conocimiento de Vaultrum — control de versiones del Core. Úsala al cerrar un proyecto, branch o experimento para evaluar qué aprendizaje reutilizable debería volver a VaultrumCore. Modelo git: Core=main, proyecto=branch, aprendizaje=commit, entrar al Core=merge con aprobación. Escribe aprendizajes en Staging y los mergea al Core solo con aprobación del maintainer. Prepara commits (título + resumen) y puede pushear su branch, pero nunca integra a main ni ramifica por su cuenta. No usar para producir trabajo (Producción/Game Design/Programación)."
 ---
 
 # Área de Conocimiento — Vaultrum (control de versiones del Core)

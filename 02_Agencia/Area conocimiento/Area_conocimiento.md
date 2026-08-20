@@ -89,5 +89,12 @@ No hace trabajo de producción (no arma RQ/GDS/SOL/EJ). No mergea sin aprobació
 
 ## Encadenado con las otras áreas
 
-Recibe de: **todas las áreas de producción**, cuando su Validador/Revisor marca un aprendizaje reutilizable al cerrar.
+Recibe de: **todas las áreas de producción**, cuando su Validador/Revisor marca un aprendizaje reutilizable al cerrar; y de la **Escuela** ([[00_Escuela]]), que entrega candidatos `EST` desde su Biblioteca (aprendizaje proactivo).
 Entrega a: **VaultrumCore** (merge aprobado).
+
+Puente con la Escuela: la Escuela investiga y destila pero **no mergea al Core**. Conocimiento es el único que propone a `main`: toma el `EST`, hace dedup + ubicación + diff, y lo presenta al owner. Decide qué se vuelve criterio indexado del Core (para que las áreas lo jalen on-demand) y qué queda como libro de referencia en la Biblioteca.
+
+
+## Skill del área
+
+El área corre como la skill `vaultrum-conocimiento` (fuente versionada en `02_Agencia/Area conocimiento/Skills/vaultrum-conocimiento/SKILL.md`).

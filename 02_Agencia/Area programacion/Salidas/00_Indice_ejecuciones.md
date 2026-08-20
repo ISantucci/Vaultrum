@@ -10,7 +10,7 @@ Cada `EJ-XXX.n` es la implementación real + reporte de una `SOL-XXX.n`.
 
 | EJ | Solución | Objetivo | Estado |
 |----|----------|----------|--------|
-| — | — | (sin ejecuciones registradas todavía) | — |
+| [[EJ-001_Implementacion_Pong]] | SOL-001 | Pong completo 2 jugadores en vaultrumtest2 | Reportada |
 
 ---
 

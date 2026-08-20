@@ -16,6 +16,12 @@ Busca transformar conocimiento en criterio operativo.
 
 ---
 
+## Modo de operación de la IA
+
+Cuando Vaultrum se carga como contexto, el asistente arranca en **Modo Vaultrum**: software asistente para la creación, cuya puerta de entrada es el **Productor** (Área de Producción), que pivotea entre áreas según lo que haga falta. Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Ambos modos y el procedimiento del switch están definidos en [[05_Modo_Operacion]] (capa 04_IA Operativa).
+
+---
+
 ## Arquitectura general
 
 Vaultrum se organiza en tres capas principales:
@@ -32,6 +38,7 @@ Esta organización responde a una lógica de niveles:
 - **02_Agencia** es la capa operativa e intermediaria.
 - **03_Comunidad** es la capa humana, colaborativa y de uso público.
 - **04_IA Operativa** es la capa transversal que cuida cómo una IA opera Vaultrum (tokens, prompteo y el pass de optimización de contexto).
+- **05_Escuela** es la capa de aprendizaje proactivo: su Biblioteca guarda libros de fundamentos y de análisis de juegos que nutren el Core y que la Agencia consulta en tiempo de diseño.
 
 VaultrumCore contiene el conocimiento.
 
@@ -230,6 +237,10 @@ Para aportar, corregir o revisar la parte comunitaria/open source:
 Para entender cómo una IA debe operar Vaultrum (tokens, prompteo, pass de contexto):
 
 [[04_Indice IA Operativa]]
+
+Para entrar a la Escuela y su Biblioteca (aprendizaje proactivo, libros de fundamentos y de juegos):
+
+[[00_Escuela]]
 
 ---
 

@@ -39,7 +39,7 @@ RQ-XXX.Y_Nombre_Descriptivo.md
 
 Ejemplo:
 
-RQ-001.1_Crear_Estructura_Salidas.md
+RQ-001.1_Paletas_Controlables.md
 
 ---
 
@@ -53,4 +53,9 @@ Formato de registro:
 
 Registros:
 
--
+- [[RQ-001.1_Paletas_Controlables]] - Dos paletas por teclado (W/S y flechas), acotadas y configurables
+- [[RQ-001.2_Pelota_Rebote_Aceleracion]] - Pelota con rebote por impacto y aceleración progresiva
+- [[RQ-001.3_Score_Victoria]] - Marcador y condición de victoria configurable
+- [[RQ-001.4_Estados_Menu_Pausa_Reinicio]] - Máquina de estados: menú, pausa, fin y reinicio
+- [[RQ-001.5_Game_Feel_Feedback]] - Feedback visual y sonoro en rebote, gol y saque
+- [[RQ-001.6_Setup_Proyecto_Cancha]] - Setup de proyecto Unity 2022.3, escena y cancha

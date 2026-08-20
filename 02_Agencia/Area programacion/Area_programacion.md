@@ -102,7 +102,11 @@ Puede detectar que un aprendizaje merece volver al Core, pero no lo formaliza: l
 
 ## Encadenado con otras áreas
 
-Recibe de: **Producción** (`RQ`) y **Game Design** (`GDS`).
+Recibe de: **Producción** (`RQ`), **Game Design** (`GDS`) y, si existen, **Level Design** (`LDS`) y **UI/UX** (`UXS`).
 Entrega a: **Conocimiento** (aprendizajes reutilizables detectados durante la ejecución).
 
-La numeración `.n` se mantiene entre `RQ / GDS / SOL / EJ` para que todo el hilo de trabajo sea rastreable de punta a punta.
+La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para que todo el hilo de trabajo sea rastreable de punta a punta.
+
+## Skill del área
+
+El área corre como la skill `vaultrum-programador` (fuente versionada en `02_Agencia/Area programacion/Skills/vaultrum-programador/SKILL.md`).

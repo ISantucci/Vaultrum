@@ -59,6 +59,14 @@ Contiene material relacionado con:
 
 ---
 
+## Qué no vive en el Core (todavía)
+
+Los **fundamentos de experiencia** y los **análisis de juegos por género** no viven en el Core: se estudian en la Biblioteca de la Escuela (`05_Escuela/Biblioteca/`) y las áreas los consultan **on-demand**.
+
+El Core no enlaza hacia abajo: el Core alimenta, no depende. Quien necesita esos libros —Producción, Game Design, Level Design, UI/UX— sabe dónde buscarlos y lo tiene declarado en su propia área. Qué se promueve de ahí a criterio del Core lo decide el Área de Conocimiento con aprobación del owner.
+
+---
+
 ## Uso del Core
 
 VaultrumCore puede usarse de forma directa como fuente de consulta.

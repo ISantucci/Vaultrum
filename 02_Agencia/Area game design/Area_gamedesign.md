@@ -85,6 +85,10 @@ No programa (eso es Programación). No define alcance ni prioridad (eso es Produ
 ## Encadenado con otras áreas
 
 Recibe de: **Producción** (`RQ` jugable).
-Entrega a: **Programación** (`GDS` como insumo de la solución técnica).
+Entrega a: **Level Design** (`LDS`) y/o **UI/UX** (`UXS`) si el sistema tiene dimensión espacial o interfaz, y a **Programación** (`GDS` como insumo de la solución técnica).
 
-La numeración `.n` se mantiene entre `RQ / GDS / SOL / EJ` para trazabilidad de punta a punta.
+La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para trazabilidad de punta a punta.
+
+## Skill del área
+
+El área corre como la skill `vaultrum-gamedesign` (fuente versionada en `02_Agencia/Area game design/Skills/vaultrum-gamedesign/SKILL.md`).

@@ -10,7 +10,7 @@ Cada `SOL-XXX.n` es una solución técnica validada y aprobada para un `RQ-XXX.n
 
 | SOL | Requerimiento | Título | Estado |
 |-----|---------------|--------|--------|
-| — | — | (sin soluciones registradas todavía) | — |
+| [[SOL-001_Arquitectura_Pong]] | RQ-001.1..6 (+GDS-001.1..5) | Arquitectura del Pong (SOLID, eventos, config SO) | Ejecutada |
 
 ---
 

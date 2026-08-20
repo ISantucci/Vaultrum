@@ -43,7 +43,7 @@ TL-XXX_Nombre_Descriptivo.md
 
 Ejemplo:
 
-TL-001_Consolidar_Salidas_Produccion.md
+TL-001_Pong_2_Jugadores_Completo.md
 
 ---
 
@@ -57,4 +57,4 @@ Formato de registro:
 
 Registros:
 
--
+- [[TL-001_Pong_2_Jugadores_Completo]] - Pong 2 jugadores completo (cancha, paletas, pelota, score, estados, juice)

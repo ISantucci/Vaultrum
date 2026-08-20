@@ -128,3 +128,7 @@ Puede ordenar la intención, el objetivo o el requerimiento de comunicación, pe
 
 No debe convertir toda idea en tarea.  
 Si una idea no tiene sentido, está fuera de alcance o todavía necesita maduración, el área debe marcarlo antes de planificar.
+
+## Skill del área
+
+El área corre como la skill `vaultrum-produccion` (fuente versionada en `02_Agencia/Area produccion/Skills/vaultrum-produccion/SKILL.md`).

@@ -1,6 +1,6 @@
 ---
-name: AiCare
-description: AiCare — Pass GC de contexto de Vaultrum (capa IA Operativa). Corre en cada commit —o cuando se pide— para mantener liviana la operación de la IA: mide qué contexto está cargado, detecta acumulación/duplicación/recarga y poda lo que ya no aporta, sin perder lo necesario. Optimización de tokens con criterio Vaultrum (primero medir, después podar). No usar para producir trabajo ni para tocar el Core.
+name: "AiCare"
+description: "AiCare — Pass GC de contexto de Vaultrum (capa IA Operativa). Corre en cada commit —o cuando se pide— para mantener liviana la operación de la IA: mide qué contexto está cargado, detecta acumulación/duplicación/recarga y poda lo que ya no aporta, sin perder lo necesario. Optimización de tokens con criterio Vaultrum (primero medir, después podar). No usar para producir trabajo ni para tocar el Core."
 ---
 
 # AiCare — Pass GC de contexto (Vaultrum)
