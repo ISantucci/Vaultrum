@@ -171,7 +171,7 @@ la cadena y las áreas            → 02_Indice Agencia
 aportar, corregir, gobernanza    → 03_Indice Comunidad
 cómo una IA opera el vault       → 04_Indice IA Operativa
 la Escuela y su Biblioteca       → 00_Escuela
-el estado real del sistema       → 00_Auditoria de arquitectura
+la primera auditoría del vault   → 00_Auditoria de arquitectura
 lo que está por formalizarse     → 00_Leyes de Vaultrum (bitacora)
 ```
 
@@ -179,7 +179,7 @@ lo que está por formalizarse     → 00_Leyes de Vaultrum (bitacora)
 
 ## [[00_Auditoria de arquitectura|Auditoría de arquitectura]]
 
-El estado real del sistema: qué está construido, qué está a medias y qué se prometió sin construir. Se relee antes de dar por buena cualquier capacidad del vault.
+La primera auditoría del vault, hecha a mano: qué está construido, qué está a medias y qué se prometió sin construir. Es un registro fechado — la serie sigue como `ARQ` en el Área de Arquitectura, que además dejó la medición automatizada.
 
 ---
 

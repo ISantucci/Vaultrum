@@ -47,7 +47,7 @@ Las siete cerradas. El `RQ-003.1` (setup de proyecto) no tiene `GDS`, por el mis
 - Un `GDS` cuelga siempre de un `RQ` (hereda número base y subnumeración). **Única excepción: el `GDS-XXX.0`** (ver abajo).
 - Un `GDS` declara si `LDS` y `UXS` aplican. Un "no aplica" dice **qué dimensión falta y por qué**; se comprueba al cerrar el `VE` con el test del "no aplica".
 - Estados posibles: En diseño / En balance / En validación / Cerrada / Rebotada.
-- Al registrar, linkear al `RQ` y dejar el resultado de la validación.
+- El `GDS` declara su `RQ` en su propia ficha, y el índice lo nombra. El resultado de la validación queda en el `GDS`.
 - Un `GDS` cerrado baja a **Level Design** (`LDS`) y/o **UI/UX** (`UXS`) cuando aplican, y de ahí —junto a ellos— al `SOL` del Área de Programación. Si ninguna aplica, el propio `GDS` lo declara y pasa directo a Programación.
 
 ---

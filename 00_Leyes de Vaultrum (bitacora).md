@@ -73,7 +73,6 @@ No es "una lista de 500 juegos". El activo valioso es una **librería de fundame
 
 Lo que el contador no mide, y queda declarado en vez de omitido: el consumo real de la ventana del modelo, el historial y las salidas generadas. Mide el material del vault que se carga, que es la parte que Vaultrum controla.
 
-
 Decisiones clave: (1) la Escuela NO mergea al Core — entrega candidatos `EST` a Conocimiento, que sigue siendo la única que propone a `main`; (2) AiCare es obligatorio en los bordes de cada misión (seguro de vida contra la acumulación); (3) toda misión es acotada por gap + presupuesto + barra de calidad; (4) el producto es una librería de fundamentos destilados, no un catálogo de juegos.
 Pendiente cerrado: los `Agentes/` y `Flujos/` están escritos y la Escuela produjo cinco misiones (`EST-001` a `EST-005`), 29 fuentes catalogadas y cuatro libros reales. La primera misión propuesta —llenar los Fundamentos de Experiencia— se cumplió con `EST-004` y `EST-005`.
 
@@ -115,6 +114,29 @@ La distinción que aporta al Core: *optimización prematura* es optimizar sin me
 **Estado:** **MERGEADA AL CORE** como `Verificacion parcial declarada`, con formato obligatorio de declaración (Método / Cubre / No cubre / Consecuencia) en el `EJ`.
 
 El corolario también se formalizó: el juicio global del owner es un modo de cierre legítimo del `VE` —**modo Veredicto**— con sus condiciones y su deuda declarada. Ver `00_Indice_ve`.
+
+---
+
+## Ley candidata #6 — El grafo se recorre por índices, no por asociación
+
+**Origen:** el owner miró el grafo de Obsidian y vio que el Core se recorría en cascada y el resto del vault era una telaraña. La medición confirmó lo que se veía: el Core tenía 89% de sus aristas bajando un escalón; la Biblioteca, 48% laterales y 43% de sus links a mitad de una frase.
+
+Lo que apareció al medir es que **el Core ya cumplía una ley que nunca se había enunciado**. Seis reglas, leídas de su comportamiento:
+
+```txt
+1. El link es el título de la sección     ## [[Hijo]] + prosa debajo
+2. Cascada de un solo escalón             un índice enlaza a sus hijos directos
+3. La hoja no linkea: sale                ## Hacia donde seguir, o nada
+4. La prosa nombra con backticks          mencionar no es enlazar
+5. Un puente por capa, declarado          y la nota dice que es el puente
+6. Cero aristas invisibles                nada en frontmatter ni en tablas
+```
+
+Con dos corolarios: **nada flota** (toda nota cuelga de un índice) y **la cadena sí puede cruzar de rama** (una salida declara su insumo directo, una línea por documento).
+
+El hallazgo que habilitó aplicarla: **ninguna de las skills navega por wikilink** — todas resuelven por ruta. El grafo es para el owner, no para la máquina. Por eso se pudo podar de 1.504 links a 572 sin tocar el funcionamiento de nada.
+
+**Estado:** FORMALIZADA fuera del Core, en `02_Agencia/Area arquitectura/`, con herramienta de medición y gate ejecutable. Candidata a merge al Core por la vía del Área de Conocimiento, con aprobación del owner. Mientras tanto vive donde se aplica.
 
 ---
 
@@ -161,7 +183,7 @@ El corolario también se formalizó: el juicio global del owner es un modo de ci
 
 ### Auditado
 
-11. ~~**Arquitectura del sistema Vaultrum.**~~ **AUDITADA.** Ver [[00_Auditoria de arquitectura]] (AUD-001).
+11. ~~**Arquitectura del sistema Vaultrum.**~~ **AUDITADA.** Ver [[00_Auditoria de arquitectura]] (AUD-001). Desde entonces la auditoría tiene área propia (`Area arquitectura`), herramienta de medición y serie `ARQ`.
 
     Resultado corto: la sospecha de duplicación entre `Area_*.md` / `Agentes/` / `Flujos/` / `Skills/` **no se confirmó** —9 frases repetidas en 24 archivos, y los 6 checklists de la Agencia viven solo en sus skills—. Los índices están sincronizados con el disco (54 de 54 salidas) y los wikilinks resuelven.
 

@@ -21,7 +21,7 @@ Cada `EST-XXX` es un fundamento destilado, citado y validado, listo para el hand
 
 - Un `EST` cuelga siempre de una misión de estudio (gap + presupuesto + barra).
 - Estados posibles: En investigación / En destilación / En validación / Listo para handoff / **Handoff hecho** / Catalogada / Descartado.
-- Al registrar, linkear a la misión, dejar las citas y el resultado de AiCare.
+- El `EST` declara su misión en su propia ficha, con las citas y el resultado de AiCare. El índice la nombra.
 - Un `EST` con handoff pasa a ser candidato de commit en el Área de Conocimiento; el merge a `main` lo aprueba el owner.
 - **Un libro solo es insumo válido de producción cuando está *En la Biblioteca*.** Un libro *En estudio* o *En validación* es material en curso: Producción lo rechaza en su gate de insumo y deriva a Escuela.
 

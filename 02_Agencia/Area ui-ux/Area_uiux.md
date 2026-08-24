@@ -58,6 +58,10 @@ Por cada `GDS` con interfaz, un **UXS-XXX.n** registrado en `00_Indice_uxs`, con
 
 El `UXS` es insumo del Área de Programación (junto al `GDS` y, si existe, el `LDS`).
 
+Queda registrada en `Salidas/`:
+
+- [[00_Indice_uxs|Índice de UXS]]
+
 ---
 
 ## Regla operativa
@@ -83,7 +87,6 @@ Consulta on-demand: la Escuela (`05_Fundamentos_de_experiencia_ludica`), pilares
 
 La numeración `.n` se mantiene entre `GDS / UXS / SOL / EJ` para trazabilidad de punta a punta.
 
-
 ## Flujos del área
 
 Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
@@ -93,14 +96,6 @@ Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde 
 ### [[02_Flujo_Diseno_UI|Flujo Diseno UI]]
 
 ### [[03_Flujo_Validacion_UX|Flujo Validacion UX]]
-
----
-
-## Salidas del área
-
-El registro de lo que el área produjo. Cada índice lista sus propias entregas.
-
-### [[02_Agencia/Area ui-ux/Salidas/00_Indice_uxs|Indice uxs]]
 
 ---
 

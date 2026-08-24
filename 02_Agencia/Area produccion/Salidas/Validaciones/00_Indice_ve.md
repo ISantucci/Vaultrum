@@ -18,7 +18,7 @@ Cada `VE-XXX` valida **la entrega de un timeline** (`TL-XXX`) contra la intenci�
 - Un `VE` cuelga de un **`TL-XXX`**, no de un `RQ`. Se valida lo que el jugador recibe, y eso es la iteración completa, no un requerimiento suelto.
 - Se abre cuando los hilos `.n` del timeline tienen su `EJ` con revisión técnica en OK.
 - Estado del `VE`: **Cerrado** / **Ajustar** / **Pausado**. Acá el estado del paso y el del artefacto coinciden, porque el `VE` es un dictamen: no tiene ciclo de vida propio.
-- **Todo `VE` declara su modo de cierre** (columna *Modo*): `Checklist` o `Veredicto`. Ver abajo.
+- **Todo `VE` declara su modo de cierre**: `Checklist` o `Veredicto`. La diferencia está más abajo.
 - *Ajustar* debe indicar a dónde rebota —un área, o un sub-agente de Producción— y con qué hallazgo concreto.
 - *Pausado* debe declarar qué falta para poder validar (principio 9).
 - Un `TL` no se considera entregado sin su `VE` en estado **Cerrado**.

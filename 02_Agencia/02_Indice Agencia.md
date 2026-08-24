@@ -172,12 +172,13 @@ Convierte un `RQ` (+ `GDS`, `LDS`, `UXS`) en una solución técnica construida c
 
 Capa de control de versiones del Core (no es producción). Modelo git: Core = `main`, proyecto = `branch`, aprendizaje = `commit`, entrar al Core = `merge` con aprobación. Gestiona qué conocimiento vuelve al Core, con criterio y sin acumular historial.
 
-
 ### [[Area_arquitectura]]
 
 Cuida la **forma** del vault, no su contenido: que se pueda entrar por un índice y llegar caminando a cualquier nota.
 
 Mide el grafo con herramienta, repara con el cambio mínimo y verifica. Es la única área que no produce contenido: produce recorrido.
+
+Sus salidas (`ARQ`) tampoco cuelgan de la columna vertebral de numeración: no son un eslabón de la cadena de producción, son pasadas sobre el vault mismo.
 
 ---
 
@@ -195,9 +196,9 @@ Por eso no cuelga de la columna vertebral de numeración de arriba: sus salidas 
 
 ---
 
-## Nota sobre los agentes legacy
+## Roles fuera de las áreas
 
-Los 7 "Agentes" del modelo anterior (personas/modos) fueron **absorbidos por las áreas y eliminados**: Programador/Auditor → Programación, Technical Game Designer → Game Design, Productor → Producción, Documentador/Arquitecto de Conocimiento → Conocimiento. Si en el futuro hace falta un rol que no tenga área, se crea en ese momento.
+No hay ninguno: los siete roles del modelo anterior fueron absorbidos por las áreas. Si hace falta un rol que ninguna área cubra, se crea en ese momento y con su área.
 
 ---
 

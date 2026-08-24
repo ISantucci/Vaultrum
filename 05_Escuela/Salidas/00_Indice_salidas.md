@@ -14,12 +14,6 @@ La Escuela **no mergea al Core**: sus salidas son candidatos, no cambios a `main
 
 ---
 
-## Registro
-
-### [[00_Indice_est|Índice de estudios (EST)]]
-
----
-
 ## Regla de salida
 
 Cada `EST` cuelga de una misión de estudio (gap + presupuesto + barra). La numeración es propia del área y correlativa:
@@ -39,4 +33,4 @@ EST (Escuela) → commit (Conocimiento) → merge a main (Owner)
 
 ## Regla operativa
 
-Antes de crear una salida, revisar el índice para confirmar el número y linkear a la misión. Ningún `EST` se registra sin cita y sin haber pasado por AiCare (arranque y handoff). Cada `EST` debe ser trazable a su misión.
+Antes de crear una salida, revisar el índice para confirmar el número y declarar la misión. Ningún `EST` se registra sin cita y sin haber pasado por AiCare (arranque y handoff). Cada `EST` debe ser trazable a su misión.

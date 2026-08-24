@@ -57,6 +57,10 @@ Por cada `GDS` con dimensión espacial, un **LDS-XXX.n** registrado en `00_Indic
 
 El `LDS` es insumo del Área de Programación (junto al `GDS` y, si existe, el `UXS`).
 
+Queda registrada en `Salidas/`:
+
+- [[00_Indice_lds|Índice de LDS]]
+
 ---
 
 ## Regla operativa
@@ -82,7 +86,6 @@ Consulta on-demand: la Escuela (`05_Fundamentos_de_experiencia_ludica`), pilares
 
 La numeración `.n` se mantiene entre `GDS / LDS / SOL / EJ` para trazabilidad de punta a punta.
 
-
 ## Flujos del área
 
 Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
@@ -92,14 +95,6 @@ Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde 
 ### [[02_Flujo_Diseno_Nivel|Flujo Diseno Nivel]]
 
 ### [[03_Flujo_Validacion_Nivel|Flujo Validacion Nivel]]
-
----
-
-## Salidas del área
-
-El registro de lo que el área produjo. Cada índice lista sus propias entregas.
-
-### [[02_Agencia/Area level design/Salidas/00_Indice_lds|Indice lds]]
 
 ---
 

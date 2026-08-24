@@ -65,6 +65,10 @@ Por cada `RQ` jugable, un **GDS-XXX.n** registrado en `00_Indice_gds`. La numera
 
 Un `GDS` cerrado baja a **Level Design** y/o **UI/UX** cuando aplican, y de ahí —junto al `LDS`/`UXS`— al Área de Programación. Si ninguna aplica, se declara en el propio `GDS` y pasa directo a Programación.
 
+Queda registrada en `Salidas/`:
+
+- [[02_Agencia/Area game design/Salidas/00_Indice_salidas|Índice de salidas del área]]
+
 ---
 
 ## Regla operativa
@@ -100,16 +104,6 @@ Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde 
 ### [[03_Flujo_Balance|Flujo Balance]]
 
 ### [[04_Flujo_Validacion_Diseno|Flujo Validacion Diseno]]
-
----
-
-## Salidas del área
-
-El registro de lo que el área produjo. Cada índice lista sus propias entregas.
-
-### [[02_Agencia/Area game design/Salidas/00_Indice_gds|Indice gds]]
-
-### [[02_Agencia/Area game design/Salidas/00_Indice_salidas|Indice salidas]]
 
 ---
 

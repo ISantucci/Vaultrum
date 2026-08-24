@@ -22,6 +22,10 @@ Primera pasada. Formalización de las seis leyes leídas del Core y aplicación 
 
 Segunda pasada, sobre `01_VaultrumCore`. 82 wikilinks encerrados en bloques de código y 21 aristas de más. Quedó en 90% cascada y cero links fuera de posición.
 
+### [[ARQ-003_Purga_de_lo_viejo|ARQ-003 — Purga de lo viejo]]
+
+Tercera pasada. No sobre links: sobre texto que describía un vault que ya no existe. Restos de tabla en los ocho índices de Salidas, reglas de la forma vieja, secciones dobles y la auditoría de la raíz.
+
 ---
 
 ## Regla del índice

@@ -30,3 +30,6 @@ backups/
 # Python
 __pycache__/
 *.pyc
+
+# Zona de descarte: se borra a mano desde el explorador
+_to_delete/

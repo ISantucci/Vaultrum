@@ -46,6 +46,10 @@ Staging no es un registro histórico. El historial, si se necesita, vive en git 
 
 Se declara porque una omisión declarada es criterio y una omisión silenciosa es un hueco. La misma regla que se le exige a un `LDS`/`UXS` que no aplica.
 
+La zona de trabajo es `Staging/`:
+
+- [[00_Staging|Staging]] — : lo que está ahí es candidato, no criterio
+
 ---
 
 ## Los 3 casos (políticas de merge)
@@ -113,7 +117,6 @@ Entrega a: **VaultrumCore** (merge aprobado).
 
 Puente con la Escuela: la Escuela investiga y destila pero **no mergea al Core**. Conocimiento es el único que propone a `main`: toma el `EST`, hace dedup + ubicación + diff, y lo presenta al owner. Decide qué se vuelve criterio indexado del Core (para que las áreas lo jalen on-demand) y qué queda como libro de referencia en la Biblioteca.
 
-
 ## Flujos del área
 
 Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
@@ -123,14 +126,6 @@ Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde 
 ### [[02_Flujo_Aprendizaje_Branch|Flujo Aprendizaje Branch]]
 
 ### [[03_Flujo_Experimento|Flujo Experimento]]
-
----
-
-## Staging del área
-
-El registro de lo que el área produjo. Cada índice lista sus propias entregas.
-
-### [[02_Agencia/Area conocimiento/Staging/00_Staging|Staging]]
 
 ---
 

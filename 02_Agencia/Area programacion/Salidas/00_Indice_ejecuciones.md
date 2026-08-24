@@ -18,4 +18,4 @@ Cada `EJ-XXX.n` es la implementación real + reporte de una `SOL-XXX.n`.
 
 - Un `EJ` cuelga siempre de un `SOL` (mismo número base y subnumeración).
 - Estados posibles: En ejecución / Reportada / En revisión / Cerrada / Rebotada.
-- Al registrar, linkear al `SOL` correspondiente y dejar el resultado de la revisión.
+- El `EJ` declara su `SOL` en su propia ficha, y el índice lo nombra. El resultado de la revisión queda en el `EJ`.

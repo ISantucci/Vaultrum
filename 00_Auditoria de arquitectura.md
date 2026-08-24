@@ -1,5 +1,7 @@
 # Auditoría de arquitectura del vault — AUD-001
 
+> **Registro fechado.** Ésta fue la primera auditoría del vault, hecha a mano. La serie continúa como `ARQ` en el Área de Arquitectura (`02_Agencia/Area arquitectura/Salidas/`), que además dejó la medición automatizada. Lo de abajo describe el estado de ese momento, no el de hoy.
+
 > Cierra el ítem 11 del backlog de `00_Leyes de Vaultrum (bitacora)`: *"la cadena se probó de punta a punta produciendo un entregable, pero no se auditó la arquitectura del vault en sí"*.
 >
 > Alcance auditado: 351 notas en disco; 125 leídas en detalle (todas las estructurales: índices, `Area_*.md`, `Agentes/`, `Flujos/`, `Skills/`, capas 03/04/05 y raíz). Las ~226 notas de contenido profundo del Core —patrones, managers, optimización, VaultrumAi— **no** se auditaron nota por nota: se auditó su indexación, no su contenido.
@@ -137,28 +139,32 @@ No requieren acción. Se dejan escritas para que la próxima auditoría no las r
 
 ```txt
 H1  checklists de la Escuela fuera de su Skill        → paso propio
-H2  declarar la excepción de Salidas/ en Conocimiento → una línea
     promover la regla de capas fuera del índice de la Agencia
     (mientras viva ahí, cada capa nueva la va a incumplir)
     segunda muestra en un dominio distinto             → decisión del owner
     resolver la tensión abierto / monousuario          → decisión del owner
 ```
 
+`H2` quedó cerrado: `Area_conocimiento` declara la excepción en su propia sección de Staging.
+
 ---
 
-## Método (para poder repetirla)
+## Método
 
-Lo mecánico de esta auditoría es reproducible y conviene correrlo antes de cada revisión estructural:
+Los pasos mecánicos de esta auditoría —inventario, resolución de wikilinks, sincronía índice↔disco, cobertura de cada índice de capa— **ya no se hacen a mano**: los corre el Área de Arquitectura.
 
 ```txt
-1. Inventario de notas en disco.
-2. Extraer todos los wikilinks y verificar que resuelvan contra el inventario.
-3. Por cada índice de salidas: comparar lo listado contra los archivos de su carpeta.
-4. Contar ítems de checklist fuera de los SKILL.md.
-5. Buscar frases largas repetidas entre Area_*.md / Agentes/ / Flujos/ / SKILL.md.
-6. Verificar que cada índice de capa liste los archivos que hay en su capa.
+python3 "02_Agencia/Area arquitectura/Herramientas/grafo.py" .
+python3 "02_Agencia/Area arquitectura/Herramientas/grafo.py" . --verificar
 ```
 
-Los pasos 1–3 y 6 son los que más barato detectan podredumbre silenciosa. El paso 5 es el que más ruido produce y el que menos encontró.
+Quedan dos pasos que la herramienta no cubre y siguen siendo manuales:
+
+```txt
+- contar ítems de checklist fuera de los SKILL.md
+- buscar frases largas repetidas entre Area_*.md / Agentes/ / Flujos/ / SKILL.md
+```
+
+El segundo es el que más ruido produce y el que menos encontró.
 
 Para el peso y la carga de contexto, el instrumento es `04_IA Operativa/Herramientas/contar_contexto.py`.

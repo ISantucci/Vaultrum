@@ -16,5 +16,5 @@ Todavía no hay ninguna. El primer `LDS` entra cuando un `GDS` cerrado declare q
 
 - Un `LDS` cuelga siempre de un `GDS` (hereda número base y subnumeración).
 - Estados posibles: En análisis / En diseño / En validación / Cerrada / Rebotada.
-- Al registrar, linkear al `GDS` y dejar el resultado de la validación.
+- El `LDS` declara su `GDS` en su propia ficha, y el índice lo nombra. El resultado de la validación queda en el `LDS`.
 - Un `LDS` cerrado es insumo del `SOL` del Área de Programación (junto al `GDS` y, si existe, el `UXS`).

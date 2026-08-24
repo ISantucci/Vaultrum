@@ -32,4 +32,4 @@ Un `GDS` pertenece a un `RQ`. Al cerrarse baja a **Level Design** y/o **UI/UX** 
 
 ## Regla operativa
 
-Antes de crear una salida, revisar el índice para confirmar el hilo (`.n`) y linkear al `RQ` correspondiente. Cada `GDS` debe ser trazable.
+Antes de crear una salida, revisar el índice para confirmar el hilo (`.n`) y declarar el `RQ` correspondiente. Cada `GDS` debe ser trazable.

@@ -141,6 +141,10 @@ VE-001      ← valida la entrega de TL-001 como conjunto
 
 El gate de cierre está definido en `02_Indice Agencia`.
 
+Queda registrada en `Salidas/`:
+
+- [[02_Agencia/Area produccion/Salidas/00_Indice_salidas|Índice de salidas del área]]
+
 ---
 
 ## Límites del área
@@ -190,14 +194,6 @@ Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde 
 ### [[03_Flujo_Planificacion_Requerimientos|Flujo Planificacion Requerimientos]]
 
 ### [[04_Flujo_Validacion_Entrega|Flujo Validacion Entrega]]
-
----
-
-## Salidas del área
-
-El registro de lo que el área produjo. Cada índice lista sus propias entregas.
-
-### [[02_Agencia/Area produccion/Salidas/00_Indice_salidas|Indice salidas]]
 
 ---
 

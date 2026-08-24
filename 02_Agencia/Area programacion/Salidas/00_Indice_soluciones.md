@@ -20,4 +20,4 @@ Las tres ejecutadas.
 
 - Un `SOL` cuelga siempre de un `RQ` (hereda número base y subnumeración).
 - Estados posibles: Propuesta / Aprobada / Ejecutada / Cerrada / Rebotada.
-- Al registrar, linkear al `RQ` (y `GDS` si aplica) correspondiente.
+- La `SOL` declara su `RQ` (y su `GDS` si aplica) en su propia ficha, y el índice lo nombra.

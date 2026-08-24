@@ -73,6 +73,10 @@ El área produce, por cada requerimiento:
 
 Ambas se registran en la carpeta `00_Indice_salidas` del área, con sus índices, respetando la numeración heredada del RQ.
 
+Queda registrada en `Salidas/`:
+
+- [[02_Agencia/Area programacion/Salidas/00_Indice_salidas|Índice de salidas del área]]
+
 ---
 
 ## Regla operativa
@@ -118,18 +122,6 @@ Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde 
 ### [[03_Flujo_Ejecucion|Flujo Ejecucion]]
 
 ### [[04_Flujo_Revision|Flujo Revision]]
-
----
-
-## Salidas del área
-
-El registro de lo que el área produjo. Cada índice lista sus propias entregas.
-
-### [[02_Agencia/Area programacion/Salidas/00_Indice_ejecuciones|Indice ejecuciones]]
-
-### [[02_Agencia/Area programacion/Salidas/00_Indice_salidas|Indice salidas]]
-
-### [[02_Agencia/Area programacion/Salidas/00_Indice_soluciones|Indice soluciones]]
 
 ---
 
