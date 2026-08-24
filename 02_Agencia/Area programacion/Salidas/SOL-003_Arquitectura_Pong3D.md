@@ -1,6 +1,6 @@
 ## Requerimientos
 
-`RQ-003.1` a `RQ-003.7` del [[TL-003_Pong3D_Unity6_Cadena_Completa]], con [[GDS-003.0_Marco_Comun]], `GDS-003.2` a `GDS-003.7`, [[UXS-003.5_Flujo_De_Pantallas]] y [[UXS-003.7_HUD_Y_Onboarding]] como insumos cerrados.
+`RQ-003.1` a `RQ-003.7` del `TL-003_Pong3D_Unity6_Cadena_Completa`, con `GDS-003.0_Marco_Comun`, `GDS-003.2` a `GDS-003.7`, `UXS-003.5_Flujo_De_Pantallas` y `UXS-003.7_HUD_Y_Onboarding` como insumos cerrados.
 
 Destino: `C:\Users\ControlEquipos\Desktop\a\vaultrumtest2`.
 
@@ -16,7 +16,7 @@ La regla operativa que se aplica es más chica y más honesta: **no encender maq
 
 ### 1. Sin motor de física
 
-**Requerimiento:** `RQ-003.3` — table-stake #2 del libro [[01_Pong]]: la pelota nunca atraviesa nada, y una pelota que atraviesa la paleta es una violación del pilar de justicia.
+**Requerimiento:** `RQ-003.3` — table-stake #2 del libro `01_Pong`: la pelota nunca atraviesa nada, y una pelota que atraviesa la paleta es una violación del pilar de justicia.
 
 Un `Rigidbody` + `Collider` por objeto hace que PhysX corra broadphase, narrowphase, resolución de contactos y sincronización de transforms para una esfera y cuatro planos. Pero el argumento decisivo **no es el costo**: es que el rebote de Pong **no es físico**. El ángulo se deriva del punto de impacto (`GDS-003.3`, regla 3), no de la normal. Usar PhysX obligaría a pelearle su propia resolución de colisión para imponerle una regla de diseño.
 
@@ -43,7 +43,7 @@ El orden importa: **paletas primero, paredes después**. Al revés, una pelota q
 
 ### 4. Todo por código, cero assets
 
-**Requerimiento:** riesgo #2 de `TL-003` y el aprendizaje de [[VE-002_Pong3D]] (*la entrega nunca aterrizó*).
+**Requerimiento:** riesgo #2 de `TL-003` y el aprendizaje de `VE-002_Pong3D` (*la entrega nunca aterrizó*).
 
 Ni prefabs, ni materiales, ni canvas cableado, ni clips de audio. La razón **no** es el peso del repositorio: es que un proyecto sin referencias no tiene referencias que se rompan. Ningún GUID que se desincronice, ningún `.wav` mal importado, ninguna escena YAML mal formada que impida abrir el proyecto.
 

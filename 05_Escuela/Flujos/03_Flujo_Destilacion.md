@@ -46,7 +46,7 @@ Antes de destilar, AiCare poda el material (duplicados/ruido) para no destilar b
 
 ## Condiciones para avanzar
 
-Avanza al [[04_Flujo_Validacion_Estudio]] cuando el `EST` está escrito y citado.
+Avanza al `04_Flujo_Validacion_Estudio` cuando el `EST` está escrito y citado.
 No avanza si el fundamento es vago o falta cita.
 
 ---

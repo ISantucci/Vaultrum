@@ -33,9 +33,9 @@ Concretamente: tomate el tiempo de planear antes de mover a nadie, leé de la Bi
 
 ## Baseline de experiencia — GATE DE INSUMO (obligatorio)
 
-Antes de escribir los `RQ`, jalá **on-demand** el libro `05_Fundamentos_de_experiencia_ludica` (`05_Escuela/Biblioteca/Fundamentos/`) y el libro del género del entregable (`05_Escuela/Biblioteca/Juegos/`, indexado desde [[Experiencia de juego]] en el Core). No cargues la Biblioteca entera.
+Antes de escribir los `RQ`, jalá **on-demand** el libro `05_Fundamentos_de_experiencia_ludica` (`05_Escuela/Biblioteca/Fundamentos/`) y el libro del género del entregable (`05_Escuela/Biblioteca/Juegos/`, indexado desde `Experiencia de juego` en el Core). No cargues la Biblioteca entera.
 
-Esto **no es una recomendación de lectura: es un gate**. El insumo se verifica antes de consumirlo (criterio del Core: [[Gates verificables]]).
+Esto **no es una recomendación de lectura: es un gate**. El insumo se verifica antes de consumirlo (criterio del Core: `Gates verificables`).
 
 ```txt
 GATE DE INSUMO DE BIBLIOTECA — se corre ANTES de redactar el primer RQ
@@ -148,7 +148,7 @@ Definición de terminado — checklist ejecutable de este paso:
 [ ] no hay estados muertos ni pantallas sin salida
 ```
 
-> Fuente canónica: el libro [[03_Definicion_de_terminado]] de la Biblioteca (`05_Escuela/Biblioteca/Fundamentos/`). El checklist de arriba es el mínimo transversal; el libro trae la versión completa y por tipo de entregable. Si el entregable tiene libro de género, su definición de terminado específica **manda sobre** este mínimo (lo extiende, no lo reemplaza).
+> Fuente canónica: el libro `03_Definicion_de_terminado` de la Biblioteca (`05_Escuela/Biblioteca/Fundamentos/`). El checklist de arriba es el mínimo transversal; el libro trae la versión completa y por tipo de entregable. Si el entregable tiene libro de género, su definición de terminado específica **manda sobre** este mínimo (lo extiende, no lo reemplaza).
 
 Registrá **VE-XXX** (cuelga del `TL`, no del `.n`) en `02_Agencia/Area produccion/Salidas/Validaciones/` y actualizá `00_Indice_ve`. Estados: **Cerrado** / **Ajustar** / **Pausado**.
 
@@ -172,7 +172,7 @@ Reglas del modo veredicto:
 - El `VE` registra el veredicto textual y **declara la deuda**: qué ítems no se recorrieron.
 - Si en la iteración siguiente aparece un problema que la checklist habría atrapado, eso es un hallazgo del sistema, no del entregable.
 
-Los dos son verificaciones parciales y los dos declaran su alcance (criterio del Core: [[Verificacion parcial declarada]]). Un veredicto global no reemplaza al instrumento: dice que el conjunto funciona, no cuál de los dieciocho falla.
+Los dos son verificaciones parciales y los dos declaran su alcance (criterio del Core: `Verificacion parcial declarada`). Un veredicto global no reemplaza al instrumento: dice que el conjunto funciona, no cuál de los dieciocho falla.
 
 ### Test del "no aplica" (se corre acá)
 

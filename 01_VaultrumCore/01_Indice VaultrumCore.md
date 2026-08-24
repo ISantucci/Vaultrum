@@ -65,7 +65,7 @@ Contiene material relacionado con:
 
 Los **fundamentos de experiencia** y los **análisis de juegos por género** no viven en el Core: viven en la Biblioteca de la Escuela (`05_Escuela/Biblioteca/`) y se consultan **on-demand**.
 
-Lo que sí vive en el Core es el **índice** hacia esos libros: [[Experiencia de juego]]. Es un puntero liviano, no una copia.
+Lo que sí vive en el Core es el **índice** hacia esos libros: `Experiencia de juego`. Es un puntero liviano, no una copia.
 
 ```txt
 el Core indexa   → liviano, siempre disponible

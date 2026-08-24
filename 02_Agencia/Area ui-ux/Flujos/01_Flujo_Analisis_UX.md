@@ -34,7 +34,7 @@ Transformar un `GDS` (+ `LDS` si aplica) en un encuadre de UX: qué necesita ver
 
 ## Condiciones para avanzar
 
-Avanza al [[02_Flujo_Diseno_UI]] cuando se entiende qué necesita el jugador. No avanza si faltan estados/feedback en el `GDS`.
+Avanza al `02_Flujo_Diseno_UI` cuando se entiende qué necesita el jugador. No avanza si faltan estados/feedback en el `GDS`.
 
 ## Resultado final
 

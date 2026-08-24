@@ -36,7 +36,7 @@ Convertir el encuadre de UX en un `UXS`: pantallas, HUD, menús, jerarquía, est
 
 ## Condiciones para avanzar
 
-Avanza al [[03_Flujo_Validacion_UX]] con el `UXS` abierto y completo.
+Avanza al `03_Flujo_Validacion_UX` con el `UXS` abierto y completo.
 
 ## Qué debe evitar
 

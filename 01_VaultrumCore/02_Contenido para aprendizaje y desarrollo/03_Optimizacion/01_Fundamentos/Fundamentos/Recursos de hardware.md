@@ -456,38 +456,32 @@ Esta nota pertenece a Fundamentos.
 Si se quiere entender el limite general:
 
 ```txt
-→ [[Bottleneck]]
+→ Bottleneck
 ```
 
 Si se quiere entender el tiempo disponible:
 
 ```txt
-→ [[Frame Budget]]
+→ Frame Budget
 ```
 
 Si el recurso sospechado es CPU:
 
 ```txt
-→ [[CPU Bound]]
+→ CPU Bound
 ```
 
 Si hay un sintoma concreto:
 
-```txt
 → [[Problemas de rendimiento]]
-```
 
 Si hace falta medir:
 
-```txt
 → [[Herramientas de deteccion]]
-```
 
 Si ya se confirmo el problema:
 
-```txt
 → [[Metodologias y soluciones]]
-```
 
 ---
 

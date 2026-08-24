@@ -5,7 +5,7 @@ autores: Jesse Schell
 editorial: CRC Press
 anio: 2008 (1ª); 2019 (3ª)
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: diseño holístico, lentes de diseño, experiencia del jugador
 ---
 
@@ -25,7 +25,7 @@ Manual holístico que enseña a diseñar mirando el juego desde ~100 **lentes** 
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Table-stakes para el estante de Fundamentos: cada 'lente' es un checklist reutilizable para revisar un loop, un sistema o un feature. Cruza directo con [[01_Loop_de_experiencia]] y con criterios de [[03_Definicion_de_terminado]].
+Table-stakes para el estante de Fundamentos: cada 'lente' es un checklist reutilizable para revisar un loop, un sistema o un feature. Cruza directo con `01_Loop_de_experiencia` y con criterios de `03_Definicion_de_terminado`.
 
 ## Estado y próximos pasos
 

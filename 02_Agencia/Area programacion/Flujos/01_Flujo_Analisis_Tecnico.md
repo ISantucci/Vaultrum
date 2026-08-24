@@ -50,7 +50,7 @@ Si el `RQ` es ambiguo o no existe, el flujo no avanza: se deriva a Producción.
 
 ## Condiciones para avanzar
 
-Avanza al [[02_Flujo_Diseno_Solucion]] cuando hay contexto real suficiente para diseñar.
+Avanza al `02_Flujo_Diseno_Solucion` cuando hay contexto real suficiente para diseñar.
 No avanza si el requerimiento sigue ambiguo o falta información crítica: se marca y se deriva.
 
 ---

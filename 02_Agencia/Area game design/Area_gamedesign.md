@@ -61,7 +61,7 @@ El loop no cierra hasta que el sistema es implementable y validable sin ambigüe
 
 ## Salida del área
 
-Por cada `RQ` jugable, un **GDS-XXX.n** registrado en [[00_Indice_gds]]. La numeración se hereda del `RQ` (`RQ-001.2 → GDS-001.2`).
+Por cada `RQ` jugable, un **GDS-XXX.n** registrado en `00_Indice_gds`. La numeración se hereda del `RQ` (`RQ-001.2 → GDS-001.2`).
 
 Un `GDS` cerrado baja a **Level Design** y/o **UI/UX** cuando aplican, y de ahí —junto al `LDS`/`UXS`— al Área de Programación. Si ninguna aplica, se declara en el propio `GDS` y pasa directo a Programación.
 
@@ -88,6 +88,30 @@ Recibe de: **Producción** (`RQ` jugable).
 Entrega a: **Level Design** (`LDS`) y/o **UI/UX** (`UXS`) si el sistema tiene dimensión espacial o interfaz, y a **Programación** (`GDS` como insumo de la solución técnica).
 
 La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para trazabilidad de punta a punta.
+
+## Flujos del área
+
+Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
+
+### [[01_Flujo_Analisis_Gameplay|Flujo Analisis Gameplay]]
+
+### [[02_Flujo_Diseno_Sistema|Flujo Diseno Sistema]]
+
+### [[03_Flujo_Balance|Flujo Balance]]
+
+### [[04_Flujo_Validacion_Diseno|Flujo Validacion Diseno]]
+
+---
+
+## Salidas del área
+
+El registro de lo que el área produjo. Cada índice lista sus propias entregas.
+
+### [[02_Agencia/Area game design/Salidas/00_Indice_gds|Indice gds]]
+
+### [[02_Agencia/Area game design/Salidas/00_Indice_salidas|Indice salidas]]
+
+---
 
 ## Skill del área
 

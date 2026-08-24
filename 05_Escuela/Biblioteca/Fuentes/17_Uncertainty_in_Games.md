@@ -5,7 +5,7 @@ autores: Greg Costikyan
 editorial: MIT Press
 anio: 2013
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: incertidumbre, fuentes de tensión, azar, ocultación, imprevisibilidad
 ---
 
@@ -25,7 +25,7 @@ Tesis: sin **incertidumbre** no hay juego interesante. Cataloga sus fuentes — 
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Da a Vaultrum un catálogo de palancas de tensión para dosificar dificultad y engagement en el [[01_Loop_de_experiencia]]. Cruza con azar/skill de [[07_Characteristics_of_Games]].
+Da a Vaultrum un catálogo de palancas de tensión para dosificar dificultad y engagement en el `01_Loop_de_experiencia`. Cruza con azar/skill de `07_Characteristics_of_Games`.
 
 ## Estado y próximos pasos
 

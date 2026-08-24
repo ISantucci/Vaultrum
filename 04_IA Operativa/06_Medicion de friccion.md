@@ -1,6 +1,6 @@
 # Medición de fricción
 
-La [[Baseline de entregable|Ley del baseline]] dice que **el costo del owner se mide en prompts**. Durante un tiempo eso fue una afirmación sin instrumento: se comparaba `TL-002` contra `TL-003` a ojo (*"el desarrollo saca 4/10"*, *"esta vez fue mejor"*), que es exactamente el tipo de juicio que Vaultrum le prohíbe a una optimización de rendimiento.
+La `Ley del baseline` dice que **el costo del owner se mide en prompts**. Durante un tiempo eso fue una afirmación sin instrumento: se comparaba `TL-002` contra `TL-003` a ojo (*"el desarrollo saca 4/10"*, *"esta vez fue mejor"*), que es exactamente el tipo de juicio que Vaultrum le prohíbe a una optimización de rendimiento.
 
 Esta nota define el instrumento. Es corta a propósito: una métrica que necesita explicación larga no se registra.
 

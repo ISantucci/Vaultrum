@@ -8,7 +8,7 @@ acceso: Libre, repo público
 licencia: incierta
 prioridad: alta
 estado: Catalogado
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 url: https://github.com/mikewesthad/Game-Design-Document-Resources
 ---
 
@@ -16,7 +16,7 @@ url: https://github.com/mikewesthad/Game-Design-Document-Resources
 
 > Artefacto real de la industria, catalogado para consulta del Productor y de Game Design.
 > **IP:** ficha + referencia. La Biblioteca no aloja ni reproduce el documento original.
-> **Licencia incierta (nivel B).** Publicado o tolerado por el titular, sin licencia formal. Se estudia y se cita; no se copia ni se redistribuye. Ver la regla de tres niveles en [[00_Indice_documentos]].
+> **Licencia incierta (nivel B).** Publicado o tolerado por el titular, sin licencia formal. Se estudia y se cita; no se copia ni se redistribuye. Ver la regla de tres niveles en `00_Indice_documentos`.
 
 ---
 
@@ -33,6 +33,10 @@ url: https://github.com/mikewesthad/Game-Design-Document-Resources
 
 ---
 
-## Estante
+## Hacia donde seguir
 
-Ficha del estante [[00_Indice_documentos]] · registrada en [[00_Catalogo_Biblioteca]] · misión [[EST-006_Mision_Lote_Biblioteca_Agosto26]].
+Esta ficha pertenece al estante de Documentacion real.
+
+Para volver al estante y ver el resto de los documentos:
+
+→ [[00_Indice_documentos]]

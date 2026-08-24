@@ -5,7 +5,7 @@ autores: Miguel Sicart
 editorial: MIT Press
 anio: 2014
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: play vs juego, playfulness, apropiación, juego como actitud
 ---
 
@@ -25,7 +25,7 @@ Corre el foco del 'juego' (game) al **jugar** (play) y a la **playfulness** como
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Amplía la mirada de Vaultrum más allá de las reglas: cómo los jugadores se apropian y juegan 'de más'. Complementa [[24_Ambiguity_of_Play]] y matiza el modelo de reglas de [[06_Half_Real]].
+Amplía la mirada de Vaultrum más allá de las reglas: cómo los jugadores se apropian y juegan 'de más'. Complementa `24_Ambiguity_of_Play` y matiza el modelo de reglas de `06_Half_Real`.
 
 ## Estado y próximos pasos
 

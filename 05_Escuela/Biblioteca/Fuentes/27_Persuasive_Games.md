@@ -5,7 +5,7 @@ autores: Ian Bogost
 editorial: MIT Press
 anio: 2007
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: retórica procedural, argumentación por reglas, juegos como discurso
 ---
 

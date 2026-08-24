@@ -8,7 +8,7 @@ acceso: Libre, PDF en el CDN de Unity
 licencia: a confirmar
 prioridad: baja
 estado: Catalogado
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 url: https://connect-prd-cdn.unity.com/20201215/83f3733d-3146-42de-8a69-f461d6662eb1/Game-Design-Document-Template.pdf
 ---
 
@@ -33,6 +33,10 @@ url: https://connect-prd-cdn.unity.com/20201215/83f3733d-3146-42de-8a69-f461d666
 
 ---
 
-## Estante
+## Hacia donde seguir
 
-Ficha del estante [[00_Indice_documentos]] · registrada en [[00_Catalogo_Biblioteca]] · misión [[EST-006_Mision_Lote_Biblioteca_Agosto26]].
+Esta ficha pertenece al estante de Documentacion real.
+
+Para volver al estante y ver el resto de los documentos:
+
+→ [[00_Indice_documentos]]

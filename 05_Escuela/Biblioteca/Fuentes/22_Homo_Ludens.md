@@ -5,7 +5,7 @@ autores: Johan Huizinga
 editorial: (orig. 1938) Routledge/Beacon
 anio: 1938 (orig.); 1949 (ing.)
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: juego como raíz de la cultura, círculo mágico, play-element
 ---
 

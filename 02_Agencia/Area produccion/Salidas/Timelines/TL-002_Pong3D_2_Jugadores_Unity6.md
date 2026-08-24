@@ -1,4 +1,4 @@
-> **SUPERSEDIDO por [[TL-003_Pong3D_Unity6_Cadena_Completa]]** — su `VE-002` quedó PAUSADO y su implementación nunca aterrizó en disco. TL-003 rehace la cadena cargando el libro [[01_Pong]] (que en ese momento estaba vacío) y agregando `UXS` y onboarding. Este timeline queda como antecedente cerrado; no se reabre.
+> **SUPERSEDIDO por `TL-003_Pong3D_Unity6_Cadena_Completa`** — su `VE-002` quedó PAUSADO y su implementación nunca aterrizó en disco. TL-003 rehace la cadena cargando el libro `01_Pong` (que en ese momento estaba vacío) y agregando `UXS` y onboarding. Este timeline queda como antecedente cerrado; no se reabre.
 
 ## Objetivo
 
@@ -40,12 +40,12 @@ Alta. Es la primera corrida completa de la Agencia refactorizada (cadena `TL →
 
 | RQ | Título | Jugable |
 |----|--------|---------|
-| [[RQ-002.1_Setup_Proyecto_Arena3D]] | Setup de proyecto Unity 6 y arena 3D | No |
-| [[RQ-002.2_Paletas_Controlables]] | Paletas controlables para dos jugadores | Sí |
-| [[RQ-002.3_Pelota_Rebote_Aceleracion]] | Pelota: rebote, ángulo por impacto y aceleración | Sí |
-| [[RQ-002.4_Score_Victoria_Reinicio]] | Marcador, condición de victoria y reinicio | Sí |
-| [[RQ-002.5_Estados_Menus]] | Estados de juego, menús y opciones | Sí |
-| [[RQ-002.6_Game_Feel_Audio]] | Game feel y audio procedural | Sí |
+| RQ-002.1_Setup_Proyecto_Arena3D | Setup de proyecto Unity 6 y arena 3D | No |
+| RQ-002.2_Paletas_Controlables | Paletas controlables para dos jugadores | Sí |
+| RQ-002.3_Pelota_Rebote_Aceleracion | Pelota: rebote, ángulo por impacto y aceleración | Sí |
+| RQ-002.4_Score_Victoria_Reinicio | Marcador, condición de victoria y reinicio | Sí |
+| RQ-002.5_Estados_Menus | Estados de juego, menús y opciones | Sí |
+| RQ-002.6_Game_Feel_Audio | Game feel y audio procedural | Sí |
 
 ---
 

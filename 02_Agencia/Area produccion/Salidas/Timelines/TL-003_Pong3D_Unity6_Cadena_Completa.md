@@ -1,14 +1,14 @@
 ## Objetivo
 
-Un **Pong 3D para dos jugadores locales en Unity 6**, entregado en `C:\Users\ControlEquipos\Desktop\a\vaultrumtest2`, que cumpla la Definición de Terminado del libro [[01_Pong]] — no que compile.
+Un **Pong 3D para dos jugadores locales en Unity 6**, entregado en `C:\Users\ControlEquipos\Desktop\a\vaultrumtest2`, que cumpla la Definición de Terminado del libro `01_Pong` — no que compile.
 
-Este timeline existe por una razón declarada: **[[TL-002_Pong3D_2_Jugadores_Unity6]] quedó en [[VE-002_Pong3D]] = PAUSADO y su implementación no está en disco** (la carpeta destino está vacía). TL-002 no fue un mal timeline: sus `RQ` y `GDS` son sólidos. Falló en el borde: nunca se pudo validar y nunca aterrizó. TL-003 rehace la cadena **cargando primero el insumo que TL-002 no tenía** —el libro [[01_Pong]], que en ese momento estaba vacío— y agrega los dos eslabones que faltaron.
+Este timeline existe por una razón declarada: **`TL-002_Pong3D_2_Jugadores_Unity6` quedó en `VE-002_Pong3D` = PAUSADO y su implementación no está en disco** (la carpeta destino está vacía). TL-002 no fue un mal timeline: sus `RQ` y `GDS` son sólidos. Falló en el borde: nunca se pudo validar y nunca aterrizó. TL-003 rehace la cadena **cargando primero el insumo que TL-002 no tenía** —el libro `01_Pong`, que en ese momento estaba vacío— y agrega los dos eslabones que faltaron.
 
 ## Antecedente y delta contra TL-002
 
 | Dimensión | TL-002 | TL-003 |
 |-----------|--------|--------|
-| Libro de género ([[01_Pong]]) | Vacío (molde de EST-001). No se pudo consultar | **Llenado por EST-001 y cargado como insumo obligatorio del `RQ`** |
+| Libro de género (01_Pong) | Vacío (molde de EST-001). No se pudo consultar | **Llenado por EST-001 y cargado como insumo obligatorio del `RQ`** |
 | `UXS` | Declarado *no aplica* | **Aplica.** La interfaz se diseña antes de codearse, no se improvisa en `Awake` (desvío #1 del `EJ-002`) |
 | Onboarding / controles | Implícito | `RQ-003.7` propio (table-stake #9 del libro) |
 | Estado en disco | Nunca aterrizó | Entrega verificable en la ruta destino |
@@ -28,9 +28,9 @@ Alta. Es la entrega que cierra el loop que originó la Ley candidata #1 (fricci�
 
 | Insumo | Qué aporta | Dónde se usa |
 |--------|-----------|--------------|
-| [[01_Pong]] | 9 table-stakes, baseline de parámetros, Definición de Terminado del género | Redacción de los `RQ` y validación final |
-| [[05_Fundamentos_de_experiencia_ludica]] | 9 pilares + CHECKLIST por-GDS | Gate de cada `GDS` |
-| [[TL-002_Pong3D_2_Jugadores_Unity6]] | Diseño previo del mismo sistema | Reutilizado donde sigue siendo válido; se declara qué se hereda |
+| 01_Pong | 9 table-stakes, baseline de parámetros, Definición de Terminado del género | Redacción de los `RQ` y validación final |
+| 05_Fundamentos_de_experiencia_ludica | 9 pilares + CHECKLIST por-GDS | Gate de cada `GDS` |
+| TL-002_Pong3D_2_Jugadores_Unity6 | Diseño previo del mismo sistema | Reutilizado donde sigue siendo válido; se declara qué se hereda |
 | VaultrumCore (SOLID, patrones, optimización) | Criterio técnico | `SOL-003` |
 
 ## Supuestos declarados
@@ -43,13 +43,13 @@ Alta. Es la entrega que cierra el loop que originó la Ley candidata #1 (fricci�
 
 | RQ | Título | Jugable | Cadena |
 |----|--------|---------|--------|
-| [[RQ-003.1_Setup_Proyecto_Arena]] | Setup de proyecto, escena y arena 3D | No | → `SOL` |
-| [[RQ-003.2_Paletas_Controlables]] | Dos paletas por teclado, con peso | Sí | → `GDS` → `SOL` |
-| [[RQ-003.3_Pelota_Rebote_Aceleracion]] | Pelota: ángulo por impacto, aceleración, anti-tunneling | Sí | → `GDS` → `SOL` |
-| [[RQ-003.4_Score_Saque_Victoria]] | Marcador, saque justo, condición de victoria | Sí | → `GDS` → `SOL` |
-| [[RQ-003.5_Estados_Y_Flujo_De_Pantallas]] | Máquina de estados y flujo sin estados muertos | Sí | → `GDS` → `UXS` → `SOL` |
-| [[RQ-003.6_Game_Feel_Y_Audio]] | Juice del impacto, del gol y del rally | Sí | → `GDS` → `SOL` |
-| [[RQ-003.7_Onboarding_Y_Legibilidad]] | Controles comunicados, lados distinguibles, HUD legible | Sí | → `GDS` → `UXS` → `SOL` |
+| RQ-003.1_Setup_Proyecto_Arena | Setup de proyecto, escena y arena 3D | No | → `SOL` |
+| RQ-003.2_Paletas_Controlables | Dos paletas por teclado, con peso | Sí | → `GDS` → `SOL` |
+| RQ-003.3_Pelota_Rebote_Aceleracion | Pelota: ángulo por impacto, aceleración, anti-tunneling | Sí | → `GDS` → `SOL` |
+| RQ-003.4_Score_Saque_Victoria | Marcador, saque justo, condición de victoria | Sí | → `GDS` → `SOL` |
+| RQ-003.5_Estados_Y_Flujo_De_Pantallas | Máquina de estados y flujo sin estados muertos | Sí | → `GDS` → `UXS` → `SOL` |
+| RQ-003.6_Game_Feel_Y_Audio | Juice del impacto, del gol y del rally | Sí | → `GDS` → `SOL` |
+| RQ-003.7_Onboarding_Y_Legibilidad | Controles comunicados, lados distinguibles, HUD legible | Sí | → `GDS` → `UXS` → `SOL` |
 
 ## Secuencia de trabajo
 
@@ -89,6 +89,6 @@ RQ-003.7 ► GDS-003.7 ► UXS-003.7 ──────────►
 
 ## Criterios de cierre
 
-`VE-003` pasa a **Cerrado** solo si, **con el juego corriendo**, se tildan los 18 ítems de la Definición de Terminado de [[01_Pong]]. Verificar el código no es verificar la entrega (aprendizaje declarado en [[VE-002_Pong3D]]).
+`VE-003` pasa a **Cerrado** solo si, **con el juego corriendo**, se tildan los 18 ítems de la Definición de Terminado de `01_Pong`. Verificar el código no es verificar la entrega (aprendizaje declarado en `VE-002_Pong3D`).
 
 Si el feel no cierra, el estado es **Ajustar** con hallazgo concreto y el balance se toca en el Inspector, sin recompilar.

@@ -5,7 +5,7 @@ autores: Katherine Isbister
 editorial: MIT Press
 anio: 2016
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: emoción por diseño, avatares, elección, juego social, empatía
 ---
 
@@ -25,7 +25,7 @@ Cómo los juegos generan **emoción y conexión social** mediante decisiones de 
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Aporta a Vaultrum el nexo entre mecánica y emoción social — útil para diseñar decisiones que 'se sientan'. Cruza con [[02_Game_feel]] (movimiento) y con decisiones significativas de [[08_Designing_Games]].
+Aporta a Vaultrum el nexo entre mecánica y emoción social — útil para diseñar decisiones que 'se sientan'. Cruza con `02_Game_feel` (movimiento) y con decisiones significativas de `08_Designing_Games`.
 
 ## Estado y próximos pasos
 

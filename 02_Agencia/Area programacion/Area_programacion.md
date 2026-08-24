@@ -71,7 +71,7 @@ El área produce, por cada requerimiento:
 - una **solución técnica** registrada como `SOL-XXX.n`,
 - una **ejecución/reporte** registrada como `EJ-XXX.n`.
 
-Ambas se registran en la carpeta [[00_Indice_salidas]] del área, con sus índices, respetando la numeración heredada del RQ.
+Ambas se registran en la carpeta `00_Indice_salidas` del área, con sus índices, respetando la numeración heredada del RQ.
 
 ---
 
@@ -106,6 +106,32 @@ Recibe de: **Producción** (`RQ`), **Game Design** (`GDS`) y, si existen, **Leve
 Entrega a: **Producción** (los `EJ` en OK vuelven para la validación de entrega del timeline) y **Conocimiento** (aprendizajes reutilizables detectados durante la ejecución).
 
 La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para que todo el hilo de trabajo sea rastreable de punta a punta. El `VE` de cierre cuelga del `TL`, sin `.n`.
+
+## Flujos del área
+
+Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
+
+### [[01_Flujo_Analisis_Tecnico|Flujo Analisis Tecnico]]
+
+### [[02_Flujo_Diseno_Solucion|Flujo Diseno Solucion]]
+
+### [[03_Flujo_Ejecucion|Flujo Ejecucion]]
+
+### [[04_Flujo_Revision|Flujo Revision]]
+
+---
+
+## Salidas del área
+
+El registro de lo que el área produjo. Cada índice lista sus propias entregas.
+
+### [[02_Agencia/Area programacion/Salidas/00_Indice_ejecuciones|Indice ejecuciones]]
+
+### [[02_Agencia/Area programacion/Salidas/00_Indice_salidas|Indice salidas]]
+
+### [[02_Agencia/Area programacion/Salidas/00_Indice_soluciones|Indice soluciones]]
+
+---
 
 ## Skill del área
 

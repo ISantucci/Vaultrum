@@ -282,6 +282,6 @@ Cada una es una misión de Escuela con su propio gap + presupuesto + barra, que 
 
 ## Fuentes
 
-Destilado (conceptos + cita, sin verbatim) del [[04_Playbook_de_diseno]] y de las fuentes del estante [[00_Indice_fuentes]] citadas por pilar:
-[[01_Rules_of_Play]] · [[02_Art_of_Game_Design]] · [[03_Game_Design_Workshop]] · [[04_Theory_of_Fun]] · [[05_Game_Feel]] · [[06_Half_Real]] · [[07_Characteristics_of_Games]] · [[08_Designing_Games]] · [[09_Gamers_Brain]] · [[10_Game_Usability]] · [[11_How_Games_Move_Us]] · [[12_Design_of_Everyday_Things]] · [[13_Elements_of_Game_Design]] · [[16_Advanced_Game_Design]] · [[17_Uncertainty_in_Games]] · [[18_Art_of_Failure]] · [[19_Playful_Production_Process]] · [[26_Cybertext]].
-Cruza a los Fundamentos [[01_Loop_de_experiencia]], [[02_Game_feel]], [[03_Definicion_de_terminado]].
+Destilado (conceptos + cita, sin verbatim) del `04_Playbook_de_diseno` y de las fuentes del estante `00_Indice_fuentes` citadas por pilar:
+`01_Rules_of_Play` · `02_Art_of_Game_Design` · `03_Game_Design_Workshop` · `04_Theory_of_Fun` · `05_Game_Feel` · `06_Half_Real` · `07_Characteristics_of_Games` · `08_Designing_Games` · `09_Gamers_Brain` · `10_Game_Usability` · `11_How_Games_Move_Us` · `12_Design_of_Everyday_Things` · `13_Elements_of_Game_Design` · `16_Advanced_Game_Design` · `17_Uncertainty_in_Games` · `18_Art_of_Failure` · `19_Playful_Production_Process` · `26_Cybertext`.
+Cruza a los Fundamentos `01_Loop_de_experiencia`, `02_Game_feel`, `03_Definicion_de_terminado`.

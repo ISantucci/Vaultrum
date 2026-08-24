@@ -46,7 +46,7 @@ Si el `RQ` no es jugable o está mal definido, el flujo no avanza: se deriva (a 
 
 ## Condiciones para avanzar
 
-Avanza al [[02_Flujo_Diseno_Sistema]] cuando la experiencia buscada está clara.
+Avanza al `02_Flujo_Diseno_Sistema` cuando la experiencia buscada está clara.
 No avanza si el `RQ` no es jugable o falta información crítica.
 
 ---

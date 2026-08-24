@@ -57,7 +57,7 @@ Ocho **skills ejecutables** (una por área, más la Escuela y AiCare) son lo que
 
 ## Entorno recomendado
 
-- **Obsidian**, para abrir y navegar el vault (la navegación usa wikilinks `[[...]]`).
+- **Obsidian**, para abrir y navegar el vault (la navegación usa wikilinks en cascada).
 - **Git**, para clonar o versionar.
 - Cualquier herramienta de IA capaz de leer archivos Markdown y usar el vault como contexto. Las skills están escritas en el formato de skills de Claude, y su contenido es portable a cualquier agente que lea instrucciones en Markdown.
 - **Python 3** (opcional), solo para las herramientas de medición de `04_IA Operativa`.
@@ -88,7 +88,7 @@ Los dos son válidos. El segundo es el que deja rastro.
 
 Etapa de apertura inicial, con una entrega real completa: la cadena se corrió de punta a punta produciendo un Pong 3D en Unity 6, jugable y jugado.
 
-Lo que eso probó y lo que no está escrito sin maquillaje en [[00_Auditoria de arquitectura]] y en el backlog de [[00_Leyes de Vaultrum (bitacora)]]. Resumen honesto: **la cadena funciona en el medio y falla en los bordes**, y las tres reglas de borde que lo corrigen ya son pasos ejecutables de las skills.
+Lo que eso probó y lo que no está escrito sin maquillaje en `00_Auditoria de arquitectura` y en el backlog de `00_Leyes de Vaultrum (bitacora)`. Resumen honesto: **la cadena funciona en el medio y falla en los bordes**, y las tres reglas de borde que lo corrigen ya son pasos ejecutables de las skills.
 
 Falta la segunda muestra. Todo lo validado se validó sobre un mismo género.
 

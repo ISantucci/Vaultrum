@@ -1,6 +1,6 @@
 ## Requerimiento y specs
 
-Cubre el hilo completo de [[TL-002_Pong3D_2_Jugadores_Unity6]]: `RQ-002.1` a `RQ-002.6`, con `GDS-002.2` a `GDS-002.6`.
+Cubre el hilo completo de `TL-002_Pong3D_2_Jugadores_Unity6`: `RQ-002.1` a `RQ-002.6`, con `GDS-002.2` a `GDS-002.6`.
 
 Los seis requerimientos comparten una única arquitectura. Partirlos en seis soluciones técnicas sería sobrearquitecturar (principio 5): el sistema tiene tres objetos móviles.
 

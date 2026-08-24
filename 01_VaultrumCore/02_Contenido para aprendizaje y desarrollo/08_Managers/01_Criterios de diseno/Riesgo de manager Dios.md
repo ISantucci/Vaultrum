@@ -175,16 +175,16 @@ Tiene muchas razones para cambiar.
 También suele romper:
 
 ```txt
-[[O - OpenClosed Principle]]
+O - OpenClosed Principle
 → cada nueva feature modifica el manager.
 
-[[I - Interface Segregation Principle]]
+I - Interface Segregation Principle
 → expone demasiados métodos para demasiados consumidores.
 
-[[D - Dependency Inversion Principle]]
+D - Dependency Inversion Principle
 → depende de demasiadas implementaciones concretas.
 
-[[L - Liskov Substitution Principle]]
+L - Liskov Substitution Principle
 → si usa abstracciones con excepciones internas constantes, la abstracción está mal diseñada.
 ```
 

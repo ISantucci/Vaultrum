@@ -390,38 +390,32 @@ Despues de entender bottleneck, el siguiente paso depende del cuello sospechado.
 Si el cuello parece estar en tiempo de frame:
 
 ```txt
-→ [[Frame Budget]]
+→ Frame Budget
 ```
 
 Si el cuello parece estar en CPU:
 
 ```txt
-→ [[CPU Bound]]
+→ CPU Bound
 ```
 
 Si hace falta entender recursos afectados:
 
 ```txt
-→ [[Recursos de hardware]]
+→ Recursos de hardware
 ```
 
 Si ya hay un sintoma concreto:
 
-```txt
 → [[Problemas de rendimiento]]
-```
 
 Si hace falta medir:
 
-```txt
 → [[Herramientas de deteccion]]
-```
 
 Si ya se confirmo la causa:
 
-```txt
 → [[Metodologias y soluciones]]
-```
 
 ---
 

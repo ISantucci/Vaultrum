@@ -1,7 +1,7 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilares 2 — Victoria/derrota y estados de fin · 5 — Justicia y control · 7 — Recompensa y motivación
 cruza: 05_Fundamentos_de_experiencia_ludica, 01_Loop_de_experiencia, 03_Definicion_de_terminado
 ---
@@ -174,7 +174,7 @@ Se rompe de dos maneras opuestas. Con costo bajo, el jugador deja de pensar y em
 
 **Límites.** Este libro asume fracaso frecuente y recuperable. No cubre juegos sin estado de derrota (sandbox, walking sims), ni fracaso económico de largo plazo en estrategia y management, donde la "muerte" son 40 horas de decisiones y el modelo de checkpoint no aplica. Tampoco cubre pérdidas de progreso en multijugador competitivo, donde el costo lo fija la comunidad y no vos.
 
-**Fuentes.** [[18_Art_of_Failure]] · [[17_Uncertainty_in_Games]] · [[08_Designing_Games]] · [[04_Theory_of_Fun]] · [[07_Characteristics_of_Games]] · [[03_Game_Design_Workshop]] · [[09_Gamers_Brain]]
-**Cruces.** [[05_Fundamentos_de_experiencia_ludica]] (Pilares 2, 5, 7) · [[01_Loop_de_experiencia]] (el fracaso como iteración del loop) · [[03_Definicion_de_terminado]] (guardado robusto como criterio de cierre) · [[02_Game_feel]]
+**Fuentes.** `18_Art_of_Failure` · `17_Uncertainty_in_Games` · `08_Designing_Games` · `04_Theory_of_Fun` · `07_Characteristics_of_Games` · `03_Game_Design_Workshop` · `09_Gamers_Brain`
+**Cruces.** `05_Fundamentos_de_experiencia_ludica` (Pilares 2, 5, 7) · `01_Loop_de_experiencia` (el fracaso como iteración del loop) · `03_Definicion_de_terminado` (guardado robusto como criterio de cierre) · `02_Game_feel`
 
 ---

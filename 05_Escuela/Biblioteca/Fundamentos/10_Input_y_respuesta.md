@@ -1,7 +1,7 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 3 — Feedback y game feel · Pilar 5 — Justicia y control
 cruza: 05_Fundamentos_de_experiencia_ludica, 02_Game_feel, 04_Playbook_de_diseno, 03_Definicion_de_terminado
 ---
@@ -9,7 +9,7 @@ cruza: 05_Fundamentos_de_experiencia_ludica, 02_Game_feel, 04_Playbook_de_diseno
 # Fundamento 10 — Input y respuesta
 
 > Profundiza la mitad **entrante** del lazo: qué pasa entre que el jugador aprieta y que el juego contesta. Cubre la cadena de latencia, el perdón de input como categoría de diseño, curvas analógicas y las consecuencias de diseño (no de binding) de teclado, gamepad y táctil.
-> **No cubre:** el lado saliente del juice —animación, partículas, sonido de impacto— que vive en [[02_Game_feel]]; netcode y rollback; accesibilidad motriz completa; ergonomía de menús (eso es UI/UX).
+> **No cubre:** el lado saliente del juice —animación, partículas, sonido de impacto— que vive en `02_Game_feel`; netcode y rollback; accesibilidad motriz completa; ergonomía de menús (eso es UI/UX).
 > **IP:** conceptos destilados + cita. Nunca texto verbatim con copyright.
 
 ## Índice del libro
@@ -181,9 +181,9 @@ INPUT Y RESPUESTA — pegar en el GDS
 ```
 
 ## Aplicación · Límites · Fuentes
-**Aplicación.** En todo GDS de Vaultrum, "Input y respuesta" es una sección propia con la tabla de baselines completada con números reales del proyecto, no con los sugeridos. Ningún requerimiento de movimiento se cierra en [[03_Definicion_de_terminado]] sin latencia medida.
+**Aplicación.** En todo GDS de Vaultrum, "Input y respuesta" es una sección propia con la tabla de baselines completada con números reales del proyecto, no con los sugeridos. Ningún requerimiento de movimiento se cierra en `03_Definicion_de_terminado` sin latencia medida.
 **Límites.** No aplica a multijugador en red (la predicción y el rollback cambian el modelo entero), ni a controles por movimiento o VR. Los números asumen 60 fps estables: a 30 fps recalculá todo en milisegundos, no en frames.
-**Fuentes.** [[05_Game_Feel]] · [[09_Gamers_Brain]] · [[10_Game_Usability]] · [[12_Design_of_Everyday_Things]] · [[02_Art_of_Game_Design]] · [[15_Game_Mechanics]] · [[29_Racing_the_Beam]] · [[01_Pong]].
-**Cruces.** [[05_Fundamentos_de_experiencia_ludica]] (P3, P5) · [[02_Game_feel]] · [[04_Playbook_de_diseno]] · [[11_Camara_y_encuadre]].
+**Fuentes.** `05_Game_Feel` · `09_Gamers_Brain` · `10_Game_Usability` · `12_Design_of_Everyday_Things` · `02_Art_of_Game_Design` · `15_Game_Mechanics` · `29_Racing_the_Beam` · `01_Pong`.
+**Cruces.** `05_Fundamentos_de_experiencia_ludica` (P3, P5) · `02_Game_feel` · `04_Playbook_de_diseno` · `11_Camara_y_encuadre`.
 
 ---

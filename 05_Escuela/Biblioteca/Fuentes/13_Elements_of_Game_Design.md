@@ -5,7 +5,7 @@ autores: Robert Zubek
 editorial: MIT Press
 anio: 2020
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: sistemas de juego, mecánicas y dinámicas, gameplay, UX, marco introductorio
 ---
 
@@ -25,7 +25,7 @@ Introducción moderna y estructurada al diseño en tres capas: **mecánicas y si
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Andamiaje conceptual limpio y actual para organizar la Biblioteca de Fundamentos: separa sistema/gameplay/experiencia, alineado con cómo Vaultrum piensa el [[01_Loop_de_experiencia]].
+Andamiaje conceptual limpio y actual para organizar la Biblioteca de Fundamentos: separa sistema/gameplay/experiencia, alineado con cómo Vaultrum piensa el `01_Loop_de_experiencia`.
 
 ## Estado y próximos pasos
 

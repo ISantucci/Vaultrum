@@ -5,7 +5,7 @@ autores: Katherine Isbister & Celia Hodent (eds.)
 editorial: CRC Press / Routledge
 anio: 2008 (1ª); 2022 (2ª)
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: usabilidad, investigación de usuarios, playtesting, accesibilidad, proceso UX
 ---
 
@@ -25,7 +25,7 @@ Antología de expertos sobre **métodos prácticos de usabilidad y UX research**
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Manual operativo para el proceso de testeo de Vaultrum: técnicas concretas de user research y cómo integrarlas sin frenar la producción. Complementa a [[09_Gamers_Brain]].
+Manual operativo para el proceso de testeo de Vaultrum: técnicas concretas de user research y cómo integrarlas sin frenar la producción. Complementa a `09_Gamers_Brain`.
 
 ## Estado y próximos pasos
 

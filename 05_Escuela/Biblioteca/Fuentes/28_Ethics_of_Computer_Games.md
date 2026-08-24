@@ -5,7 +5,7 @@ autores: Miguel Sicart
 editorial: MIT Press
 anio: 2009
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: ética del jugador, agencia moral, diseño ético, jugador como sujeto ético
 ---
 
@@ -25,7 +25,7 @@ Analiza al **jugador como agente ético**: los juegos plantean dilemas morales y
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Aporta a Vaultrum un marco para diseñar decisiones con carga moral y evaluar el impacto ético de las reglas. Complemento crítico de [[27_Persuasive_Games]].
+Aporta a Vaultrum un marco para diseñar decisiones con carga moral y evaluar el impacto ético de las reglas. Complemento crítico de `27_Persuasive_Games`.
 
 ## Estado y próximos pasos
 

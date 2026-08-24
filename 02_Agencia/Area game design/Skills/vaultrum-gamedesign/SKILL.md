@@ -61,7 +61,7 @@ Un `GDS` cerrado **no va siempre directo a Programación**. Decidí explícitame
 
 Ambas pueden correr **en paralelo**: las dos cuelgan del mismo `GDS`. Cuando las que apliquen estén cerradas, el paquete completo (`GDS` + `LDS` + `UXS`) pasa a Programación.
 
-Si ninguna aplica, escribilo igual en el `GDS`. Pero **no alcanza con marcar la casilla**: un "no aplica" es una afirmación verificable, no un atajo (ver [[Gates verificables]] en el Core).
+Si ninguna aplica, escribilo igual en el `GDS`. Pero **no alcanza con marcar la casilla**: un "no aplica" es una afirmación verificable, no un atajo (ver `Gates verificables` en el Core).
 
 ### Gate del "no aplica" (obligatorio)
 

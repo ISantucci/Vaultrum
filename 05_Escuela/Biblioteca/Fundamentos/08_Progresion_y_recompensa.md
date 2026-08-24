@@ -1,15 +1,15 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 7 — Recompensa y motivación
 cruza: 05_Fundamentos_de_experiencia_ludica, 04_Playbook_de_diseno, 07_Economia_y_balance, 06_Dificultad_y_curva
 ---
 
 # Fundamento 08 — Progresión y recompensa
 
-> Este libro profundiza el **Pilar 7** de [[05_Fundamentos_de_experiencia_ludica]]. El baseline (que la recompensa siga al esfuerzo, que se lea claro, que no llegue tarde) ya está ahí. Acá va lo que el pilar deja afuera: **las tres progresiones que se confunden entre sí**, vertical vs horizontal, meta-progresión en roguelites, refuerzo variable y su costo ético, la curva de desbloqueos, y cómo conviven motivación intrínseca y extrínseca.
-> Lo que NO cubre: la matemática de los recursos que financian la recompensa (vive en `07_Economia_y_balance`), la sensación del feedback al recibirla (vive en [[02_Game_feel]]), la exigencia que la precede (vive en `06_Dificultad_y_curva`).
+> Este libro profundiza el **Pilar 7** de `05_Fundamentos_de_experiencia_ludica`. El baseline (que la recompensa siga al esfuerzo, que se lea claro, que no llegue tarde) ya está ahí. Acá va lo que el pilar deja afuera: **las tres progresiones que se confunden entre sí**, vertical vs horizontal, meta-progresión en roguelites, refuerzo variable y su costo ético, la curva de desbloqueos, y cómo conviven motivación intrínseca y extrínseca.
+> Lo que NO cubre: la matemática de los recursos que financian la recompensa (vive en `07_Economia_y_balance`), la sensación del feedback al recibirla (vive en `02_Game_feel`), la exigencia que la precede (vive en `06_Dificultad_y_curva`).
 > **IP:** conceptos destilados + cita. Nunca texto verbatim con copyright.
 
 ## Índice del libro
@@ -176,12 +176,12 @@ El mecanismo que las hace convivir: **la recompensa extrínseca debe ser un info
 **Qué trae la IA por default:** la separación explícita de las tres progresiones para el sistema propuesto, la verificación de que cada nivel habilite una decisión y no sólo un número, el test de peaje en cualquier meta-progresión, y la marca automática de toda aleatoriedad que decida avance en vez de sabor.
 
 ## Límites
-No aplica igual en: arcade puro y juegos de sesión única (la progresión es la del jugador y nada más — ver [[01_Pong]]), puzzles cerrados donde el contenido es la progresión completa, y experiencias narrativas lineales cortas. En juegos-servicio la progresión se vuelve calendario y el tema desborda Fundamentos.
+No aplica igual en: arcade puro y juegos de sesión única (la progresión es la del jugador y nada más — ver `01_Pong`), puzzles cerrados donde el contenido es la progresión completa, y experiencias narrativas lineales cortas. En juegos-servicio la progresión se vuelve calendario y el tema desborda Fundamentos.
 
 **Tensiones:** con `06_Dificultad_y_curva` — cada recompensa vertical baja la curva; hay que reponerla. Con `07_Economia_y_balance` — la progresión es la principal fuente de inflación del juego. Con el Pilar 9 (agencia) — un árbol de progresión con una sola rama óptima anula la decisión. Con el Pilar 1 (core loop) — si la recompensa es lo único que sostiene el loop, el loop no es bueno todavía: **arreglá el loop antes de agregar loot.**
 
 ## Fuentes
-[[04_Theory_of_Fun]] · [[08_Designing_Games]] · [[02_Art_of_Game_Design]] · [[09_Gamers_Brain]] · [[11_How_Games_Move_Us]] · [[15_Game_Mechanics]] · [[18_Art_of_Failure]] · [[28_Ethics_of_Computer_Games]] · [[14_Fundamentals_of_Game_Design]] · [[25_Play_Matters]]
-Cruces: [[05_Fundamentos_de_experiencia_ludica]] (Pilar 7) · [[04_Playbook_de_diseno]] · [[01_Loop_de_experiencia]] · `06_Dificultad_y_curva` · `07_Economia_y_balance`
+`04_Theory_of_Fun` · `08_Designing_Games` · `02_Art_of_Game_Design` · `09_Gamers_Brain` · `11_How_Games_Move_Us` · `15_Game_Mechanics` · `18_Art_of_Failure` · `28_Ethics_of_Computer_Games` · `14_Fundamentals_of_Game_Design` · `25_Play_Matters`
+Cruces: `05_Fundamentos_de_experiencia_ludica` (Pilar 7) · `04_Playbook_de_diseno` · `01_Loop_de_experiencia` · `06_Dificultad_y_curva` · `07_Economia_y_balance`
 
 ---

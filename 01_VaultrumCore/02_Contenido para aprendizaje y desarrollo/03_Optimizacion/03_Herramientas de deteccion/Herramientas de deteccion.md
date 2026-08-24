@@ -137,13 +137,13 @@ Ventana rapida para observar datos basicos de render y rendimiento.
 
 Consultar como apoyo inicial, no como diagnostico final.
 
-### [[Logs de diagnostico|Logs de diagnostico]]
+### [[Logs de diagnostico]]
 
 Registros manuales para confirmar flujos, conteos, eventos o ejecuciones esperadas.
 
 Consultar cuando haga falta evidencia simple de comportamiento interno.
 
-### [[Comparacion antes y despues|Comparacion antes y despues]]
+### [[Comparacion antes y despues]]
 
 Metodo para validar si una optimizacion realmente mejoro el sistema.
 

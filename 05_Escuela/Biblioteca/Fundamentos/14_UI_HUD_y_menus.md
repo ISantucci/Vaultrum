@@ -1,14 +1,14 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 4 — Claridad y legibilidad
 cruza: 05_Fundamentos_de_experiencia_ludica, 02_Game_feel, 03_Definicion_de_terminado, 04_Playbook_de_diseno
 ---
 
 # Fundamento 14 — UI, HUD y menús
 
-> Cubre la capa donde el juego habla explícito: HUD, menús, navegación, estados de interfaz y legibilidad. **No** cubre estilo gráfico ni dirección de arte, ni economía de F2P, ni localización profunda, ni accesibilidad completa (solo el piso mínimo). Tampoco cubre el feedback dentro del mundo jugable: eso es [[02_Game_feel]].
+> Cubre la capa donde el juego habla explícito: HUD, menús, navegación, estados de interfaz y legibilidad. **No** cubre estilo gráfico ni dirección de arte, ni economía de F2P, ni localización profunda, ni accesibilidad completa (solo el piso mínimo). Tampoco cubre el feedback dentro del mundo jugable: eso es `02_Game_feel`.
 > **IP:** conceptos destilados + cita. Nunca texto verbatim con copyright.
 
 ## Índice del libro
@@ -164,7 +164,7 @@ Para un dev solo hay una trampa extra: la UI parece "lo que se hace al final" y 
 
 **Límites.** Este libro asume un juego single-player con pantalla completa. No cubre UI de multijugador local (split-screen cambia todos los presupuestos), ni interfaces de simulación densa (estrategia, management), donde el HUD *es* el juego y los baselines de 3–5 elementos no aplican. Tampoco reemplaza una auditoría de accesibilidad: acá hay piso, no techo.
 
-**Fuentes.** [[09_Gamers_Brain]] · [[10_Game_Usability]] · [[12_Design_of_Everyday_Things]] · [[14_Fundamentals_of_Game_Design]] · [[02_Art_of_Game_Design]] · [[13_Elements_of_Game_Design]]
-**Cruces.** [[05_Fundamentos_de_experiencia_ludica]] (Pilar 4) · [[02_Game_feel]] (feedback dentro del mundo) · [[03_Definicion_de_terminado]] (opciones mínimas como criterio de cierre) · [[04_Playbook_de_diseno]]
+**Fuentes.** `09_Gamers_Brain` · `10_Game_Usability` · `12_Design_of_Everyday_Things` · `14_Fundamentals_of_Game_Design` · `02_Art_of_Game_Design` · `13_Elements_of_Game_Design`
+**Cruces.** `05_Fundamentos_de_experiencia_ludica` (Pilar 4) · `02_Game_feel` (feedback dentro del mundo) · `03_Definicion_de_terminado` (opciones mínimas como criterio de cierre) · `04_Playbook_de_diseno`
 
 ---

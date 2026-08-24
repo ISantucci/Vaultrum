@@ -64,7 +64,7 @@ Precedente: en `TL-002` los `RQ`, `GDS`, `SOL` y `EJ` eran de buena calidad y la
 
 Cuando no se pueda verificar en el entorno de destino (el motor no está disponible, no se puede ejecutar el build, falta hardware), **no elijas entre "verificado" y "sin verificar"**. Verificá lo que se pueda y declará el alcance.
 
-Formato obligatorio en el `EJ` (criterio del Core: [[Verificacion parcial declarada]]):
+Formato obligatorio en el `EJ` (criterio del Core: `Verificacion parcial declarada`):
 
 ```txt
 VERIFICACION PARCIAL
@@ -117,7 +117,7 @@ No repitas teoría: consultala y aplicala. Rutas relativas a la raíz del vault:
 
 Prioridad de reutilización: reutilizar > extender > aplicar criterio del Core > crear nuevo (solo si hay necesidad real).
 
-**Criterios de entrega (obligatorio):** `.../04_Criterios de entrega/` — [[Baseline de entregable]], [[Verificacion parcial declarada]], [[Gates verificables]]. Y para decidir si una optimización corresponde antes de medirla: [[Cuando NO optimizar]].
+**Criterios de entrega (obligatorio):** `.../04_Criterios de entrega/` — `Baseline de entregable`, `Verificacion parcial declarada`, `Gates verificables`. Y para decidir si una optimización corresponde antes de medirla: `Cuando NO optimizar`.
 
 ## Alcance no pedido
 
@@ -127,7 +127,7 @@ Por cada decisión técnica, escribí la línea: *"esto existe porque el requeri
 
 La regla **no** es "no optimices": es que la justificación apunte a un `RQ`, no a un principio. Apagar la física en un Pong es correcto *si* el motivo es que el rebote no es físico (regla de diseño), y es alcance no pedido *si* el motivo es el costo de la broadphase. Mismo código, distinta justificación.
 
-Precedente: una corrida técnica del mismo Pong hecha fuera de la cadena produjo ocho decisiones de ingeniería excelentes —accumulator a 120 Hz, CCD propio, cero asignaciones, batching ajustado— para un juego de veinte objetos donde nadie pidió rendimiento. No tenía menú ni condición de fin. Ver [[Cuando NO optimizar]].
+Precedente: una corrida técnica del mismo Pong hecha fuera de la cadena produjo ocho decisiones de ingeniería excelentes —accumulator a 120 Hz, CCD propio, cero asignaciones, batching ajustado— para un juego de veinte objetos donde nadie pidió rendimiento. No tenía menú ni condición de fin. Ver `Cuando NO optimizar`.
 
 ## Criterios técnicos que protegés
 

@@ -1,14 +1,14 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilares 6 y 9 — Dificultad/tensión y Agencia/decisiones significativas
 cruza: 05_Fundamentos_de_experiencia_ludica, 04_Playbook_de_diseno, 06_Dificultad_y_curva, 08_Progresion_y_recompensa
 ---
 
 # Fundamento 07 — Economía y balance
 
-> Este libro profundiza los **Pilares 6 y 9** de [[05_Fundamentos_de_experiencia_ludica]]. El baseline (que las decisiones tengan consecuencia, que la tensión venga de recursos escasos) ya está ahí. Acá va lo que el pilar deja afuera: **la máquina de recursos** (fuentes, sumideros, conversores, stocks), los loops de refuerzo, la inflación, el balance de opciones y **cómo se balancea sin datos de mercado**, que es la situación real del dev solo.
+> Este libro profundiza los **Pilares 6 y 9** de `05_Fundamentos_de_experiencia_ludica`. El baseline (que las decisiones tengan consecuencia, que la tensión venga de recursos escasos) ya está ahí. Acá va lo que el pilar deja afuera: **la máquina de recursos** (fuentes, sumideros, conversores, stocks), los loops de refuerzo, la inflación, el balance de opciones y **cómo se balancea sin datos de mercado**, que es la situación real del dev solo.
 > Lo que NO cubre: la sensación de recibir la recompensa (vive en `08_Progresion_y_recompensa`), la curva de exigencia (vive en `06_Dificultad_y_curva`), monetización y economía real (fuera del alcance de Fundamentos).
 > **IP:** conceptos destilados + cita. Nunca texto verbatim con copyright.
 
@@ -195,12 +195,12 @@ El indicador de salud: **si el jugador puede nombrar por qué eligió cada cosa 
 **Qué trae la IA por default:** el mapa fuente/sumidero/conversor/stock del sistema propuesto antes de escribir un número, la planilla de primera aproximación con las fórmulas de escalado, la detección de dominancia estricta comparando opciones en una unidad común, y la pregunta de sistema mínimo ante cada moneda nueva.
 
 ## Límites
-No aplica igual en: juegos sin recursos persistentes (arcade puro, ver [[01_Pong]]), narrativos, y sandbox creativos donde acumular *es* el objetivo. En PvP competitivo el balance de opciones domina sobre el balance de economía y la herramienta principal pasa a ser la telemetría masiva, que el dev solo no tiene: ahí conviene reducir el espacio de opciones antes que intentar balancear muchas.
+No aplica igual en: juegos sin recursos persistentes (arcade puro, ver `01_Pong`), narrativos, y sandbox creativos donde acumular *es* el objetivo. En PvP competitivo el balance de opciones domina sobre el balance de economía y la herramienta principal pasa a ser la telemetría masiva, que el dev solo no tiene: ahí conviene reducir el espacio de opciones antes que intentar balancear muchas.
 
 **Tensiones:** con el Pilar 7 (recompensa) — los frenos de inflación se sienten como castigo si no se explican. Con `06_Dificultad_y_curva` — la economía es el vector por el que la curva se aplana sin permiso. Con el Pilar 9 (agencia) — cada sumidero automático (decaimiento, impuestos) le saca decisión al jugador: preferí siempre el sumidero elegido.
 
 ## Fuentes
-[[15_Game_Mechanics]] · [[01_Rules_of_Play]] · [[08_Designing_Games]] · [[03_Game_Design_Workshop]] · [[07_Characteristics_of_Games]] · [[17_Uncertainty_in_Games]] · [[14_Fundamentals_of_Game_Design]] · [[16_Advanced_Game_Design]] · [[02_Art_of_Game_Design]]
-Cruces: [[05_Fundamentos_de_experiencia_ludica]] (Pilares 6 y 9) · [[04_Playbook_de_diseno]] · `06_Dificultad_y_curva` · `08_Progresion_y_recompensa` · [[01_Loop_de_experiencia]]
+`15_Game_Mechanics` · `01_Rules_of_Play` · `08_Designing_Games` · `03_Game_Design_Workshop` · `07_Characteristics_of_Games` · `17_Uncertainty_in_Games` · `14_Fundamentals_of_Game_Design` · `16_Advanced_Game_Design` · `02_Art_of_Game_Design`
+Cruces: `05_Fundamentos_de_experiencia_ludica` (Pilares 6 y 9) · `04_Playbook_de_diseno` · `06_Dificultad_y_curva` · `08_Progresion_y_recompensa` · `01_Loop_de_experiencia`
 
 ---

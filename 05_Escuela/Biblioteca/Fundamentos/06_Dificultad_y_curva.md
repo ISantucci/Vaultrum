@@ -1,15 +1,15 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 6 — Dificultad, tensión y flow
 cruza: 05_Fundamentos_de_experiencia_ludica, 04_Playbook_de_diseno, 01_Loop_de_experiencia, 09_Onboarding_y_tutorial
 ---
 
 # Fundamento 06 — Dificultad y curva
 
-> Este libro profundiza el **Pilar 6** del libro [[05_Fundamentos_de_experiencia_ludica]]. El baseline (qué es flow, por qué la dificultad plana aburre, checklist mínimo por GDS) ya está ahí y no se repite. Acá va lo que el pilar deja explícitamente afuera: **descomponer la dificultad en cuatro ejes que se ajustan distinto**, la forma de la curva escalonada, el ajuste dinámico y sus costos políticos, asistencias vs modos, y la economía de la muerte.
-> Lo que NO cubre: la sensación del control momento a momento (vive en [[02_Game_feel]]), la enseñanza de mecánicas (vive en `09_Onboarding_y_tutorial`), y el reparto de desafíos en el espacio (Level Design).
+> Este libro profundiza el **Pilar 6** del libro `05_Fundamentos_de_experiencia_ludica`. El baseline (qué es flow, por qué la dificultad plana aburre, checklist mínimo por GDS) ya está ahí y no se repite. Acá va lo que el pilar deja explícitamente afuera: **descomponer la dificultad en cuatro ejes que se ajustan distinto**, la forma de la curva escalonada, el ajuste dinámico y sus costos políticos, asistencias vs modos, y la economía de la muerte.
+> Lo que NO cubre: la sensación del control momento a momento (vive en `02_Game_feel`), la enseñanza de mecánicas (vive en `09_Onboarding_y_tutorial`), y el reparto de desafíos en el espacio (Level Design).
 > **IP:** conceptos destilados + cita. Nunca texto verbatim con copyright.
 
 ## Índice del libro
@@ -193,7 +193,7 @@ No aplica igual en: juegos de sandbox puro sin estados de fracaso (la curva la p
 **Tensiones:** con el Pilar 9 (agencia) — cada asistencia y cada DDA le saca peso a la decisión del jugador. Con el Pilar 7 (recompensa) — bajar dificultad devalúa la recompensa que la corona. Con `07_Economia_y_balance` — la inflación de poder aplana la curva sin que nadie lo decida. Con `02_Game_feel` — un juego que se siente mal se percibe difícil aunque los números sean generosos: **arreglá el feel antes de tocar la dificultad.**
 
 ## Fuentes
-[[02_Art_of_Game_Design]] · [[03_Game_Design_Workshop]] · [[04_Theory_of_Fun]] · [[08_Designing_Games]] · [[09_Gamers_Brain]] · [[17_Uncertainty_in_Games]] · [[18_Art_of_Failure]] · [[13_Elements_of_Game_Design]] · [[16_Advanced_Game_Design]]
-Cruces: [[05_Fundamentos_de_experiencia_ludica]] (Pilar 6, baseline) · [[04_Playbook_de_diseno]] · [[02_Game_feel]] · [[01_Loop_de_experiencia]] · `07_Economia_y_balance` · `08_Progresion_y_recompensa` · `09_Onboarding_y_tutorial`
+`02_Art_of_Game_Design` · `03_Game_Design_Workshop` · `04_Theory_of_Fun` · `08_Designing_Games` · `09_Gamers_Brain` · `17_Uncertainty_in_Games` · `18_Art_of_Failure` · `13_Elements_of_Game_Design` · `16_Advanced_Game_Design`
+Cruces: `05_Fundamentos_de_experiencia_ludica` (Pilar 6, baseline) · `04_Playbook_de_diseno` · `02_Game_feel` · `01_Loop_de_experiencia` · `07_Economia_y_balance` · `08_Progresion_y_recompensa` · `09_Onboarding_y_tutorial`
 
 ---

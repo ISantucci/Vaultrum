@@ -46,7 +46,7 @@ El checklist operativo y la tabla de rebote de este paso viven en la skill del �
 ## Estado de la entrega  → Cerrado / Ajustar / Pausado
 ```
 
-Se registra como `VE-XXX` en `Salidas/Validaciones/` y se indexa en [[00_Indice_ve]].
+Se registra como `VE-XXX` en `Salidas/Validaciones/` y se indexa en `00_Indice_ve`.
 
 ---
 
@@ -93,7 +93,7 @@ No cierra por cansancio ni por avanzar.
 
 ## Pendiente declarado
 
-La fuente canónica de la *definición de terminado* debería ser el libro [[03_Definicion_de_terminado]] de la Biblioteca, hoy en estado **Reservado**. Mientras ese libro no esté escrito, el checklist operativo vive en la skill del área. Cuando la Escuela lo complete, la skill debe pasar a referenciarlo en vez de sostenerlo (principios 2 y 9).
+La fuente canónica de la *definición de terminado* debería ser el libro `03_Definicion_de_terminado` de la Biblioteca, hoy en estado **Reservado**. Mientras ese libro no esté escrito, el checklist operativo vive en la skill del área. Cuando la Escuela lo complete, la skill debe pasar a referenciarlo en vez de sostenerlo (principios 2 y 9).
 
 ---
 

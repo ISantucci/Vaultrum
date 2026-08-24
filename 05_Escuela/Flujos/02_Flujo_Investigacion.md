@@ -44,7 +44,7 @@ Si la misión no está aprobada, el flujo no avanza.
 
 ## Condiciones para avanzar
 
-Avanza al [[03_Flujo_Destilacion]] cuando hay material bruto citado suficiente para destilar.
+Avanza al `03_Flujo_Destilacion` cuando hay material bruto citado suficiente para destilar.
 No avanza si el material no responde el gap o no está citado.
 
 ---

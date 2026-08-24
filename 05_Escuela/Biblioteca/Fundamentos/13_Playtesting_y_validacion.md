@@ -1,7 +1,7 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Proceso — validación empírica (transversal a los 9 pilares)
 cruza: 05_Fundamentos_de_experiencia_ludica, 03_Definicion_de_terminado, 04_Playbook_de_diseno
 ---
@@ -207,7 +207,7 @@ DESPUÉS
 ```
 
 ## Aplicación · Límites · Fuentes
-**Aplicación.** Ningún requerimiento de Vaultrum se cierra en [[03_Definicion_de_terminado]] sin al menos un test con ficha y umbral. Los checklists de los Fundamentos 10, 11 y 12 son las hipótesis; este libro es el instrumento con el que se verifican. El backlog de síntomas vive junto al proyecto y se lleva al Core sólo cuando el aprendizaje es reutilizable.
+**Aplicación.** Ningún requerimiento de Vaultrum se cierra en `03_Definicion_de_terminado` sin al menos un test con ficha y umbral. Los checklists de los Fundamentos 10, 11 y 12 son las hipótesis; este libro es el instrumento con el que se verifican. El backlog de síntomas vive junto al proyecto y se lleva al Core sólo cuando el aprendizaje es reutilizable.
 **Límites.** No sustituye QA formal ni testeo de accesibilidad con personas con discapacidad, que requieren protocolos propios. Los umbrales son heurísticas de trabajo, no estadística: con n=5 no hay significancia, hay señal. Para decisiones de plata (precio, plataforma, alcance) esto no alcanza.
-**Fuentes.** [[03_Game_Design_Workshop]] · [[19_Playful_Production_Process]] · [[09_Gamers_Brain]] · [[10_Game_Usability]] · [[02_Art_of_Game_Design]] · [[12_Design_of_Everyday_Things]] · [[08_Designing_Games]] · [[18_Art_of_Failure]] · [[04_Theory_of_Fun]].
-**Cruces.** [[05_Fundamentos_de_experiencia_ludica]] (los 9 pilares) · [[03_Definicion_de_terminado]] · [[04_Playbook_de_diseno]] · [[10_Input_y_respuesta]] · [[11_Camara_y_encuadre]] · [[12_Pacing_y_estructura]].
+**Fuentes.** `03_Game_Design_Workshop` · `19_Playful_Production_Process` · `09_Gamers_Brain` · `10_Game_Usability` · `02_Art_of_Game_Design` · `12_Design_of_Everyday_Things` · `08_Designing_Games` · `18_Art_of_Failure` · `04_Theory_of_Fun`.
+**Cruces.** `05_Fundamentos_de_experiencia_ludica` (los 9 pilares) · `03_Definicion_de_terminado` · `04_Playbook_de_diseno` · `10_Input_y_respuesta` · `11_Camara_y_encuadre` · `12_Pacing_y_estructura`.

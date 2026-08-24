@@ -4,7 +4,7 @@
 
 Tipo de misión: **catálogo + aprendizaje liviano de fuente** (no destilación profunda). Por pedido del owner: sumar el libro a la Biblioteca en la zona correcta y aprenderlo lo suficiente para saber qué puede aportar; la destilación a fundamentos queda para una misión futura.
 
-Salida del [[01_Flujo_Mision_Estudio]] (rol: [[01_Bibliotecario]]).
+Salida del `01_Flujo_Mision_Estudio` (rol: `01_Bibliotecario`).
 
 ---
 

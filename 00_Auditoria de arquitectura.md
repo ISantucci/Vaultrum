@@ -1,6 +1,6 @@
 # Auditoría de arquitectura del vault — AUD-001
 
-> Cierra el ítem 11 del backlog de [[00_Leyes de Vaultrum (bitacora)]]: *"la cadena se probó de punta a punta produciendo un entregable, pero no se auditó la arquitectura del vault en sí"*.
+> Cierra el ítem 11 del backlog de `00_Leyes de Vaultrum (bitacora)`: *"la cadena se probó de punta a punta produciendo un entregable, pero no se auditó la arquitectura del vault en sí"*.
 >
 > Alcance auditado: 351 notas en disco; 125 leídas en detalle (todas las estructurales: índices, `Area_*.md`, `Agentes/`, `Flujos/`, `Skills/`, capas 03/04/05 y raíz). Las ~226 notas de contenido profundo del Core —patrones, managers, optimización, VaultrumAi— **no** se auditaron nota por nota: se auditó su indexación, no su contenido.
 >
@@ -16,7 +16,7 @@ Lo que sí apareció son huecos de otro tipo: una capa que no cumple la regla qu
 
 | Dimensión | Resultado | Estado |
 |-----------|-----------|--------|
-| Wikilinks que resuelven | 4 no resuelven, **las 4 son plantillas** (`[[TL-XXX_Nombre_Descriptivo]]`) | correcto |
+| Wikilinks que resuelven | 4 no resuelven, **las 4 son plantillas** (`TL-XXX_Nombre_Descriptivo`) | correcto |
 | Índices ↔ disco (salidas) | 54 de 54 salidas indexadas | correcto |
 | Duplicación literal entre capas | 9 frases en 24 archivos de área | correcto |
 | Checklists solo en la Skill (Agencia) | 6 de 6 | correcto |
@@ -93,7 +93,7 @@ Las otras cinco áreas tienen las cuatro carpetas. Conocimiento tiene `Agentes/`
 
 Dos capas asumían la existencia de un índice que la tercera declaraba inexistente por principio. En la práctica ganó la versión de la Escuela —el libro de Pong se consultó igual— pero por costumbre, no por diseño.
 
-**Corregido:** el Core ahora tiene [[Experiencia de juego]], un índice liviano hacia la Biblioteca, y `01_Indice VaultrumCore` explica la dirección del enlace en vez de negarla. El criterio queda: *el Core indexa, la Biblioteca pesa, el Core no depende*.
+**Corregido:** el Core ahora tiene `Experiencia de juego`, un índice liviano hacia la Biblioteca, y `01_Indice VaultrumCore` explica la dirección del enlace en vez de negarla. El criterio queda: *el Core indexa, la Biblioteca pesa, el Core no depende*.
 
 ### H4 — El índice de IA Operativa no listaba `05_Modo_Operacion` — **corregido**
 

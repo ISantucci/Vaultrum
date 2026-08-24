@@ -8,10 +8,12 @@ Cada `UXS-XXX.n` es la capa de comunicación jugador↔juego diseñada y validad
 
 ## Registro
 
-| UXS | Insumo (GDS) | Interfaz | Estado |
-|-----|--------------|----------|--------|
-| [[UXS-003.5_Flujo_De_Pantallas]] | [[GDS-003.5_Estados]] | Seis pantallas, mapa de navegación, reglas de interacción por teclado | Cerrada |
-| [[UXS-003.7_HUD_Y_Onboarding]] | [[GDS-003.7_Onboarding_Legibilidad]] | HUD de juego, jerarquía visual, código de color redundante, onboarding del primer saque | Cerrada |
+### TL-003 — Pong 3D, cadena completa
+
+- [[UXS-003.5_Flujo_De_Pantallas|UXS-003.5 Flujo de pantallas]] — seis pantallas, mapa de navegación y reglas de interacción por teclado, para `GDS-003.5`
+- [[UXS-003.7_HUD_Y_Onboarding|UXS-003.7 HUD y onboarding]] — HUD de juego, jerarquía visual, código de color redundante y onboarding del primer saque, para `GDS-003.7`
+
+Las dos cerradas.
 
 ---
 

@@ -5,7 +5,7 @@ autores: Ernest Adams
 editorial: New Riders
 anio: 2006 (1ª); 2014 (3ª)
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: diseño centrado en el jugador, gameplay, géneros, arcos de core mechanics
 ---
 

@@ -5,7 +5,7 @@ autores: Michael Sellers
 editorial: Addison-Wesley
 anio: 2017
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: pensamiento sistémico, loops, emergencia, bucles de interés, diseño de sistemas
 ---
 
@@ -25,7 +25,7 @@ Aplica **teoría de sistemas** al diseño: los juegos son sistemas de partes en 
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Marco de 'systems thinking' que ordena cómo Vaultrum compone sistemas y sus interacciones. Complementa [[15_Game_Mechanics]] a nivel de arquitectura de sistemas y emergencia.
+Marco de 'systems thinking' que ordena cómo Vaultrum compone sistemas y sus interacciones. Complementa `15_Game_Mechanics` a nivel de arquitectura de sistemas y emergencia.
 
 ## Estado y próximos pasos
 

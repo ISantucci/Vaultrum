@@ -42,7 +42,7 @@ Puede combinar distintas fuentes:
 
 ```txt
 distancia
-[[Field of View]]
+Field of View
 raycasts
 triggers
 sonido
@@ -260,7 +260,7 @@ jugador dentro de rango
 → detectado
 ```
 
-Puede consumir [[Field of View]].
+Puede consumir `Field of View`.
 
 Sirve para guardias, sigilo, camaras y enemigos donde la vision sea importante.
 
@@ -416,7 +416,7 @@ Preguntas utiles:
 
 ## Relacion con Field of View
 
-La deteccion del jugador puede consumir [[Field of View]] cuando la vision direccional importa.
+La deteccion del jugador puede consumir `Field of View` cuando la vision direccional importa.
 
 ```txt
 Field of View

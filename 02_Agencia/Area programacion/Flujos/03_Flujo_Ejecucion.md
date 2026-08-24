@@ -51,7 +51,7 @@ No arranca sin una SOL aprobada.
 
 ## Condiciones para avanzar
 
-Avanza al [[04_Flujo_Revision]] cuando la ejecución está reportada.
+Avanza al `04_Flujo_Revision` cuando la ejecución está reportada.
 Si durante la ejecución la solución no cierra, no improvisa: rebota al Diseñador de Solución.
 
 ---

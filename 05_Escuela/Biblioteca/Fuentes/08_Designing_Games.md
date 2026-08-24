@@ -5,7 +5,7 @@ autores: Tynan Sylvester
 editorial: O'Reilly
 anio: 2013
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: juego como motor de experiencias, emergencia, elegancia, valores de decisión
 ---
 
@@ -25,7 +25,7 @@ Del creador de RimWorld: un juego es un **motor de experiencias emocionales** co
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Puente directo entre mecánica y experiencia sentida — núcleo del [[01_Loop_de_experiencia]]. Aporta el criterio de 'elegancia' como métrica de calidad de diseño y foco en decisiones significativas.
+Puente directo entre mecánica y experiencia sentida — núcleo del `01_Loop_de_experiencia`. Aporta el criterio de 'elegancia' como métrica de calidad de diseño y foco en decisiones significativas.
 
 ## Estado y próximos pasos
 

@@ -5,7 +5,7 @@ autores: Celia Hodent
 editorial: CRC Press
 anio: 2017
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: UX, neurociencia cognitiva, percepción, memoria, atención, engagement
 ---
 
@@ -25,7 +25,7 @@ Aplica **ciencia cognitiva** (percepción, atención, memoria, motivación) al d
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Base de UX para Vaultrum: cómo comunicar feedback y objetivos sin sobrecargar al jugador. Refuerza el feedback del [[01_Loop_de_experiencia]] y [[02_Game_feel]] desde lo perceptual.
+Base de UX para Vaultrum: cómo comunicar feedback y objetivos sin sobrecargar al jugador. Refuerza el feedback del `01_Loop_de_experiencia` y `02_Game_feel` desde lo perceptual.
 
 ## Estado y próximos pasos
 

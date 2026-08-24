@@ -4,7 +4,7 @@
 
 Origen: Ley candidata #1 (fricción mínima / baseline competente). La ley nació del Pong3D (vaultrumtest1): el juego salió 7/10 pero el *desarrollo* 4/10, porque hicieron falta demasiados prompts para algo tan básico como un Pong. Empezar la Escuela por Pong cierra ese loop exacto: destilar sus fundamentos para que "hacé un Pong" traiga el baseline sin pedirlo.
 
-Es la **primera misión de la Escuela** y llena el **primer libro** de la [[00_Biblioteca]] → estante [[00_Indice_juegos]] → [[01_Pong]]. Salida del [[01_Flujo_Mision_Estudio]] (rol: [[01_Bibliotecario]]).
+Es la **primera misión de la Escuela** y llena el **primer libro** de la `00_Biblioteca` → estante `00_Indice_juegos` → `01_Pong`. Salida del `01_Flujo_Mision_Estudio` (rol: `01_Bibliotecario`).
 
 ---
 
@@ -82,11 +82,11 @@ Pong es la entrada 1. La misma plantilla se repite por cada tipo de experiencia 
 
 ## Resultado de la corrida
 
-Libro [[01_Pong]] llenado en una sola corrida, sin búsqueda externa: el estante de Fuentes ya tenía catalogado todo lo necesario, así que la misión se resolvió destilando material propio de la Biblioteca. Estado del libro: **En validación** (a la espera del handoff a Conocimiento y la aprobación del owner).
+Libro `01_Pong` llenado en una sola corrida, sin búsqueda externa: el estante de Fuentes ya tenía catalogado todo lo necesario, así que la misión se resolvió destilando material propio de la Biblioteca. Estado del libro: **En validación** (a la espera del handoff a Conocimiento y la aprobación del owner).
 
-Consumido primero por el [[TL-003_Pong3D_Unity6_Cadena_Completa]] — el primer timeline que carga este libro como insumo obligatorio del `RQ`. Ese es el cierre del loop que originó la Ley #1.
+Consumido primero por el `TL-003_Pong3D_Unity6_Cadena_Completa` — el primer timeline que carga este libro como insumo obligatorio del `RQ`. Ese es el cierre del loop que originó la Ley #1.
 
 ## Decisiones pendientes del owner
 
-1. **Aprobación del libro:** OK para pasar [[01_Pong]] de *En validación* a *En la Biblioteca* vía handoff al Área de Conocimiento.
-2. **Fundamento 01:** el libro de Pong aportó material para [[01_Loop_de_experiencia]] (loops anidados de segundos/punto/partida), que sigue *En estudio*. Definir si se actualiza ahora o en misión propia.
+1. **Aprobación del libro:** OK para pasar `01_Pong` de *En validación* a *En la Biblioteca* vía handoff al Área de Conocimiento.
+2. **Fundamento 01:** el libro de Pong aportó material para `01_Loop_de_experiencia` (loops anidados de segundos/punto/partida), que sigue *En estudio*. Definir si se actualiza ahora o en misión propia.

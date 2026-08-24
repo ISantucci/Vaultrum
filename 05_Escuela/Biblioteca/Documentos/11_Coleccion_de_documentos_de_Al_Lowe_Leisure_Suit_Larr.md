@@ -4,11 +4,11 @@ familia: GDD / design bible histórico
 autor: Al Lowe — Sierra On-Line
 anio: 1991
 formato: GDDs / design docs (varios)
-acceso: Libre según el listado; publicados por el propio diseñador, 
+acceso: Libre según el listado; publicados por el propio diseñador,
 licencia: incierta
 prioridad: media
 estado: Catalogado
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 url: http://allowe.com/games/game-designs.html
 ---
 
@@ -16,7 +16,7 @@ url: http://allowe.com/games/game-designs.html
 
 > Artefacto real de la industria, catalogado para consulta del Productor y de Game Design.
 > **IP:** ficha + referencia. La Biblioteca no aloja ni reproduce el documento original.
-> **Licencia incierta (nivel B).** Publicado o tolerado por el titular, sin licencia formal. Se estudia y se cita; no se copia ni se redistribuye. Ver la regla de tres niveles en [[00_Indice_documentos]].
+> **Licencia incierta (nivel B).** Publicado o tolerado por el titular, sin licencia formal. Se estudia y se cita; no se copia ni se redistribuye. Ver la regla de tres niveles en `00_Indice_documentos`.
 
 ---
 
@@ -33,6 +33,10 @@ url: http://allowe.com/games/game-designs.html
 
 ---
 
-## Estante
+## Hacia donde seguir
 
-Ficha del estante [[00_Indice_documentos]] · registrada en [[00_Catalogo_Biblioteca]] · misión [[EST-006_Mision_Lote_Biblioteca_Agosto26]].
+Esta ficha pertenece al estante de Documentacion real.
+
+Para volver al estante y ver el resto de los documentos:
+
+→ [[00_Indice_documentos]]

@@ -4,7 +4,7 @@
 
 Tipo de misión: **destilación a nivel de marco (cross-source)**. Por pedido del owner: estudiar todos los libros catalogados y sacar la información jugosa útil para desarrollar un juego, **organizada por para qué sirve** (mostrar, guiar, feel, decisiones, retener, sistemas, emoción, marco, producción, restricciones).
 
-Salida del [[03_Flujo_Destilacion]]. Produce el libro de Fundamentos [[04_Playbook_de_diseno]].
+Salida del `03_Flujo_Destilacion`. Produce el libro de Fundamentos `04_Playbook_de_diseno`.
 
 ---
 
@@ -18,7 +18,7 @@ Se considera **respondida** cuando existe un libro de Fundamentos con principios
 
 ## Dedup contra el Core y la Biblioteca
 
-- **Alta nueva** en Fundamentos: [[04_Playbook_de_diseno]]. No duplica a [[01_Loop_de_experiencia]], [[02_Game_feel]] ni [[03_Definicion_de_terminado]]: los **cruza y alimenta** (categorías A/C se enlazan a game feel y loop; I/E a definición de terminado).
+- **Alta nueva** en Fundamentos: `04_Playbook_de_diseno`. No duplica a `01_Loop_de_experiencia`, `02_Game_feel` ni `03_Definicion_de_terminado`: los **cruza y alimenta** (categorías A/C se enlazan a game feel y loop; I/E a definición de terminado).
 - Cruza-referencia explícita a esos tres libros para no repetir su contenido.
 
 ---

@@ -126,7 +126,7 @@ Los tres fallos fueron de borde, y las tres reglas que los cubren viven ahora **
 | **Ramas opcionales** | un "no aplica" declara qué dimensión falta, y se comprueba a posteriori con el test del "no aplica" | `vaultrum-gamedesign` (declara) + `vaultrum-produccion` (comprueba en el `VE`) |
 | **Salida** | existir en disco es parte del cierre: un `EJ` no está reportado si el artefacto no está donde el `TL` dice | `vaultrum-programador`, gate de existencia en disco |
 
-Criterio de fondo en el Core: [[Gates verificables]] — *un gate que no se puede verificar mecánicamente no es un gate, es una intención.*
+Criterio de fondo en el Core: `Gates verificables` — *un gate que no se puede verificar mecánicamente no es un gate, es una intención.*
 
 ---
 
@@ -140,7 +140,7 @@ La Agencia **aplica** los criterios de entrega; no los define. Viven en el Core,
 [[Gates verificables]]             por qué la cadena falla en los bordes
 ```
 
-Y el índice hacia el baseline por género: [[Experiencia de juego]].
+Y el índice hacia el baseline por género: `Experiencia de juego`.
 
 Si una skill y el Core divergen, el Core es el criterio y la skill es el procedimiento: se corrige la skill.
 
@@ -172,11 +172,18 @@ Convierte un `RQ` (+ `GDS`, `LDS`, `UXS`) en una solución técnica construida c
 
 Capa de control de versiones del Core (no es producción). Modelo git: Core = `main`, proyecto = `branch`, aprendizaje = `commit`, entrar al Core = `merge` con aprobación. Gestiona qué conocimiento vuelve al Core, con criterio y sin acumular historial.
 
+
+### [[Area_arquitectura]]
+
+Cuida la **forma** del vault, no su contenido: que se pueda entrar por un índice y llegar caminando a cualquier nota.
+
+Mide el grafo con herramienta, repara con el cambio mínimo y verifica. Es la única área que no produce contenido: produce recorrido.
+
 ---
 
 ## Vínculo con la Escuela (05_Escuela)
 
-La **Escuela** ([[00_Escuela]]) **no es un área de la Agencia**: es una capa propia. Comparte estructura (tiene `Agentes/`, `Flujos/`, `Salidas/`, `Skills/`) porque también es un lugar donde se trabaja, pero trabaja sobre otra cosa:
+La **Escuela** (`00_Escuela`) **no es un área de la Agencia**: es una capa propia. Comparte estructura (tiene `Agentes/`, `Flujos/`, `Salidas/`, `Skills/`) porque también es un lugar donde se trabaja, pero trabaja sobre otra cosa:
 
 - La **Agencia** produce **el proyecto del usuario**. Su insumo es una intención; su producto son `TL/RQ/GDS/LDS/UXS/SOL/EJ`.
 - La **Escuela** produce **conocimiento para el sistema**. Su insumo es un gap del Core; su producto son libros en la Biblioteca y candidatos `EST`.

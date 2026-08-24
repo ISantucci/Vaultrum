@@ -64,7 +64,7 @@ No es responsabilidad principal de esta sección explicar representación lógic
 
 Esos temas pertenecen a:
 
-[[IA para desarrollo de mapas]]
+`IA para desarrollo de mapas`
 
 ---
 

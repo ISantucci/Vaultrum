@@ -112,7 +112,7 @@ Problema relacionado con memoria que queda retenida y no se libera correctamente
 
 Consultar cuando el uso de memoria sube con el tiempo o una escena se degrada progresivamente.
 
-### [[Busquedas globales por frame|Busquedas globales por frame]]
+### [[Busquedas globales por frame]]
 
 Problema relacionado con busquedas costosas repetidas durante gameplay.
 

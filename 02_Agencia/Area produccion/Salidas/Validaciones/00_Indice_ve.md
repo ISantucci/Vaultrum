@@ -2,16 +2,14 @@
 
 Registro de los cierres de entrega del Área de Producción.
 
-Cada `VE-XXX` valida **la entrega de un timeline** (`TL-XXX`) contra la intención original, el diseño acordado y la definición de terminado. La produce el [[04_Validador_Entrega]] corriendo el [[04_Flujo_Validacion_Entrega]].
+Cada `VE-XXX` valida **la entrega de un timeline** (`TL-XXX`) contra la intención original, el diseño acordado y la definición de terminado. La produce el `04_Validador_Entrega` corriendo el `04_Flujo_Validacion_Entrega`.
 
 ---
 
 ## Registro
 
-| VE | Timeline | Entrega validada | Modo | Estado |
-|----|----------|------------------|------|-------|
-| [[VE-002_Pong3D]] | [[TL-002_Pong3D_2_Jugadores_Unity6]] | EJ-002 | — | **Pausado** — la implementación nunca llegó a estar en disco |
-| [[VE-003_Pong3D]] | [[TL-003_Pong3D_Unity6_Cadena_Completa]] | EJ-003 | Veredicto | **Cerrado** — jugado por el owner, 8/10, divertido. Deuda declarada: los 18 ítems no se recorrieron. Mejoras pendientes van a TL-004 |
+- [[VE-002_Pong3D|VE-002 Pong 3D]] — validación del `TL-002` sobre el `EJ-002`. **Pausada:** la implementación nunca llegó a estar en disco.
+- [[VE-003_Pong3D|VE-003 Pong 3D, cadena completa]] — validación del `TL-003` sobre el `EJ-003`. **Cerrada:** jugado por el owner, 8/10, divertido. Deuda declarada: los 18 ítems no se recorrieron; las mejoras pendientes van al `TL-004`.
 
 ---
 
@@ -43,7 +41,7 @@ Reglas del modo veredicto:
 - El `VE` registra el veredicto textual y **declara la deuda**: qué ítems no se recorrieron.
 - Si en la iteración siguiente aparece un problema que la checklist habría atrapado, el aprendizaje es del sistema, no del entregable.
 
-Los dos son verificaciones parciales y los dos declaran su alcance. Criterio del Core: [[Verificacion parcial declarada]].
+Los dos son verificaciones parciales y los dos declaran su alcance. Criterio del Core: `Verificacion parcial declarada`.
 
 **Por qué se formaliza:** `VE-003` cerró por veredicto sin que ese modo existiera escrito, lo que dejó la duda de si era un cierre legítimo o una excepción. Es legítimo — y ahora tiene nombre, condiciones y una deuda que se declara en vez de omitirse.
 

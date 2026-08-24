@@ -54,7 +54,7 @@ Usabilidad primero, engagement después: la interfaz no cierra hasta que el juga
 
 ## Salida del área
 
-Por cada `GDS` con interfaz, un **UXS-XXX.n** registrado en [[00_Indice_uxs]], con su índice. La numeración se hereda del `GDS` (`GDS-001.2 → UXS-001.2`).
+Por cada `GDS` con interfaz, un **UXS-XXX.n** registrado en `00_Indice_uxs`, con su índice. La numeración se hereda del `GDS` (`GDS-001.2 → UXS-001.2`).
 
 El `UXS` es insumo del Área de Programación (junto al `GDS` y, si existe, el `LDS`).
 
@@ -79,10 +79,30 @@ No define reglas ni balance (Game Design). No diseña niveles/espacio jugable (L
 
 Recibe de: **Game Design** (`GDS`) y opcionalmente **Level Design** (`LDS`).
 Entrega a: **Programación** (`UXS` como insumo de la solución técnica).
-Consulta on-demand: la Escuela ([[05_Fundamentos_de_experiencia_ludica]]), pilares 3, 4, 5, 7.
+Consulta on-demand: la Escuela (`05_Fundamentos_de_experiencia_ludica`), pilares 3, 4, 5, 7.
 
 La numeración `.n` se mantiene entre `GDS / UXS / SOL / EJ` para trazabilidad de punta a punta.
 
+
+## Flujos del área
+
+Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
+
+### [[01_Flujo_Analisis_UX|Flujo Analisis UX]]
+
+### [[02_Flujo_Diseno_UI|Flujo Diseno UI]]
+
+### [[03_Flujo_Validacion_UX|Flujo Validacion UX]]
+
+---
+
+## Salidas del área
+
+El registro de lo que el área produjo. Cada índice lista sus propias entregas.
+
+### [[02_Agencia/Area ui-ux/Salidas/00_Indice_uxs|Indice uxs]]
+
+---
 
 ## Skill del área
 

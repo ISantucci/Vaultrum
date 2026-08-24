@@ -46,7 +46,7 @@ Si no hay gap concreto, el flujo no avanza: se pide precisión al owner o se cie
 
 ## Condiciones para avanzar
 
-Avanza al [[02_Flujo_Investigacion]] cuando la misión supera el gate.
+Avanza al `02_Flujo_Investigacion` cuando la misión supera el gate.
 No avanza si falta gap, presupuesto o barra.
 
 ---

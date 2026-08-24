@@ -6,7 +6,7 @@ La **Escuela Vaultrum** es un espacio propio del sistema (par de Core, Agencia, 
 
 Nace de la Ley candidata #1 (fricción mínima / baseline competente): si la IA tiene que traer "lo básico bien hecho" por default, alguien tiene que producir y curar ese básico. Esa es la Escuela.
 
-Su corazón es la [[00_Biblioteca]]: el espacio donde se guardan los **libros** y donde trabajan sus **agentes**. No produce trabajo hacia adelante (no arma RQ/GDS/SOL/EJ): produce y cuida conocimiento reutilizable.
+Su corazón es la `00_Biblioteca`: el espacio donde se guardan los **libros** y donde trabajan sus **agentes**. No produce trabajo hacia adelante (no arma RQ/GDS/SOL/EJ): produce y cuida conocimiento reutilizable.
 
 ---
 
@@ -28,9 +28,9 @@ Gap del Core / idea / ambigüedad
 
 ---
 
-## La Biblioteca (el corazón)
+## [[00_Biblioteca|La Biblioteca (el corazón)]]
 
-Todo el activo vive en la [[00_Biblioteca]]: una librería real y navegable con **dos estantes**:
+Todo el activo vive en la `00_Biblioteca`: una librería real y navegable con **dos estantes**:
 
 - **[[00_Indice_fundamentos|Fundamentos]]** — lo transversal: el loop de experiencia, el game feel, la definición de terminado.
 - **[[00_Indice_juegos|Juegos]]** — análisis por juego/tipo, guardados por **género** (Pong → arcade, etc.).
@@ -58,7 +58,7 @@ La Escuela es un espacio al que se **manda a iterar en sesiones acotadas por tok
 - una **caza de ideas** para un juego (sacar ideas, referencias, variantes),
 - **reforzar un concepto que falla o se siente ambiguo** — dentro de Vaultrum o dentro de un juego en curso (no siempre es from scratch).
 
-El detalle del intake y el alcance lo maneja el [[01_Bibliotecario]].
+El detalle del intake y el alcance lo maneja el `01_Bibliotecario`.
 
 ---
 
@@ -80,6 +80,28 @@ La Escuela es el área con más riesgo de intoxicarse (estudia con libertad, pue
   Flujos/                  (pipeline de misión con gates AiCare)
   Salidas/                 (candidatos EST + misiones registradas)
 ```
+
+---
+
+## Flujos del espacio
+
+Cada flujo es un paso de la misión de estudio.
+
+### [[01_Flujo_Mision_Estudio|Flujo Mision Estudio]]
+
+### [[02_Flujo_Investigacion|Flujo Investigacion]]
+
+### [[03_Flujo_Destilacion|Flujo Destilacion]]
+
+### [[04_Flujo_Validacion_Estudio|Flujo Validacion Estudio]]
+
+---
+
+## Salidas del espacio
+
+El registro de las misiones de estudio.
+
+### [[05_Escuela/Salidas/00_Indice_salidas|Índice de salidas]]
 
 ---
 

@@ -67,10 +67,10 @@ No revisa código ni rediseña reglas: rebota con hallazgos concretos al área q
 
 El Área de Producción trabaja de forma progresiva.
 
-Primero interpreta la intención del usuario.  
-Después valida si la idea tiene sentido.  
-Luego reduce la ambigüedad y define alcance.  
-Después transforma la idea en salidas productivas registrables.  
+Primero interpreta la intención del usuario.
+Después valida si la idea tiene sentido.
+Luego reduce la ambigüedad y define alcance.
+Después transforma la idea en salidas productivas registrables.
 Finalmente, cuando la entrega vuelve, valida que responda a lo prometido.
 
 Recorrido general:
@@ -106,9 +106,9 @@ Cada agente del área implementa la parte que corresponde a su responsabilidad, 
 
 ## Regla operativa
 
-Primero entender.  
-Después validar.  
-Después ordenar.  
+Primero entender.
+Después validar.
+Después ordenar.
 Después convertir en salida productiva registrable.
 
 El resultado final del área debe ser una idea más clara, más realista, más acotada y mejor preparada para avanzar.
@@ -139,7 +139,7 @@ TL-001
 VE-001      ← valida la entrega de TL-001 como conjunto
 ```
 
-El gate de cierre está definido en [[02_Indice Agencia]].
+El gate de cierre está definido en `02_Indice Agencia`.
 
 ---
 
@@ -147,22 +147,22 @@ El gate de cierre está definido en [[02_Indice Agencia]].
 
 El Área de Producción no debe absorber responsabilidades que pertenecen a otras áreas.
 
-No debe programar soluciones técnicas.  
+No debe programar soluciones técnicas.
 Puede definir qué se necesita construir, pero no cómo debe implementarse en código.
 
-No debe diseñar gameplay en profundidad.  
+No debe diseñar gameplay en profundidad.
 Puede ordenar una necesidad de diseño, pero no reemplazar el criterio del **Área de Game Design**.
 
-No debe documentar conocimiento permanente del Core.  
+No debe documentar conocimiento permanente del Core.
 Puede producir requerimientos, decisiones productivas o lineamientos de planificación, pero cuando un aprendizaje debe quedar registrado como conocimiento reutilizable, lo marca y lo deriva al **Área de Conocimiento**.
 
-No debe auditar la calidad técnica de la implementación.  
-Eso lo hace el Revisor Técnico del **Área de Programación** contra sus criterios. Producción valida la **entrega frente a la intención y la experiencia** (ver [[04_Validador_Entrega]]), no el código.
+No debe auditar la calidad técnica de la implementación.
+Eso lo hace el Revisor Técnico del **Área de Programación** contra sus criterios. Producción valida la **entrega frente a la intención y la experiencia** (ver `04_Validador_Entrega`), no el código.
 
-No debe crear contenido público.  
+No debe crear contenido público.
 Puede ordenar la intención, el objetivo o el requerimiento de comunicación, pero la difusión y el material público viven en la capa **03_Comunidad**.
 
-No debe convertir toda idea en tarea.  
+No debe convertir toda idea en tarea.
 Si una idea no tiene sentido, está fuera de alcance o todavía necesita maduración, el área debe marcarlo antes de planificar.
 
 ---
@@ -173,9 +173,31 @@ Recibe de: el **usuario** (intención abierta) y de **Programación** (el `EJ` c
 
 Entrega a: **Game Design** (`RQ` jugable), **Programación** (`RQ` no jugable, directo) y **Conocimiento** (aprendizaje reutilizable detectado al cerrar la entrega).
 
-Consulta on-demand: la Biblioteca de la Escuela ([[05_Fundamentos_de_experiencia_ludica]]) para no dejar implícitas las table-stakes de un entregable jugable al escribir los `RQ` y al validar la entrega.
+Consulta on-demand: la Biblioteca de la Escuela (`05_Fundamentos_de_experiencia_ludica`) para no dejar implícitas las table-stakes de un entregable jugable al escribir los `RQ` y al validar la entrega.
 
 La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para trazabilidad de punta a punta; el `VE` cuelga del `TL` sin `.n`.
+
+---
+
+## Flujos del área
+
+Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
+
+### [[01_Flujo_Analisis_Estrategico|Flujo Analisis Estrategico]]
+
+### [[02_Flujo_Bajada_Operativa|Flujo Bajada Operativa]]
+
+### [[03_Flujo_Planificacion_Requerimientos|Flujo Planificacion Requerimientos]]
+
+### [[04_Flujo_Validacion_Entrega|Flujo Validacion Entrega]]
+
+---
+
+## Salidas del área
+
+El registro de lo que el área produjo. Cada índice lista sus propias entregas.
+
+### [[02_Agencia/Area produccion/Salidas/00_Indice_salidas|Indice salidas]]
 
 ---
 

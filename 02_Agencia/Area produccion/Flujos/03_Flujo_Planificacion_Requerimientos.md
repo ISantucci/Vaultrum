@@ -11,7 +11,7 @@ El flujo no ejecuta el trabajo.
 
 El flujo no deriva técnicamente la solución.
 
-El flujo cierra la **apertura** del hilo dejando una planificación registrable, numerada y entendible. No cierra la intervención del área: Producción vuelve al final, con el [[04_Flujo_Validacion_Entrega]], a validar que lo entregado sea lo planificado.
+El flujo cierra la **apertura** del hilo dejando una planificación registrable, numerada y entendible. No cierra la intervención del área: Producción vuelve al final, con el `04_Flujo_Validacion_Entrega`, a validar que lo entregado sea lo planificado.
 
 ---
 
@@ -61,17 +61,17 @@ Antes de generar una nueva salida, se debe verificar el próximo número disponi
 
 La verificación debe hacerse revisando:
 
-- [[00_Indice_salidas]]
+- [[02_Agencia/Area produccion/Salidas/00_Indice_salidas|Índice de salidas de Producción]]
 - [[00_Indice_timelines]]
-- [[00_indice_requerimientos]]
+- [[00_Indice_requerimientos|Índice de requerimientos]]
 
 La numeración debe mantener relación entre timeline y requerimientos.
 
 Ejemplo:
 
-TL-001  
-RQ-001.1  
-RQ-001.2  
+TL-001
+RQ-001.1
+RQ-001.2
 RQ-001.3
 
 El número base pertenece al timeline.
@@ -84,8 +84,8 @@ Si no existe ningun timeline registrado, la primera salida debe comenzar como TL
 
 Los requerimientos asociados deben comenzar como:
 
-RQ-005.1  
-RQ-005.2  
+RQ-005.1
+RQ-005.2
 RQ-005.3
 
 No se debe inventar numeración sin revisar los índices.
@@ -175,9 +175,9 @@ La numeración debe respetar la relación entre timeline y requerimientos.
 
 Ejemplo:
 
-TL-001 - Consolidar Salidas del Área de Producción  
-RQ-001.1 - Crear estructura de Salidas  
-RQ-001.2 - Crear índices de Salidas  
+TL-001 - Consolidar Salidas del Área de Producción
+RQ-001.1 - Crear estructura de Salidas
+RQ-001.2 - Crear índices de Salidas
 RQ-001.3 - Ajustar Flujo de Planificación y Requerimientos
 
 ---
@@ -209,49 +209,49 @@ La salida debe poder registrarse como archivos dentro de Salidas.
 
 ## Formato de salida
 
-Número base de salida:  
+Número base de salida:
 TL-XXX / RQ-XXX.X
 
-Timeline a crear:  
+Timeline a crear:
 Nombre del timeline principal.
 
-Requerimientos a crear:  
+Requerimientos a crear:
 Lista de requerimientos asociados.
 
-Objetivo:  
+Objetivo:
 Resultado que se busca alcanzar.
 
-Área afectada:  
+Área afectada:
 Área principal afectada por la planificación.
 
-Criticidad:  
+Criticidad:
 Alta / Media / Baja.
 
-Alcance:  
+Alcance:
 Qué entra dentro de esta planificación.
 
-Fuera de alcance:  
+Fuera de alcance:
 Qué no debe resolverse en esta etapa.
 
-Secuencia de trabajo:  
+Secuencia de trabajo:
 Orden sugerido de avance por etapas.
 
-Tiempos estimados:  
+Tiempos estimados:
 Estimación realista por etapa o bloque de trabajo.
 
-Prioridades:  
+Prioridades:
 Orden de importancia o secuencia sugerida.
 
-Dependencias:  
+Dependencias:
 Condiciones, decisiones, documentos, áreas o recursos necesarios.
 
-Riesgos:  
+Riesgos:
 Factores que pueden afectar alcance, tiempo, calidad o ejecución.
 
-Criterios de cierre:  
+Criterios de cierre:
 Condiciones que deben cumplirse para considerar cerrado el timeline.
 
-Registro sugerido:  
+Registro sugerido:
 Archivos que deberian crearse o actualizarse, incluyendo timeline, requerimientos asociados e indices correspondientes.
 
 ---
@@ -311,15 +311,15 @@ La planificación no debe cerrarse si:
 
 Este flujo no debe ejecutar el requerimiento.
 
-No debe resolver implementación técnica.  
-No debe definir arquitectura de código.  
-No debe diseñar gameplay en profundidad.  
-No debe convertir deseos futuros en tareas inmediatas.  
-No debe prometer fechas sin información suficiente.  
-No debe ocultar riesgos para que el timeline parezca más prolijo.  
-No debe generar requerimientos sin timeline asociado.  
-No debe generar timeline sin requerimientos concretos.  
-No debe inventar numeración sin revisar los índices.  
+No debe resolver implementación técnica.
+No debe definir arquitectura de código.
+No debe diseñar gameplay en profundidad.
+No debe convertir deseos futuros en tareas inmediatas.
+No debe prometer fechas sin información suficiente.
+No debe ocultar riesgos para que el timeline parezca más prolijo.
+No debe generar requerimientos sin timeline asociado.
+No debe generar timeline sin requerimientos concretos.
+No debe inventar numeración sin revisar los índices.
 No debe crear una carpeta de derivación en esta etapa.
 
 ---
@@ -334,8 +334,8 @@ Antes de cerrar el flujo, se debe verificar que:
 - se crearon o propusieron los requerimientos asociados,
 - el timeline incluye links a sus requerimientos,
 - el indice de timelines fue actualizado o indicado para actualizacion,
-- el indice de requerimientos fue actualizado o indicado para actualizacion. 
-  
+- el indice de requerimientos fue actualizado o indicado para actualizacion.
+
   ---
 ## Resultado final
 
@@ -346,7 +346,7 @@ Esa salida debe estar compuesta por:
 - un timeline principal,
 - uno o más requerimientos asociados.
 
-Es la salida de **apertura** del hilo. La salida de cierre (`VE`) la produce el [[04_Flujo_Validacion_Entrega]] cuando la entrega vuelve.
+Es la salida de **apertura** del hilo. La salida de cierre (`VE`) la produce el `04_Flujo_Validacion_Entrega` cuando la entrega vuelve.
 
 El timeline ordena la planificación general.
 

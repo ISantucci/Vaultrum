@@ -5,7 +5,7 @@ autores: Richard Lemarchand
 editorial: MIT Press
 anio: 2021
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: proceso de producción, fases (ideación, preproducción, producción, post), vertical slice, milestones
 ---
 

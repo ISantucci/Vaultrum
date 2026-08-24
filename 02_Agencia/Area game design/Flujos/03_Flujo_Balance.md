@@ -45,7 +45,7 @@ Completa el `GDS-XXX.n` con:
 
 ## Condiciones para avanzar
 
-Avanza al [[04_Flujo_Validacion_Diseno]] cuando la capa numérica está cerrada.
+Avanza al `04_Flujo_Validacion_Diseno` cuando la capa numérica está cerrada.
 Si al balancear aparece que las reglas no cierran, rebota al Diseñador de Sistema.
 
 ---

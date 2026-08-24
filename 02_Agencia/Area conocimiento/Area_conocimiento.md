@@ -38,7 +38,7 @@ Decide **dónde vive** el aprendizaje en el Core, evita duplicación y resuelve 
 
 ## Staging (y por qué esta área no tiene `Salidas/`)
 
-La carpeta [[00_Staging]] es la pizarra de **commits pendientes**: aprendizajes escritos que esperan tu aprobación. Es **transitoria**: cuando un aprendizaje se mergea al Core, se limpia de Staging. Si se descarta, también.
+La carpeta `00_Staging` es la pizarra de **commits pendientes**: aprendizajes escritos que esperan tu aprobación. Es **transitoria**: cuando un aprendizaje se mergea al Core, se limpia de Staging. Si se descarta, también.
 
 Staging no es un registro histórico. El historial, si se necesita, vive en git (el `git log`), no en el vault.
 
@@ -50,13 +50,13 @@ Se declara porque una omisión declarada es criterio y una omisión silenciosa e
 
 ## Los 3 casos (políticas de merge)
 
-### Caso 1 — Dev completo → [[01_Flujo_Retrospectiva]]
+### [[01_Flujo_Retrospectiva|Caso 1 — Dev completo]]
 El desarrollo se terminó porque el conocimiento ya estaba en el Core. Poco aprendizaje nuevo. Se corre una retrospectiva: casi no hay commits, a lo sumo un refinamiento de una nota existente. Merge limpio, `main` casi no cambia.
 
-### Caso 2 — Branch completa (idea nueva) → [[02_Flujo_Aprendizaje_Branch]]
+### [[02_Flujo_Aprendizaje_Branch|Caso 2 — Branch completa (idea nueva)]]
 Se desarrolló una idea nueva de punta a punta. Hay conocimiento nuevo real. Flujo completo: detectar → escribir en Staging → presentar diff → aprobar → merge. Es el caso central del área.
 
-### Caso 3 — Branch experimental → [[03_Flujo_Experimento]]
+### [[03_Flujo_Experimento|Caso 3 — Branch experimental]]
 Idea que quizás es un avance. Se evalúa si sirve. Si sí, genera commits (va al flujo del caso 2). Si no, se descarta: cero al Core.
 
 ---
@@ -81,7 +81,7 @@ El área prepara commits (título acorde a la implementación + resumen breve en
 - Trabajando sobre `main`, el área **no crea branches nuevas ni commitea antes de que exista una implementación**.
 - El área puede stagear, commitear y **pushear su branch de trabajo** (seguro de vida); no puede integrar a `main`.
 
-Detalle en [[01_Encargado_Commits]].
+Detalle en `01_Encargado_Commits`.
 
 ---
 
@@ -108,11 +108,31 @@ Es la única sección del Core que nació del uso del propio sistema, y por eso 
 
 ## Encadenado con las otras áreas
 
-Recibe de: **todas las áreas de producción**, cuando su Validador/Revisor marca un aprendizaje reutilizable al cerrar; y de la **Escuela** ([[00_Escuela]]), que entrega candidatos `EST` desde su Biblioteca (aprendizaje proactivo).
+Recibe de: **todas las áreas de producción**, cuando su Validador/Revisor marca un aprendizaje reutilizable al cerrar; y de la **Escuela** (`00_Escuela`), que entrega candidatos `EST` desde su Biblioteca (aprendizaje proactivo).
 Entrega a: **VaultrumCore** (merge aprobado).
 
 Puente con la Escuela: la Escuela investiga y destila pero **no mergea al Core**. Conocimiento es el único que propone a `main`: toma el `EST`, hace dedup + ubicación + diff, y lo presenta al owner. Decide qué se vuelve criterio indexado del Core (para que las áreas lo jalen on-demand) y qué queda como libro de referencia en la Biblioteca.
 
+
+## Flujos del área
+
+Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
+
+### [[01_Flujo_Retrospectiva|Flujo Retrospectiva]]
+
+### [[02_Flujo_Aprendizaje_Branch|Flujo Aprendizaje Branch]]
+
+### [[03_Flujo_Experimento|Flujo Experimento]]
+
+---
+
+## Staging del área
+
+El registro de lo que el área produjo. Cada índice lista sus propias entregas.
+
+### [[02_Agencia/Area conocimiento/Staging/00_Staging|Staging]]
+
+---
 
 ## Skill del área
 

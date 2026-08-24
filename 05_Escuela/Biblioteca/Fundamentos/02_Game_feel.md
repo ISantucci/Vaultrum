@@ -21,7 +21,7 @@ mision: —
 
 ## Loop de experiencia
 
-*(cruza con [[01_Loop_de_experiencia]])*
+*(cruza con `01_Loop_de_experiencia`)*
 
 ## Table-stakes
 

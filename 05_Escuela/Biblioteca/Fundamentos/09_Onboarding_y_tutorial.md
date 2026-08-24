@@ -1,15 +1,15 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilares 4 y 6 — Claridad/legibilidad y Dificultad/tensión
 cruza: 05_Fundamentos_de_experiencia_ludica, 04_Playbook_de_diseno, 06_Dificultad_y_curva, 02_Game_feel
 ---
 
 # Fundamento 09 — Onboarding y tutorial
 
-> Este libro profundiza los **Pilares 4 y 6** de [[05_Fundamentos_de_experiencia_ludica]]. El baseline (que se entienda qué hacer, que el HUD sea legible, que la curva arranque suave) ya está ahí. Acá va lo que el pilar deja afuera: **enseñar como diseño de niveles**, el presupuesto de atención de los primeros 60 s / 5 min / 30 min, qué se puede asumir del vocabulario del género, el costo real de cada popup, y cómo testear un onboarding sin contaminarlo.
-> Lo que NO cubre: el diseño del HUD y la jerarquía visual (UI/UX), la curva completa del juego (vive en `06_Dificultad_y_curva`), la respuesta táctil de los controles (vive en [[02_Game_feel]]).
+> Este libro profundiza los **Pilares 4 y 6** de `05_Fundamentos_de_experiencia_ludica`. El baseline (que se entienda qué hacer, que el HUD sea legible, que la curva arranque suave) ya está ahí. Acá va lo que el pilar deja afuera: **enseñar como diseño de niveles**, el presupuesto de atención de los primeros 60 s / 5 min / 30 min, qué se puede asumir del vocabulario del género, el costo real de cada popup, y cómo testear un onboarding sin contaminarlo.
+> Lo que NO cubre: el diseño del HUD y la jerarquía visual (UI/UX), la curva completa del juego (vive en `06_Dificultad_y_curva`), la respuesta táctil de los controles (vive en `02_Game_feel`).
 > **IP:** conceptos destilados + cita. Nunca texto verbatim con copyright.
 
 ## Índice del libro
@@ -189,5 +189,5 @@ No aplica igual en: juegos de complejidad deliberadamente alta cuyo público esp
 **Tensiones:** con `06_Dificultad_y_curva` — el onboarding pide error barato y la curva pide que el error importe; la resolución es temporal, no de compromiso (barato primero, caro después). Con el Pilar 9 (agencia) — enseñar por restricción le saca libertad al jugador justo cuando quiere probar. Con el Pilar 8 (pacing) — un onboarding cuidadoso es lento, y la primera impresión pide velocidad: la salida es enseñar dentro de la acción, nunca antes de ella.
 
 ## Fuentes
-[[09_Gamers_Brain]] · [[10_Game_Usability]] · [[12_Design_of_Everyday_Things]] · [[04_Theory_of_Fun]] · [[03_Game_Design_Workshop]] · [[02_Art_of_Game_Design]] · [[13_Elements_of_Game_Design]] · [[19_Playful_Production_Process]] · [[14_Fundamentals_of_Game_Design]]
-Cruces: [[05_Fundamentos_de_experiencia_ludica]] (Pilares 4 y 6) · [[04_Playbook_de_diseno]] · [[02_Game_feel]] · [[01_Loop_de_experiencia]] · `06_Dificultad_y_curva` · `08_Progresion_y_recompensa`
+`09_Gamers_Brain` · `10_Game_Usability` · `12_Design_of_Everyday_Things` · `04_Theory_of_Fun` · `03_Game_Design_Workshop` · `02_Art_of_Game_Design` · `13_Elements_of_Game_Design` · `19_Playful_Production_Process` · `14_Fundamentals_of_Game_Design`
+Cruces: `05_Fundamentos_de_experiencia_ludica` (Pilares 4 y 6) · `04_Playbook_de_diseno` · `02_Game_feel` · `01_Loop_de_experiencia` · `06_Dificultad_y_curva` · `08_Progresion_y_recompensa`

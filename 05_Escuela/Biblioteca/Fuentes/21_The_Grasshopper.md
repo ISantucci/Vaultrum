@@ -5,7 +5,7 @@ autores: Bernard Suits
 editorial: Broadview Press
 anio: 1978
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: definición filosófica de juego, actitud lúdica, obstáculos innecesarios
 ---
 
@@ -25,7 +25,7 @@ Definición filosófica clásica: jugar un juego es **el intento voluntario de s
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Da a Vaultrum el 'por qué' filosófico de las reglas: la regla que limita es la que crea el juego. Base conceptual para definir qué es jugar, aguas arriba de [[06_Half_Real]].
+Da a Vaultrum el 'por qué' filosófico de las reglas: la regla que limita es la que crea el juego. Base conceptual para definir qué es jugar, aguas arriba de `06_Half_Real`.
 
 ## Estado y próximos pasos
 

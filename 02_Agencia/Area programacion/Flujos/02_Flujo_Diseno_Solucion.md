@@ -26,7 +26,7 @@ Si el diagnóstico no trae contexto real suficiente, no avanza: vuelve al Analis
 
 ## Verificación de numeración
 
-`SOL-XXX.n` hereda el número base y la subnumeración del `RQ-XXX.n` que resuelve. Revisar [[00_Indice_soluciones]] antes de registrar. No inventar numeración.
+`SOL-XXX.n` hereda el número base y la subnumeración del `RQ-XXX.n` que resuelve. Revisar `00_Indice_soluciones` antes de registrar. No inventar numeración.
 
 ---
 
@@ -61,7 +61,7 @@ Si el diagnóstico no trae contexto real suficiente, no avanza: vuelve al Analis
 
 ## Condiciones para avanzar
 
-Avanza al [[03_Flujo_Ejecucion]] **solo con aprobación explícita del alcance**.
+Avanza al `03_Flujo_Ejecucion` **solo con aprobación explícita del alcance**.
 No avanza sin OK. Si el diagnóstico era insuficiente, rebota al Analista.
 
 ---

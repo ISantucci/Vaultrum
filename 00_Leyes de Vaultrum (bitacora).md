@@ -9,12 +9,12 @@
 
 | # | Idea | Estado | Dónde vive ahora |
 |---|------|--------|------------------|
-| 1 | Fricción mínima y baseline competente | **MERGEADA** | [[Baseline de entregable]] (mitad 1) |
+| 1 | Fricción mínima y baseline competente | **MERGEADA** | Baseline de entregable (mitad 1) |
 | 2 | La Escuela Vaultrum | **CONSTRUIDA** | `05_Escuela/` |
-| 3 | Optimizar sin requerimiento es scope no pedido | **MERGEADA** | [[Baseline de entregable]] (mitad 2) + [[Cuando NO optimizar]] |
-| 4 | Verificación parcial declarada | **MERGEADA** | [[Verificacion parcial declarada]] |
+| 3 | Optimizar sin requerimiento es scope no pedido | **MERGEADA** | Baseline de entregable (mitad 2) + Cuando NO optimizar |
+| 4 | Verificación parcial declarada | **MERGEADA** | Verificacion parcial declarada |
 | 5 | Backlog de mejoras del sistema | **abierto** (parcialmente cerrado) | acá abajo |
-| — | La cadena falla en los bordes | **MERGEADA** | [[Gates verificables]] + 3 skills |
+| — | La cadena falla en los bordes | **MERGEADA** | Gates verificables + 3 skills |
 
 Las cuatro mergeadas viven en la sección nueva del Core `01_VaultrumCore/.../04_Criterios de entrega/`. Fue el primer ciclo `Core → Agencia → Conocimiento → Core` que cerró completo.
 
@@ -40,9 +40,9 @@ El VaultrumCore es muy rico en *ingeniería* (SOLID, patrones, managers, optimiz
 **Propuesta de módulo nuevo en el Core:**
 Un área de **Fundamentos de Experiencia / Definición de Terminado** — un baseline que todo entregable debe cumplir antes de considerarse hecho, para que la IA complete lo conocido sin que haga falta pedirlo, y el usuario gaste sus prompts solo en su visión.
 
-**Estado:** **MERGEADA AL CORE.** Formalizada como [[Baseline de entregable]] (mitad 1: *completo en experiencia*), en `01_VaultrumCore/.../04_Criterios de entrega/`. Su prueba mecánica —cobertura *table-stake → RQ*— es un paso ejecutable de `vaultrum-produccion`.
+**Estado:** **MERGEADA AL CORE.** Formalizada como `Baseline de entregable` (mitad 1: *completo en experiencia*), en `01_VaultrumCore/.../04_Criterios de entrega/`. Su prueba mecánica —cobertura *table-stake → RQ*— es un paso ejecutable de `vaultrum-produccion`.
 
-El gap del Core que esta ley detectó también se cerró: existe la sección [[Experiencia de juego]], que indexa los fundamentos y los libros por género de la Biblioteca, y [[03_Definicion_de_terminado]] ya está escrito.
+El gap del Core que esta ley detectó también se cerró: existe la sección `Experiencia de juego`, que indexa los fundamentos y los libros por género de la Biblioteca, y `03_Definicion_de_terminado` ya está escrito.
 
 ---
 
@@ -77,13 +77,13 @@ Lo que el contador no mide, y queda declarado en vez de omitido: el consumo real
 Decisiones clave: (1) la Escuela NO mergea al Core — entrega candidatos `EST` a Conocimiento, que sigue siendo la única que propone a `main`; (2) AiCare es obligatorio en los bordes de cada misión (seguro de vida contra la acumulación); (3) toda misión es acotada por gap + presupuesto + barra de calidad; (4) el producto es una librería de fundamentos destilados, no un catálogo de juegos.
 Pendiente cerrado: los `Agentes/` y `Flujos/` están escritos y la Escuela produjo cinco misiones (`EST-001` a `EST-005`), 29 fuentes catalogadas y cuatro libros reales. La primera misión propuesta —llenar los Fundamentos de Experiencia— se cumplió con `EST-004` y `EST-005`.
 
-**Pendiente nuevo, de la auditoría (H1):** la Escuela tiene checklists operativos fuera de su `SKILL.md` (15 ítems en tres archivos). Incumple la regla de capas que la Agencia sí cumple. Ver [[00_Auditoria de arquitectura]].
+**Pendiente nuevo, de la auditoría (H1):** la Escuela tiene checklists operativos fuera de su `SKILL.md` (15 ítems en tres archivos). Incumple la regla de capas que la Agencia sí cumple. Ver `00_Auditoria de arquitectura`.
 
 ---
 
 ## Ley candidata #3 — Optimizar sin requerimiento de performance es scope no pedido
 
-**Origen:** contraste entre una corrida técnica de Pong hecha fuera de Vaultrum y la cadena completa del [[TL-003_Pong3D_Unity6_Cadena_Completa]]. La corrida suelta produjo ingeniería excelente —loop con accumulator a 120 Hz e interpolación, CCD propio, cero asignaciones, un solo `Update`, batching y culling ajustados— para un problema en el que **nadie había pedido performance ni determinismo**. Ocho decisiones, todas técnicas, cero sobre la experiencia.
+**Origen:** contraste entre una corrida técnica de Pong hecha fuera de Vaultrum y la cadena completa del `TL-003_Pong3D_Unity6_Cadena_Completa`. La corrida suelta produjo ingeniería excelente —loop con accumulator a 120 Hz e interpolación, CCD propio, cero asignaciones, un solo `Update`, batching y culling ajustados— para un problema en el que **nadie había pedido performance ni determinismo**. Ocho decisiones, todas técnicas, cero sobre la experiencia.
 
 **Idea central:**
 En Vaultrum el presupuesto del usuario se mide en prompts (Ley #1) y el de la IA en foco. Una decisión de ingeniería que no responde a un requerimiento consume ese presupuesto igual que una feature que nadie pidió. Es *scope no pedido*: trabajo de calidad, sin encargo.
@@ -98,7 +98,7 @@ Apagar PhysX en un Pong es correcto *si* el motivo es que el rebote de Pong no e
 
 **Relación con la Ley #1:** son la misma ley vista desde los dos lados. La #1 dice que la IA debe traer sin pedirlo lo que un entregable necesita para *ser satisfactorio*. La #3 dice que no debe traer sin pedirlo lo que nadie necesita. Juntas definen el baseline: **completo en experiencia, mínimo en maquinaria.**
 
-**Estado:** **MERGEADA AL CORE.** Formalizada como [[Baseline de entregable]] (mitad 2: *mínimo en maquinaria*) y desarrollada para rendimiento en [[Cuando NO optimizar]], que quedó como hermana de `Medir antes de optimizar` en Fundamentos de Optimización.
+**Estado:** **MERGEADA AL CORE.** Formalizada como `Baseline de entregable` (mitad 2: *mínimo en maquinaria*) y desarrollada para rendimiento en `Cuando NO optimizar`, que quedó como hermana de `Medir antes de optimizar` en Fundamentos de Optimización.
 
 La distinción que aporta al Core: *optimización prematura* es optimizar sin medir; *optimización no pedida* es optimizar sin encargo. Medir corrige la primera y no corrige la segunda. La prueba —la tabla de **lo que se hizo** / **lo que deliberadamente no se hizo**— es obligatoria en toda `SOL`.
 
@@ -106,21 +106,21 @@ La distinción que aporta al Core: *optimización prematura* es optimizar sin me
 
 ## Concepto #4 — Verificación parcial declarada
 
-**Origen:** [[EJ-003_Implementacion_Pong3D]]. `VE-002` había quedado PAUSADO con el diagnóstico *"verificar el código no es verificar la entrega"*, que es correcto pero deja un hueco: entre "no se verificó nada" y "se jugó una partida" hay terreno útil.
+**Origen:** `EJ-003_Implementacion_Pong3D`. `VE-002` había quedado PAUSADO con el diagnóstico *"verificar el código no es verificar la entrega"*, que es correcto pero deja un hueco: entre "no se verificó nada" y "se jugó una partida" hay terreno útil.
 
 **Idea central:** una entrega puede verificarse **parcialmente** sin el entorno de destino, siempre que la verificación declare su alcance. En `EJ-003` los 17 scripts se compilaron fuera de Unity contra un stub de la API: cerró la clase entera de errores de sintaxis, tipos y firmas, sin poder abrir el editor. No convierte un PAUSADO en Cerrado — pero convierte *"no sabemos nada"* en *"sabemos esto y no aquello"*.
 
 **Regla propuesta:** toda verificación que no sea la del gate declara qué cubre **y qué no**, en el mismo párrafo. Una verificación sin alcance declarado se lee como cierre y produce el falso Cerrado que los `VE` existen para evitar.
 
-**Estado:** **MERGEADA AL CORE** como [[Verificacion parcial declarada]], con formato obligatorio de declaración (Método / Cubre / No cubre / Consecuencia) en el `EJ`.
+**Estado:** **MERGEADA AL CORE** como `Verificacion parcial declarada`, con formato obligatorio de declaración (Método / Cubre / No cubre / Consecuencia) en el `EJ`.
 
-El corolario también se formalizó: el juicio global del owner es un modo de cierre legítimo del `VE` —**modo Veredicto**— con sus condiciones y su deuda declarada. Ver [[00_Indice_ve]].
+El corolario también se formalizó: el juicio global del owner es un modo de cierre legítimo del `VE` —**modo Veredicto**— con sus condiciones y su deuda declarada. Ver `00_Indice_ve`.
 
 ---
 
 ## Concepto #5 — Backlog de mejoras del sistema
 
-**Origen:** cierre del [[TL-003_Pong3D_Unity6_Cadena_Completa]] (jugado por el owner, 8/10, divertido). Lo que sigue **no** son aprendizajes para el Core —esos ya están mergeados, ver la tabla de estado arriba— sino mejoras al sistema mismo.
+**Origen:** cierre del `TL-003_Pong3D_Unity6_Cadena_Completa` (jugado por el owner, 8/10, divertido). Lo que sigue **no** son aprendizajes para el Core —esos ya están mergeados, ver la tabla de estado arriba— sino mejoras al sistema mismo.
 
 ### Sobre la cadena de la Agencia
 
@@ -129,7 +129,7 @@ El corolario también se formalizó: el juicio global del owner es un modo de ci
    - *ramas opcionales* → gate del "no aplica" en `vaultrum-gamedesign`: hay que declarar qué dimensión falta y por qué, con formato mínimo. El **test del "no aplica"** (¿la siguiente área tuvo que hacerlo igual?) se corre al cerrar el `VE`.
    - *salida* → gate de existencia en disco en `vaultrum-programador`: listado archivo por archivo antes de reportar el `EJ`.
 
-   El criterio de fondo quedó en el Core como [[Gates verificables]]: *un gate que no se puede verificar mecánicamente no es un gate, es una intención.*
+   El criterio de fondo quedó en el Core como `Gates verificables`: *un gate que no se puede verificar mecánicamente no es un gate, es una intención.*
 
 2. ~~**`GDS-003.0` inventó un artefacto sin nombre.**~~ **FORMALIZADO.** El `GDS-XXX.0` es ahora parte de la columna vertebral, con condiciones: se abre solo si **tres o más** `GDS` del timeline comparten definiciones, contiene solo lo compartido, cuelga del `TL` y no de un `RQ`, y los demás lo referencian sin copiarlo. Con dos `GDS` se repite y listo — un marco común para dos specs es sobrearquitectura.
 

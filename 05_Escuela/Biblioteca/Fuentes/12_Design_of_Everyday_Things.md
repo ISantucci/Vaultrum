@@ -5,7 +5,7 @@ autores: Don Norman
 editorial: Basic Books
 anio: 1988 (orig. como 'The Psychology of Everyday Things'); 2013 (rev.)
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: affordances, signifiers, mapping, feedback, modelo mental, error humano
 ---
 
@@ -25,7 +25,7 @@ Clásico de diseño centrado en el humano fuera de los juegos: **affordances**, 
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Vocabulario base de UX que subyace a [[09_Gamers_Brain]] y [[10_Game_Usability]]. Affordances/signifiers/feedback son criterios directos para la legibilidad del [[01_Loop_de_experiencia]] y controles.
+Vocabulario base de UX que subyace a `09_Gamers_Brain` y `10_Game_Usability`. Affordances/signifiers/feedback son criterios directos para la legibilidad del `01_Loop_de_experiencia` y controles.
 
 ## Estado y próximos pasos
 

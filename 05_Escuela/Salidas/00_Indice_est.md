@@ -8,14 +8,12 @@ Cada `EST-XXX` es un fundamento destilado, citado y validado, listo para el hand
 
 ## Registro
 
-| EST | Misión (gap) | Fundamento | Estado |
-|-----|--------------|------------|--------|
-| [[EST-001_Mision_Pong]] | Fundamentos de experiencia (Pong) | [[01_Pong]] + aporte a [[01_Loop_de_experiencia]] | **Handoff hecho** |
-| [[EST-002_Mision_Catalogo_RulesOfPlay]] | Catalogar *Rules of Play* | fuente catalogada (sin destilar) | Catalogada |
-| [[EST-003_Mision_Catalogo_Batch_Fundamentos]] | Catálogo batch de 28 fuentes del canon | 28 fuentes catalogadas (sin destilar) | Catalogada |
-| [[EST-004_Mision_Destilacion_Playbook]] | Destilar 29 fuentes en playbook por función | [[04_Playbook_de_diseno]] (destilación de marco) | **Handoff hecho** |
-| [[EST-005_Mision_Fundamentos_Experiencia_Ludica]] | Fundamentos de la buena experiencia lúdica (9 pilares + checklist por-GDS) | [[05_Fundamentos_de_experiencia_ludica]] | **Handoff hecho** |
-| [[EST-006_Mision_Lote_Biblioteca_Agosto26]] | Cobertura de la Biblioteca: Fundamentos sin profundizar, estante de Juegos con un solo libro, cero documentación real | 12 Fundamentos (06–17) + 52 documentos del estante nuevo [[00_Indice_documentos]] | En estudio — **sin AiCare, sin handoff** |
+- [[EST-001_Mision_Pong|EST-001 Misión Pong]] — fundamentos de experiencia sobre Pong; produjo el libro de Pong y aportó al de Loop de experiencia. **Handoff hecho.**
+- [[EST-002_Mision_Catalogo_RulesOfPlay|EST-002 Misión Rules of Play]] — catalogar la fuente, sin destilar. Catalogada.
+- [[EST-003_Mision_Catalogo_Batch_Fundamentos|EST-003 Misión catálogo del canon]] — 28 fuentes del canon catalogadas, sin destilar. Catalogada.
+- [[EST-004_Mision_Destilacion_Playbook|EST-004 Misión destilación del Playbook]] — destilar 29 fuentes en un playbook por función. **Handoff hecho.**
+- [[EST-005_Mision_Fundamentos_Experiencia_Ludica|EST-005 Misión fundamentos de experiencia lúdica]] — los 9 pilares más el checklist por GDS. **Handoff hecho.**
+- [[EST-006_Mision_Lote_Biblioteca_Agosto26|EST-006 Misión lote de Biblioteca]] — lote de agosto: fundamentos nuevos y el estante de documentación real. Pendiente de cierre.
 
 ---
 
@@ -31,7 +29,7 @@ Cada `EST-XXX` es un fundamento destilado, citado y validado, listo para el hand
 
 ## Handoff a Conocimiento — resultado
 
-Los tres `EST` con handoff se resolvieron por **indexación**, no por copia: el Core guarda el puntero en [[Experiencia de juego]] y el contenido queda en la Biblioteca, cargándose on-demand.
+Los tres `EST` con handoff se resolvieron por **indexación**, no por copia: el Core guarda el puntero en `Experiencia de juego` y el contenido queda en la Biblioteca, cargándose on-demand.
 
 ```txt
 EST-001 → 01_Pong (En la Biblioteca) + primer contenido de 01_Loop_de_experiencia

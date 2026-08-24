@@ -5,7 +5,7 @@ autores: Tracy Fullerton
 editorial: CRC Press
 anio: 2004 (1ª); 2018 (4ª)
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: diseño centrado en el juego, prototipado, playtesting, iteración
 ---
 
@@ -25,7 +25,7 @@ Método **playcentric**: diseñar iterando sobre prototipos jugables y playtesti
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Base metodológica para cómo Vaultrum prototipa y valida: prototipo → playtest → iteración. Aporta el vocabulario de 'elementos formales/dramáticos/dinámicos' y refuerza la [[03_Definicion_de_terminado]] vía testeo.
+Base metodológica para cómo Vaultrum prototipa y valida: prototipo → playtest → iteración. Aporta el vocabulario de 'elementos formales/dramáticos/dinámicos' y refuerza la `03_Definicion_de_terminado` vía testeo.
 
 ## Estado y próximos pasos
 

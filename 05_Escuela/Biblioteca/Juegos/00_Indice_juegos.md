@@ -2,15 +2,16 @@
 
 Un libro por juego/tipo, guardado por **género**. Cada libro son los fundamentos destilados de ese juego (table-stakes + juice + definición de terminado específicos), citados y reutilizables como baseline al pedir un juego de ese género.
 
-Se apoya siempre en los [[00_Indice_fundamentos|Fundamentos]] transversales: el libro de Juego agrega lo *específico*, los Fundamentos aportan lo *común*.
+Se apoya siempre en los `Fundamentos` transversales: el libro de Juego agrega lo *específico*, los Fundamentos aportan lo *común*.
 
 ---
 
 ## Registro (por género)
 
-| # | Libro | Género | Tipo | Misión | Estado |
-|---|-------|--------|------|--------|--------|
-| 01 | [[01_Pong]] | Arcade | Paleta-y-pelota | [[EST-001_Mision_Pong]] | En la Biblioteca |
+### [[01_Pong|Pong]]
+
+Arcade · Paleta-y-pelota · EST-001 Mision Pong · En la Biblioteca
+
 
 ---
 

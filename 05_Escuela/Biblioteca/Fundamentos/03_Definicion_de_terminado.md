@@ -1,7 +1,7 @@
 ---
 tipo: fundamento
 estado: En la Biblioteca
-mision: [[EST-001_Mision_Pong]] (síntesis) + uso en [[VE-003_Pong3D]]
+mision: EST-001_Mision_Pong (síntesis) + uso en VE-003_Pong3D
 ---
 
 # Fundamento 03 — Definición de Terminado
@@ -94,7 +94,7 @@ Dieciséis ítems, cinco bloques. Los cinco bloques son el orden de fallo típic
 
 La checklist transversal es el piso. El libro del género agrega los ítems específicos de ese tipo de entregable, que suelen ser los que más importan.
 
-Ejemplo, comparando con [[01_Pong]]:
+Ejemplo, comparando con `01_Pong`:
 
 ```txt
 transversal:  "el loop principal se puede repetir sin romperse"
@@ -118,7 +118,7 @@ Una entrega puede darse por terminada de dos maneras, y el `VE` declara cuál us
 
 Los dos son verificaciones parciales y ninguno reemplaza al otro. Un 8/10 del owner es información real y suficiente para cerrar una entrega; no dice cuál de los dieciséis ítems falla. La checklist dice cuál falla; no dice si el conjunto engancha.
 
-Cuando se cierra por veredicto, **se declara la deuda**: qué ítems no se recorrieron. Criterio del Core: [[Verificacion parcial declarada]].
+Cuando se cierra por veredicto, **se declara la deuda**: qué ítems no se recorrieron. Criterio del Core: `Verificacion parcial declarada`.
 
 ## Aplicación
 
@@ -142,6 +142,6 @@ Es también la fuente canónica del checklist que la skill `vaultrum-produccion`
 
 ## Fuentes
 
-Síntesis propia a partir de los Fundamentos [[01_Loop_de_experiencia]], [[02_Game_feel]] y [[05_Fundamentos_de_experiencia_ludica]], del libro de género [[01_Pong]], y del uso real en [[VE-002_Pong3D]] y [[VE-003_Pong3D]].
+Síntesis propia a partir de los Fundamentos `01_Loop_de_experiencia`, `02_Game_feel` y `05_Fundamentos_de_experiencia_ludica`, del libro de género `01_Pong`, y del uso real en `VE-002_Pong3D` y `VE-003_Pong3D`.
 
 Canon de apoyo, sin verbatim: `19_Playful_Production_Process` (fases y criterios de cierre) · `03_Game_Design_Workshop` (playtesting como instrumento) · `09_Gamers_Brain` y `10_Game_Usability` (legibilidad, usabilidad, ausencia de estados muertos) · `05_Game_Feel` (respuesta y peso) · `08_Designing_Games` (elegancia y prototipo gris).

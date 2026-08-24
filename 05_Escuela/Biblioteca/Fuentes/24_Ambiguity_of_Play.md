@@ -5,7 +5,7 @@ autores: Brian Sutton-Smith
 editorial: Harvard University Press
 anio: 1997
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: retóricas del juego, ambigüedad, múltiples definiciones, teoría del play
 ---
 

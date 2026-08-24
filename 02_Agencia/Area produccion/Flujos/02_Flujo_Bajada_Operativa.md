@@ -98,34 +98,34 @@ Debe incluir, cuando corresponda:
 
 ## Formato de salida
 
-Objetivo concreto:  
+Objetivo concreto:
 Resultado específico que se busca lograr.
 
-Alcance inicial:  
+Alcance inicial:
 Qué debe entrar en la primera versión del trabajo.
 
-Alcance futuro:  
+Alcance futuro:
 Qué puede quedar para más adelante sin afectar el avance actual.
 
-Fuera de alcance:  
+Fuera de alcance:
 Qué no debe considerarse parte de esta etapa.
 
-Bloques principales de trabajo:  
+Bloques principales de trabajo:
 Partes grandes en las que se puede dividir el trabajo.
 
-Dependencias:  
+Dependencias:
 Condiciones, decisiones, documentos, áreas o recursos necesarios para avanzar.
 
-Riesgos operativos:  
+Riesgos operativos:
 Problemas que pueden afectar orden, alcance, prioridad o ejecución.
 
-Información faltante:  
+Información faltante:
 Datos que todavía deben aclararse antes de planificar, si aplica.
 
-Área probablemente afectada:  
+Área probablemente afectada:
 Área o áreas que deberían recibir el trabajo más adelante.
 
-Base para planificación:  
+Base para planificación:
 Resumen limpio para que el Flujo de Planificación y Requerimientos pueda trabajar sin reinterpretar la intención original.
 
 ---
@@ -175,12 +175,12 @@ No debe avanzar si:
 
 Este flujo no debe volver a debatir indefinidamente si la idea vale la pena.
 
-No debe armar requerimientos finales.  
-No debe estimar timelines cerrados.  
-No debe inventar tareas por rellenar.  
-No debe resolver implementación técnica.  
-No debe mezclar alcance inicial con alcance futuro.  
-No debe mandar al siguiente flujo una idea todavía confusa.  
+No debe armar requerimientos finales.
+No debe estimar timelines cerrados.
+No debe inventar tareas por rellenar.
+No debe resolver implementación técnica.
+No debe mezclar alcance inicial con alcance futuro.
+No debe mandar al siguiente flujo una idea todavía confusa.
 No debe ocultar dependencias o riesgos para que el trabajo parezca más simple.
 
 ---

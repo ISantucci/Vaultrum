@@ -18,7 +18,7 @@ Si el `GDS` no implica espacio ni progresión jugable (ej: un sistema puramente 
 
 ### [[01_Analista_Espacio]]
 
-Interpreta qué experiencia **espacial y de ritmo** busca el sistema: cómo debería sentirse recorrer y enfrentar esto. Encuadra con los pilares de **dificultad/flow (6)**, **pacing (8)** y **core loop (1)** del libro [[05_Fundamentos_de_experiencia_ludica]]. No define el layout final.
+Interpreta qué experiencia **espacial y de ritmo** busca el sistema: cómo debería sentirse recorrer y enfrentar esto. Encuadra con los pilares de **dificultad/flow (6)**, **pacing (8)** y **core loop (1)** del libro `05_Fundamentos_de_experiencia_ludica`. No define el layout final.
 
 ### [[02_Disenador_Nivel]]
 
@@ -53,7 +53,7 @@ El loop no cierra hasta que el nivel es construible y respeta la experiencia bus
 
 ## Salida del área
 
-Por cada `GDS` con dimensión espacial, un **LDS-XXX.n** registrado en [[00_Indice_lds]], con su índice. La numeración se hereda del `GDS` (`GDS-001.2 → LDS-001.2`).
+Por cada `GDS` con dimensión espacial, un **LDS-XXX.n** registrado en `00_Indice_lds`, con su índice. La numeración se hereda del `GDS` (`GDS-001.2 → LDS-001.2`).
 
 El `LDS` es insumo del Área de Programación (junto al `GDS` y, si existe, el `UXS`).
 
@@ -78,10 +78,30 @@ No define reglas ni balance base (Game Design). No diseña interfaces/HUD/menús
 
 Recibe de: **Game Design** (`GDS` cerrado).
 Entrega a: **Programación** (`LDS` como insumo de la solución técnica).
-Consulta on-demand: la Escuela ([[05_Fundamentos_de_experiencia_ludica]]), pilares 1, 6, 8, 9.
+Consulta on-demand: la Escuela (`05_Fundamentos_de_experiencia_ludica`), pilares 1, 6, 8, 9.
 
 La numeración `.n` se mantiene entre `GDS / LDS / SOL / EJ` para trazabilidad de punta a punta.
 
+
+## Flujos del área
+
+Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
+
+### [[01_Flujo_Analisis_Espacio|Flujo Analisis Espacio]]
+
+### [[02_Flujo_Diseno_Nivel|Flujo Diseno Nivel]]
+
+### [[03_Flujo_Validacion_Nivel|Flujo Validacion Nivel]]
+
+---
+
+## Salidas del área
+
+El registro de lo que el área produjo. Cada índice lista sus propias entregas.
+
+### [[02_Agencia/Area level design/Salidas/00_Indice_lds|Indice lds]]
+
+---
 
 ## Skill del área
 

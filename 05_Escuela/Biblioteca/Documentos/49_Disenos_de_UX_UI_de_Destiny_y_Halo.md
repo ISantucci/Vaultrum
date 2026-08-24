@@ -8,7 +8,7 @@ acceso: —
 licencia: a confirmar
 prioridad: alta
 estado: Catalogado
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 url: https://gamedocs.org/destiny-and-halo-ux-ui-designs/
 ---
 
@@ -24,6 +24,10 @@ Casi todo el material público es de game design; documentación de **UX/UI de p
 
 ---
 
-## Estante
+## Hacia donde seguir
 
-Ficha del estante [[00_Indice_documentos]] · registrada en [[00_Catalogo_Biblioteca]] · misión [[EST-006_Mision_Lote_Biblioteca_Agosto26]].
+Esta ficha pertenece al estante de Documentacion real.
+
+Para volver al estante y ver el resto de los documentos:
+
+→ [[00_Indice_documentos]]

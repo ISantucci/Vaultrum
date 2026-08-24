@@ -43,14 +43,14 @@ que errores evitar
 ## Contenido de esta seccion
 
 ```txt
-[[NPC pasivo de interaccion]]
-[[NPC patrullero simple]]
-[[NPC patrullero con variedad]]
-[[NPC de sigilo]]
-[[NPC agresivo directo]]
-[[NPC evasivo]]
-[[NPC con ataques variados]]
-[[NPC tactico simple]]
+NPC pasivo de interaccion
+NPC patrullero simple
+NPC patrullero con variedad
+NPC de sigilo
+NPC agresivo directo
+NPC evasivo
+NPC con ataques variados
+NPC tactico simple
 ```
 
 ---

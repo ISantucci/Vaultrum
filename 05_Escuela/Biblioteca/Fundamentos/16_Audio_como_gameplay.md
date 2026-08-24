@@ -1,7 +1,7 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilares 3 — Feedback y game feel · 4 — Claridad y legibilidad
 cruza: 05_Fundamentos_de_experiencia_ludica, 02_Game_feel, 14_UI_HUD_y_menus
 ---
@@ -179,7 +179,7 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 
 **Límites.** Este libro trata el audio como sistema de información, no como obra. No cubre composición, síntesis, grabación de foley ni mezcla profesional. Tampoco cubre audio espacial avanzado (HRTF, oclusión, propagación), que en la mayoría de los proyectos de un dev solo es sobre-ingeniería frente a un buen rolloff y un buen paneo. Los valores de loudness son baseline sugerido, no requisito de plataforma: verificá los de tu destino antes de certificar.
 
-**Fuentes.** [[05_Game_Feel]] · [[08_Designing_Games]] · [[09_Gamers_Brain]] · [[11_How_Games_Move_Us]] · [[13_Elements_of_Game_Design]] · [[10_Game_Usability]] · [[29_Racing_the_Beam]]
-**Cruces.** [[05_Fundamentos_de_experiencia_ludica]] (Pilares 3 y 4) · [[02_Game_feel]] (el audio como tercio del feel) · [[14_UI_HUD_y_menus]] (redundancia visual e indicadores direccionales) · [[15_Muerte_reintento_y_checkpoints]] (el cue que define si la muerte fue justa)
+**Fuentes.** `05_Game_Feel` · `08_Designing_Games` · `09_Gamers_Brain` · `11_How_Games_Move_Us` · `13_Elements_of_Game_Design` · `10_Game_Usability` · `29_Racing_the_Beam`
+**Cruces.** `05_Fundamentos_de_experiencia_ludica` (Pilares 3 y 4) · `02_Game_feel` (el audio como tercio del feel) · `14_UI_HUD_y_menus` (redundancia visual e indicadores direccionales) · `15_Muerte_reintento_y_checkpoints` (el cue que define si la muerte fue justa)
 
 ---

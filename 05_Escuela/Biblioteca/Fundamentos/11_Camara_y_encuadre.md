@@ -1,7 +1,7 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 4 — Claridad y legibilidad · Pilar 5 — Justicia y control
 cruza: 05_Fundamentos_de_experiencia_ludica, 02_Game_feel, 10_Input_y_respuesta, 04_Playbook_de_diseno
 ---
@@ -175,7 +175,7 @@ CÁMARA Y ENCUADRE — pegar en el GDS
 ## Aplicación · Límites · Fuentes
 **Aplicación.** La cámara se especifica en el GDS junto al movimiento, nunca después: los parámetros de cámara y los de locomoción se balancean juntos. En el LDS, cada sala declara su región de cámara y su verificación de "destino visible".
 **Límites.** No aplica a VR (donde toda cámara no diegética es náusea garantizada) ni a cámaras de estrategia con control total del jugador, donde el contrato se invierte. Los porcentajes asumen 16:9; en ultrawide recalculá la deadzone en unidades de mundo, no de pantalla.
-**Fuentes.** [[05_Game_Feel]] · [[09_Gamers_Brain]] · [[10_Game_Usability]] · [[14_Fundamentals_of_Game_Design]] · [[13_Elements_of_Game_Design]] · [[12_Design_of_Everyday_Things]] · [[03_Game_Design_Workshop]] · [[29_Racing_the_Beam]] · [[01_Pong]].
-**Cruces.** [[05_Fundamentos_de_experiencia_ludica]] (P4, P5) · [[02_Game_feel]] · [[10_Input_y_respuesta]] · [[04_Playbook_de_diseno]].
+**Fuentes.** `05_Game_Feel` · `09_Gamers_Brain` · `10_Game_Usability` · `14_Fundamentals_of_Game_Design` · `13_Elements_of_Game_Design` · `12_Design_of_Everyday_Things` · `03_Game_Design_Workshop` · `29_Racing_the_Beam` · `01_Pong`.
+**Cruces.** `05_Fundamentos_de_experiencia_ludica` (P4, P5) · `02_Game_feel` · `10_Input_y_respuesta` · `04_Playbook_de_diseno`.
 
 ---

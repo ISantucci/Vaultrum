@@ -14,6 +14,12 @@ La Escuela **no mergea al Core**: sus salidas son candidatos, no cambios a `main
 
 ---
 
+## Registro
+
+### [[00_Indice_est|Índice de estudios (EST)]]
+
+---
+
 ## Regla de salida
 
 Cada `EST` cuelga de una misión de estudio (gap + presupuesto + barra). La numeración es propia del área y correlativa:

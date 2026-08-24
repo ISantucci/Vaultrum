@@ -23,7 +23,7 @@ Dos mitades que parecen opuestas y son la misma:
 - **Completo en experiencia** — las *table-stakes* de un entregable no se piden, se incluyen. Un juego no está terminado sin input → feedback, objetivo claro, victoria/derrota, estados y reinicio. El owner gasta sus pedidos en su idea, no en completar lo que cualquier versión competente ya debería traer.
 - **Mínimo en maquinaria** — no se enciende maquinaria que ningún requerimiento pidió. Una optimización sin encargo consume el mismo presupuesto que una feature que nadie pidió.
 
-Criterio completo: [[Baseline de entregable]].
+Criterio completo: `Baseline de entregable`.
 
 ### 2. La cadena con gates
 
@@ -45,7 +45,7 @@ commit al Core (Conocimiento)  ¿qué aprendizaje vuelve al sistema?
 
 **Un artefacto downstream no existe sin su insumo upstream.** Si falta, se marca y no se avanza. Eso es lo que impide saltear pasos, y lo que hace que una entrega no se dé por terminada porque compila.
 
-Detalle de la cadena, la numeración y los gates: [[02_Indice Agencia]].
+Detalle de la cadena, la numeración y los gates: `02_Indice Agencia`.
 
 ---
 
@@ -53,7 +53,7 @@ Detalle de la cadena, la numeración y los gates: [[02_Indice Agencia]].
 
 Al cargar Vaultrum como contexto, el asistente arranca en **Modo Vaultrum**: software asistente para la creación, con puerta de entrada en el **Productor** (Área de Producción), que pivotea entre áreas según haga falta.
 
-Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Ambos modos y el procedimiento del switch están en [[05_Modo_Operacion]].
+Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Ambos modos y el procedimiento del switch están en `05_Modo_Operacion`.
 
 ---
 
@@ -78,7 +78,7 @@ Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Am
 
 ---
 
-## 01_VaultrumCore
+## [[01_Indice VaultrumCore|01_VaultrumCore]]
 
 Es el corazón. Contiene principios, criterios, patrones de diseño, arquitectura, optimización, IA para juegos, estructuras de datos, algoritmos, managers y material reutilizable.
 
@@ -89,11 +89,11 @@ Y desde el primer ciclo completo, dos secciones que antes no tenía:
 
 VaultrumCore no ejecuta y no resuelve proyectos: **alimenta**. Se puede usar directo, sin pasar por ningún flujo.
 
-Entrada: [[01_Indice VaultrumCore]]
+Entrada: `01_Indice VaultrumCore`
 
 ---
 
-## 02_Agencia
+## [[02_Indice Agencia|02_Agencia]]
 
 La capa operativa. Seis **áreas**, cada una autocontenida —trae sus sub-agentes, su método, su producto y su skill ejecutable— y la salida de una es la entrada de la siguiente.
 
@@ -108,15 +108,27 @@ La capa operativa. Seis **áreas**, cada una autocontenida —trae sus sub-agent
 
 El hilo es de **Producción de punta a punta**: lo abre con la intención y lo cierra validando la entrega. Nada avanza sin su insumo, y nada se da por terminado porque compile.
 
-**Los bordes son donde falla.** El medio de la cadena funciona; la evidencia dice que fallan la entrada, las ramas opcionales y la salida. Las tres reglas que lo corrigen ya son pasos ejecutables de las skills, no criterio escrito. Detalle en [[02_Indice Agencia]].
+**Los bordes son donde falla.** El medio de la cadena funciona; la evidencia dice que fallan la entrada, las ramas opcionales y la salida. Las tres reglas que lo corrigen ya son pasos ejecutables de las skills, no criterio escrito. Detalle en `02_Indice Agencia`.
 
 ---
 
-## 03_Comunidad
+## [[03_Indice Comunidad|03_Comunidad]]
 
 La capa humana y pública: quién usa, estudia, adapta, corrige, propone o expande el sistema, bajo qué criterios y con qué límites.
 
-Entrada: [[03_Indice Comunidad]]
+Entrada: `03_Indice Comunidad`
+
+---
+
+## [[04_Indice IA Operativa|04_IA Operativa]]
+
+Cómo una IA opera el vault sin inflarlo: cuidado de tokens, prompteo, modo de operación y la pasada de GC de contexto.
+
+---
+
+## [[00_Escuela|05_Escuela]]
+
+La capa proactiva: la Biblioteca y las misiones de estudio que la llenan. El Core indexa; el peso vive acá y se carga on-demand.
 
 ---
 
@@ -147,21 +159,33 @@ Un entregable de software que no sea un juego recorre la misma cadena sin `GDS` 
 
 Lo que **sí** cambia es el baseline: las *table-stakes* de una herramienta no son las de un juego. En ese caso Producción declara de dónde sale el mínimo —de un libro de la Biblioteca, o fijado por el owner para esa entrega— en vez de improvisarlo.
 
-Advertencia honesta: **esto todavía no se probó.** Todo lo validado se validó sobre un mismo género. Ver [[00_Auditoria de arquitectura]].
+Advertencia honesta: **esto todavía no se probó.** Todo lo validado se validó sobre un mismo género. Ver `00_Auditoria de arquitectura`.
 
 ---
 
 ## Cómo recorrer Vaultrum
 
 ```txt
-el conocimiento central          → [[01_Indice VaultrumCore]]
-la cadena y las áreas            → [[02_Indice Agencia]]
-aportar, corregir, gobernanza    → [[03_Indice Comunidad]]
-cómo una IA opera el vault       → [[04_Indice IA Operativa]]
-la Escuela y su Biblioteca       → [[00_Escuela]]
-el estado real del sistema       → [[00_Auditoria de arquitectura]]
-lo que está por formalizarse     → [[00_Leyes de Vaultrum (bitacora)]]
+el conocimiento central          → 01_Indice VaultrumCore
+la cadena y las áreas            → 02_Indice Agencia
+aportar, corregir, gobernanza    → 03_Indice Comunidad
+cómo una IA opera el vault       → 04_Indice IA Operativa
+la Escuela y su Biblioteca       → 00_Escuela
+el estado real del sistema       → 00_Auditoria de arquitectura
+lo que está por formalizarse     → 00_Leyes de Vaultrum (bitacora)
 ```
+
+---
+
+## [[00_Auditoria de arquitectura|Auditoría de arquitectura]]
+
+El estado real del sistema: qué está construido, qué está a medias y qué se prometió sin construir. Se relee antes de dar por buena cualquier capacidad del vault.
+
+---
+
+## [[00_Leyes de Vaultrum (bitacora)|Leyes de Vaultrum (bitácora)]]
+
+Lo que el uso del propio sistema fue dejando como criterio y todavía no se formalizó en el Core. Es la antesala de una ley.
 
 ---
 

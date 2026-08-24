@@ -11,7 +11,7 @@ El resultado debe quedar registrado como timeline y requerimientos asociados al 
 ## Índices internos
 
 - [[00_Indice_timelines]]
-- [[00_indice_requerimientos]]
+- [[00_Indice_requerimientos|Índice de requerimientos]]
 - [[00_Indice_ve]]
 
 ---
@@ -28,8 +28,8 @@ Los requerimientos asociados usan el mismo número base con subnumeración.
 
 Ejemplo:
 
-RQ-001.1  
-RQ-001.2  
+RQ-001.1
+RQ-001.2
 RQ-001.3
 
 ---
@@ -40,10 +40,10 @@ La validación de entrega cuelga del timeline y **no lleva subnumeración**: val
 
 Ejemplo:
 
-TL-001  
+TL-001
 VE-001
 
-El gate de cierre está definido en [[02_Indice Agencia]].
+El gate de cierre está definido en `02_Indice Agencia`.
 
 ---
 
@@ -71,7 +71,7 @@ Luego se deben crear los requerimientos asociados usando el mismo numero base.
 
 Ejemplo:
 
-TL-001  
-RQ-001.1  
-RQ-001.2  
+TL-001
+RQ-001.1
+RQ-001.2
 RQ-001.3

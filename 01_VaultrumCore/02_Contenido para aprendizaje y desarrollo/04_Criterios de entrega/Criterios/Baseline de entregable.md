@@ -47,7 +47,7 @@ Un juego sin condicion de fin no es un juego incompleto: es un juguete. Un menu 
 
 Fuera de videojuegos la lista cambia y la regla no. Un script de linea de comandos sin mensaje de error util, sin codigo de salida y sin `--help` esta igual de incompleto. Un documento sin la pregunta que responde declarada arriba, tambien.
 
-**Donde vive la lista concreta.** El Core no la guarda: la guarda la Biblioteca de la Escuela, por genero y por tipo, y se consulta on-demand. Ver [[Experiencia de juego]] para el indice. Si el entregable es de un tipo que la Biblioteca no cubre, eso **no** se resuelve por intuicion: se declara como faltante y se manda a estudiar.
+**Donde vive la lista concreta.** El Core no la guarda: la guarda la Biblioteca de la Escuela, por genero y por tipo, y se consulta on-demand. Ver `Experiencia de juego` para el indice. Si el entregable es de un tipo que la Biblioteca no cubre, eso **no** se resuelve por intuicion: se declara como faltante y se manda a estudiar.
 
 ---
 
@@ -73,7 +73,7 @@ un solo Update
 
 Misma decision tecnica. Distinta justificacion. Solo una de las dos se puede defender frente a quien pidio el trabajo.
 
-Ver [[Cuando NO optimizar]] para el desarrollo de esta mitad aplicado a rendimiento.
+Ver `Cuando NO optimizar` para el desarrollo de esta mitad aplicado a rendimiento.
 
 ---
 

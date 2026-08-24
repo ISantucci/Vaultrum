@@ -5,7 +5,7 @@ autores: Jesper Juul
 editorial: MIT Press
 anio: 2005
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: reglas vs ficción, definición de juego, ontología del videojuego
 ---
 

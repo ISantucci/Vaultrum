@@ -8,9 +8,7 @@ Cada `LDS-XXX.n` es un nivel/escenario jugable diseñado y validado para un `GDS
 
 ## Registro
 
-| LDS | Insumo (GDS) | Nivel | Estado |
-|-----|--------------|-------|--------|
-| — | — | (sin salidas todavía) | — |
+Todavía no hay ninguna. El primer `LDS` entra cuando un `GDS` cerrado declare que el nivel aplica.
 
 ---
 

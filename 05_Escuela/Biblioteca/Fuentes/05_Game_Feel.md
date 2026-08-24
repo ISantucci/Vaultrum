@@ -5,7 +5,7 @@ autores: Steve Swink
 editorial: CRC Press / Morgan Kaufmann
 anio: 2008
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: game feel, control en tiempo real, juice, respuesta percibida
 ---
 
@@ -25,7 +25,7 @@ Define el **game feel** como control en tiempo real de un avatar dentro de un es
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Fuente primaria del libro [[02_Game_feel]]: aporta el modelo formal de sensación de control y el concepto de juice para el feedback del [[01_Loop_de_experiencia]].
+Fuente primaria del libro `02_Game_feel`: aporta el modelo formal de sensación de control y el concepto de juice para el feedback del `01_Loop_de_experiencia`.
 
 ## Estado y próximos pasos
 

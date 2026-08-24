@@ -1,7 +1,7 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: transversal de proceso
 cruza: 19_Playful_Production_Process, 03_Definicion_de_terminado, 04_Playbook_de_diseno, 01_Loop_de_experiencia
 ---
@@ -147,7 +147,7 @@ El orden importa: **feel → comprensión → diversión → viabilidad**. Si el
 - **La lista NO.** Documento vivo de cortes con fecha y motivo. *Cuándo:* desde el día uno. *Costo:* 20 minutos por semana.
 - **Timebox de rescate.** Si un feature pasa el doble de su estimación, se degrada a la versión simple o se corta. Decisión tomada de antemano, no en el momento de frustración. *Cuándo:* siempre. *Costo:* ninguno; el costo es no tenerlo.
 - **Congelar hacia atrás.** Freeze escalonado (features → contenido → bugs) en vez de un único "ya está". *Cuándo:* último 30%. *Costo:* requiere haber reservado ese 30%.
-- **El juego chico primero.** Terminar y publicar algo del tamaño de un [[01_Pong]] antes del proyecto grande. *Cuándo:* si nunca terminaste nada. *Costo:* 2–4 semanas que parecen desvío y son la inversión más rentable del proyecto grande.
+- **El juego chico primero.** Terminar y publicar algo del tamaño de un `01_Pong` antes del proyecto grande. *Cuándo:* si nunca terminaste nada. *Costo:* 2–4 semanas que parecen desvío y son la inversión más rentable del proyecto grande.
 - **Definición de terminado por entregable.** Cada tarea tiene su criterio de cierre escrito antes de empezarla. *Cuándo:* siempre. Ver [[03_Definicion_de_terminado]].
 
 ## Antipatrones
@@ -203,5 +203,5 @@ El orden importa: **feel → comprensión → diversión → viabilidad**. Si el
 
 **Límites.** Este libro asume un dev solo o un equipo de 2–3 personas, autofinanciado, sin fecha externa impuesta. No cubre planificación con publisher, hitos contractuales, ni coordinación de equipos donde el problema deja de ser el alcance y pasa a ser la comunicación. Los ratios de contenido son baseline sugerido a partir de estructura de trabajo típica: medí los tuyos en la primera vertical slice y reemplazalos, porque los tuyos son los únicos que importan.
 
-**Fuentes.** [[19_Playful_Production_Process]] · [[03_Game_Design_Workshop]] · [[02_Art_of_Game_Design]] · [[16_Advanced_Game_Design]] · [[13_Elements_of_Game_Design]] · [[08_Designing_Games]]
-**Cruces.** [[03_Definicion_de_terminado]] (el criterio de cierre por entregable que este libro presupone) · [[04_Playbook_de_diseno]] · [[01_Loop_de_experiencia]] (el loop es lo último que se recorta) · [[05_Fundamentos_de_experiencia_ludica]] · [[01_Pong]] (el juego chico como entrenamiento de cierre)
+**Fuentes.** `19_Playful_Production_Process` · `03_Game_Design_Workshop` · `02_Art_of_Game_Design` · `16_Advanced_Game_Design` · `13_Elements_of_Game_Design` · `08_Designing_Games`
+**Cruces.** `03_Definicion_de_terminado` (el criterio de cierre por entregable que este libro presupone) · `04_Playbook_de_diseno` · `01_Loop_de_experiencia` (el loop es lo último que se recorta) · `05_Fundamentos_de_experiencia_ludica` · `01_Pong` (el juego chico como entrenamiento de cierre)

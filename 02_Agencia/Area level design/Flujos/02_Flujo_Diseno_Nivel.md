@@ -35,7 +35,7 @@ Convertir el encuadre espacial en un `LDS`: layout, encuentros, pacing y dificul
 
 ## Condiciones para avanzar
 
-Avanza al [[03_Flujo_Validacion_Nivel]] con el `LDS` abierto y completo.
+Avanza al `03_Flujo_Validacion_Nivel` con el `LDS` abierto y completo.
 
 ## Qué debe evitar
 

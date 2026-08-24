@@ -5,7 +5,7 @@ autores: Katie Salen & Eric Zimmerman (eds.)
 editorial: MIT Press
 anio: 2006
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: antología, textos fundacionales, teoría de juego, lecturas críticas
 ---
 
@@ -25,7 +25,7 @@ Antología complementaria de *Rules of Play*: reúne **textos fundacionales** so
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Índice-guía de la propia Biblioteca: señala qué fuentes primarias vale la pena destilar y conecta a [[01_Rules_of_Play]]. Útil para priorizar próximas misiones de estudio.
+Índice-guía de la propia Biblioteca: señala qué fuentes primarias vale la pena destilar y conecta a `01_Rules_of_Play`. Útil para priorizar próximas misiones de estudio.
 
 ## Estado y próximos pasos
 

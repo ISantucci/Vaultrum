@@ -6,7 +6,15 @@ La Biblioteca es el **corazón de la Escuela**: el espacio donde se guardan los 
 
 No es un catálogo de juegos ni una lista de 500 títulos. Es una colección de **libros** curados, cada uno con índice y metadata, indexados para consultarse por categoría.
 
-> **Portada:** [[00_Catalogo_Biblioteca]] — índice maestro de todo lo ya sumado, separado por categoría. La skill lo actualiza al cerrar cada corrida.
+> **Portada:** `00_Catalogo_Biblioteca` — índice maestro de todo lo ya sumado, separado por categoría. La skill lo actualiza al cerrar cada corrida.
+
+---
+
+## Portada
+
+### [[00_Catalogo_Biblioteca|Catálogo de la Biblioteca]]
+
+Índice maestro de todo lo ya sumado, separado por categoría. La skill lo actualiza al cerrar cada corrida.
 
 ---
 
@@ -50,7 +58,7 @@ mision: [[EST-XXX_...]]
 
 Los libros de **Fundamentos** no llevan `genero`; los de **Juegos**, sí.
 
-Los **documentos** del cuarto estante no siguen esta anatomía: son fichas de artefacto, con su propia metadata (`familia`, `autor`, `anio`, `formato`, `acceso`, `licencia`, `prioridad`, `url`). Ver [[00_Indice_documentos]].
+Los **documentos** del cuarto estante no siguen esta anatomía: son fichas de artefacto, con su propia metadata (`familia`, `autor`, `anio`, `formato`, `acceso`, `licencia`, `prioridad`, `url`). Ver `00_Indice_documentos`.
 
 ---
 

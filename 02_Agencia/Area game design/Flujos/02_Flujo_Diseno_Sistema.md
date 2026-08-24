@@ -51,8 +51,8 @@ Si el encuadre no trae experiencia clara, vuelve al Analista.
 
 ## Condiciones para avanzar
 
-Avanza al [[03_Flujo_Balance]] cuando las reglas están cerradas.
-Si el sistema tiene números relevantes, pasa por Balance; si no, puede saltar directo a [[04_Flujo_Validacion_Diseno]].
+Avanza al `03_Flujo_Balance` cuando las reglas están cerradas.
+Si el sistema tiene números relevantes, pasa por Balance; si no, puede saltar directo a `04_Flujo_Validacion_Diseno`.
 Si el encuadre era insuficiente, rebota al Analista.
 
 ---

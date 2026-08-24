@@ -104,9 +104,9 @@ No es una sección de técnica. Define qué se le puede exigir a una entrega ant
 
 Incluye:
 
-- [[Baseline de entregable]] — completo en experiencia, mínimo en maquinaria;
-- [[Verificacion parcial declarada]] — cómo se declara lo que se verificó y lo que no;
-- [[Gates verificables]] — por qué las cadenas de trabajo fallan en los bordes.
+- `Baseline de entregable` — completo en experiencia, mínimo en maquinaria;
+- `Verificacion parcial declarada` — cómo se declara lo que se verificó y lo que no;
+- `Gates verificables` — por qué las cadenas de trabajo fallan en los bordes.
 
 Usar esta sección cuando el problema esté relacionado con:
 

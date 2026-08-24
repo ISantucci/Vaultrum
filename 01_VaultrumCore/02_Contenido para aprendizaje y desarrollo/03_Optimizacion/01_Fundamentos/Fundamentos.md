@@ -131,7 +131,7 @@ Consultar antes de proponer cualquier solucion de rendimiento.
 
 Explica por que una optimizacion tambien necesita encargo, y no solo evidencia.
 
-Consultar antes de [[Medir antes de optimizar]]: primero se decide si corresponde optimizar, despues con que evidencia.
+Consultar antes de `Medir antes de optimizar`: primero se decide si corresponde optimizar, despues con que evidencia.
 
 ---
 

@@ -5,7 +5,7 @@ autores: Raph Koster
 editorial: O'Reilly / Paraglyph
 anio: 2004; 2013 (2ª)
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: diversión como aprendizaje, patrones, curva de dominio
 ---
 
@@ -25,7 +25,7 @@ Tesis: la **diversión es el acto de aprender** patrones. Un juego entretiene mi
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Fundamento para diseñar progresión y dificultad: mantener el flujo de patrones nuevos alimenta el [[01_Loop_de_experiencia]]. Marco para razonar cuándo un sistema se agota o se vuelve trivial.
+Fundamento para diseñar progresión y dificultad: mantener el flujo de patrones nuevos alimenta el `01_Loop_de_experiencia`. Marco para razonar cuándo un sistema se agota o se vuelve trivial.
 
 ## Estado y próximos pasos
 

@@ -32,7 +32,7 @@ python "04_IA Operativa/Herramientas/contar_contexto.py" diff \
 ```
 
 **Si podés correr el script, corrélo.** Un número medido reemplaza a cualquier apreciación.
-**Si no podés correrlo** (sin acceso a shell), decilo en el bloque de medición con esas palabras: *"medición no disponible — estimación"*. No presentes una estimación como si fuera un conteo. Es el mismo criterio que [[Verificacion parcial declarada]] en el Core.
+**Si no podés correrlo** (sin acceso a shell), decilo en el bloque de medición con esas palabras: *"medición no disponible — estimación"*. No presentes una estimación como si fuera un conteo. Es el mismo criterio que `Verificacion parcial declarada` en el Core.
 
 El script declara en cada salida si contó exacto (con tokenizador instalado) o aproximó (heurística, ±12%). Ese modo se copia tal cual en la salida del pass.
 

@@ -5,7 +5,7 @@ autores: Jesper Juul
 editorial: MIT Press
 anio: 2013
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: fracaso, dificultad, paradoja del fracaso, motivación, aprendizaje
 ---
 
@@ -25,7 +25,7 @@ Explora la **paradoja del fracaso**: buscamos juegos que nos hacen sentir mal al
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Fundamento para diseñar derrota/dificultad en Vaultrum: cómo el fracaso alimenta la mejora en vez de expulsar. Insumo directo para la rama victoria/derrota del [[01_Loop_de_experiencia]].
+Fundamento para diseñar derrota/dificultad en Vaultrum: cómo el fracaso alimenta la mejora en vez de expulsar. Insumo directo para la rama victoria/derrota del `01_Loop_de_experiencia`.
 
 ## Estado y próximos pasos
 

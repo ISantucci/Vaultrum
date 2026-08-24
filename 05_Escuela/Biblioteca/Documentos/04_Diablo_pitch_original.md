@@ -4,11 +4,11 @@ familia: GDD / design bible histórico
 autor: David Brevik — Condor, Inc.
 anio: 1994
 formato: Pitch
-acceso: Libre — **liberado por el propio autor** tras su postmortem 
+acceso: Libre — **liberado por el propio autor** tras su postmortem
 licencia: a confirmar
 prioridad: alta
 estado: Catalogado
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 url: http://www.graybeardgames.com/download/diablo_pitch.pdf
 ---
 
@@ -33,6 +33,10 @@ url: http://www.graybeardgames.com/download/diablo_pitch.pdf
 
 ---
 
-## Estante
+## Hacia donde seguir
 
-Ficha del estante [[00_Indice_documentos]] · registrada en [[00_Catalogo_Biblioteca]] · misión [[EST-006_Mision_Lote_Biblioteca_Agosto26]].
+Esta ficha pertenece al estante de Documentacion real.
+
+Para volver al estante y ver el resto de los documentos:
+
+→ [[00_Indice_documentos]]

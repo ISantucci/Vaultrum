@@ -23,17 +23,15 @@ Es la unica seccion del Core que enlaza hacia la Biblioteca. Lo hace por diseno:
 
 ---
 
-## Estante de Fundamentos (transversal a todo genero)
-
-Indice completo: [[00_Indice_fundamentos]]
+## [[00_Indice_fundamentos|Estante de Fundamentos (transversal a todo genero)]]
 
 | Libro | Que responde | Cuando cargarlo |
 |-------|--------------|-----------------|
-| [[04_Playbook_de_diseno]] | principios accionables ordenados **por funcion** (mostrar, guiar, feel, decisiones, retener, sistemas, emocion, marco, produccion, restricciones) | cuando se sabe *que se quiere lograr* y falta como |
-| [[05_Fundamentos_de_experiencia_ludica]] | los 9 pilares de por que algo **se siente bien**, con checklist verificable por especificacion | al disenar o revisar un sistema jugable |
-| [[01_Loop_de_experiencia]] | input → feedback → objetivo → victoria/derrota; loops anidados | cuando hay dudas de si lo que hay es un juego o un juguete |
-| [[02_Game_feel]] | juice, peso, respuesta al control | cuando el sistema funciona y no se siente |
-| [[03_Definicion_de_terminado]] | la checklist que separa *compila* de *esta hecho* | antes de dar cualquier entregable por terminado |
+| 04_Playbook_de_diseno | principios accionables ordenados **por funcion** (mostrar, guiar, feel, decisiones, retener, sistemas, emocion, marco, produccion, restricciones) | cuando se sabe *que se quiere lograr* y falta como |
+| 05_Fundamentos_de_experiencia_ludica | los 9 pilares de por que algo **se siente bien**, con checklist verificable por especificacion | al disenar o revisar un sistema jugable |
+| 01_Loop_de_experiencia | input → feedback → objetivo → victoria/derrota; loops anidados | cuando hay dudas de si lo que hay es un juego o un juguete |
+| 02_Game_feel | juice, peso, respuesta al control | cuando el sistema funciona y no se siente |
+| 03_Definicion_de_terminado | la checklist que separa *compila* de *esta hecho* | antes de dar cualquier entregable por terminado |
 
 Los dos primeros estan destilados y completos. Los otros tres son mas chicos y crecen por mision de la Escuela.
 
@@ -41,13 +39,11 @@ Los dos primeros estan destilados y completos. Los otros tres son mas chicos y c
 
 ---
 
-## Estante de Juegos (por genero)
-
-Indice completo: [[00_Indice_juegos]]
+## [[00_Indice_juegos|Estante de Juegos (por genero)]]
 
 | Genero | Tipo | Libro |
 |--------|------|-------|
-| Arcade | Paleta-y-pelota | [[01_Pong]] |
+| Arcade | Paleta-y-pelota | 01_Pong |
 
 El estante crece de a un libro por genero, por mision de la Escuela.
 
@@ -68,7 +64,7 @@ El estante crece de a un libro por genero, por mision de la Escuela.
      se declara el faltante y se deriva a la Escuela
 ```
 
-El paso 4 no es opcional. Es la regla de borde de [[Gates verificables]]: el insumo se verifica antes de consumirlo. Un libro vacio consumido como si tuviera contenido fue exactamente lo que hundio una entrega.
+El paso 4 no es opcional. Es la regla de borde de `Gates verificables`: el insumo se verifica antes de consumirlo. Un libro vacio consumido como si tuviera contenido fue exactamente lo que hundio una entrega.
 
 ---
 
@@ -89,7 +85,7 @@ Conocimiento    → para decidir que de la Biblioteca se promueve a criterio ind
 Las dos secciones se necesitan y no se superponen:
 
 ```txt
-[[Baseline de entregable]]     → dice que TIENE QUE HABER un minimo por tipo
+Baseline de entregable     → dice que TIENE QUE HABER un minimo por tipo
 esta seccion                   → dice DONDE ESTA ese minimo, por tipo
 ```
 
@@ -103,6 +99,6 @@ La primera es la regla. Esta es el indice. Si la regla existe y el indice esta v
 Esta seccion indexa. No copia.
 ```
 
-Si un contenido de la Biblioteca aparece transcrito aca, es duplicacion: se borra y se deja el link. Lo unico que puede crecer en esta seccion es la tabla.
+Si un contenido de la Biblioteca aparece transcrito aca, es duplicacion: se borra y se deja el puntero al estante. Lo unico que puede crecer en esta seccion es la tabla.
 
 Que un libro se promueva a criterio propio del Core —dejando de ser referencia y pasando a ser regla— lo decide el Area de Conocimiento con aprobacion del owner. Hasta entonces, se indexa.

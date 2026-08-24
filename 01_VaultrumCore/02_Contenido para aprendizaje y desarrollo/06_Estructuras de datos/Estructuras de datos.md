@@ -62,10 +62,10 @@ Pathfinding
 ## Estructuras incluidas
 
 ```txt
-[[Stack]]
-[[Queue]]
-[[Grafos]]
-[[ABB]]
+Stack
+Queue
+Grafos
+ABB
 ```
 
 ---

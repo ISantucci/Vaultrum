@@ -5,7 +5,7 @@ autores: Espen Aarseth
 editorial: Johns Hopkins University Press
 anio: 1997
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: literatura ergódica, cibertexto, esfuerzo no trivial, textones/scriptons
 ---
 

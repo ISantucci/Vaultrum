@@ -33,7 +33,7 @@ Transformar un `GDS` cerrado en un encuadre espacial: qué experiencia de recorr
 
 ## Condiciones para avanzar
 
-Avanza al [[02_Flujo_Diseno_Nivel]] cuando la experiencia de recorrido está clara. No avanza si falta dimensión espacial o info crítica.
+Avanza al `02_Flujo_Diseno_Nivel` cuando la experiencia de recorrido está clara. No avanza si falta dimensión espacial o info crítica.
 
 ## Resultado final
 

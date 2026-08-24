@@ -47,7 +47,7 @@ Destino: `C:\Users\ControlEquipos\Desktop\a\vaultrumtest2` (carpeta vacía; la i
 [x] -define:ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER      → 0 errores
 ```
 
-Esto **no** reemplaza abrir Unity: verifica sintaxis, tipos y firmas del código propio, no que la escena se genere, que los materiales resuelvan el shader `Standard` ni que el juego se sienta bien. Es exactamente la distinción que dejó [[VE-002_Pong3D]] en PAUSADO — *verificar el código no es verificar la entrega* — y por eso se declara acá con su alcance en vez de presentarse como validación.
+Esto **no** reemplaza abrir Unity: verifica sintaxis, tipos y firmas del código propio, no que la escena se genere, que los materiales resuelvan el shader `Standard` ni que el juego se sienta bien. Es exactamente la distinción que dejó `VE-002_Pong3D` en PAUSADO — *verificar el código no es verificar la entrega* — y por eso se declara acá con su alcance en vez de presentarse como validación.
 
 **Revisión de contrato hecha leyendo el código:**
 

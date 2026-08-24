@@ -5,7 +5,7 @@ autores: Roger Caillois
 editorial: (orig. 1958) University of Illinois Press
 anio: 1958 (orig.); 1961 (ing.)
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: taxonomía del juego, agon/alea/mimicry/ilinx, paidia vs ludus
 ---
 
@@ -25,7 +25,7 @@ Clasifica el juego en cuatro categorías — **agôn** (competencia), **alea** (
 
 ## Por qué le sirve a Vaultrum (a qué apunta)
 
-Taxonomía útil para ubicar el tipo de placer que ofrece cada juego de Vaultrum y balancear sus ingredientes (competencia/azar/rol/vértigo). Extiende a [[22_Homo_Ludens]].
+Taxonomía útil para ubicar el tipo de placer que ofrece cada juego de Vaultrum y balancear sus ingredientes (competencia/azar/rol/vértigo). Extiende a `22_Homo_Ludens`.
 
 ## Estado y próximos pasos
 

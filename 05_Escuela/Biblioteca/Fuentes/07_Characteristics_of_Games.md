@@ -5,7 +5,7 @@ autores: George Skaff Elias, Richard Garfield & K. Robert Gutschera
 editorial: MIT Press
 anio: 2012
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: taxonomía de juegos, longitud, azar vs skill, heurísticas de diseño
 ---
 

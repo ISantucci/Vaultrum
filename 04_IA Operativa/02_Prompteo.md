@@ -25,7 +25,7 @@ Cada `SKILL.md` de un área es un prompt operativo persistente. Cuando se escrib
 
 ## Dar Vaultrum de contexto sin saturar
 
-Dar el vault entero de contexto es caro e innecesario (ver [[01_Cuidado de tokens]]). En cambio:
+Dar el vault entero de contexto es caro e innecesario (ver `01_Cuidado de tokens`). En cambio:
 
 ```
 Cargar el índice de la capa/área que aplica

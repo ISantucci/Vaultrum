@@ -6,8 +6,8 @@ editorial: MIT Press
 anio: 2003/2004
 prologo: Frank Lantz
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-002_Mision_Catalogo_RulesOfPlay]]
-alimenta: [[01_Loop_de_experiencia]], [[02_Game_feel]], [[03_Definicion_de_terminado]]
+mision: EST-002_Mision_Catalogo_RulesOfPlay
+alimenta: 01_Loop_de_experiencia, 02_Game_feel, 03_Definicion_de_terminado
 ---
 
 # Fuente 01 — Rules of Play: Game Design Fundamentals
@@ -36,9 +36,9 @@ El libro organiza ~18 marcos conceptuales ("game design schemas") en tres nivele
 
 Es material de primera línea para el estante de **Fundamentos**:
 
-- El **loop de experiencia** ([[01_Loop_de_experiencia]]) se conecta con "meaningful play": acción → resultado discernible e integrado.
-- El **game feel** ([[02_Game_feel]]) se cruza con el nivel "Play" (placer, respuesta percibida).
-- La **definición de terminado** ([[03_Definicion_de_terminado]]) puede apoyarse en el nivel "Rules" (sistema formal completo, sin estados muertos).
+- El **loop de experiencia** (`01_Loop_de_experiencia`) se conecta con "meaningful play": acción → resultado discernible e integrado.
+- El **game feel** (`02_Game_feel`) se cruza con el nivel "Play" (placer, respuesta percibida).
+- La **definición de terminado** (`03_Definicion_de_terminado`) puede apoyarse en el nivel "Rules" (sistema formal completo, sin estados muertos).
 
 ## Estado y próximos pasos
 

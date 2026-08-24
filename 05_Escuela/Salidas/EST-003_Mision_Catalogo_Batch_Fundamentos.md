@@ -4,7 +4,7 @@
 
 Tipo de misión: **catálogo + aprendizaje liviano de fuente** (no destilación profunda). Por pedido del owner: sumar los libros a la Biblioteca en la zona correcta (estante **Fuentes**) y aprenderlos a nivel de marco para saber qué puede aportar cada uno; la destilación a Fundamentos/Juegos queda para misiones futuras.
 
-Salida del [[01_Flujo_Mision_Estudio]] (rol: [[01_Bibliotecario]]).
+Salida del `01_Flujo_Mision_Estudio` (rol: `01_Bibliotecario`).
 
 ---
 
@@ -18,7 +18,7 @@ Se considera **respondida** cuando cada libro tiene una ficha de fuente cataloga
 
 ## Dedup contra el Core y la Biblioteca
 
-- **Rules of Play (Salen & Zimmerman)** ya existía como [[01_Rules_of_Play]] (EST-002). **No se duplica**: queda como está.
+- **Rules of Play (Salen & Zimmerman)** ya existía como `01_Rules_of_Play` (EST-002). **No se duplica**: queda como está.
 - Los otros **28 libros son alta nueva**: fuentes 02–29. Ninguno tenía ficha previa.
 
 ---

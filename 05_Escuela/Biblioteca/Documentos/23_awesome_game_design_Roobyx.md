@@ -4,11 +4,11 @@ familia: Colección / repositorio de documentos
 autor: comunidad GitHub, mantenido
 anio: —
 formato: Colección / awesome list
-acceso: Libre, repo público (las awesome lists suelen ser CC0/MIT — 
+acceso: Libre, repo público (las awesome lists suelen ser CC0/MIT —
 licencia: explícita
 prioridad: alta
 estado: Catalogado
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 url: https://github.com/Roobyx/awesome-game-design
 ---
 
@@ -33,6 +33,10 @@ url: https://github.com/Roobyx/awesome-game-design
 
 ---
 
-## Estante
+## Hacia donde seguir
 
-Ficha del estante [[00_Indice_documentos]] · registrada en [[00_Catalogo_Biblioteca]] · misión [[EST-006_Mision_Lote_Biblioteca_Agosto26]].
+Esta ficha pertenece al estante de Documentacion real.
+
+Para volver al estante y ver el resto de los documentos:
+
+→ [[00_Indice_documentos]]

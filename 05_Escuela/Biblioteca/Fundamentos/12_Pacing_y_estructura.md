@@ -1,7 +1,7 @@
 ---
 tipo: fundamento
 estado: En estudio
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 8 — Ritmo y pacing
 cruza: 05_Fundamentos_de_experiencia_ludica, 01_Loop_de_experiencia, 04_Playbook_de_diseno
 ---
@@ -179,9 +179,9 @@ PACING Y ESTRUCTURA — pegar en el GDS / LDS
 ```
 
 ## Aplicación · Límites · Fuentes
-**Aplicación.** La planilla de curva es entregable del LDS: una fila por minuto, con intensidad prevista, tipo, novedad y punto de salida. La auditoría de cinco chequeos entra en [[03_Definicion_de_terminado]] como criterio de cierre de nivel.
+**Aplicación.** La planilla de curva es entregable del LDS: una fila por minuto, con intensidad prevista, tipo, novedad y punto de salida. La auditoría de cinco chequeos entra en `03_Definicion_de_terminado` como criterio de cierre de nivel.
 **Límites.** No aplica tal cual a juegos sin narrativa espacial (puzzle infinito, roguelike puro, sandbox) donde el pacing lo genera el sistema: ahí se diseña la **distribución** de intensidad, no la curva. Tampoco cubre pacing de sesiones sociales, donde el grupo impone su propio ritmo.
-**Fuentes.** [[08_Designing_Games]] · [[04_Theory_of_Fun]] · [[02_Art_of_Game_Design]] · [[03_Game_Design_Workshop]] · [[13_Elements_of_Game_Design]] · [[14_Fundamentals_of_Game_Design]] · [[16_Advanced_Game_Design]] · [[17_Uncertainty_in_Games]] · [[18_Art_of_Failure]] · [[11_How_Games_Move_Us]] · [[19_Playful_Production_Process]].
-**Cruces.** [[05_Fundamentos_de_experiencia_ludica]] (P8, P6, P7) · [[01_Loop_de_experiencia]] · [[04_Playbook_de_diseno]] · [[13_Playtesting_y_validacion]].
+**Fuentes.** `08_Designing_Games` · `04_Theory_of_Fun` · `02_Art_of_Game_Design` · `03_Game_Design_Workshop` · `13_Elements_of_Game_Design` · `14_Fundamentals_of_Game_Design` · `16_Advanced_Game_Design` · `17_Uncertainty_in_Games` · `18_Art_of_Failure` · `11_How_Games_Move_Us` · `19_Playful_Production_Process`.
+**Cruces.** `05_Fundamentos_de_experiencia_ludica` (P8, P6, P7) · `01_Loop_de_experiencia` · `04_Playbook_de_diseno` · `13_Playtesting_y_validacion`.
 
 ---

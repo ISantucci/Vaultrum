@@ -8,7 +8,7 @@ acceso: **Bloqueado / problemático
 licencia: bloqueada
 prioridad: baja
 estado: Catalogado
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 url: https://github.com/Clownacy/CSE2
 ---
 
@@ -16,7 +16,7 @@ url: https://github.com/Clownacy/CSE2
 
 > Artefacto real de la industria, catalogado para consulta del Productor y de Game Design.
 > **IP:** ficha + referencia. La Biblioteca no aloja ni reproduce el documento original.
-> **Acceso bloqueado (nivel C).** La fuente devolvió un bloqueo legal. Queda registrada como referencia y como precedente de política, no como material de consulta. Ver la regla de tres niveles en [[00_Indice_documentos]].
+> **Acceso bloqueado (nivel C).** La fuente devolvió un bloqueo legal. Queda registrada como referencia y como precedente de política, no como material de consulta. Ver la regla de tres niveles en `00_Indice_documentos`.
 
 ---
 
@@ -32,6 +32,10 @@ url: https://github.com/Clownacy/CSE2
 
 ---
 
-## Estante
+## Hacia donde seguir
 
-Ficha del estante [[00_Indice_documentos]] · registrada en [[00_Catalogo_Biblioteca]] · misión [[EST-006_Mision_Lote_Biblioteca_Agosto26]].
+Esta ficha pertenece al estante de Documentacion real.
+
+Para volver al estante y ver el resto de los documentos:
+
+→ [[00_Indice_documentos]]

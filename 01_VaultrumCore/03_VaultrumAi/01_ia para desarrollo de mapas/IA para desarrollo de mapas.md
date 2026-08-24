@@ -59,7 +59,7 @@ No es responsabilidad principal de esta sección explicar percepción, estados, 
 
 Esos temas pertenecen a:
 
-[[IA para NPC]]
+`IA para NPC`
 
 ---
 

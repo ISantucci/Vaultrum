@@ -4,11 +4,11 @@ familia: Documentación oficial de motor
 autor: Unity Technologies, con aportes de Wilmer Lin; edición ampliada reciente
 anio: —
 formato: Doc técnica oficial / e-book
-acceso: Gratis, pero **requiere formulario/cuenta** en el portal de 
+acceso: Gratis, pero **requiere formulario/cuenta** en el portal de
 licencia: a confirmar
 prioridad: alta
 estado: Catalogado
-mision: [[EST-006_Mision_Lote_Biblioteca_Agosto26]]
+mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 url: https://unity.com/resources/level-up-your-code-with-game-programming-patterns
 ---
 
@@ -33,6 +33,10 @@ url: https://unity.com/resources/level-up-your-code-with-game-programming-patter
 
 ---
 
-## Estante
+## Hacia donde seguir
 
-Ficha del estante [[00_Indice_documentos]] · registrada en [[00_Catalogo_Biblioteca]] · misión [[EST-006_Mision_Lote_Biblioteca_Agosto26]].
+Esta ficha pertenece al estante de Documentacion real.
+
+Para volver al estante y ver el resto de los documentos:
+
+→ [[00_Indice_documentos]]

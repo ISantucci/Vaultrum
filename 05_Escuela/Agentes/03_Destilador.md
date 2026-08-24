@@ -33,7 +33,7 @@ No destila material sin citar ni fuera de la misión.
 
 Leer el material bruto y separar el principio reutilizable del caso puntual.
 Escribir el fundamento como criterio: qué es, cuándo se aplica como baseline, cuándo no.
-Volcarlo al **libro que corresponde**: un libro de [[00_Indice_fundamentos|Fundamentos]] si es transversal, o uno de [[00_Indice_juegos|Juegos]] (con género/tipo) si es específico de un juego. Actualiza el libro existente antes de crear uno nuevo.
+Volcarlo al **libro que corresponde**: un libro de `Fundamentos` si es transversal, o uno de `Juegos` (con género/tipo) si es específico de un juego. Actualiza el libro existente antes de crear uno nuevo.
 Mantener la cita de cada fuente que sostiene el principio.
 Dejar el candidato `EST` con la estructura del área, listo para validar.
 

@@ -16,13 +16,13 @@ TL-003
   GDS-003.0 (marco comun, sin RQ propio)                                 [completo]
 ```
 
-Sin eslabones faltantes. `LDS` no aplica y está declarado en el `TL` y en el `GDS-003.0` con su motivo (no hay dimensión espacial que componer). `UXS` **sí** aplica, al revés que en [[VE-002_Pong3D]], y produjo las dos primeras salidas del Área de UI/UX del vault.
+Sin eslabones faltantes. `LDS` no aplica y está declarado en el `TL` y en el `GDS-003.0` con su motivo (no hay dimensión espacial que componer). `UXS` **sí** aplica, al revés que en `VE-002_Pong3D`, y produjo las dos primeras salidas del Área de UI/UX del vault.
 
 ## Contra los insumos de la Biblioteca
 
 Es la diferencia estructural con TL-002 y por eso se verifica primero.
 
-| Table-stake del libro [[01_Pong]] | Cubierto en | Implementado |
+| Table-stake del libro 01_Pong | Cubierto en | Implementado |
 |---|---|---|
 | 1 · Dos paletas en un eje, con límites | `RQ-003.2` / `GDS-003.2` | `PaddleController` |
 | 2 · Pelota que nunca atraviesa nada | `RQ-003.3` / `GDS-003.3` r.7 | Substepping + cruce de plano |
@@ -46,7 +46,7 @@ Los siete están implementados según el `EJ-003`. **Verificado leyendo el códi
 
 ## Definición de Terminado
 
-La checklist de 18 ítems del libro [[01_Pong]], que se corre **sobre el juego corriendo**:
+La checklist de 18 ítems del libro `01_Pong`, que se corre **sobre el juego corriendo**:
 
 ```txt
 LOOP

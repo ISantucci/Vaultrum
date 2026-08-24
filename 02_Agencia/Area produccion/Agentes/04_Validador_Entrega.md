@@ -41,7 +41,7 @@ Jalar **on-demand** el libro `05_Fundamentos_de_experiencia_ludica` de la Biblio
 
 Verificar la trazabilidad del timeline: `TL → RQ → GDS → (LDS / UXS) → SOL → EJ`. Si falta un eslabón que correspondía, marcarlo.
 
-Correr la definición de terminado. Ese checklist **no se le pide al owner**: se da por incluido, porque las table-stakes de un entregable no son trabajo que él tenga que solicitar (ver la ley candidata #1 en [[00_Leyes de Vaultrum (bitacora)]], todavía sin ratificar).
+Correr la definición de terminado. Ese checklist **no se le pide al owner**: se da por incluido, porque las table-stakes de un entregable no son trabajo que él tenga que solicitar (ver la ley candidata #1 en `00_Leyes de Vaultrum (bitacora)`, todavía sin ratificar).
 
 Cuando corresponda, marcar el aprendizaje reutilizable y derivarlo al **Área de Conocimiento**. Producción no lo formaliza: lo marca.
 
@@ -65,15 +65,15 @@ No cierra por cansancio. Si el resultado es "funciona pero no es bueno", el esta
 
 Un **`VE-XXX`** que deje la entrega en un estado declarado: **Cerrado**, **Ajustar** (con el área destino de cada hallazgo) o **Pausado** (con lo que falta para poder validar).
 
-El formato de salida y los criterios de aceptación viven en el documento del flujo; el gate de cierre, en [[02_Indice Agencia]].
+El formato de salida y los criterios de aceptación viven en el documento del flujo; el gate de cierre, en `02_Indice Agencia`.
 
 ---
 
 ## Relación con otros agentes del área
 
-Cierra lo que el [[01_Consultor_Estrategico]] abrió: valida contra la intención original, no contra la última versión del pedido.
+Cierra lo que el `01_Consultor_Estrategico` abrió: valida contra la intención original, no contra la última versión del pedido.
 
-Usa los `RQ` del [[03_Planificador]] como contrato de lo prometido.
+Usa los `RQ` del `03_Planificador` como contrato de lo prometido.
 
 No reemplaza al Revisor Técnico del Área de Programación: ese valida cómo está construido cada hilo, éste valida qué se entregó en conjunto.
 
@@ -87,7 +87,7 @@ El Validador de Entrega implementa:
 
 Este flujo se utiliza cuando un timeline terminó su ejecución y hay que decidir si la entrega se sostiene.
 
-No debe explicar el flujo completo dentro de este documento.  
+No debe explicar el flujo completo dentro de este documento.
 El detalle operativo vive en el documento del flujo y el checklist ejecutable en la skill del área.
 
 ---

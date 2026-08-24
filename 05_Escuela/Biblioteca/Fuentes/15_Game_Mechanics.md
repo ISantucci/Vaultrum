@@ -5,7 +5,7 @@ autores: Ernest Adams & Joris Dormans
 editorial: New Riders
 anio: 2012
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: mecánicas, sistemas dinámicos, feedback loops, Machinations, economías internas
 ---
 

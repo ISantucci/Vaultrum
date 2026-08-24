@@ -3,14 +3,14 @@ tipo: juego
 genero: Arcade
 subtipo: Paleta-y-pelota
 estado: En validación
-mision: [[EST-001_Mision_Pong]]
+mision: EST-001_Mision_Pong
 cruza: 05_Fundamentos_de_experiencia_ludica, 01_Loop_de_experiencia, 02_Game_feel, 03_Definicion_de_terminado
 ---
 
 # Libro 01 — Pong
 
 > Primer libro del estante de Juegos. Género: Arcade / paleta-y-pelota.
-> Lo **transversal** vive en [[05_Fundamentos_de_experiencia_ludica]]; acá va lo **específico de Pong**: qué lo hace *ser* Pong y qué lo hace *sentirse* bien.
+> Lo **transversal** vive en `05_Fundamentos_de_experiencia_ludica`; acá va lo **específico de Pong**: qué lo hace *ser* Pong y qué lo hace *sentirse* bien.
 > **IP:** conceptos destilados + cita. Nunca texto verbatim con copyright.
 
 ---
@@ -42,7 +42,7 @@ LOOP DE PUNTO (≈5–20 s)          rally → alguien falla → gol → saque
 LOOP DE PARTIDA (≈2–5 min)       puntos → llegar al puntaje objetivo → victoria/derrota → revancha
 ```
 
-Los tres loops anidan (Pilar 1 de [[05_Fundamentos_de_experiencia_ludica]]): siempre hay algo que perseguir *ahora* (esta pelota), algo a mediano plazo (este punto) y algo por lo que volver (la revancha). El error clásico al implementar un Pong es construir solo el loop atómico —pelota que rebota— y llamarlo juego. Sin el loop de partida no hay stakes: `18_Art_of_Failure`, `21_The_Grasshopper`.
+Los tres loops anidan (Pilar 1 de `05_Fundamentos_de_experiencia_ludica`): siempre hay algo que perseguir *ahora* (esta pelota), algo a mediano plazo (este punto) y algo por lo que volver (la revancha). El error clásico al implementar un Pong es construir solo el loop atómico —pelota que rebota— y llamarlo juego. Sin el loop de partida no hay stakes: `18_Art_of_Failure`, `21_The_Grasshopper`.
 
 **Qué hace de Pong un juego y no un juguete:** el objetivo impuesto (llegar al puntaje) y el obstáculo innecesario aceptado voluntariamente (solo podés mover la paleta en un eje). Sacale cualquiera de los dos y queda un salvapantallas. `21_The_Grasshopper`, `06_Half_Real`
 

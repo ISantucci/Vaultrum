@@ -1,13 +1,13 @@
 ---
 tipo: fundamento
 estado: En la Biblioteca
-mision: [[EST-001_Mision_Pong]]
+mision: EST-001_Mision_Pong
 ---
 
 # Fundamento 01 — Loop de experiencia
 
 > Qué convierte un conjunto de reglas en algo que se *juega*. Transversal a todo género.
-> Estado: **En la Biblioteca** — primer aporte destilado desde el análisis de Pong ([[EST-001_Mision_Pong]]).
+> Estado: **En la Biblioteca** — primer aporte destilado desde el análisis de Pong (`EST-001_Mision_Pong`).
 
 ## Índice del libro
 
@@ -109,11 +109,11 @@ Dos reglas transversales que salieron del análisis de Pong y aplican a cualquie
 
 **La legibilidad gana.** Si el juice impide leer el estado del juego, el juice está mal. Un screenshake que tapa la pelota convierte una mejora de feel en un problema de claridad.
 
-Desarrollo en [[02_Game_feel]].
+Desarrollo en `02_Game_feel`.
 
 ## Definición de Terminado
 
-El loop cerrado es el piso, no el techo. La checklist completa está en [[03_Definicion_de_terminado]]; lo que este fundamento aporta ahí son los dos bloques que dependen del loop:
+El loop cerrado es el piso, no el techo. La checklist completa está en `03_Definicion_de_terminado`; lo que este fundamento aporta ahí son los dos bloques que dependen del loop:
 
 ```txt
 LOOP
@@ -135,7 +135,7 @@ PARTIDA
 
 **Validación de entrega (VE).** Si el entregable "funciona" y no engancha, el diagnóstico casi siempre es un loop superior faltante: existe el atómico y no hay razón para volver.
 
-Criterio del Core relacionado: [[Baseline de entregable]].
+Criterio del Core relacionado: `Baseline de entregable`.
 
 ## Límites
 
@@ -149,4 +149,4 @@ Conceptos destilados, sin verbatim:
 
 `21_The_Grasshopper` (objetivo impuesto + obstáculo innecesario) · `06_Half_Real` (reglas vs ficción, qué constituye un juego) · `17_Uncertainty_in_Games` (fuentes de incertidumbre) · `23_Man_Play_and_Games` (agon / alea / mimicry / ilinx) · `18_Art_of_Failure` (fracaso que retiene) · `04_Theory_of_Fun` (aprendizaje como fuente de diversión) · `16_Advanced_Game_Design` (loops anidados y pensamiento sistémico) · `05_Game_Feel` (feedback y respuesta) · `09_Gamers_Brain` (legibilidad y carga cognitiva).
 
-Cruza con: [[02_Game_feel]] · [[03_Definicion_de_terminado]] · [[04_Playbook_de_diseno]] · [[05_Fundamentos_de_experiencia_ludica]] · [[01_Pong]].
+Cruza con: `02_Game_feel` · `03_Definicion_de_terminado` · `04_Playbook_de_diseno` · `05_Fundamentos_de_experiencia_ludica` · `01_Pong`.

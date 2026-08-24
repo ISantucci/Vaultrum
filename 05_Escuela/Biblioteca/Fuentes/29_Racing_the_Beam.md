@@ -5,7 +5,7 @@ autores: Nick Montfort & Ian Bogost
 editorial: MIT Press
 anio: 2009
 estado: Catalogada (pendiente de destilación)
-mision: [[EST-003_Mision_Catalogo_Batch_Fundamentos]]
+mision: EST-003_Mision_Catalogo_Batch_Fundamentos
 temas: platform studies, restricciones de hardware, Atari 2600, creatividad por límites
 ---
 

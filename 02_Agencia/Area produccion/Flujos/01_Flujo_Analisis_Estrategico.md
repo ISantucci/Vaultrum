@@ -135,11 +135,11 @@ No debe avanzar si:
 
 Este flujo no debe convertir toda idea en tarea.
 
-No debe armar requerimientos finales.  
-No debe estimar timelines.  
-No debe definir arquitectura técnica.  
-No debe diseñar implementación.  
-No debe llenar la salida de alternativas innecesarias.  
+No debe armar requerimientos finales.
+No debe estimar timelines.
+No debe definir arquitectura técnica.
+No debe diseñar implementación.
+No debe llenar la salida de alternativas innecesarias.
 No debe forzar el avance si la idea todavía no está lista.
 
 ---

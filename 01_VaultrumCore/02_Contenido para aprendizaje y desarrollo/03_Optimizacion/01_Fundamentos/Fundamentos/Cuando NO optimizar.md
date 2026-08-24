@@ -122,7 +122,7 @@ compresion de assets                  el build no tiene restriccion de tamano
 La regla no aplica cuando existe encargo. Existe encargo cuando:
 
 - hay un requerimiento explicito de rendimiento, memoria, tiempo de carga o consumo;
-- hay un sintoma medido en el proyecto real (ver [[Medir antes de optimizar]]);
+- hay un sintoma medido en el proyecto real (ver `Medir antes de optimizar`);
 - la plataforma de destino impone una restriccion conocida y declarada;
 - una *table-stake* del entregable exige la maquinaria. Si el juego exige que la pelota nunca atraviese una pared, la continuidad de colision **tiene** requerimiento detras: la table-stake es el requerimiento.
 
@@ -155,7 +155,7 @@ Confundirla con "escribi cualquier cosa que despues se ve" es el error inverso, 
 
 ## Relacion con el resto del Core
 
-Es la mitad tecnica de un criterio mas grande: ver [[Baseline de entregable]].
+Es la mitad tecnica de un criterio mas grande: ver `Baseline de entregable`.
 
 ```txt
 completo en experiencia   → trae sin pedirlo lo que el entregable necesita
