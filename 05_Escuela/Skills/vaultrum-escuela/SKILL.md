@@ -115,5 +115,6 @@ El merge a `main` lo hace Conocimiento con aprobación del owner. Vos no tocás 
 
 ## AiCare es obligatorio
 
-Sin AiCare no arranca una misión y no se hace handoff. Es el seguro de vida contra la acumulación. Corré la skill `aicare` (o `vaultrum-gc`) en los cuatro bordes marcados arriba.
+Sin AiCare no arranca una misión y no se hace handoff. Es el seguro de vida contra la acumulación. Corré la skill `aicare` en los cuatro bordes marcados arriba.
 
+Regla de capas: la Escuela comparte la estructura de un área y le aplica la misma regla — la skill es el procedimiento ejecutable, `Agentes/` la responsabilidad y `Flujos/` los criterios de aceptación. Ver `02_Agencia/02_Indice Agencia.md`.

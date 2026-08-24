@@ -23,3 +23,10 @@ _old/
 _private/
 backup/
 backups/
+
+# Estado de sesion de AiCare (manifiestos de carga) — no es contenido del vault
+.aicare/
+
+# Python
+__pycache__/
+*.pyc

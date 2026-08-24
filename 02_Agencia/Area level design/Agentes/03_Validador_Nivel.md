@@ -14,17 +14,7 @@ Verifica contra el checklist de cierre y contra los pilares de experiencia (1, 6
 
 ## Checklist de cierre
 
-```
-[ ] El recorrido es legible: se entiende a dónde ir y qué se enfrenta
-[ ] Pacing con alternancia deliberada de picos y valles (pilar 8)
-[ ] Curva de dificultad escalonada, ajustada a la habilidad esperada (pilar 6)
-[ ] Dificultad aplicada con parámetros del GDS (sin redefinir balance)
-[ ] Checkpoints / descansos ubicados con criterio
-[ ] Sin muertes injustas por diseño de espacio (amenazas telegrafiadas)
-[ ] Decisiones espaciales significativas donde aplica (pilar 9)
-[ ] Integraciones con otros niveles/sistemas identificadas
-[ ] El nivel es construible por Programación sin ambigüedad
-```
+El checklist operativo vive en la skill del área (`vaultrum-leveldesign`), que es lo que corre. Acá no se repite: si cambia, cambia allá. Cubre: legibilidad del recorrido, pacing, curva de dificultad, uso de los parámetros del `GDS`, checkpoints, amenazas telegrafiadas, decisiones espaciales, integraciones y construibilidad.
 
 ---
 

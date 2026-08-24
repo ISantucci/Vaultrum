@@ -34,6 +34,8 @@ Contiene material sobre:
 - SOLID;
 - patrones de diseño;
 - optimización;
+- criterios de entrega;
+- experiencia de juego (índice hacia la Biblioteca);
 - estructuras de datos;
 - algoritmos;
 - managers;
@@ -59,11 +61,20 @@ Contiene material relacionado con:
 
 ---
 
-## Qué no vive en el Core (todavía)
+## Qué vive en el Core y qué vive en la Biblioteca
 
-Los **fundamentos de experiencia** y los **análisis de juegos por género** no viven en el Core: se estudian en la Biblioteca de la Escuela (`05_Escuela/Biblioteca/`) y las áreas los consultan **on-demand**.
+Los **fundamentos de experiencia** y los **análisis de juegos por género** no viven en el Core: viven en la Biblioteca de la Escuela (`05_Escuela/Biblioteca/`) y se consultan **on-demand**.
 
-El Core no enlaza hacia abajo: el Core alimenta, no depende. Quien necesita esos libros —Producción, Game Design, Level Design, UI/UX— sabe dónde buscarlos y lo tiene declarado en su propia área. Qué se promueve de ahí a criterio del Core lo decide el Área de Conocimiento con aprobación del owner.
+Lo que sí vive en el Core es el **índice** hacia esos libros: [[Experiencia de juego]]. Es un puntero liviano, no una copia.
+
+```txt
+el Core indexa   → liviano, siempre disponible
+la Biblioteca    → el peso, se carga solo cuando hace falta
+```
+
+Esa es la única dirección en la que el Core enlaza hacia otra capa, y es deliberada: el Core sigue siendo la fuente de criterio, y parte del criterio es saber dónde está el resto. Lo que el Core **no** hace es depender de la Biblioteca para existir — si un libro falta, el Core lo dice y eso dispara una misión de Escuela.
+
+Qué se promueve de la Biblioteca a criterio propio del Core lo decide el Área de Conocimiento con aprobación del owner.
 
 ---
 

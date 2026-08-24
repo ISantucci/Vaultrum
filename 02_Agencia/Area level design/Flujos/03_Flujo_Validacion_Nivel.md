@@ -13,21 +13,11 @@ Verificar que el `LDS` sea jugable, con buen ritmo y construible; cerrarlo o reb
 
 ## Checklist
 
-```
-[ ] Recorrido legible
-[ ] Pacing con picos y valles (pilar 8)
-[ ] Dificultad escalonada y ajustada (pilar 6)
-[ ] Dificultad con parámetros del GDS (sin redefinir balance)
-[ ] Checkpoints / descansos con criterio
-[ ] Sin muertes injustas por diseño de espacio
-[ ] Decisiones espaciales significativas donde aplica (pilar 9)
-[ ] Integraciones identificadas
-[ ] Construible sin ambigüedad
-```
+El checklist operativo vive en la skill del área (`vaultrum-leveldesign`), que es lo que corre. Acá no se repite: si cambia, cambia allá.
 
 ## Condiciones para avanzar
 
-Cierra el `LDS` si pasa. Si no, rebota: experiencia espacial → Analista; layout/pacing → Diseñador; regla/balance → Game Design.
+Declara el estado del paso —**Cerrado** / **Ajustar** / **Pausado**— y cierra el `LDS` si pasa. Si no, rebota: experiencia espacial → Analista; layout/pacing → Diseñador; regla/balance → Game Design.
 
 ## Resultado final
 

@@ -43,6 +43,15 @@ regla o balance mal definido            → deriva a Game Design
 [ ] Construible por Programación sin ambigüedad
 ```
 
+
+## Estado del paso
+
+Al cerrar, declará el estado (vocabulario común de la Agencia — no confundir con el estado del artefacto en su índice):
+
+- **Cerrado** — la spec queda lista para bajar a Programación.
+- **Ajustar** — hay hallazgos concretos; rebota al sub-agente que corresponde.
+- **Pausado** — falta información o una decisión del owner. Se declara qué falta (principio 9) y no se avanza. Pausar es un cierre válido: es preferible a diseñar sobre un supuesto.
+
 ## Salida registrable
 
 Por cada `GDS` con dimensión espacial, un **LDS-XXX.n** con: layout, colocación de desafíos, pacing, dificultad aplicada, checkpoints/progresión, integraciones y criterios de validación.
@@ -57,3 +66,4 @@ Componé el nivel más simple que entregue la experiencia de recorrido buscada. 
 
 No definís reglas ni balance base (Game Design). No diseñás interfaces/HUD/menús (UI/UX). No programás (Programación). No definís alcance (Producción). No hacés arte final. Si falta regla/balance → Game Design; cuando el LDS cierra → Programación.
 
+Regla de capas: ver `02_Agencia/02_Indice Agencia.md`.

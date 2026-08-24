@@ -21,10 +21,12 @@ La numeración se hereda del requerimiento que diseña. No se inventa: cuelga de
 ```
 RQ-001.2   (Producción)
 GDS-001.2  (Game Design)
+LDS-001.2  (Level Design · si el sistema tiene espacio)
+UXS-001.2  (UI/UX · si el sistema tiene interfaz)
 SOL-001.2  (Programación)
 ```
 
-Un `GDS` pertenece a un `RQ`. Es el insumo directo del `SOL` del Área de Programación.
+Un `GDS` pertenece a un `RQ`. Al cerrarse baja a **Level Design** y/o **UI/UX** cuando aplican, y de ahí —junto al `LDS`/`UXS`— al `SOL` del Área de Programación. Si ninguna aplica, el propio `GDS` lo declara y pasa directo a Programación.
 
 ---
 

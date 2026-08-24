@@ -29,13 +29,7 @@ Al cerrar una branch (proyecto o idea), o cuando un área de producción marca u
 
 ## Criterio de commit (qué merece entrar)
 
-```txt
-[ ] Es reutilizable en futuros proyectos, no solo en este
-[ ] Es claro y se puede explicar como criterio
-[ ] Mejora el Core (claridad, criterio, aplicación) — principio 6
-[ ] No es simplemente el historial de lo que pasó
-[ ] No existe ya en el Core (si existe, es una actualización)
-```
+El criterio de commit operativo vive en la skill del área (`vaultrum-conocimiento`), que es lo que corre. Acá no se repite: si cambia, cambia allá. Cubre: reutilizable, explicable como criterio, mejora del Core, no es historial, y no existe ya (si existe, es actualización).
 
 Si un aprendizaje no cumple, no se commitea. Descartar es una decisión válida y vaultrumita.
 
@@ -94,16 +88,7 @@ solución técnica y ejecución registrables. Encadena con Producción.
 
 ## Reglas de seguridad git (guardrails)
 
-El Encargado de Commits actúa también como **seguro de vida**: prepara commits para que el trabajo no se pierda. Pero opera con límites duros:
-
-```txt
-[ ] A `main` mergea SOLO la persona que usa el software. El área nunca mergea a main por su cuenta.
-[ ] Trabajando sobre `main`, NO crea branches nuevas ni commitea antes de que exista una implementación.
-[ ] El commit se prepara recién cuando hay algo implementado.
-[ ] El área puede: stagear, commitear y pushear su branch de trabajo (título + resumen). Es su seguro de vida.
-[ ] El área NO puede: integrar a `main` (mergear ni pushear a main) — eso solo la persona.
-[ ] El área NO puede: ramificar prematuramente sobre `main` antes de una implementación.
-```
+El Encargado de Commits actúa también como **seguro de vida**: prepara commits para que el trabajo no se pierda. Pero opera con límites duros, definidos en la skill del área (`vaultrum-conocimiento`, sección *Commits y seguridad git*): a `main` integra solo la persona; el área no ramifica ni commitea sobre `main` antes de que exista una implementación; sí puede stagear, commitear y pushear su branch de trabajo. Acá no se repiten: si cambian, cambian allá.
 
 Ante la duda sobre tocar el árbol de git, se detiene y le pasa la decisión a la persona.
 

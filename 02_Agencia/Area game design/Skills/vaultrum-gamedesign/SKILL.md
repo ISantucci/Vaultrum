@@ -24,7 +24,7 @@ Usá los sub-agentes que el sistema necesite (un sistema simple puede cerrarse c
 1. **Analista de Gameplay** — interpretá la intención jugable: objetivo del sistema, experiencia esperada, qué debe sentir el jugador. Pasá el sistema por la **grilla de los 9 pilares** (`05_Fundamentos_de_experiencia_ludica`): para cada pilar, anotá qué debe cumplir este sistema o marcá **N/A con justificación**. Salida: encuadre (incluye la lectura por pilar).
 2. **Diseñador de Sistema** — definí reglas, entradas, salidas/feedback y estados. Señalá qué valores necesitarán balance (sin fijar números). Abrí el **GDS-XXX.n**. ⟵ gate de reglas
 3. **Balanceador** — completá el GDS con la capa numérica: parámetros configurables (valor inicial + rango), curvas de dificultad/progresión/economía, mecanismo de configuración (ScriptableObject/tabla/Inspector), y cómo se valida el balance. Nunca hardcodear.
-4. **Validador de Diseño** — verificá contra el checklist de cierre **y** contra el CHECKLIST por-GDS de los 9 pilares (`05_Fundamentos_de_experiencia_ludica`). Si cumple, cerrá el GDS (listo para Programación). Si no, **rebotá**:
+4. **Validador de Diseño** — verificá contra el checklist de cierre **y** contra el CHECKLIST por-GDS de los 9 pilares (`05_Fundamentos_de_experiencia_ludica`). Si cumple, cerrá el GDS y **derivá según corresponda** (ver "Al cerrar el GDS"). Si no, **rebotá**:
 
 ```
 falta entender la experiencia → Analista
@@ -44,13 +44,82 @@ balance/curvas sin cerrar     → Balanceador
 [ ] Integraciones con otros sistemas identificadas
 [ ] Aporta a la experiencia (sin complejidad de más)
 [ ] Los 9 pilares de experiencia cubiertos o marcados N/A con justificación (CHECKLIST por-GDS de 05_Fundamentos_de_experiencia_ludica)
+[ ] LDS y UXS decididos: cada "no aplica" dice qué dimensión falta y por qué
+[ ] Si hay GDS-XXX.0: este GDS lo referencia y no lo duplica
 ```
+
+## Al cerrar el GDS — a dónde va
+
+Un `GDS` cerrado **no va siempre directo a Programación**. Decidí explícitamente, y dejá la decisión registrada en el `GDS`:
+
+```
+¿el sistema ocurre en un espacio, un nivel o una pantalla jugable
+ con recorrido, encuentros o progresión?      → SÍ: Level Design (vaultrum-leveldesign) → LDS-XXX.n
+¿el jugador necesita ver, navegar o decidir
+ a través de una interfaz, HUD o menú?        → SÍ: UI/UX (vaultrum-uiux)               → UXS-XXX.n
+```
+
+Ambas pueden correr **en paralelo**: las dos cuelgan del mismo `GDS`. Cuando las que apliquen estén cerradas, el paquete completo (`GDS` + `LDS` + `UXS`) pasa a Programación.
+
+Si ninguna aplica, escribilo igual en el `GDS`. Pero **no alcanza con marcar la casilla**: un "no aplica" es una afirmación verificable, no un atajo (ver [[Gates verificables]] en el Core).
+
+### Gate del "no aplica" (obligatorio)
+
+Para declarar que `LDS` o `UXS` no aplican, escribí **qué dimensión del entregable está ausente**, en una línea, dentro del `GDS`:
+
+```txt
+LDS no aplica — el sistema no compone espacio: la arena es fija, sin
+                recorrido, encuentros ni progresión intra-nivel.
+UXS no aplica — el jugador no navega ni decide a través de ninguna
+                pantalla: no hay menú, HUD ni estado que comunicar.
+```
+
+Formato mínimo: `<área> no aplica — <qué dimensión falta> : <por qué falta>`. Un "no aplica" sin la segunda mitad **no cierra el gate**.
+
+**Test a posteriori (lo corre el Validador de Entrega al cerrar el `VE`):**
+
+```txt
+¿la siguiente área tuvo que hacer ese trabajo igual, como desvío?
+  sí  → el "no aplica" era falso. Es un hallazgo del VE, va a Game Design.
+  no  → el "no aplica" era correcto.
+```
+
+Precedente: en `TL-002` se declaró `UXS` no aplica y la interfaz se construyó igual dentro del `EJ`. La declaración era falsa y nadie lo detectó hasta releer la entrega.
+
+## Estado del paso
+
+Al cerrar, declará el estado (vocabulario común de la Agencia — no confundir con el estado del artefacto en su índice):
+
+- **Cerrado** — el `GDS` queda listo para bajar a Level Design / UI/UX / Programación.
+- **Ajustar** — hay hallazgos concretos; rebota al sub-agente que corresponde.
+- **Pausado** — falta información o una decisión del owner. Se declara qué falta (principio 9) y no se avanza. Pausar es un cierre válido: es preferible a diseñar sobre un supuesto.
 
 ## Salida registrable
 
 Por cada `RQ` jugable, un **GDS-XXX.n** con: objetivo, reglas, entradas, salidas/feedback, estados, parámetros configurables + curvas, integraciones, experiencia esperada y criterios de validación.
 
-Registralo en `02_Agencia/Area game design/Salidas/` y actualizá `00_Indice_gds`. La numeración se hereda del `RQ` (`RQ-001.2 → GDS-001.2`). Linkeá al `RQ`. Un `GDS` cerrado es el insumo directo del `SOL` del Área de Programación.
+Registralo en `02_Agencia/Area game design/Salidas/` y actualizá `00_Indice_gds`. La numeración se hereda del `RQ` (`RQ-001.2 → GDS-001.2`). Linkeá al `RQ`. Un `GDS` cerrado es insumo de Level Design y/o UI/UX si aplican, y del `SOL` del Área de Programación.
+
+### El marco común: `GDS-XXX.0`
+
+Cuando **tres o más** `GDS` del mismo timeline comparten definiciones (geometría de la arena, paleta de color, contrato de eventos, convenciones de nombres, omisiones declaradas comunes), esas definiciones van a un **`GDS-XXX.0`** en vez de repetirse.
+
+Es el único artefacto de la cadena que **no cuelga de un `RQ`**: cuelga del `TL`, igual que el `VE`. Por eso lleva `.0`.
+
+```txt
+GDS-XXX.0   marco común       cuelga de TL-XXX     (sin RQ propio)
+GDS-XXX.n   spec del sistema  cuelga de RQ-XXX.n
+```
+
+Reglas:
+
+- Se abre **solo** si hay tres o más `GDS` que lo comparten. Con dos, se repite y listo — un marco común para dos specs es sobrearquitectura (principio 5).
+- Contiene **solo** lo compartido. Si algo lo usa un único `GDS`, va en ese `GDS`.
+- Los `GDS-XXX.n` lo referencian; no lo copian.
+- No pasa por Level Design ni UI/UX por su cuenta: viaja con los `GDS` que lo referencian.
+- El `VE` lo verifica como parte del timeline.
+
+Precedente: `GDS-003.0` en el Pong 3D evitó repetir seis veces la misma geometría y el mismo contrato de eventos. Funcionó, pero entró como excepción silenciosa a la numeración. Esta regla lo formaliza.
 
 ## Criterio de diseño
 
@@ -58,5 +127,7 @@ Diseñá el sistema más simple que cumpla la experiencia. No agregues reglas qu
 
 ## Límites
 
-No programás. No definís alcance ni prioridad (Producción). No hacés narrativa ni arte. Si falta alcance → Producción. Cuando el GDS cierra → Programación.
+No programás. No definís alcance ni prioridad (Producción). No hacés narrativa ni arte. No diseñás el nivel (Level Design) ni la interfaz (UI/UX): definís las reglas que ellas acomodan. Si falta alcance → Producción. Cuando el GDS cierra → Level Design y/o UI/UX si aplican, después Programación.
+
+Regla de capas: ver `02_Agencia/02_Indice Agencia.md`.
 

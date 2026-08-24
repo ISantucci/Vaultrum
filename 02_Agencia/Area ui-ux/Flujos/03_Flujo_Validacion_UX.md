@@ -13,22 +13,11 @@ Verificar que el `UXS` sea usable, legible y accesible; cerrarlo o rebotarlo.
 
 ## Checklist
 
-```
-[ ] ¿qué pasa? ¿qué puedo hacer? ¿cómo me va? respondidas siempre (pilar 4)
-[ ] Affordances + signifiers en elementos interactivos
-[ ] Jerarquía visual dirige la mirada a lo crítico
-[ ] Feedback inmediato y discernible por acción de UI (pilar 3)
-[ ] Mapping natural; input responsivo (pilar 5)
-[ ] Progreso/recompensa visibles cuando aplica (pilar 7)
-[ ] Estados de interfaz cubiertos
-[ ] Accesibilidad mínima (contraste, tamaño, alternativa a color)
-[ ] Usabilidad primero
-[ ] Construible sin ambigüedad
-```
+El checklist operativo vive en la skill del área (`vaultrum-uiux`), que es lo que corre. Acá no se repite: si cambia, cambia allá.
 
 ## Condiciones para avanzar
 
-Cierra el `UXS` si pasa. Si no, rebota: necesidades del jugador → Analista; pantallas/feedback → Diseñador; estado/feedback en reglas → Game Design.
+Declara el estado del paso —**Cerrado** / **Ajustar** / **Pausado**— y cierra el `UXS` si pasa. Si no, rebota: necesidades del jugador → Analista; pantallas/feedback → Diseñador; estado/feedback en reglas → Game Design.
 
 ## Resultado final
 

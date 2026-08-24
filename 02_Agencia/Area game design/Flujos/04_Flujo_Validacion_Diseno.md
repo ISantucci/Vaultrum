@@ -1,6 +1,6 @@
 ## Propósito
 
-Validar el `GDS-XXX.n` y decidir si se cierra (listo para Programación) o rebota. Cierra el loop del Área de Game Design garantizando que el sistema sea claro, jugable, implementable y validable.
+Validar el `GDS-XXX.n` y decidir si se cierra —declarando su destino: Level Design y/o UI/UX si aplican, y después Programación— o rebota. Cierra el loop del Área de Game Design garantizando que el sistema sea claro, jugable, implementable y validable.
 
 ---
 
@@ -19,16 +19,7 @@ Revisa el `GDS` contra el encuadre y el checklist de criterios. Define cómo se 
 
 ## Checklist de criterios
 
-```txt
-[ ] El objetivo del sistema es claro
-[ ] Las reglas no tienen huecos ni contradicciones
-[ ] Entradas, salidas y feedback están definidos
-[ ] Los estados y transiciones son claros
-[ ] Hay parámetros configurables con valores iniciales
-[ ] Cada regla es validable (se puede testear)
-[ ] Las integraciones con otros sistemas están identificadas
-[ ] Aporta a la experiencia buscada (no complejidad de más)
-```
+El checklist operativo vive en la skill del área (`vaultrum-gamedesign`), que es lo que corre. Acá no se repite: si cambia, cambia allá.
 
 ---
 
@@ -40,7 +31,8 @@ Revisa el `GDS` contra el encuadre y el checklist de criterios. Define cómo se 
 ## Criterios de validación definidos
 ## Integraciones detectadas
 ## Desvíos detectados
-## Decisión: CERRAR (listo para Programación) / REBOTAR a [sub-agente]
+## Estado del paso: Cerrado / Ajustar (a qué sub-agente) / Pausado (qué falta)
+## Destino al cerrar: Level Design / UI-UX / Programación (o por qué no aplican)
 ```
 
 ---
@@ -57,7 +49,9 @@ balance/curvas sin cerrar     → Balanceador
 
 ## Criterios de aceptación (cierre)
 
-El `GDS` se cierra cuando el checklist completo da OK y queda trazable (`RQ → GDS`). Ahí pasa a ser insumo del Área de Programación.
+El `GDS` se cierra cuando el checklist completo da OK, queda trazable (`RQ → GDS`) y el destino al cerrar está declarado.
+
+**Cerrado** → si el `GDS` tiene dimensión espacial va a **Level Design** (`LDS`), si tiene interfaz va a **UI/UX** (`UXS`) —pueden ir en paralelo— y recién con ellas cerradas el paquete baja a **Programación**. Si ninguna aplica, se declara en el propio `GDS` y pasa directo a Programación.
 
 ---
 
@@ -69,4 +63,4 @@ No rediseña el sistema. No aprueba diseño no validable. No agrega criterios fu
 
 ## Resultado final
 
-Un `GDS-XXX.n` cerrado y validable, listo para que Programación produzca su `SOL`.
+Un `GDS-XXX.n` cerrado y validable, con su destino declarado: Level Design y/o UI/UX si aplican, y después Programación.

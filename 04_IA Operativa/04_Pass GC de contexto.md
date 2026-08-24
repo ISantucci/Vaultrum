@@ -44,6 +44,10 @@ Síntoma        → contexto pesado, se pierde el hilo, respuestas genéricas
 
 Si no se puede medir, se declara y se propone cómo validar la hipótesis — nunca podar a ciegas.
 
+**Medir es contar.** El paso "Medir" se ejecuta con `Herramientas/contar_contexto.py` sobre el manifiesto de carga (`.aicare/carga-actual.txt`), y el paso "Validar" con el `diff` antes/después. Si el script no se puede correr, el pass lo dice con esas palabras —*medición no disponible, estimación*— y no presenta el número como conteo.
+
+**Gate antes de podar:** por cada archivo candidato, ¿es insumo de un gate activo? Si lo es, no se poda aunque pese. Podar un insumo de gate ahorra contexto y rompe la cadena.
+
 ---
 
 ## Qué NO debe hacer el pass
@@ -63,12 +67,14 @@ Una nota o un contexto claro pero algo largo no es un problema hasta medirlo com
 
 ```
 ## Pass GC — <commit>
-## Medición: qué había cargado (aprox.)
+## Medición: <total> tokens en <N> archivos — conteo: <exacto|aproximado|no disponible>
 ## Detectado: acumulación / duplicación / recarga
-## Podado: qué se liberó y por qué
-## Validación: contexto necesario intacto
-## Estado del Token Budget: cómodo / ajustado
+## Podado: qué se liberó, y el delta medido (antes → después)
+## Validación: contexto necesario intacto; ningún insumo de gate liberado
+## Estado del Token Budget: cómodo / ajustado / al límite / excedido (<X>%)
 ```
+
+Un pass sin número en la línea de Medición está incompleto: es una intención de haber medido.
 
 ---
 

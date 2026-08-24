@@ -36,11 +36,15 @@ Decide **dónde vive** el aprendizaje en el Core, evita duplicación y resuelve 
 
 ---
 
-## Staging
+## Staging (y por qué esta área no tiene `Salidas/`)
 
 La carpeta [[00_Staging]] es la pizarra de **commits pendientes**: aprendizajes escritos que esperan tu aprobación. Es **transitoria**: cuando un aprendizaje se mergea al Core, se limpia de Staging. Si se descarta, también.
 
 Staging no es un registro histórico. El historial, si se necesita, vive en git (el `git log`), no en el vault.
+
+**Excepción declarada a la estructura de área.** Las otras cinco áreas tienen `Agentes/`, `Flujos/`, `Salidas/` y `Skills/`. Esta tiene `Staging/` en lugar de `Salidas/`, y es deliberado: **su salida registrable es el commit al Core**, que por definición vive en el Core y no acá. Guardar además una copia en `Salidas/` sería duplicar `main` — justo lo que el principio 11 prohíbe.
+
+Se declara porque una omisión declarada es criterio y una omisión silenciosa es un hueco. La misma regla que se le exige a un `LDS`/`UXS` que no aplica.
 
 ---
 
@@ -84,6 +88,21 @@ Detalle en [[01_Encargado_Commits]].
 ## Límites del área
 
 No hace trabajo de producción (no arma RQ/GDS/SOL/EJ). No mergea sin aprobación. No acumula historial en el vault. No infla el Core con "por las dudas": si un aprendizaje no es claro y reutilizable, no entra.
+
+---
+
+## Criterio que gestiona (el Core lo tiene escrito)
+
+Los aprendizajes del primer ciclo completo ya están en el Core, en `01_VaultrumCore/.../04_Criterios de entrega/`:
+
+```txt
+[[Baseline de entregable]]         completo en experiencia, mínimo en maquinaria
+[[Verificacion parcial declarada]] cómo se declara una verificación incompleta
+[[Gates verificables]]             por qué la cadena falla en los bordes
+[[Cuando NO optimizar]]            (en 03_Optimizacion) la mitad técnica del baseline
+```
+
+Es la única sección del Core que nació del uso del propio sistema, y por eso es la que esta área tiene que cuidar con más rigor: un criterio entra ahí cuando **una entrega real lo produjo**, no cuando suena razonable.
 
 ---
 

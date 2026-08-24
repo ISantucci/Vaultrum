@@ -14,18 +14,7 @@ Verifica contra el checklist de cierre y los pilares 3 (feedback), 4 (claridad),
 
 ## Checklist de cierre
 
-```
-[ ] En todo momento el jugador responde: ¿qué pasa? ¿qué puedo hacer? ¿cómo me va? (pilar 4)
-[ ] Los elementos interactivos señalizan su función (affordance + signifier)
-[ ] Jerarquía visual dirige la mirada a lo crítico; no compite consigo misma
-[ ] Toda acción de UI tiene feedback inmediato y discernible (pilar 3)
-[ ] Mapping control→efecto natural; input responsivo (pilar 5)
-[ ] Progreso/recompensa visibles cuando aplica (pilar 7)
-[ ] Estados de la interfaz cubiertos (normal/hover/activo/error/deshabilitado)
-[ ] Accesibilidad mínima (contraste, tamaño de touch/target, alternativa a color)
-[ ] Usabilidad primero: sin fricción antes de sumar adorno
-[ ] Construible por Programación sin ambigüedad
-```
+El checklist operativo vive en la skill del área (`vaultrum-uiux`), que es lo que corre. Acá no se repite: si cambia, cambia allá. Cubre: las tres preguntas del jugador (pilar 4), affordances y signifiers, jerarquía visual, feedback por acción, mapping control→efecto, progreso visible, estados de interfaz, accesibilidad mínima y construibilidad.
 
 ---
 

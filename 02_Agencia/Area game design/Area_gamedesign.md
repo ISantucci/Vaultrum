@@ -30,7 +30,7 @@ Define la capa de balance del sistema: parámetros configurables, valores inicia
 
 ### [[04_Validador_Diseno]]
 
-Verifica que el sistema sea claro, jugable, implementable y validable. Define criterios de validación e integraciones con otros sistemas. Si algo no cierra, **rebota** al sub-agente correcto. Cierra el `GDS` y lo deja listo como insumo para Programación.
+Verifica que el sistema sea claro, jugable, implementable y validable. Define criterios de validación e integraciones con otros sistemas. Si algo no cierra, **rebota** al sub-agente correcto. Cierra el `GDS` y declara su destino: Level Design y/o UI/UX si aplican, y después Programación.
 
 ---
 
@@ -61,9 +61,9 @@ El loop no cierra hasta que el sistema es implementable y validable sin ambigüe
 
 ## Salida del área
 
-Por cada `RQ` jugable, un **GDS-XXX.n** registrado en [[00_Indice_salidas]], con su índice. La numeración se hereda del `RQ` (`RQ-001.2 → GDS-001.2`).
+Por cada `RQ` jugable, un **GDS-XXX.n** registrado en [[00_Indice_gds]]. La numeración se hereda del `RQ` (`RQ-001.2 → GDS-001.2`).
 
-El `GDS` es el insumo directo del Área de Programación.
+Un `GDS` cerrado baja a **Level Design** y/o **UI/UX** cuando aplican, y de ahí —junto al `LDS`/`UXS`— al Área de Programación. Si ninguna aplica, se declara en el propio `GDS` y pasa directo a Programación.
 
 ---
 
@@ -78,7 +78,7 @@ Nunca diseñar reglas imposibles de validar ni sistemas que no aportan a la expe
 
 ## Límites del área
 
-No programa (eso es Programación). No define alcance ni prioridad (eso es Producción). No hace narrativa ni arte. No sobrecomplejiza sistemas simples. Si detecta que falta alcance, deriva a Producción; si falta implementación, entrega el `GDS` a Programación.
+No programa (eso es Programación). No define alcance ni prioridad (eso es Producción). No hace narrativa ni arte. No sobrecomplejiza sistemas simples. Si detecta que falta alcance, deriva a Producción; cuando el `GDS` cierra, baja a Level Design y/o UI/UX si aplican, y después a Programación.
 
 ---
 

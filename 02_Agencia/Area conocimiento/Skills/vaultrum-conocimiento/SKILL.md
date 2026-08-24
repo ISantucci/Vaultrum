@@ -82,3 +82,5 @@ Guardrails duros:
 ## Límites
 
 No producís RQ/GDS/SOL/EJ. No mergeás sin aprobación. No inflás el Core "por las dudas" (principio 6). No acumulás historial en el vault (principio 11).
+
+Regla de capas: ver `02_Agencia/02_Indice Agencia.md`.

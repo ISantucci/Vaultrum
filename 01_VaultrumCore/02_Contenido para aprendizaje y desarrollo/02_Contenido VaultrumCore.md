@@ -96,6 +96,47 @@ La regla base es medir antes de optimizar.
 
 ---
 
+## [[Criterios de entrega]]
+
+Sección dedicada a una sola pregunta: **cuándo algo está terminado**.
+
+No es una sección de técnica. Define qué se le puede exigir a una entrega antes de darla por hecha, y qué vocabulario usar cuando la respuesta no es un sí o un no limpio.
+
+Incluye:
+
+- [[Baseline de entregable]] — completo en experiencia, mínimo en maquinaria;
+- [[Verificacion parcial declarada]] — cómo se declara lo que se verificó y lo que no;
+- [[Gates verificables]] — por qué las cadenas de trabajo fallan en los bordes.
+
+Usar esta sección cuando el problema esté relacionado con:
+
+- qué entra en una entrega antes de construirla;
+- decisiones técnicas que nadie pidió;
+- verificaciones que no se pueden completar en el entorno de destino;
+- pasos obligatorios que se saltean sin que nadie lo note;
+- flujos de trabajo que hay que diseñar o revisar.
+
+Es la única sección del Core que nació del uso del propio sistema y no de bibliografía externa. Por eso su regla de crecimiento es más estricta: un criterio entra cuando una entrega real lo produjo.
+
+---
+
+## [[Experiencia de juego]]
+
+Índice liviano hacia la Biblioteca de la Escuela, donde vive el conocimiento sobre experiencia jugable.
+
+El Core indexa; el peso vive en `05_Escuela/Biblioteca/` y se carga on-demand. Esta sección dice **qué hay y dónde**, para poder jalar el libro puntual sin cargar la Biblioteca entera.
+
+Sirve para encontrar:
+
+- los fundamentos transversales (loop, game feel, definición de terminado, playbook, los 9 pilares);
+- el libro del género del entregable, con sus table-stakes y su baseline de parámetros.
+
+Usar esta sección antes de escribir requerimientos o diseñar un sistema jugable.
+
+La regla base es que esta sección **indexa y no copia**.
+
+---
+
 ## [[Estructuras de datos]]
 
 Sección dedicada a estructuras de datos útiles para organizar, consultar, recorrer o priorizar información.

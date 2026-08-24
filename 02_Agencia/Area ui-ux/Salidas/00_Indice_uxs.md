@@ -10,7 +10,8 @@ Cada `UXS-XXX.n` es la capa de comunicación jugador↔juego diseñada y validad
 
 | UXS | Insumo (GDS) | Interfaz | Estado |
 |-----|--------------|----------|--------|
-| — | — | (sin salidas todavía) | — |
+| [[UXS-003.5_Flujo_De_Pantallas]] | [[GDS-003.5_Estados]] | Seis pantallas, mapa de navegación, reglas de interacción por teclado | Cerrada |
+| [[UXS-003.7_HUD_Y_Onboarding]] | [[GDS-003.7_Onboarding_Legibilidad]] | HUD de juego, jerarquía visual, código de color redundante, onboarding del primer saque | Cerrada |
 
 ---
 

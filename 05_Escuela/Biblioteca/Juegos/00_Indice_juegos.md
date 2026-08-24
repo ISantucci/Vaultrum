@@ -10,7 +10,7 @@ Se apoya siempre en los [[00_Indice_fundamentos|Fundamentos]] transversales: el 
 
 | # | Libro | Género | Tipo | Misión | Estado |
 |---|-------|--------|------|--------|--------|
-| 01 | [[01_Pong]] | Arcade | Paleta-y-pelota | [[EST-001_Mision_Pong]] | En estudio |
+| 01 | [[01_Pong]] | Arcade | Paleta-y-pelota | [[EST-001_Mision_Pong]] | En la Biblioteca |
 
 ---
 
@@ -21,3 +21,11 @@ Se apoya siempre en los [[00_Indice_fundamentos|Fundamentos]] transversales: el 
 - Estados: En estudio / En destilación / En validación / En la Biblioteca / A actualizar.
 - Un libro se **actualiza**, no se duplica. Si un nuevo estudio toca uno existente, edita el libro.
 - Un libro pasa a "En la Biblioteca" tras handoff a Conocimiento + aprobación del owner.
+
+---
+
+## Nota de gobernanza (cerrada)
+
+`01_Pong` estuvo *En validación* mientras ya se usaba como insumo de producción en `TL-003` — un libro sin aprobar alimentando una entrega real. El hueco se cerró: handoff a Conocimiento hecho, aprobación del owner registrada, y el libro pasó a **En la Biblioteca**.
+
+Regla que queda: **si un libro se usa como insumo de un `RQ`, tiene que estar en estado *En la Biblioteca*.** Un libro *En estudio* o *En validación* no es insumo válido — es material en curso. Producción lo verifica en su gate de insumo.

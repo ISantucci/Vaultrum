@@ -34,7 +34,7 @@ Si el diagnóstico no trae contexto real suficiente, no avanza: vuelve al Analis
 
 ```txt
 ## SOL-XXX.n — Título
-## Requerimiento asociado (RQ-XXX.n / GDS-XXX.n)
+## Requerimiento asociado (RQ-XXX.n / GDS-XXX.n / LDS-XXX.n / UXS-XXX.n)
 ## Solución propuesta (arquitectura)
 ## Separación de responsabilidades
 ## Conocimiento del Core aplicado

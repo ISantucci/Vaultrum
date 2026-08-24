@@ -193,7 +193,7 @@ Si detecta que la idea no tiene sentido, tiene contradicciones fuertes o necesit
 
 El Planificador tiene una responsabilidad principal: convertir objetivos claros en timelines y requerimientos asociados.
 
-No debe convertirse en consultor estrategico, traductor operativo, programador, documentador, auditor ni disenador tecnico.
+No debe convertirse en Consultor Estrategico, Traductor Operativo, Validador de Entrega, ni absorber el trabajo de Game Design, Level Design, UI/UX, Programacion o Conocimiento.
 
 Si una planificacion requiere varias responsabilidades, debe formalizar solo la parte productiva y dejar claro que queda pendiente para otra area.
 

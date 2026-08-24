@@ -31,6 +31,16 @@ Cómo una IA debe operar el vault: cargar por índices, partir del Core, declara
 ### [[04_Pass GC de contexto]]
 El pass tipo garbage collector que corre **en cada commit** para mantener la operación liviana. Su cadencia es el `Reducir frecuencia de actualización` del Core aplicado a tokens.
 
+### [[05_Modo_Operacion]]
+Los dos modos en que la IA opera el vault: **Modo Vaultrum** (usar el sistema para construir el proyecto del usuario) y **Modo Owner** (modificar el sistema mismo, protegido).
+
+### [[06_Medicion de friccion]]
+El instrumento que mide el **costo del owner en prompts** y lo separa en visión / aclaración / remedial. Es lo que vuelve falsable la Ley del baseline. No confundir con el conteo de tokens: son dos presupuestos distintos.
+
+### Herramientas/
+
+`contar_contexto.py` — el contador real de contexto. Mapa del vault por capa, archivos más pesados, costo de una carga concreta contra un presupuesto, y diff antes/después de podar. Es el Profiler de esta capa.
+
 ---
 
 ## Relación con la optimización del Core
@@ -60,4 +70,6 @@ El **Pass GC** y el **Área de Conocimiento** comparten cadencia (ambos corren e
 
 Esta capa debe practicar lo que predica: ser breve, clara y token-eficiente. Una capa sobre cuidar tokens no puede inflarse.
 
-Primero medir. Después podar. Nunca podar de más.
+Y debe practicar lo que predica **también en el medir**: durante un tiempo esta capa decía "medir" y estimaba a ojo. Un pass de optimización sin instrumento es lo que el Core le prohíbe a cualquier optimización de rendimiento. El instrumento ahora existe (`Herramientas/contar_contexto.py`) y declara su propio margen de error.
+
+Primero medir —contando, no estimando—. Después podar. Nunca podar de más.

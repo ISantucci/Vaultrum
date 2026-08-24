@@ -10,9 +10,9 @@
 
 | # | Libro | Cubre | Estado | Misión |
 |---|-------|-------|--------|--------|
-| 01 | [[01_Loop_de_experiencia]] | input → feedback → objetivo → victoria/derrota | En estudio | [[EST-001_Mision_Pong]] |
+| 01 | [[01_Loop_de_experiencia]] | input → feedback → objetivo → victoria/derrota; loops anidados | En la Biblioteca | [[EST-001_Mision_Pong]] |
 | 02 | [[02_Game_feel]] | juice, feedback, sensación de control | Reservado | — |
-| 03 | [[03_Definicion_de_terminado]] | checklist de "está hecho" | Reservado | — |
+| 03 | [[03_Definicion_de_terminado]] | checklist de "está hecho"; los dos modos de cierre | En la Biblioteca | síntesis 01/02/05 |
 | 04 | [[04_Playbook_de_diseno]] | principios accionables por función de diseño (destilado de 29 fuentes) | En la Biblioteca | [[EST-004_Mision_Destilacion_Playbook]] |
 | 05 | [[05_Fundamentos_de_experiencia_ludica]] | 9 pilares de la experiencia lúdica + CHECKLIST por-GDS + misiones de profundización | En la Biblioteca | [[EST-005_Mision_Fundamentos_Experiencia_Ludica]] |
 
@@ -20,7 +20,7 @@
 
 | # | Libro | Género | Subtipo | Estado | Misión |
 |---|-------|--------|---------|--------|--------|
-| 01 | [[01_Pong]] | Arcade | Paleta-y-pelota | En estudio | [[EST-001_Mision_Pong]] |
+| 01 | [[01_Pong]] | Arcade | Paleta-y-pelota | En la Biblioteca | [[EST-001_Mision_Pong]] |
 
 ## Fuentes (externas) → [[00_Indice_fuentes]]
 
@@ -64,3 +64,15 @@
 - La categoría manda: Fundamentos / Juegos / Fuentes. Género y autor son la clave de búsqueda.
 - El estado refleja el del libro (En estudio / Reservado / En destilación / En validación / En la Biblioteca / Catalogada / A actualizar).
 - No se duplica: si el libro ya está, se actualiza su fila, no se agrega otra.
+
+---
+
+## Estado del handoff a Conocimiento
+
+| EST | Libro | Handoff | Resultado en el Core |
+|-----|-------|---------|----------------------|
+| [[EST-001_Mision_Pong]] | [[01_Pong]] + aporte a [[01_Loop_de_experiencia]] | hecho | indexado en [[Experiencia de juego]] |
+| [[EST-004_Mision_Destilacion_Playbook]] | [[04_Playbook_de_diseno]] | hecho | indexado en [[Experiencia de juego]] |
+| [[EST-005_Mision_Fundamentos_Experiencia_Ludica]] | [[05_Fundamentos_de_experiencia_ludica]] | hecho | indexado en [[Experiencia de juego]] |
+
+**Qué significa "indexado" y no "mergeado".** Los libros no se copian al Core: el Core guarda un puntero liviano y el peso queda acá, cargándose on-demand. Eso es lo que mantiene liviana la operación (criterio de IA Operativa). Promover un libro a criterio propio del Core —dejando de ser referencia para pasar a ser regla— es una decisión aparte, del Área de Conocimiento con aprobación del owner.

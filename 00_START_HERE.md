@@ -1,14 +1,8 @@
 ## Qué es Vaultrum
 
-**Vaultrum** es una herramienta abierta de conocimiento, criterio y trabajo con inteligencia artificial orientada al desarrollo de videojuegos, software y sistemas creativos.
+**Vaultrum** es un sistema de desarrollo asistido por IA con **trazabilidad obligatoria**, orientado a videojuegos, software y sistemas creativos.
 
-Su objetivo es ayudar a pensar mejor, decidir mejor, construir mejor y documentar mejor.
-
-Vaultrum puede usarse de forma libre o con ayuda de su Agencia.
-
-Una persona puede entrar al sistema, recorrer sus contenidos y aplicarlos directamente en sus propios proyectos.
-
-También puede usar la Agencia como intermediaria para transformar una necesidad, problema o idea en una salida más clara, útil y accionable.
+Su objetivo es ayudar a pensar mejor, decidir mejor, construir mejor y documentar mejor. Y sostenerlo: que al terminar quede escrito qué se decidió, por qué, qué se descartó y qué falta.
 
 Vaultrum no busca acumular contenido por cantidad.
 
@@ -16,258 +10,177 @@ Busca transformar conocimiento en criterio operativo.
 
 ---
 
+## Las dos cosas que hacen a Vaultrum
+
+Todo lo demás se apoya en estas dos.
+
+### 1. La regla del baseline
+
+> **Completo en experiencia, mínimo en maquinaria.**
+
+Dos mitades que parecen opuestas y son la misma:
+
+- **Completo en experiencia** — las *table-stakes* de un entregable no se piden, se incluyen. Un juego no está terminado sin input → feedback, objetivo claro, victoria/derrota, estados y reinicio. El owner gasta sus pedidos en su idea, no en completar lo que cualquier versión competente ya debería traer.
+- **Mínimo en maquinaria** — no se enciende maquinaria que ningún requerimiento pidió. Una optimización sin encargo consume el mismo presupuesto que una feature que nadie pidió.
+
+Criterio completo: [[Baseline de entregable]].
+
+### 2. La cadena con gates
+
+```txt
+Intención
+  ↓
+TL + RQ      (Producción)      qué se hace, con qué alcance
+  ↓
+GDS          (Game Design)     reglas, estados, feedback, balance
+  ↓
+LDS / UXS    (Level Design / UI-UX, si aplican)
+  ↓
+SOL + EJ     (Programación)    solución técnica + implementación
+  ↓
+VE           (Producción)      ¿lo entregado es lo prometido?
+  ↓
+commit al Core (Conocimiento)  ¿qué aprendizaje vuelve al sistema?
+```
+
+**Un artefacto downstream no existe sin su insumo upstream.** Si falta, se marca y no se avanza. Eso es lo que impide saltear pasos, y lo que hace que una entrega no se dé por terminada porque compila.
+
+Detalle de la cadena, la numeración y los gates: [[02_Indice Agencia]].
+
+---
+
 ## Modo de operación de la IA
 
-Cuando Vaultrum se carga como contexto, el asistente arranca en **Modo Vaultrum**: software asistente para la creación, cuya puerta de entrada es el **Productor** (Área de Producción), que pivotea entre áreas según lo que haga falta. Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Ambos modos y el procedimiento del switch están definidos en [[05_Modo_Operacion]] (capa 04_IA Operativa).
+Al cargar Vaultrum como contexto, el asistente arranca en **Modo Vaultrum**: software asistente para la creación, con puerta de entrada en el **Productor** (Área de Producción), que pivotea entre áreas según haga falta.
+
+Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Ambos modos y el procedimiento del switch están en [[05_Modo_Operacion]].
 
 ---
 
 ## Arquitectura general
 
-Vaultrum se organiza en tres capas principales:
+```txt
+01_VaultrumCore     el conocimiento y el criterio
+      ↓
+02_Agencia          la cadena que lo aplica al proyecto del usuario
+      ↓
+03_Comunidad        quiénes lo usan, aportan y gobiernan
 
-01_VaultrumCore  
-↓  
-02_Agencia  
-↓  
-03_Comunidad
+04_IA Operativa     transversal: cómo una IA opera el vault sin inflarlo
+05_Escuela          transversal: aprendizaje proactivo y la Biblioteca
+```
 
-Esta organización responde a una lógica de niveles:
-
-- **01_VaultrumCore** es la capa base del sistema.
-- **02_Agencia** es la capa operativa e intermediaria.
-- **03_Comunidad** es la capa humana, colaborativa y de uso público.
-- **04_IA Operativa** es la capa transversal que cuida cómo una IA opera Vaultrum (tokens, prompteo y el pass de optimización de contexto).
-- **05_Escuela** es la capa de aprendizaje proactivo: su Biblioteca guarda libros de fundamentos y de análisis de juegos que nutren el Core y que la Agencia consulta en tiempo de diseño.
-
-VaultrumCore contiene el conocimiento.
-
-La Agencia usa ese conocimiento para ayudar a trabajar sobre proyectos, problemas, ideas y necesidades reales.
-
-La Comunidad usa, aporta, corrige, propone y expande el sistema.
+- **01_VaultrumCore** es la fuente de criterio. Alimenta el arranque de cada área y recibe de vuelta lo aprendido.
+- **02_Agencia** produce **el proyecto del usuario**.
+- **03_Comunidad** usa, aporta, corrige y expande.
+- **04_IA Operativa** cuida el costo de operar: tokens, prompteo, el pass GC y sus herramientas de medición.
+- **05_Escuela** produce **conocimiento para el sistema**: sale a buscar lo que al Core le falta y lo trae destilado a su Biblioteca.
 
 ---
 
 ## 01_VaultrumCore
 
-**VaultrumCore** es el corazón de Vaultrum.
+Es el corazón. Contiene principios, criterios, patrones de diseño, arquitectura, optimización, IA para juegos, estructuras de datos, algoritmos, managers y material reutilizable.
 
-Es la capa donde vive el conocimiento central del sistema.
+Y desde el primer ciclo completo, dos secciones que antes no tenía:
 
-Contiene contenido como:
+- **Criterios de entrega** — cuándo algo está terminado: [[Baseline de entregable]], [[Verificacion parcial declarada]], [[Gates verificables]]. Es la única parte del Core que nació del uso del propio sistema.
+- **Experiencia de juego** — el índice liviano hacia la Biblioteca de la Escuela: [[Experiencia de juego]].
 
-- principios;
-- criterios;
-- patrones de diseño;
-- arquitectura;
-- optimización;
-- inteligencia artificial;
-- estructuras de datos;
-- algoritmos;
-- managers;
-- aprendizajes;
-- material reutilizable.
+VaultrumCore no ejecuta y no resuelve proyectos: **alimenta**. Se puede usar directo, sin pasar por ningún flujo.
 
-VaultrumCore puede usarse directamente.
-
-Una persona puede entrar al Core, leer sus contenidos, adaptar ideas, tomar criterios y aplicarlos en sus propios proyectos sin pasar necesariamente por un flujo guiado.
-
-VaultrumCore no ejecuta.
-
-VaultrumCore no resuelve proyectos por sí mismo.
-
-VaultrumCore alimenta.
-
-Su función es concentrar conocimiento útil para que pueda ser usado tanto por personas como por la Agencia.
-
-Cuando un proyecto, una experiencia o una salida genera aprendizaje útil, ese aprendizaje puede volver al Core como retroalimentación, mejora o nuevo criterio reutilizable.
+Entrada: [[01_Indice VaultrumCore]]
 
 ---
 
 ## 02_Agencia
 
-**Agencia** es la capa operativa e intermediaria de Vaultrum.
+La capa operativa. Seis **áreas**, cada una autocontenida —trae sus sub-agentes, su método, su producto y su skill ejecutable— y la salida de una es la entrada de la siguiente.
 
-Contiene agentes, áreas y formas de trabajo que ayudan a transformar necesidades humanas en salidas útiles.
+| Área | Produce | Responde |
+|------|---------|----------|
+| Producción | `TL` + `RQ` … y `VE` al cerrar | qué se hace, con qué alcance, y si lo entregado es lo prometido |
+| Game Design | `GDS` | reglas, estados, feedback, balance |
+| Level Design | `LDS` | espacio, encuentros, pacing, dificultad aplicada |
+| UI/UX | `UXS` | pantallas, HUD, navegación, legibilidad |
+| Programación | `SOL` + `EJ` | cómo se implementa y qué se implementó |
+| Conocimiento | commits al Core | qué aprendizaje merece volver a `main` |
 
-La Agencia trabaja sobre proyectos, problemas, ideas, decisiones y tareas usando el conocimiento disponible en VaultrumCore.
+El hilo es de **Producción de punta a punta**: lo abre con la intención y lo cierra validando la entrega. Nada avanza sin su insumo, y nada se da por terminado porque compile.
 
-Su función es asistir cuando una persona necesita ordenar, analizar, decidir, documentar, producir o resolver algo con más criterio.
-
-La Agencia puede intervenir en tareas como:
-
-- producción;
-- documentación;
-- programación;
-- análisis;
-- arquitectura;
-- optimización;
-- organización de proyectos;
-- contenido público;
-- estructuración de ideas;
-- revisión de decisiones;
-- generación de salidas concretas.
-
-La Agencia se nutre del Core.
-
-La Agencia funciona como intermediaria entre una necesidad humana y el conocimiento disponible en Vaultrum.
-
-Cuando el trabajo de la Agencia genera aprendizajes útiles, esos aprendizajes pueden retroalimentar VaultrumCore.
+**Los bordes son donde falla.** El medio de la cadena funciona; la evidencia dice que fallan la entrada, las ramas opcionales y la salida. Las tres reglas que lo corrigen ya son pasos ejecutables de las skills, no criterio escrito. Detalle en [[02_Indice Agencia]].
 
 ---
 
 ## 03_Comunidad
 
-**Comunidad** es la capa humana, colaborativa y pública de Vaultrum.
+La capa humana y pública: quién usa, estudia, adapta, corrige, propone o expande el sistema, bajo qué criterios y con qué límites.
 
-Incluye a las personas que usan, estudian, adaptan, corrigen, proponen o expanden el sistema.
-
-La Comunidad no existe solo para aportar contenido.
-
-También existe para usar Vaultrum como herramienta en proyectos propios.
-
-Una persona puede participar de distintas maneras:
-
-- usando VaultrumCore como fuente de conocimiento;
-- usando la Agencia como ayuda para sus proyectos;
-- proponiendo contenido nuevo;
-- corrigiendo contenido existente;
-- mejorando claridad;
-- revisando gobernanza;
-- entendiendo licencias;
-- participando en el sistema de contribución;
-- compartiendo aprendizajes útiles.
-
-La Comunidad no define por sí sola la identidad del sistema.
-
-La Comunidad usa y aporta valor bajo una estructura clara.
+Entrada: [[03_Indice Comunidad]]
 
 ---
 
 ## Formas de usar Vaultrum
 
-Vaultrum puede usarse de dos formas principales.
-
 ### Uso libre
 
-La persona entra al sistema, recorre VaultrumCore y usa el contenido directamente.
-
-Este uso sirve para:
-
-- estudiar conceptos;
-- tomar criterios de diseño o programación;
-- revisar patrones;
-- entender estructuras;
-- aplicar ideas en proyectos propios;
-- comparar decisiones técnicas;
-- inspirarse para resolver problemas;
-- usar el vault como fuente de consulta.
-
-En este caso, Vaultrum funciona como una base abierta de conocimiento práctico.
-
----
-### Uso asistido por Agencia
-
-La persona parte de una necesidad, problema, idea o proyecto.
-
-La Agencia actúa como intermediaria y ayuda a transformar esa entrada en una salida útil usando conocimiento disponible en VaultrumCore.
-
-Este uso sirve para:
-
-- ordenar una idea;
-- definir una tarea;
-- analizar un sistema;
-- armar documentación;
-- preparar un prompt operativo;
-- revisar arquitectura;
-- mejorar una decisión;
-- producir una salida concreta;
-- convertir conocimiento en acción.
-
-En este caso, Vaultrum funciona como sistema de trabajo asistido.
-
----
-
-## Flujo conceptual
-
-### Uso libre
-
-Persona  
-↓  
-VaultrumCore  
-↓  
-Proyecto propio / aprendizaje / aplicación directa
+Entrar al Core, leer, tomar criterio y aplicarlo en un proyecto propio. Sirve para estudiar conceptos, revisar patrones, comparar decisiones técnicas o usar el vault como fuente de consulta.
 
 ### Uso asistido
 
-Persona / problema / proyecto  
-↓  
-Agencia  
-↓  
-Conocimiento de VaultrumCore  
-↓  
-Salida útil  
-↓  
-Aprendizaje / mejora posible del sistema
+Partir de una necesidad y dejar que la Agencia la convierta en un entregable, atravesando la cadena. Sirve para ordenar una idea, definir alcance, diseñar un sistema, implementarlo y validarlo — dejando el rastro escrito.
 
-Ambas formas de uso son válidas.
+Los dos son válidos. Vaultrum no obliga a un único camino.
 
-Vaultrum no obliga a seguir un único camino.
+---
 
-El Core no es el destino obligatorio de cada flujo.
+## ¿Solo videojuegos?
 
-El Core es la fuente de conocimiento que puede ser consultada, usada y retroalimentada cuando corresponde.
+La cadena **no** es específica de videojuegos. Lo específico son dos eslabones:
+
+```txt
+específico de juegos:   GDS (reglas de gameplay) · LDS (nivel)
+general a cualquier software:  TL · RQ · UXS · SOL · EJ · VE
+```
+
+Un entregable de software que no sea un juego recorre la misma cadena sin `GDS` ni `LDS`: sus `RQ` van directo a Programación, y `UXS` aplica si tiene interfaz.
+
+Lo que **sí** cambia es el baseline: las *table-stakes* de una herramienta no son las de un juego. En ese caso Producción declara de dónde sale el mínimo —de un libro de la Biblioteca, o fijado por el owner para esa entrega— en vez de improvisarlo.
+
+Advertencia honesta: **esto todavía no se probó.** Todo lo validado se validó sobre un mismo género. Ver [[00_Auditoria de arquitectura]].
 
 ---
 
 ## Cómo recorrer Vaultrum
 
-Para entender el conocimiento central del sistema:
-
-[[01_Indice VaultrumCore]]
-
-Para entender cómo trabajan los agentes y áreas operativas:
-
-[[02_Indice Agencia]]
-
-Para aportar, corregir o revisar la parte comunitaria/open source:
-
-[[03_Indice Comunidad]]
-
-Para entender cómo una IA debe operar Vaultrum (tokens, prompteo, pass de contexto):
-
-[[04_Indice IA Operativa]]
-
-Para entrar a la Escuela y su Biblioteca (aprendizaje proactivo, libros de fundamentos y de juegos):
-
-[[00_Escuela]]
+```txt
+el conocimiento central          → [[01_Indice VaultrumCore]]
+la cadena y las áreas            → [[02_Indice Agencia]]
+aportar, corregir, gobernanza    → [[03_Indice Comunidad]]
+cómo una IA opera el vault       → [[04_Indice IA Operativa]]
+la Escuela y su Biblioteca       → [[00_Escuela]]
+el estado real del sistema       → [[00_Auditoria de arquitectura]]
+lo que está por formalizarse     → [[00_Leyes de Vaultrum (bitacora)]]
+```
 
 ---
 
 ## Estado actual
 
-Vaultrum se encuentra en una etapa de apertura inicial.
+Etapa de apertura inicial, con **una entrega real completa**: la cadena se corrió de punta a punta produciendo un Pong 3D en Unity 6, jugable y jugado por el owner.
 
-La prioridad actual es ordenar y publicar una base clara para que otras personas puedan usar el sistema, aplicarlo en sus proyectos y aportar mejoras.
+Lo que eso probó:
 
-El foco actual está en:
+- la cadena produce un entregable que se juega, con trazabilidad completa;
+- las table-stakes entran como requerimiento explícito y no como intuición;
+- el ciclo de conocimiento cierra: lo aprendido volvió al Core.
 
-- fortalecer VaultrumCore;
-- ordenar Agencia;
-- abrir Comunidad;
-- facilitar el uso libre del contenido;
-- facilitar el uso asistido con Agencia;
-- mejorar contenido existente;
-- sumar contenido útil faltante;
-- corregir contradicciones;
-- mejorar vínculos internos;
-- preservar identidad.
+Lo que no:
 
-No se busca cerrar una experiencia final de usuario todavía.
+- **una sola muestra.** Un género, sin dimensión espacial, sin persistencia ni contenido. `LDS` nunca corrió.
+- **la fricción todavía no está medida.** El instrumento existe ([[06_Medicion de friccion]]); la primera entrega con número va a ser `TL-004`.
 
-No se busca automatizar todo el sistema todavía.
-
-No se busca agregar capas innecesarias.
+El foco actual está en la segunda muestra y en medir, no en agregar capas.
 
 ---
 
@@ -275,4 +188,4 @@ No se busca agregar capas innecesarias.
 
 Vaultrum no busca ser grande por tener más contenido.
 
-Vaultrum busca ser útil porque su contenido tiene criterio, estructura y aplicación real.
+Vaultrum busca ser útil porque su contenido tiene criterio, estructura y aplicación real — y porque lo que produce queda escrito.

@@ -53,14 +53,14 @@ Diseñador de Solución → SOL-XXX.n        ⟵ gate de aprobación
 Ejecutor Técnico      → EJ-XXX.n
   ↓
 Revisor Técnico       → ¿cumple criterios?
-        ├── Sí  → cierra el hilo
+        ├── Sí  → cierra la revisión y devuelve el hilo a Producción
         └── No  → rebota:
                   · falta criterio técnico   → Analista
                   · solución mal planteada    → Diseñador
                   · implementación desviada   → Ejecutor
 ```
 
-El loop se repite hasta que el Revisor da OK contra los criterios de aceptación. Recién ahí el hilo (`.n`) se considera cerrado.
+El loop se repite hasta que el Revisor da OK contra los criterios de aceptación. Ahí cierra la **revisión técnica** del hilo `.n`. Cuando todos los hilos del timeline están en OK, la entrega vuelve al Área de Producción, que la cierra con su `VE-XXX`.
 
 ---
 
@@ -103,9 +103,9 @@ Puede detectar que un aprendizaje merece volver al Core, pero no lo formaliza: l
 ## Encadenado con otras áreas
 
 Recibe de: **Producción** (`RQ`), **Game Design** (`GDS`) y, si existen, **Level Design** (`LDS`) y **UI/UX** (`UXS`).
-Entrega a: **Conocimiento** (aprendizajes reutilizables detectados durante la ejecución).
+Entrega a: **Producción** (los `EJ` en OK vuelven para la validación de entrega del timeline) y **Conocimiento** (aprendizajes reutilizables detectados durante la ejecución).
 
-La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para que todo el hilo de trabajo sea rastreable de punta a punta.
+La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para que todo el hilo de trabajo sea rastreable de punta a punta. El `VE` de cierre cuelga del `TL`, sin `.n`.
 
 ## Skill del área
 

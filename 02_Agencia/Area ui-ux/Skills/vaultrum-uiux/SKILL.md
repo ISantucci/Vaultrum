@@ -44,6 +44,15 @@ estado o feedback mal definido en reglas    → deriva a Game Design
 [ ] Construible por Programación sin ambigüedad
 ```
 
+
+## Estado del paso
+
+Al cerrar, declará el estado (vocabulario común de la Agencia — no confundir con el estado del artefacto en su índice):
+
+- **Cerrado** — la spec queda lista para bajar a Programación.
+- **Ajustar** — hay hallazgos concretos; rebota al sub-agente que corresponde.
+- **Pausado** — falta información o una decisión del owner. Se declara qué falta (principio 9) y no se avanza. Pausar es un cierre válido: es preferible a diseñar sobre un supuesto.
+
 ## Salida registrable
 
 Por cada `GDS` con interfaz, un **UXS-XXX.n** con: pantallas/HUD/menús, jerarquía de información, affordances/mapping, estados + feedback, accesibilidad, integraciones y criterios de validación.
@@ -58,3 +67,4 @@ Diseñá la interfaz más clara que comunique lo necesario. Priorizá legibilida
 
 No definís reglas ni balance (Game Design). No diseñás niveles/espacio (Level Design). No programás (Programación). No definís alcance (Producción). No hacés arte final ni ilustración. Si falta estado/feedback en reglas → Game Design; cuando el UXS cierra → Programación.
 
+Regla de capas: ver `02_Agencia/02_Indice Agencia.md`.

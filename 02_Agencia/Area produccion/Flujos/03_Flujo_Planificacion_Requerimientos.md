@@ -11,7 +11,7 @@ El flujo no ejecuta el trabajo.
 
 El flujo no deriva técnicamente la solución.
 
-El flujo cierra Producción dejando una planificación registrable, numerada y entendible.
+El flujo cierra la **apertura** del hilo dejando una planificación registrable, numerada y entendible. No cierra la intervención del área: Producción vuelve al final, con el [[04_Flujo_Validacion_Entrega]], a validar que lo entregado sea lo planificado.
 
 ---
 
@@ -280,9 +280,9 @@ Si estos puntos no pueden cumplirse por falta de información, el flujo debe cer
 
 ---
 
-## Condiciones para cerrar Producción
+## Condiciones para cerrar la planificación
 
-El Área de Producción puede cerrar su intervención cuando:
+La planificación puede darse por cerrada —y el hilo pasar a las demás áreas— cuando:
 
 - la idea fue transformada en timeline y requerimientos asociados,
 - el trabajo tiene alcance y límites claros,
@@ -292,7 +292,9 @@ El Área de Producción puede cerrar su intervención cuando:
 - los requerimientos concretan el timeline,
 - la salida puede registrarse en los índices correspondientes.
 
-Producción no debe cerrar el trabajo si:
+Cerrar la planificación **no cierra el trabajo del área**: el timeline vuelve a Producción al final para su validación de entrega (`VE`).
+
+La planificación no debe cerrarse si:
 
 - el objetivo sigue ambiguo,
 - el alcance todavía está mezclado,
@@ -343,6 +345,8 @@ Esa salida debe estar compuesta por:
 
 - un timeline principal,
 - uno o más requerimientos asociados.
+
+Es la salida de **apertura** del hilo. La salida de cierre (`VE`) la produce el [[04_Flujo_Validacion_Entrega]] cuando la entrega vuelve.
 
 El timeline ordena la planificación general.
 

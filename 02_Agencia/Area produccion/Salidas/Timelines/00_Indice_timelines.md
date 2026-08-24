@@ -58,3 +58,5 @@ Formato de registro:
 Registros:
 
 - [[TL-001_Pong_2_Jugadores_Completo]] - Pong 2 jugadores completo (cancha, paletas, pelota, score, estados, juice)
+- [[TL-002_Pong3D_2_Jugadores_Unity6]] - Pong 3D 2 jugadores en Unity 6 (arena, paletas, pelota, score, estados, opciones, game feel)
+- [[TL-003_Pong3D_Unity6_Cadena_Completa]] - Pong 3D 2 jugadores en Unity 6 con cadena completa (supersede TL-002): carga el libro de Pong, agrega UXS y onboarding

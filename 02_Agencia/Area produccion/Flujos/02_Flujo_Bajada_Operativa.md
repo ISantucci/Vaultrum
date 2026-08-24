@@ -70,9 +70,9 @@ Puede incluir:
 - decisiones todavía no tomadas,
 - mejoras no prioritarias,
 - implementación técnica detallada,
-- documentación permanente,
-- auditoría final,
-- contenido público,
+- documentación permanente del Core (Área de Conocimiento),
+- revisión técnica del código (Área de Programación),
+- material público (capa 03_Comunidad),
 - cualquier responsabilidad que pertenezca a otra área.
 
 ---

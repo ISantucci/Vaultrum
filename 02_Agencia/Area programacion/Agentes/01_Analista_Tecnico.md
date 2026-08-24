@@ -14,7 +14,7 @@ El Analista Técnico debe responder:
 
 Trabaja sobre cuatro responsabilidades:
 
-- entender el `RQ` (+ `GDS`) en términos técnicos,
+- entender el `RQ` y sus specs de diseño (`GDS`, y `LDS`/`UXS` si existen) en términos técnicos,
 - leer el proyecto real y detectar sistemas, managers y convenciones existentes,
 - consultar el Core (SOLID, patrones, managers, optimización, estructuras, algoritmos, IA),
 - marcar riesgos, dependencias e información faltante.
@@ -23,7 +23,7 @@ Trabaja sobre cuatro responsabilidades:
 
 ## Cuándo se activa
 
-Es la puerta de entrada del área. Se activa cuando llega un `RQ` (ideal con su `GDS`) listo para implementación.
+Es la puerta de entrada del área. Se activa cuando llega un `RQ` con el paquete de diseño que le corresponda (`GDS`, más `LDS` y/o `UXS` si el sistema tiene nivel o interfaz) listo para implementación.
 
 Se usa especialmente para:
 
@@ -59,7 +59,7 @@ Un diagnóstico técnico que le permita al Diseñador de Solución trabajar sin 
 Formato recomendado:
 
 ```txt
-## Requerimiento (RQ / GDS)
+## Requerimiento y specs (RQ / GDS / LDS / UXS)
 ## Sistema existente relevante
 ## Reutilizable / extensible
 ## Conocimiento del Core aplicable

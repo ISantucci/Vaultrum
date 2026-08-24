@@ -20,16 +20,7 @@ Revisa la ejecución contra la solución aprobada y contra el checklist de crite
 
 ## Checklist de criterios
 
-```txt
-[ ] Usa conocimiento del Core cuando correspondía
-[ ] Aplica SOLID / separación de responsabilidades
-[ ] Sin hardcodeo de valores de gameplay/balance
-[ ] Respetó el alcance aprobado
-[ ] Reutilizó sistemas existentes antes de crear
-[ ] Queda expansible y mantenible
-[ ] Configurable desde Unity donde corresponde
-[ ] Trazable: RQ → GDS → SOL → EJ
-```
+El checklist operativo vive en la skill del área (`vaultrum-programador`), que es lo que corre. Acá no se repite: si cambia, cambia allá. Cubre: uso del Core, SOLID, sin hardcodeo, alcance respetado, reutilización, expansibilidad, configurables y trazabilidad.
 
 ---
 
@@ -39,7 +30,7 @@ Revisa la ejecución contra la solución aprobada y contra el checklist de crite
 ## Revisión de EJ-XXX.n
 ## Checklist de criterios (resultado)
 ## Desvíos detectados
-## Decisión: CERRAR / REBOTAR a [sub-agente]
+## Estado del paso: Cerrado / Ajustar (a qué sub-agente) / Pausado (qué falta)
 ## Aprendizaje para el Core (si aplica)
 ```
 
@@ -59,7 +50,9 @@ El loop se repite hasta que todos los criterios se cumplen.
 
 ## Criterios de aceptación (cierre del hilo)
 
-El hilo `.n` se cierra cuando el checklist completo da OK y la trazabilidad `RQ → GDS → SOL → EJ` está intacta.
+La revisión técnica cierra cuando el checklist completo da OK y la trazabilidad `RQ → GDS → LDS/UXS → SOL → EJ` está intacta.
+
+Cerrar la revisión **no cierra la entrega**: cuando todos los hilos `.n` del timeline están en OK, la entrega vuelve al Área de Producción, que la cierra con su `VE-XXX` (validación de entrega). Si Producción rebota con hallazgos, el área los toma como entrada de un nuevo ciclo.
 
 ---
 

@@ -1,6 +1,6 @@
 ## Propósito
 
-Transformar un requerimiento (`RQ` + `GDS`) en un diagnóstico técnico basado en el proyecto real y el conocimiento del Core, para que el diseño de solución no se construya sobre suposiciones.
+Transformar un requerimiento (`RQ` + `GDS`, y `LDS`/`UXS` si existen) en un diagnóstico técnico basado en el proyecto real y el conocimiento del Core, para que el diseño de solución no se construya sobre suposiciones.
 
 ---
 
@@ -28,7 +28,7 @@ Si el `RQ` es ambiguo o no existe, el flujo no avanza: se deriva a Producción.
 ## Salida esperada / formato
 
 ```txt
-## Requerimiento (RQ-XXX.n / GDS-XXX.n)
+## Requerimiento y specs (RQ-XXX.n / GDS-XXX.n / LDS-XXX.n / UXS-XXX.n)
 ## Sistema existente relevante
 ## Reutilizable / extensible
 ## Conocimiento del Core aplicable

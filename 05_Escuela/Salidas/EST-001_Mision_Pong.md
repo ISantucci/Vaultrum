@@ -40,13 +40,13 @@ Misión acotada. Al ser Pong un caso chico y conocido, una sola corrida debería
 ## Barra de calidad (criterios de aceptación)
 
 ```txt
-[ ] Reutilizable: sirve de baseline para cualquier "hacé un Pong" o variante, no para uno solo
-[ ] Claro: se entiende como criterio por humanos e IAs (principio 8)
-[ ] Citado: cada fundamento con su fuente
-[ ] No verbatim: concepto destilado, nunca texto con copyright
-[ ] Con aplicación (qué trae la IA por default) y límites (cuándo NO)
-[ ] Incluye una Definición de Terminado accionable para un Pong
-[ ] No duplica el Core
+[x] Reutilizable: sirve de baseline para cualquier "hacé un Pong" o variante, no para uno solo
+[x] Claro: se entiende como criterio por humanos e IAs (principio 8)
+[x] Citado: cada fundamento con su fuente
+[x] No verbatim: concepto destilado, nunca texto con copyright
+[x] Con aplicación (qué trae la IA por default) y límites (cuándo NO)
+[x] Incluye una Definición de Terminado accionable para un Pong
+[x] No duplica el Core
 ```
 
 ---
@@ -55,9 +55,9 @@ Misión acotada. Al ser Pong un caso chico y conocido, una sola corrida debería
 
 ```txt
 [x] ANTES — misión acotada a un caso (Pong); presupuesto blando fijado; contexto base = Core actual (sin módulo de experiencia).
-[ ] DURANTE — mide consumo en la investigación; corta si excede.
-[ ] ANTES DE DESTILAR — poda material bruto (duplicados/ruido).
-[ ] ANTES DEL HANDOFF — confirma que el EST no infla ni duplica el Core.
+[x] DURANTE — corrida única, sin búsqueda externa: se destiló sobre las fuentes ya catalogadas del estante (05, 13, 17, 18, 21, 06, 23, 08, 03, 09, 12) y sobre el Fundamento 05, ya en la Biblioteca.
+[x] ANTES DE DESTILAR — sin material bruto que podar: el insumo ya estaba destilado en el estante de Fuentes.
+[x] ANTES DEL HANDOFF — el libro no duplica el Fundamento 05: éste aporta los 9 pilares transversales, el libro de Pong aporta solo lo específico del género (table-stakes, baseline de parámetros, feel del impacto).
 ```
 
 ---
@@ -66,10 +66,10 @@ Misión acotada. Al ser Pong un caso chico y conocido, una sola corrida debería
 
 ```
 [[01_Bibliotecario]]  → misión (este doc) ✔ gate superado
-[[02_Investigador]]   → material bruto citado sobre Pong (mecánica + game feel)
-[[03_Destilador]]     → EST: fundamentos de Pong (table-stakes + juice + def. de terminado)
-[[04_Validador_Estudio]] → barra + dedup + AiCare → handoff a Conocimiento
-Área de Conocimiento  → commit → Owner → merge a main
+[[02_Investigador]]   → material citado del estante de Fuentes ✔ (sin salida externa: dedup contra lo ya catalogado)
+[[03_Destilador]]     → [[01_Pong]] llenado ✔ (loop, 9 table-stakes, juice, baseline de parámetros, Definición de Terminado)
+[[04_Validador_Estudio]] → barra + dedup + AiCare ✔ → pendiente handoff a Conocimiento
+Área de Conocimiento  → commit → Owner → merge a main   ⟵ PENDIENTE (aprobación del owner)
 ```
 
 ---
@@ -80,7 +80,13 @@ Pong es la entrada 1. La misma plantilla se repite por cada tipo de experiencia 
 
 ---
 
+## Resultado de la corrida
+
+Libro [[01_Pong]] llenado en una sola corrida, sin búsqueda externa: el estante de Fuentes ya tenía catalogado todo lo necesario, así que la misión se resolvió destilando material propio de la Biblioteca. Estado del libro: **En validación** (a la espera del handoff a Conocimiento y la aprobación del owner).
+
+Consumido primero por el [[TL-003_Pong3D_Unity6_Cadena_Completa]] — el primer timeline que carga este libro como insumo obligatorio del `RQ`. Ese es el cierre del loop que originó la Ley #1.
+
 ## Decisiones pendientes del owner
 
-1. **Presupuesto:** confirmar el tamaño de la corrida (cuántas fuentes antes de destilar).
-2. **Aprobación de arranque:** OK para que el Investigador salga a buscar material de Pong.
+1. **Aprobación del libro:** OK para pasar [[01_Pong]] de *En validación* a *En la Biblioteca* vía handoff al Área de Conocimiento.
+2. **Fundamento 01:** el libro de Pong aportó material para [[01_Loop_de_experiencia]] (loops anidados de segundos/punto/partida), que sigue *En estudio*. Definir si se actualiza ahora o en misión propia.

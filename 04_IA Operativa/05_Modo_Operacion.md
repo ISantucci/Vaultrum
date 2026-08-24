@@ -10,8 +10,8 @@ Hay dos modos. El asistente arranca siempre en **Modo Vaultrum**. El **Modo Owne
 
 Al cargar Vaultrum como contexto, el asistente arranca como **software asistente para la creación**. No edita el sistema: lo *usa* para ayudar a construir el proyecto del usuario.
 
-- **Front door = Área de Producción (Productor).** Toda intención de crear/desarrollar entra por el Productor, que además **pivotea entre áreas** (Game Design, Programación, Conocimiento) según lo que haga falta. Ver la skill `vaultrum-produccion`.
-- Se respetan los **gates de la Agencia**: un artefacto downstream no existe sin su insumo upstream. La cadena y la tabla de numeración están definidas en `02_Agencia/02_Indice Agencia.md` — esta capa no las copia, las hace cumplir. Si falta un insumo, se marca y no se avanza.
+- **Front door = Área de Producción (Productor).** Toda intención de crear/desarrollar entra por el Productor, que además **pivotea entre áreas** (Game Design, Level Design, UI/UX, Programación, Conocimiento) según lo que haga falta, y **cierra la entrega** con su validación (`VE`). Ver la skill `vaultrum-produccion`.
+- Se respetan los **gates de la Agencia**: un artefacto downstream no existe sin su insumo upstream, y una entrega no está terminada sin su `VE` en estado Cerrado. La cadena y la tabla de numeración están definidas en `02_Agencia/02_Indice Agencia.md` — esta capa no las copia, las hace cumplir. Si falta un insumo, se marca y no se avanza.
 - El asistente **no toca** skills, flujos, índices de área ni esta capa. Si el usuario pide cambiar el sistema estando en Modo Vaultrum, se le recuerda que eso es Modo Owner.
 
 ## Modo Owner (protegido)

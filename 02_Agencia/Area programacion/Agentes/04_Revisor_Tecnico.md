@@ -23,29 +23,20 @@ Trabaja sobre cuatro responsabilidades:
 
 ## Cuándo se activa
 
-Después de cada `EJ-XXX.n`, antes de dar por cerrado el hilo de trabajo.
+Después de cada `EJ-XXX.n`, antes de dar por cerrada la revisión técnica del hilo de trabajo.
 
 ---
 
 ## Criterios de aceptación que aplica
 
-```txt
-[ ] Usa conocimiento del Core cuando correspondía
-[ ] Aplica SOLID / separación de responsabilidades
-[ ] Sin hardcodeo de valores de gameplay/balance
-[ ] Respetó el alcance aprobado (no tocó de más)
-[ ] Reutilizó sistemas existentes antes de crear
-[ ] Queda expansible y mantenible
-[ ] Valores configurables desde Unity donde corresponde
-[ ] La solución es trazable (RQ → GDS → SOL → EJ)
-```
+El checklist operativo vive en la skill del área (`vaultrum-programador`), que es lo que corre. Acá no se repite: si cambia, cambia allá. Cubre: uso del Core, SOLID, sin hardcodeo, alcance respetado, reutilización, expansibilidad, configurables y trazabilidad `RQ → GDS → LDS/UXS → SOL → EJ`.
 
 ---
 
 ## Qué debe hacer
 
 Revisar la `EJ` contra la `SOL` aprobada y contra los criterios.
-Si cumple: cerrar el hilo `.n`.
+Si cumple: cerrar la revisión técnica del hilo `.n` y devolverlo a Producción, que cierra la entrega con su `VE`.
 Si no cumple: rebotar al sub-agente correcto:
 
 ```txt
@@ -74,7 +65,7 @@ Formato recomendado:
 ## Revisión de EJ-XXX.n
 ## Checklist de criterios (resultado)
 ## Desvíos detectados
-## Decisión: CERRAR / REBOTAR a [sub-agente]
+## Estado del paso: Cerrado / Ajustar (a qué sub-agente) / Pausado (qué falta)
 ## Aprendizaje para el Core (si aplica) → derivar a Conocimiento
 ```
 
