@@ -160,8 +160,3 @@ Un Pong que compila y rebota pero no tilda **Estados**, **Claridad** y **Feel** 
 - El modo **1 jugador contra IA** agrega un problema que este libro no cubre: el ajuste de dificultad del rival y la percepción de justicia frente a una IA que no falla. Es misión de profundización.
 - No mergea al Core: es candidato `EST` para Conocimiento; el owner aprueba.
 
-## Fuentes
-
-Conceptos destilados + cita, sin verbatim. Del estante [[00_Indice_fuentes]]:
-[[05_Game_Feel]] (feel del impacto, peso del control, juice como comunicación) · [[13_Elements_of_Game_Design]] (la paleta como dial, legibilidad del sistema) · [[17_Uncertainty_in_Games]] (incertidumbre por desempeño, tensión del rally) · [[18_Art_of_Failure]] (derrota legible, reintento rápido) · [[21_The_Grasshopper]] (objetivo + obstáculo innecesario = juego) · [[06_Half_Real]] (reglas consistentes) · [[23_Man_Play_and_Games]] (agon) · [[08_Designing_Games]] (elegancia: pocas reglas, muchas situaciones) · [[03_Game_Design_Workshop]] (prototipo gris, playtest) · [[09_Gamers_Brain]] y [[12_Design_of_Everyday_Things]] (claridad, mapping, feedback).
-Cruza a [[05_Fundamentos_de_experiencia_ludica]] (los 9 pilares y su CHECKLIST por-GDS), [[01_Loop_de_experiencia]], [[02_Game_feel]], [[03_Definicion_de_terminado]].

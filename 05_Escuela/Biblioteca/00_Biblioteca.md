@@ -21,6 +21,9 @@ Análisis **por juego/tipo**, guardados por **género**. Qué hace bien un Pong,
 ### [[00_Indice_fuentes|Fuentes]]
 Libros, papers y referencias **externas** que la Escuela estudia — la materia prima. No son libros destilados de Vaultrum: se catalogan (cita + resumen aprendido, sin verbatim) y luego, en una misión de destilación, alimentan los Fundamentos o Juegos. Separar la fuente del libro destilado evita meter texto ajeno en el activo propio.
 
+### [[00_Indice_documentos|Documentación real]]
+**Artefactos** de la industria: documentos de diseño que se usaron de verdad (GDD, design bibles, pitches), código fuente liberado, documentación oficial de motor y registros de proceso. No son teoría (eso es Fuentes) ni destilado propio (eso son Fundamentos y Juegos): son **evidencia primaria**, para que Producción y Game Design vean cómo lo resolvió alguien que ya lo hizo en vez de discutirlo en abstracto. La Biblioteca **no aloja** estos documentos: guarda ficha, referencia y URL, con el nivel de licencia declarado.
+
 ---
 
 ## Anatomía de un libro
@@ -46,6 +49,8 @@ mision: [[EST-XXX_...]]
 ```
 
 Los libros de **Fundamentos** no llevan `genero`; los de **Juegos**, sí.
+
+Los **documentos** del cuarto estante no siguen esta anatomía: son fichas de artefacto, con su propia metadata (`familia`, `autor`, `anio`, `formato`, `acceso`, `licencia`, `prioridad`, `url`). Ver [[00_Indice_documentos]].
 
 ---
 
@@ -73,6 +78,7 @@ El Core guarda un **índice por género** que apunta a estos libros. Producción
 ## Reglas de la Biblioteca
 
 - Un libro por tipo de experiencia/juego; se **actualiza**, no se duplica (principio 7).
+- **Nunca se aloja material ajeno.** El estante de Documentación real guarda ficha + URL + nivel de licencia (A explícita / B publicada sin licencia formal / C filtrada o decompilada). Nivel C se referencia, no se usa como insumo de producción.
 - Conceptos + citas, **nunca** texto verbatim con copyright. Si una fuente no tiene licencia clara, se resuelve con el owner antes de usarla.
 - Un libro es "de verdad" recién cuando pasó por misión (investigado + destilado + validado). Antes es un estante reservado, *En estudio*.
 - La Escuela llena la Biblioteca; **el owner aprueba** qué se vuelve criterio del Core.
