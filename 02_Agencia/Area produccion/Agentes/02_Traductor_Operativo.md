@@ -63,12 +63,12 @@ Si una idea ya está suficientemente clara, debe dejarla preparada para que el P
 
 El Traductor Operativo no debe absorber responsabilidades de otros agentes.
 
-No debe debatir eternamente la validez de la idea.  
-No debe armar requerimientos finales completos.  
-No debe estimar timelines cerrados.  
-No debe inventar tareas por rellenar.  
-No debe diseñar la implementación técnica.  
-No debe convertir alcance futuro en alcance inmediato.  
+No debe debatir eternamente la validez de la idea.
+No debe armar requerimientos finales completos.
+No debe estimar timelines cerrados.
+No debe inventar tareas por rellenar.
+No debe diseñar la implementación técnica.
+No debe convertir alcance futuro en alcance inmediato.
 No debe pasar al Planificador una idea todavía confusa.
 
 Su trabajo termina cuando la idea queda ordenada, acotada y lista para planificación.
@@ -129,5 +129,5 @@ Este flujo se utiliza cuando una idea ya fue validada o ajustada, pero todavía 
 
 El Traductor Operativo debe usar este flujo para dejar una base clara y transferible al Planificador.
 
-No debe explicar el flujo completo dentro de este documento.  
+No debe explicar el flujo completo dentro de este documento.
 El detalle operativo vive en el documento del flujo.

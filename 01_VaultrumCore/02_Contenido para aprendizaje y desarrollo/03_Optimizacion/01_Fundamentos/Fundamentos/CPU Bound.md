@@ -369,26 +369,24 @@ Esta nota pertenece a Fundamentos.
 Si se quiere entender el presupuesto temporal:
 
 ```txt
-→ [[Frame Budget]]
+→ Frame Budget
 ```
 
 Si se quiere entender que limita el rendimiento:
 
 ```txt
-→ [[Bottleneck]]
+→ Bottleneck
 ```
 
 Si se quiere entender el ciclo de ejecucion:
 
 ```txt
-→ [[Game loop]]
+→ Game loop
 ```
 
 Si hay un sintoma concreto de CPU:
 
-```txt
 → [[Problemas de rendimiento]]
-```
 
 Especialmente:
 
@@ -402,9 +400,7 @@ Instantiate y Destroy constantes
 
 Si hace falta medir:
 
-```txt
 → [[Herramientas de deteccion]]
-```
 
 Herramientas utiles:
 
@@ -416,9 +412,7 @@ Timeline
 
 Si ya se confirmo el problema:
 
-```txt
 → [[Metodologias y soluciones]]
-```
 
 ---
 

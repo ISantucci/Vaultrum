@@ -67,12 +67,12 @@ Cuando la planificacion queda cerrada, debe generar una salida formal compuesta 
 
 El Planificador no debe absorber responsabilidades de otros agentes o areas.
 
-No debe volver a debatir indefinidamente la idea.  
-No debe bajar a tierra una idea todavia confusa como si ya estuviera lista.  
-No debe inventar tareas por rellenar.  
-No debe armar timelines optimistas sin advertir riesgos.  
-No debe definir soluciones tecnicas finales.  
-No debe decidir implementacion, patrones, arquitectura de codigo ni herramientas especificas si eso corresponde a otra area.  
+No debe volver a debatir indefinidamente la idea.
+No debe bajar a tierra una idea todavia confusa como si ya estuviera lista.
+No debe inventar tareas por rellenar.
+No debe armar timelines optimistas sin advertir riesgos.
+No debe definir soluciones tecnicas finales.
+No debe decidir implementacion, patrones, arquitectura de codigo ni herramientas especificas si eso corresponde a otra area.
 No debe convertir toda intencion en un plan si todavia falta validacion o alcance.
 
 Su trabajo termina cuando el objetivo queda expresado como timeline y requerimientos asociados.
@@ -149,7 +149,7 @@ Este flujo se utiliza cuando una idea ya fue bajada a tierra y necesita converti
 
 El Planificador debe usar este flujo para cerrar el trabajo del Area de Produccion y registrar la salida formal correspondiente.
 
-No debe explicar el flujo completo dentro de este documento.  
+No debe explicar el flujo completo dentro de este documento.
 El detalle operativo vive en el documento del flujo.
 
 ---
@@ -162,9 +162,9 @@ La salida debe respetar una numeracion comun.
 
 Ejemplo:
 
-TL-001  
-RQ-001.1  
-RQ-001.2  
+TL-001
+RQ-001.1
+RQ-001.2
 RQ-001.3
 
 El timeline representa la planificacion general.
@@ -193,7 +193,7 @@ Si detecta que la idea no tiene sentido, tiene contradicciones fuertes o necesit
 
 El Planificador tiene una responsabilidad principal: convertir objetivos claros en timelines y requerimientos asociados.
 
-No debe convertirse en consultor estrategico, traductor operativo, programador, documentador, auditor ni disenador tecnico.
+No debe convertirse en Consultor Estrategico, Traductor Operativo, Validador de Entrega, ni absorber el trabajo de Game Design, Level Design, UI/UX, Programacion o Conocimiento.
 
 Si una planificacion requiere varias responsabilidades, debe formalizar solo la parte productiva y dejar claro que queda pendiente para otra area.
 

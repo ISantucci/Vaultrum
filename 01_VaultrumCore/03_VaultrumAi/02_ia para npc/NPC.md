@@ -223,31 +223,31 @@ Un NPC puede consumir sistemas segun su necesidad.
 Ejemplos:
 
 ```txt
-[[Percepcion]]
-[[Field of View]]
-[[Deteccion del jugador]]
-[[Estados de NPC]]
-[[Arboles de decision]]
-[[Seleccion ponderada]]
-[[Patrullaje]]
-[[Persecucion]]
-[[Ataque]]
-[[Huida]]
-[[Steering Behaviours]]
-[[Obstacle Avoidance]]
-[[Integracion con Pathfinding]]
+Percepcion
+Field of View
+Deteccion del jugador
+Estados de NPC
+Arboles de decision
+Seleccion ponderada
+Patrullaje
+Persecucion
+Ataque
+Huida
+Steering Behaviours
+Obstacle Avoidance
+Integracion con Pathfinding
 ```
 
 Tambien puede relacionarse con sistemas externos a esta carpeta:
 
 ```txt
-[[IA para desarrollo de mapas]]
-[[Pathfinding]]
-[[State]]
-[[Strategy]]
-[[Observer]]
-[[Command]]
-[[Event Queue]]
+IA para desarrollo de mapas
+Pathfinding
+State
+Strategy
+Observer
+Command
+Event Queue
 ```
 
 Pero consumir un sistema no significa redefinirlo.
@@ -376,13 +376,13 @@ Ejemplo:
 Guardia patrullero
 
 Necesita:
-- [[Percepcion]]
-- [[Field of View]]
-- [[Patrullaje]]
-- [[Persecucion]]
-- [[Ataque]]
-- [[Estados de NPC]]
-- [[Integracion con Pathfinding]] si el mapa lo requiere
+- Percepcion
+- Field of View
+- Patrullaje
+- Persecucion
+- Ataque
+- Estados de NPC
+- Integracion con Pathfinding si el mapa lo requiere
 ```
 
 Ejemplo:

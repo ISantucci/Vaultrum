@@ -8,53 +8,45 @@ Cada timeline organiza una planificación general y agrupa los requerimientos ne
 
 ## Formato obligatorio
 
-Cada timeline debe ordenar:
+Cada timeline ordena:
 
-- objetivo,
-- área afectada,
-- criticidad,
-- requerimientos asociados,
-- secuencia de trabajo,
-- dependencias,
-- riesgos,
-- criterios de cierre.
+```txt
+objetivo
+área afectada
+criticidad
+requerimientos asociados
+secuencia de trabajo
+dependencias
+riesgos
+criterios de cierre
+```
 
 ---
 
-## Regla de numeración
+## Regla de numeración y nombre de archivo
 
-Cada timeline usa un número base incremental.
+Cada timeline usa un número base incremental, y sus requerimientos heredan ese número:
 
-Ejemplo:
-
-TL-001  
-TL-002  
+```txt
+TL-001
+TL-002
 TL-003
+```
 
-Los requerimientos asociados deben usar el mismo número base.
+El archivo se nombra con el código, el separador y el nombre descriptivo:
 
----
-
-## Patron de archivo
-
-Cada timeline debe usar este patron:
-
+```txt
 TL-XXX_Nombre_Descriptivo.md
-
-Ejemplo:
-
-TL-001_Consolidar_Salidas_Produccion.md
+TL-001_Pong_2_Jugadores_Completo.md
+```
 
 ---
 
 ## Timelines registrados
 
-Formato de registro:
+- [[TL-001_Pong_2_Jugadores_Completo|TL-001 Pong 2 jugadores]] — cancha, paletas, pelota, score, estados y juice
+- [[TL-002_Pong3D_2_Jugadores_Unity6|TL-002 Pong 3D en Unity 6]] — arena, paletas, pelota, score, estados, opciones y game feel
+- [[TL-003_Pong3D_Unity6_Cadena_Completa|TL-003 Pong 3D, cadena completa]] — supersede al TL-002: carga el libro de Pong y agrega UI/UX y onboarding
 
-```
-- [[TL-XXX_Nombre_Descriptivo]] - objetivo breve
-```
+---
 
-Registros:
-
--

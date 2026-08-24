@@ -4,14 +4,15 @@ Esta carpeta contiene las salidas formales generadas por el Área de Producción
 
 Una salida formal aparece cuando una idea ya fue analizada, bajada a tierra y planificada.
 
-El resultado debe quedar registrado como timeline y requerimientos asociados.
+El resultado debe quedar registrado como timeline y requerimientos asociados al abrir el hilo, y como validación de entrega al cerrarlo.
 
 ---
 
 ## Índices internos
 
-- [[00_indice_requerimientos]]
 - [[00_Indice_timelines]]
+- [[00_Indice_requerimientos|Índice de requerimientos]]
+- [[00_Indice_ve]]
 
 ---
 
@@ -27,9 +28,22 @@ Los requerimientos asociados usan el mismo número base con subnumeración.
 
 Ejemplo:
 
-RQ-001.1  
-RQ-001.2  
+RQ-001.1
+RQ-001.2
 RQ-001.3
+
+---
+
+## Regla de la validación de entrega
+
+La validación de entrega cuelga del timeline y **no lleva subnumeración**: valida la iteración completa, no cada requerimiento.
+
+Ejemplo:
+
+TL-001
+VE-001
+
+El gate de cierre está definido en `02_Indice Agencia`.
 
 ---
 
@@ -57,7 +71,7 @@ Luego se deben crear los requerimientos asociados usando el mismo numero base.
 
 Ejemplo:
 
-TL-001  
-RQ-001.1  
-RQ-001.2  
+TL-001
+RQ-001.1
+RQ-001.2
 RQ-001.3

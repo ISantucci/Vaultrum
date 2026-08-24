@@ -223,13 +223,13 @@ Un manager sano debe tener una razón clara para cambiar.
 También se relaciona con:
 
 ```txt
-[[O - OpenClosed Principle]]
+O - OpenClosed Principle
 → si cada feature obliga a modificar el manager, está mal cerrado.
 
-[[I - Interface Segregation Principle]]
+I - Interface Segregation Principle
 → si el manager expone demasiadas cosas, fuerza dependencias innecesarias.
 
-[[D - Dependency Inversion Principle]]
+D - Dependency Inversion Principle
 → si depende de todos los concretos, queda rígido.
 ```
 

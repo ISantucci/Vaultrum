@@ -12,6 +12,10 @@ desktop.ini
 *.temp
 *.bak
 
+# Owner mode (secreto local, nunca se versiona)
+.owner.local.json
+**/.owner.local.json
+
 # Local/private folders
 cosas viejas/
 Cosas viejas/
@@ -19,3 +23,13 @@ _old/
 _private/
 backup/
 backups/
+
+# Estado de sesion de AiCare (manifiestos de carga) — no es contenido del vault
+.aicare/
+
+# Python
+__pycache__/
+*.pyc
+
+# Zona de descarte: se borra a mano desde el explorador
+_to_delete/

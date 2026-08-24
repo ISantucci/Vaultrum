@@ -321,20 +321,18 @@ Esta nota pertenece a Fundamentos.
 Si se quiere entender cuanto tiempo hay disponible:
 
 ```txt
-→ [[Frame Budget]]
+→ Frame Budget
 ```
 
 Si se quiere identificar el cuello de botella:
 
 ```txt
-→ [[Bottleneck]]
+→ Bottleneck
 ```
 
 Si hace falta elegir herramienta:
 
-```txt
 → [[Herramientas de deteccion]]
-```
 
 Herramientas utiles:
 
@@ -349,15 +347,11 @@ Comparacion antes y despues
 
 Si ya existe un sintoma:
 
-```txt
 → [[Problemas de rendimiento]]
-```
 
 Si ya se confirmo un problema:
 
-```txt
 → [[Metodologias y soluciones]]
-```
 
 ---
 

@@ -211,7 +211,7 @@ No conviene usar Theta Star solo porque parece más avanzado.
 
 Si el suavizado posterior alcanza, puede ser una solución más simple y suficiente.
 
-Para el criterio de suavizado como post-proceso, ver [[A Star suavizado]].
+Para el criterio de suavizado como post-proceso, ver `A Star suavizado`.
 
 ---
 

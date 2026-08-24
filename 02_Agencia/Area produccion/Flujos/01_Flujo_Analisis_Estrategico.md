@@ -36,6 +36,7 @@ El flujo debe transformar la entrada inicial en una dirección evaluada.
 
 Para eso debe:
 
+- partir del Core: consultar identidad, principios y criterios aplicables (principio 1),
 - entender la intención del usuario,
 - identificar el problema real,
 - separar necesidad de solución propuesta,
@@ -54,13 +55,13 @@ Durante el análisis se debe identificar, aunque sea de forma tentativa, qué á
 Ejemplos posibles:
 
 - Producción,
+- Game Design,
+- Level Design,
+- UI/UX,
 - Programación,
-- Technical Game Design,
-- Documentación,
-- Auditoría,
-- Contenido Público,
-- VaultrumAI,
-- Sistema Vaultrum,
+- Conocimiento,
+- Escuela (si el gap es de conocimiento, no de proyecto),
+- Sistema Vaultrum (Modo Owner),
 - Indefinida todavía.
 
 Esta identificación no es una derivación final.
@@ -69,52 +70,26 @@ Sirve para orientar el trabajo posterior y evitar que la idea avance sin context
 
 ---
 
-## Salida esperada
+## Salida esperada / formato
 
-La salida del flujo debe dejar la idea en un estado entendible y transferible.
+```txt
+## Lectura de la idea
+## Problema real
+## Estado de la idea        → Cerrado / Ajustar / Pausado / Descartado
+## Área probablemente afectada
+## Riesgos principales
+## Dirección recomendada    → avanzar / ajustar / pausar / descartar / pedir información
+## Condiciones de avance
+## Pendientes de aclaración
+## Salida para el siguiente flujo
+```
 
-Debe incluir, cuando corresponda:
+Qué significa cada campo cuando no es obvio:
 
-- lectura de la idea,
-- problema real,
-- estado de la idea,
-- área probablemente afectada,
-- riesgos principales,
-- dirección recomendada,
-- condiciones de avance,
-- pendientes de aclaración,
-- salida para el siguiente flujo.
-
----
-
-## Formato de salida
-
-Lectura de la idea:  
-Descripción breve de lo que el usuario quiere hacer o resolver.
-
-Problema real:  
-Necesidad, conflicto u oportunidad que parece estar detrás de la idea.
-
-Estado de la idea:  
-Validada / Ajustada / Pausada / Descartada.
-
-Área probablemente afectada:  
-Área o áreas que podrían verse involucradas.
-
-Riesgos principales:  
-Problemas de alcance, prioridad, dependencia, ambigüedad o viabilidad detectados.
-
-Dirección recomendada:  
-Avanzar, ajustar, pausar, descartar o pedir más información.
-
-Condiciones de avance:  
-Qué debería respetarse para que la idea pueda seguir sin deformarse.
-
-Pendientes de aclaración:  
-Información que todavía falta, si aplica.
-
-Salida para el siguiente flujo:  
-Resumen limpio para que el Flujo de Bajada Operativa pueda trabajar sobre la idea sin reinterpretarla desde cero.
+- **Estado de la idea** — vocabulario común de la Agencia. *Cerrado* = la idea avanza al siguiente paso. *Descartado* solo existe acá: es el único paso donde una idea puede no seguir. *Pausado* es un cierre válido, no un fracaso: se cierra el flujo declarando qué falta (principio 9).
+- **Área probablemente afectada** — orientación tentativa, no derivación final. Sirve para que el trabajo posterior no avance sin contexto.
+- **Condiciones de avance** — qué debe respetarse para que la idea siga sin deformarse.
+- **Salida para el siguiente flujo** — resumen limpio para que la Bajada Operativa no reinterprete la idea desde cero.
 
 ---
 
@@ -124,7 +99,7 @@ El flujo puede darse por cerrado cuando:
 
 - la intención del usuario fue entendida,
 - el problema real fue identificado o se aclaró que todavía no está claro,
-- la idea quedó validada, ajustada, pausada o descartada,
+- el estado quedó declarado: Cerrado, Ajustar, Pausado o Descartado,
 - los riesgos principales están visibles,
 - existe una dirección recomendada,
 - se identificó el área probablemente afectada, aunque sea tentativamente,
@@ -160,11 +135,11 @@ No debe avanzar si:
 
 Este flujo no debe convertir toda idea en tarea.
 
-No debe armar requerimientos finales.  
-No debe estimar timelines.  
-No debe definir arquitectura técnica.  
-No debe diseñar implementación.  
-No debe llenar la salida de alternativas innecesarias.  
+No debe armar requerimientos finales.
+No debe estimar timelines.
+No debe definir arquitectura técnica.
+No debe diseñar implementación.
+No debe llenar la salida de alternativas innecesarias.
 No debe forzar el avance si la idea todavía no está lista.
 
 ---

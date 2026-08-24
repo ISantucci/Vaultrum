@@ -19,7 +19,7 @@ Rol del NPC
 ## Contenido de esta seccion
 
 ```txt
-[[IA aplicada al diseno de NPCs]]
+IA aplicada al diseno de NPCs
 ```
 
 ---

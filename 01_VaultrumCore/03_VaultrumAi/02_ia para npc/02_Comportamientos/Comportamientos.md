@@ -20,10 +20,10 @@ Movimiento / combate / interaccion
 ## Contenido de esta seccion
 
 ```txt
-[[Patrullaje]]
-[[Persecucion]]
-[[Ataque]]
-[[Huida]]
+Patrullaje
+Persecucion
+Ataque
+Huida
 ```
 
 ---

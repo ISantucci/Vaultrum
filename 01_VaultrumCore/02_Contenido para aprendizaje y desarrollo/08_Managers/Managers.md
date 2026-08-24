@@ -290,6 +290,7 @@ Incluye documentos como:
 - [[Como refactorizar una clase dios|Cómo refactorizar una clase dios]]
 - [[Como proponer Managers sin sobrearquitecturar|Cómo proponer Managers sin sobrearquitecturar]]
 - [[Prompt base para analisis de managers|Prompt base para análisis de Managers]]
+- [[Optimizacion arquitectonica de Managers|Optimización arquitectónica de Managers]]
 
 Esta carpeta debe permitir que una IA reciba un proyecto y haga un análisis ordenado.
 

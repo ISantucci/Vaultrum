@@ -582,38 +582,32 @@ Despues de entender Frame Budget, el siguiente paso depende del caso.
 Si se quiere entender que parte limita el rendimiento:
 
 ```txt
-→ [[Bottleneck]]
+→ Bottleneck
 ```
 
 Si el problema parece venir de scripts, IA, fisica o logica:
 
 ```txt
-→ [[CPU Bound]]
+→ CPU Bound
 ```
 
 Si hace falta entender que se ejecuta cada frame:
 
 ```txt
-→ [[Game loop]]
+→ Game loop
 ```
 
 Si hay un sintoma concreto:
 
-```txt
 → [[Problemas de rendimiento]]
-```
 
 Si hace falta medir:
 
-```txt
 → [[Herramientas de deteccion]]
-```
 
 Si ya hay diagnostico y se necesita evaluar una respuesta:
 
-```txt
 → [[Metodologias y soluciones]]
-```
 
 ---
 
