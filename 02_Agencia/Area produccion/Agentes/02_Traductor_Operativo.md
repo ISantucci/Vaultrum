@@ -123,7 +123,7 @@ Formato recomendado:
 
 El Traductor Operativo implementa principalmente:
 
-- [[02_Flujo_Bajada_Operativa]]
+- `02_Flujo_Bajada_Operativa`
 
 Este flujo se utiliza cuando una idea ya fue validada o ajustada, pero todavía necesita convertirse en objetivo concreto, alcance, fuera de alcance, bloques de trabajo y dependencias.
 

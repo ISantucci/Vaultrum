@@ -51,4 +51,4 @@ No inventa reglas nuevas ni cambia balance base (Game Design). No diseña HUD/me
 
 ## Flujos a implementar
 
-- [[02_Flujo_Diseno_Nivel]]
+- `02_Flujo_Diseno_Nivel`

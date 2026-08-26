@@ -8,10 +8,11 @@ Cada `VE-XXX` valida **la entrega de un timeline** (`TL-XXX`) contra la intenci�
 
 ## Registro
 
-- [[VE-002_Pong3D|VE-002 Pong 3D]] — validación del `TL-002` sobre el `EJ-002`. **Pausada:** la implementación nunca llegó a estar en disco.
-- [[VE-003_Pong3D|VE-003 Pong 3D, cadena completa]] — validación del `TL-003` sobre el `EJ-003`. **Cerrada:** jugado por el owner, 8/10, divertido. Deuda declarada: los 18 ítems no se recorrieron; las mejoras pendientes van al `TL-004`.
+Los artefactos de un proyecto **no se registran acá**. Viven en la carpeta del proyecto, en `06_Proyectos/<Proyecto>/01_Produccion/`, y se listan en el cuaderno de ese proyecto.
 
----
+Este índice es el **contrato de salida** del área: qué produce, qué forma tiene, cómo se numera y cuándo está cerrado. No es un archivo.
+
+> Entrada a los proyectos: `00_Proyectos`. Por qué dejaron de vivir acá: `TL-008_La_Agencia_Es_La_Empresa`.
 
 ## Regla
 

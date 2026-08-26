@@ -14,6 +14,7 @@ Cada `EST-XXX` es un fundamento destilado, citado y validado, listo para el hand
 - [[EST-004_Mision_Destilacion_Playbook|EST-004 Misión destilación del Playbook]] — destilar 29 fuentes en un playbook por función. **Handoff hecho.**
 - [[EST-005_Mision_Fundamentos_Experiencia_Ludica|EST-005 Misión fundamentos de experiencia lúdica]] — los 9 pilares más el checklist por GDS. **Handoff hecho.**
 - [[EST-006_Mision_Lote_Biblioteca_Agosto26|EST-006 Misión lote de Biblioteca]] — lote de agosto: fundamentos nuevos y el estante de documentación real. Pendiente de cierre.
+- [[EST-007_Mision_Frameworks_Spec_Driven|EST-007 Misión frameworks spec-driven]] — relevamiento externo: cómo resuelven cuatro frameworks comparables la portabilidad multi-superficie y la economía de tokens. Produjo la fuente `30_Frameworks_spec_driven_multiagente`. **Cerrada con deuda declarada.**
 
 ---
 

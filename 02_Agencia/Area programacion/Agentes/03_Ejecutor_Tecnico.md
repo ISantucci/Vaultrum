@@ -68,6 +68,6 @@ Formato recomendado:
 
 ## Flujos a implementar
 
-- [[03_Flujo_Ejecucion]]
+- `03_Flujo_Ejecucion`
 
 El detalle operativo vive en el documento del flujo.

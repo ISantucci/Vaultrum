@@ -148,7 +148,7 @@ El orden importa: **feel → comprensión → diversión → viabilidad**. Si el
 - **Timebox de rescate.** Si un feature pasa el doble de su estimación, se degrada a la versión simple o se corta. Decisión tomada de antemano, no en el momento de frustración. *Cuándo:* siempre. *Costo:* ninguno; el costo es no tenerlo.
 - **Congelar hacia atrás.** Freeze escalonado (features → contenido → bugs) en vez de un único "ya está". *Cuándo:* último 30%. *Costo:* requiere haber reservado ese 30%.
 - **El juego chico primero.** Terminar y publicar algo del tamaño de un `01_Pong` antes del proyecto grande. *Cuándo:* si nunca terminaste nada. *Costo:* 2–4 semanas que parecen desvío y son la inversión más rentable del proyecto grande.
-- **Definición de terminado por entregable.** Cada tarea tiene su criterio de cierre escrito antes de empezarla. *Cuándo:* siempre. Ver [[03_Definicion_de_terminado]].
+- **Definición de terminado por entregable.** Cada tarea tiene su criterio de cierre escrito antes de empezarla. *Cuándo:* siempre. Ver `03_Definicion_de_terminado`.
 
 ## Antipatrones
 

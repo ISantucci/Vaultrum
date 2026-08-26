@@ -2,7 +2,7 @@
 tipo: juego
 genero: Arcade
 subtipo: Paleta-y-pelota
-estado: En validación
+estado: En la Biblioteca
 mision: EST-001_Mision_Pong
 cruza: 05_Fundamentos_de_experiencia_ludica, 01_Loop_de_experiencia, 02_Game_feel, 03_Definicion_de_terminado
 ---

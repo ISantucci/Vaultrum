@@ -61,9 +61,9 @@ Antes de generar una nueva salida, se debe verificar el próximo número disponi
 
 La verificación debe hacerse revisando:
 
-- [[02_Agencia/Area produccion/Salidas/00_Indice_salidas|Índice de salidas de Producción]]
-- [[00_Indice_timelines]]
-- [[00_Indice_requerimientos|Índice de requerimientos]]
+- `00_Salidas_produccion`
+- `00_Indice_timelines`
+- `00_Indice_requerimientos`
 
 La numeración debe mantener relación entre timeline y requerimientos.
 

@@ -8,39 +8,11 @@ Cada `GDS-XXX.n` es un sistema jugable diseñado y validado para un `RQ-XXX.n`.
 
 ## Registro
 
-### TL-001 — Pong 2 jugadores
+Los artefactos de un proyecto **no se registran acá**. Viven en la carpeta del proyecto, en `06_Proyectos/<Proyecto>/02_GameDesign/`, y se listan en el cuaderno de ese proyecto.
 
-- [[GDS-001.1_Paletas|GDS-001.1 Paletas]] — paletas controlables, para `RQ-001.1`
-- [[GDS-001.2_Pelota|GDS-001.2 Pelota]] — rebote y aceleración, para `RQ-001.2`
-- [[GDS-001.3_Score_Victoria|GDS-001.3 Score y victoria]] — para `RQ-001.3`
-- [[GDS-001.4_Estados|GDS-001.4 Estados]] — menú, pausa y reinicio, para `RQ-001.4`
-- [[GDS-001.5_Game_Feel|GDS-001.5 Game feel]] — feedback, para `RQ-001.5`
+Este índice es el **contrato de salida** del área: qué produce, qué forma tiene, cómo se numera y cuándo está cerrado. No es un archivo.
 
-Las cinco cerradas.
-
-### TL-002 — Pong 3D en Unity 6
-
-- [[GDS-002.2_Paletas|GDS-002.2 Paletas]] — control directo y clamp, para `RQ-002.2`
-- [[GDS-002.3_Pelota|GDS-002.3 Pelota]] — ángulo por impacto, aceleración y anti-tunneling, para `RQ-002.3`
-- [[GDS-002.4_Score_Victoria|GDS-002.4 Score y victoria]] — con reinicio, para `RQ-002.4`
-- [[GDS-002.5_Estados|GDS-002.5 Estados]] — menús y opciones, para `RQ-002.5`
-- [[GDS-002.6_Game_Feel|GDS-002.6 Game feel]] — audio procedural, para `RQ-002.6`
-
-Las cinco cerradas. El `RQ-002.1` (setup de proyecto) no tiene `GDS`: no hay sistema jugable que diseñar.
-
-### TL-003 — Pong 3D, cadena completa
-
-- [[GDS-003.0_Marco_Comun|GDS-003.0 Marco común]] — geometría, paleta de color, contrato de eventos y omisiones declaradas; cuelga del `TL-003`, no de un `RQ`
-- [[GDS-003.2_Paletas|GDS-003.2 Paletas]] — rampa de aceleración y peso, para `RQ-003.2`
-- [[GDS-003.3_Pelota|GDS-003.3 Pelota]] — dial de puntería, spin de paleta y continuo por cruce de plano, para `RQ-003.3`
-- [[GDS-003.4_Score_Saque_Victoria|GDS-003.4 Score, saque y victoria]] — saque compensatorio y revancha, para `RQ-003.4`
-- [[GDS-003.5_Estados|GDS-003.5 Estados]] — seis estados, transiciones explícitas, sin estados muertos, para `RQ-003.5`
-- [[GDS-003.6_Game_Feel|GDS-003.6 Game feel]] — juice jerarquizado y pacing sonoro del rally, para `RQ-003.6`
-- [[GDS-003.7_Onboarding_Legibilidad|GDS-003.7 Onboarding y legibilidad]] — redundancia color+lado y jerarquía del HUD, para `RQ-003.7`
-
-Las siete cerradas. El `RQ-003.1` (setup de proyecto) no tiene `GDS`, por el mismo motivo.
-
----
+> Entrada a los proyectos: `00_Proyectos`. Por qué dejaron de vivir acá: `TL-008_La_Agencia_Es_La_Empresa`.
 
 ## Regla
 

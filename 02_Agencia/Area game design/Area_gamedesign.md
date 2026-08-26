@@ -67,7 +67,7 @@ Un `GDS` cerrado baja a **Level Design** y/o **UI/UX** cuando aplican, y de ahí
 
 Queda registrada en `Salidas/`:
 
-- [[02_Agencia/Area game design/Salidas/00_Indice_salidas|Índice de salidas del área]]
+- [[00_Salidas_gamedesign|Índice de salidas del área]]
 
 ---
 
@@ -91,7 +91,7 @@ No programa (eso es Programación). No define alcance ni prioridad (eso es Produ
 Recibe de: **Producción** (`RQ` jugable).
 Entrega a: **Level Design** (`LDS`) y/o **UI/UX** (`UXS`) si el sistema tiene dimensión espacial o interfaz, y a **Programación** (`GDS` como insumo de la solución técnica).
 
-La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para trazabilidad de punta a punta.
+La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ / QA` para trazabilidad de punta a punta.
 
 ## Flujos del área
 

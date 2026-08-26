@@ -62,6 +62,6 @@ Completa el `GDS-XXX.n` con:
 
 ## Flujos a implementar
 
-- [[03_Flujo_Balance]]
+- `03_Flujo_Balance`
 
 El detalle operativo vive en el documento del flujo.

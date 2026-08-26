@@ -64,6 +64,6 @@ No infla el Core: si un fundamento no es claro y reutilizable, no lo escribe.
 
 ## Flujos a implementar
 
-- [[03_Flujo_Destilacion]]
+- `03_Flujo_Destilacion`
 
 El detalle operativo vive en el documento del flujo.

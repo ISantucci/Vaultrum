@@ -84,6 +84,6 @@ Numerada e indexada en `Salidas/` como misión de estudio.
 
 ## Flujos a implementar
 
-- [[01_Flujo_Mision_Estudio]]
+- `01_Flujo_Mision_Estudio`
 
 El detalle operativo vive en el documento del flujo.

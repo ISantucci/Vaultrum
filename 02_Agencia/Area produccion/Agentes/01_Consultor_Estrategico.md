@@ -116,7 +116,7 @@ Formato recomendado:
 
 El Consultor Estratégico implementa principalmente:
 
-- [[01_Flujo_Analisis_Estrategico]]
+- `01_Flujo_Analisis_Estrategico`
 
 Este flujo se utiliza cuando el usuario llega con una idea, problema, objetivo o posibilidad que todavía necesita ser entendida, cuestionada y validada antes de avanzar.
 

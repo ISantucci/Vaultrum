@@ -14,7 +14,7 @@ Tercera pasada. No buscó links: buscó **texto que describía un vault que ya n
 
 Los ocho índices de Salidas venían de una conversión automática de tabla a cascada, y se notaba:
 
-- **el alias repetía el nombre del archivo** — `[[GDS-001.1_Paletas|GDS-001.1 Paletas]]`, `[[UXS-003.5_Flujo_De_Pantallas|UXS-003.5 Flujo De Pantallas]]`, con Title Case mal puesto;
+- **el alias repetía el nombre del archivo** — ``GDS-001.1_Paletas``, ``UXS-003.5_Flujo_De_Pantallas``, con Title Case mal puesto;
 - **la metadata venía en tira de puntos medios** — `RQ-001.1 · Paletas controlables · Cerrada`, que es una fila de tabla sin celdas;
 - **la columna de estado repetía el mismo valor** diecisiete veces. Una columna con un solo valor no es información;
 - **los tres proyectos estaban en una lista plana**, sin decir dónde termina uno y empieza el otro.
@@ -41,7 +41,7 @@ Fusionadas: el link vive ahora al final de la sección que ya explicaba el conce
 
 ## Restos en la raíz
 
-- **`00_Auditoria de arquitectura` (AUD-001)** se presentaba como *"el estado real del sistema"* y describe el estado de un momento anterior a las dos pasadas. Queda marcada como registro fechado, con la serie continuando en `ARQ`. Su sección de **Método** describía a mano seis pasos que hoy corre `grafo.py`: quedaron los dos que la herramienta no cubre.
+- **`ARQ-000_Auditoria_de_arquitectura` (AUD-001)** se presentaba como *"el estado real del sistema"* y describe el estado de un momento anterior a las dos pasadas. Queda marcada como registro fechado, con la serie continuando en `ARQ`. Su sección de **Método** describía a mano seis pasos que hoy corre `grafo.py`: quedaron los dos que la herramienta no cubre.
 - **`H2`** del backlog de esa auditoría estaba abierto y ya estaba cerrado en `Area_conocimiento`.
 - **La nota de agentes legacy** del índice de la Agencia listaba siete roles absorbidos hace tres semanas. Queda la regla, se fue el inventario de nombres muertos.
 - **La bitácora** suma la ley candidata #6: las seis leyes del grafo, con el dato que habilitó aplicarlas (ninguna skill navega por wikilink).

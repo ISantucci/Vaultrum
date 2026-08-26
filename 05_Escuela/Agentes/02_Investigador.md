@@ -62,6 +62,6 @@ No investiga fuera del alcance ni "hasta que se gasten los tokens": se corta en 
 
 ## Flujos a implementar
 
-- [[02_Flujo_Investigacion]]
+- `02_Flujo_Investigacion`
 
 El detalle operativo vive en el documento del flujo.

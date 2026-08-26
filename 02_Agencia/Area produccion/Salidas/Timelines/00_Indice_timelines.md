@@ -44,9 +44,16 @@ TL-001_Pong_2_Jugadores_Completo.md
 
 ## Timelines registrados
 
-- [[TL-001_Pong_2_Jugadores_Completo|TL-001 Pong 2 jugadores]] — cancha, paletas, pelota, score, estados y juice
-- [[TL-002_Pong3D_2_Jugadores_Unity6|TL-002 Pong 3D en Unity 6]] — arena, paletas, pelota, score, estados, opciones y game feel
-- [[TL-003_Pong3D_Unity6_Cadena_Completa|TL-003 Pong 3D, cadena completa]] — supersede al TL-002: carga el libro de Pong y agrega UI/UX y onboarding
+Los timelines de un proyecto viven en `06_Proyectos/<Proyecto>/01_Produccion/`. Acá quedan **solo los de Modo Owner**: los que desarrollan el sistema Vaultrum en sí.
 
----
+- [[TL-007_Apertura_De_Vaultrum|TL-007 La apertura de Vaultrum]] — el eslabón cero: la puerta, las quince preguntas de seteo y el cuaderno del proyecto
+- [[TL-008_La_Agencia_Es_La_Empresa|TL-008 La Agencia es la empresa, no el archivo]] — separar el sistema de lo que el sistema produce
+
+> Proyectos: `00_Proyectos`. El Pong 3D y Vaultrum World se mudaron ahí el 2026-08-25.
+
+## Nota de secuencia
+
+`TL-007` y `TL-008` corren en Modo Owner y **van antes que cualquier proyecto**. Se cruzan en un punto declarado: `RQ-007.4` depende de `RQ-008.2`, porque el cuaderno vive en un árbol que el Arquitecto emplaza.
+
+La línea de Vaultrum World (`TL-004..006`) está detenida a propósito hasta que cierren los dos: modela el recorrido de una cadena cuyo primer eslabón todavía no existe.
 

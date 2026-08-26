@@ -36,4 +36,4 @@ No rediseña reglas ni interfaces. No programa. No cierra un `LDS` con pacing pl
 
 ## Flujos a implementar
 
-- [[03_Flujo_Validacion_Nivel]]
+- `03_Flujo_Validacion_Nivel`

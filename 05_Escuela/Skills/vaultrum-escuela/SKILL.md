@@ -15,7 +15,7 @@ Trabajás como **una sola IA que se pone cuatro sombreros en secuencia**. Corré
 05_Escuela/
   00_Escuela.md               → contexto del área (leelo antes de arrancar)
   Biblioteca/00_Biblioteca.md → formato de libro (leelo antes de escribir)
-  Biblioteca/00_Catalogo_Biblioteca.md → portada: índice maestro de todo lo sumado
+  Herramientas/biblioteca.py  → la vista de conjunto: conteos, misiones, dedup (calculada)
   Biblioteca/Fundamentos/     → libros transversales (loop, game feel, definición de terminado)
   Biblioteca/Juegos/          → análisis por juego, con metadata de género/tipo
   Biblioteca/Fuentes/         → libros/papers/referencias externas (materia prima)
@@ -40,7 +40,7 @@ Primero misión (gap + presupuesto + barra). Después investigación con citas. 
 ### 1. Bibliotecario (ancla) — arma la misión
 
 - Traducí el pedido (gap/idea/ambigüedad) en una **pregunta de estudio verificable**.
-- **Dedup inicial** contra el Core y contra la Biblioteca (mirá el catálogo `00_Catalogo_Biblioteca.md`): ¿ya hay libro/fuente que lo cubre? Si sí, la misión es *actualización*, no alta.
+- **Dedup inicial** contra el Core y contra la Biblioteca. No a ojo: `python3 "05_Escuela/Herramientas/biblioteca.py" . --dedup <tema>`. Si ya hay libro/fuente que lo cubre, la misión es *actualización*, no alta.
 - Fijá **presupuesto de tokens** y **barra de calidad**.
 - **AiCare — ANTES:** validá el presupuesto y medí el contexto base. Si falta gap/presupuesto/barra, no arranca.
 - Registrá la misión en `05_Escuela/Salidas/EST-XXX_Mision_<nombre>.md`.
@@ -72,9 +72,29 @@ Primero misión (gap + presupuesto + barra). Después investigación con citas. 
 - **AiCare — ANTES DEL HANDOFF:** confirmá que el `EST` no infla el contexto ni recarga lo existente.
 - Si pasa: dejá el `EST` listo y **entregá a Conocimiento**. Si no: volvé al Destilador o descartá con motivo.
 
-### PASO FINAL OBLIGATORIO — registrar en el catálogo
+### PASO FINAL OBLIGATORIO — registrar en el estante y verificar
 
-Antes de cerrar cualquier corrida, registrá el libro/fuente creado o actualizado en la portada de la Biblioteca: **`Biblioteca/00_Catalogo_Biblioteca.md`**, en su categoría (Fundamentos / Juegos / Fuentes), con estado y misión. Si ya existe, **actualizá su fila** (no dupliques). Una entrada que no está en el catálogo no cuenta como "sumada". Este paso corre siempre, incluso si no hay handoff al Core.
+Antes de cerrar cualquier corrida, tres pasos y ninguno es opcional:
+
+1. **Escribí estado y misión en el frontmatter de la ficha.** La ficha es la fuente de verdad; todo lo demás se deriva de ella.
+2. **Registrá la pieza en su estante** — `00_Indice_fundamentos`, `00_Indice_juegos`, `00_Indice_fuentes` o `00_Indice_documentos` — con `### [[Hijo]]` y su línea de descripción. Si ya existe, **actualizá su entrada**; no dupliques.
+3. **La ficha no devuelve la arista.** El estante la enlaza; ella no enlaza al estante. Una ficha termina donde termina su contenido: sin `## Hacia donde seguir`, sin "para volver al estante", sin link al índice padre. Para volver está la carpeta (Ley 2 del grafo).
+
+```txt
+correcto   el estante enlaza 52 fichas y las fichas no enlazan nada
+mal        el estante enlaza 52 fichas y las 52 devuelven el link → 105 aristas en un nodo
+```
+
+   `## Hacia donde seguir` significa *seguir*, no *volver*: solo se escribe cuando el camino continúa hacia **otra** sección, nunca hacia el índice propio. Si la ficha necesita nombrar otro libro, va con backticks (Ley 4).
+4. **Corré el verificador:**
+
+```bash
+python3 "05_Escuela/Herramientas/biblioteca.py" . --verificar
+```
+
+Falla si una ficha no está enlazada por su estante, si no declara estado, o si **la ficha y el estante dicen estados distintos**. Ese último caso es el que dejó a `01_Pong` marcado *En validación* en su ficha durante meses, mientras el estante lo daba por cerrado.
+
+No escribas a mano ningún conteo ni ninguna vista de conjunto: eso lo calcula la herramienta. Este paso corre siempre, incluso si no hay handoff al Core.
 
 ---
 

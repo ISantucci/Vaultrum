@@ -368,4 +368,4 @@ E-books de Unity
 
 ## Estado
 
-Estante abierto en la misión `EST-006_Mision_Lote_Biblioteca_Agosto26`. 52 documentos catalogados, ninguno destilado. Registrado en `00_Catalogo_Biblioteca` y declarado como cuarto estante en `00_Biblioteca`.
+Estante abierto en la misión `EST-006_Mision_Lote_Biblioteca_Agosto26`. 52 documentos catalogados, ninguno destilado. Declarado como cuarto estante en `00_Biblioteca`. El conteo y el estado del estante se calculan con `Herramientas/biblioteca.py`.

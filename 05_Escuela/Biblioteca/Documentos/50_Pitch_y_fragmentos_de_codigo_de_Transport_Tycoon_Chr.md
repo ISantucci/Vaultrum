@@ -21,13 +21,3 @@ url: https://gamedocs.org/chris-sawyers-transport-tycoon-pitch-and-snippets-of-s
 
 **URL:** https://gamedocs.org/chris-sawyers-transport-tycoon-pitch-and-snippets-of-source-code/
 Combinación poco común de **pitch comercial más código real** del mismo proyecto, de un desarrollador que escribió un juego entero en assembly. Une las familias 1 y 3 en un solo ítem. **Prioridad media.**
-
----
-
-## Hacia donde seguir
-
-Esta ficha pertenece al estante de Documentacion real.
-
-Para volver al estante y ver el resto de los documentos:
-
-→ [[00_Indice_documentos]]

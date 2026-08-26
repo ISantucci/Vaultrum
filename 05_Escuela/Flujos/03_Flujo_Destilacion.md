@@ -6,7 +6,7 @@ Convertir el material bruto en un candidato `EST`: **fundamento reutilizable + c
 
 ## Entrada del flujo
 
-- Material bruto citado del [[02_Flujo_Investigacion]].
+- Material bruto citado del `02_Flujo_Investigacion`.
 
 Antes de destilar, AiCare poda el material (duplicados/ruido) para no destilar basura.
 

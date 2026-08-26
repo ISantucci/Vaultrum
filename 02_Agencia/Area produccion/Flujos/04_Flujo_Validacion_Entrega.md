@@ -11,6 +11,7 @@ Existe porque la revisión técnica del Área de Programación valida **cómo es
 ## Entrada del flujo
 
 - un `TL-XXX` con todos sus hilos `.n` en revisión técnica OK (cada uno con su `EJ-XXX.n` cerrado por el Revisor Técnico),
+- su `QA-XXX` de entrega cerrado, en GO o CONDITIONAL GO, con su riesgo residual declarado,
 - los `RQ` del timeline, como contrato de lo prometido,
 - los `GDS` (y `LDS`/`UXS` si existieron), como contrato de cómo debía sentirse,
 - lo construido, ejecutándose.
@@ -23,7 +24,7 @@ Si algún hilo del timeline todavía no cerró su revisión técnica, el flujo n
 
 - Parte del Core: identidad, principios y criterios aplicables (principio 1).
 - Jala **on-demand** `05_Fundamentos_de_experiencia_ludica` de la Biblioteca de la Escuela y lee la entrega contra los pilares que aplican.
-- Verifica la trazabilidad del timeline: `TL → RQ → GDS → (LDS / UXS) → SOL → EJ`.
+- Verifica la trazabilidad del timeline: `TL → RQ → GDS → (LDS / UXS) → SOL → EJ → QA`, más el `QA-XXX` de entrega.
 - Corre el checklist de **definición de terminado** contra lo que se puede jugar, no contra el papel.
 - Decide el estado de la entrega y, si corresponde, a qué área rebota cada hallazgo.
 - Marca el aprendizaje reutilizable para derivarlo al Área de Conocimiento.
@@ -56,6 +57,7 @@ El flujo puede darse por cerrado cuando:
 
 - la entrega fue verificada **corriendo**, no leyendo specs,
 - cada `RQ` del timeline tiene una respuesta explícita: cumplido, incompleto o descartado con motivo,
+- el `QA` de entrega está citado, con su veredicto y su riesgo residual,
 - la definición de terminado está tildada o tiene lo faltante escrito,
 - cada hallazgo tiene un área destino concreta, no una queja general,
 - el estado de la entrega está declarado.
@@ -72,6 +74,7 @@ Queda **Pausado** cuando falta información o una decisión del owner para poder
 
 No debe cerrarse en **Cerrado** si:
 
+- el `QA` de entrega está en NO-GO, o no existe,
 - el resultado "funciona pero no es bueno" — ese estado es *Ajustar*,
 - falta un eslabón de trazabilidad que correspondía existir,
 - la definición de terminado tiene ítems sin tildar y sin justificar,

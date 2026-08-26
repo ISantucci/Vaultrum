@@ -99,7 +99,9 @@ Ejemplo real (`EJ-003`): compilar 17 scripts fuera del motor contra un stub de l
 
 Estados posibles al cerrar la revisión: **Cerrado** · **Ajustar** (con el sub-agente destino) · **Pausado** (falta una decisión o un insumo; se declara qué falta y no se fuerza el cierre — principio 9).
 
-**Cerrar la revisión técnica no cierra la entrega.** Cuando todos los hilos `.n` de un timeline están en OK, la entrega vuelve a Producción, que la cierra con su `VE-XXX`. Si Producción rebota con hallazgos de entrega, entran como nuevo ciclo del loop.
+**Cerrar la revisión técnica no cierra la entrega.** Con el `EJ` en OK, el hilo pasa al **Área de Control de Calidad**, que corre su gate (`QA-XXX.n`) y devuelve GO, CONDITIONAL GO o NO-GO. Cuando todos los hilos están verificados, la entrega vuelve a Producción, que la cierra con su `VE-XXX`. Si Calidad o Producción rebotan con hallazgos, entran como nuevo ciclo del loop.
+
+**Lo que Calidad te va a pedir y conviene dejar hecho antes:** una build identificable (no "lo último"), los criterios de aceptación a la vista, y la instrumentación mínima para poder probar lo que hiciste — semilla fija, atajo de estado, log o comando de consola. Un sistema poco testeable no se verifica menos: se verifica peor y más caro.
 
 ## Salidas registrables
 

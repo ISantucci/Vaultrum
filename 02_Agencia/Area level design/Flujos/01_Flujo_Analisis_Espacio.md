@@ -8,7 +8,7 @@ Transformar un `GDS` cerrado en un encuadre espacial: qué experiencia de recorr
 
 ## Transformación que realiza
 
-- Parte del Core y del libro [[05_Fundamentos_de_experiencia_ludica]] (pilares 1, 6, 8, 9).
+- Parte del Core y del libro `05_Fundamentos_de_experiencia_ludica` (pilares 1, 6, 8, 9).
 - Interpreta la intención espacial del sistema.
 - Define la experiencia de recorrido y la curva de ritmo objetivo.
 - Marca riesgos de pacing/dificultad e información faltante.

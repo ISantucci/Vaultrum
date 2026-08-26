@@ -39,7 +39,7 @@ Seis pasos, de menor a mayor riesgo, midiendo entre cada uno.
 | Frontmatter → texto plano | 96 notas | −100 |
 | Celdas de tabla → texto plano | índices y catálogos | −386 |
 | Mitad de frase → backticks | ~90 notas | −530 |
-| Tablas-registro → cascada `## [[Hijo]]` | 11 índices | +147 secciones |
+| Tablas-registro → cascada `## `Hijo`` | 11 índices | +147 secciones |
 | Bibliografía de los libros → backticks | 6 libros de Fundamentos | −84 |
 | Registros de misión dejan de navegar | 7 notas `EST` | −18 |
 

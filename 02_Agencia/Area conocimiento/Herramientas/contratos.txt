@@ -1,0 +1,34 @@
+# Contratos de seccion por tipo de artefacto — semilla medida, no inventada.
+#
+# Origen: conteo sobre los artefactos REALES del vault (2026-08-25). Una seccion
+# entra al contrato si aparece en el 75% o mas de los artefactos de su tipo.
+# Es la unica fuente honesta de que forma tiene un artefacto hoy.
+#
+# Este archivo es PROVISORIO. Cuando RQ-008.1 escriba los contratos de salida en
+# el indice de cada area, este archivo pasa a leerlos de ahi y deja de decidir.
+#
+# formato:  TIPO | seccion | seccion | ...
+# una seccion se compara sin acentos, sin mayusculas y sin lo que va entre parentesis.
+
+TL  | Objetivo | Area afectada | Criticidad | Dependencias | Riesgos | Criterios de cierre
+RQ  | Titulo | Timeline | Area afectada | Criticidad | Descripcion | Subtasks | Criterios de aceptacion
+GDS | Reglas | Entradas | Salidas | Parametros configurables | Integraciones | Experiencia esperada
+UXS | Insumo | Encuadre de UX | Validacion de UX | Instrumento
+QA  | Insumo | Alcance y perfil | Version | Defectos | Cobertura | Medicion | Veredicto
+VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos | Aprendizaje para el Core | Estado de la entrega
+
+# QA es el unico contrato que NO sale de medir artefactos reales: el area se creo
+# despues de este archivo y todavia no produjo ninguno. Sale del contrato de salida
+# escrito en `00_Indice_qa`, que es exactamente la fuente que este archivo dice que
+# va a usar cuando exista. Cuando haya QA reales, se mide y se corrige si difiere.
+
+# SIN FORMA ESTABLE — medido, no omitido.
+#
+# SOL  4 artefactos, ninguna seccion en 2 de 4 o mas salvo "Diagnostico" (2/4 = 50%).
+# EJ   4 artefactos, solo "Archivos creados" llega a 3/4.
+# LDS  0 artefactos. El area nunca corrio.
+#
+# Los dos artefactos que escribe el programador son justo los que no tienen forma
+# compartida, y por eso son los que mas se olvidan. Cerrar esto es el primer
+# trabajo del area, y sale de RQ-008.1, no de una opinion. Hasta entonces el gate
+# reporta "sin contrato" para SOL, EJ y LDS: no los aprueba ni los falla.

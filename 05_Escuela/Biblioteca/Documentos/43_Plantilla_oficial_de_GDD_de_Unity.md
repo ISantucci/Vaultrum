@@ -30,13 +30,3 @@ url: https://connect-prd-cdn.unity.com/20201215/83f3733d-3146-42de-8a69-f461d666
 - **Prioridad:** **Baja**
 
 ---
-
----
-
-## Hacia donde seguir
-
-Esta ficha pertenece al estante de Documentacion real.
-
-Para volver al estante y ver el resto de los documentos:
-
-→ [[00_Indice_documentos]]

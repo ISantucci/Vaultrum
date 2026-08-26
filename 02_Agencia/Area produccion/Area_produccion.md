@@ -15,7 +15,7 @@ El área es además **dueña de la entrega**: la abre con la intención del usua
 ## Entrada del área
 
 - una **intención abierta** del usuario: idea, problema, objetivo, mejora o duda de alcance. No necesita estar completa.
-- o un **timeline que vuelve** desde Programación con sus `EJ` en revisión OK, para validar la entrega.
+- o un **timeline que vuelve** desde Control de Calidad con su `QA` cerrado, para validar la entrega.
 
 No hay insumo previo obligatorio: Producción es la puerta de entrada de la Agencia. Si la intención es modificar el sistema Vaultrum en vez de construir un proyecto, no es trabajo de esta área: es Modo Owner.
 
@@ -84,8 +84,8 @@ Bajada operativa            (Traductor Operativo)
   ↓
 Planificación               (Planificador)      → TL + RQ  ⟵ gate de arranque
   ↓
-[ cada hilo .n pasa a las demás áreas: GDS → LDS/UXS → SOL → EJ ]
-  ↓  (todos los EJ del TL en revisión OK)
+[ cada hilo .n pasa a las demás áreas: GDS → LDS/UXS → SOL → EJ → QA ]
+  ↓  (todos los hilos del TL verificados, y el QA de entrega en GO o CONDITIONAL GO)
 Validación de entrega       (Validador de Entrega) → VE   ⟵ gate de cierre
         ├── Cerrado  → la entrega del TL termina
         ├── Ajustar  → rebota al área con el hallazgo
@@ -101,6 +101,20 @@ Las salidas productivas se registran como:
 Cada agente del área implementa la parte que corresponde a su responsabilidad, sin absorber tareas de otros agentes o áreas.
 
 **Ningún paso avanza por inercia.** Cada uno declara si la idea puede seguir, debe ajustarse o queda pausada. Pausar es un cierre válido: es preferible declarar qué falta que avanzar sobre una base débil (principios 4 y 9).
+
+---
+
+## El commit del proyecto
+
+El `VE` en **Cerrado** es lo que habilita el commit de la entrega. Es una consecuencia del cierre y es de esta área: es la que verificó que lo entregado sea lo prometido.
+
+```txt
+VE Cerrado   → se puede commitear la entrega
+VE Ajustar   → no se commitea; sí se puede pushear la branch de trabajo
+VE Pausado   → no se commitea: se declara qué falta
+```
+
+La política del repositorio vive en `04_IA Operativa/03_Operar Vaultrum`. El gate de forma corre solo en el `pre-commit` y es del Área de Arquitectura. La verificación técnica previa al commit **es del Área de Control de Calidad**: su `QA` es insumo del `VE`, y un `VE` no cierra en Cerrado con un `QA` en NO-GO.
 
 ---
 
@@ -143,7 +157,7 @@ El gate de cierre está definido en `02_Indice Agencia`.
 
 Queda registrada en `Salidas/`:
 
-- [[02_Agencia/Area produccion/Salidas/00_Indice_salidas|Índice de salidas del área]]
+- [[00_Salidas_produccion|Índice de salidas del área]]
 
 ---
 
@@ -161,7 +175,7 @@ No debe documentar conocimiento permanente del Core.
 Puede producir requerimientos, decisiones productivas o lineamientos de planificación, pero cuando un aprendizaje debe quedar registrado como conocimiento reutilizable, lo marca y lo deriva al **Área de Conocimiento**.
 
 No debe auditar la calidad técnica de la implementación.
-Eso lo hace el Revisor Técnico del **Área de Programación** contra sus criterios. Producción valida la **entrega frente a la intención y la experiencia** (ver `04_Validador_Entrega`), no el código.
+Eso lo hace el Revisor Técnico del **Área de Programación** contra sus criterios, y el **Área de Control de Calidad** verifica que lo construido se sostenga. Producción valida la **entrega frente a la intención y la experiencia** (ver `04_Validador_Entrega`), no el código ni la evidencia de prueba.
 
 No debe crear contenido público.
 Puede ordenar la intención, el objetivo o el requerimiento de comunicación, pero la difusión y el material público viven en la capa **03_Comunidad**.
@@ -173,13 +187,13 @@ Si una idea no tiene sentido, está fuera de alcance o todavía necesita madurac
 
 ## Encadenado con otras áreas
 
-Recibe de: el **usuario** (intención abierta) y de **Programación** (el `EJ` cerrado que vuelve para validarse).
+Recibe de: el **usuario** (intención abierta) y de **Control de Calidad** (el `QA` con su veredicto, que es lo que habilita validar la entrega).
 
 Entrega a: **Game Design** (`RQ` jugable), **Programación** (`RQ` no jugable, directo) y **Conocimiento** (aprendizaje reutilizable detectado al cerrar la entrega).
 
 Consulta on-demand: la Biblioteca de la Escuela (`05_Fundamentos_de_experiencia_ludica`) para no dejar implícitas las table-stakes de un entregable jugable al escribir los `RQ` y al validar la entrega.
 
-La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para trazabilidad de punta a punta; el `VE` cuelga del `TL` sin `.n`.
+La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ / QA` para trazabilidad de punta a punta; el `QA` de entrega y el `VE` cuelgan del `TL` sin `.n`.
 
 ---
 

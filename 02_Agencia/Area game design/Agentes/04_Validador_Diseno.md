@@ -70,6 +70,6 @@ No rediseña el sistema él mismo. No aprueba un diseño no validable. No agrega
 
 ## Flujos a implementar
 
-- [[04_Flujo_Validacion_Diseno]]
+- `04_Flujo_Validacion_Diseno`
 
 El detalle operativo vive en el documento del flujo.

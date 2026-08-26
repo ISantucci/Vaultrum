@@ -1,0 +1,12 @@
+# Excepciones declaradas del gate de calidad de Vaultrum
+#
+# Una por linea:   ruta del QA | ley | razon
+#
+# Claves validas: A (contrato del QA)  L1  L2  L3  L4  L5  L6  V (veredicto)
+#
+# Regla: lo que no esta declarado aca, falla. Una excepcion sin razon escrita
+# es una falla con mejor redaccion, y una excepcion permanente es una ley mal
+# escrita: si se repite, se corrige la ley o se corrige el proceso.
+#
+# --- ejemplo de formato (comentado; borrar el # para activar) ---
+# 06_Proyectos/Pong3D/06_Calidad/QA-004.2.md | L3 | defecto heredado sin registro: el proyecto empezo antes de la planilla. Decision del owner.

@@ -77,6 +77,6 @@ Formato recomendado (usar solo lo necesario):
 
 ## Flujos a implementar
 
-- [[02_Flujo_Diseno_Solucion]]
+- `02_Flujo_Diseno_Solucion`
 
 El detalle operativo vive en el documento del flujo.

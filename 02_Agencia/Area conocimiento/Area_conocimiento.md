@@ -1,14 +1,165 @@
 ## Propósito
 
-El Área de Conocimiento es la **capa de control de versiones del conocimiento** de Vaultrum. No produce trabajo hacia adelante como las áreas de producción: cuida el Core y gestiona qué aprendizaje entra a él, con criterio y aprobación.
+El Área de Conocimiento es **la memoria de la Agencia**.
 
-No existe para acumular historial. Existe para que el Core crezca solo con conocimiento claro, reutilizable y útil (principio 11).
+No produce proyecto. Hace dos cosas que ninguna otra área hace: cuida que lo que se trabaja **quede escrito y se entienda**, y decide qué de lo trabajado **vuelve al Core** como criterio.
+
+```txt
+Un área que no escribe lo que hizo, lo vuelve a hacer.
+Un sistema que no absorbe lo que aprendió, no aprende: acumula.
+```
+
+Las dos mitades son la misma: sin documentación no hay de dónde cosechar, y sin cosecha la documentación es archivo muerto. Esta área existe para que Vaultrum se nutra de su propio trabajo.
 
 ---
 
-## Modelo: gestión de versiones
+## Dónde está parada
 
+**No está al final de la cadena.** Está debajo, junto a Arquitectura. Las dos sostienen a las demás sin producir proyecto, y ninguna aparece en la columna vertebral de numeración.
+
+```txt
+Arquitectura   la forma del VAULT   dónde vive, de qué índice cuelga, con qué aristas
+Conocimiento   la forma del TEXTO   si se entiende, si falta algo, si está dicho dos veces
+               y la PERTENENCIA     a qué cuerpo de conocimiento pertenece lo nuevo
 ```
+
+La frontera es dura y se lee en una línea: **el arquitecto decide dónde vive una nota; Conocimiento decide a qué pertenece y cómo está escrita.** Cuando el área necesita colocar algo en el vault, no lo coloca: le pide el emplazamiento al arquitecto y lo cita. Cuando el arquitecto necesita saber si una nota nueva duplica criterio existente, no lo decide: pregunta acá.
+
+---
+
+## Los tres servicios
+
+Cada uno declara su momento de entrada. Un área que solo puede entrar cuando otra ya cerró está condenada a acomodar, no a decidir — por eso esta entra tres veces y no una.
+
+### Modo Copiloto — durante
+
+Un área está escribiendo su artefacto y Conocimiento la acompaña: qué falta, qué está dicho dos veces, qué se afirma sin evidencia, qué no se va a entender dentro de tres meses.
+
+**Asiste, no firma.** El `GDS` sigue siendo de Game Design aunque Conocimiento lo haya ayudado a escribir. Si Conocimiento firmara, la trazabilidad diría que el diseño lo hizo el bibliotecario.
+
+### Modo Gate — al cerrar un artefacto
+
+Verificación **mecánica** contra el contrato de salida del tipo: `documentacion.py` corre solo y devuelve un número. Si pasa, el artefacto cierra. Si falla, y solo entonces, se llama al Copiloto.
+
+Este modo existe por una razón concreta: el que se olvida de documentar se olvida de pedir ayuda para documentar. Un copiloto que solo entra cuando lo llaman no evita el olvido; un gate que corre solo, sí.
+
+### Modo Cosecha — al cerrar una entrega
+
+Qué de lo que se trabajó merece volver al Core. Es la autonutrición del sistema, y es lo único que esta área firma.
+
+---
+
+## El instrumento
+
+El área no evalúa documentación a ojo. La medición la hace `Herramientas/documentacion.py`:
+
+```txt
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" <ruta>
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" <ruta> --verificar
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" <ruta> --cosecha
+```
+
+`--verificar` devuelve código 1 si un artefacto no nombra su insumo, le falta una sección de su contrato, declara un "no aplica" sin decir qué queda ausente, afirma un número sin fuente, nombra un archivo del vault que no está en disco, repite un párrafo que ya vive en otro lado, o cierra sin declarar su estado.
+
+`--cosecha` no opina: junta la evidencia de lo trabajado —la traza de operación, los remediales declarados en los `VE`, lo que ya espera en Staging— para que el Cosechador decida sobre hechos y no sobre memoria.
+
+**La autoridad para condicionar el trabajo de otra área se sostiene en poder probar lo que se afirma.** Lo que la herramienta no prueba —si el texto se entiende, si el criterio es correcto, si el aprendizaje vale— se sigue verificando a mano y **se declara como juicio**, nunca como medición.
+
+---
+
+## Las seis leyes de la documentación
+
+Ninguna se inventó acá. Las seis ya estaban escritas en el vault, sueltas, sin nadie que las midiera.
+
+### Ley 1 — El artefacto declara su insumo
+
+Un artefacto downstream no existe sin su insumo upstream. Si un `GDS` no nombra su `RQ`, la cadena se lee entera y no se puede recorrer hacia atrás.
+
+### Ley 2 — La forma del contrato está completa
+
+Cada tipo tiene secciones obligatorias. No se deducen abriendo un artefacto: se leen en el contrato de salida del área. Lo que hoy hay en `Herramientas/contratos.txt` es una **semilla medida** sobre los artefactos reales, y se reemplaza cuando los contratos existan.
+
+### Ley 3 — Una omisión declarada es criterio; una silenciosa es un hueco
+
+Un "no aplica" es una afirmación verificable, no un atajo: dice **qué dimensión del entregable queda ausente**. Un "no aplica" pelado es un hueco con buena letra.
+
+### Ley 4 — Ningún número sin fuente
+
+Una afirmación con número y sin instrumento ni fuente es una estimación disfrazada de medición. Se arregla midiendo o **declarándola como estimación**. Las dos salidas son válidas; disfrazarla no.
+
+### Ley 5 — Lo que se afirma terminado existe en disco
+
+Un artefacto no está reportado si lo que dice que produjo no está donde dice. Es el borde de salida de la cadena, y es donde más se rompe.
+
+### Ley 6 — No se dice dos veces
+
+Si el mismo párrafo vive en dos archivos, uno de los dos sobra o los dos están mal ubicados. Repetir el Core es la forma más cara de citarlo.
+
+### Corolario — El artefacto declara su estado
+
+`Cerrado`, `Ajustar` o `Pausado`. Vale para lo que cierra algo: un `TL`, un `EJ`, un `VE`. El estado de un `GDS` o un `SOL` vive en el índice de su área, no adentro del artefacto, y pedírselo sería inventar una regla que el vault no tiene.
+
+---
+
+## Sub-agentes del área
+
+### [[01_Copiloto_Documentacion]]
+
+Rol ancla. Acompaña a un área mientras escribe: devuelve observaciones sobre la forma del texto, nunca una reescritura. Asiste, no firma.
+
+### [[02_Cosechador]]
+
+Decide **con criterio qué merece volver al Core**, sobre la evidencia que junta el instrumento y no sobre memoria. No todo entra. Clasifica el caso y prepara los candidatos.
+
+### [[03_Documentador]]
+
+Escribe cada aprendizaje candidato como un `.md` claro en Staging, útil para humanos e IAs: qué es, cuándo aplica, qué NO es, cómo se usa.
+
+### [[04_Bibliotecario_Pertenencia]]
+
+Decide **a qué cuerpo de conocimiento pertenece** lo nuevo, detecta duplicación, resuelve conflictos —si ya existe algo parecido se actualiza en vez de duplicar— y arma el diff. Pide el emplazamiento al arquitecto y lo cita; no coloca la nota por su cuenta.
+
+### [[05_Validador_Documentacion]]
+
+Corre el instrumento y **cierra los tres modos**. Falla la entrega si un artefacto queda fuera de ley, si una observación del Copiloto se presentó como medición, o si un candidato llega a Staging sin destino ni criterio.
+
+---
+
+## Flujos del área
+
+Cada flujo es un paso del loop. Se entra por el que corresponde al estado del trabajo, no por todos.
+
+### [[01_Flujo_Copiloto]]
+
+Acompañar a un área mientras escribe su artefacto.
+
+### [[02_Flujo_Gate_Documentacion]]
+
+Medir un artefacto contra su contrato y cerrarlo o rebotarlo.
+
+### [[03_Flujo_Cosecha]]
+
+Juntar la evidencia de lo trabajado, clasificar el caso y decidir qué se absorbe.
+
+### [[04_Flujo_Retrospectiva]]
+
+Caso 1 — el desarrollo salió del Core: se revisa por fricciones y `main` casi no cambia.
+
+### [[05_Flujo_Aprendizaje_Branch]]
+
+Caso 2 — hubo conocimiento nuevo real: detectar, escribir, ubicar, presentar el diff y mergear con aprobación.
+
+### [[06_Flujo_Experimento]]
+
+Caso 3 — una idea que quizás sirve: se evalúa, y si no sirve se descarta sin tocar el Core.
+
+---
+
+## Modelo de versiones del Core
+
+El área sigue siendo la única que propone cambios a `main`, y lo hace con el modelo de siempre:
+
+```txt
 VaultrumCore        = main            (fuente de verdad, curada)
 Proyecto / idea     = branch          (el trabajo de las áreas de producción)
 Aprendizaje útil    = commit          (propuesta de cambio al Core)
@@ -16,116 +167,69 @@ Entrar al Core      = merge a main    (requiere revisión + aprobación del main
 Descartar           = branch tirada   (no toca el Core)
 ```
 
-El Core alimenta el arranque de todas las áreas (principio 1: partir del Core) y esta área gestiona lo que vuelve a él. Es la única que puede proponer cambios a `main`.
-
----
-
-## Sub-agentes del área
-
-### [[01_Encargado_Commits]]
-
-Rol ancla. Al cerrar una branch (o cuando un área marca un aprendizaje), revisa lo hecho y decide **con criterio qué merece commitearse** (no todo entra — principio 11). Prepara los commits candidatos y gestiona la política de merge según el caso. No escribe la nota final ni decide su ubicación.
-
-### [[02_Documentador]]
-
-Escribe cada aprendizaje candidato como un `.md` claro en **Staging**, útil para humanos e IAs (principio 8): responsabilidad, aplicación, límites. No decide si entra ni dónde vive.
-
-### [[03_Arquitecto_Conocimiento]]
-
-Decide **dónde vive** el aprendizaje en el Core, evita duplicación y resuelve "conflictos de merge" (si ya existe algo parecido, se actualiza en vez de duplicar). Prepara el diff que se te presenta. No redacta el contenido desde cero ni aprueba el merge.
+**Es una metáfora de versionado, no la operación de git.** Un `COMMIT-XXX` es una propuesta de conocimiento; el commit del repositorio es otra cosa y no es de esta área. Ver *Lo que esta área ya no hace*.
 
 ---
 
 ## Staging (y por qué esta área no tiene `Salidas/`)
 
-La carpeta `00_Staging` es la pizarra de **commits pendientes**: aprendizajes escritos que esperan tu aprobación. Es **transitoria**: cuando un aprendizaje se mergea al Core, se limpia de Staging. Si se descarta, también.
+La carpeta `Staging` es la pizarra de **commits pendientes**: aprendizajes escritos que esperan aprobación. Es **transitoria**: cuando un aprendizaje se mergea al Core, se limpia; si se descarta, también.
 
-Staging no es un registro histórico. El historial, si se necesita, vive en git (el `git log`), no en el vault.
+La zona de trabajo es:
 
-**Excepción declarada a la estructura de área.** Las otras cinco áreas tienen `Agentes/`, `Flujos/`, `Salidas/` y `Skills/`. Esta tiene `Staging/` en lugar de `Salidas/`, y es deliberado: **su salida registrable es el commit al Core**, que por definición vive en el Core y no acá. Guardar además una copia en `Salidas/` sería duplicar `main` — justo lo que el principio 11 prohíbe.
+- [[00_Staging|Staging]] — lo que está ahí es candidato, no criterio
 
-Se declara porque una omisión declarada es criterio y una omisión silenciosa es un hueco. La misma regla que se le exige a un `LDS`/`UXS` que no aplica.
+**Excepción declarada a la estructura de área.** Las otras áreas tienen `Salidas/`. Esta tiene `Staging/` en su lugar, y es deliberado por dos razones:
 
-La zona de trabajo es `Staging/`:
+- su salida registrable es el **commit al Core**, que por definición vive en el Core y no acá — guardar además una copia sería duplicar `main`;
+- lo que produce asistiendo **no es una salida suya**: se incorpora al artefacto del área dueña y no lleva su firma. Un informe de gate que quedara archivado sería historial de un trabajo ajeno.
 
-- [[00_Staging|Staging]] — : lo que está ahí es candidato, no criterio
+Se declara porque una omisión declarada es criterio y una omisión silenciosa es un hueco.
 
 ---
 
-## Los 3 casos (políticas de merge)
+## Lo que esta área ya no hace
 
-### [[01_Flujo_Retrospectiva|Caso 1 — Dev completo]]
-El desarrollo se terminó porque el conocimiento ya estaba en el Core. Poco aprendizaje nuevo. Se corre una retrospectiva: casi no hay commits, a lo sumo un refinamiento de una nota existente. Merge limpio, `main` casi no cambia.
+**El commit de git salió del área.** Estaba acá por un accidente de la metáfora: el área se llamó *control de versiones* y se le colgó el control de versiones literal. Nada de eso es conocimiento.
 
-### [[02_Flujo_Aprendizaje_Branch|Caso 2 — Branch completa (idea nueva)]]
-Se desarrolló una idea nueva de punta a punta. Hay conocimiento nuevo real. Flujo completo: detectar → escribir en Staging → presentar diff → aprobar → merge. Es el caso central del área.
+```txt
+la política del repositorio        →  `04_IA Operativa/03_Operar Vaultrum`
+cuándo se commitea un proyecto     →  Producción, atado al `VE` en Cerrado
+la verificación previa al commit   →  Área de Control de Calidad, con su `QA`
+el gate de forma del pre-commit    →  Arquitectura, que ya era dueña del hook
+```
 
-### [[03_Flujo_Experimento|Caso 3 — Branch experimental]]
-Idea que quizás es un avance. Se evalúa si sirve. Si sí, genera commits (va al flujo del caso 2). Si no, se descarta: cero al Core.
+El servicio real que esto prestaba —**seguro de vida para no perder trabajo**— no se borró: se movió con él, y lo declara `03_Operar Vaultrum`.
+
+---
+
+## Encadenado con las otras áreas
+
+Recibe de: **todas las áreas**, en dos momentos distintos — mientras escriben (Copiloto) y al cerrar (Gate y Cosecha). Y de la **Escuela**, que entrega candidatos `EST` desde su Biblioteca.
+
+Entrega a: **el artefacto del área dueña** (observaciones, sin firma) y a **VaultrumCore** (merge aprobado).
+
+Puente con la Escuela: la Escuela mira **afuera** y no mergea al Core; Conocimiento mira **adentro** y es el único que propone a `main`. Toma el `EST`, hace dedup, pertenencia y diff, y lo presenta al owner. Decide qué se vuelve criterio indexado del Core y qué queda como libro de referencia en la Biblioteca.
 
 ---
 
 ## Regla operativa
 
-Primero criterio (¿este aprendizaje es reutilizable?).
-Después redacción clara.
-Después ubicación sin duplicar.
-Después presentación del diff.
+Primero medir, después opinar.
+Primero criterio, después redacción.
+Después pertenencia, sin duplicar.
+Después el diff.
 Recién con tu aprobación, merge al Core.
 
 Ningún aprendizaje entra al Core sin pasar por criterio y aprobación.
 
 ---
 
-## Reglas de git (seguridad)
-
-El área prepara commits (título acorde a la implementación + resumen breve en los comentarios) y actúa como seguro de vida para no perder trabajo. Pero:
-
-- A `main` integra **solo la persona** que usa el software; el área nunca mergea ni pushea a main por su cuenta.
-- Trabajando sobre `main`, el área **no crea branches nuevas ni commitea antes de que exista una implementación**.
-- El área puede stagear, commitear y **pushear su branch de trabajo** (seguro de vida); no puede integrar a `main`.
-
-Detalle en `01_Encargado_Commits`.
-
----
-
 ## Límites del área
 
-No hace trabajo de producción (no arma RQ/GDS/SOL/EJ). No mergea sin aprobación. No acumula historial en el vault. No infla el Core con "por las dudas": si un aprendizaje no es claro y reutilizable, no entra.
+No hace trabajo de producción: no arma `RQ`, `GDS`, `SOL` ni `EJ`. **No firma el artefacto de otra área** ni decide su contenido: dice qué falta, no qué decir. No coloca notas en el vault por su cuenta. No mergea sin aprobación. No acumula historial. No infla el Core "por las dudas": si un aprendizaje no es claro y reutilizable, no entra.
 
----
-
-## Criterio que gestiona (el Core lo tiene escrito)
-
-Los aprendizajes del primer ciclo completo ya están en el Core, en `01_VaultrumCore/.../04_Criterios de entrega/`:
-
-```txt
-[[Baseline de entregable]]         completo en experiencia, mínimo en maquinaria
-[[Verificacion parcial declarada]] cómo se declara una verificación incompleta
-[[Gates verificables]]             por qué la cadena falla en los bordes
-[[Cuando NO optimizar]]            (en 03_Optimizacion) la mitad técnica del baseline
-```
-
-Es la única sección del Core que nació del uso del propio sistema, y por eso es la que esta área tiene que cuidar con más rigor: un criterio entra ahí cuando **una entrega real lo produjo**, no cuando suena razonable.
-
----
-
-## Encadenado con las otras áreas
-
-Recibe de: **todas las áreas de producción**, cuando su Validador/Revisor marca un aprendizaje reutilizable al cerrar; y de la **Escuela** (`00_Escuela`), que entrega candidatos `EST` desde su Biblioteca (aprendizaje proactivo).
-Entrega a: **VaultrumCore** (merge aprobado).
-
-Puente con la Escuela: la Escuela investiga y destila pero **no mergea al Core**. Conocimiento es el único que propone a `main`: toma el `EST`, hace dedup + ubicación + diff, y lo presenta al owner. Decide qué se vuelve criterio indexado del Core (para que las áreas lo jalen on-demand) y qué queda como libro de referencia en la Biblioteca.
-
-## Flujos del área
-
-Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde al estado del trabajo, no por todos.
-
-### [[01_Flujo_Retrospectiva|Flujo Retrospectiva]]
-
-### [[02_Flujo_Aprendizaje_Branch|Flujo Aprendizaje Branch]]
-
-### [[03_Flujo_Experimento|Flujo Experimento]]
+Y no presenta juicio como medición. Un informe que hace eso vale menos que uno que no mide nada, porque el segundo por lo menos no engaña.
 
 ---
 

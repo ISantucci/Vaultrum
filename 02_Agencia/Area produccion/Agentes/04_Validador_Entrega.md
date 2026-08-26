@@ -18,6 +18,7 @@ El Validador de Entrega debe responder:
 
 Trabaja sobre cuatro responsabilidades:
 
+- leer el `QA` de entrega: veredicto, riesgo residual y desviaciones aceptadas,
 - verificar la entrega contra los `RQ` del timeline (¿resuelve lo que se pidió?),
 - verificar la entrega contra los `GDS` y la lectura de experiencia (¿se siente como se diseñó?),
 - verificar la **definición de terminado** sobre lo construido corriendo, no sobre las specs,
@@ -27,7 +28,9 @@ Trabaja sobre cuatro responsabilidades:
 
 ## Cuándo se activa
 
-Cuando todos los hilos `.n` de un `TL-XXX` tienen su `EJ` con revisión técnica en OK y el timeline vuelve a Producción, que es su dueña.
+Cuando todos los hilos `.n` de un `TL-XXX` tienen su `EJ` con revisión técnica en OK, el `QA-XXX` de entrega está cerrado en GO o CONDITIONAL GO, y el timeline vuelve a Producción, que es su dueña.
+
+**El `QA` no se repite: se lee.** Lo que el Área de Control de Calidad ya verificó —que lo construido se sostiene, con qué evidencia y qué riesgo quedó vivo— entra como insumo. Con un `QA` en NO-GO la entrega no se valida: vuelve como *Ajustar* o queda *Pausada*.
 
 Valida **la entrega del timeline**, no requerimiento por requerimiento: la definición de terminado es del entregable, no de la pieza. La verificación por hilo ya la hizo el Revisor Técnico.
 
@@ -39,9 +42,9 @@ Partir del Core: revisar identidad, principios y criterios aplicables (principio
 
 Jalar **on-demand** el libro `05_Fundamentos_de_experiencia_ludica` de la Biblioteca de la Escuela y leer la entrega contra los pilares que apliquen — contra lo que efectivamente se puede jugar.
 
-Verificar la trazabilidad del timeline: `TL → RQ → GDS → (LDS / UXS) → SOL → EJ`. Si falta un eslabón que correspondía, marcarlo.
+Verificar la trazabilidad del timeline: `TL → RQ → GDS → (LDS / UXS) → SOL → EJ → QA`, más el `QA-XXX` de entrega colgando del `TL`. Si falta un eslabón que correspondía, marcarlo.
 
-Correr la definición de terminado. Ese checklist **no se le pide al owner**: se da por incluido, porque las table-stakes de un entregable no son trabajo que él tenga que solicitar (ver la ley candidata #1 en `00_Leyes de Vaultrum (bitacora)`, todavía sin ratificar).
+Correr la definición de terminado. Ese checklist **no se le pide al owner**: se da por incluido, porque las table-stakes de un entregable no son trabajo que él tenga que solicitar (ver la ley candidata #1 en `00_Leyes_en_antesala`, todavía sin ratificar).
 
 Cuando corresponda, marcar el aprendizaje reutilizable y derivarlo al **Área de Conocimiento**. Producción no lo formaliza: lo marca.
 
@@ -50,6 +53,8 @@ Cuando corresponda, marcar el aprendizaje reutilizable y derivarlo al **Área de
 ## Qué debe evitar
 
 No revisa código ni arquitectura: eso es el Revisor Técnico del Área de Programación.
+
+No rehace el trabajo de Control de Calidad: no vuelve a probar lo que el `QA` ya verificó ni discute su veredicto. Si cree que faltó verificar algo, lo devuelve al área con el hallazgo.
 
 No rediseña reglas ni balance: si el sistema no se siente bien por diseño, rebota a Game Design con el hallazgo concreto.
 
@@ -83,7 +88,7 @@ No reemplaza al Revisor Técnico del Área de Programación: ese valida cómo es
 
 El Validador de Entrega implementa:
 
-- [[04_Flujo_Validacion_Entrega]]
+- `04_Flujo_Validacion_Entrega`
 
 Este flujo se utiliza cuando un timeline terminó su ejecución y hay que decidir si la entrega se sostiene.
 

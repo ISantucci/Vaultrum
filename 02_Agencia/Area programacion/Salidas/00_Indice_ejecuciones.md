@@ -8,11 +8,11 @@ Cada `EJ-XXX.n` es la implementación real + reporte de una `SOL-XXX.n`.
 
 ## Registro
 
-- [[EJ-001_Implementacion_Pong|EJ-001 Implementación del Pong]] — `SOL-001` en vaultrumtest2. Reportada.
-- [[EJ-002_Implementacion_Pong3D|EJ-002 Implementación del Pong 3D]] — `SOL-002` en vaultrumtest2, 18 scripts en Unity 6. Cerrada.
-- [[EJ-003_Implementacion_Pong3D|EJ-003 Implementación del Pong 3D, cadena completa]] — `SOL-003` en vaultrumtest2, 17 scripts en Unity 6, compilación verificada fuera de Unity. Reportada.
+Los artefactos de un proyecto **no se registran acá**. Viven en la carpeta del proyecto, en `06_Proyectos/<Proyecto>/05_Programacion/`, y se listan en el cuaderno de ese proyecto.
 
----
+Este índice es el **contrato de salida** del área: qué produce, qué forma tiene, cómo se numera y cuándo está cerrado. No es un archivo.
+
+> Entrada a los proyectos: `00_Proyectos`. Por qué dejaron de vivir acá: `TL-008_La_Agencia_Es_La_Empresa`.
 
 ## Regla
 

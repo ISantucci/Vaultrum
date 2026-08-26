@@ -69,6 +69,6 @@ No avanza si el `RQ` no es jugable o está mal definido: lo marca y deriva.
 
 ## Flujos a implementar
 
-- [[01_Flujo_Analisis_Gameplay]]
+- `01_Flujo_Analisis_Gameplay`
 
 El detalle operativo vive en el documento del flujo.

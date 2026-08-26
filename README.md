@@ -31,6 +31,7 @@ Intención
   → GDS          (Game Design)     reglas, estados, feedback, balance
   → LDS / UXS    (Level Design / UI-UX, si aplican)
   → SOL + EJ     (Programación)    solución técnica + implementación
+  → QA           (Control de Calidad)  ¿se sostiene? GO / CONDITIONAL GO / NO-GO
   → VE           (Producción)      ¿lo entregado es lo prometido?
   → commit al Core (Conocimiento)  ¿qué aprendizaje vuelve al sistema?
 ```
@@ -46,12 +47,12 @@ Cinco capas:
 | Capa | Qué es |
 |------|--------|
 | **01_VaultrumCore** | la base de conocimiento: SOLID, patrones, optimización, estructuras, algoritmos, managers, IA para juegos, y los criterios de entrega |
-| **02_Agencia** | las seis áreas que ejecutan la cadena, cada una con sus agentes, flujos, salidas y su skill ejecutable |
-| **03_Comunidad** | gobernanza, contribución, licencia y marca |
+| **02_Agencia** | las ocho áreas que ejecutan y sostienen la cadena, cada una con sus agentes, flujos, salidas y su skill ejecutable |
+| **03_Comunidad** | gobernanza, contribución, licencia y marca — y la preparación de lo que el sistema publica, con su Archivo |
 | **04_IA Operativa** | cómo una IA opera el vault sin inflarlo: tokens, prompteo, el pass GC y sus herramientas de medición |
 | **05_Escuela** | aprendizaje proactivo y la Biblioteca: fundamentos de experiencia y análisis de juegos por género |
 
-Ocho **skills ejecutables** (una por área, más la Escuela y AiCare) son lo que hace que la cadena corra en vez de quedarse en documentación.
+Once **skills ejecutables** (una por área, más la Escuela, la Comunidad y AiCare) son lo que hace que la cadena corra en vez de quedarse en documentación.
 
 ---
 
@@ -88,7 +89,7 @@ Los dos son válidos. El segundo es el que deja rastro.
 
 Etapa de apertura inicial, con una entrega real completa: la cadena se corrió de punta a punta produciendo un Pong 3D en Unity 6, jugable y jugado.
 
-Lo que eso probó y lo que no está escrito sin maquillaje en `00_Auditoria de arquitectura` y en el backlog de `00_Leyes de Vaultrum (bitacora)`. Resumen honesto: **la cadena funciona en el medio y falla en los bordes**, y las tres reglas de borde que lo corrigen ya son pasos ejecutables de las skills.
+Lo que eso probó y lo que no está escrito sin maquillaje en `ARQ-000_Auditoria_de_arquitectura` y en el backlog de `00_Leyes_en_antesala`. Resumen honesto: **la cadena funciona en el medio y falla en los bordes**, y las tres reglas de borde que lo corrigen ya son pasos ejecutables de las skills.
 
 Falta la segunda muestra. Todo lo validado se validó sobre un mismo género.
 

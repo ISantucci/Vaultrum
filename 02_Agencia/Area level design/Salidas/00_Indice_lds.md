@@ -8,9 +8,11 @@ Cada `LDS-XXX.n` es un nivel/escenario jugable diseñado y validado para un `GDS
 
 ## Registro
 
-Todavía no hay ninguna. El primer `LDS` entra cuando un `GDS` cerrado declare que el nivel aplica.
+Los artefactos de un proyecto **no se registran acá**. Viven en la carpeta del proyecto, en `06_Proyectos/<Proyecto>/03_LevelDesign/`, y se listan en el cuaderno de ese proyecto.
 
----
+Este índice es el **contrato de salida** del área: qué produce, qué forma tiene, cómo se numera y cuándo está cerrado. No es un archivo.
+
+> Entrada a los proyectos: `00_Proyectos`. Por qué dejaron de vivir acá: `TL-008_La_Agencia_Es_La_Empresa`.
 
 ## Regla
 

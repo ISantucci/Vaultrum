@@ -6,7 +6,7 @@ Completar el `GDS-XXX.n` con su capa numérica: parámetros configurables, valor
 
 ## Entrada del flujo
 
-- `GDS-XXX.n` con reglas, estados y feedback ya definidos ([[02_Flujo_Diseno_Sistema]]).
+- `GDS-XXX.n` con reglas, estados y feedback ya definidos (`02_Flujo_Diseno_Sistema`).
 
 Puede omitirse si el sistema no tiene valores que impacten la experiencia.
 

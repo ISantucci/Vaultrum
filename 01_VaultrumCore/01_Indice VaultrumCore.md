@@ -35,6 +35,7 @@ Contiene material sobre:
 - patrones de diseño;
 - optimización;
 - criterios de entrega;
+- calidad y testing;
 - experiencia de juego (índice hacia la Biblioteca);
 - estructuras de datos;
 - algoritmos;

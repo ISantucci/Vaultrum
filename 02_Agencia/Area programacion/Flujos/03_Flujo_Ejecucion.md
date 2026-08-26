@@ -19,7 +19,7 @@ No arranca sin una SOL aprobada.
 - Reutiliza sistemas existentes en vez de duplicar.
 - Deja los valores de gameplay/balance configurables.
 - Documenta qué se tocó, por qué y cómo se valida.
-- Verifica numeración: `EJ-XXX.n` hereda del `SOL-XXX.n`. Revisar [[00_Indice_ejecuciones]].
+- Verifica numeración: `EJ-XXX.n` hereda del `SOL-XXX.n`. Revisar `00_Indice_ejecuciones`.
 
 ---
 

@@ -4,11 +4,11 @@ Verificar que el `LDS` sea jugable, con buen ritmo y construible; cerrarlo o reb
 
 ## Entrada del flujo
 
-- `LDS-XXX.n` abierto por el [[02_Flujo_Diseno_Nivel]].
+- `LDS-XXX.n` abierto por el `02_Flujo_Diseno_Nivel`.
 
 ## Transformación que realiza
 
-- Corre el checklist de cierre y los pilares 1, 6, 8, 9 del libro [[05_Fundamentos_de_experiencia_ludica]].
+- Corre el checklist de cierre y los pilares 1, 6, 8, 9 del libro `05_Fundamentos_de_experiencia_ludica`.
 - Detecta huecos de pacing, dificultad, legibilidad de recorrido o construibilidad.
 
 ## Checklist

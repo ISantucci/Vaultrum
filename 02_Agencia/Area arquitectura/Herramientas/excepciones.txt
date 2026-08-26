@@ -1,0 +1,15 @@
+# Excepciones declaradas del grafo de Vaultrum
+#
+# Una por linea:   ruta relativa al vault | ley | razon
+#
+# Leyes validas: TABLA  YAML  MEDIO  titulo-mixto  salto  sube  flotando  inalcanzable
+#
+# Regla: lo que no esta declarado aca, falla. Una capa entera fuera del veredicto
+# no es una excepcion, es un agujero. El Core no esta exento por ser el Core:
+# esta exento nota por nota, con la razon escrita, y la decide el owner.
+#
+# --- ejemplo de formato (comentado; borrar el # para activar) ---
+# 01_VaultrumCore/.../Experiencia de juego.md | TABLA | nota puente del Core, decision del owner (ARQ-001)
+
+06_Proyectos/** | flotando | workspace local no versionado: 00_Proyectos es el indice de la constelacion y vive fuera del paquete publicado. START_HERE lo nombra con backticks para no dejar un link colgado en una copia recien clonada. Decision del owner, TL-008.
+06_Proyectos/** | inalcanzable | workspace local no versionado: las leyes del grafo cuidan el vault PUBLICADO, y este subarbol no se publica. Cada artefacto si se alcanza desde el cuaderno de su proyecto. Hallazgo para el Arquitecto: grafo.py no distingue vault publicado de workspace local. Decision del owner, TL-008.

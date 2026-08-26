@@ -19,7 +19,7 @@ El Core sabia construir bien y no sabia que se siente bien. SOLID, patrones, opt
 
 Esa asimetria produjo entregas tecnicamente impecables sin menu, sin condicion de fin y sin forma de volver a jugar. La correccion no fue meter game design en el Core: fue **indexar** el conocimiento que la Escuela destila, para que las areas lo encuentren.
 
-Es la unica seccion del Core que enlaza hacia la Biblioteca. Lo hace por diseno: el Core es la fuente de criterio, y parte del criterio es saber donde esta el resto.
+Esta nota es el **puente** del Core hacia la Biblioteca: la unica seccion del Core que enlaza hacia otra capa, y la unica que puede hacerlo. Lo hace por diseno: el Core es la fuente de criterio, y parte del criterio es saber donde esta el resto.
 
 ---
 

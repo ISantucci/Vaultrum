@@ -10,7 +10,7 @@ No existe para diseñar el nivel. Existe para que el nivel posterior responda a 
 
 ¿Cómo debería sentirse recorrer y enfrentar este sistema en un nivel?
 
-- partir del Core y de la Escuela: consultar principios y los pilares 1 (core loop), 6 (dificultad/flow), 8 (pacing) y 9 (agencia) del libro [[05_Fundamentos_de_experiencia_ludica]],
+- partir del Core y de la Escuela: consultar principios y los pilares 1 (core loop), 6 (dificultad/flow), 8 (pacing) y 9 (agencia) del libro `05_Fundamentos_de_experiencia_ludica`,
 - interpretar la intención espacial del `GDS`: qué desafíos permite el sistema y cómo escalarlos,
 - definir la experiencia de recorrido buscada (tensión, exploración, descanso),
 - marcar la curva de ritmo objetivo (picos y valles) a nivel de encuadre,
@@ -52,4 +52,4 @@ No define layout final, encuentros ni curvas numéricas. No cambia reglas ni bal
 
 ## Flujos a implementar
 
-- [[01_Flujo_Analisis_Espacio]]
+- `01_Flujo_Analisis_Espacio`

@@ -143,7 +143,7 @@ El formato puede reducirse si la planificacion es simple, pero no debe romper la
 
 El Planificador implementa principalmente:
 
-- [[03_Flujo_Planificacion_Requerimientos]]
+- `03_Flujo_Planificacion_Requerimientos`
 
 Este flujo se utiliza cuando una idea ya fue bajada a tierra y necesita convertirse en timeline y requerimientos asociados.
 

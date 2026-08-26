@@ -6,15 +6,23 @@ La Biblioteca es el **corazón de la Escuela**: el espacio donde se guardan los 
 
 No es un catálogo de juegos ni una lista de 500 títulos. Es una colección de **libros** curados, cada uno con índice y metadata, indexados para consultarse por categoría.
 
-> **Portada:** `00_Catalogo_Biblioteca` — índice maestro de todo lo ya sumado, separado por categoría. La skill lo actualiza al cerrar cada corrida.
+Esta nota es la portada. Los cuatro estantes de abajo son el registro: cada uno enlaza sus piezas y las describe.
 
 ---
 
-## Portada
+## La vista de conjunto se calcula, no se mantiene
 
-### [[00_Catalogo_Biblioteca|Catálogo de la Biblioteca]]
+Cuántas piezas hay, en qué estado están y de qué misión salió cada una **no se escriben a mano**: se derivan del árbol.
 
-Índice maestro de todo lo ya sumado, separado por categoría. La skill lo actualiza al cerrar cada corrida.
+```txt
+python3 "05_Escuela/Herramientas/biblioteca.py" .                    conteos, por misión, lo que está en curso
+python3 "05_Escuela/Herramientas/biblioteca.py" . --dedup <tema>     ¿ya hay algo que cubra esto?
+python3 "05_Escuela/Herramientas/biblioteca.py" . --verificar        la ficha y su estante coinciden
+```
+
+La fuente de verdad de cada pieza es **su propia ficha**. El estante la enlaza y la describe; todo lo demás se calcula.
+
+Un dato calculado no puede derivar del original, porque no tiene copia. La Biblioteca mantuvo durante meses un catálogo escrito a mano que reflejaba 99 entradas: nunca se desincronizó con los estantes, y aun así ocultó una deriva — la ficha de `01_Pong` decía *En validación* mientras el estante y el catálogo la daban por cerrada. El espejo coincidía con el espejo; nadie miraba el original.
 
 ---
 

@@ -24,6 +24,7 @@ La Agencia se organiza en **Áreas**. Un área es autocontenida: trae consigo su
 - **`Flujos/`** — ficha de cada paso: entrada, criterios de aceptación, condiciones de avance y formato de salida.
 - **`Salidas/`** — artefactos formales, numerados e indexados, que quedan escritos en el vault.
 - **`Skills/`** — la skill ejecutable del área: corre el procedimiento y escribe las salidas.
+- **`Herramientas/`** — opcional: los instrumentos que el área usa para medir lo que afirma. Un área que declara un número sin instrumento está estimando.
 
 Cada área es dueña de su propia metodología de trabajo. Nada de un área vive fuera de su carpeta.
 
@@ -55,21 +56,26 @@ Intención                                                                  │
   ↓                                                                        │
 Área de Producción     → TL + RQ      (qué, alcance, prioridad)            │
   ↓ (RQ jugable)                                                           │
+Área de UI/UX          → UXS mitad A  (presupuesto de comunicación)        │
+  ↓ (el presupuesto condiciona el sistema, no su presentación)             │
 Área de Game Design    → GDS          (reglas, feedback, estados, balance) │
                        (+ GDS-XXX.0 marco común, si 3+ GDS comparten base)   │
   ↓ (GDS cerrado)                                                          │
   ├─► Área de Level Design → LDS  (espacio, niveles, encuentros, pacing)   │
-  └─► Área de UI/UX        → UXS  (pantallas, HUD, menús, legibilidad)     │
+  └─► Área de UI/UX        → UXS mitad B (pantallas, HUD, legibilidad)     │
   ↓ (RQ + GDS + LDS + UXS)                                                 │
 Área de Programación   → SOL + EJ     (solución técnica + implementación)  │
-  ↓ (todos los EJ del TL en revisión OK)                                   │
+  ↓ (EJ con revisión técnica OK)                                           │
+Área de Control        → QA           (¿se sostiene lo construido?)        │
+de Calidad               QA-XXX.n por hilo · QA-XXX por entrega            │
+  ↓ (QA en GO o CONDITIONAL GO)                                            │
 Área de Producción     → VE           (validación de entrega del TL)       │
   │                                                                        │
   └──── aprendizaje reutilizable ──► Área de Conocimiento ─── merge ───────┘
                                      (control de versiones del Core)
 ```
 
-**Dos palabras, dos cortes.** Un **hilo `.n`** es la cadena de un requerimiento (`RQ → GDS → LDS/UXS → SOL → EJ`) y lo cierra la revisión técnica del Área de Programación. Una **entrega** es el timeline completo (`TL` con todos sus hilos en OK) y la cierra el `VE` del Área de Producción.
+**Dos palabras, dos cortes.** Un **hilo `.n`** es la cadena de un requerimiento (`RQ → GDS → LDS/UXS → SOL → EJ → QA`): la revisión técnica cierra su construcción y el `QA-XXX.n` decide si lo construido se sostiene. Una **entrega** es el timeline completo (`TL` con todos sus hilos verificados) y la cierran el `QA-XXX` y, con él en la mano, el `VE` del Área de Producción.
 
 **La entrega es de Producción de punta a punta.** La abre con la intención y la cierra validándola: el `EJ` cierra su hilo, no la entrega. Esto existe para que nadie dé por terminado algo que compila pero no se sostiene frente a un jugador (principio 4: eficacia sobre inmediatez).
 
@@ -88,29 +94,32 @@ Todo cuelga del número base del **timeline**. Cada área agrega su prefijo sobr
 | `GDS-XXX.0` | Marco común (opcional) | Game Design | **TL-XXX** (no cuelga de un `RQ`) |
 | `GDS-XXX.n` | Game Design Spec | Game Design | RQ-XXX.n |
 | `LDS-XXX.n` | Level Design Spec | Level Design | GDS-XXX.n |
-| `UXS-XXX.n` | UI/UX Spec | UI/UX | GDS-XXX.n |
+| `UXS-XXX.n` | UI/UX Spec | UI/UX | RQ-XXX.n (mitad A) + GDS-XXX.n (mitad B) |
 | `SOL-XXX.n` | Solución técnica | Programación | RQ-XXX.n (+ GDS/LDS/UXS-XXX.n) |
 | `EJ-XXX.n` | Ejecución / reporte | Programación | SOL-XXX.n |
-| `VE-XXX` | Validación de entrega | Producción | TL-XXX (con sus `EJ` en OK) |
+| `QA-XXX.n` | Gate de calidad del hilo | Control de Calidad | EJ-XXX.n |
+| `QA-XXX` | Gate de calidad de la entrega | Control de Calidad | **TL-XXX** (con sus `QA-XXX.n`) |
+| `VE-XXX` | Validación de entrega | Producción | TL-XXX (con su `QA-XXX`) |
 
-La subnumeración `.n` es compartida: `RQ-001.2 ↔ GDS-001.2 ↔ LDS-001.2 ↔ UXS-001.2 ↔ SOL-001.2 ↔ EJ-001.2` son el mismo hilo de trabajo visto por cada área. El `VE` es la excepción y **no lleva `.n`**: valida la entrega del timeline completo, porque la definición de terminado es del entregable y no de la pieza. `LDS` y `UXS` son **opcionales**: existen solo si el `GDS` tiene, respectivamente, dimensión espacial o interfaz.
+La subnumeración `.n` es compartida: `RQ-001.2 ↔ GDS-001.2 ↔ LDS-001.2 ↔ UXS-001.2 ↔ SOL-001.2 ↔ EJ-001.2 ↔ QA-001.2` son el mismo hilo de trabajo visto por cada área. El `QA` de entrega y el `VE` son las excepciones y **no llevan `.n`**: valida la entrega del timeline completo, porque la definición de terminado es del entregable y no de la pieza. `LDS` y `UXS` son **opcionales**: existen solo si el hilo tiene, respectivamente, dimensión espacial o algo que alguien tenga que leer. El `UXS` es el único artefacto que **abre antes que su insumo principal**: su mitad A se escribe contra el `RQ` para que Game Design pueda cerrar el `GDS` contra ella. Por eso declara dos insumos y no uno.
 
 Reglas:
 
 - No se inventa numeración sin revisar los índices del área.
-- Cada salida linkea hacia atrás a su insumo (`EJ → SOL → RQ/GDS/LDS/UXS → TL`, y `VE → TL`).
+- Cada salida linkea hacia atrás a su insumo (`QA → EJ → SOL → RQ/GDS/LDS/UXS → TL`, y `QA-XXX → TL`, y `VE → TL`).
 - Un artefacto downstream no existe sin su insumo upstream. **Esta es la definición canónica de los gates**: quien la necesite, la referencia acá; no se copia a otros documentos.
-- **Los dos artefactos que cuelgan del `TL` y no de un `RQ` son `GDS-XXX.0` y `VE-XXX`.** Ninguno lleva `.n` de hilo: el marco común porque es transversal a varios hilos, el `VE` porque la definición de terminado es del entregable y no de la pieza. Cualquier otro artefacto sin `RQ` upstream es un hueco, no una excepción.
-- El `GDS-XXX.0` es **opcional y condicionado**: se abre solo si tres o más `GDS` del timeline comparten definiciones. Detalle en [[00_Indice_gds]].
+- **Los tres artefactos que cuelgan del `TL` y no de un `RQ` son `GDS-XXX.0`, `QA-XXX` y `VE-XXX`.** Ninguno lleva `.n` de hilo: el marco común porque es transversal a varios hilos; el `QA` de entrega y el `VE` porque la decisión de calidad y la definición de terminado son del entregable y no de la pieza. Cualquier otro artefacto sin `RQ` upstream es un hueco, no una excepción.
+- El `GDS-XXX.0` es **opcional y condicionado**: se abre solo si tres o más `GDS` del timeline comparten definiciones. Detalle en `00_Indice_gds`.
 - Una omisión declarada es criterio; una omisión silenciosa es un hueco. Si `LDS` o `UXS` no aplican, el `GDS` lo dice explícitamente **y dice qué dimensión del entregable está ausente** — un "no aplica" es una afirmación verificable, no un atajo. Se comprueba al cerrar el `VE` con el *test del "no aplica"*: ¿la siguiente área tuvo que hacer ese trabajo igual?
-- Un `TL` no está entregado sin su `VE` en estado **Cerrado**. La revisión técnica cierra el hilo `.n`; la validación de entrega cierra la iteración.
-- El `VE` declara su **modo de cierre**: `Checklist` (se recorren los ítems sobre el entregable corriendo) o `Veredicto` (juicio global del owner sobre el entregable corriendo, con la deuda declarada). Detalle en [[00_Indice_ve]].
+- Un `TL` no está entregado sin su `VE` en estado **Cerrado**. La revisión técnica cierra el hilo `.n`; el `QA` decide si lo construido se sostiene; la validación de entrega cierra la iteración.
+- **Un `VE` no cierra en Cerrado sin su `QA` en GO o CONDITIONAL GO**, citado en el `VE`. Un `QA` en NO-GO deja la entrega en *Ajustar* o *Pausado*, nunca en Cerrado.
+- El `VE` declara su **modo de cierre**: `Checklist` (se recorren los ítems sobre el entregable corriendo) o `Veredicto` (juicio global del owner sobre el entregable corriendo, con la deuda declarada). Detalle en `00_Indice_ve`.
 
 **Estados de cierre de un paso (vocabulario común a todas las áreas).** Cada paso cierra declarando: **Cerrado** (avanza) · **Ajustar** (rebota con hallazgo concreto al sub-agente o área que corresponde) · **Pausado** (falta información o una decisión del owner; se declara qué falta y no se avanza — principio 9). Pausar es un cierre válido, no un fracaso: es preferible a construir sobre un supuesto. En el análisis estratégico de Producción se suma **Descartado**, porque es el único paso donde una idea puede no seguir.
 
 No confundir con el **estado de un artefacto** en su índice, que describe el ciclo de vida de la salida (dónde está en el loop del área) y no la decisión de un paso. Cada área define el suyo en su índice de salidas, porque sus etapas son distintas.
 
-Auditoría no es un área separada: los criterios de aceptación viven dentro del flujo de cada área y el Revisor/Validador de cada área los aplica.
+Auditoría no es un área separada: los criterios de aceptación viven dentro del flujo de cada área y el Revisor/Validador de cada área los aplica. Control de Calidad tampoco audita a las demás: no revisa cómo trabajó cada área, verifica **lo construido** contra los criterios que esas áreas escribieron.
 
 ---
 
@@ -162,36 +171,74 @@ Diseño de espacio y tiempo. Consume un `GDS` cerrado con dimensión espacial y 
 
 ### [[Area_uiux]]
 
-Capa de comunicación jugador↔juego. Consume un `GDS` (y opcionalmente un `LDS`) y diseña pantallas, HUD, menús, flujos de navegación, jerarquía de información y feedback. Produce `UXS` (UI/UX spec). Usabilidad primero, engagement después. No define reglas ni diseña el espacio jugable.
+Cuida la **legibilidad del sistema**: que quien lo opera pueda responder qué pasa, qué puede hacer y cómo va, sin que nadie se lo explique. Vale para un juego y para cualquier herramienta con operador — un jugador es un operador con reglas de juego encima.
+
+**Entra dos veces.** Antes de que Game Design cierre, con el **presupuesto de comunicación**: cuántas señales entran, por qué canal, con qué techo y qué no entra. Y después, con la **interfaz**: pantallas, HUD, menús, jerarquía, mapping, feedback y accesibilidad. Presta además un tercer servicio, **Pasada**, para medir una interfaz que ya existe.
+
+Produce `UXS` (UI/UX spec), en dos mitades con dos cierres. Aplica seis leyes de la comunicación con una herramienta real —`Herramientas/legibilidad.py`— que prueba contraste WCAG, simulación de daltonismo, consistencia de mapping, feedback, navegación y densidad. **Un `UXS` no cierra sin estar medido.**
+
+Usabilidad primero, engagement después. No define reglas ni balance —dice cuántos estados se pueden distinguir, no cuáles existen— ni diseña el espacio jugable.
 
 ### [[Area_programacion]]
 
 Convierte un `RQ` (+ `GDS`, `LDS`, `UXS`) en una solución técnica construida con criterio Vaultrum. Produce `SOL` (solución técnica) + `EJ` (ejecución). Sus sub-agentes iteran hasta cumplir los criterios de aceptación.
 
+### [[Area_control_de_calidad]]
+
+**El último paso de la cadena, y el único que puede decir que no.** Corre al terminar una épica —una implementación específica o la entrega completa— y decide si lo construido **se sostiene**: build verificada, pase por riesgo, defectos reproducibles, arreglos reverificados, regresión corrida y cobertura declarada.
+
+Produce `QA`, con dos cortes: `QA-XXX.n` cierra un hilo y cuelga de su `EJ`; `QA-XXX` cierra la entrega y cuelga del `TL`, sin `.n`. Su salida es una decisión de tres valores —**GO · CONDITIONAL GO · NO-GO**— y es **insumo obligatorio del `VE`**.
+
+Entra **dos veces**, como UI/UX y por la misma razón: antes, con el presupuesto de verificación —qué instrumentación hace falta para que esto se pueda probar—, dicho mientras todavía se puede construir; y después, con el gate, sobre una versión congelada. Un gate que solo aparece al final descubre problemas estructurales cuando ya son caros.
+
+Aplica seis leyes de la verificación con una herramienta real —`Herramientas/calidad.py`— que mide versión congelada, verificación de build, trazabilidad del defecto, reverificación, cobertura sin huecos y riesgo con dueño, y compara el veredicto declarado contra el medido. **Un `QA` no cierra sin estar medido.**
+
+No arregla lo que encuentra, no revisa arquitectura ni estilo de código, y no valida la experiencia: eso sigue siendo del `VE` y del playtest.
+
 ### [[Area_conocimiento]]
 
-Capa de control de versiones del Core (no es producción). Modelo git: Core = `main`, proyecto = `branch`, aprendizaje = `commit`, entrar al Core = `merge` con aprobación. Gestiona qué conocimiento vuelve al Core, con criterio y sin acumular historial.
+**La memoria de la Agencia.** No produce proyecto: cuida que lo que se trabaja quede escrito y se entienda, y decide qué de lo trabajado vuelve al Core.
+
+**Tampoco está al final de la cadena: está debajo, como Arquitectura.** Entra tres veces y no una. **Copiloto** acompaña a un área mientras escribe su artefacto —asiste, no firma: la autoría y el estado de cierre siguen siendo del área dueña—. **Gate** mide el artefacto contra su contrato antes de cerrarlo, y corre solo, porque el que se olvida de documentar se olvida de pedir ayuda para documentar. **Cosecha** decide qué aprendizaje vuelve a `main`, sobre la evidencia de lo trabajado y no sobre memoria.
+
+Mide con `Herramientas/documentacion.py`, que prueba seis leyes de la documentación —insumo declarado, contrato completo, omisión declarada, ningún número sin fuente, lo terminado existe en disco, no se dice dos veces—. **Un artefacto no cierra sin estar medido.**
+
+Sigue siendo la única que propone cambios a `main`, con el modelo de siempre: Core = `main`, proyecto = `branch`, aprendizaje = `commit`, entrar al Core = `merge` con aprobación. Es una metáfora de versionado: **el commit del repositorio no es de esta área** — la política vive en `04_IA Operativa/03_Operar Vaultrum` y el cierre que lo habilita es el `VE` de Producción.
+
+**Dos áreas están debajo de la cadena, no adentro.** Ninguna produce proyecto y ninguna aparece en la columna vertebral de numeración; las dos sostienen a las demás antes de que construyan:
+
+```txt
+Arquitectura   la forma del VAULT   dónde vive, de qué índice cuelga, con qué aristas
+Conocimiento   la forma del TEXTO   si se entiende, si falta algo, si está dicho dos veces
+               y la PERTENENCIA     a qué cuerpo de conocimiento pertenece lo nuevo
+```
+
+La frontera entre las dos es dura: **el arquitecto decide dónde vive una nota; Conocimiento decide a qué pertenece y cómo está escrita.** Conocimiento nunca coloca una nota por su cuenta: pide el emplazamiento y lo cita. Arquitectura nunca escribe el cuerpo.
 
 ### [[Area_arquitectura]]
 
 Cuida la **forma** del vault, no su contenido: que se pueda entrar por un índice y llegar caminando a cualquier nota.
 
-Mide el grafo con herramienta, repara con el cambio mínimo y verifica. Es la única área que no produce contenido: produce recorrido.
+**No está al final de la cadena: está debajo de todas.** No recibe el trabajo de nadie y no se lo entrega a nadie — le presta forma a quien la va a necesitar, antes de que construya. Presta tres servicios: **Plano** (explica en cascada cómo hacer algo sin romper ley), **Emplazamiento** (decide dónde vive el contenido nuevo y coloca la estructura) y **Pasada** (mide, repara y verifica lo que ya está).
 
-Sus salidas (`ARQ`) tampoco cuelgan de la columna vertebral de numeración: no son un eslabón de la cadena de producción, son pasadas sobre el vault mismo.
+La regla que la activa: **cualquier área que vaya a crear, mover o purgar notas, índices o carpetas le pide el plano o el emplazamiento antes de tocar nada, y lo cita en su salida.** Editar el cuerpo de una nota que ya existe no la activa: el área se ocupa de la forma, no del texto.
+
+Qué existe lo decide el área dueña; **dónde vive lo decide el arquitecto**, y es vinculante. El cuerpo de la nota nunca es suyo.
+
+Sus salidas (`ARQ`) no cuelgan de la columna vertebral de numeración: no son un eslabón de la cadena de producción, son intervenciones sobre el vault mismo. Cada una declara su modo.
 
 ---
 
-## Vínculo con la Escuela (05_Escuela)
+## [[00_Escuela|Vínculo con la Escuela (05_Escuela)]]
 
-La **Escuela** (`00_Escuela`) **no es un área de la Agencia**: es una capa propia. Comparte estructura (tiene `Agentes/`, `Flujos/`, `Salidas/`, `Skills/`) porque también es un lugar donde se trabaja, pero trabaja sobre otra cosa:
+La **Escuela** **no es un área de la Agencia**: es una capa propia. Comparte estructura (tiene `Agentes/`, `Flujos/`, `Salidas/`, `Skills/`) porque también es un lugar donde se trabaja, pero trabaja sobre otra cosa:
 
-- La **Agencia** produce **el proyecto del usuario**. Su insumo es una intención; su producto son `TL/RQ/GDS/LDS/UXS/SOL/EJ`.
+- La **Agencia** produce **el proyecto del usuario**. Su insumo es una intención; su producto son `TL/RQ/GDS/LDS/UXS/SOL/EJ/QA/VE`.
 - La **Escuela** produce **conocimiento para el sistema**. Su insumo es un gap del Core; su producto son libros en la Biblioteca y candidatos `EST`.
 
 Por eso no cuelga de la columna vertebral de numeración de arriba: sus salidas no son un eslabón de la cadena de producción. La Agencia se conecta con ella de dos formas:
 
-- **Producción, Game Design, Level Design y UI/UX** la **consultan on-demand** en tiempo de diseño (vía el índice por género del Core y el libro [[05_Fundamentos_de_experiencia_ludica]]) para que la primera entrega sea sólida, no un MVP apurado.
+- **Producción, Game Design, Level Design y UI/UX** la **consultan on-demand** en tiempo de diseño (vía el índice por género del Core y el libro `05_Fundamentos_de_experiencia_ludica`) para que la primera entrega sea sólida, no un MVP apurado.
 - **Conocimiento** es el **puente de gobernanza**: recibe los candidatos `EST` de la Escuela y es el único que los propone a `main`.
 
 ---

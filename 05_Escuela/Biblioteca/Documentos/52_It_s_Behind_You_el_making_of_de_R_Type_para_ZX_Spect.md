@@ -21,13 +21,3 @@ url: https://gamedocs.org/its-behind-you-the-making-of-r-type-for-the-zx-spectru
 
 **URL:** https://gamedocs.org/its-behind-you-the-making-of-r-type-for-the-zx-spectrum/
 Libro completo sobre portar un arcade a hardware severamente limitado. Es el mejor ejemplo que encontré de **diseño bajo restricción técnica extrema**, un tema con poca documentación de largo aliento. **Prioridad baja-media.**
-
----
-
-## Hacia donde seguir
-
-Esta ficha pertenece al estante de Documentacion real.
-
-Para volver al estante y ver el resto de los documentos:
-
-→ [[00_Indice_documentos]]

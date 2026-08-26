@@ -33,3 +33,39 @@ __pycache__/
 
 # Zona de descarte: se borra a mano desde el explorador
 _to_delete/
+
+# Trace de operacion (RQ-004.1) — lo escribe el hook, no es contenido del vault
+.vaultrum/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PUBLICACION — se publica el SISTEMA, no el historial de uso (TL-008, 2026-08-25)
+#
+# Quien clona Vaultrum recibe el criterio, las areas, los flujos, las skills, las
+# herramientas y la Biblioteca. NO recibe los proyectos de otro ni su historial.
+# Los indices de cada area (00_*) SI se versionan: son el contrato de salida.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Proyectos — las estrellas. Viven en el mundo, no en el paquete.
+06_Proyectos/
+
+# Artefactos de la cadena, esten donde esten (los indices 00_* quedan fuera)
+TL-*.md
+RQ-*.md
+GDS-*.md
+LDS-*.md
+UXS-*.md
+SOL-*.md
+EJ-*.md
+QA-*.md
+VE-*.md
+
+# Historial de uso del propio sistema — auditorias, misiones, publicaciones,
+# leyes en antesala. Vive en el area que lo produjo; no viaja en el paquete.
+ARQ-*.md
+EST-*.md
+PUB-*.md
+COMMIT-*.md
+02_Agencia/Area conocimiento/Staging/
+
+# Instructivos de una sola vez
+_APLICAR_*.txt

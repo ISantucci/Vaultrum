@@ -141,7 +141,7 @@ Criterio del Core relacionado: `Baseline de entregable`.
 
 - **No dice cuántos loops.** Tres es lo típico (atómico / sesión corta / retorno), pero un juego largo tiene más y uno de dos minutos puede tener dos. La regla es que haya más de uno, no que haya tres.
 - **No aplica igual fuera de lo jugable.** En una herramienta el equivalente del loop atómico existe (acción → resultado visible) pero "victoria/derrota" no: se reemplaza por *tarea completada / error recuperable*.
-- **No resuelve la duración.** Un loop bien cerrado y aburrido sigue siendo aburrido. Lo que hace interesante al loop es el espacio de decisión, y eso es Pilar 9 de [[05_Fundamentos_de_experiencia_ludica]].
+- **No resuelve la duración.** Un loop bien cerrado y aburrido sigue siendo aburrido. Lo que hace interesante al loop es el espacio de decisión, y eso es Pilar 9 de `05_Fundamentos_de_experiencia_ludica`.
 
 ## Fuentes
 

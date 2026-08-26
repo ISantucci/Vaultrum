@@ -37,7 +37,7 @@ Es el criterio de `Managers`: los links viven en listas y en títulos, y el bloq
 | Caso | Cuántos | Qué se hizo |
 |------|---------|-------------|
 | Salida declarada hacia un índice de sección, en `## Hacia donde seguir` | 15 | sale del bloque y pasa a ser link real (Ley 3) |
-| Duplica la cascada `## [[Hijo]]` que ya está en la misma nota | 37 | pierde los corchetes |
+| Duplica la cascada `## `Hijo`` que ya está en la misma nota | 37 | pierde los corchetes |
 | Hermano por cercanía, o mención lateral | 30 | pierde los corchetes |
 
 Las 15 liberadas son las únicas que agregan alcance: desde una hoja de Fundamentos se salta al índice de la sección que sigue, que es exactamente lo que la nota ofrece cuando dice *"si ya hay un síntoma concreto"*.
@@ -52,7 +52,7 @@ Las 15 liberadas son las únicas que agregan alcance: desde una hoja de Fundamen
 | Tabla de la nota puente | 6 | `Experiencia de juego` enlazaba seis libros sueltos de la Biblioteca |
 | Mención en prosa | 3 | referencias a notas ya alcanzables, ahora nombradas con backticks |
 
-La nota puente conserva sus dos aristas hacia la Biblioteca, ahora como títulos de sección: `## [[00_Indice_fundamentos]]` y `## [[00_Indice_juegos]]`. Los seis libros los cascadea cada estante. Las tablas siguen ahí y se leen igual — dejaron de tejer.
+La nota puente conserva sus dos aristas hacia la Biblioteca, ahora como títulos de sección: `## `00_Indice_fundamentos`` y `## `00_Indice_juegos``. Los seis libros los cascadea cada estante. Las tablas siguen ahí y se leen igual — dejaron de tejer.
 
 ---
 

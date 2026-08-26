@@ -6,7 +6,7 @@ Verificar la barra de calidad del candidato `EST` y hacer el handoff al Área de
 
 ## Entrada del flujo
 
-- Un candidato `EST` del [[03_Flujo_Destilacion]].
+- Un candidato `EST` del `03_Flujo_Destilacion`.
 
 ---
 

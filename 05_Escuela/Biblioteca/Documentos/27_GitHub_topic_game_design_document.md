@@ -31,13 +31,3 @@ url: https://github.com/topics/game-design-document
 - **Prioridad:** **Media**
 
 ---
-
----
-
-## Hacia donde seguir
-
-Esta ficha pertenece al estante de Documentacion real.
-
-Para volver al estante y ver el resto de los documentos:
-
-→ [[00_Indice_documentos]]

@@ -21,13 +21,3 @@ url: https://gamedocs.org/double-fine-productions-game-design-documents-from-lee
 
 **URLs:** https://gamedocs.org/double-fine-productions-game-design-documents-from-lee-petty/ · https://gamedocs.org/ninja-theory-documents/
 Documentación de estudios **contemporáneos y de tamaño medio** — la escala más parecida a la de un proyecto Vaultrum realista. El corpus histórico es casi todo AAA de los 90 o indie de una persona; esta franja intermedia estaba vacía. **Prioridad media-alta.**
-
----
-
-## Hacia donde seguir
-
-Esta ficha pertenece al estante de Documentacion real.
-
-Para volver al estante y ver el resto de los documentos:
-
-→ [[00_Indice_documentos]]

@@ -6,7 +6,7 @@ Ejecutar la misión dentro del presupuesto: buscar fuentes y traer **material br
 
 ## Entrada del flujo
 
-- Una misión de estudio que superó el gate del [[01_Flujo_Mision_Estudio]] (gap + presupuesto + barra).
+- Una misión de estudio que superó el gate del `01_Flujo_Mision_Estudio` (gap + presupuesto + barra).
 
 Si la misión no está aprobada, el flujo no avanza.
 

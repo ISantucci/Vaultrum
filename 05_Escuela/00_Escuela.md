@@ -13,7 +13,7 @@ Su corazón es la `00_Biblioteca`: el espacio donde se guardan los **libros** y 
 ## Escuela vs Conocimiento (proactiva vs reactiva)
 
 ```
-Conocimiento  = aprendizaje REACTIVO  → cosecha de proyectos propios cerrados
+Conocimiento  = aprendizaje INTERNO   → acompana lo que se escribe y cosecha lo trabajado
 Escuela       = aprendizaje PROACTIVO → sale a buscar lo que falta en el mundo
 ```
 
@@ -32,8 +32,8 @@ Gap del Core / idea / ambigüedad
 
 Todo el activo vive en la `00_Biblioteca`: una librería real y navegable con **dos estantes**:
 
-- **[[00_Indice_fundamentos|Fundamentos]]** — lo transversal: el loop de experiencia, el game feel, la definición de terminado.
-- **[[00_Indice_juegos|Juegos]]** — análisis por juego/tipo, guardados por **género** (Pong → arcade, etc.).
+- **Fundamentos** (`00_Indice_fundamentos`) — lo transversal: el loop de experiencia, el game feel, la definición de terminado.
+- **Juegos** (`00_Indice_juegos`) — análisis por juego/tipo, guardados por **género** (Pong → arcade, etc.).
 
 Cada libro tiene índice y metadata (género, tipo), para que se encuentre por categoría. Los libros no se escriben a mano de una: son el resultado de las **misiones de estudio** de la Escuela, y se **actualizan**, no se duplican.
 
@@ -101,7 +101,7 @@ Cada flujo es un paso de la misión de estudio.
 
 El registro de las misiones de estudio.
 
-### [[05_Escuela/Salidas/00_Indice_salidas|Índice de salidas]]
+### [[00_Salidas_escuela|Índice de salidas]]
 
 ---
 

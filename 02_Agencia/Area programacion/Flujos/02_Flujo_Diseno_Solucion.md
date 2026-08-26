@@ -6,7 +6,7 @@ Transformar un diagnóstico técnico en una **solución técnica validada** (`SO
 
 ## Entrada del flujo
 
-- Diagnóstico técnico del [[01_Flujo_Analisis_Tecnico]].
+- Diagnóstico técnico del `01_Flujo_Analisis_Tecnico`.
 - Conocimiento del Core aplicable ya identificado.
 
 Si el diagnóstico no trae contexto real suficiente, no avanza: vuelve al Analista.

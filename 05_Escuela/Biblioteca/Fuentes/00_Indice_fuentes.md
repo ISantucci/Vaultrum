@@ -124,6 +124,10 @@ Miguel Sicart · ética del jugador, agencia moral, diseño ético · Catalogada
 
 Montfort & Bogost · platform studies, restricciones de hardware · Catalogada
 
+### [[30_Frameworks_spec_driven_multiagente|Frameworks de desarrollo dirigido por especificación]]
+
+spec-kit · BMAD-METHOD · OpenSpec · Agent OS · portabilidad multi-superficie, economía de tokens, reglas de entrevista · **Destilada**
+
 
 ---
 

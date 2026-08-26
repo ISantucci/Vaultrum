@@ -1,0 +1,4 @@
+# Excepciones declaradas del gate de documentacion.
+# Una por linea:  ruta | ley | razon
+# Una excepcion sin razon escrita no es una excepcion: es un agujero.
+# Una capa entera fuera del veredicto tampoco.

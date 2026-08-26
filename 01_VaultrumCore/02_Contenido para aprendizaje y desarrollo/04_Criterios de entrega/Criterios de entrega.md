@@ -105,7 +105,7 @@ La Agencia **aplica** estos criterios; no los define.
 
 ```txt
 Baseline de entregable    → Produccion (RQ) y Game Design (GDS)
-Verificacion parcial      → Programacion (EJ) y Produccion (VE)
+Verificacion parcial      → Programacion (EJ), Control de Calidad (QA) y Produccion (VE)
 Gates verificables        → toda skill que declare un paso obligatorio
 ```
 

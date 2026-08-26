@@ -31,13 +31,3 @@ url: https://github.com/Roobyx/awesome-game-design
 - **Prioridad:** **Alta** (texto corto, altísima relación valor/esfuerzo)
 
 ---
-
----
-
-## Hacia donde seguir
-
-Esta ficha pertenece al estante de Documentacion real.
-
-Para volver al estante y ver el resto de los documentos:
-
-→ [[00_Indice_documentos]]

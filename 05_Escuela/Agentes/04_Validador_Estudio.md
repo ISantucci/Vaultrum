@@ -76,6 +76,6 @@ No acepta "por las dudas": ante la duda, vuelve o se descarta.
 
 ## Flujos a implementar
 
-- [[04_Flujo_Validacion_Estudio]]
+- `04_Flujo_Validacion_Estudio`
 
 El detalle operativo vive en el documento del flujo.

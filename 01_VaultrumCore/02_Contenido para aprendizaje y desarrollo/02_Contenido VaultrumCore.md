@@ -209,6 +209,34 @@ No debe absorber lógica que pertenece a otros sistemas.
 
 ---
 
+## [[Calidad y testing]]
+
+Sección dedicada a una pregunta que ninguna otra respondía: **cómo se comprueba que lo construido hace lo que dice hacer**, y que lo sigue haciendo después del próximo cambio.
+
+Incluye:
+
+- qué son calidad, QA y testing, y qué hace testeable a un sistema;
+- error, defecto y falla, y los principios del testing;
+- niveles y tipos de prueba;
+- técnicas de diseño de casos: particiones, límites, tablas de decisión, estados, pares, exploratorio;
+- testing basado en riesgo, y la diferencia entre severity y priority;
+- qué afirma una cobertura y qué métricas dañan cuando se usan como objetivo;
+- cuándo automatizar y cuándo no;
+- el ciclo de vida de un defecto y el análisis de causa raíz;
+- qué cambia cuando lo que se verifica es un videojuego.
+
+Usar esta sección cuando el problema esté relacionado con:
+
+- verificar algo que se acaba de construir;
+- decidir qué probar cuando no alcanza para probar todo;
+- escribir un reporte de defecto que otro pueda reproducir;
+- decidir si algo puede darse por bueno, y con qué evidencia;
+- explicar por qué "no encontramos nada" no significa "está bien".
+
+No define **cuándo algo está terminado** —eso es `Criterios de entrega`— ni cómo se ejecuta el control en un proyecto concreto, que es operativo y vive en el Área de Control de Calidad de la Agencia.
+
+---
+
 ## Cómo usar esta sección
 
 Esta sección puede recorrerse de forma libre.

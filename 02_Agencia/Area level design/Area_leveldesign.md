@@ -84,7 +84,7 @@ Recibe de: **Game Design** (`GDS` cerrado).
 Entrega a: **Programación** (`LDS` como insumo de la solución técnica).
 Consulta on-demand: la Escuela (`05_Fundamentos_de_experiencia_ludica`), pilares 1, 6, 8, 9.
 
-La numeración `.n` se mantiene entre `GDS / LDS / SOL / EJ` para trazabilidad de punta a punta.
+La numeración `.n` se mantiene entre `GDS / LDS / SOL / EJ / QA` para trazabilidad de punta a punta.
 
 ## Flujos del área
 

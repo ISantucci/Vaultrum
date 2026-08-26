@@ -6,7 +6,7 @@ Transformar el encuadre de gameplay en un sistema jugable concreto: reglas, entr
 
 ## Entrada del flujo
 
-- Encuadre del [[01_Flujo_Analisis_Gameplay]] (objetivo + experiencia esperada).
+- Encuadre del `01_Flujo_Analisis_Gameplay` (objetivo + experiencia esperada).
 
 Si el encuadre no trae experiencia clara, vuelve al Analista.
 
@@ -18,7 +18,7 @@ Si el encuadre no trae experiencia clara, vuelve al Analista.
 - Define entradas (jugador/sistema) y salidas/feedback.
 - Define estados y transiciones.
 - Señala qué valores necesitarán balance (sin fijar números).
-- Verifica numeración: `GDS-XXX.n` hereda del `RQ-XXX.n`. Revisar [[00_Indice_gds]].
+- Verifica numeración: `GDS-XXX.n` hereda del `RQ-XXX.n`. Revisar `00_Indice_gds`.
 
 ---
 

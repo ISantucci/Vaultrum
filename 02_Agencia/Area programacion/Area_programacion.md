@@ -53,14 +53,14 @@ Diseñador de Solución → SOL-XXX.n        ⟵ gate de aprobación
 Ejecutor Técnico      → EJ-XXX.n
   ↓
 Revisor Técnico       → ¿cumple criterios?
-        ├── Sí  → cierra la revisión y devuelve el hilo a Producción
+        ├── Sí  → cierra la revisión y pasa el hilo a Control de Calidad
         └── No  → rebota:
                   · falta criterio técnico   → Analista
                   · solución mal planteada    → Diseñador
                   · implementación desviada   → Ejecutor
 ```
 
-El loop se repite hasta que el Revisor da OK contra los criterios de aceptación. Ahí cierra la **revisión técnica** del hilo `.n`. Cuando todos los hilos del timeline están en OK, la entrega vuelve al Área de Producción, que la cierra con su `VE-XXX`.
+El loop se repite hasta que el Revisor da OK contra los criterios de aceptación. Ahí cierra la **revisión técnica** del hilo `.n`, y el hilo pasa al **Área de Control de Calidad**, que corre su gate (`QA-XXX.n`). Cuando todos los hilos están verificados, la entrega vuelve al Área de Producción, que la cierra con su `VE-XXX`.
 
 ---
 
@@ -71,11 +71,11 @@ El área produce, por cada requerimiento:
 - una **solución técnica** registrada como `SOL-XXX.n`,
 - una **ejecución/reporte** registrada como `EJ-XXX.n`.
 
-Ambas se registran en la carpeta `00_Indice_salidas` del área, con sus índices, respetando la numeración heredada del RQ.
+Ambas se registran en la carpeta `00_Salidas_programacion` del área, con sus índices, respetando la numeración heredada del RQ.
 
 Queda registrada en `Salidas/`:
 
-- [[02_Agencia/Area programacion/Salidas/00_Indice_salidas|Índice de salidas del área]]
+- [[00_Salidas_programacion|Índice de salidas del área]]
 
 ---
 
@@ -96,6 +96,7 @@ No se ejecuta código hasta que la solución fue propuesta y aprobada.
 El Área de Programación no debe absorber responsabilidades de otras áreas.
 
 - No define alcance ni prioridad (eso es Producción).
+- No se verifica a sí misma: el Revisor Técnico valida **cómo está construido** el hilo; que lo construido se sostenga lo decide el **Área de Control de Calidad**, con su propio gate y su evidencia.
 - No define reglas de gameplay ni feedback (eso es Game Design).
 - No documenta conocimiento permanente del vault (eso es Conocimiento).
 - No inventa requerimientos: si falta uno, deriva a Producción.
@@ -107,9 +108,11 @@ Puede detectar que un aprendizaje merece volver al Core, pero no lo formaliza: l
 ## Encadenado con otras áreas
 
 Recibe de: **Producción** (`RQ`), **Game Design** (`GDS`) y, si existen, **Level Design** (`LDS`) y **UI/UX** (`UXS`).
-Entrega a: **Producción** (los `EJ` en OK vuelven para la validación de entrega del timeline) y **Conocimiento** (aprendizajes reutilizables detectados durante la ejecución).
+Entrega a: **Control de Calidad** (el `EJ` en OK y la build identificable, para el gate), **Producción** (el timeline verificado vuelve para la validación de entrega) y **Conocimiento** (aprendizajes reutilizables detectados durante la ejecución).
 
-La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ` para que todo el hilo de trabajo sea rastreable de punta a punta. El `VE` de cierre cuelga del `TL`, sin `.n`.
+Control de Calidad le devuelve defectos con evidencia y, cuando corresponde, pedidos de **testabilidad**: instrumentación, semillas fijas, atajos de estado o logs que bajan el costo de todas las verificaciones que vienen después.
+
+La numeración `.n` se mantiene entre `RQ / GDS / LDS / UXS / SOL / EJ / QA` para que todo el hilo de trabajo sea rastreable de punta a punta. El `QA` de entrega y el `VE` de cierre cuelgan del `TL`, sin `.n`.
 
 ## Flujos del área
 

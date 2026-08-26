@@ -52,7 +52,7 @@ El loop se repite hasta que todos los criterios se cumplen.
 
 La revisión técnica cierra cuando el checklist completo da OK y la trazabilidad `RQ → GDS → LDS/UXS → SOL → EJ` está intacta.
 
-Cerrar la revisión **no cierra la entrega**: cuando todos los hilos `.n` del timeline están en OK, la entrega vuelve al Área de Producción, que la cierra con su `VE-XXX` (validación de entrega). Si Producción rebota con hallazgos, el área los toma como entrada de un nuevo ciclo.
+Cerrar la revisión **no cierra la entrega**: el hilo pasa al Área de Control de Calidad, que corre su gate (`QA-XXX.n`) sobre una build identificable. Cuando todos los hilos del timeline están verificados, la entrega vuelve al Área de Producción, que la cierra con su `VE-XXX` (validación de entrega). Si Calidad o Producción rebotan con hallazgos, el área los toma como entrada de un nuevo ciclo.
 
 ---
 

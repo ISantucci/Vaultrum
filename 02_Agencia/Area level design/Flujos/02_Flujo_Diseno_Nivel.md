@@ -4,7 +4,7 @@ Convertir el encuadre espacial en un `LDS`: layout, encuentros, pacing y dificul
 
 ## Entrada del flujo
 
-- Encuadre del [[01_Flujo_Analisis_Espacio]] + `GDS-XXX.n`.
+- Encuadre del `01_Flujo_Analisis_Espacio` + `GDS-XXX.n`.
 
 ## Transformación que realiza
 

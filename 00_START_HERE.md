@@ -38,12 +38,17 @@ LDS / UXS    (Level Design / UI-UX, si aplican)
   ↓
 SOL + EJ     (Programación)    solución técnica + implementación
   ↓
+QA           (Control de Calidad)  ¿lo construido se sostiene? con evidencia
+  ↓
 VE           (Producción)      ¿lo entregado es lo prometido?
   ↓
 commit al Core (Conocimiento)  ¿qué aprendizaje vuelve al sistema?
+
+(Conocimiento entra además ANTES: acompaña a cada área mientras escribe,
+ y mide el artefacto contra su contrato antes de dejarlo cerrar.)
 ```
 
-**Un artefacto downstream no existe sin su insumo upstream.** Si falta, se marca y no se avanza. Eso es lo que impide saltear pasos, y lo que hace que una entrega no se dé por terminada porque compila.
+**Un artefacto downstream no existe sin su insumo upstream.** Si falta, se marca y no se avanza. Eso es lo que impide saltear pasos, y lo que hace que una entrega no se dé por terminada porque compila — ni porque alguien la probó un rato.
 
 Detalle de la cadena, la numeración y los gates: `02_Indice Agencia`.
 
@@ -64,7 +69,7 @@ Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Am
       ↓
 02_Agencia          la cadena que lo aplica al proyecto del usuario
       ↓
-03_Comunidad        quiénes lo usan, aportan y gobiernan
+03_Comunidad        quiénes lo usan y aportan, y cómo se cuenta hacia afuera
 
 04_IA Operativa     transversal: cómo una IA opera el vault sin inflarlo
 05_Escuela          transversal: aprendizaje proactivo y la Biblioteca
@@ -72,7 +77,7 @@ Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Am
 
 - **01_VaultrumCore** es la fuente de criterio. Alimenta el arranque de cada área y recibe de vuelta lo aprendido.
 - **02_Agencia** produce **el proyecto del usuario**.
-- **03_Comunidad** usa, aporta, corrige y expande.
+- **03_Comunidad** usa, aporta, corrige y expande — y prepara lo que el sistema publica.
 - **04_IA Operativa** cuida el costo de operar: tokens, prompteo, el pass GC y sus herramientas de medición.
 - **05_Escuela** produce **conocimiento para el sistema**: sale a buscar lo que al Core le falta y lo trae destilado a su Biblioteca.
 
@@ -84,8 +89,8 @@ Es el corazón. Contiene principios, criterios, patrones de diseño, arquitectur
 
 Y desde el primer ciclo completo, dos secciones que antes no tenía:
 
-- **Criterios de entrega** — cuándo algo está terminado: [[Baseline de entregable]], [[Verificacion parcial declarada]], [[Gates verificables]]. Es la única parte del Core que nació del uso del propio sistema.
-- **Experiencia de juego** — el índice liviano hacia la Biblioteca de la Escuela: [[Experiencia de juego]].
+- **Criterios de entrega** — cuándo algo está terminado: `Baseline de entregable`, `Verificacion parcial declarada`, `Gates verificables`. Es la única parte del Core que nació del uso del propio sistema.
+- **Experiencia de juego** — el índice liviano hacia la Biblioteca de la Escuela: `Experiencia de juego`.
 
 VaultrumCore no ejecuta y no resuelve proyectos: **alimenta**. Se puede usar directo, sin pasar por ningún flujo.
 
@@ -95,7 +100,7 @@ Entrada: `01_Indice VaultrumCore`
 
 ## [[02_Indice Agencia|02_Agencia]]
 
-La capa operativa. Seis **áreas**, cada una autocontenida —trae sus sub-agentes, su método, su producto y su skill ejecutable— y la salida de una es la entrada de la siguiente.
+La capa operativa. **Ocho áreas** —seis en la cadena, y Conocimiento y Arquitectura debajo de ella—, cada una autocontenida: trae sus sub-agentes, su método, su producto y su skill ejecutable. La salida de una es la entrada de la siguiente.
 
 | Área | Produce | Responde |
 |------|---------|----------|
@@ -104,7 +109,9 @@ La capa operativa. Seis **áreas**, cada una autocontenida —trae sus sub-agent
 | Level Design | `LDS` | espacio, encuentros, pacing, dificultad aplicada |
 | UI/UX | `UXS` | pantallas, HUD, navegación, legibilidad |
 | Programación | `SOL` + `EJ` | cómo se implementa y qué se implementó |
-| Conocimiento | commits al Core | qué aprendizaje merece volver a `main` |
+| Control de Calidad | `QA` | si lo construido se sostiene: GO / CONDITIONAL GO / NO-GO |
+| Conocimiento | documentación medida + commits al Core | si lo escrito se entiende, y qué aprendizaje vuelve a `main` |
+| Arquitectura | `ARQ` | dónde vive cada nota y si el vault se puede recorrer |
 
 El hilo es de **Producción de punta a punta**: lo abre con la intención y lo cierra validando la entrega. Nada avanza sin su insumo, y nada se da por terminado porque compile.
 
@@ -115,6 +122,8 @@ El hilo es de **Producción de punta a punta**: lo abre con la intención y lo c
 ## [[03_Indice Comunidad|03_Comunidad]]
 
 La capa humana y pública: quién usa, estudia, adapta, corrige, propone o expande el sistema, bajo qué criterios y con qué límites.
+
+Y desde que también trabaja, la que **prepara lo que Vaultrum muestra hacia afuera**: cuatro sub-agentes, cuatro flujos, salidas `PUB` y su propio Archivo de lo publicado. Se dispara solo a pedido del owner.
 
 Entrada: `03_Indice Comunidad`
 
@@ -129,6 +138,24 @@ Cómo una IA opera el vault sin inflarlo: cuidado de tokens, prompteo, modo de o
 ## [[00_Escuela|05_Escuela]]
 
 La capa proactiva: la Biblioteca y las misiones de estudio que la llenan. El Core indexa; el peso vive acá y se carga on-demand.
+
+---
+
+## `06_Proyectos` — los proyectos
+
+Lo que Vaultrum produce **no vive adentro de las areas**. Un area es el edificio donde se trabaja; el proyecto es lo que se produjo, y lo producido no se guarda en la oficina que lo hizo.
+
+```txt
+01_VaultrumCore    el criterio          el sol
+02_Agencia         como se trabaja      los edificios
+06_Proyectos       lo que se produjo    las estrellas
+```
+
+Cada proyecto trae su cuaderno en la raiz y sus artefactos en carpetas por area: `01_Produccion/`, `02_GameDesign/`, `03_LevelDesign/`, `04_UI-UX/`, `05_Programacion/`. La carpeta existe si un area escribio algo ahi; nada se pre-crea.
+
+**Esa carpeta no se versiona.** Quien clona Vaultrum recibe el sistema y sus funcionalidades, no el historial de uso de otro. Por eso se nombra con backticks y no se enlaza: en una copia recién clonada esta carpeta no existe, y un link colgado en la puerta es peor que una mención. Es la única excepción declarada del grafo, registrada en `excepciones.txt`.
+
+Detalle de la regla: `TL-008_La_Agencia_Es_La_Empresa`.
 
 ---
 
@@ -152,14 +179,14 @@ La cadena **no** es específica de videojuegos. Lo específico son dos eslabones
 
 ```txt
 específico de juegos:   GDS (reglas de gameplay) · LDS (nivel)
-general a cualquier software:  TL · RQ · UXS · SOL · EJ · VE
+general a cualquier software:  TL · RQ · UXS · SOL · EJ · QA · VE
 ```
 
 Un entregable de software que no sea un juego recorre la misma cadena sin `GDS` ni `LDS`: sus `RQ` van directo a Programación, y `UXS` aplica si tiene interfaz.
 
 Lo que **sí** cambia es el baseline: las *table-stakes* de una herramienta no son las de un juego. En ese caso Producción declara de dónde sale el mínimo —de un libro de la Biblioteca, o fijado por el owner para esa entrega— en vez de improvisarlo.
 
-Advertencia honesta: **esto todavía no se probó.** Todo lo validado se validó sobre un mismo género. Ver `00_Auditoria de arquitectura`.
+Advertencia honesta: **esto todavía no se probó.** Todo lo validado se validó sobre un mismo género. Ver `ARQ-000_Auditoria_de_arquitectura`.
 
 ---
 
@@ -171,21 +198,19 @@ la cadena y las áreas            → 02_Indice Agencia
 aportar, corregir, gobernanza    → 03_Indice Comunidad
 cómo una IA opera el vault       → 04_Indice IA Operativa
 la Escuela y su Biblioteca       → 00_Escuela
-la primera auditoría del vault   → 00_Auditoria de arquitectura
-lo que está por formalizarse     → 00_Leyes de Vaultrum (bitacora)
+tus proyectos                    → 06_Proyectos/00_Proyectos  (local)
 ```
 
----
+**Lo que no está acá.** Esta puerta lleva al sistema y a sus funcionalidades. El **historial de uso** —auditorías, misiones de estudio, publicaciones, leyes en antesala— vive en el área que lo produjo y no se publica:
 
-## [[00_Auditoria de arquitectura|Auditoría de arquitectura]]
+```txt
+auditorías del vault      → Área de Arquitectura, sus salidas ARQ
+leyes por formalizar      → Área de Conocimiento, su Staging
+misiones de estudio       → Escuela, sus salidas EST
+lo publicado hacia afuera → Comunidad, sus salidas PUB
+```
 
-La primera auditoría del vault, hecha a mano: qué está construido, qué está a medias y qué se prometió sin construir. Es un registro fechado — la serie sigue como `ARQ` en el Área de Arquitectura, que además dejó la medición automatizada.
-
----
-
-## [[00_Leyes de Vaultrum (bitacora)|Leyes de Vaultrum (bitácora)]]
-
-Lo que el uso del propio sistema fue dejando como criterio y todavía no se formalizó en el Core. Es la antesala de una ley.
+Una puerta que abre a un registro fechado le cuenta a quien llega el pasado del dueño en vez de lo que el sistema hace.
 
 ---
 
@@ -202,7 +227,7 @@ Lo que eso probó:
 Lo que no:
 
 - **una sola muestra.** Un género, sin dimensión espacial, sin persistencia ni contenido. `LDS` nunca corrió.
-- **la fricción todavía no está medida.** El instrumento existe ([[06_Medicion de friccion]]); la primera entrega con número va a ser `TL-004`.
+- **la fricción todavía no está medida.** El instrumento existe (`06_Medicion de friccion`); la primera entrega con número va a ser `TL-004`.
 
 El foco actual está en la segunda muestra y en medir, no en agregar capas.
 

@@ -1,6 +1,6 @@
 ---
 name: "vaultrum-produccion"
-description: "Área de Producción de Vaultrum y puerta de entrada del Modo Vaultrum. Úsala cuando el owner quiera crear o desarrollar un proyecto (videojuego/software), de cero o ya empezado. Es el Productor y dueño de la entrega: recibe la intención, detecta si es nuevo o existente, releva lo mínimo (incluida versión de motor instalada elegida por el owner), produce Timeline (TL) + Requerimientos (RQ), pivotea entre áreas (Game Design, Level Design, UI/UX, Programación, Conocimiento) y cierra la entrega validándola (VE). No diseña gameplay en profundidad ni escribe código."
+description: "Área de Producción de Vaultrum y puerta de entrada del Modo Vaultrum. Úsala cuando el owner quiera crear o desarrollar un proyecto (videojuego/software), de cero o ya empezado. Es el Productor y dueño de la entrega: recibe la intención, detecta si es nuevo o existente, releva lo mínimo (incluida versión de motor instalada elegida por el owner), produce Timeline (TL) + Requerimientos (RQ), pivotea entre áreas (Game Design, Level Design, UI/UX, Programación, Control de Calidad, Conocimiento) y cierra la entrega validándola (VE). No diseña gameplay en profundidad ni escribe código."
 ---
 
 # Área de Producción — Productor / Orquestador del Modo Vaultrum
@@ -133,7 +133,9 @@ El Productor decide **qué área toca y en qué orden**, según el RQ. No ejecut
 
 ## Paso 4 — Cerrar la entrega (Validador de Entrega)
 
-Cuando **todos los hilos `.n` de un timeline** tienen su `EJ` con revisión técnica en OK, el timeline **vuelve a Producción**. No termina en Programación.
+Cuando **todos los hilos `.n` de un timeline** tienen su `EJ` con revisión técnica en OK, el timeline pasa por el **Área de Control de Calidad** (skill `vaultrum-calidad`), que corre el gate y devuelve un `QA-XXX` con veredicto. Recién entonces **vuelve a Producción**. No termina en Programación.
+
+**El `QA` es insumo, no trámite:** leelo antes de validar —veredicto, riesgo residual, desviaciones aceptadas— y no vuelvas a probar lo que ya se verificó. Con un `QA` en NO-GO la entrega no se valida: queda en *Ajustar* o *Pausado*.
 
 Corré el **Validador de Entrega** siguiendo su flujo (`Agentes/04_Validador_Entrega.md` y `Flujos/04_Flujo_Validacion_Entrega.md`): verificá la entrega contra los `RQ`, contra los `GDS` y contra la definición de terminado. Jalá `05_Fundamentos_de_experiencia_ludica` y hacé la lectura contra lo que **se puede jugar**, no contra el papel.
 
@@ -196,7 +198,20 @@ el jugador no entiende qué hacer                                → UI/UX
 la intención original estaba mal capturada                      → Consultor Estratégico
 ```
 
-**Un `TL` no está entregado sin su `VE` en estado Cerrado** (gate definido en `02_Agencia/02_Indice Agencia.md`). Si el resultado es "funciona pero no es bueno", el estado correcto es *Ajustar*.
+**Un `TL` no está entregado sin su `VE` en estado Cerrado, y un `VE` no cierra sin su `QA` en GO o CONDITIONAL GO** (gate definido en `02_Agencia/02_Indice Agencia.md`). Si el resultado es "funciona pero no es bueno", el estado correcto es *Ajustar*.
+
+
+### El commit del proyecto
+
+Con el `VE` en **Cerrado**, declarás que la entrega se puede commitear. Es una consecuencia del cierre, no un acto aparte, y es tuya: sos quien verificó que lo entregado es lo prometido.
+
+```
+VE Cerrado   → se puede commitear      (y AiCare corre su Pass GC en ese intervalo)
+VE Ajustar   → no se commitea la entrega; sí se puede pushear la branch de trabajo
+VE Pausado   → no se commitea: se declara qué falta
+```
+
+La política del repositorio —quién integra a `main`, qué no se hace sobre `main`— vive en `04_IA Operativa/03_Operar Vaultrum` y no se repite acá. El gate de forma corre solo en el `pre-commit` y es de Arquitectura. La verificación técnica previa es del **Área de Control de Calidad**, y llega como el `QA` que este `VE` cita.
 
 ## Sub-agentes del área (mentalidades internas)
 
@@ -215,4 +230,4 @@ No diseña gameplay en profundidad (Game Design). No escribe código ni decide a
 
 ## Señales de mala respuesta
 
-Salta a programar sin TL/RQ · asume o fija una versión de motor no elegida por el owner · deja menú/estados/victoria/reinicio implícitos · planifica sin consultar el baseline de la Biblioteca · **sigue de largo con un libro de género vacío en vez de derivar a Escuela** · no deja escrita la prueba de cobertura table-stake → RQ · cierra un VE sin declarar en qué modo lo cerró · se saltea Level Design o UI/UX sin declarar por qué no aplican · da la entrega por terminada en el `EJ` sin correr la validación de entrega · cierra en falso en vez de pausar · abre un cuestionario interminable en vez de "lo mínimo para empezar" · numera sin revisar índices · rompe la trazabilidad `TL → RQ → GDS → LDS/UXS → SOL → EJ` + `TL → VE`.
+Salta a programar sin TL/RQ · asume o fija una versión de motor no elegida por el owner · deja menú/estados/victoria/reinicio implícitos · planifica sin consultar el baseline de la Biblioteca · **sigue de largo con un libro de género vacío en vez de derivar a Escuela** · no deja escrita la prueba de cobertura table-stake → RQ · cierra un VE sin declarar en qué modo lo cerró · se saltea Level Design o UI/UX sin declarar por qué no aplican · da la entrega por terminada en el `EJ` sin pasar por el gate de calidad ni correr la validación de entrega · cierra en falso en vez de pausar · abre un cuestionario interminable en vez de "lo mínimo para empezar" · numera sin revisar índices · rompe la trazabilidad `TL → RQ → GDS → LDS/UXS → SOL → EJ → QA` + `TL → QA` + `TL → VE`.

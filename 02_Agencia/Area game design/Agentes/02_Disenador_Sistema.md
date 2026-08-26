@@ -71,6 +71,6 @@ No define reglas imposibles de validar.
 
 ## Flujos a implementar
 
-- [[02_Flujo_Diseno_Sistema]]
+- `02_Flujo_Diseno_Sistema`
 
 El detalle operativo vive en el documento del flujo.

@@ -36,7 +36,7 @@ El checklist operativo vive en la skill del área (`vaultrum-programador`), que 
 ## Qué debe hacer
 
 Revisar la `EJ` contra la `SOL` aprobada y contra los criterios.
-Si cumple: cerrar la revisión técnica del hilo `.n` y devolverlo a Producción, que cierra la entrega con su `VE`.
+Si cumple: cerrar la revisión técnica del hilo `.n` y pasarlo al Área de Control de Calidad, que corre su gate (`QA-XXX.n`). La entrega la cierra Producción con su `VE`, después.
 Si no cumple: rebotar al sub-agente correcto:
 
 ```txt
@@ -73,6 +73,6 @@ Formato recomendado:
 
 ## Flujos a implementar
 
-- [[04_Flujo_Revision]]
+- `04_Flujo_Revision`
 
 El detalle operativo vive en el documento del flujo.

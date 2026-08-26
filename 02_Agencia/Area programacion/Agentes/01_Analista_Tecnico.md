@@ -72,6 +72,6 @@ Formato recomendado:
 
 ## Flujos a implementar
 
-- [[01_Flujo_Analisis_Tecnico]]
+- `01_Flujo_Analisis_Tecnico`
 
 El detalle operativo vive en el documento del flujo.

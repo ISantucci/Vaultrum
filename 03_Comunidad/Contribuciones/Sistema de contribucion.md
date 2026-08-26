@@ -422,7 +422,7 @@ Las decisiones sobre identidad, VaultrumCore, estructura central y dirección ge
 
 El registro visible de contribuidores vive en:
 
-[[CONTRIBUTORS]]
+`CONTRIBUTORS`
 
 Ese documento contiene la tabla comunitaria de contribuidores, puntajes, rangos y aportes reconocidos.
 
