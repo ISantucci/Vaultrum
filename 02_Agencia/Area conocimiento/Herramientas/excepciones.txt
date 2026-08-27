@@ -2,3 +2,30 @@
 # Una por linea:  ruta | ley | razon
 # Una excepcion sin razon escrita no es una excepcion: es un agujero.
 # Una capa entera fuera del veredicto tampoco.
+
+# --- Legacy pre-contrato: TL-001 del Pong 3D ---------------------------------
+# Los seis RQ de TL-001 se escribieron antes de que existiera un contrato de RQ, y
+# TL-003 los supersede con la forma nueva (RQ-003.x cumple el contrato entero).
+# Reescribirlos seria falsear la historia del proyecto: se declaran y no fallan.
+# Decision del owner, pasada de documentacion 2026-08-27.
+06_Proyectos/Pong3D/01_Produccion/RQ-001.1_Paletas_Controlables.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/RQ-001.2_Pelota_Rebote_Aceleracion.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/RQ-001.3_Score_Victoria.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/RQ-001.4_Estados_Menu_Pausa_Reinicio.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/RQ-001.5_Game_Feel_Feedback.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/RQ-001.6_Setup_Proyecto_Cancha.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/TL-001_Pong_2_Jugadores_Completo.md | sin-estado | timeline abandonado sin cierre formal: TL-002 lo reemplazo. El estado real esta escrito en el cuaderno del proyecto.
+06_Proyectos/Pong3D/05_Programacion/EJ-001_Implementacion_Pong.md | sin-estado | ejecucion de TL-001, del mismo lote sin estado formal. Idem.
+
+# --- Marco comun: el unico GDS que no describe un sistema --------------------
+06_Proyectos/Pong3D/02_GameDesign/GDS-003.0_Marco_Comun.md | contrato | el GDS-XXX.0 no es un GDS de sistema: contiene SOLO lo compartido por varios hilos (geometria y contrato de eventos), y por eso no tiene reglas, entradas, salidas ni experiencia esperada propias. Su forma esta formalizada aparte en 00_Indice_gds.
+
+# --- Ley 4: conteos que no son afirmaciones de resultado medido --------------
+# La heuristica marca cualquier numero sin instrumento en la misma linea. Estos
+# cinco son conteos de alcance (cuantos RQ, cuantos archivos, que umbral), no
+# afirmaciones sobre algo medido. El instrumento, donde aplica, esta en el mismo
+# documento un parrafo mas arriba o mas abajo.
+02_Agencia/Area produccion/Salidas/Requerimientos/RQ-008.4_Mudanza_De_Lo_Historico.md | sin-evidencia | conteo de alcance de la mudanza; el 0 links rotos lo midio grafo.py y esta citado en el mismo RQ.
+06_Proyectos/Pong3D/05_Programacion/SOL-002_Arquitectura_Pong3D.md | sin-evidencia | 'los seis requerimientos' es un conteo de hilos del TL, no un resultado medido.
+06_Proyectos/Pong3D/01_Produccion/VE-003_Pong3D.md | sin-evidencia | '3 minutos' es la duracion estimada de una checklist, declarada como estimacion.
+06_Proyectos/VaultrumWorld/05_Programacion/SOL-004.1_Registro_De_Operacion.md | sin-evidencia | el umbral de 8 MB es un parametro de diseno declarado en la propia SOL, no una medicion.

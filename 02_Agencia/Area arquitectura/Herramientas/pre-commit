@@ -1,0 +1,63 @@
+#!/bin/sh
+# ============================================================================
+#  Vaultrum - gate de cierre.  Un commit que deja el vault fuera de ley no entra.
+#
+#  FUENTE VERSIONADA de este hook. Lo instala skills.sh / skills.bat en
+#  .git/hooks/pre-commit; .git/hooks no viaja en un clone, asi que sin el
+#  instalador el gate no existe -- que es como el vault estuvo hasta hoy.
+#
+#  Tres mediciones, tres areas:
+#    1. grafo.py            (Arquitectura)  la forma del vault que el owner camina
+#    2. grafo.py --paquete  (Arquitectura)  la forma del vault que se CLONA
+#    3. documentacion.py    (Conocimiento)  la forma del texto
+#
+#  La 2 existe porque la 1 medía la copia de trabajo: en disco todo resolvia y
+#  en un clone habia 44 links rotos que nadie habia medido nunca (COMMIT-005).
+#
+#  Para saltearlo a proposito:  git commit --no-verify
+#  Un desvio deliberado se declara en el excepciones.txt del area que mide.
+# ============================================================================
+
+RAIZ=$(git rev-parse --show-toplevel)
+GRAFO="$RAIZ/02_Agencia/Area arquitectura/Herramientas/grafo.py"
+DOC="$RAIZ/02_Agencia/Area conocimiento/Herramientas/documentacion.py"
+
+if ! git diff --cached --name-only --diff-filter=ACMR | grep -q '\.md$'; then
+  exit 0
+fi
+
+PY=$(command -v python3 || command -v python)
+if [ -z "$PY" ]; then
+  echo "gate de cierre: no encuentro python - medicion no disponible, sigo."
+  exit 0
+fi
+
+FALLO=0
+
+corre() {                       # corre <etiqueta> <script> [flags...]
+  ETIQUETA=$1; SCRIPT=$2; shift 2
+  [ -f "$SCRIPT" ] || { echo "gate: falta $ETIQUETA - medicion no disponible, sigo."; return 0; }
+  "$PY" "$SCRIPT" "$RAIZ" "$@" --verificar || FALLO=1
+}
+
+corre "grafo.py"           "$GRAFO"
+corre "grafo.py --paquete" "$GRAFO" --paquete
+corre "documentacion.py"   "$DOC"
+
+if [ $FALLO -ne 0 ]; then
+  cat <<'MSG'
+
+  Commit frenado por el gate de cierre.
+  Corre el informe completo del que fallo para ver que ley se rompio:
+
+    python3 "02_Agencia/Area arquitectura/Herramientas/grafo.py" .
+    python3 "02_Agencia/Area arquitectura/Herramientas/grafo.py" . --paquete
+    python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" .
+
+  Si el desvio es deliberado, declaralo en el excepciones.txt del area que
+  mide, o commitea con --no-verify y dejalo escrito en el ARQ.
+
+MSG
+fi
+
+exit $FALLO

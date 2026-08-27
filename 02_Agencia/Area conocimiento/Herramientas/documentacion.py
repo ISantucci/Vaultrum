@@ -159,6 +159,10 @@ def medir(rel, txt, contratos, raiz):
 
     # Ley 3 - omision declarada
     for n, l in lineas:
+        # Un TITULO no declara nada: nombra la seccion donde se declara.
+        # '## Test del "no aplica"' no es un "no aplica" sin dimension.
+        if l.lstrip().startswith('#'):
+            continue
         if NOAPLICA.search(l):
             resto = NOAPLICA.sub('', l).strip(' .:-—·*')
             if len(resto) < 25:

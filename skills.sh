@@ -64,4 +64,14 @@ print("     [ok] el total entra" if tot<=8000 else "     [AVISO] el total pasa e
 PY
 fi
 
+# ---------------------------------------------------------------------------
+# Gate de cierre: .git/hooks NO viaja en un clone, asi que el hook se instala
+# aca desde su fuente versionada. Sin esto, un clone no tiene gate.
+HOOK_SRC="02_Agencia/Area arquitectura/Herramientas/pre-commit"
+if [ -d .git ] && [ -f "$HOOK_SRC" ]; then
+  mkdir -p .git/hooks
+  cp "$HOOK_SRC" .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+  echo "  [ok] gate de cierre instalado en .git/hooks/pre-commit"
+fi
+
 printf '\n  Listo. Abri una sesion nueva para que el asistente las descubra.\n\n'

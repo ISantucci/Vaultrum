@@ -81,6 +81,16 @@ powershell -NoProfile -Command ^
 
 :fin
 echo.
+rem ---------------------------------------------------------------------------
+rem  Gate de cierre: .git\hooks NO viaja en un clone, asi que el hook se instala
+rem  aca desde su fuente versionada. Sin esto, un clone no tiene gate.
+set "HOOK_SRC=02_Agencia\Area arquitectura\Herramientas\pre-commit"
+if exist ".git" if exist "%HOOK_SRC%" (
+  if not exist ".git\hooks" mkdir ".git\hooks"
+  copy /y "%HOOK_SRC%" ".git\hooks\pre-commit" >nul
+  echo   [ok] gate de cierre instalado en .git\hooks\pre-commit
+)
+
 echo   Listo. Abri una sesion nueva para que el asistente las descubra.
 echo.
 endlocal
