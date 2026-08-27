@@ -44,12 +44,9 @@ TL-001_Pong_2_Jugadores_Completo.md
 
 ## Timelines registrados
 
-Los timelines de un proyecto viven en `06_Proyectos/<Proyecto>/01_Produccion/`. Acá quedan **solo los de Modo Owner**: los que desarrollan el sistema Vaultrum en sí.
+El listado de timelines de Modo Owner vive en `00_Registro_timelines`, que no se versiona. Los de un proyecto viven en la carpeta del proyecto.
 
-- [[TL-007_Apertura_De_Vaultrum|TL-007 La apertura de Vaultrum]] — el eslabón cero: la puerta, las quince preguntas de seteo y el cuaderno del proyecto
-- [[TL-008_La_Agencia_Es_La_Empresa|TL-008 La Agencia es la empresa, no el archivo]] — separar el sistema de lo que el sistema produce
-
-> Proyectos: `00_Proyectos`. El Pong 3D y Vaultrum World se mudaron ahí el 2026-08-25.
+---
 
 ## Nota de secuencia
 

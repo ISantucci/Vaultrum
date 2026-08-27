@@ -8,16 +8,9 @@ Cada `VE-XXX` valida **la entrega de un timeline** (`TL-XXX`) contra la intenci�
 
 ## Registro
 
-Los `VE` de un proyecto viven en `<Proyecto>/01_Produccion/`. Acá queda **solo lo de Modo Owner**: la validación de las entregas del sistema mismo.
+El listado de validaciones vive en `00_Registro_ve`, que no se versiona.
 
-- [[VE-007_Apertura_De_Vaultrum|VE-007 — La apertura de Vaultrum]] — **Cerrado con deuda declarada**, modo Checklist. Siete de diez table-stakes verificadas sobre el sistema corriendo, con dos pruebas de usuario nuevo antes y después.
-
-
-Los artefactos de un proyecto **no se registran acá**. Viven en la carpeta del proyecto, en `06_Proyectos/<Proyecto>/01_Produccion/`, y se listan en el cuaderno de ese proyecto.
-
-Este índice es el **contrato de salida** del área: qué produce, qué forma tiene, cómo se numera y cuándo está cerrado. No es un archivo.
-
-> Entrada a los proyectos: `00_Proyectos`. Por qué dejaron de vivir acá: `TL-008_La_Agencia_Es_La_Empresa`.
+---
 
 ## Regla
 

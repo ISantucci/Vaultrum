@@ -61,6 +61,11 @@ VE-*.md
 
 # Historial de uso del propio sistema — auditorias, misiones, publicaciones,
 # leyes en antesala. Vive en el area que lo produjo; no viaja en el paquete.
+#
+# Los 00_Registro_* son el LISTADO de cada serie: el contrato queda en su
+# 00_Indice_* y si viaja; el listado es historial de uso y no. Misma regla que
+# TL-008 aplico a las Salidas de proyecto: un area declara, no guarda.
+00_Registro_*.md
 ARQ-*.md
 EST-*.md
 PUB-*.md

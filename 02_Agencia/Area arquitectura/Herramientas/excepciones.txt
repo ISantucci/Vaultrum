@@ -17,3 +17,18 @@ CLAUDE.md | flotando | puerta de maquina, no nota del vault: la lee el harness a
 CLAUDE.md | inalcanzable | idem: no se entra por un indice porque no se entra, se carga sola.
 AGENTS.md | flotando | misma puerta, para Codex y las superficies que leen AGENTS.md. Decision del owner, RQ-007.2.
 AGENTS.md | inalcanzable | idem CLAUDE.md.
+
+# --- Historial de uso: el indice publica su contrato y NOMBRA su registro con
+# backticks; el registro y su serie no viajan en el paquete. En la copia de
+# trabajo siguen siendo navegables desde el registro, pero no desde la puerta.
+# Decision del owner, pasada del paquete 2026-08-27.
+02_Agencia/Area arquitectura/Salidas/** | flotando | registro y serie ARQ: historial de uso, no viaja en el paquete. Su contrato es 00_Indice_arq, que si viaja y lo nombra con backticks.
+02_Agencia/Area arquitectura/Salidas/** | inalcanzable | idem: no se camina desde la puerta a proposito. Se llega desde 00_Registro_arq.
+05_Escuela/Salidas/** | flotando | registro y serie EST: historial de uso. Contrato en 00_Indice_est.
+05_Escuela/Salidas/** | inalcanzable | idem.
+03_Comunidad/Salidas/** | flotando | registro y serie PUB: historial de uso. Contrato en 00_Indice_pub.
+03_Comunidad/Salidas/** | inalcanzable | idem.
+02_Agencia/Area produccion/Salidas/** | flotando | registros y artefactos de Modo Owner: historial de uso. Contratos en 00_Indice_timelines, 00_Indice_requerimientos y 00_Indice_ve.
+02_Agencia/Area produccion/Salidas/** | inalcanzable | idem.
+02_Agencia/Area conocimiento/Staging/** | flotando | Staging es zona transitoria de commits al Core: historial, no sistema.
+02_Agencia/Area conocimiento/Staging/** | inalcanzable | idem.

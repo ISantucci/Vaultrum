@@ -177,7 +177,7 @@ La carpeta `Staging` es la pizarra de **commits pendientes**: aprendizajes escri
 
 La zona de trabajo es:
 
-- [[00_Staging|Staging]] — lo que está ahí es candidato, no criterio
+- `00_Staging` — la pizarra de commits pendientes. Lo que está ahí es candidato, no criterio, y **no viaja en el paquete**: es historial de uso, no sistema
 
 **Excepción declarada a la estructura de área.** Las otras áreas tienen `Salidas/`. Esta tiene `Staging/` en su lugar, y es deliberado por dos razones:
 

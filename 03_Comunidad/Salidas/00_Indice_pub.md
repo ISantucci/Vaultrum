@@ -36,17 +36,7 @@ Un caso de uso que todavía no existe se declara ausente. No se inventa, y la im
 
 ## Registro
 
-### [[PUB-001_We_Are_Back|PUB-001 — We are back]]
-
-Primera corrida de la capa. Reaparición después de tres meses sin publicar: el refactor a áreas, la cadena con gates, la primera entrega jugada, la Escuela, IA Operativa, el ciclo de conocimiento cerrado y las dos pasadas de arquitectura. Cierra con hacia dónde va el sistema. Estado: Listo — pasó de Falta a Listo con la regla de imágenes opcionales, sin tocar el texto.
-
-### [[PUB-002_El_auditor_auditado|PUB-002 — El auditor auditado]]
-
-Actualización de sistema, con los tres tiempos completos. **Problema:** el verificador del grafo decía *en ley* y solo podía probar tres de las seis leyes, y el área estaba escrita para entrar última. **Implementación:** las seis leyes medidas, el área dada vuelta en tres modos, cuatro gates y uno que corre solo. **Caso de uso:** le pidieron ordenar la Biblioteca y encontró un catálogo espejo de 19 KB que tapaba un libro cerrado en el índice y sin aprobar en su ficha. Estado: Listo, sin imágenes por decisión del owner.
-
-### [[PUB-003_El_dueno_que_no_existia|PUB-003 — El dueño que no existía]]
-
-Actualización de sistema, con los tres tiempos completos. **Problema:** el Área de Conocimiento tenía colgado el control de versiones de git —126 de sus 624 líneas— y al sacárselo quedó una reasignación en el aire: *"la verificación previa al commit → Área de QA, cuando exista"*. **Implementación:** Conocimiento pasó de un servicio a tres y estrenó su instrumento; nació el Área de Control de Calidad, con nueve notas de criterio al Core y un gate entre el `EJ` y el `VE`. **Caso de uso:** el gate nuevo midió su propio contrato de salida y se falló —declaraba GO con un bloqueante abierto, midió NO-GO—, y el gate de documentación encontró 44 fallas sobre 77 artefactos en su primera corrida. Estado: Listo, sin imágenes por decisión del owner.
+El listado de publicaciones vive en `00_Registro_pub`, que no se versiona.
 
 ---
 
