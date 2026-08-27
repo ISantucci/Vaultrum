@@ -9,7 +9,7 @@ No enciendas maquinaria que ningun requerimiento pidio
 — y eso incluye la maquinaria propia.
 ```
 
-[[Medir antes de optimizar]] responde *con que evidencia* se optimiza. Esta nota responde una pregunta anterior: *si corresponde optimizar*.
+Medir antes de optimizar responde con que evidencia se optimiza. Esta nota responde una pregunta anterior: si corresponde optimizar.
 
 Las dos se pueden fallar por separado. Se puede optimizar con medicion impecable un sistema que nadie necesitaba que fuera rapido.
 

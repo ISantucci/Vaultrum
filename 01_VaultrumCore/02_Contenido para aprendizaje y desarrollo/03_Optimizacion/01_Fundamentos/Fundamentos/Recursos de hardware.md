@@ -389,7 +389,7 @@ Ejemplo:
 Hay GC Alloc por frame.
 ```
 
-En ese caso, esta nota puede explicar que el GC afecta runtime, pero el diagnostico puntual pertenece a Problemas de rendimiento y Herramientas de deteccion.
+En ese caso, esta nota puede explicar que el GC afecta runtime, pero el diagnostico puntual pertenece a la rama Memoria y a Diagnostico.
 
 Tampoco conviene convertir esta nota en una lista infinita de hardware.
 
@@ -473,15 +473,23 @@ Si el recurso sospechado es CPU:
 
 Si hay un sintoma concreto:
 
-→ [[Problemas de rendimiento]]
+→ [[CPU]]
+
+→ [[GPU]]
+
+→ [[Memoria]]
+
+→ [[Carga e IO]]
+
+→ [[UI]]
 
 Si hace falta medir:
 
-→ [[Herramientas de deteccion]]
+→ [[Diagnostico]]
 
 Si ya se confirmo el problema:
 
-→ [[Metodologias y soluciones]]
+→ [[Patrones transversales]]
 
 ---
 

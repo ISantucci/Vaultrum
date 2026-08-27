@@ -1,91 +1,65 @@
 ## Proposito
 
-Esta subcarpeta reune los conceptos base necesarios para entender optimizacion en videojuegos.
+Esta rama reune los conceptos base necesarios para entender optimizacion antes de diagnosticar o proponer soluciones.
 
-No existe para resolver problemas puntuales.
-No existe para listar tecnicas.
-No existe para proponer soluciones directamente.
+No existe para acumular definiciones.
+No existe para explicar tecnicas concretas.
+No existe para resolver un sintoma puntual.
 
-Existe para construir el criterio previo que permite diagnosticar bien.
-
-Antes de hablar de herramientas, problemas o soluciones, una persona o una IA necesita entender:
-
-```txt
-presupuesto de frame
-cuellos de botella
-recursos afectados
-game loop
-medicion
-criterio previo a la optimizacion
-```
+Existe para que, cuando aparezca un problema de rendimiento, ya se tenga el marco con el que pensarlo.
 
 ---
 
 ## Idea central
 
-Los fundamentos explican el marco mental de la optimizacion.
-
-Esta subcarpeta responde:
+Casi todos los errores de optimizacion no son errores de tecnica: son errores de marco.
 
 ```txt
-Que significa optimizar?
-Que recursos existen?
-Que limita el rendimiento?
-Que pasa cuando un sistema no entra en el tiempo de frame?
-Por que hay que medir antes de tocar codigo?
+optimizar sin saber cuanto tiempo hay por frame
+mirar el promedio y no la estabilidad
+atacar lo que parece lento en vez de lo que limita
+acelerar trabajo que no tendria que ejecutarse
+ganar en un recurso sin ver que se gasto en otro
+romper el feedback del jugador para bajar un numero
 ```
 
-La idea principal es:
-
-```txt
-No se puede diagnosticar bien lo que no se entiende.
-```
+Esta rama existe para que ninguno de esos seis sea posible.
 
 ---
 
-## Cuando usar esta subcarpeta
+## Cuando usar esta rama
 
-Usar esta subcarpeta cuando haga falta entender conceptos base antes de analizar un problema de rendimiento.
+Usar Fundamentos cuando:
 
-Conviene consultarla cuando:
+```txt
+todavia no esta claro que esta pasando
+hay que decidir si algo es caro o barato
+hay que justificar por que se optimiza esto y no aquello
+hay que explicar un trade-off
+hay que frenar una optimizacion que nadie pidio
+```
 
-- no esta claro que significa optimizar,
-- no se entiende el costo por frame,
-- no se sabe que recurso puede estar afectado,
-- se necesita diferenciar CPU, GPU, memoria, GC o carga,
-- se quiere entender que es un bottleneck,
-- se necesita justificar por que medir antes de optimizar,
-- una IA esta por proponer una solucion sin diagnostico claro,
-- un sistema funciona pero no se sabe si escala.
+No hace falta leerla entera cada vez. Se consulta la nota que corresponde al hueco de criterio.
 
 ---
 
-## Como debe usar esta subcarpeta una IA
+## Como debe usar esta rama una IA
 
-Una IA debe usar Fundamentos para construir criterio antes de proponer una optimizacion.
+Una IA debe apoyarse en Fundamentos para justificar una decision, no para adornar una propuesta.
 
-No debe saltar directo a una tecnica.
-
-Debe razonar asi:
+Antes de recomendar algo, debe poder responder:
 
 ```txt
-Sintoma observado
-→ concepto base relacionado
-→ recurso posiblemente afectado
-→ herramienta de medicion
-→ diagnostico
-→ solucion candidata
+¿Cual es el objetivo de FPS y cuanto es el presupuesto por frame?
+¿El problema es el promedio o son los spikes?
+¿Que recurso esta implicado?
+¿Cual es el costo unitario, la cantidad y la frecuencia?
+¿Se puede eliminar el trabajo en vez de acelerarlo?
+¿Que se gasta al ganar esto?
+¿Lo pidio alguien?
 ```
 
-Ejemplo:
-
-```txt
-El juego tiene caidas de FPS.
-→ revisar Frame Budget.
-→ revisar Bottleneck.
-→ identificar si el limite esta en CPU, GPU, memoria o GC.
-→ recien despues proponer una medicion o solucion.
-```
+Si no puede responderlas, todavia no esta en condiciones de proponer una solucion.
 
 ---
 
@@ -93,89 +67,124 @@ El juego tiene caidas de FPS.
 
 ### [[Frame Budget]]
 
-Explica cuanto tiempo tiene disponible cada frame segun el objetivo de FPS.
+Explica cuanto tiempo tiene disponible cada frame segun el objetivo de FPS, y como ese presupuesto se reparte entre los sistemas que corren dentro del frame.
 
-Consultar cuando el problema este relacionado con caidas de FPS, costo por frame, frecuencia de ejecucion o estabilidad general.
+Consultar cuando haya que decidir si un costo es aceptable o cuando haya que repartir el frame entre sistemas.
 
-### [[Bottleneck]]
+### [[Frame time y estabilidad]]
 
-Explica que es un cuello de botella y por que no todos los problemas de rendimiento tienen la misma causa.
+Explica por que la unidad util es el tiempo por frame y no los FPS, y por que un promedio sano puede esconder una experiencia mala.
 
-Consultar cuando haya que identificar que parte del sistema esta limitando el rendimiento.
-
-### [[Game loop]]
-
-Explica el ciclo principal del juego y como se ejecutan los sistemas a lo largo del tiempo.
-
-Consultar cuando el problema este relacionado con Update, FixedUpdate, frecuencia de ejecucion o carga de trabajo por frame.
-
-### [[CPU Bound]]
-
-Explica que significa que el rendimiento este limitado por CPU.
-
-Consultar cuando el costo parezca venir de scripts, logica, IA, fisica, pathfinding, busquedas o sistemas ejecutandose en CPU.
+Consultar cuando haya stutter, spikes o caidas puntuales aunque el promedio parezca correcto.
 
 ### [[Recursos de hardware]]
 
-Explica los recursos principales que pueden afectar el rendimiento de un videojuego.
+Explica que hace cada recurso durante la ejecucion y que problemas tipicos genera cada uno.
 
-Consultar cuando haga falta diferenciar CPU, GPU, memoria, VRAM, disco, GC u otros recursos.
+Consultar cuando haya que traducir un sintoma a un recurso posiblemente afectado.
 
-### [[Medir antes de optimizar]]
+### [[Bottleneck]]
 
-Explica por que una optimizacion debe partir de medicion, evidencia o una hipotesis tecnica clara.
+Explica que es el cuello de botella y por que no existe la optimizacion del juego en abstracto, sino la del recurso que limita.
 
-Consultar antes de proponer cualquier solucion de rendimiento.
+Consultar cuando haya que decidir donde vale la pena trabajar.
+
+### [[Game loop]]
+
+Explica el ciclo de ejecucion y como cada subsistema consume una porcion del presupuesto del frame.
+
+Consultar cuando haya que ubicar donde ocurre un costo dentro del frame.
+
+### [[Costo cantidad y frecuencia]]
+
+Explica la ecuacion que aparece en casi todos los problemas de performance: costo unitario por cantidad por frecuencia.
+
+Consultar cuando haya que estimar un costo antes de medirlo, o cuando una operacion parezca insignificante de a una.
+
+### [[Reducir trabajo antes que acelerarlo]]
+
+Explica las seis preguntas que hay que hacerse antes de intentar hacer algo mas rapido, y la jerarquia que sale de ellas.
+
+Consultar antes de cualquier optimizacion. Es el principio ordenador de toda la seccion.
+
+### [[Trade-offs de optimizacion]]
+
+Explica que toda optimizacion intercambia un recurso por otro, y cuales son los intercambios habituales.
+
+Consultar al evaluar una solucion candidata y antes de declarar que una optimizacion termino.
+
+### [[Valor perceptual por costo]]
+
+Explica como comparar el costo computacional de un sistema contra lo que ese sistema le aporta al jugador.
+
+Consultar cuando la solucion facil sea eliminar algo que el jugador si estaba percibiendo.
 
 ### [[Cuando NO optimizar]]
 
-Explica por que una optimizacion tambien necesita encargo, y no solo evidencia.
+Explica la diferencia entre optimizacion prematura y alcance no pedido, y como se declara una omision deliberada.
 
-Consultar antes de `Medir antes de optimizar`: primero se decide si corresponde optimizar, despues con que evidencia.
+Consultar antes de abrir cualquier trabajo de optimizacion: primero se decide si corresponde, despues con que evidencia.
 
----
+### [[Medir antes de optimizar]]
 
-## Relacion con el resto de Optimizacion
+Explica por que hace falta evidencia antes del cambio y como se arma una medicion que sirva.
 
-Fundamentos no resuelve el problema completo.
+Consultar cuando ya se decidio que corresponde optimizar y hay que conseguir el dato.
 
-Fundamentos ayuda a entenderlo.
+### [[Errores conceptuales frecuentes]]
 
-El flujo correcto es:
+Explica los mitos que circulan como si fueran criterio y cual es la formulacion correcta de cada uno.
 
-```txt
-fundamento
-→ problema posible
-→ herramienta de deteccion
-→ solucion candidata
-→ validacion
-```
+Consultar cuando alguien afirme que una API, una construccion del lenguaje o una metrica es mala en si misma.
 
 ---
 
-## Criterio de uso
-
-Esta subcarpeta debe mantenerse como base conceptual.
-
-No debe crecer con problemas concretos.
-
-No debe convertirse en una lista de soluciones.
-
-No debe repetir el contenido de herramientas o metodologias.
-
-Si aparece una nota nueva, primero hay que preguntar:
+## Como se conecta con otras ramas
 
 ```txt
-Es un concepto base?
-Ayuda a entender optimizacion antes del diagnostico?
-Pertenece a Fundamentos o a otra subcarpeta?
+Fundamentos
+→ da el marco
+
+Diagnostico
+→ decide a que rama entrar
+
+CPU / GPU / Memoria / Carga e IO / UI
+→ resuelven el problema del recurso
+
+Patrones transversales
+→ lo que reaparece en mas de una rama
 ```
+
+Fundamentos no resuelve sintomas concretos. Si aparece uno, el camino sigue por `Diagnostico`.
+
+---
+
+## Criterio de crecimiento
+
+Esta rama no debe crecer con problemas concretos, tecnicas ni herramientas.
+
+Entra en Fundamentos lo que cumple las tres:
+
+```txt
+sirve para razonar antes de tocar nada
+sigue siendo valido si cambia el motor
+se usa desde mas de una rama
+```
+
+Un tema que solo aplica a un recurso pertenece a la rama de ese recurso, no aca.
 
 ---
 
 ## Regla final
 
+Sin marco, la optimizacion es una opinion tecnica.
+
 ```txt
-Fundamentos no existe para optimizar directamente.
-Existe para entender antes de diagnosticar.
+Marco
+→ diagnostico
+→ solucion
+→ trade-off
+→ validacion
 ```
+
+Lo que no se puede explicar antes de medir, tampoco se va a poder defender despues.

@@ -40,16 +40,16 @@ Ejemplos:
 
 ```txt
 30 FPS
-→ 33.33 ms por frame
+→ 33,33 ms por frame
 
 60 FPS
-→ 16.66 ms por frame
+→ 16,66 ms por frame
 
 120 FPS
-→ 8.33 ms por frame
+→ 8,33 ms por frame
 ```
 
-Esto significa que un juego a 60 FPS tiene aproximadamente 16.66 ms para completar todo el trabajo de un frame.
+Esto significa que un juego a 60 FPS tiene aproximadamente 16,66 ms para completar todo el trabajo de un frame.
 
 Si el frame tarda mas, el juego no puede sostener 60 FPS de forma estable.
 
@@ -78,10 +78,10 @@ Frame Budget
 Bottleneck
 → parte que consume demasiado
 
-Herramientas de deteccion
+Diagnostico
 → medicion real
 
-Metodologias y soluciones
+la rama del recurso afectado
 → respuesta posible
 ```
 
@@ -104,7 +104,7 @@ Objetivo:
 60 FPS
 
 Presupuesto:
-16.66 ms por frame
+16,66 ms por frame
 
 Frame actual:
 24 ms
@@ -151,13 +151,13 @@ Ejemplo:
 
 ```txt
 30 FPS
-→ cada frame puede tardar hasta 33.33 ms
+→ cada frame puede tardar hasta 33,33 ms
 
 60 FPS
-→ cada frame puede tardar hasta 16.66 ms
+→ cada frame puede tardar hasta 16,66 ms
 
 120 FPS
-→ cada frame puede tardar hasta 8.33 ms
+→ cada frame puede tardar hasta 8,33 ms
 ```
 
 El trabajo del frame se reparte entre muchos sistemas.
@@ -165,7 +165,7 @@ El trabajo del frame se reparte entre muchos sistemas.
 Ejemplo conceptual:
 
 ```txt
-Frame de 16.66 ms
+Frame de 16,66 ms
 
 Input
 → 0.2 ms
@@ -204,87 +204,9 @@ Total
 → 20.2 ms
 ```
 
-Entonces el frame ya no entra dentro de 16.66 ms.
+Entonces el frame ya no entra dentro de 16,66 ms.
 
 El juego puede bajar de FPS o sentirse inestable.
-
----
-
-## Costo, cantidad y frecuencia
-
-Una operacion no se evalua solamente por su costo individual.
-
-Hay que mirar:
-
-```txt
-Costo de la operacion
-× cantidad de objetos
-× frecuencia de ejecucion
-```
-
-Formula mental:
-
-```txt
-Costo total
-=
-costo
-× cantidad
-× frecuencia
-```
-
-Ejemplo:
-
-```txt
-Una busqueda simple
-→ puede ser barata.
-
-La misma busqueda
-× 500 enemigos
-× 60 veces por segundo
-→ puede ser cara.
-```
-
-Otro ejemplo:
-
-```txt
-Actualizar una barra de vida
-→ puede no importar.
-
-Actualizar 300 barras de vida cada frame
-aunque no hayan cambiado
-→ puede volverse un problema.
-```
-
-Otro ejemplo:
-
-```txt
-Calcular pathfinding una vez
-→ puede estar bien.
-
-Calcular pathfinding cada frame para muchos NPCs
-→ puede romper el Frame Budget.
-```
-
-La optimizacion suele atacar una de estas tres variables:
-
-```txt
-Reducir costo.
-Reducir cantidad.
-Reducir frecuencia.
-```
-
-Ejemplo:
-
-```txt
-Reducir costo
-→ cachear referencias.
-
-Reducir cantidad
-→ actualizar solo objetos activos o cercanos.
-
-Reducir frecuencia
-→ recalcular IA cada 0.2 segundos en vez de cada frame.
-```
 
 ---
 
@@ -400,7 +322,7 @@ El juego baja de FPS cuando hay muchos enemigos.
 
 Frame Budget:
 El objetivo es 60 FPS.
-El presupuesto es 16.66 ms.
+El presupuesto es 16,66 ms.
 El frame esta tardando 24 ms.
 
 Diagnostico pendiente:
@@ -437,7 +359,7 @@ Ejemplo:
 
 ```txt
 Problema:
-El juego baja al tener 100 enemigos.
+El juego baja al tener 300 enemigos.
 
 Antes de aplicar solucion:
 medir cuanto tarda el frame
@@ -597,17 +519,33 @@ Si hace falta entender que se ejecuta cada frame:
 → Game loop
 ```
 
+Si hace falta estimar cuanto va a pesar un sistema dentro del presupuesto:
+
+```txt
+→ Costo cantidad y frecuencia
+```
+
 Si hay un sintoma concreto:
 
-→ [[Problemas de rendimiento]]
+→ [[CPU]]
+
+y las demas ramas segun el recurso:
+
+→ [[GPU]]
+
+→ [[Memoria]]
+
+→ [[Carga e IO]]
+
+→ [[UI]]
 
 Si hace falta medir:
 
-→ [[Herramientas de deteccion]]
+→ [[Diagnostico]]
 
 Si ya hay diagnostico y se necesita evaluar una respuesta:
 
-→ [[Metodologias y soluciones]]
+→ [[Patrones transversales]]
 
 ---
 

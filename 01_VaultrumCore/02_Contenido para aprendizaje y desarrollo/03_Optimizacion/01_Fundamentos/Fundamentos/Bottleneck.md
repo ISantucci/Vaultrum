@@ -407,15 +407,25 @@ Si hace falta entender recursos afectados:
 
 Si ya hay un sintoma concreto:
 
-→ [[Problemas de rendimiento]]
+→ [[CPU]]
+
+y las demas ramas segun el recurso:
+
+→ [[GPU]]
+
+→ [[Memoria]]
+
+→ [[Carga e IO]]
+
+→ [[UI]]
 
 Si hace falta medir:
 
-→ [[Herramientas de deteccion]]
+→ [[Diagnostico]]
 
 Si ya se confirmo la causa:
 
-→ [[Metodologias y soluciones]]
+→ [[Patrones transversales]]
 
 ---
 

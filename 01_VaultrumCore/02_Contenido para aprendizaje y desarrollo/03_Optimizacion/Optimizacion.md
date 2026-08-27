@@ -20,28 +20,34 @@ Despues se optimiza.
 
 ## Idea central
 
-Optimizar en videojuegos significa mejorar el uso de recursos para sostener una experiencia estable, fluida y escalable.
+Optimizar no es hacer que el juego tenga mas FPS.
 
-No significa solamente subir FPS.
+Optimizar es administrar recursos limitados para cumplir un objetivo de rendimiento determinado.
 
-Un videojuego funciona en tiempo real. Cada frame tiene un presupuesto limitado. Si una parte del sistema consume mas de lo que corresponde, aparecen problemas como:
-
-```txt
-caidas de FPS
-spikes
-stuttering
-input lag
-cargas lentas
-uso excesivo de memoria
-presion del Garbage Collector
-```
-
-La idea principal es:
+Los recursos que compiten durante la ejecucion son:
 
 ```txt
-No alcanza con que algo funcione.
-Tambien importa cuanto cuesta, cuantas veces se ejecuta y si escala bien.
+tiempo de CPU
+tiempo de GPU
+memoria
+ancho de banda de memoria
+almacenamiento / I/O
+tiempo disponible por frame
 ```
+
+Por eso la pregunta correcta nunca es:
+
+```txt
+¿Como hago esto mas rapido?
+```
+
+La pregunta anterior es:
+
+```txt
+¿Esto esta limitando realmente al juego?
+```
+
+Una optimizacion sin diagnostico previo es una modificacion especulativa. Puede no mejorar nada, empeorar otra parte, aumentar la complejidad, consumir mas memoria, introducir bugs, dificultar el mantenimiento o simplemente trasladar el cuello de botella a otro recurso.
 
 ---
 
@@ -49,87 +55,359 @@ Tambien importa cuanto cuesta, cuantas veces se ejecuta y si escala bien.
 
 Esta seccion sirve para construir criterio de diagnostico y optimizacion.
 
-Debe ayudar a responder preguntas como:
-
-- Que problema de rendimiento hay.
-- Como medirlo.
-- Que recurso esta afectado.
-- Que herramienta usar.
-- Que solucion puede aplicar.
-- Que trade-off trae.
-- Como validar si mejoro.
-
-El objetivo es que esta seccion sirva tanto para estudiar como para aplicar en proyectos reales.
-
-Tambien debe servir como base para que una IA o agente razone asi:
+Debe ayudar a responder:
 
 ```txt
-Sintoma
-→ posible causa
-→ area afectada
-→ herramienta de medicion
-→ diagnostico
-→ solucion candidata
+¿Que problema de rendimiento hay?
+¿Como se mide?
+¿Que recurso esta afectado?
+¿Que herramienta usar?
+¿Que solucion puede aplicar?
+¿Que trade-off trae?
+¿Como se valida si mejoro?
+```
+
+El objetivo es que sirva tanto para estudiar como para aplicar en proyectos reales.
+
+---
+
+## El principio que organiza esta seccion
+
+Esta seccion esta separada por recurso: CPU, GPU, memoria, carga y UI tienen cada uno su rama.
+
+Pero la separacion no es la puerta de entrada.
+
+```txt
+                    PERFORMANCE
+                         |
+                 ¿que esta limitando?
+                         |
+        +----------------+-----------------+
+        v                v                 v
+       CPU              GPU             Memoria
+        |                |                 |
+        +------------+---+-----------------+
+                     v
+              causa concreta
+                     v
+                  solucion
+                     v
+                 trade-off
+                     v
+                 validacion
+```
+
+Por encima de todas las ramas esta el diagnostico, porque es lo unico que permite decidir a cual entrar.
+
+```txt
+No se empieza optimizando CPU.
+No se empieza optimizando GPU.
+Se empieza midiendo.
+
+CPU, GPU, memoria o I/O son respuestas posibles al diagnostico,
+no puntos de partida.
+```
+
+Memoria, carga y UI no se meten adentro de CPU o de GPU para conseguir una arquitectura binaria. Son dimensiones propias porque existen problemas de performance que no encajan en ninguno de los dos procesadores, y porque la UI cuesta en los dos a la vez.
+
+---
+
+## Organizacion de la seccion
+
+```txt
+03_Optimizacion/
+├── Optimizacion.md
+├── 01_Fundamentos/                el marco previo a cualquier diagnostico
+├── 02_Diagnostico/                el metodo y las herramientas de medicion
+├── 03_CPU/                        problemas y soluciones de tiempo de CPU
+├── 04_GPU/                        problemas y soluciones de tiempo de GPU
+├── 05_Memoria/                    allocations, GC, retencion y lifecycle
+├── 06_Carga e IO/                 startup, transiciones, streaming, freezes
+├── 07_UI/                         cuesta en CPU y en GPU a la vez
+└── 08_Patrones transversales/     lo que aplica en mas de una rama
+```
+
+El recorrido esperado es:
+
+```txt
+Fundamentos
+→ Diagnostico
+→ la rama del recurso afectado
+→ solucion
 → trade-off
 → validacion
 ```
 
 ---
 
-## Criterio principal
+## [[Fundamentos]]
 
-La optimizacion correcta no ataca lo que parece lento.
+Conceptos base para entender optimizacion antes de diagnosticar o proponer soluciones.
 
-Ataca lo que fue medido como problema.
-
-No deberia ser:
+Esta rama sirve para entender el marco general:
 
 ```txt
-Tecnica avanzada
-→ buscar donde aplicarla
+presupuesto de frame
+frame time y estabilidad
+cuellos de botella
+recursos afectados
+game loop
+costo x cantidad x frecuencia
+reducir trabajo antes que acelerarlo
+trade-offs
+valor perceptual por costo
+medicion previa
+cuando NO optimizar
 ```
 
-Debe ser:
-
-```txt
-Problema real
-→ medicion
-→ diagnostico
-→ solucion concreta
-→ validacion
-```
-
-Optimizar sin medir es adivinar.
+Usar esta rama cuando todavia haga falta entender que esta pasando antes de analizar un problema concreto.
 
 ---
 
-## Como usar esta seccion
+## [[Diagnostico]]
 
-Esta seccion debe usarse como sistema de diagnostico.
+El metodo y las herramientas que permiten decidir a que rama entrar.
 
-El flujo recomendado es:
+Esta rama sirve para pasar de un sintoma a un recurso identificado:
 
 ```txt
-1. Identificar sintoma.
-2. Medir con herramientas.
-3. Determinar posible bottleneck.
-4. Asociar el problema a un recurso afectado.
-5. Consultar la subcarpeta correspondiente.
-6. Elegir una solucion candidata.
-7. Evaluar trade-off.
-8. Aplicar solo si corresponde.
-9. Validar antes/despues.
+flujo de diagnostico
+CPU Bound
+GPU Bound
+traslado del cuello de botella
+comparacion antes y despues
+Unity Profiler
+CPU Usage
+Timeline
+GC Alloc
+Memory Profiler
+Frame Debugger
+Stats
+logs de diagnostico
 ```
 
-No hace falta leer toda la seccion para cada problema.
+Usar esta rama siempre, y antes que cualquier otra. Es la unica que no se saltea.
 
-Se consulta la parte que corresponde al diagnostico actual.
+---
+
+## [[CPU]]
+
+Problemas y soluciones del tiempo de CPU: simulacion, gameplay, scripts, fisica, IA, spawning y preparacion del rendering.
+
+Usar esta rama cuando el diagnostico apunte a CPU:
+
+```txt
+muchos Update activos
+busquedas globales por frame
+Instantiate y Destroy constantes
+pathfinding recalculado demasiado seguido
+fisica costosa
+IA que piensa de mas
+```
+
+---
+
+## [[GPU]]
+
+Problemas y soluciones del tiempo de GPU: vertices, rasterizacion, fragmentos, texturas, iluminacion y blending.
+
+Usar esta rama cuando el diagnostico apunte a GPU:
+
+```txt
+overdraw y transparencias
+fill rate y resolucion
+costo de fragmentos y shaders
+costo de vertices y geometria
+sombras costosas
+iluminacion en runtime
+post processing pesado
+```
+
+Advertencia que esta rama repite: draw call no es sinonimo de problema de GPU. Rendering involucra a los dos procesadores.
+
+---
+
+## [[Memoria]]
+
+Memoria es una dimension propia, no una consecuencia de CPU ni de GPU.
+
+Usar esta rama cuando el problema sea de allocations, presion del recolector, retencion o crecimiento sostenido:
+
+```txt
+GC Alloc por frame
+strings por frame
+memory leak
+object pooling
+evitar allocations por frame
+ciclo de vida de recursos
+```
+
+---
+
+## [[Carga e IO]]
+
+El rendimiento no es exclusivamente FPS. Startup, pantallas de carga, transiciones, streaming y freezes tambien lo son.
+
+Usar esta rama cuando el problema aparezca al cargar, al cambiar de escena o al entrar a una zona:
+
+```txt
+freeze por carga en runtime
+Addressables
+AssetManager
+precarga y carga distribuida
+```
+
+---
+
+## [[UI]]
+
+La UI no se clasifica solamente como CPU ni solamente como GPU: cuesta en los dos.
+
+```txt
+CPU   actualizacion, layout, rebuilds, generacion de texto, input, raycasts
+GPU   transparencias, imagenes, mascaras, overdraw, grandes superficies
+```
+
+Usar esta rama cuando el costo aparezca al abrir una pantalla, al actualizar el HUD o al mover listas.
+
+---
+
+## [[Patrones transversales]]
+
+Lo que no pertenece a un solo recurso: patrones que aplican en CPU, en GPU, en fisica, en IA y en rendering, mas la arquitectura que permite optimizar sin romper comportamiento.
+
+```txt
+Early Exit
+broad phase y narrow phase
+Active Set
+escalado de precision
+batch processing
+clases puras
+MonoBehaviour como puente
+separar logica de Unity
+separacion model / view
+```
+
+Usar esta rama cuando la misma idea reaparezca en dos ramas distintas.
+
+---
+
+## Huecos declarados
+
+Estos temas pueden aparecer en un diagnostico y todavia no tienen ficha propia en la seccion.
+
+Se dejan escritos como texto plano hasta que exista una necesidad real de desarrollarlos. Un hueco declarado es criterio; un hueco silencioso es una promesa que la seccion no cumple.
+
+```txt
+Stuttering como sintoma propio
+    hoy se trata repartido entre frame time, memoria y carga
+
+Assets mal gestionados
+    hoy se trata desde Carga e IO, sin ficha de problema propia
+
+Pools mal dimensionados
+    hoy vive dentro de la nota de object pooling
+
+Eventos no desuscriptos
+    hoy vive dentro de memory leak
+
+Render pipeline y sus variantes
+    la seccion habla de etapas, no de pipelines concretos
+
+Multithreading y paralelismo
+    solo aparece como advertencia en errores conceptuales
+```
+
+Lo que cerro el refactor y ya no es hueco:
+
+```txt
+Fisica costosa       ahora tiene ficha en CPU
+GPU Bound            ahora tiene ficha en Diagnostico
+overdraw, fill rate, shaders, geometria,
+sombras, iluminacion, post processing        ahora tienen ficha en GPU
+LOD, culling, batching, mipmaps              ahora tienen ficha en GPU
+```
+
+---
+
+## Temas relacionados que no son de esta seccion
+
+Estos temas aparecen en el razonamiento de optimizacion pero pertenecen a otra parte del Core.
+
+```txt
+Patrones de diseño       → 02_Patrones de diseno
+Managers                 → 08_Managers
+SOLID                    → 01_SOLID
+Estructuras de datos     → 06_Estructuras de datos
+Algoritmos               → 07_Algoritmos
+Criterios de entrega     → 04_Criterios de entrega
+```
+
+Se nombran, no se enlazan desde aca, salvo que haya una necesidad operativa concreta.
+
+Las notas de esta seccion que comparten nombre con una de esas secciones cubren solo la mitad de optimizacion del tema. La mitad estructural pertenece a la seccion dueña.
+
+---
+
+## Guia rapida de diagnostico
+
+Esta guia no decide automaticamente. Solo orienta hacia que parte de la seccion conviene ir.
+
+```txt
+Necesito entender conceptos base
+→ Fundamentos
+
+Hay caida de FPS, spikes, stuttering o input lag
+→ Diagnostico
+
+Tengo un sintoma y no se de quien es
+→ Diagnostico
+
+El frame es caro y la escena es visualmente simple
+→ Diagnostico, despues CPU
+
+El frame es caro y la escena es visualmente rica
+→ Diagnostico, despues GPU
+
+Hay spikes periodicos o la memoria crece
+→ Memoria
+
+El freeze aparece al cargar o al cambiar de escena
+→ Carga e IO
+
+El costo aparece al abrir una pantalla o mover el HUD
+→ UI
+
+La misma idea me sirve en dos ramas
+→ Patrones transversales
+```
+
+---
+
+## Formato de una ficha de performance
+
+Todo problema de performance documentado en esta seccion responde estas preguntas, en este orden:
+
+```txt
+Problema            que ocurre
+Area                CPU / GPU / Memoria / I/O / Mixto
+Sintoma observable  que ve el desarrollador o el jugador
+Causa tecnica       que sucede realmente
+Deteccion           que herramienta o metrica lo confirma
+Diagnostico         como distinguirlo de causas parecidas
+Solucion            opciones disponibles
+Trade-off           que cuesta cada solucion
+Validacion          como se demuestra que funciono
+Error frecuente     que interpretacion incorrecta suele hacerse
+```
+
+Una ficha que no puede completar Deteccion, Trade-off y Validacion todavia no es una ficha: es una intuicion escrita.
 
 ---
 
 ## Uso por agentes en Vaultrum
 
-Cuando una IA trabaje en Modo Programador, Auditor o Arquitecto de conocimiento, debe usar esta seccion como apoyo de diagnostico.
+Cuando una IA trabaje sobre un problema de rendimiento, debe usar esta seccion como apoyo de diagnostico.
 
 No debe usarla como lista de tecnicas para aplicar.
 
@@ -176,10 +454,12 @@ No debe:
 - proponer tecnicas sin sintoma,
 - aplicar soluciones sin medir,
 - confundir cantidad con costo real,
+- entrar directo a una rama sin pasar por Diagnostico,
 - usar Object Pool porque hay objetos,
 - usar Update Manager porque hay Updates,
 - usar Addressables porque hay assets,
-- reducir calidad visual sin diagnostico,
+- bajar calidad visual sin diagnostico,
+- reducir draw calls como objetivo en si mismo,
 - agregar sistemas complejos sin trade-off claro,
 - modificar arquitectura sin validar impacto,
 - prometer mejoras sin definir como medirlas.
@@ -192,152 +472,91 @@ La optimizacion requiere evidencia o una hipotesis tecnica clara.
 
 ---
 
-## Organizacion de la seccion
+## Antes de proponer una optimizacion
 
-La seccion de Optimizacion se organiza en cuatro bloques principales.
+Estas diez preguntas son el filtro previo. Si alguna no tiene respuesta, todavia no hay una propuesta: hay una intuicion.
 
 ```txt
-03_Optimizacion/
-├── Optimizacion.md
-├── 01_Fundamentos/
-├── 02_Problemas de rendimiento/
-├── 03_Herramientas de deteccion/
-└── 04_Metodologias y soluciones/
+¿Cual es el sintoma?
+¿Como se reproduce?
+¿Que recurso podria estar afectado?
+¿Que herramienta permite medirlo?
+¿Que dato confirmaria el problema?
+¿Que solucion candidata existe?
+¿Que alternativa mas simple existe?
+¿Que trade-off trae?
+¿Que riesgo introduce?
+¿Como se valida antes y despues?
 ```
 
-Esta organizacion sigue el flujo:
+Las dos que mas se saltean son la segunda y la septima.
+
+Sin reproduccion no hay medicion comparable: se mide una vez, se cambia algo y se mide otra cosa. Y sin la pregunta por la alternativa mas simple, toda propuesta tiende hacia la solucion mas elaborada, que es tambien la mas cara de mantener.
 
 ```txt
-Fundamentos
-→ problemas
-→ herramientas
-→ soluciones
-```
-
----
-
-## [[Fundamentos]]
-
-Conceptos base para entender optimizacion antes de diagnosticar o proponer soluciones.
-
-Esta subcarpeta sirve para entender el marco general:
-
-```txt
-presupuesto de frame
-cuellos de botella
-recursos afectados
-game loop
-medicion
-criterio previo a la optimizacion
-```
-
-Usar esta carpeta cuando todavia haga falta entender que esta pasando antes de analizar un problema concreto.
-
----
-
-## [[Problemas de rendimiento]]
-
-Fichas de diagnostico sobre problemas concretos que pueden afectar el rendimiento.
-
-Esta subcarpeta sirve para identificar sintomas, causas posibles, recursos afectados y formas de deteccion.
-
-Usar esta carpeta cuando ya existe un sintoma o sospecha concreta, por ejemplo:
-
-```txt
-muchos Update activos
-Instantiate y Destroy constantes
-GC Alloc por frame
-memory leaks
-busquedas globales por frame
-UI actualizada innecesariamente
-pathfinding recalculado demasiado seguido
+Antes de un pool, ¿alcanza con no destruir?
+Antes de un Update Manager, ¿alcanza con apagar el componente?
+Antes de particionar el espacio, ¿alcanza con filtrar por distancia?
+Antes de un sistema de LOD, ¿alcanza con una distancia de dibujado?
 ```
 
 ---
 
-## [[Herramientas de deteccion]]
+## Antes de ejecutar una optimizacion
 
-Herramientas para medir, observar y confirmar problemas de rendimiento.
-
-Esta subcarpeta sirve para decidir que mirar y como interpretar los datos antes de aplicar una solucion.
-
-Usar esta carpeta cuando haga falta validar una hipotesis con herramientas como:
+Antes de ejecutar, hay que entregar:
 
 ```txt
-Unity Profiler
-CPU Usage
-Timeline
-GC Alloc
-Memory Profiler
-Frame Debugger
-Stats
-logs de diagnostico
-comparacion antes y despues
+Sintoma:
+Medicion disponible o pendiente:
+Diagnostico:
+Rama afectada:
+Solucion propuesta:
+Sistema existente relacionado:
+Archivos que podria tocar:
+Archivos que no deberia tocar:
+Trade-off:
+Riesgos:
+Validacion:
+Decision requerida:
 ```
+
+La ejecucion requiere aprobacion.
 
 ---
 
-## [[Metodologias y soluciones]]
-
-Tecnicas, practicas y arquitecturas que ayudan a prevenir o resolver problemas de rendimiento.
-
-Esta subcarpeta sirve para elegir una solucion candidata despues de medir y diagnosticar.
-
-Usar esta carpeta cuando ya este claro el problema y haga falta evaluar alternativas como:
+## Principios fundamentales
 
 ```txt
-Update Manager
-Object Pool
-cacheo de referencias
-clases puras
-reducir frecuencia de actualizacion
-UI orientada a eventos
-Addressables
-AssetManager
-evitar allocations por frame
-separar logica de Unity
-```
-
----
-
-## Guia rapida de diagnostico
-
-Esta guia no decide automaticamente.
-
-Solo orienta hacia que parte de la seccion conviene ir.
-
-```txt
-Necesito entender conceptos base
-→ Fundamentos
-
-Tengo un sintoma de rendimiento
-→ Problemas de rendimiento
-
-Necesito medir o confirmar una hipotesis
-→ Herramientas de deteccion
-
-Ya tengo un diagnostico y necesito evaluar una solucion
-→ Metodologias y soluciones
-```
-
-Ejemplo de flujo correcto:
-
-```txt
-Caidas de FPS
-→ Fundamentos para entender Frame Budget y Bottleneck
-→ Problemas de rendimiento para identificar posibles causas
-→ Herramientas de deteccion para medir
-→ Metodologias y soluciones para elegir una respuesta
-→ validacion antes/despues
+1.  Medir antes de optimizar.
+2.  Trabajar con frame time, no solo con FPS.
+3.  Identificar el bottleneck antes de modificar.
+4.  Reducir trabajo antes de intentar acelerarlo.
+5.  Costo real = costo unitario x frecuencia x cantidad.
+6.  Filtrar barato antes de validar caro.
+7.  No actualizar lo que no necesita actualizarse.
+8.  No recalcular informacion estable.
+9.  Priorizar algoritmo y estructura de datos antes que microoptimizacion.
+10. Pooling y caching son trade-offs, no reglas universales.
+11. CPU y GPU se diagnostican por separado.
+12. Rendering puede ser costoso tanto en CPU como en GPU.
+13. Memoria es una dimension independiente.
+14. Loading e I/O tambien forman parte de performance.
+15. La UI se analiza en CPU y en GPU.
+16. LOD es un principio perceptual, no solo un sistema de mallas.
+17. Culling significa evitar trabajo que no contribuye.
+18. La arquitectura debe facilitar optimizar, no nacer de optimizaciones hipoteticas.
+19. Toda optimizacion tiene trade-offs.
+20. Toda optimizacion necesita validacion posterior.
+21. Un buen numero de profiler no justifica romper gameplay, feedback o estabilidad.
+22. Performance existe para sostener la experiencia del jugador.
 ```
 
 ---
 
 ## Criterio de uso
 
-La optimizacion debe estar al servicio del juego.
-
-No se optimiza para demostrar tecnica.
+La optimizacion debe estar al servicio del juego. No se optimiza para demostrar tecnica.
 
 Se optimiza para sostener:
 
@@ -349,7 +568,7 @@ Mantenibilidad
 Experiencia del jugador
 ```
 
-Una buena optimizacion deberia cumplir estas condiciones:
+Una buena optimizacion cumple estas condiciones:
 
 ```txt
 Resuelve un problema medido.
@@ -374,99 +593,6 @@ No se valida despues.
 
 ---
 
-## Antes de proponer una optimizacion
-
-Una IA debe responder estas preguntas antes de recomendar una solucion:
-
-```txt
-Cual es el sintoma?
-Como se reproduce?
-Que recurso podria estar afectado?
-Que herramienta permite medirlo?
-Que dato confirmaria el problema?
-Que solucion candidata existe?
-Que alternativa simple existe?
-Que trade-off trae?
-Que riesgo introduce?
-Como se valida antes/despues?
-```
-
-Si no puede responder estas preguntas, no debe proponer la optimizacion todavia.
-
----
-
-## Antes de ejecutar una optimizacion
-
-Antes de ejecutar una optimizacion, la IA debe entregar:
-
-```txt
-Sintoma:
-...
-
-Medicion disponible o pendiente:
-...
-
-Diagnostico:
-...
-
-Solucion propuesta:
-...
-
-Sistema existente relacionado:
-...
-
-Archivos que podria tocar:
-...
-
-Archivos que no deberia tocar:
-...
-
-Trade-off:
-...
-
-Riesgos:
-...
-
-Validacion:
-...
-
-Decision requerida:
-...
-```
-
-La ejecucion requiere aprobacion.
-
----
-
-## Uso correcto dentro de Vaultrum
-
-El uso correcto de esta seccion es:
-
-```txt
-Sintoma real
-→ medicion o hipotesis
-→ diagnostico
-→ lectura puntual
-→ solucion candidata
-→ trade-off
-→ validacion
-```
-
-No es:
-
-```txt
-Quiero optimizar
-→ busco tecnica avanzada
-→ la aplico
-→ asumo que mejoro
-```
-
-Optimizacion debe ayudar a decidir.
-
-No debe reemplazar el criterio.
-
----
-
 ## Regla final
 
 La optimizacion no empieza tocando codigo.
@@ -476,6 +602,7 @@ Empieza entendiendo el problema.
 ```txt
 Primero medir.
 Despues diagnosticar.
+Despues entrar a la rama.
 Despues optimizar.
 Despues validar.
 ```

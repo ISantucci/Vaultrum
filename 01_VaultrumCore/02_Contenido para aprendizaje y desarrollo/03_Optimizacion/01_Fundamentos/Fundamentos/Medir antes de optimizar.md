@@ -140,7 +140,7 @@ Ejemplo inspirado en Tower Defense:
 
 ```txt
 Prueba:
-Nivel con 100 enemigos y 20 torres.
+Nivel con 300 enemigos y 30 torres.
 Duracion: 60 segundos.
 
 Antes:
@@ -332,7 +332,7 @@ Si se quiere identificar el cuello de botella:
 
 Si hace falta elegir herramienta:
 
-→ [[Herramientas de deteccion]]
+→ [[Diagnostico]]
 
 Herramientas utiles:
 
@@ -347,11 +347,21 @@ Comparacion antes y despues
 
 Si ya existe un sintoma:
 
-→ [[Problemas de rendimiento]]
+→ [[CPU]]
+
+y las demas ramas segun el recurso:
+
+→ [[GPU]]
+
+→ [[Memoria]]
+
+→ [[Carga e IO]]
+
+→ [[UI]]
 
 Si ya se confirmo un problema:
 
-→ [[Metodologias y soluciones]]
+→ [[Patrones transversales]]
 
 ---
 
