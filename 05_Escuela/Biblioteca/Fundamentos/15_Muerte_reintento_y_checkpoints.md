@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilares 2 — Victoria/derrota y estados de fin · 5 — Justicia y control · 7 — Recompensa y motivación
 cruza: 05_Fundamentos_de_experiencia_ludica, 01_Loop_de_experiencia, 03_Definicion_de_terminado

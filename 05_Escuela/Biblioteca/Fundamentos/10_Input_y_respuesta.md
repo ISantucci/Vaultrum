@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 3 — Feedback y game feel · Pilar 5 — Justicia y control
 cruza: 05_Fundamentos_de_experiencia_ludica, 02_Game_feel, 04_Playbook_de_diseno, 03_Definicion_de_terminado

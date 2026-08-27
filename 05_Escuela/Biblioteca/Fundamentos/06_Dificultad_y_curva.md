@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 6 — Dificultad, tensión y flow
 cruza: 05_Fundamentos_de_experiencia_ludica, 04_Playbook_de_diseno, 01_Loop_de_experiencia, 09_Onboarding_y_tutorial

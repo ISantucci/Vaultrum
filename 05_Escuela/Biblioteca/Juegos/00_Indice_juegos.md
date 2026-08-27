@@ -12,6 +12,10 @@ Se apoya siempre en los `Fundamentos` transversales: el libro de Juego agrega lo
 
 Arcade · Paleta-y-pelota · EST-001 Mision Pong · En la Biblioteca
 
+### [[02_Plataformero_2D|Plataformero 2D]]
+
+Plataformas · Plataformero 2D de precision · EST-010 Mision Plataformero 2D · En la Biblioteca
+
 
 ---
 
