@@ -11,6 +11,7 @@ Cuatro leyes del espacio, todas derivadas del GDS y ninguna inventada aca:
   Ley 2  ningun escalon supera el techo derivado de la altura de salto
   Ley 3  toda plataforma es alcanzable desde la anterior, simulando el salto
   Ley 4  hay techo suficiente para saltar donde hay que saltar
+  Ley 5  toda plataforma de aterrizaje tiene ancho para frenar
 
   python3 nivel.py <nivel.txt> <parametros.json>
   python3 nivel.py <nivel.txt> <parametros.json> --verificar
@@ -71,18 +72,26 @@ def escalones(sup):
     return res
 
 def simular_salto(P):
-    """Devuelve la trayectoria (dx, dy) del salto maximo, en tiles.
-    dy positivo = mas arriba. Usa exactamente los parametros del GDS."""
+    """Trayectoria del salto maximo, en tiles. dy positivo = mas arriba.
+
+    Integra EXACTAMENTE igual que el build (EJ-001): semi-implicito, apex hang
+    multiplicando la gravedad del paso, y saturacion en velocidad terminal. La
+    primera version aplicaba el apex hang de otra forma y daba 2.94 tiles contra
+    los 2.91 del juego. La diferencia era chica y el criterio no: un instrumento
+    que aproxima lo que el build hace exacto miente cuando el margen se ajusta.
+    La fuente de verdad es el build. Lo alineo QA-001.
+    """
     T = P['tile_px']
     vx = P['velocidad_max_px_s'] / 60.0
     vy = -P['impulso_salto_px_frame']
     gs, gc = P['gravedad_subida'], P['gravedad_caida']
+    vterm = P['velocidad_terminal_px_s'] / 60.0
     x = y = 0.0
     tray = []
     for _ in range(240):
-        vy += gs if vy < 0 else gc
-        if abs(vy) < P['umbral_apex']: vy -= (gs if vy < 0 else gc) * (1 - P['factor_apex'])
-        vy = min(vy, P['velocidad_terminal_px_s'] / 60.0)
+        g = gs if vy < 0 else gc
+        if abs(vy) < P['umbral_apex']: g *= P['factor_apex']
+        vy = min(vy + g, vterm)
         x += vx; y += vy
         tray.append((x / T, -y / T))
         if y > T * 8: break
@@ -143,6 +152,27 @@ def auditar(g, P):
         datos.setdefault('techos', []).append((a-1, libre))
         if libre < alto_salto + 1:
             fallas.append(('Ley 4', 'techo de %d tiles en x=%d: hace falta %d' % (libre, a-1, int(alto_salto)+1)))
+    # Ley 5 - ancho de aterrizaje LIBRE. Un hueco que cae sobre un tile suelto,
+    # o sobre una franja corta seguida de peligro, obliga a una precision que el
+    # nivel no enseño: el jugador aterriza y ya esta encima de lo de atras.
+    # Un salto que BAJA arrastra momento y necesita mas franja que uno en llano.
+    # Las dos cosas las encontro QA-001 corriendo el bot sobre el nivel.
+    llano = P.get('aterrizaje_min_tiles', 2)
+    bajada = P.get('aterrizaje_min_tiles_bajada', 4)
+    for (a, b, w) in hs:
+        if b == len(sup) - 1: continue
+        y_sal = sup[a-1] if a > 0 else None
+        y_lle = sup[b+1]
+        if y_lle is None: continue
+        dy = (y_sal - y_lle) if y_sal is not None else 0
+        minimo = bajada if dy < 0 else llano
+        x, seguro = b + 1, 0
+        while x < len(sup) and sup[x] is not None and g[sup[x]][x] == '#':
+            seguro += 1; x += 1
+        datos.setdefault('aterrizajes', []).append((b+1, seguro, minimo, dy))
+        if seguro < minimo:
+            fallas.append(('Ley 5', 'aterrizaje libre de %d tile(s) en x=%d tras el hueco x=%d..%d con dy=%+d (minimo %d)'
+                           % (seguro, b+1, a, b, dy, minimo)))
     return sup, datos, fallas
 
 def informe(g, P):
