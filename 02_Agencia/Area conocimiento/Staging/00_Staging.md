@@ -58,6 +58,14 @@ Origen: `ARQ-005` sobre el Área de Arquitectura y `ARQ-009` sobre el Área de U
 
 ---
 
+### [[COMMIT-007_El_area_de_optimizacion_que_no_hace_falta|COMMIT-007 — El área de Optimización que no hace falta (todavía)]]
+
+Evaluación pedida por el owner al cerrar el refactor de `03_Optimizacion`. La respuesta es no, y el motivo es el hallazgo: el corte no está en la salida de la cadena sino en su entrada — nadie pregunta cuánto rendimiento necesita el entregable, y por eso QA escribe `na:sin presupuesto declarado` con razón trazable a una pregunta que nadie hizo. Propone una pregunta más en el relevamiento de Producción en lugar de un área, y deja escritas las tres condiciones que cambiarían la respuesta. Es además el primer criterio del sistema sobre **cuándo NO crear un área**.
+
+### [[COMMIT-008_El_hueco_que_estaba_en_la_bibliografia|COMMIT-008 — El hueco que estaba en la bibliografía]]
+
+Sale de `EST-009`, la misión que el owner abrió sin tema. El aprendizaje es el método que evitó el relleno: **el hueco de una biblioteca está en su bibliografía, no en su índice** — se encuentra leyendo qué cita cada pieza ya escrita, no preguntando qué tema falta. Así aparecieron un área entera sin fuentes (Level Design), doce libros escritos por recombinación del canon sin fuente propia de su tema, y un fallo nombrado en la pieza más usada del estante sin nada que lo resolviera. Es ejecutable con herramienta y aplica igual al Core y a los `RQ`. El área **recomienda que NO entre al Core**: es criterio de un rol, no ley del sistema, y su lugar es el charter del Bibliotecario.
+
 ## Lo que ya se mergeó
 
 **Vacío de la primera vuelta.** No quedaban commits pendientes antes de éste.

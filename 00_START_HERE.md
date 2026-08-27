@@ -151,7 +151,7 @@ Lo que Vaultrum produce **no vive adentro de las areas**. Un area es el edificio
 06_Proyectos       lo que se produjo    las estrellas
 ```
 
-Cada proyecto trae su cuaderno en la raiz y sus artefactos en carpetas por area: `01_Produccion/`, `02_GameDesign/`, `03_LevelDesign/`, `04_UI-UX/`, `05_Programacion/`. La carpeta existe si un area escribio algo ahi; nada se pre-crea.
+Cada proyecto trae su cuaderno en la raiz y sus artefactos en carpetas por area: `01_Produccion/`, `02_GameDesign/`, `03_LevelDesign/`, `04_UI-UX/`, `05_Programacion/`, `06_Calidad/`. La carpeta existe si un area escribio algo ahi; nada se pre-crea.
 
 **Esa carpeta no se versiona.** Quien clona Vaultrum recibe el sistema y sus funcionalidades, no el historial de uso de otro. Por eso se nombra con backticks y no se enlaza: en una copia recién clonada esta carpeta no existe, y un link colgado en la puerta es peor que una mención. Es la única excepción declarada del grafo, registrada en `excepciones.txt`.
 

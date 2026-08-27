@@ -13,3 +13,7 @@
 
 06_Proyectos/** | flotando | workspace local no versionado: 00_Proyectos es el indice de la constelacion y vive fuera del paquete publicado. START_HERE lo nombra con backticks para no dejar un link colgado en una copia recien clonada. Decision del owner, TL-008.
 06_Proyectos/** | inalcanzable | workspace local no versionado: las leyes del grafo cuidan el vault PUBLICADO, y este subarbol no se publica. Cada artefacto si se alcanza desde el cuaderno de su proyecto. Hallazgo para el Arquitecto: grafo.py no distingue vault publicado de workspace local. Decision del owner, TL-008.
+CLAUDE.md | flotando | puerta de maquina, no nota del vault: la lee el harness antes del primer mensaje, no un humano caminando el grafo. Enlazarla desde START_HERE seria invitar a leerla como documentacion, que es justo lo que no es. Decision del owner, RQ-007.2.
+CLAUDE.md | inalcanzable | idem: no se entra por un indice porque no se entra, se carga sola.
+AGENTS.md | flotando | misma puerta, para Codex y las superficies que leen AGENTS.md. Decision del owner, RQ-007.2.
+AGENTS.md | inalcanzable | idem CLAUDE.md.

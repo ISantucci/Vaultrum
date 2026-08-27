@@ -44,7 +44,8 @@ balance/curvas sin cerrar     → Balanceador
 [ ] Integraciones con otros sistemas identificadas
 [ ] Aporta a la experiencia (sin complejidad de más)
 [ ] Los 9 pilares de experiencia cubiertos o marcados N/A con justificación (CHECKLIST por-GDS de 05_Fundamentos_de_experiencia_ludica)
-[ ] LDS y UXS decididos: cada "no aplica" dice qué dimensión falta y por qué
+[ ] LDS decidido: el "no aplica" dice qué dimensión falta y por qué
+[ ] Si el `RQ` declaró que UXS aplica, este GDS lo consume; no lo vuelve a decidir
 [ ] Si hay GDS-XXX.0: este GDS lo referencia y no lo duplica
 ```
 
@@ -55,24 +56,24 @@ Un `GDS` cerrado **no va siempre directo a Programación**. Decidí explícitame
 ```
 ¿el sistema ocurre en un espacio, un nivel o una pantalla jugable
  con recorrido, encuentros o progresión?      → SÍ: Level Design (vaultrum-leveldesign) → LDS-XXX.n
-¿el jugador necesita ver, navegar o decidir
- a través de una interfaz, HUD o menú?        → SÍ: UI/UX (vaultrum-uiux)               → UXS-XXX.n
 ```
 
-Ambas pueden correr **en paralelo**: las dos cuelgan del mismo `GDS`. Cuando las que apliquen estén cerradas, el paquete completo (`GDS` + `LDS` + `UXS`) pasa a Programación.
+**UI/UX ya no se decide acá.** Su mitad A cuelga del `RQ` y corrió **antes** que vos: el presupuesto de comunicación condiciona el sistema, no al revés. Si el `RQ` declaró que aplica, tu `GDS` **consume ese `UXS` mitad A** y habilita la mitad B; si declaró que no, no lo reabras — y si te parece que se equivocó, es un hallazgo que rebota a Producción, no una decisión tuya.
+
+Cuando `LDS` y la mitad B que apliquen estén cerradas, el paquete completo (`GDS` + `LDS` + `UXS`) pasa a Programación.
 
 Si ninguna aplica, escribilo igual en el `GDS`. Pero **no alcanza con marcar la casilla**: un "no aplica" es una afirmación verificable, no un atajo (ver `Gates verificables` en el Core).
 
 ### Gate del "no aplica" (obligatorio)
 
-Para declarar que `LDS` o `UXS` no aplican, escribí **qué dimensión del entregable está ausente**, en una línea, dentro del `GDS`:
+Para declarar que **`LDS`** no aplica, escribí **qué dimensión del entregable está ausente**, en una línea, dentro del `GDS`:
 
 ```txt
 LDS no aplica — el sistema no compone espacio: la arena es fija, sin
                 recorrido, encuentros ni progresión intra-nivel.
-UXS no aplica — el jugador no navega ni decide a través de ninguna
-                pantalla: no hay menú, HUD ni estado que comunicar.
 ```
+
+El "no aplica" de `UXS` tiene el mismo formato pero **se escribe en el `RQ`**, y lo declara Producción.
 
 Formato mínimo: `<área> no aplica — <qué dimensión falta> : <por qué falta>`. Un "no aplica" sin la segunda mitad **no cierra el gate**.
 
@@ -98,7 +99,7 @@ Al cerrar, declará el estado (vocabulario común de la Agencia — no confundir
 
 Por cada `RQ` jugable, un **GDS-XXX.n** con: objetivo, reglas, entradas, salidas/feedback, estados, parámetros configurables + curvas, integraciones, experiencia esperada y criterios de validación.
 
-Registralo en `02_Agencia/Area game design/Salidas/` y actualizá `00_Indice_gds`. La numeración se hereda del `RQ` (`RQ-001.2 → GDS-001.2`). Linkeá al `RQ`. Un `GDS` cerrado es insumo de Level Design y/o UI/UX si aplican, y del `SOL` del Área de Programación.
+Registralo así: Dónde aterriza: `<Proyecto>/02_GameDesign/`, según la regla **Dónde aterriza cada salida** de `02_Indice Agencia`. La ruta del proyecto sale del cuaderno; **nunca se escribe adentro de `Vaultrum/`**. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. Actualizá el cuaderno del proyecto. La numeración se hereda del `RQ` (`RQ-001.2 → GDS-001.2`). Linkeá al `RQ`. Un `GDS` cerrado es insumo de Level Design y/o UI/UX si aplican, y del `SOL` del Área de Programación.
 
 ### El marco común: `GDS-XXX.0`
 

@@ -56,7 +56,7 @@ Al cerrar, declará el estado (vocabulario común de la Agencia — no confundir
 
 Por cada `GDS` con dimensión espacial, un **LDS-XXX.n** con: layout, colocación de desafíos, pacing, dificultad aplicada, checkpoints/progresión, integraciones y criterios de validación.
 
-Registralo en `02_Agencia/Area level design/Salidas/` y actualizá `00_Indice_lds`. La numeración se hereda del `GDS` (`GDS-001.2 → LDS-001.2`). Linkeá al `GDS`. Un `LDS` cerrado es insumo del `SOL` del Área de Programación (junto al `GDS` y, si existe, el `UXS`).
+Registralo así: Dónde aterriza: `<Proyecto>/03_LevelDesign/`, según la regla **Dónde aterriza cada salida** de `02_Indice Agencia`. La ruta del proyecto sale del cuaderno; **nunca se escribe adentro de `Vaultrum/`**. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. Actualizá el cuaderno del proyecto. La numeración se hereda del `GDS` (`GDS-001.2 → LDS-001.2`). Linkeá al `GDS`. Un `LDS` cerrado es insumo del `SOL` del Área de Programación (junto al `GDS` y, si existe, el `UXS`).
 
 ## Criterio de diseño
 

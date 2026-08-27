@@ -101,3 +101,20 @@ El owner pidió los dos movimientos en orden: anotar el aprendizaje en el área 
 ### [[ARQ-016_Las_cincuenta_aristas_que_no_bajaban|ARQ-016 — Las cincuenta aristas que no bajaban]]
 
 Modo Pasada sobre todo el vault menos el Core. Las 51 aristas que no bajaban caían en cinco patrones y los cinco pasaron el mismo test: cada destino ya tenía exactamente un padre, así que ninguna era contención. 50 a backticks; queda una, el README hacia la puerta, que no es un padre sino la entrada. Agencia 76% → 99% de cascada, Escuela y Comunidad al 100%. Incluye la corrección de una cifra que esta área publicó mal en `ARQ-014` y `ARQ-015`: los 44 links del Core eran 16, y 15 de ellos son salidas legales de la Ley 3.
+
+### [[ARQ-017_El_area_que_no_sabia_para_que_estaba|ARQ-017 — El área que no sabía para qué estaba]]
+
+Pasada de diagnóstico sobre el charter del Área de Conocimiento: siete hallazgos, un charter propuesto y cinco decisiones que son del owner. Corrida el 2026-08-25 y entregada como `.txt` suelto en la raíz; registrada acá el 2026-08-26 sin editar una coma. **Diagnóstico, no intervención** — la reescritura del charter necesita su propio plano y su propia aprobación.
+
+### [[ARQ-018_La_puerta_que_faltaba|ARQ-018 — La puerta que faltaba]]
+
+Emplazamiento de la raíz: entran `CLAUDE.md`, `AGENTS.md` y `skills.bat`; salen los dos `.txt` sueltos, el `__pycache__` y un lock huérfano. Deja escrita la distinción que faltaba: **el vault tiene dos entradas** —`00_START_HERE` para el humano, `CLAUDE.md` para la máquina— y la segunda no se enlaza porque no se navega. Desvío declarado: se colocó antes de pedir el plano.
+
+### [[ARQ-019_La_rama_que_no_existia|ARQ-019 — La rama que no existía]]
+
+Emplazamiento sobre el Core: la sección de Optimización pasa de cuatro bloques por fase del método a ocho ramas por recurso, con el diagnóstico por encima de todas. El material académico del owner entró completo y cerró el hueco que la medición mostró: GPU era el 3% de una sección de 250 KB, no existía `GPU Bound` teniendo `CPU Bound`, y dos notas de herramientas apuntaban a ocho notas de GPU que nadie había escrito. De 40 notas a 79, sin borrar ninguna hoja: las carpetas se renombraron en vez de vaciarse. Tres índices retirados con su contenido absorbido y declarado. Cero excepciones nuevas. Desvío declarado: se colocó y se escribió en la misma corrida, y el cuerpo de las notas no lo puso el área dueña.
+
+
+### [[ARQ-020_Las_treinta_y_ocho_fichas_que_entraron|ARQ-020 — Las treinta y ocho fichas que entraron]]
+
+Emplazamiento sobre la Biblioteca: entran 38 fichas de los lotes `EST-008` y `EST-009`, y los estantes de Fuentes y Documentación real pasan de 30 y 52 a 56 y 64. Tres decisiones de forma: **sin índice intermedio** aunque el registro crezca —agregaría un escalón y rompería la Ley 2—, **una sección de registro nueva** para los cuatro documentos que reconstruyen en vez de registrar, y **la bibliografía entre backticks**, que evitó más de sesenta aristas laterales. La medición intermedia mostró la Ley 2 en vivo: tres fichas escritas y sin entrada en su índice aparecieron como flotando. Cero notas movidas, cero excepciones nuevas, grafo en ley. Desvío declarado: se colocó antes de pedir el plano — **la tercera seguida**, y queda abierto el hallazgo de que las otras áreas no tienen el pedido de plano en su flujo.

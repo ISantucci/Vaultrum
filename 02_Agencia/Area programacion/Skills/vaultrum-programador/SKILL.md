@@ -110,7 +110,7 @@ Todo hilo produce dos artefactos numerados, heredando la numeración del RQ:
 - **SOL-XXX.n** — solución técnica (arquitectura, responsabilidades, Core aplicado, configurables, alternativas descartadas, riesgos).
 - **EJ-XXX.n** — ejecución (archivos modificados/creados/no tocados, cambios, sistemas reutilizados, configurables, riesgos, siguiente paso).
 
-Registralas en `02_Agencia/Area programacion/Salidas/` y actualizá `00_Indice_soluciones` y `00_Indice_ejecuciones`. Antes de numerar, revisá los índices. `SOL/EJ` comparten número base y subnumeración con su `RQ` (`RQ-001.2 ↔ SOL-001.2 ↔ EJ-001.2`). Linkeá siempre hacia atrás, incluyendo el `LDS`/`UXS` si existieron.
+Registralas así: Dónde aterriza: `<Proyecto>/05_Programacion/`, según la regla **Dónde aterriza cada salida** de `02_Indice Agencia`. La ruta del proyecto sale del cuaderno; **nunca se escribe adentro de `Vaultrum/`**. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. Actualizá el cuaderno del proyecto. Antes de numerar, revisá los índices. `SOL/EJ` comparten número base y subnumeración con su `RQ` (`RQ-001.2 ↔ SOL-001.2 ↔ EJ-001.2`). Linkeá siempre hacia atrás, incluyendo el `LDS`/`UXS` si existieron.
 
 ## Uso del Core (base de criterio)
 

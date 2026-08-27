@@ -67,11 +67,23 @@ Once **skills ejecutables** (una por área, más la Escuela, la Comunidad y AiCa
 
 ## Cómo abrir Vaultrum
 
+Hay dos formas de tener Vaultrum, y son distintas.
+
+### Leerlo — como vault de Obsidian
+
 1. Clonar o descargar este repositorio.
 2. Abrir Obsidian → **Open folder as vault** → la carpeta raíz de Vaultrum.
 3. Abrir [[00_START_HERE]].
 
-El repositorio se puede leer desde GitHub, pero la experiencia está pensada para Obsidian.
+Sirve para estudiar el criterio, revisar patrones y usar la Biblioteca. No hace falta nada más.
+
+### Instalarlo — para que te atienda
+
+1. Clonar el repositorio.
+2. Correr **`skills.bat`** (Windows) o **`skills.sh`** (macOS/Linux) desde la raíz. Sincroniza las once skills a `.claude/skills/` y `.agents/skills/`, que es donde Claude Code, Codex, Cursor, Zed y Copilot las descubren solos.
+3. Abrir una sesión de IA con esa carpeta como contexto.
+
+`CLAUDE.md` y `AGENTS.md` en la raíz son la puerta: declaran el Modo Vaultrum y mandan al Productor. Con eso, el primer mensaje —sea cual sea— abre el seteo del proyecto.
 
 ---
 

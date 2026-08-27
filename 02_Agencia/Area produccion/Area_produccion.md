@@ -211,6 +211,12 @@ Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde 
 
 ---
 
+## Plantillas del área
+
+### [[Cuaderno_de_proyecto|Cuaderno de proyecto]]
+
+La memoria del proyecto: identidad, entorno, estado, cadena, decisiones y pendientes. El Productor lo escribe al cerrar el seteo y **lo lee antes de hablar** al abrir una sesión — es lo que hace que reabrir no vuelva a preguntar todo.
+
 ## Skill del área
 
 El área corre como la skill `vaultrum-produccion` (fuente versionada en `02_Agencia/Area produccion/Skills/vaultrum-produccion/SKILL.md`).

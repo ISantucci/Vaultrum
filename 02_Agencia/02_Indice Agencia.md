@@ -123,6 +123,58 @@ Auditoría no es un área separada: los criterios de aceptación viven dentro de
 
 ---
 
+## Dónde aterriza cada salida
+
+**Un área explica cómo trabaja y qué forma tiene lo que devuelve. No guarda lo que devuelve.**
+
+El trabajo de un proyecto vive en la carpeta del proyecto. `Vaultrum/` no se escribe a sí mismo mientras trabaja.
+
+```txt
+<Proyecto>/
+├── <Proyecto>.md      el cuaderno: identidad, entorno, estado, decisiones, pendientes
+├── 01_Produccion/     TL · RQ · VE
+├── 02_GameDesign/     GDS
+├── 03_LevelDesign/    LDS
+├── 04_UI-UX/          UXS
+├── 05_Programacion/   SOL · EJ
+└── 06_Calidad/        QA
+```
+
+La carpeta existe si un área efectivamente escribió algo ahí: **nada se pre-crea**.
+
+| Área | Escribe en | |
+|------|-----------|---|
+| Producción | `<Proyecto>/01_Produccion/` | `TL` · `RQ` · `VE` |
+| Game Design | `<Proyecto>/02_GameDesign/` | `GDS` |
+| Level Design | `<Proyecto>/03_LevelDesign/` | `LDS` |
+| UI/UX | `<Proyecto>/04_UI-UX/` | `UXS` |
+| Programación | `<Proyecto>/05_Programacion/` | `SOL` · `EJ` |
+| Control de Calidad | `<Proyecto>/06_Calidad/` | `QA` |
+| **Conocimiento** | **el sistema** — Staging y Core | su producto **no** es del proyecto |
+| **Arquitectura** | **el sistema** — `Salidas/ARQ` | interviene el vault, no el proyecto |
+
+Las dos últimas no se mudan, y eso es el criterio funcionando: **lo que produce sistema se queda en el sistema; lo que produce proyecto se va al proyecto.**
+
+### Cómo sabe un área dónde está el proyecto
+
+Lo lee del **cuaderno**, que Producción escribe al cerrar el seteo. No lo adivina ni lo vuelve a preguntar.
+
+Si **no hay** carpeta de proyecto, un área no inventa una: **devuelve a Producción**, que es quien abre el proyecto.
+
+### La numeración es local al proyecto
+
+El contador arranca en `TL-001` por proyecto. El `TL-001` de un juego y el de otro son distintos porque viven en carpetas distintas.
+
+> **Consecuencia declarada:** se pierde el número global. `TL-004` sin su proyecto es ambiguo. **Toda referencia cruzada entre proyectos nombra el proyecto.**
+
+### Qué queda en `Salidas/` de cada área
+
+El **contrato de salida**: qué produce, qué forma tiene, cómo se numera, dónde aterriza y cuándo está cerrado. El listado de artefactos vive en el cuaderno del proyecto.
+
+Origen: `TL-008_La_Agencia_Es_La_Empresa` · `RQ-008.3_Reapuntado_De_Las_Skills`.
+
+---
+
 ## Los bordes de la cadena
 
 El medio de la cadena funciona; los bordes son donde falla. La evidencia es la comparación `TL-002` vs `TL-003`: la primera tenía `RQ`, `GDS`, `SOL` y `EJ` de buena calidad —tanto que se reutilizaron— y aun así la entrega quedó en PAUSADO y su implementación nunca llegó a estar en disco.

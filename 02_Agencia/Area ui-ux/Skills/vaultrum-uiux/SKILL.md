@@ -42,8 +42,10 @@ Antes de diseñar, jalá **on-demand** el libro `05_Fundamentos_de_experiencia_l
   Flujos/                         presupuesto, análisis, diseño, auditoría, validación
   Herramientas/legibilidad.py     la medición
   Herramientas/excepciones.txt    lo que está exento, línea por línea, con su razón
-  Salidas/                        UXS-XXX.n + su índice
+  Salidas/00_Indice_uxs           el contrato de salida
 ```
+
+Los artefactos del proyecto viven en `<Proyecto>/04_UI-UX/`, no acá. Regla completa: **Dónde aterriza cada salida**, en `02_Indice Agencia`.
 
 ## Las seis leyes (el contrato)
 
@@ -63,6 +65,8 @@ Y dos corolarios: **el presupuesto de pantalla es finito** (techo declarado y fr
 ```txt
 Mitad A — Presupuesto   con el RQ en la mano, antes de que el GDS cierre
 Mitad B — Interfaz      con el GDS cerrado, medida con la herramienta
+
+> **La mitad A cuelga del `RQ`, no del `GDS`.** Corre antes que Game Design y no lo necesita: quien declara que el entregable tiene interfaz es Producción, en el `RQ`. Por eso un entregable **con interfaz y sin gameplay** —una herramienta, un flujo conversacional— tiene rama acá aunque nunca haya un `GDS` del cual colgar. La mitad B sí espera el `GDS`.
 ```
 
 Un `UXS` que arranca directo en la mitad B es válido y se declara: el sistema se cerró sin presupuesto. Es deuda, no error.
@@ -134,8 +138,8 @@ Fase `presupuesto`: alcanza con `uxs-paleta` y `uxs-densidad`. Fase `interfaz`: 
 ## Modo Pasada
 
 ```bash
-python3 "02_Agencia/Area ui-ux/Herramientas/legibilidad.py" "02_Agencia/Area ui-ux/Salidas"
-python3 "02_Agencia/Area ui-ux/Herramientas/legibilidad.py" "02_Agencia/Area ui-ux/Salidas" --verificar
+python3 "02_Agencia/Area ui-ux/Herramientas/legibilidad.py" "<Proyecto>/04_UI-UX"
+python3 "02_Agencia/Area ui-ux/Herramientas/legibilidad.py" "<Proyecto>/04_UI-UX" --verificar
 ```
 
 Si no podés correrla, decilo con esas palabras: *"medición no disponible — estimación"*. No presentes una impresión como si fuera una medición.
@@ -176,7 +180,7 @@ Al cerrar, declará el estado (vocabulario común de la Agencia) y **cuál de la
 
 ## Salida registrable
 
-Un `UXS-XXX.n` por cada `RQ` con interfaz, registrado en `00_Indice_uxs`. La numeración se hereda del hilo (`RQ-004.5 → GDS-004.5 → UXS-004.5`). Declará el `RQ` en la mitad A y el `GDS` en la mitad B, cada uno en su línea rotulada.
+Un `UXS-XXX.n` por cada `RQ` con interfaz, escrito en `<Proyecto>/04_UI-UX/` y registrado en el cuaderno del proyecto. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. La numeración se hereda del hilo (`RQ-004.5 → GDS-004.5 → UXS-004.5`). Declará el `RQ` en la mitad A y el `GDS` en la mitad B, cada uno en su línea rotulada.
 
 Un `UXS` cerrado es insumo del `SOL` del Área de Programación, junto al `GDS` y, si existe, el `LDS`.
 
