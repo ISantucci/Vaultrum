@@ -14,7 +14,7 @@ Existe porque el resto del Core sabe construir bien y no sabia declarar terminad
 
 ## Por que existe esta seccion
 
-Los tres criterios de abajo no se inventaron: salieron de una entrega real.
+Los criterios de abajo no se inventaron: salieron de entregas reales.
 
 El ciclo `TL-002 → TL-003` del Pong 3D produjo tres aprendizajes que no entraban en ninguna seccion existente:
 
@@ -25,6 +25,8 @@ la cadena fallaba en los bordes, no en el medio
 ```
 
 Los tres son criterios de entrega. Ninguno es de optimizacion, de arquitectura ni de diseno. Por eso la seccion.
+
+El cuarto —`Alcance del instrumento`— llego despues y por otra via: no de una entrega de proyecto, sino de dos pasadas sobre las herramientas del propio vault. Confirma la regla de esta seccion en vez de romperla: tambien salio de algo que paso, no de algo que sonaba razonable.
 
 Es tambien la unica parte del Core que nacio del uso del propio sistema y no de bibliografia externa. Eso la hace la mas fragil y la que mas evidencia necesita antes de crecer: una nota entra aca cuando una entrega real la produjo, no cuando suena razonable.
 
@@ -85,6 +87,23 @@ Usar esta nota al **disenar o revisar un flujo de trabajo**, propio o de la Agen
 
 ---
 
+## [[Alcance del instrumento]]
+
+> **Una ley que el instrumento no mide no esta vigente: esta escrita.**
+
+El criterio hermano de `Gates verificables`, por el lado de la herramienta. Aquel dice que un gate sin comprobacion mecanica es una intencion; este dice que un gate mecanico que corre y devuelve cero tampoco alcanza si mide de menos, reconoce las excepciones por su rotulo, o mide un artefacto que no es el que se entrega.
+
+Responde:
+
+- por que un gate en verde puede estar declarando cumplida una regla que nadie prueba;
+- por que una excepcion implementada por su nombre es la puerta de lo que la ley prohibe;
+- por que un veredicto cierto sobre el artefacto equivocado no sirve;
+- que diferencia hay entre declarar una decision y declarar un defecto.
+
+Usar esta nota cuando haya que **escribir o revisar un gate**, no cuando haya que decidir el alcance de una entrega.
+
+---
+
 ## Como se relacionan
 
 Los tres cubren momentos distintos de la misma entrega:
@@ -93,9 +112,12 @@ Los tres cubren momentos distintos de la misma entrega:
 antes de construir   → Baseline de entregable      (que tiene que traer)
 durante              → Verificacion parcial        (que sabemos hasta ahora)
 al disenar el flujo  → Gates verificables          (como se comprueba sin criterio subjetivo)
+al escribir el gate  → Alcance del instrumento     (si la comprobacion prueba lo que dice)
 ```
 
-El primero define la vara. El segundo define como se habla de una medicion incompleta. El tercero define como se comprueba sin depender del juicio de quien mira.
+El primero define la vara. El segundo define como se habla de una medicion incompleta. El tercero define como se comprueba sin depender del juicio de quien mira. El cuarto cierra el circulo: comprueba la comprobacion.
+
+Los dos ultimos son el mismo criterio en dos tiempos. `Gates verificables` se pregunta si la regla **puede** medirse; `Alcance del instrumento`, si la medicion que existe **la mide de verdad**, y sobre que cosa.
 
 ---
 
@@ -107,6 +129,8 @@ La Agencia **aplica** estos criterios; no los define.
 Baseline de entregable    → Produccion (RQ) y Game Design (GDS)
 Verificacion parcial      → Programacion (EJ), Control de Calidad (QA) y Produccion (VE)
 Gates verificables        → toda skill que declare un paso obligatorio
+Alcance del instrumento   → Arquitectura, Conocimiento, UI/UX y Control de Calidad
+                            (las cuatro areas que miden con herramienta propia)
 ```
 
 Si una skill y esta seccion divergen, la seccion es la fuente de criterio y la skill es el procedimiento. Se corrige la skill.
