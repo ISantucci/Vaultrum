@@ -15,6 +15,8 @@ Cada `EST-XXX` es un fundamento destilado, citado y validado, listo para el hand
 - [[EST-005_Mision_Fundamentos_Experiencia_Ludica|EST-005 Misión fundamentos de experiencia lúdica]] — los 9 pilares más el checklist por GDS. **Handoff hecho.**
 - [[EST-006_Mision_Lote_Biblioteca_Agosto26|EST-006 Misión lote de Biblioteca]] — lote de agosto: fundamentos nuevos y el estante de documentación real. Pendiente de cierre.
 - [[EST-007_Mision_Frameworks_Spec_Driven|EST-007 Misión frameworks spec-driven]] — relevamiento externo: cómo resuelven cuatro frameworks comparables la portabilidad multi-superficie y la economía de tokens. Produjo la fuente `30_Frameworks_spec_driven_multiagente`. **Cerrada con deuda declarada.**
+- [[EST-008_Mision_Lote_Level_Design|EST-008 Misión lote de Level Design]] — hueco de estante: el Área de Level Design no tenía ni una fuente. Catalogó `31`–`36` en Fuentes. **Cerrada como misión de catálogo** (sin handoff: no destiló).
+- [[EST-009_Mision_Fuentes_Huerfanas|EST-009 Misión fuentes huérfanas]] — el gap se midió leyendo qué cita cada libro *En estudio*: ninguno citaba una fuente de su propio tema. Catalogó `37`–`56` en Fuentes y `53`–`64` en Documentación real, y abrió una sección de estante. **Cerrada como misión de catálogo.**
 
 ---
 

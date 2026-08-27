@@ -284,6 +284,10 @@ Libro técnico / doc de referencia · Robert Nystrom, 2009 · licencia a confirm
 
 Plantilla / doc oficial · Unity Technologies, ~, 2020 · licencia a confirmar · prioridad baja
 
+### [[56_Valve_Developer_Community_Level_Design|Valve Developer Community — Level design]]
+
+Wiki oficial de desarrollo · Valve Corporation y comunidad, desde 2005 · licencia nivel B · prioridad media
+
 
 ## Registro — Postmortems técnicos y registros de proceso
 
@@ -304,6 +308,34 @@ Colección académica / wiki de patrones · Staffan Björk y colaboradores — C
 ### [[47_The_Door_Problem_Liz_England|The Door Problem — Liz England]]
 
 Ensayo / doc de práctica profesional · Liz England, 2014 · licencia incierta · prioridad alta
+
+### [[54_Iwata_Asks|Iwata Asks]]
+
+Archivo oficial de entrevistas de desarrollo · Nintendo, 2006-2015 · licencia nivel A · prioridad alta
+
+### [[55_Making_of_Prince_of_Persia|The Making of Prince of Persia — Journals 1985-1993]]
+
+Diario de desarrollo publicado · Jordan Mechner, 2011/2020 · licencia nivel A · prioridad alta
+
+### [[57_GDC_Level_Design_Workshop|GDC Level Design Workshop]]
+
+Serie anual de charlas con slides · GDC, desde 2016 · licencia nivel B · prioridad alta
+
+### [[59_The_Art_of_Screenshake|The Art of Screenshake]]
+
+Charla con demo en vivo · Jan Willem Nijman (Vlambeer), 2013 · licencia nivel B · prioridad alta
+
+### [[60_Juice_It_or_Lose_It|Juice it or lose it]]
+
+Charla con demo en vivo · Martin Jonasson & Petri Purho, 2012 · licencia nivel B · prioridad alta
+
+### [[61_Juicing_Your_Cameras_With_Math|Math for Game Programmers: Juicing Your Cameras With Math]]
+
+Charla técnica con slides en PDF · Squirrel Eiserloh, 2016 · licencia nivel B · prioridad alta
+
+### [[62_Playing_to_Win|Playing to Win]]
+
+Libro completo publicado por su autor · David Sirlin, 2000-2006 · licencia nivel A · prioridad media
 
 
 ## Registro — Hallazgos del relevamiento
@@ -329,6 +361,27 @@ Hallazgo — ficha mínima · —, — · licencia a confirmar · prioridad medi
 ### [[52_It_s_Behind_You_el_making_of_de_R_Type_para_ZX_Spect|It's Behind You — el making of de R-Type para ZX Spectrum]]
 
 Hallazgo — ficha mínima · —, — · licencia a confirmar · prioridad baja
+
+
+## Registro — Referencia y especificación reconstruida
+
+Material que **no registra un desarrollo**: cataloga o reconstruye. Un catálogo de pantallas reales, una física deducida por ingeniería inversa, una estructura de nivel reducida a grafo, un género definido por factores. Se consultan por su **método y su forma**, no por su historia.
+
+### [[53_Game_UI_Database|Game UI Database]]
+
+Base de datos de referencia visual · Edd Coates, desde 2020 · licencia nivel B · prioridad alta
+
+### [[58_Sonic_Physics_Guide|Sonic Physics Guide]]
+
+Especificación reconstruida por ingeniería inversa · comunidad de Sonic Retro, desde 2005 · **licencia nivel C — se referencia, no se usa de insumo** · prioridad media
+
+### [[63_Boss_Keys|Boss Keys]]
+
+Análisis de estructura con notación de grafo · Mark Brown (GMTK), 2016-2020 · licencia nivel B · prioridad alta
+
+### [[64_Berlin_Interpretation|The Berlin Interpretation]]
+
+Definición de género por factores · International Roguelike Development Conference, 2008 · licencia nivel B · prioridad media
 
 
 ---
@@ -368,4 +421,8 @@ E-books de Unity
 
 ## Estado
 
-Estante abierto en la misión `EST-006_Mision_Lote_Biblioteca_Agosto26`. 52 documentos catalogados, ninguno destilado. Declarado como cuarto estante en `00_Biblioteca`. El conteo y el estado del estante se calculan con `Herramientas/biblioteca.py`.
+Estante abierto en la misión `EST-006_Mision_Lote_Biblioteca_Agosto26` con 52 documentos. La misión `EST-009_Mision_Fuentes_Huerfanas` sumó doce más (53-64) y abrió la sección **Referencia y especificación reconstruida**, una familia que el estante no tenía: material que cataloga o reconstruye en vez de registrar.
+
+Tres de esos doce entraron juntos y por un motivo declarado: `59`, `60` y `61` son el material que le faltaba a `02_Game_feel`, el libro de Fundamentos que sigue *Reservado*. Con ellos, escribirlo deja de estar bloqueado por falta de material y pasa a ser una decisión del owner.
+
+64 documentos catalogados, ninguno destilado. Declarado como cuarto estante en `00_Biblioteca`. El conteo y el estado del estante se calculan con `Herramientas/biblioteca.py`.
