@@ -67,5 +67,12 @@ PUB-*.md
 COMMIT-*.md
 02_Agencia/Area conocimiento/Staging/
 
+# Skills instaladas — son COPIAS generadas por skills.bat desde su area.
+# La fuente versionada es 02_Agencia/Area */Skills/ y las capas 03/04/05.
+# Versionarlas duplicaria el repo y abriria la puerta a editarlas a mano.
+.claude/skills/
+.agents/skills/
+
 # Instructivos de una sola vez
 _APLICAR_*.txt
+_AUDITORIA_*.txt
