@@ -8,3 +8,10 @@
 #
 # Una excepcion sin razon escrita es una falla con mejor redaccion.
 # Una capa entera fuera del veredicto no es una excepcion, es un agujero.
+
+# --- Pong 3D: los tres hallazgos de la Pasada, decision del owner --------------
+# Las dos specs ya habian bajado a EJ-003 cuando la Pasada las midio. Corregirlas
+# despues abriria una diferencia entre lo escrito y lo construido, que es peor que
+# el defecto. Registrado en 00_Indice_uxs y decidido por el owner.
+06_Proyectos/Pong3D/04_UI-UX/UXS-003.5_Flujo_De_Pantallas.md | visible | ARRIBA y ABAJO mueven el cursor en Options y no estan escritas en pantalla. La spec ya estaba construida cuando se midio.
+06_Proyectos/Pong3D/04_UI-UX/UXS-003.5_Flujo_De_Pantallas.md | contraste | estructura sobre piso da 1.41:1. Idem: ya construido. La correccion entra si se reabre el proyecto.
