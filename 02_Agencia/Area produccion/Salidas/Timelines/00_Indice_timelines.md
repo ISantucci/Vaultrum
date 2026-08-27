@@ -52,5 +52,7 @@ El listado de timelines de Modo Owner vive en `00_Registro_timelines`, que no se
 
 `TL-007` y `TL-008` corren en Modo Owner y **van antes que cualquier proyecto**. Se cruzan en un punto declarado: `RQ-007.4` depende de `RQ-008.2`, porque el cuaderno vive en un árbol que el Arquitecto emplaza.
 
-La línea de Vaultrum World (`TL-004..006`) está detenida a propósito hasta que cierren los dos: modela el recorrido de una cadena cuyo primer eslabón todavía no existe.
+**Los dos cerraron**: `VE-007` el 2026-08-26 y `VE-008` el 2026-08-27, los dos en Cerrado con deuda declarada. El bloqueo de Modo Owner está levantado.
+
+La línea de Vaultrum World de ese proyecto estaba detenida a propósito hasta que cerraran: modelaba el recorrido de una cadena cuyo primer eslabón todavía no existía. Ahora existe. Lo que la mantiene en la cola no es el bloqueo sino la prioridad: antes va la segunda muestra, porque la cadena sigue teniendo una sola.
 
