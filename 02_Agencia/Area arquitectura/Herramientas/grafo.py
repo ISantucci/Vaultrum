@@ -12,7 +12,12 @@ La ruta puede ser exacta o un prefijo de subarbol terminado en '/**'.
 
   python3 grafo.py [ruta_del_vault]              informe completo
   python3 grafo.py [ruta] --verificar            solo el veredicto (exit 1 si falla)
+  python3 grafo.py [ruta] --paquete              mide el vault PUBLICADO (git ls-files)
   python3 grafo.py [ruta] --leyes                que ley cubre cada falla
+
+El modo --paquete existe porque el gate medía la copia de trabajo y no el
+paquete que se entrega: en disco todo resuelve, y en un clone se rompe lo que
+apunta a un archivo gitignoreado. Ver COMMIT-005.
 """
 import os,re,sys,collections
 
@@ -38,6 +43,7 @@ LEY = {'TABLA':'Ley 6 — cero aristas invisibles',
        'sube':'Ley 2 — no hay links de vuelta al padre',
        'retorno':'Ley 2 — no hay links de vuelta al indice padre (para volver esta la carpeta)',
        'puente':'Ley 5 — un puente por capa, y declarado',
+       'no-viaja':'Ley 7 — el paquete no enlaza lo que no viaja',
        'flotando':'Corolario — nada flota',
        'inalcanzable':'Pregunta fundacional — se entra por un indice y se llega caminando',
        'roto':'link roto','ambiguo':'link ambiguo (nombre repetido)'}
@@ -63,6 +69,19 @@ def cargar(root):
                 p = os.path.relpath(os.path.join(dp, f), root).replace('\\', '/')
                 files[p] = open(os.path.join(dp, f), encoding='utf-8', errors='replace').read()
     return files
+
+def cargar_paquete(root):
+    """El paquete es lo que git entrega: `git ls-files`. Lo que no esta ahi no
+    viaja, y un wikilink que lo apunta es un link roto para todo el que clone."""
+    try:
+        import subprocess
+        out = subprocess.run(['git','-C',root,'ls-files','-z'],
+                             capture_output=True, timeout=120)
+        if out.returncode != 0: return None
+        return {p.replace('\\','/') for p in out.stdout.decode('utf-8','replace').split('\0')
+                if p.endswith('.md')}
+    except Exception:
+        return None
 
 def cargar_excepciones(root):
     """ruta | ley | razon — una por linea. Lo que no esta aca, falla."""
@@ -157,9 +176,10 @@ def direccion(a, b, dirs_con_indice):
     return 'lateral'
 
 # ---------------------------------------------------------------- auditoria
-def auditar(root):
+def auditar(root, modo_paquete=False):
     files = cargar(root)
     exc   = cargar_excepciones(root)
+    pkg   = cargar_paquete(root) if modo_paquete else None
     stems, sufijos, dirs_con_indice = {}, {}, {}
     for p in files:
         stems.setdefault(os.path.basename(p)[:-3], []).append(p)
@@ -168,7 +188,7 @@ def auditar(root):
             sufijos.setdefault('/'.join(segs[-k - 1:]), []).append(p)
         if es_indice(p): dirs_con_indice.setdefault(os.path.dirname(p), []).append(p)
 
-    r = dict(files=files, exc=exc,
+    r = dict(files=files, exc=exc, pkg=pkg, modo_paquete=modo_paquete,
              pos=collections.defaultdict(collections.Counter),
              dirn=collections.defaultdict(collections.Counter),
              kb=collections.Counter(), n=collections.Counter(),
@@ -184,6 +204,9 @@ def auditar(root):
             d = resolver(files, stems, sufijos, t)
             if d is None:  r['rotos'].append((p, t, ln)); continue
             if d == 'AMBIGUO': r['ambig'].append((p, t, ln)); continue
+            if pkg is not None and p in pkg and d not in pkg:
+                r['viol'][p]['no-viaja'] += 1
+                r['detalle'][p].append((ln, 'no-viaja', d))
             dr = direccion(p, d, dirs_con_indice)
             # Ley 2: una hoja que enlaza al indice de su propia carpeta vuelve al padre.
             # Se mide por el EFECTO (donde aterriza la arista), no por el rotulo de la
@@ -205,7 +228,8 @@ def auditar(root):
                 r['adj'][p].append(d)
 
     # nada flota: toda nota cuelga de un indice
-    r['flotando'] = [p for p in files if p not in r['colgada']
+    universo = files if pkg is None else {p: t for p, t in files.items() if p in pkg}
+    r['flotando'] = [p for p in universo if p not in r['colgada']
                      and not p.endswith('SKILL.md')
                      and os.path.basename(p) not in EXENTAS and p != PUERTA]
 
@@ -215,7 +239,7 @@ def auditar(root):
         while cola:
             for m in r['adj'].get(cola.pop(), []):
                 if m not in vistas: vistas.add(m); cola.append(m)
-        r['inalcanzables'] = [p for p in sorted(files) if p not in vistas
+        r['inalcanzables'] = [p for p in sorted(universo) if p not in vistas
                               and not p.endswith('SKILL.md')
                               and os.path.basename(p) not in EXENTAS]
     else:
@@ -256,6 +280,13 @@ def fallas(r):
 def informe(r):
     tot = sum(sum(c.values()) for c in r['pos'].values())
     inal = r['inalcanzables']
+    if r.get('modo_paquete'):
+        n = '?' if r.get('pkg') is None else len(r['pkg'])
+        print(f"MODO PAQUETE — se mide lo que git entrega: {n} notas versionadas "
+              f"de {len(r['files'])} en disco.")
+        if r.get('pkg') is None:
+            print("  (git no respondio: se midio la copia de trabajo)")
+        print()
     print(f"notas {len(r['files'])} | links {tot} | rotos {len(r['rotos'])} | "
           f"ambiguos {len(r['ambig'])} | flotando {len(r['flotando'])} | "
           f"inalcanzables {'?' if inal is None else len(inal)}")
@@ -282,7 +313,8 @@ def informe(r):
             print(f"\n  {LEY.get(tipo, tipo)}  ({sum(x[1] for x in agr[tipo])})")
             for p, n in sorted(agr[tipo], key=lambda x: -x[1])[:12]:
                 extra = ""
-                if tipo in ('salto', 'sube', 'retorno', 'TABLA', 'MEDIO', 'YAML', 'titulo-mixto'):
+                if tipo in ('salto', 'sube', 'retorno', 'TABLA', 'MEDIO', 'YAML',
+                            'titulo-mixto', 'no-viaja'):
                     ej = [d for l, t2, d in r['detalle'].get(p, []) if t2 == tipo][:1]
                     if ej: extra = f"   ej: -> {ej[0]}"
                 print(f"    {n:>3}  {p}{extra}")
@@ -319,7 +351,7 @@ def veredicto(r):
 
 if __name__ == '__main__':
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
-    r = auditar(args[0] if args else '.')
+    r = auditar(args[0] if args else '.', modo_paquete='--paquete' in sys.argv)
     if '--leyes' in sys.argv:
         for k, v in LEY.items(): print(f"  {k:<14} {v}")
         sys.exit(0)
