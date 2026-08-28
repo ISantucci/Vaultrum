@@ -29,3 +29,19 @@
 06_Proyectos/Pong3D/05_Programacion/SOL-002_Arquitectura_Pong3D.md | sin-evidencia | 'los seis requerimientos' es un conteo de hilos del TL, no un resultado medido.
 06_Proyectos/Pong3D/01_Produccion/VE-003_Pong3D.md | sin-evidencia | '3 minutos' es la duracion estimada de una checklist, declarada como estimacion.
 06_Proyectos/VaultrumWorld/05_Programacion/SOL-004.1_Registro_De_Operacion.md | sin-evidencia | el umbral de 8 MB es un parametro de diseno declarado en la propia SOL, no una medicion.
+
+# --- Legacy pre-contrato: SOL y EJ del Pong 3D -------------------------------
+# Misma politica que los RQ de TL-001, tres lineas mas arriba, y por el mismo motivo.
+# El contrato de SOL y EJ se escribio el 2026-08-28 (00_Indice_soluciones y
+# 00_Indice_ejecuciones). Estos seis artefactos son ANTERIORES, y ademas son la
+# materia prima de la que salio el contrato: fueron los cinco SOL y cinco EJ que
+# se midieron para derivar la forma. Reescribirlos ahora destruiria la fuente de
+# la medicion y falsearia como trabajaba el area antes de tener contrato.
+# Pong3D esta cerrado (VE-003). Se declaran y no fallan.
+# Decision del owner, 2026-08-28.
+06_Proyectos/Pong3D/05_Programacion/SOL-001_Arquitectura_Pong.md | contrato | SOL anterior al contrato de SOL (2026-08-28). Proyecto cerrado y materia prima de la medicion.
+06_Proyectos/Pong3D/05_Programacion/SOL-002_Arquitectura_Pong3D.md | contrato | idem SOL-001.
+06_Proyectos/Pong3D/05_Programacion/SOL-003_Arquitectura_Pong3D.md | contrato | idem SOL-001. Es ademas el que ya aplicaba la tabla de "lo que deliberadamente no se hizo", con otro titulo.
+06_Proyectos/Pong3D/05_Programacion/EJ-001_Implementacion_Pong.md | contrato | EJ anterior al contrato de EJ (2026-08-28). Del mismo lote legacy que su RQ.
+06_Proyectos/Pong3D/05_Programacion/EJ-002_Implementacion_Pong3D.md | contrato | idem EJ-001.
+06_Proyectos/Pong3D/05_Programacion/EJ-003_Implementacion_Pong3D.md | contrato | idem EJ-001.
