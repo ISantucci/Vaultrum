@@ -5,7 +5,7 @@ autores: Fletcher Dunn & Ian Parberry
 editorial: A K Peters / CRC Press
 anio: 2011 (2ª ed.)
 licencia: nivel B — descatalogado; texto completo publicado libre por los autores en gamemath.com
-estado: Catalogada (pendiente de destilación)
+estado: Estudiado (destilada parcialmente — alimentó 03_Matematica_del_movimiento: vectores y producto punto; matrices y quaternions siguen sin destilar)
 mision: EST-009_Mision_Fuentes_Huerfanas
 temas: vectores, matrices, transformaciones, espacios de coordenadas, rotación, cuaterniones
 apunta_a: Área de Programación · VaultrumWorld (mundo isométrico) · 11_Camara_y_encuadre
@@ -37,5 +37,7 @@ Su aporte pedagógico es el orden: primero qué significa geométricamente, desp
 
 ## Estado y próximos pasos
 
-- **Catalogada**, pendiente de destilación.
-- Fuente de consulta directa, más que de destilación: su valor es que esté a mano y sea gratis cuando aparece el problema.
+- **Estudiado**, destilada **parcialmente** en `EST-014` → `03_Matematica_del_movimiento`.
+- **Lo que se tomó:** vectores con interpretación geométrica, la separación posición/desplazamiento, normalización y sus trampas, el producto punto en sus tres usos.
+- **Lo que NO se tomó, y es deliberado:** matrices, espacios de coordenadas, rotación y cuaterniones — o sea, todo lo 3D. `Pong3D` y `VaultrumWorld` lo van a necesitar; hoy no lo necesitan. Queda como la próxima misión del estante de Construcción, declarada en los límites del libro `03`.
+- Sigue siendo además fuente de consulta directa: texto completo libre y a mano cuando aparece el problema.

@@ -30,10 +30,13 @@ Gap del Core / idea / ambigüedad
 
 ## [[00_Biblioteca|La Biblioteca (el corazón)]]
 
-Todo el activo vive en la `00_Biblioteca`: una librería real y navegable con **dos estantes**:
+Todo el activo vive en la `00_Biblioteca`: una librería real y navegable con **cinco estantes**:
 
-- **Fundamentos** (`00_Indice_fundamentos`) — lo transversal: el loop de experiencia, el game feel, la definición de terminado.
+- **Fundamentos** (`00_Indice_fundamentos`) — lo transversal de la *experiencia*: el loop, el game feel, la definición de terminado.
 - **Juegos** (`00_Indice_juegos`) — análisis por juego/tipo, guardados por **género** (Pong → arcade, etc.).
+- **Construcción** (`00_Indice_construccion`) — el *mecanismo*: cómo se construye técnicamente un juego. La Biblioteca no es una escuela de juegos: es una escuela de desarrollo de videojuegos.
+- **Fuentes** (`00_Indice_fuentes`) — libros, papers y referencias externas: la materia prima.
+- **Documentación real** (`00_Indice_documentos`) — evidencia primaria de la industria: ficha + URL + licencia, nunca alojada.
 
 Cada libro tiene índice y metadata (género, tipo), para que se encuentre por categoría. Los libros no se escriben a mano de una: son el resultado de las **misiones de estudio** de la Escuela, y se **actualizan**, no se duplican.
 

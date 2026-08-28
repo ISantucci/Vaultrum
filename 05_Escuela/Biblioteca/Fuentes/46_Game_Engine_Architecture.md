@@ -4,7 +4,7 @@ titulo: "Game Engine Architecture"
 autores: Jason Gregory
 editorial: CRC Press / A K Peters
 anio: 2018 (3ª ed.)
-estado: Catalogada (pendiente de destilación)
+estado: Estudiado (destilada parcialmente — alimentó 01_Bucle_de_simulacion, 02_Colision_y_consulta_espacial, 03_Matematica_del_movimiento)
 mision: EST-009_Mision_Fuentes_Huerfanas
 temas: arquitectura de motor, subsistemas, gameplay foundation, bucle principal, memoria, herramientas
 apunta_a: Área de Programación · 10_Input_y_respuesta
@@ -35,5 +35,7 @@ Es un libro de motores AAA y de 1000+ páginas. Se destila la **estructura de su
 
 ## Estado y próximos pasos
 
-- **Catalogada**, pendiente de destilación.
-- En la destilación futura: candidata a abrir un libro de Fundamentos de arquitectura técnica, hoy inexistente. Decisión del owner: la Biblioteca todavía no tiene estante ni criterio para fundamentos de programación.
+- **Estudiado**, destilada parcialmente en la misión `EST-012` / `EST-013` / `EST-014`.
+- El estante que esta ficha pedía **existe**: `ARQ-022_La_frontera_del_material_tecnico` lo abrió como quinto estante, `Construcción`. Esta ficha lo había anticipado — *"la Biblioteca todavía no tiene estante ni criterio para fundamentos de programación"*— y era correcta.
+- **Lo que se tomó:** el marco de los tres relojes y el ciclo de vida del frame (`01_Bucle_de_simulacion`), el lugar del subsistema de colisión (`02`), la interpolación dentro del frame (`03`).
+- **Lo que sigue sin destilar:** memoria, sistema de recursos, render, animación. Ninguno tiene consumidor en Vaultrum hoy; `EST-011` los ubica en la lista priorizada.

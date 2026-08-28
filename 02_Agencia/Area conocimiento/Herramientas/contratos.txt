@@ -1,11 +1,12 @@
 # Contratos de seccion por tipo de artefacto — semilla medida, no inventada.
 #
-# Origen: conteo sobre los artefactos REALES del vault (2026-08-25). Una seccion
-# entra al contrato si aparece en el 75% o mas de los artefactos de su tipo.
+# Origen: conteo sobre los artefactos REALES del vault. Una seccion entra al
+# contrato si aparece en el 75% o mas de los artefactos de su tipo.
 # Es la unica fuente honesta de que forma tiene un artefacto hoy.
 #
-# Este archivo es PROVISORIO. Cuando RQ-008.1 escriba los contratos de salida en
-# el indice de cada area, este archivo pasa a leerlos de ahi y deja de decidir.
+# Este archivo es PROVISORIO. Cuando RQ-008.1 termine de escribir los contratos
+# de salida en el indice de cada area, este archivo pasa a leerlos de ahi y deja
+# de decidir. SOL y EJ ya estan escritos alla y esta linea los copia.
 #
 # formato:  TIPO | seccion | seccion | ...
 # una seccion se compara sin acentos, sin mayusculas y sin lo que va entre parentesis.
@@ -14,6 +15,8 @@ TL  | Objetivo | Area afectada | Criticidad | Dependencias | Riesgos | Criterios
 RQ  | Titulo | Timeline | Area afectada | Criticidad | Descripcion | Subtasks | Criterios de aceptacion
 GDS | Reglas | Entradas | Salidas | Parametros configurables | Integraciones | Experiencia esperada
 UXS | Insumo | Encuadre de UX | Validacion de UX | Instrumento
+SOL | Insumo | Diagnostico | Decisiones | Lo que deliberadamente no se hizo | Arquitectura | Contrato de ejecucion | Verificacion | Estado
+EJ  | Insumo | Lo que se implemento | Archivos creados | Desvios declarados | Verificacion | Riesgos abiertos | Estado
 QA  | Insumo | Alcance y perfil | Version | Defectos | Cobertura | Medicion | Veredicto
 VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos | Aprendizaje para el Core | Estado de la entrega
 
@@ -22,13 +25,71 @@ VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos 
 # escrito en `00_Indice_qa`, que es exactamente la fuente que este archivo dice que
 # va a usar cuando exista. Cuando haya QA reales, se mide y se corrige si difiere.
 
+# ---------------------------------------------------------------------------
+# SOL y EJ — resueltos el 2026-08-28. Antes decian "sin forma estable".
+#
+# El diagnostico viejo era correcto y la conclusion era falsa. Medido literal,
+# los 5 SOL no compartian NINGUNA seccion. Medido por FUNCION, comparten cinco:
+# los cinco decian las mismas cosas con titulos distintos. La arquitectura
+# aparecia como "Arquitectura", "Estructura", "Componentes propuestos" y
+# "Decision de arquitectura". No era falta de forma: era falta de vocabulario.
+#
+#   SOL, sobre 5 reales     Decisiones 5/5 · Arquitectura 5/5 · Verificacion 5/5
+#                           Diagnostico 4/5 · Insumo 4/5   |  umbral 4/5
+#   EJ,  sobre 5 reales     Lo que se implemento 5/5 · Archivos creados 5/5
+#                           Verificacion 5/5 · Insumo 4/5 · Desvios 4/5
+#                           Riesgos abiertos 4/5 · Estado 4/5
+#
+# Dos secciones del SOL NO salen de medir, y se declaran:
+#   "Lo que deliberadamente no se hizo"  ley del Core (Baseline de entregable,
+#        mitad 2), obligatoria en toda SOL. Medida 2/5, siempre como ### colgando
+#        de otra seccion. Sube a ## para que el gate la vea.
+#   "Contrato de ejecucion"  disenada, con su requerimiento detras: el owner pidio
+#        poder rutear la ejecucion a un ejecutor barato, y un EJ solo se delega si
+#        el SOL cerro la spec (archivos, interfaces, invariantes, prohibido).
+#
+# "Estado" entra al SOL con 2/5 por el corolario de la documentacion: todo
+# artefacto declara su estado. No es una excepcion al umbral, es otra ley.
+#
+# "Punto de quiebre" quedo FUERA a proposito: sin presupuesto de rendimiento
+# declarado en el RQ se llenaria de "n/a", que es el defecto que QA arrastro en
+# dos entregas. Entra cuando exista la pregunta de plataforma y rendimiento.
+# ---------------------------------------------------------------------------
+
 # SIN FORMA ESTABLE — medido, no omitido.
 #
-# SOL  4 artefactos, ninguna seccion en 2 de 4 o mas salvo "Diagnostico" (2/4 = 50%).
-# EJ   4 artefactos, solo "Archivos creados" llega a 3/4.
-# LDS  0 artefactos. El area nunca corrio.
+# LDS  0 artefactos. El area nunca corrio. No hay nada que medir, y no se inventa.
+#      El gate reporta "sin contrato" para LDS: no lo aprueba ni lo falla.
+
+# ---------------------------------------------------------------------------
+# TABLA DE EQUIVALENCIAS — como se agrupo por funcion.
 #
-# Los dos artefactos que escribe el programador son justo los que no tienen forma
-# compartida, y por eso son los que mas se olvidan. Cerrar esto es el primer
-# trabajo del area, y sale de RQ-008.1, no de una opinion. Hasta entonces el gate
-# reporta "sin contrato" para SOL, EJ y LDS: no los aprueba ni los falla.
+# Se escribe para que la proxima medicion mida lo mismo y no otra cosa. Sin esto,
+# "agrupar por funcion" es una opinion distinta cada vez que alguien la corre.
+#
+# SOL
+#   Insumo        <- insumo · requerimiento · requerimientos · requerimiento y specs · entorno
+#   Diagnostico   <- diagnostico · criterio que ordena todas las decisiones
+#   Decisiones    <- decisiones · decisiones tecnicas y alternativas descartadas ·
+#                    alternativas descartadas · la decision que define todo lo demas ·
+#                    decision de arquitectura
+#   Arquitectura  <- arquitectura · estructura · componentes propuestos · flujo de datos ·
+#                    contrato de trace · regla dura de implementacion
+#   Verificacion  <- verificacion · criterios de aceptacion tecnicos · gate de aprobacion ·
+#                    alcance a aprobar · alcance declarado
+#   Estado        <- estado
+#
+# EJ
+#   Insumo               <- insumo · solucion · solucion ejecutada · requerimiento
+#   Lo que se implemento <- ejecucion · que se implemento · que se implemento por
+#                           requerimiento · lo que se implemento por hilo · como se usa
+#   Archivos creados     <- archivos creados · archivos eliminados · instalacion
+#   Desvios declarados   <- desvios declarados · desvios respecto de la sol
+#   Verificacion         <- verificacion hecha · verificacion ejecutada · verificacion
+#                           parcial declarada · verificacion del instalador · checklist de cierre
+#   Riesgos abiertos     <- riesgos abiertos · pendiente / riesgo · pendiente que bloquea el cierre
+#   Estado               <- estado · estado del paso
+#
+# Los artefactos viejos usan los nombres de la izquierda y el contrato pide los de
+# la derecha: van a fallar el gate. Eso es deuda declarada, no un error del gate.
+# ---------------------------------------------------------------------------

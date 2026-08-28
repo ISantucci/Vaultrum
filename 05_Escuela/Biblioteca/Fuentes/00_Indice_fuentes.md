@@ -126,7 +126,7 @@ Montfort & Bogost · platform studies, restricciones de hardware · Catalogada
 
 ### [[30_Frameworks_spec_driven_multiagente|Frameworks de desarrollo dirigido por especificación]]
 
-spec-kit · BMAD-METHOD · OpenSpec · Agent OS · portabilidad multi-superficie, economía de tokens, reglas de entrevista · **Destilada**
+spec-kit · BMAD-METHOD · OpenSpec · Agent OS · portabilidad multi-superficie, economía de tokens, reglas de entrevista · **Estudiado**
 
 ### [[31_Architectural_Approach_Level_Design|An Architectural Approach to Level Design]]
 
@@ -190,7 +190,7 @@ Jason Schreier · 2017 · periodismo, no método: cómo suele ir de verdad un de
 
 ### [[46_Game_Engine_Architecture|Game Engine Architecture]]
 
-Jason Gregory · 3ª ed. 2018 · subsistemas de motor y ciclo de vida del frame; por qué Unity está organizado así · Catalogada
+Jason Gregory · 3ª ed. 2018 · subsistemas de motor y ciclo de vida del frame; por qué Unity está organizado así · **Estudiado** — destilada parcialmente en los tres libros de Construcción
 
 ### [[47_AI_for_Games|AI for Games]]
 
@@ -198,7 +198,7 @@ Ian Millington · 3ª ed. 2019 · steering, pathfinding, estados, árboles de co
 
 ### [[48_3D_Math_Primer|3D Math Primer for Graphics and Game Development]]
 
-Dunn & Parberry · 2ª ed. 2011 · vectores, matrices y rotación con interpretación geométrica · **texto completo libre** · Catalogada
+Dunn & Parberry · 2ª ed. 2011 · vectores, matrices y rotación con interpretación geométrica · **texto completo libre** · **Estudiado** — destilada parcialmente en `03_Matematica_del_movimiento` (vectores sí, matrices y quaternions no)
 
 ### [[49_Art_of_Computer_Game_Design|The Art of Computer Game Design]]
 
@@ -222,7 +222,7 @@ Sönke Ahrens · 2ª ed. 2022 · nota atómica, el valor en los enlaces; la lite
 
 ### [[54_Real_Time_Collision_Detection|Real-Time Collision Detection]]
 
-Christer Ericson · 2004 · colisión discreta vs continua — la fuente que resuelve el tunneling que `01_Pong` nombra · Catalogada
+Christer Ericson · 2004 · colisión discreta vs continua — la fuente que resuelve el tunneling que `01_Pong` nombra · **Estudiado** — destilada en `02_Colision_y_consulta_espacial`
 
 ### [[55_Game_AI_Pro|Game AI Pro (vols. 1-3 y edición online)]]
 

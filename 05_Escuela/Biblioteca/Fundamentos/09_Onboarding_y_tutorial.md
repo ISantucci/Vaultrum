@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilares 4 y 6 — Claridad/legibilidad y Dificultad/tensión
 cruza: 05_Fundamentos_de_experiencia_ludica, 04_Playbook_de_diseno, 06_Dificultad_y_curva, 02_Game_feel
@@ -79,7 +79,7 @@ Jerarquía de medios de enseñanza, del más barato al más caro para el jugador
 |---|---|---|
 | **0–60 s** | El jugador tiene el control y ejecuta el verbo central. Sabe qué es lo suyo en pantalla y hacia dónde va. | Logos largos, cinemática no salteable, elegir dificultad a ciegas, más de 1 popup |
 | **1–5 min** | Ya usó la mecánica central 5+ veces, tuvo un primer éxito claro, y sabe cuál es su objetivo de sesión. | Presentar 2 mecánicas más sin consolidar la primera; primer muro real |
-| **5–30 min** | Vio 2–4 mecánicas más, tuvo un momento memorable, y entendió el loop completo (acción → consecuencia → recompensa → nueva acción). | Que todavía no haya aparecido el gancho; que el juego siga "explicando" |
+| **5–30 min** | Vio 2–3 mecánicas más —el total de los 30 minutos no pasa de 5—, tuvo un momento memorable, y entendió el loop completo (acción → consecuencia → recompensa → nueva acción). | Que todavía no haya aparecido el gancho; que el juego siga "explicando" |
 
 El recurso escaso no es el tiempo, es la **atención**: en los primeros minutos el jugador está gastando casi toda su capacidad en operar los controles. Todo lo que le pidas leer compite directamente con eso. Por eso el texto llega mal en el minuto 1 y bien en el minuto 20.
 
@@ -108,14 +108,14 @@ Regla operativa: **usar la convención del género es la forma más barata de en
 | Popups en los primeros 10 min | Máximo 3 | A partir de ahí se cierran por reflejo |
 | Palabras por popup | ≤ 15 | Encima de 15 se saltea |
 | Mecánicas nuevas en los primeros 5 min | 1 (máximo 2) | Consolidar > presentar |
-| Mecánicas nuevas en los primeros 30 min | 3–5 en total | Deja espacio para practicar cada una |
+| Mecánicas nuevas en los primeros 30 min | 3–5 **en total, contando las de los primeros 5 min** | Deja espacio para practicar cada una. Es un total, no un adicional: 2 en los primeros 5 min dejan 3 para el resto |
 | Usos de una mecánica antes de examinarla | 3–5 con variación | Menos y no se automatiza |
 | Tiempo hasta el primer éxito claro del jugador | < 90 s | El primer éxito es lo que compra los 10 min siguientes |
 | Tiempo hasta el momento memorable | < 3 min (nunca más de 10) | Es el gancho y lo que el jugador cuenta |
 | Costo del primer error | 0 (ni tiempo ni recurso) | Habilita explorar en vez de temer |
 | Duración total del tramo tutorial | ≤ 10 % del tiempo esperado de juego | Encima se lee como escuela |
-| Testers necesarios que nunca vieron el juego | Mínimo 3, ideal 5 | Con 3 aparecen los bloqueos duros; con 5 los de comprensión |
-| Tiempo de silencio del observador durante el test | 100 % | Cualquier ayuda invalida la corrida |
+| Testers necesarios que nunca vieron el juego | 5 frescos | El n canónico lo fija `13_Playtesting_y_validacion`; con 3 ya aparecen los bloqueos duros, pero los de comprensión necesitan 5 |
+| Tiempo de silencio del observador durante el test | 100 % mientras la corrida sea válida | Cualquier ayuda la termina como dato de onboarding — ver el protocolo: el rescate a los 3 min es un hallazgo, no una excepción a esta regla |
 
 ## Patrones que funcionan
 
@@ -156,7 +156,9 @@ Regla operativa: **usar la convención del género es la forma más barata de en
 
 **Por qué no podés estar en la sala hablando.** Cada aclaración que das es una corrección que el jugador real no va a tener. Un onboarding testeado con el diseñador al lado siempre parece funcionar: estás siendo el tutorial. Protocolo mínimo: presentás el juego en una frase, decís "no te voy a poder ayudar", y te callás. Si el tester se traba más de 3 min sin progreso, anotás el punto exacto y recién ahí intervenís — pero esa corrida ya terminó como dato de onboarding. Grabá pantalla y manos si podés; el silencio incómodo es el dato.
 
-**Telemetría mínima:** tiempo hasta el primer input, tiempo hasta el primer éxito, tasa de abandono por minuto en los primeros 10, popups mostrados vs tiempo en pantalla de cada uno, primer uso de cada mecánica enseñada (y si hubo un segundo uso), y punto exacto del primer abandono.
+**Eventos candidatos de telemetría** (no una lista a implementar entera): tiempo hasta el primer input, tiempo hasta el primer éxito, tasa de abandono por minuto en los primeros 10, popups mostrados vs tiempo en pantalla de cada uno, primer uso de cada mecánica enseñada (y si hubo un segundo uso), y punto exacto del primer abandono.
+
+> El **tope total** de eventos activos lo fija `13_Playtesting_y_validacion` en ≤10, uno por pregunta de diseño. Esta lista propone candidatos para el dominio del onboarding; no los suma al presupuesto por su cuenta. Cuatro libros proponiendo "su" telemetría mínima suman ~23 eventos, que es más del doble del tope.
 
 ## CHECKLIST
 
@@ -174,7 +176,7 @@ Regla operativa: **usar la convención del género es la forma más barata de en
 [ ] Todo lo enseñado por popup es reconsultable en pausa/glosario
 [ ] No se pide elegir dificultad antes de haber jugado
 [ ] El tramo tutorial es <= 10 % del tiempo esperado de juego
-[ ] Se testeó con >= 3 personas que nunca vieron el juego, en silencio total
+[ ] Se testeó con 5 testers frescos, en silencio total (el n lo fija 13_Playtesting)
 [ ] Cada mecánica enseñada vuelve a aparecer dentro de los 10 min siguientes
 ```
 

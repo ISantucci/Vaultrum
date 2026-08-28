@@ -284,6 +284,10 @@ Libro técnico / doc de referencia · Robert Nystrom, 2009 · licencia a confirm
 
 Plantilla / doc oficial · Unity Technologies, ~, 2020 · licencia a confirmar · prioridad baja
 
+### [[65_Fix_Your_Timestep|Fix Your Timestep! — Glenn Fiedler]]
+
+Artículo técnico de referencia · Glenn Fiedler, 2004 rev. 2018 · licencia nivel B · prioridad alta · **Estudiado** — destilado en `01_Bucle_de_simulacion`
+
 ### [[56_Valve_Developer_Community_Level_Design|Valve Developer Community — Level design]]
 
 Wiki oficial de desarrollo · Valve Corporation y comunidad, desde 2005 · licencia nivel B · prioridad media

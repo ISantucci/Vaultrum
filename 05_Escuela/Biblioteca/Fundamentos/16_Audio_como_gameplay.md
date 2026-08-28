@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilares 3 — Feedback y game feel · 4 — Claridad y legibilidad
 cruza: 05_Fundamentos_de_experiencia_ludica, 02_Game_feel, 14_UI_HUD_y_menus
@@ -41,16 +41,24 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 **Capa 2 — Jerarquía y mezcla.** Cuando dos sonidos compiten, uno tiene que ganar, y esa decisión se toma en el mixer, no en el momento.
 
 ```txt
-  BUS               EJEMPLO                        NIVEL REL.   DUCKEA A
-  ────────────────────────────────────────────────────────────────────────
-  0 UI crítica      error, confirmación de menú     -6 dB       1,2,3,4
-  1 Advertencia     carga de ataque, timer, alarma  -6 dB       2,3,4
-  2 Acción jugador  golpe, salto, recarga, daño     -8 dB       3,4
-  3 Mundo/enemigos  pasos, impactos lejanos         -14 dB      4
-  4 Música/ambiente colchón, loop, viento           -18 dB      —
+  BUS                EJEMPLO                          NIVEL REL.  DUCKEA A
+  ─────────────────────────────────────────────────────────────────────────
+  0 UI crítica       error, fallo, alerta bloqueante    -6 dB     1,2,3,4,5
+  1 Advertencia      carga de ataque, timer, alarma     -6 dB     2,3,4,5
+  2 Acción jugador   golpe, salto, recarga, daño        -8 dB     3,4,5
+  3 Mundo/enemigos   pasos, impactos lejanos           -14 dB     5
+  4 UI ordinaria     navegar menú, hover, confirmar    -16 dB     —
+  5 Música/ambiente  colchón, loop, viento             -18 dB     —
 
   Regla: un sonido nunca puede ser tapado por un bus de número mayor.
   Ducking: -4 a -6 dB, ataque 50 ms, release 300-500 ms.
+
+  La UI se parte en dos a propósito. La UI CRÍTICA manda porque su trabajo es
+  interrumpir: un error tiene que ganarle a todo. La UI ORDINARIA vive en el
+  bus 4, por DEBAJO de la acción del jugador. Juntarlas en un bus es como se
+  fabrica el antipatrón "UI más fuerte que el gameplay": nadie decide que
+  navegar un menú suene más que matar un enemigo — sale solo de haber puesto
+  las dos cosas en el mismo bus.
 ```
 
 **Capa 3 — El telegrafiado.** Un cue que suena junto con el impacto no es telegrafiado, es notificación de daño. El tiempo de reacción simple humano ronda los 250 ms; para que el jugador *decida* y *ejecute* hace falta más. Por eso el cue va 400–800 ms antes del golpe, y el ataque no puede tener un tiempo de carga menor que su propio cue.
@@ -65,7 +73,14 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
   reaccionar: la muerte se lee como injusta aunque el balance esté bien.
 ```
 
-**Capa 4 — Variación y fatiga.** Un sample sin variación deja de escucharse como información y empieza a escucharse como ruido. El mecanismo es adaptación perceptual: el cerebro filtra lo perfectamente repetido. Solución barata: round-robin de 4–8 samples + pitch aleatorio ±5–8% + volumen ±2 dB. Regla de detección: **si un sonido puede sonar más de 3 veces en 10 segundos, necesita variación.**
+**Capa 4 — Variación y fatiga.** Un sample sin variación deja de escucharse como información y empieza a escucharse como ruido. El mecanismo es adaptación perceptual: el cerebro filtra lo perfectamente repetido. Solución barata: round-robin de 4–8 samples + pitch aleatorio ±5–8% + volumen ±2 dB. Regla de detección, en dos umbrales porque son dos fenómenos distintos y dispara el que llegue primero:
+
+```txt
+RAFAGA      > 3 veces en 10 s    adaptacion inmediata: el oido lo filtra en el acto
+SOSTENIDO   > 6 veces por minuto fatiga acumulada: molesta sin que se note por que
+```
+
+El de ráfaga es el que se siente como *"esto suena repetido"*; el sostenido es el que hace apagar el audio a los veinte minutos sin poder explicar el motivo.
 
 **Capa 5 — Audio adaptativo.** Dos modelos, y el barato alcanza.
 
@@ -75,7 +90,7 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 | Por estado (vertical) | Pistas distintas con transición en compás | Medio | Cambios de zona o fase de jefe |
 | Stinger | Frase corta encima de lo que suene | Muy bajo | Victoria, descubrimiento, muerte |
 
-**Capa 6 — El silencio.** El silencio es el único recurso de audio que cuesta cero producir y funciona por contraste: un corte de 3–8 segundos antes de un pico convierte el pico en evento. Sin silencios, la música al 100% todo el tiempo es una planicie, y una planicie no tiene picos.
+**Capa 6 — El silencio.** El silencio es el único recurso de audio que cuesta cero producir y funciona por contraste: una **bajada** de 3–8 segundos antes de un pico convierte el pico en evento (no confundir con el **corte total** de 1–2 s pegado al impacto: son dos recursos distintos y se encadenan). Sin silencios, la música al 100% todo el tiempo es una planicie, y una planicie no tiene picos.
 
 **Capa 7 — Lo mínimo, en orden.** Para un dev solo, este es el orden de producción. Cada línea vale más que todas las de abajo juntas.
 
@@ -99,7 +114,8 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 | Latencia input → sonido | ≤50 ms (objetivo ≤30 ms) | Arriba de 100 ms se percibe desacoplado del control |
 | Anticipación de un cue de advertencia | 400–800 ms antes del impacto | Reacción humana ~250 ms + margen de decisión |
 | Variaciones por sonido de alta frecuencia | 4–8 samples + pitch ±5–8% + vol ±2 dB | Corta la fatiga por repetición |
-| Umbral que exige variación | Sonido que suena >3 veces en 10 s | Punto donde el oído empieza a filtrar |
+| Umbral que exige variación — ráfaga | Sonido que suena >3 veces en 10 s | Punto donde el oído empieza a filtrar |
+| Umbral que exige variación — sostenido | Sonido que suena >6 veces por minuto | Fatiga acumulada; dispara el que llegue primero |
 | Voces simultáneas | 24–32 totales; 2–4 por tipo de evento | Evita el barro sonoro en combate |
 | Loudness integrado de la mezcla | -18 a -16 LUFS; picos ≤ -1 dBTP | Deja headroom y evita clipping en TV |
 | Ducking de música bajo advertencia | -4 a -6 dB, ataque 50 ms, release 300–500 ms | Abre lugar sin que se note el bombeo |
@@ -107,7 +123,8 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 | Sonidos mínimos para prototipo jugable | 12–20 | Con menos, el prototipo miente sobre el feel |
 | Capas de música adaptativa | 3–4 | Más capas = costo de composición sin ganancia perceptible |
 | Crossfade entre capas / estados | 0.5–2 s, alineado a compás | Transición que no se escucha como corte |
-| Silencio antes de un pico | ≥1 corte de 3–8 s | El contraste crea el pico |
+| Silencio antes de un pico — bajada | ≥1 bajada de 3–8 s | El contraste crea el pico |
+| Silencio antes del impacto — corte | 1–2 s de corte total | Pegado al golpe; se encadena con la bajada |
 | Loop ambiental mínimo | ≥60 s, o 20 s con capas asincrónicas | Debajo de 30 s el loop se detecta |
 | Duración de un sonido de UI | 60–150 ms | Más largo se solapa al navegar rápido |
 | Sliders de volumen | 3 (master, música, SFX) + rango dinámico reducido | Piso de un juego terminado |
@@ -122,7 +139,7 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 - **Mezcla por prioridad.** Buses con ducking automático según la tabla de jerarquía, definidos una vez en el mixer. *Cuándo:* apenas tengas más de 20 sonidos. *Costo:* medio día de setup y deja de existir el problema "no escuché la alarma".
 - **Capa de tensión por proximidad.** Un stem que sube cuando hay enemigos cerca. *Cuándo:* stealth, survival, exploración con peligro. *Costo:* un sistema de estado de amenaza que después reutilizás para música y para IA.
 - **Sonido de estado con corte.** Loops de estado (veneno, poca vida) que se atenúan tras 20–30 s para no fatigar. *Cuándo:* estados persistentes. *Costo:* hay que reforzarlos visualmente porque el audio se retira.
-- **Silencio antes del golpe.** Corte total 1–2 s antes de un evento mayor. *Cuándo:* jefes, revelaciones, fin de nivel. *Costo:* coordinación con animación y cámara.
+- **Silencio antes del golpe.** No es lo mismo que el silencio de la Capa 6: aquel es una **bajada de música de 3–8 s** que convierte el pico en evento; éste es un **corte total de 1–2 s** pegado al impacto. Se pueden encadenar —bajada larga, corte corto, golpe— y ése es el efecto completo. Corte total 1–2 s antes de un evento mayor. *Cuándo:* jefes, revelaciones, fin de nivel. *Costo:* coordinación con animación y cámara.
 - **Indicador direccional de sonido.** Flecha o arco en el borde de pantalla para sonidos importantes fuera de cámara. *Cuándo:* si el audio comunica posición. *Costo:* UI extra, y resuelve accesibilidad de una.
 
 ## Antipatrones
@@ -147,7 +164,7 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 - **Test de los 20 minutos.** Sesión larga sin interrupciones. El primer sonido que te empiece a molestar es el que necesita variación.
 - **Test del parlante malo.** Escuchá la mezcla en el parlante de la notebook y en auriculares baratos. Si el cue de advertencia desaparece en el parlante chico, está en un rango de frecuencia equivocado.
 - **Test mono.** Colapsá a mono. Los cues que dependían del paneo para distinguirse tienen que seguir siendo distinguibles por timbre.
-- **Conteo de repeticiones.** Loggeá cuántas veces se dispara cada AudioClip por minuto. Todo lo que pase de 6/min sin variación va a la lista de arreglos.
+- **Conteo de repeticiones.** Loggeá cuántas veces se dispara cada AudioClip, por minuto y en ventanas de 10 s. Va a la lista de arreglos lo que cruce **cualquiera** de los dos umbrales: más de 6/min sostenido, o más de 3 en 10 s en ráfaga.
 
 ## CHECKLIST
 
@@ -157,7 +174,8 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 [ ] Dar daño y recibir daño suenan distinto y son inconfundibles
 [ ] Todo ataque enemigo tiene cue >=400 ms antes del impacto
 [ ] Ningun cue de advertencia esta a menos de 250 ms del golpe
-[ ] Todo sonido que puede sonar >3 veces en 10 s tiene 4+ variaciones + pitch
+[ ] Todo sonido que cruce CUALQUIER umbral tiene 4+ variaciones + pitch:
+    rafaga >3 veces en 10 s  ·  sostenido >6 veces por minuto
 [ ] Existe un mixer con buses jerarquizados y ducking configurado
 [ ] La musica ducka bajo advertencias, no al reves
 [ ] Limite de voces por evento configurado (2-4)
@@ -168,14 +186,15 @@ Se rompe también por el lado opuesto: audio que existe pero no está jerarquiza
 [ ] Reverb por zona, no un reverb unico para todo el juego
 [ ] Test del mute hecho: la lista de informacion perdida esta cerrada
 [ ] Todo lo que el audio comunica tiene equivalente visual
-[ ] 3 sliders de volumen + opcion de rango dinamico reducido
+[ ] 3 sliders de volumen + opcion de rango dinamico reducido (los sliders son
+    canonicos en 14_UI_HUD_y_menus; aca solo se verifica que existan)
 [ ] Mezcla verificada en parlante de notebook, auriculares y mono
 [ ] Loudness integrado entre -18 y -16 LUFS, picos <= -1 dBTP
 ```
 
 ## Aplicación · Límites · Fuentes
 
-**Aplicación (Unity, dev solo).** Un `AudioMixer` con los cinco buses de la tabla, y `Snapshots` para los estados globales (normal, pausa, combate, poca vida) resueltos con transiciones de 0.3–0.5 s. Encapsulá todo disparo en un `AudioService.Play(SoundId, position)` que resuelva pool, round-robin, pitch y límite de voces: si vas llamando `AudioSource.PlayOneShot` desde 40 scripts, no vas a poder cambiar la mezcla después. Los `SoundId` como ScriptableObject con su lista de variaciones te dan el round-robin gratis y te dejan intercambiar assets sin tocar código. Para música por capas alcanza con N `AudioSource` sincronizados por `PlayScheduled` y cross-fade de volumen: no hace falta middleware para 3 capas. Comprimí en Vorbis todo lo largo, dejá en PCM/ADPCM solo los sonidos cortos de alta frecuencia.
+**Aplicación (Unity, dev solo).** Un `AudioMixer` con los seis buses de la tabla —UI crítica y UI ordinaria separadas—, y `Snapshots` para los estados globales (normal, pausa, combate, poca vida) resueltos con transiciones de 0.3–0.5 s. Encapsulá todo disparo en un `AudioService.Play(SoundId, position)` que resuelva pool, round-robin, pitch y límite de voces: si vas llamando `AudioSource.PlayOneShot` desde 40 scripts, no vas a poder cambiar la mezcla después. Los `SoundId` como ScriptableObject con su lista de variaciones te dan el round-robin gratis y te dejan intercambiar assets sin tocar código. Para música por capas alcanza con N `AudioSource` sincronizados por `PlayScheduled` y cross-fade de volumen: no hace falta middleware para 3 capas. Comprimí en Vorbis todo lo largo, dejá en PCM/ADPCM solo los sonidos cortos de alta frecuencia.
 
 **Límites.** Este libro trata el audio como sistema de información, no como obra. No cubre composición, síntesis, grabación de foley ni mezcla profesional. Tampoco cubre audio espacial avanzado (HRTF, oclusión, propagación), que en la mayoría de los proyectos de un dev solo es sobre-ingeniería frente a un buen rolloff y un buen paneo. Los valores de loudness son baseline sugerido, no requisito de plataforma: verificá los de tu destino antes de certificar.
 

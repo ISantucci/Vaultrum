@@ -4,7 +4,7 @@ titulo: "Real-Time Collision Detection"
 autores: Christer Ericson
 editorial: Morgan Kaufmann / Elsevier
 anio: 2004
-estado: Catalogada (pendiente de destilación)
+estado: Estudiado (destilada — alimentó 02_Colision_y_consulta_espacial)
 mision: EST-009_Mision_Fuentes_Huerfanas
 temas: detección de colisiones, tests geométricos, colisión continua vs discreta, tunneling, estructuras de aceleración
 apunta_a: 01_Pong (table-stake 2) · Área de Programación · 10_Input_y_respuesta
@@ -39,5 +39,7 @@ Es un libro técnico denso y anterior a los motores actuales. Para Vaultrum se d
 
 ## Estado y próximos pasos
 
-- **Catalogada**, pendiente de destilación.
-- Destilación prioritaria: es la única fuente del lote que responde a un fallo **ya nombrado por un libro que ya se usó en producción**.
+- **Estudiado**, destilada en `EST-013` → `02_Colision_y_consulta_espacial`.
+- El circuito se cerró: `01_Pong` nombraba el tunneling como su fallo número uno, `EST-009` catalogó la fuente que lo resuelve, y `EST-013` la destiló. Entre el fallo nombrado y el mecanismo escrito pasaron tres misiones.
+- **Lo que se tomó:** la distinción discreta/continua, la condición exacta del tunneling, y la asimetría de la fase ancha (falsos positivos sí, falsos negativos jamás).
+- **Lo que sigue sin destilar:** los tests geométricos primitiva por primitiva y las estructuras de aceleración. El motor los resuelve; el criterio de costo ya es del Core.

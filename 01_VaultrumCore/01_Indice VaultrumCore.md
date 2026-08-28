@@ -64,9 +64,17 @@ Contiene material relacionado con:
 
 ## Qué vive en el Core y qué vive en la Biblioteca
 
-Los **fundamentos de experiencia** y los **análisis de juegos por género** no viven en el Core: viven en la Biblioteca de la Escuela (`05_Escuela/Biblioteca/`) y se consultan **on-demand**.
+Los **fundamentos de experiencia**, los **análisis de juegos por género** y el **mecanismo técnico** —cómo funciona un paso fijo, una colisión, un shader— no viven en el Core: viven en la Biblioteca de la Escuela (`05_Escuela/Biblioteca/`) y se consultan **on-demand**.
 
-Lo que sí vive en el Core es el **índice** hacia esos libros: `Experiencia de juego`. Es un puntero liviano, no una copia.
+La frontera, medida en `ARQ-022` y en una línea:
+
+```txt
+el Core tiene el PRECIO de todo y el MECANISMO de nada
+```
+
+`Física costosa` dice cuánto sale la física por frame; ninguna nota del Core dice qué es un integrador. `Game loop` lo declara en su propio cuerpo: *"no existe para documentar el orden interno del motor"*. Las dos caras se necesitan y no se pisan — la de la Biblioteca es lo que la del Core da por sabido.
+
+Lo que sí vive en el Core es el **índice** hacia esos libros: `Experiencia de juego`. Es un puntero liviano, no una copia, y cubre las dos mitades: experiencia (para Producción, Game Design, Level Design y UI/UX, antes de cerrar el `GDS`) y construcción (para Programación, después, al escribir el `SOL`).
 
 ```txt
 el Core indexa   → liviano, siempre disponible

@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilares 6 y 9 — Dificultad/tensión y Agencia/decisiones significativas
 cruza: 05_Fundamentos_de_experiencia_ludica, 04_Playbook_de_diseno, 06_Dificultad_y_curva, 08_Progresion_y_recompensa
@@ -121,7 +121,8 @@ El indicador de salud: **si el jugador puede nombrar por qué eligió cada cosa 
 | Parámetro / criterio | Baseline sugerido | Por qué |
 |---|---|---|
 | Monedas distintas en un juego pequeño | 1–2 (máx. 3) | Cada una multiplica superficie de balance y exploits |
-| Ratio de sumidero vs fuente en estado estable | 0,85–1,0 del ingreso por hora | Debajo de 0,85 el stock se acumula muerto |
+| Ratio sumidero/fuente **en estado estable** | 0,95–1,05 (objetivo 1,0) | *Estable* significa que el stock no crece: cualquier ratio bajo 1 acumula para siempre |
+| Ratio sumidero/fuente **en fase de crecimiento** (early) | 0,7–0,9 | Ahí el jugador SÍ tiene que poder acumular para su primera compra grande |
 | Crecimiento del costo de mejora N+1 | ×1,15 – ×1,35 sobre la anterior | Contiene la inflación sin frenar el progreso |
 | Rendimiento de stats por punto invertido | Decreciente: 100 %, 80 %, 65 %, 55 %… | Evita que una sola stat domine |
 | Spread de poder entre la mejor y la peor opción viable | ≤ 15 % en potencia efectiva | Encima de 15 % la peor deja de elegirse |
@@ -130,7 +131,7 @@ El indicador de salud: **si el jugador puede nombrar por qué eligió cada cosa 
 | Costo de la compra más cara del early game | 20–40 min de ingreso ordinario | Debajo de 20 min no genera deseo; encima de 40 se lee como grind |
 | Tope de stock (inventario/moneda) | 1,5–3× el gasto más caro disponible | Fuerza el gasto, evita el atesoramiento infinito |
 | Pérdida en conversión (crafteo/reciclado) | 25–50 % del valor | Es el sumidero más elegante: el jugador lo elige |
-| Variación de RNG en recompensa por acción | ±30 % alrededor de la media | Da textura sin romper la planificación |
+| Variación de RNG en la recompensa **ordinaria por acción** | ±30 % alrededor de la media (piso 70 %) | Da textura sin romper la planificación. El piso del **botín aleatorio** es más bajo y lo fija `08_Progresion_y_recompensa` |
 | Cantidad de valores hardcodeados en código | 0 | Todo parámetro económico vive en una tabla editable |
 
 ## Patrones que funcionan
@@ -169,7 +170,9 @@ El indicador de salud: **si el jugador puede nombrar por qué eligió cada cosa 
 
 **Qué NO preguntar:** "¿Está balanceado?" (no es su trabajo y no tiene la data). "¿Subirías el precio de X?" (le pedís que balancee). "¿Te gustó la economía?" (nadie percibe la economía como objeto).
 
-**Telemetría mínima:** stock de cada moneda muestreado cada 5 min, ingreso y gasto por hora discriminado por fuente/sumidero, tasa de elección de cada opción (la distribución plana es la meta; una opción bajo el 5 % de uso está muerta), tiempo hasta la primera compra, y cantidad de recurso al terminar el juego.
+**Eventos candidatos de telemetría:** stock de cada moneda muestreado cada 5 min, ingreso y gasto por hora discriminado por fuente/sumidero, tasa de elección de cada opción (la distribución plana es la meta; una opción bajo el 5 % de uso está muerta), tiempo hasta la primera compra, y cantidad de recurso al terminar el juego.
+
+> **Eventos candidatos, no lista a implementar.** El tope total de telemetría activa lo fija `13_Playtesting_y_validacion` en **≤10 eventos, uno por pregunta de diseño**. Este libro propone candidatos de su dominio y no los suma al presupuesto por su cuenta: la unión de las cuatro listas de este estante son ~23 eventos, más del doble del tope.
 
 ## CHECKLIST
 

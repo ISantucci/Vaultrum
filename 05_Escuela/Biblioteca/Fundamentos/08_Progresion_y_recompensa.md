@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 7 — Recompensa y motivación
 cruza: 05_Fundamentos_de_experiencia_ludica, 04_Playbook_de_diseno, 07_Economia_y_balance, 06_Dificultad_y_curva
@@ -108,10 +108,19 @@ El mecanismo que las hace convivir: **la recompensa extrínseca debe ser un info
 | Ratio vertical / horizontal después de la hora 5 | 30 / 70 | El experto ya quiere expresarse |
 | Meta-progresión: ventaja total acumulable | ≤ 30 % de potencia sobre el run base | Encima de 30 % el juego se gana farmeando |
 | Meta-progresión: % que abre opciones vs sube stats | ≥ 60 % opciones | Evita el peaje |
-| Piso garantizado en recompensa aleatoria | Nunca 0; mínimo 40 % de la media | Elimina la sesión perdida por mala suerte |
+| Piso garantizado en el **botín aleatorio** | Nunca 0; mínimo 40 % de la media | Elimina la sesión perdida por mala suerte. La recompensa **ordinaria por acción** tiene piso más alto (±30 %) y la fija `07_Economia_y_balance` |
 | Techo de mala racha (pity) | Garantía a los 8–12 intentos fallidos | Corta la frustración sin matar la sorpresa |
 | Densidad de desbloqueos anunciados visibles a la vez | 2–4 objetivos activos | Uno es frágil; más de 4 es ruido |
-| Duración del "poder nuevo se siente nuevo" | 10–20 min antes de que el contenido lo iguale | Menos y la progresión se lee como falsa |
+| Duración del "poder nuevo se siente nuevo" | 10–20 min hasta que aparezca contenido que lo **exija** | Menos y la progresión se lee como falsa. No confundir con *Escalado paralelo* |
+
+> **La misma ventana de ~15 minutos aparece dos veces en este libro con veredictos opuestos, y no es una contradicción: son dos cosas distintas que pasan en el mismo momento.**
+>
+> ```txt
+> a los ~15 min aparece un desafio que EXIGE el poder nuevo   -> la progresion se confirma
+> a los ~15 min aparece el mismo desafio con numeros mas altos -> la progresion era decorativa
+> ```
+>
+> El baseline mide lo primero: cuánto dura la sensación de poder antes de que el diseño le dé algo que hacer con ella. El antipatrón *Escalado paralelo* nombra lo segundo. La diferencia no está en el tiempo, está en **qué aparece al final de la ventana**: contenido que pide la habilidad nueva, o los mismos enemigos con más HP.
 
 ## Patrones que funcionan
 
@@ -149,7 +158,9 @@ El mecanismo que las hace convivir: **la recompensa extrínseca debe ser un info
 
 **Qué NO preguntar:** "¿Te gustaron las recompensas?" (respuesta cortés). "¿Querés más loot?" (siempre sí, y no significa nada). "¿Está bien el ritmo de progresión?" (no tiene con qué comparar).
 
-**Telemetría mínima:** tiempo hasta cada desbloqueo, % de jugadores que alcanza cada hito (la caída entre hitos consecutivos marca el punto de fuga), distribución de uso de las opciones desbloqueadas (una opción bajo el 5 % está muerta), sesiones por jugador y en qué hito ocurrió la última, y ratio de recompensas recogidas vs ignoradas.
+**Eventos candidatos de telemetría:** tiempo hasta cada desbloqueo, % de jugadores que alcanza cada hito (la caída entre hitos consecutivos marca el punto de fuga), distribución de uso de las opciones desbloqueadas (una opción bajo el 5 % está muerta), sesiones por jugador y en qué hito ocurrió la última, y ratio de recompensas recogidas vs ignoradas.
+
+> **Eventos candidatos, no lista a implementar.** El tope total de telemetría activa lo fija `13_Playtesting_y_validacion` en **≤10 eventos, uno por pregunta de diseño**. Este libro propone candidatos de su dominio y no los suma al presupuesto por su cuenta: la unión de las cuatro listas de este estante son ~23 eventos, más del doble del tope.
 
 ## CHECKLIST
 

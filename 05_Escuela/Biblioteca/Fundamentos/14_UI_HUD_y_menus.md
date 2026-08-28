@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 4 — Claridad y legibilidad
 cruza: 05_Fundamentos_de_experiencia_ludica, 02_Game_feel, 03_Definicion_de_terminado, 04_Playbook_de_diseno

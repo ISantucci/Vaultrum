@@ -4,7 +4,7 @@ titulo: "Frameworks de desarrollo dirigido por especificación, multi-superficie
 autores: github/spec-kit · bmad-code-org/BMAD-METHOD · Fission-AI/OpenSpec · buildermethods/agent-os
 editorial: repositorios open-source (GPL/MIT según proyecto)
 anio: 2026
-estado: Destilada (alimentó RQ-007.2, RQ-007.3, RQ-007.7)
+estado: Estudiado (destilada — alimentó RQ-007.2, RQ-007.3, RQ-007.7)
 mision: EST-007_Mision_Frameworks_Spec_Driven
 temas: agent skills, progressive disclosure, portabilidad multi-agente, economía de tokens, relevamiento asistido
 ---

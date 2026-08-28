@@ -6,13 +6,20 @@
 #  .git/hooks/pre-commit; .git/hooks no viaja en un clone, asi que sin el
 #  instalador el gate no existe -- que es como el vault estuvo hasta hoy.
 #
-#  Tres mediciones, tres areas:
+#  Cuatro mediciones, dos areas:
 #    1. grafo.py            (Arquitectura)  la forma del vault que el owner camina
 #    2. grafo.py --paquete  (Arquitectura)  la forma del vault que se CLONA
-#    3. documentacion.py    (Conocimiento)  la forma del texto
+#    3. gemelos.py          (Arquitectura)  las copias deliberadas siguen iguales
+#    4. documentacion.py    (Conocimiento)  la forma del texto
 #
 #  La 2 existe porque la 1 medía la copia de trabajo: en disco todo resolvia y
 #  en un clone habia 44 links rotos que nadie habia medido nunca (COMMIT-005).
+#
+#  La 3 existe porque el vault tiene copias deliberadas -- CLAUDE.md y AGENTS.md
+#  son la misma puerta para dos harnesses (RQ-007.2), y cada skill vive versionada
+#  en su area y copiada a .claude/skills y .agents/skills -- y NADA las comparaba.
+#  Una copia que nadie compara deriva, y el sintoma es que dos harnesses reciben
+#  instrucciones distintas del mismo vault sin que nada proteste.
 #
 #  Para saltearlo a proposito:  git commit --no-verify
 #  Un desvio deliberado se declara en el excepciones.txt del area que mide.
@@ -20,6 +27,7 @@
 
 RAIZ=$(git rev-parse --show-toplevel)
 GRAFO="$RAIZ/02_Agencia/Area arquitectura/Herramientas/grafo.py"
+GEMELOS="$RAIZ/02_Agencia/Area arquitectura/Herramientas/gemelos.py"
 DOC="$RAIZ/02_Agencia/Area conocimiento/Herramientas/documentacion.py"
 
 if ! git diff --cached --name-only --diff-filter=ACMR | grep -q '\.md$'; then
@@ -42,6 +50,7 @@ corre() {                       # corre <etiqueta> <script> [flags...]
 
 corre "grafo.py"           "$GRAFO"
 corre "grafo.py --paquete" "$GRAFO" --paquete
+corre "gemelos.py"         "$GEMELOS"
 corre "documentacion.py"   "$DOC"
 
 if [ $FALLO -ne 0 ]; then
@@ -52,7 +61,12 @@ if [ $FALLO -ne 0 ]; then
 
     python3 "02_Agencia/Area arquitectura/Herramientas/grafo.py" .
     python3 "02_Agencia/Area arquitectura/Herramientas/grafo.py" . --paquete
+    python3 "02_Agencia/Area arquitectura/Herramientas/gemelos.py" .
     python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" .
+
+  Si fallo gemelos.py por una COPIA, se arregla sola:
+    python3 "02_Agencia/Area arquitectura/Herramientas/gemelos.py" . --sincronizar
+  Si fallo por un ESPEJO (CLAUDE.md / AGENTS.md), decidi cual vale: no hay original.
 
   Si el desvio es deliberado, declaralo en el excepciones.txt del area que
   mide, o commitea con --no-verify y dejalo escrito en el ARQ.

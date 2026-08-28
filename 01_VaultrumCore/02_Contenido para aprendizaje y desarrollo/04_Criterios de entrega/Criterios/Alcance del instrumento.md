@@ -26,9 +26,9 @@ nunca se compararon
 
 ---
 
-## Las tres formas de fallar
+## Las cuatro formas de fallar
 
-Un instrumento puede pasar y no servir de tres maneras distintas. Las tres son de forma, no de criterio: ninguna se arregla escribiendo mejor la ley.
+Un instrumento puede pasar y no servir de cuatro maneras distintas. Las cuatro son de forma, no de criterio: ninguna se arregla escribiendo mejor la ley.
 
 ### 1. Mide de menos
 
@@ -51,6 +51,31 @@ El gate mide algo real y devuelve un numero cierto, sobre una cosa que no es la 
 > **Un gate mide un artefacto concreto. Si el artefacto que mide no es el que se entrega, su veredicto es cierto y no sirve.**
 
 Es la mas dificil de ver porque no hay sintoma: todo esta verde.
+
+### 4. Compara dos espejos
+
+El gate mide los artefactos correctos y los compara entre si, y los dos se derivan del mismo trabajo. Entonces que coincidan no dice nada del trabajo: dice que la copia se hizo bien.
+
+> **Un verificador que compara dos derivados del mismo hecho no verifica ese hecho. Para verificarlo tiene que llegar al original.**
+
+El caso testigo tiene dos apariciones con meses de distancia y la misma forma. Un libro de la Biblioteca quedo marcado *En validacion* en su ficha mientras el estante y el catalogo escrito a mano lo daban por cerrado: dos espejos coincidian y nadie miraba el original. Reparado eso, la herramienta paso a cruzar la ficha contra el estante — **y son los dos derivados del mismo trabajo**. Un lote entero de 64 piezas quedo declarando cerrado mientras la mision que las produjo se declaraba abierta, y el gate contesto `EN NORMA` las dos veces que corrio.
+
+La pregunta que lo detecta es una sola:
+
+```txt
+¿estas dos cosas que comparo pueden estar mal LAS DOS, por la misma causa?
+   si  → son espejos. ¿Cual es el original, y lo puedo abrir?
+   no  → una de las dos es el original. El cruce sirve.
+```
+
+Y el corolario, que es donde esta nota se corrige a si misma: la forma 1 se arregla **declarando** el alcance, y esta no.
+
+```txt
+declarar el alcance   correcto  cuando el original esta fuera del instrumento
+                      EXCUSA    cuando esta a un open() de distancia
+```
+
+Un gate que compara espejos y declara *"no mido esa mitad"* eligio la respuesta barata teniendo la cara. El arreglo no es un descargo ni un cruce mas contra otro derivado — dos espejos no se arreglan con un tercero. Es abrir el original.
 
 ---
 
@@ -77,10 +102,13 @@ Al escribir o revisar cualquier gate, criterio de entrega o checklist verificabl
 1. Cada regla escrita, tiene una medicion que le corresponda?
 2. Las excepciones, se reconocen por lo que hacen o por como se llaman?
 3. El gate mide el artefacto que se entrega, o el que quedo a mano?
-4. Cuando el gate pasa, la salida dice que probo y que no probo?
+4. Si compara dos cosas: ¿cual de las dos es el original?
+5. Cuando el gate pasa, la salida dice que probo y que no probo?
 ```
 
-La cuarta es la barata y la que mas rinde: no arregla el instrumento, pero impide que su silencio se lea como aprobacion.
+La quinta es la barata y la que mas rinde: no arregla el instrumento, pero impide que su silencio se lea como aprobacion.
+
+La cuarta es la que mas duele, porque su respuesta correcta suele ser trabajo y no una linea de texto. Si ninguno de los dos lados es el original, el gate tiene que decir cual es y por que no lo alcanza — y si lo alcanza, abrirlo.
 
 ---
 

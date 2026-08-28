@@ -139,6 +139,87 @@ Las excepciones se declaran una por una en `Herramientas/excepciones.txt`, con s
 
 ---
 
+## El piso de interfaz
+
+Las seis leyes miden **el techo**: que lo declarado se lea bien, que no colisione, que no sobre. Ninguna de las seis mide **el piso**: que lo declarado **alcance**.
+
+La Ley 1 es la que más se le acerca y se satisface con una **declaración**. El `UXS` escribe *"cómo voy → el largo del cuerpo"* y la ley da la pregunta por contestada. Nadie preguntó si eso le alcanza a quien juega.
+
+```txt
+Que SOBRE senal   se mide     densidad, contraste, colision de canales
+Que FALTE senal   no se mide  se descubre jugando
+```
+
+### Por qué el presupuesto no lo cubre
+
+Un presupuesto de **cero** en un canal es legítimo. `UXS-001.2` de Salto declara cero HUD permanente y cero texto en juego, y tiene razón: el género vive de que la postura del personaje lo diga todo.
+
+Pero el presupuesto reparte **lo que compite por la pantalla**. Hay una capa que no compite con nada porque no está siempre visible: la pantalla de inventario vacío, el estado de carga, el error de guardado, la primera vez que alguien ve esa pantalla. Esa capa **no se presupuesta: existe o no existe**.
+
+Confundir las dos es lo que produce la interfaz que mide en verde y se siente vacía.
+
+### Los seis ítems del piso
+
+Ninguno depende del género y ninguno consume presupuesto. Un `UXS` que no los declara está incompleto aunque las seis leyes den verde.
+
+| # | Ítem | Qué exige |
+|---|------|-----------|
+| 1 | **Los cinco estados de pantalla** | toda pantalla declara su estado **vacío**, **cargando**, **error**, **primera vez** y **cambio de dispositivo**, o por qué no aplica |
+| 2 | **Pausa que pausa** | existe, abre en ≤200 ms y **congela la simulación**. Nadie muere mirando el menú de opciones |
+| 3 | **El cajón de cada dato** | cada dato del sistema está en uno de tres: HUD permanente · a demanda · no va (lo dice el mundo) |
+| 4 | **La cadena de respuesta tiene números** | ≤16 ms cambio visual · ≤50 ms sonido · ≤200 ms transición. Arriba de 300 ms sin respuesta, se aprieta de nuevo |
+| 5 | **Opciones mínimas** | tres sliders de audio, remapeo, salir — alcanzables en ≤3 pasos desde la pausa |
+| 6 | **El encuadre tiene margen** | safe area del 5%, tipografía de cuerpo dimensionada para la distancia de lectura declarada |
+
+**La regla de admisión del cajón 1**, que es la que evita las dos fallas opuestas:
+
+```txt
+va al HUD permanente  si se consulta >=1 vez cada 10 s
+                      Y cambia una decision inmediata
+```
+
+Un dato que no cumple las dos cosas no es "poco importante": está en el cajón equivocado. Con esa regla, el HUD vacío y el HUD de simulador de vuelo son la misma falla — nadie asignó los cajones.
+
+### De dónde sale
+
+El piso no se inventó acá. Está destilado en `14_UI_HUD_y_menus` (`05_Escuela/Biblioteca/Fundamentos/`), con su baseline numérico completo, sus diez antipatrones y sus seis pruebas. El área **lo consulta on-demand** y no lo copia: el libro es la fuente, esto es el contrato.
+
+### Lo que el piso todavía no tiene
+
+`legibilidad.py` **no mide el piso**. Los seis ítems se declaran en el `UXS` y los verifica el Validador leyendo, no corriendo. Es deuda declarada, con su motivo: el instrumento se extiende cuando el piso demuestre que la forma sirve en dos proyectos reales. Hasta entonces, el checklist de cierre lo marca como juicio y no como medición.
+
+---
+
+## El costo de lo que se dibuja
+
+El `UXS` decide qué se dibuja y con qué frecuencia cambia. Esas dos cosas fijan el costo recurrente de la interfaz **antes** de que Programación escriba una línea — y la interfaz suele ser el gasto por frame más grande de un juego chico.
+
+No es optimización. **Optimizar sin requerimiento es alcance no pedido; esto es arquitectura, y la arquitectura no tiene ventana de "después".** Separar un canvas cuando ya hay treinta elementos adentro es un rediseño; declararlo el día cero es una fila en una tabla.
+
+Por eso el `UXS` declara, para cada elemento que pone en pantalla, **cada cuánto cambia**:
+
+```txt
+nunca            estatico          marco, etiquetas, fondo
+por evento       cambia al pasar   vidas, puntaje, estado
+por frame        cambia siempre    barra de tiempo, medidor continuo
+```
+
+Tres reglas salen de esa tabla, y las tres son del Core (`03_Optimizacion/07_UI/`):
+
+1. **Agrupar por frecuencia de cambio, no por ubicación** — lo que nunca cambia no comparte lote con lo que cambia por frame (`Separar canvas por frecuencia de cambio`).
+2. **La interfaz se actualiza por evento, no por sondeo** — el dato cambia, avisa, la UI se entera. No al revés (`UI orientada a eventos`).
+3. **Un elemento que se reescribe sin cambiar es trabajo puro** (`UI actualizada innecesariamente`, `Canvas rebuild`).
+
+El área **no** elige la implementación: eso es del `SOL`. Declara la frecuencia, que es información de diseño, y sin ella Programación tiene que adivinarla o descubrirla con el profiler cuando ya es cara.
+
+```txt
+En la corrida de Merma, OnGUI dibujaba todo dos veces por frame.
+No lo encontro ninguna lectura del documento: lo encontro contar rectangulos.
+La frecuencia de cambio no estaba declarada en ningun lado.
+```
+
+---
+
 ## Sub-agentes del área
 
 ### [[01_Consultor_Legibilidad]]
@@ -195,7 +276,7 @@ Un gate que no se puede verificar mecánicamente no es un gate, es una intenció
 |------|--------|-----------|------------------|
 | Comunicación | antes de que cierre un `GDS` con interfaz | presupuesto entregado y citado en el `GDS` | la mitad A del `UXS` existe y el `GDS` la nombra |
 | Interfaz | todo `RQ` con interfaz | `UXS` abierto antes de que Programación abra el `SOL` | el `SOL` declara su `UXS` |
-| Cierre | todo `UXS` que se cierra | las seis leyes en verde | `legibilidad.py --verificar` devuelve 0 |
+| Cierre | todo `UXS` que se cierra | las seis leyes en verde **y los seis ítems del piso declarados** | `legibilidad.py --verificar` devuelve 0 · el piso lo lee el Validador (todavía no se mide) |
 | No aplica | un `GDS` declara que no hay interfaz | qué dimensión de comunicación queda ausente | el test del *no aplica* al cerrar el `VE` |
 
 Corregir el texto de una etiqueta o el valor de un parámetro visual en un `UXS` ya cerrado **no** dispara ningún gate. El área se activa cuando cambia lo que se comunica, no cuando cambia cómo está escrito.
@@ -228,6 +309,8 @@ Los bloques que la herramienta lee viven dentro de bloques de código cercados. 
 ## Regla operativa
 
 Primero el presupuesto, después el encuadre, después la interfaz, y recién entonces la validación.
+
+**El piso antes que el techo.** Primero existe lo que tiene que existir; recién después se discute cuánto entra en pantalla. Un `UXS` que discute densidad sin haber asignado los cajones está optimizando un presupuesto que todavía no sabe qué reparte.
 
 **Usabilidad primero, engagement después.** La interfaz no cierra hasta que quien opera *puede* operar el sistema sin fricción. Nunca decorar a costa de la legibilidad: nada de lo que se agregue puede tapar una falla ni volver ambiguo un estado.
 
@@ -271,7 +354,7 @@ El área entra **dos veces**: antes de que Game Design cierre, y después.
 
 Recibe de **Producción** el `RQ` y de **Game Design** el `GDS`; opcionalmente de **Level Design** el `LDS` cuando la interfaz depende del espacio. Entrega a **Programación**.
 
-Consulta on-demand la Biblioteca de la Escuela: el libro `05_Fundamentos_de_experiencia_ludica`, pilares 3, 4, 5 y 7. Cuando el entregable no es un juego, el pilar 4 sigue aplicando entero y los otros tres se leen como feedback, control y progreso visible del sistema.
+Consulta on-demand la Biblioteca de la Escuela: `05_Fundamentos_de_experiencia_ludica` (pilares 3, 4, 5 y 7) y `14_UI_HUD_y_menus`, que es de donde sale el piso. Según el caso, además: `09_Onboarding_y_tutorial` cuando la interfaz enseña, `10_Input_y_respuesta` cuando hay que fijar la cadena de respuesta, `11_Camara_y_encuadre` cuando la cámara transporta señal, y `16_Audio_como_gameplay` cuando el sonido es el canal redundante del color. Los cuatro están *En la Biblioteca* desde la corrección del lote `EST-006`. **On-demand quiere decir uno por vez, por lo que se necesita** — la Biblioteca entera no se carga. Cuando el entregable no es un juego, el pilar 4 sigue aplicando entero y los otros tres se leen como feedback, control y progreso visible del sistema.
 
 Y consulta al Área de Arquitectura antes de crear, mover o purgar notas: el `UXS` es una nota del vault y su forma la dicta el arquitecto.
 

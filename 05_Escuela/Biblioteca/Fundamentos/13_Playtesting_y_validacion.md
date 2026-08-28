@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Proceso — validación empírica (transversal a los 9 pilares)
 cruza: 05_Fundamentos_de_experiencia_ludica, 03_Definicion_de_terminado, 04_Playbook_de_diseno
@@ -50,22 +50,28 @@ Para un dev solo esto no es un lujo de estudio grande, es la única defensa cont
 **C. El protocolo.**
 
 ```txt
-PROTOCOLO DE SESIÓN (60 min)
+PROTOCOLO DE SESIÓN (45–70 min según cuánto dure el juego)
 
- T-1 día │ confirmar · build limpia y probada · hoja de observación impresa
- 00:00   │ ENCUADRE (3 min)
-         │   decir:    "no te evalúo a vos, evalúo el juego"
-         │             "pensá en voz alta" · "si te trabás, trabate"
-         │   NO decir: cómo se juega · qué esperás · qué cambiaste
- 00:03   │ CONSENTIMIENTO + grabación (pantalla + audio; manos si es de input)
- 00:05   │ JUEGO (20–40 min)          ←  VOS: CALLADO
-         │   sólo dos frases permitidas:
-         │     "¿qué estás pensando?"   "¿qué estás intentando hacer?"
-         │   rescate SÓLO tras 3 min trabado — y anotá minuto y motivo:
-         │   ese rescate ES el hallazgo, no una interrupción del hallazgo
- 00:45   │ ENTREVISTA (10–15 min) — de abierto a cerrado, nunca al revés
- 00:58   │ CIERRE: gracias · qué sigue · todavía NO le expliques el juego
- +1 h    │ VOLCADO: notas crudas → SÍNTOMAS. El diagnóstico, mañana.
+ T-1 día  │ confirmar · build limpia y probada · hoja de observación impresa
+ 00:00    │ ENCUADRE (3 min)
+          │   decir:    "no te evalúo a vos, evalúo el juego"
+          │             "pensá en voz alta" · "si te trabás, trabate"
+          │   NO decir: cómo se juega · qué esperás · qué cambiaste
+ 00:03    │ CONSENTIMIENTO + grabación (pantalla + audio; manos si es de input)
+ 00:05    │ JUEGO (20–40 min)          ←  VOS: CALLADO
+          │   sólo dos frases permitidas:
+          │     "¿qué estás pensando?"   "¿qué estás intentando hacer?"
+          │   rescate SÓLO tras 3 min trabado — y anotá minuto y motivo:
+          │   ese rescate ES el hallazgo, no una interrupción del hallazgo
+          │   -> termina entre 00:25 y 00:45, y de ahí en más el reloj es RELATIVO
+ fin+0:00 │ ENTREVISTA (10–15 min) — de abierto a cerrado, nunca al revés
+ +entrev. │ CIERRE: gracias · qué sigue · todavía NO le expliques el juego
+          │   arranca cuando termina la entrevista, no a una hora fija
+ +1 h     │ VOLCADO: notas crudas → SÍNTOMAS. El diagnóstico, mañana.
+
+ El tramo posterior al juego NO tiene hora fija: si la agendás a las 00:45 y el
+ tester terminó a las 00:25, tenés veinte minutos de nada — y el silencio
+ posterior a una sesión es donde el diseñador empieza a explicar su juego.
 ```
 
 El costo real de hablar durante el test: cada intervención compra un dato falso y destruye uno real. Si tenés que intervenir, ya encontraste el bug.
@@ -108,6 +114,8 @@ Umbrales prácticos: 3 de 5 con el mismo síntoma → arreglar. 1 de 8 → anota
 | De recencia | El último minuto tiñe todo el recuerdo | Preguntá por momentos específicos, no por el conjunto |
 
 **H. Telemetría mínima para un dev solo.** Regla: **un evento por pregunta de diseño**. Si no tenés la pregunta, no loguees. CSV local, id de sesión anónimo, nada de nube hasta que la necesites.
+
+> **Este libro es el dueño del territorio de playtest.** Los otros libros del estante —`07`, `08`, `09`, `12`— proponen eventos candidatos y protocolos de observación de **su** dominio, y está bien que lo hagan: saben qué preguntar sobre economía, progresión, onboarding y pacing. Lo que no hacen es **legislar**. El n de testers, el protocolo de sesión y el tope de ≤10 eventos activos se fijan acá, y ahí se dirime cualquier diferencia. Sin este párrafo, la unión de las cuatro listas da ~23 eventos y cada libro cree estar pidiendo poco.
 
 | Evento | Responde |
 |---|---|

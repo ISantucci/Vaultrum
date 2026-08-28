@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: Pilar 8 — Ritmo y pacing
 cruza: 05_Fundamentos_de_experiencia_ludica, 01_Loop_de_experiencia, 04_Playbook_de_diseno
@@ -33,33 +33,38 @@ Cuando falta, el diagnóstico es engañoso. El tester dice "es muy difícil" en 
 | Secuencia / sala | 3–8 min | Un espacio nuevo | Una puerta, un cofre, un checkpoint | Sala sin gancho de salida |
 | Nivel | 8–20 min | Una premisa espacial | Clímax + bajada | Clímax que no es el máximo |
 | Acto | 1–4 h | Una promesa nueva | Un giro de sistema | Acto 2 sin capa nueva |
-| Sesión | 20–90 min | El jugador se sienta | El jugador elige irse | Sin punto de salida natural |
+| Sesión | 5–90 min, **según plataforma** (ver capa H) | El jugador se sienta | El jugador elige irse | Sin punto de salida natural |
 | Campaña | 6–40 h | La fantasía | El cierre | Último tercio de relleno |
 
 **C. La forma: serrucho ascendente.**
 
 ```txt
-CURVA DE INTENSIDAD — nivel de 15 min (escala 0–10, muestreo cada 30 s)
+CURVA DE INTENSIDAD — nivel de 15 min (escala 0–10, 13 muestras)
 
-10 │                                                  ██
- 9 │                                                  ██
- 8 │          ██              ██          ██          ██
- 7 │          ██              ██          ██          ██
- 6 │      ██  ██          ██  ██      ██  ██          ██
- 5 │  ██  ██  ██  ██      ██  ██  ██  ██  ██  ██      ██
- 4 │  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██
- 3 │  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██
- 2 │  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██
- 1 │  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██
-   └──────────────────────────────────────────────────────────
-      G   P1  V1  P2  V2  P3  V3  P4  V4  P5  V5  CLI  BAJ
-     0'  1'  2'30 4'  5'30 7' 8'30 10' 11' 12'30    14'  15'
+10 │                                                                   ██
+ 9 │                                                       ██          ██
+ 8 │                                           ██          ██          ██
+ 7 │                               ██          ██          ██          ██
+ 6 │                   ██          ██          ██          ██    ██    ██
+ 5 │       ██          ██          ██          ██    ██    ██    ██    ██
+ 4 │ ██    ██          ██          ██    ██    ██    ██    ██    ██    ██
+ 3 │ ██    ██          ██    ██    ██    ██    ██    ██    ██    ██    ██
+ 2 │ ██    ██    ██    ██    ██    ██    ██    ██    ██    ██    ██    ██    ██
+ 1 │ ██    ██    ██    ██    ██    ██    ██    ██    ██    ██    ██    ██    ██
+   └────────────────────────────────────────────────────────────────────────────────
+     G     P1    V1    P2    V2    P3    V3    P4    V4    P5    V5    CLI   BAJ
+     0'   0'45   2'    3'    4'    5'   6'30   8'    9'   10'30 12'   13'30 15'
 
- G   gancho ≤45 s      P  pico 45–90 s      V  valle
+ G   gancho ≤45 s, y NO es el pico mas alto: retiene, no abruma
+ P   pico 45–90 s          V  valle
  DELTA   cada pico supera al valle anterior en ≥3 puntos
  TECHO   el clímax es el único 10 del nivel
  BAJADA  20–40 s sin amenaza después del clímax
  PLANO   ningún tramo con variación <2 puntos durante más de 4 min
+
+ Los cinco picos ascienden 5-6-7-8-9 y los cinco valles 2-3-4-5-6: el serrucho
+ sube por las dos puntas. Un serrucho de picos iguales no es ascendente, es
+ repetitivo, y a los tres dientes el jugador ya sabe lo que viene.
 ```
 
 **D. El rol del valle.** Un valle no es tiempo perdido: hace tres trabajos simultáneos. (1) **Consolida** el aprendizaje del pico anterior —el cerebro no integra bajo carga—. (2) **Restaura** recursos y atención. (3) **Hace legible** el pico siguiente por contraste. Duración sugerida: 20–40% del pico previo, mínimo 20 s. Y un valle **nunca es una pantalla vacía**: es loot, ruta, decisión de build, una conversación, un rincón que premia mirar.
@@ -154,7 +159,9 @@ CURVA DE INTENSIDAD — nivel de 15 min (escala 0–10, muestreo cada 30 s)
 **Qué observar:** sesión completa, sin interrupciones, con una **hoja de intensidad percibida** que llenás vos cada 2 minutos (0–10) mientras mirás. Anotá micro-conductas: cambio de postura, mirar el celular, suspirar, hablar del juego (bueno) vs. hablar de otra cosa (malo), la primera vez que pregunta cuánto falta.
 **Qué preguntar después:** "contame el nivel de memoria, momento por momento" —lo que no recuerda, no existió—; "¿en qué momento pensaste en parar?"; "si mañana tuvieras 20 minutos, ¿qué harías primero?".
 **Qué NO preguntar:** "¿fue muy largo?", "¿te aburriste?" (nadie lo admite en la cara del autor), "¿qué le sacarías?".
-**Telemetría mínima:** tiempo por sala, gap entre acciones significativas (más de 8 s marca un valle no diseñado), muertes por minuto como curva, punto exacto de abandono de sesión, duración de sesión, % que llega al minuto 30, tiempo hasta el primer objetivo declarado. Superponé tu hoja de intensidad prevista con la curva real de muertes por minuto: donde no coinciden, ahí está el problema.
+**Eventos candidatos de telemetría:** tiempo por sala, gap entre acciones significativas (más de 8 s marca un valle no diseñado), muertes por minuto como curva, punto exacto de abandono de sesión, duración de sesión, % que llega al minuto 30, tiempo hasta el primer objetivo declarado. Superponé tu hoja de intensidad prevista con la curva real de muertes por minuto: donde no coinciden, ahí está el problema.
+
+> **Eventos candidatos, no lista a implementar.** El tope total de telemetría activa lo fija `13_Playtesting_y_validacion` en **≤10 eventos, uno por pregunta de diseño**. Este libro propone candidatos de su dominio y no los suma al presupuesto por su cuenta: la unión de las cuatro listas de este estante son ~23 eventos, más del doble del tope.
 
 ## CHECKLIST
 ```txt
@@ -165,7 +172,7 @@ PACING Y ESTRUCTURA — pegar en el GDS / LDS
 [ ] Gancho ≤45 s · primera decisión con consecuencia ≤60 s
 [ ] Ningún pico sostenido >90 s sin valle
 [ ] Ningún tramo plano >4 min (variación <2 puntos)
-[ ] Delta pico/valle ≥3 en cada transición
+[ ] Delta ≥3 entre cada pico y el valle ANTERIOR (el gancho no cuenta: no tiene valle previo)
 [ ] Cada valle tiene trabajo liviano; ninguno es pasillo vacío
 [ ] Clímax = máximo absoluto del nivel · bajada de 20–40 s después
 [ ] Densidad de novedad respetada según fase (60–90 s / 3–5 min / 8–15 min)

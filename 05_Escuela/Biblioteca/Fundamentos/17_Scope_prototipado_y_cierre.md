@@ -1,6 +1,6 @@
 ---
 tipo: fundamento
-estado: En estudio
+estado: En la Biblioteca
 mision: EST-006_Mision_Lote_Biblioteca_Agosto26
 profundiza: transversal de proceso
 cruza: 19_Playful_Production_Process, 03_Definicion_de_terminado, 04_Playbook_de_diseno, 01_Loop_de_experiencia
@@ -72,15 +72,31 @@ El orden importa: **feel → comprensión → diversión → viabilidad**. Si el
      3D               2 –  6 min / semana
      Sistémico / proc  20 – 60+ min / semana   (el contenido lo genera el sistema)
 
-   ARITMÉTICA QUE DUELE:
-     querés 6 h de juego en 3D  ->  360 min / 4 min por semana  =  90 semanas
-     + 30% de cierre            ->  ~117 semanas  =  2 años y 3 meses
+   ARITMÉTICA QUE DUELE — se DERIVA del modelo de fases, no se elige:
+
+     semanas_de_produccion = minutos_objetivo / ritmo_semanal
+     calendario_total      = semanas_de_produccion / 0,50    <- produccion es el 50%
+     si el ritmo es ESTIMADO de esta tabla, y no medido en tu propio
+     vertical slice, el total se multiplica ademas por 1,6
+
+     querés 6 h de juego en 3D, a 4 min/semana:
+       produccion   360 / 4        =   90 semanas
+       calendario   90 / 0,50      =  180 semanas  =  3 años y 5 meses
+       sin medir    180 x 1,6      =  288 semanas  =  5 años y 6 meses
+
+   El error mas comun al hacer esta cuenta es sumarle a la produccion un
+   porcentaje de cierre. No es una sobretasa sobre la produccion: la produccion
+   es una fraccion declarada del calendario, y concepto, prototipos y cierre son
+   las otras tres. Sumar "+30%" a 90 semanas da 117 y deja el cierre en 23% del
+   total, por debajo del piso de 25% que este mismo libro fija.
 
    Salidas posibles (elegí una, conscientemente):
      a) bajar la duración objetivo    (6 h -> 90 min)
      b) cambiar a contenido sistémico (procedural, roguelite, sandbox)
      c) bajar el nivel de pulido      (estilizado barato, sin cutscenes)
-     d) aceptar los 2 años            (con los ojos abiertos, no por default)
+     d) aceptar el calendario derivado (con los ojos abiertos, no por default:
+                                       son 3 años y 5 meses, no los 2 y pico
+                                       que da la cuenta mal hecha)
 ```
 
 **Capa 4 — Vertical slice honesta.** Una rebanada de 3–10 minutos del juego a calidad final absoluta: arte, audio, UI, feel, guardado, todo. Honesta significa que no hay nada truqueado para la demo. Sirve para dos cosas: probar que sabés cómo se ve el producto terminado, y medir cuánto cuesta realmente producir un minuto de tu juego. Ese número, multiplicado por la duración objetivo, es tu calendario real. Se hace **antes** de producir contenido en masa, nunca después.
@@ -114,7 +130,9 @@ El orden importa: **feel → comprensión → diversión → viabilidad**. Si el
 **Content lock:** al 85%. Ningún nivel, enemigo o asset nuevo. Se congela para poder testear un juego que no cambia.
 **Bug bar:** al 90%. Solo crashes, softlocks y bloqueantes. Todo bug cosmético conocido va a una lista y se publica igual.
 
-**Capa 7 — La lista NO.** Un documento vivo, en el mismo repo que el diseño, con todo lo que decidiste no hacer y por qué. No es un cementerio: es la evidencia de que el alcance está bajo control. Si en un mes no agregaste ninguna entrada, el scope no se está gestionando, está creciendo.
+**Capa 7 — La lista NO.** Un documento vivo, en el mismo repo que el diseño, con todo lo que decidiste no hacer y por qué. No es un cementerio: es la evidencia de que el alcance está bajo control.
+
+Dos números con roles distintos, para que no se lean como uno solo: la **cadencia sana** es ≥1 entrada por semana; la **alarma** es dos semanas sin ninguna. Si pasaron dos semanas y no dijiste que no a nada, el scope no se está gestionando, está creciendo.
 
 ## Baseline numérico
 
@@ -131,7 +149,7 @@ El orden importa: **feel → comprensión → diversión → viabilidad**. Si el
 | Contenido pulido por semana | 2–6 min (3D) · 5–15 min (2D) | Base de toda la aritmética de calendario |
 | Feature freeze | Al 70% del calendario | Deja tiempo real para terminar lo empezado |
 | Content lock | Al 85% | Testear un blanco móvil no sirve |
-| Entradas nuevas en la lista NO | ≥1 por semana | Métrica directa de gestión de alcance |
+| Entradas nuevas en la lista NO | ≥1 por semana (alarma a las 2 semanas sin ninguna) | Métrica directa de gestión de alcance |
 | Cadencia de build jugable | ≥1 por semana | Sin build no hay proyecto, hay repositorio |
 | Jugado por alguien externo | ≥1 vez por mes | Es la única fuente de verdad |
 | Bug bar de release | 0 crashes · 0 softlocks · ≤5 cosméticos conocidos | Perfecto no existe; publicable sí |
@@ -184,11 +202,12 @@ El orden importa: **feel → comprensión → diversión → viabilidad**. Si el
 [ ] El prototipo de comprension paso: 4 de 5 testers jugaron 2 min sin ayuda
 [ ] Existe vertical slice de 3-10 min a calidad final, sin trucos de demo
 [ ] El costo por minuto de juego esta medido, no estimado
-[ ] La duracion objetivo sale de la aritmetica del presupuesto de contenido
+[ ] La duracion objetivo sale de la aritmetica del presupuesto de contenido,
+    con el calendario DERIVADO (produccion / 0,50) y no con un porcentaje sumado
 [ ] Todas las estimaciones tienen multiplicador x1.6 (x2 si el sistema es nuevo)
 [ ] El 30% final del calendario esta reservado para cierre y esta protegido
 [ ] Existe fecha de feature freeze (70%) y de content lock (85%) en el calendario
-[ ] Existe la lista NO y se le agrego algo en las ultimas 2 semanas
+[ ] Existe la lista NO y se le agrego algo en la ultima semana (2 semanas = alarma)
 [ ] Hay build jugable de esta semana que un tercero puede abrir
 [ ] Alguien externo jugo el juego en el ultimo mes
 [ ] El orden de recorte esta escrito y acordado con vos mismo antes de la crisis

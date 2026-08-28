@@ -6,7 +6,7 @@ La Biblioteca es el **corazón de la Escuela**: el espacio donde se guardan los 
 
 No es un catálogo de juegos ni una lista de 500 títulos. Es una colección de **libros** curados, cada uno con índice y metadata, indexados para consultarse por categoría.
 
-Esta nota es la portada. Los cuatro estantes de abajo son el registro: cada uno enlaza sus piezas y las describe.
+Esta nota es la portada. Los cinco estantes de abajo son el registro: cada uno enlaza sus piezas y las describe.
 
 ---
 
@@ -33,6 +33,9 @@ Lo **transversal**: lo que hace que algo *sea* una experiencia y se *sienta* bie
 
 ### [[00_Indice_juegos|Juegos]]
 Análisis **por juego/tipo**, guardados por **género**. Qué hace bien un Pong, un breakout, un roguelike: sus table-stakes y su juice específicos. Cuando se pide un juego de ese género, su libro (y los Fundamentos que aplican) están al alcance.
+
+### [[00_Indice_construccion|Construcción]]
+**Cómo se construye técnicamente** un juego: el paso fijo, la colisión, el quaternion, el shader. Los otros estantes responden por la experiencia; este por el mecanismo. La frontera con el Core es una línea: **el Core ya tiene el precio de todo y el mecanismo de nada** — `Física costosa` dice cuánto sale la física por frame y ninguna nota dice qué es un integrador. Lo consulta Programación al escribir el `SOL`, después de que el `GDS` cerró. Emplazamiento en `ARQ-022_La_frontera_del_material_tecnico`.
 
 ### [[00_Indice_fuentes|Fuentes]]
 Libros, papers y referencias **externas** que la Escuela estudia — la materia prima. No son libros destilados de Vaultrum: se catalogan (cita + resumen aprendido, sin verbatim) y luego, en una misión de destilación, alimentan los Fundamentos o Juegos. Separar la fuente del libro destilado evita meter texto ajeno en el activo propio.
