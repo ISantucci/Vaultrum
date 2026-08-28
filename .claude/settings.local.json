@@ -1,0 +1,11 @@
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "fal-ai"
+  ],
+  "permissions": {
+    "allow": [
+      "PowerShell(git ls-remote *)"
+    ]
+  }
+}

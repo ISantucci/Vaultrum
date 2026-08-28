@@ -22,14 +22,17 @@
     ],
     "PostToolUse": [
       {
+        "matcher": "Read|Write|Edit|MultiEdit|NotebookEdit|Skill",
         "hooks": [
           {
             "type": "command",
             "command": "python3 \"$CLAUDE_PROJECT_DIR/04_IA Operativa/Herramientas/vaultrum_trace.py\""
           }
-        ],
-        "matcher": "Read|Write|Edit|MultiEdit|NotebookEdit|Skill"
+        ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "codex@openai-codex": true
   }
 }

@@ -27,7 +27,7 @@ Dos reglas salieron de eso y estan implementadas aca:
   2. El recorrido EXCLUYE los destinos. Un instalador que se lee a si mismo
      como fuente es una recursion esperando pasar.
 """
-import os, sys, shutil, re
+import os, sys, shutil, re, hashlib
 
 DESTINOS = ['.claude/skills', '.agents/skills']
 EXCLUIR  = {'.git', '.claude', '.agents', 'node_modules', '_to_delete'}
@@ -46,9 +46,61 @@ def fuentes(raiz):
         if 'SKILL.md' in files:
             nombre = os.path.basename(base)
             if nombre in out:
-                print(f'  [AVISO] dos fuentes se llaman «{nombre}»: {out[nombre]} y {base}')
+                # F5: elegir una fuente por el orden de os.walk es elegir al azar, y despues
+                # --verificar la compara contra la fuente equivocada y dice que esta todo bien.
+                raise SystemExit(f'  [ERROR] dos fuentes se llaman «{nombre}»:\n'
+                                 f'          {out[nombre]}\n          {base}\n'
+                                 f'  No se toca ningun destino. Renombra una de las dos.')
             out[nombre] = base
     return out
+
+
+def huella(ruta):
+    """Hash del ARBOL entero, no solo de SKILL.md.
+
+    F4: comparar solo SKILL.md deja pasar assets, scripts y referencias divergentes,
+    y --verificar devuelve 0 sobre una copia que no es igual a su fuente.
+    """
+    h = hashlib.sha256()
+    for base, dirs, files in os.walk(ruta):
+        dirs.sort()
+        for f in sorted(files):
+            rel = os.path.relpath(os.path.join(base, f), ruta).replace('\\', '/')
+            h.update(rel.encode())
+            with open(os.path.join(base, f), 'rb') as fh:
+                h.update(fh.read())
+    return h.hexdigest()
+
+
+def sincronizar(origen, destino):
+    """Copia a un temporal, valida, y recien despues reemplaza.
+
+    F3: la version anterior hacia rmtree(destino) y despues copytree. Un fallo por
+    permisos, disco lleno o interrupcion dejaba la skill ausente o a medias --
+    exactamente el modo de falla que este instalador existe para no repetir, y que
+    su propio docstring declara prohibido. Escribirlo mal una vez es un error;
+    escribirlo mal en el archivo que denuncia ese error es peor.
+    """
+    tmp    = destino + '.nuevo'
+    previo = destino + '.previo'
+    for x in (tmp, previo):
+        if os.path.isdir(x):
+            shutil.rmtree(x)
+    shutil.copytree(origen, tmp)
+    if huella(tmp) != huella(origen):
+        shutil.rmtree(tmp)
+        raise SystemExit(f'  [ERROR] la copia de «{os.path.basename(origen)}» no coincide '
+                         f'con su fuente. No se reemplaza nada.')
+    if os.path.isdir(destino):
+        os.rename(destino, previo)
+    try:
+        os.rename(tmp, destino)
+    except OSError:
+        if os.path.isdir(previo):
+            os.rename(previo, destino)     # se restaura la copia que andaba
+        raise
+    if os.path.isdir(previo):
+        shutil.rmtree(previo)
 
 
 def descripcion(ruta):
@@ -77,19 +129,16 @@ def main():
 
     difiere = []
     for nombre, ruta in sorted(src.items()):
+        h_src = huella(ruta)
         estados = []
         for d in DESTINOS:
             dst = os.path.join(d, nombre)
-            igual = (os.path.isfile(os.path.join(dst, 'SKILL.md')) and
-                     open(os.path.join(dst, 'SKILL.md'), 'rb').read() ==
-                     open(os.path.join(ruta, 'SKILL.md'), 'rb').read())
+            igual = os.path.isdir(dst) and huella(dst) == h_src
             if not igual:
                 difiere.append(f'{d}/{nombre}')
                 estados.append('difiere')
-            if not solo_medir:
-                if os.path.isdir(dst):
-                    shutil.rmtree(dst)
-                shutil.copytree(ruta, dst)
+            if not solo_medir and not igual:
+                sincronizar(ruta, dst)
         print(f'  [{"==" if not estados else "ok" if not solo_medir else "!!"}] {nombre}')
 
     # destinos que ya no tienen fuente
@@ -103,6 +152,7 @@ def main():
         print('\n  Sin fuente en el area (se borran, son copias generadas):')
         for h in huerfanas:
             print(f'    - {h}')
+            difiere.append(h)          # F4: una huerfana ES una diferencia
             if not solo_medir:
                 shutil.rmtree(h)
 

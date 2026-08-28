@@ -37,6 +37,9 @@ Los dos modos en que la IA opera el vault: **Modo Vaultrum** (usar el sistema pa
 ### [[06_Medicion de friccion]]
 El instrumento que mide el **costo del owner en prompts** y lo separa en visión / aclaración / remedial. Es lo que vuelve falsable la Ley del baseline. No confundir con el conteo de tokens: son dos presupuestos distintos.
 
+### [[07_Despacho de ejecucion]]
+El segundo presupuesto de la capa: no qué contexto se carga, sino **dónde corre el trabajo y qué cuesta**. La ley del subagente —escribe el archivo, devuelve un resumen— con su contraejemplo medido, y el criterio de reparto entre ejecutor barato y modelo fuerte.
+
 ### Herramientas/
 
 `contar_contexto.py` — el contador real de contexto. Mapa del vault por capa, archivos más pesados, costo de una carga concreta contra un presupuesto, y diff antes/después de podar. Es el Profiler de esta capa.

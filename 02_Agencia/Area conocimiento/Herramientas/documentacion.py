@@ -42,6 +42,7 @@ LEY = {
     'insumo'       : 'Ley 1 - un artefacto downstream no existe sin su insumo upstream',
     'contrato'     : 'Ley 2 - falta una seccion obligatoria del contrato del tipo',
     'sin-contrato' : 'Ley 2 - el tipo no tiene forma estable medible (no falla: es el hallazgo)',
+    'contrato-vacio': 'Ley 2 - una seccion del contrato existe y esta incompleta',
     'omision'      : 'Ley 3 - un "no aplica" sin decir que dimension queda ausente',
     'sin-evidencia': 'Ley 4 - afirmacion con numero y sin fuente ni instrumento',
     'fantasma'     : 'Ley 5 - se afirma un archivo del vault que no esta en disco',
@@ -49,7 +50,19 @@ LEY = {
     'sin-estado'   : 'Corolario - el artefacto no declara su estado de cierre',
 }
 
-ESTADOS  = ('cerrado', 'ajustar', 'pausado', 'descartado', 'en revision', 'abierto', 'entregado')
+# Vocabulario CANONICO de estados. Los contratos de salida de cada area lo citan;
+# no lo redefinen. Antes vivia en tres lugares y los tres decian cosas distintas: el
+# contrato del EJ admitia "Reportada" y "Rebotada", que aca no existian, asi que un EJ
+# que cumplia su contrato podia fallar el gate. Hallazgo del adversarial review, 2026-08-28.
+ESTADOS  = ('cerrado', 'cerrada', 'ajustar', 'pausado', 'descartado', 'en revision', 'abierto',
+            'entregado',
+            # ciclo de vida de SOL
+            'propuesta', 'aprobada', 'ejecutada',
+            # ciclo de vida de EJ
+            'en ejecucion', 'reportada', 'rebotada')
+# Secciones que ademas de existir tienen que traer sus bloques. Hoy solo el contrato
+# de ejecucion, porque es el unico que habilita delegar trabajo a otro ejecutor.
+SUBBLOQUES = {'contrato de ejecucion': ('archivos', 'interfaces', 'invariantes', 'prohibido')}
 UNIDADES = r'(?:%|ms|fps|kb|mb|gb|px|hz|x|veces|segundos|minutos|horas|prompts|tokens|lineas|links|notas|archivos)'
 NUMERO   = re.compile(r'(?<![\w.-])(\d+(?:[.,]\d+)?)\s*(' + UNIDADES + r')\b', re.I)
 FUENTE   = re.compile(r'(`[^`]+`|\bmedid|\bmedic|\bsegun\b|\bfuente\b|\bconteo\b|\bestimacion\b|\ba ojo\b|'
@@ -149,13 +162,42 @@ def medir(rel, txt, contratos, raiz):
             fallas.append(('insumo', 0, 'no nombra su insumo (' + esperados + ')'))
 
     # Ley 2 - contrato de secciones
-    presentes = [limpiar(m.group(1)) for l in txt.splitlines() for m in [H2.match(l)] if m]
+    #
+    # Se mide la PRESENCIA y ademas el CUERPO. Un encabezado sin nada debajo satisface
+    # "la seccion existe" y no satisface nada mas: es el mismo defecto que la Ley 1 de
+    # UI/UX tenia --una declaracion que se lee como evidencia-- reproducido aca.
+    # Hallazgo del adversarial review, 2026-08-28.
+    cuerpos, actual = {}, None
+    for l in txt.splitlines():
+        m = H2.match(l)
+        if m:
+            actual = limpiar(m.group(1))
+            cuerpos[actual] = []
+        elif actual is not None:
+            cuerpos[actual].append(l)
+
+    presentes = list(cuerpos)
     if tipo not in contratos:
         fallas.append(('sin-contrato', 0, tipo + ' no tiene forma estable medida (ver contratos.txt)'))
     else:
         for sec in contratos[tipo]:
-            if not any(sec in p or p in sec for p in presentes if p):
+            match = [p for p in presentes if p and (sec in p or p in sec)]
+            if not match:
                 fallas.append(('contrato', 0, 'falta la seccion "' + sec + '"'))
+                continue
+            cuerpo = '\n'.join(cuerpos[match[0]]).strip()
+            util = re.sub(r'[\s|`>*_#-]', '', cuerpo)
+            if len(util) < 3:
+                fallas.append(('contrato-vacio', 0, 'la seccion "' + sec + '" es un encabezado sin cuerpo'))
+                continue
+            # Secciones con estructura interna declarada: no alcanza con que existan.
+            # El "Contrato de ejecucion" es el que habilita delegar un EJ a un ejecutor
+            # barato; si le falta cualquiera de sus cuatro bloques, quien ejecuta tiene
+            # que DECIDIR, que es justo lo que no se delega.
+            for bloque in SUBBLOQUES.get(sec, ()):
+                if bloque not in limpiar(cuerpo):
+                    fallas.append(('contrato-vacio', 0,
+                                   'la seccion "' + sec + '" no declara "' + bloque + '"'))
 
     # Ley 3 - omision declarada
     for n, l in lineas:
@@ -314,7 +356,7 @@ def informe(raiz, res, contratos, excep):
              ', '.join(t for t in TIPOS if t not in contratos) or '—'))
     duros = sum(v for k, v in tot.items() if k != 'sin-contrato')
     print('\nfallas %d (+%d artefactos de tipo sin contrato)\n' % (duros, tot['sin-contrato']))
-    for clave in ('insumo', 'contrato', 'omision', 'sin-evidencia', 'fantasma', 'duplicado', 'sin-estado', 'sin-contrato'):
+    for clave in ('insumo', 'contrato', 'contrato-vacio', 'omision', 'sin-evidencia', 'fantasma', 'duplicado', 'sin-estado', 'sin-contrato'):
         filas = [(r['rel'], f) for r in res for f in r['fallas'] if f[0] == clave]
         if not filas:
             continue

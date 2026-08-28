@@ -43,6 +43,71 @@ solución mal planteada / no SOLID          → Diseñador
 implementación desviada / fuera de alcance → Ejecutor
 ```
 
+## Despacho: qué ejecuta quién
+
+El área tiene dos ejecutores disponibles y **no son intercambiables**. El criterio de reparto y la ley del subagente son de `04_IA Operativa/07_Despacho de ejecucion`, que es su autoridad. **Acá va la aplicación, no la regla.**
+
+Aplicada al loop de arriba:
+
+| Fase | Quién | Por qué |
+|------|-------|---------|
+| 1 · Analista | **modelo fuerte** | leer el proyecto real y detectar lo que falta es juicio |
+| 2 · Diseñador (`SOL`) | **modelo fuerte** | acá se decide. Delegar esto es delegar la arquitectura |
+| 3 · Ejecutor (`EJ`) | **Codex**, si el `SOL` cerró la spec | ejecutar contra un contrato escrito es mecánico |
+| 4 · Revisor | **Codex, como segunda opinión** | otro modelo es otro instrumento |
+
+**El `SOL` es la llave.** Un `EJ` se delega solo si su `SOL` trae el `Contrato de ejecución` completo —archivos, interfaces, invariantes, prohibido—. Sin esa sección, quien ejecuta tiene que **decidir**, y decidir es justo lo que no se delega. Si el `SOL` no la tiene, no se rutea: se completa el `SOL`.
+
+### Cómo se escribe un pedido delegado
+
+Por la **ley del subagente** (`07_Despacho de ejecucion`), todo pedido lleva las dos instrucciones adentro. No son opcionales:
+
+```txt
+1. escribi el resultado en <ruta exacta>
+2. devolveme SOLO: que archivos tocaste, que quedo sin hacer, y una linea de estado
+```
+
+Un `rescue` sin esas dos líneas es un desvío declarable, no un atajo.
+
+**Y verificá que el ejecutor pueda escribir.** Una corrida en modo lectura devuelve hallazgos y no deja el archivo: el pedido parece cumplido y el artefacto no existe. Es el mismo gate de existencia en disco de abajo, aplicado a lo que hace otro.
+
+### Los comandos, y cuándo cada uno
+
+```txt
+/codex:rescue --effort low "<tarea>"     ejecutar contra un SOL cerrado
+/codex:rescue --model spark "<tarea>"    lo mismo, aun mas barato (gpt-5.3-codex-spark)
+/codex:rescue --background "<tarea>"     tareas largas: no bloquea, se cosecha con /codex:result
+/codex:review --base <ref>               revision estandar antes de cerrar
+/codex:adversarial-review                cuestiona el diseno y los trade-offs
+/codex:status · /codex:result · /codex:cancel     ciclo de vida de lo que corre en background
+```
+
+El esfuerzo por defecto del proyecto se fija una vez en `.codex/config.toml` (`model`, `model_reasoning_effort`) y no se repite en cada llamada.
+
+**`adversarial-review` no es una pasada barata: es un instrumento.** Tapa un hueco declarado del sistema — `QA` dice textualmente que *no revisa arquitectura*, y el Revisor Técnico que sí lo hace **no produce artefacto**. Un segundo modelo cuestionando el `SOL` es otro instrumento corriendo, que es de donde salieron los tres rebotes hacia arriba de `TL-003`. Corre **antes** de cerrar el hilo, y **cada hallazgo vuelve al sub-agente que le corresponde, con la misma tabla de rebotes de arriba**:
+
+```txt
+hallazgo de DISEÑO         -> reabre el SOL y lo versiona.   Un SOL aprobado con un
+                              defecto de diseno no se parcha desde el EJ: obligaria a
+                              implementar el defecto o a incumplir el SOL.
+hallazgo de IMPLEMENTACION -> desvio declarado en el EJ
+defecto reproducible        -> QA, con su evidencia
+```
+
+Meter un hallazgo de diseño en el `EJ` es escribir la corrección en el lugar equivocado, que es exactamente lo que el loop de sub-agentes existe para evitar.
+
+### Lo que no se delega, nunca
+
+```txt
+el SOL                    ahi se decide la arquitectura
+que un RQ este cumplido   eso lo cierra el VE, con el owner
+el veredicto de QA        el gate es del area de Calidad
+tocar el Core             solo Conocimiento propone, y con aprobacion del owner
+correr los instrumentos   son scripts: no necesitan modelo, y su salida es la evidencia
+```
+
+Y la regla que ordena todo lo anterior: **el ahorro no puede costar trazabilidad.** Un `EJ` ejecutado por Codex se registra igual que uno propio, con las mismas siete secciones y el mismo gate de existencia en disco. Quién lo escribió va como una línea del `EJ`, no como una excepción al contrato.
+
 ## Gate de existencia en disco (obligatorio antes de reportar el EJ)
 
 **Un `EJ` no está reportado si el artefacto no está donde el `TL` dice que va.** No alcanza con describir lo que se hizo: hay que verificar que esté.

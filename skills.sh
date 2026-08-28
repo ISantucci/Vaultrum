@@ -18,11 +18,16 @@ if [ ! -f "$SCRIPT" ]; then
   exit 1
 fi
 
+# set -e mataria el script antes de poder informar el codigo: se desactiva aca
+# a proposito para propagar el exit code del instalador, no el del shell.
+set +e
 if command -v python3 >/dev/null 2>&1; then
-  python3 "$SCRIPT" "$PWD" "$@"
+  python3 "$SCRIPT" "$PWD" "$@"; RC=$?
 elif command -v python >/dev/null 2>&1; then
-  python "$SCRIPT" "$PWD" "$@"
+  python "$SCRIPT" "$PWD" "$@"; RC=$?
 else
   echo "  [ERROR] No encontre Python en el PATH."
   exit 1
 fi
+[ "$RC" -ne 0 ] && echo "  [!] El instalador termino con codigo $RC."
+exit $RC
