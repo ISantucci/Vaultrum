@@ -26,6 +26,26 @@ Es la única ley de esta nota, y no salió de una intuición.
 2. devolveme SOLO: que archivos tocaste, que quedo sin hacer, y una linea de estado
 ```
 
+### La ley corre sobre ejecución, no sobre juicio
+
+La ley de arriba está bien y su dominio estaba sin declarar. La primera corrida real la rompió con razón: se pidió un review adversarial con las tres líneas de vuelta de siempre, y volvieron **siete hallazgos completos**. No fue un incumplimiento del ejecutor: fue un error de la regla.
+
+```txt
+delegar EJECUCION   el producto es un archivo en disco   -> resumen corto, y el archivo
+                    el trabajo queda fuera del contexto     se verifica con el gate
+                    y el resumen alcanza
+
+delegar JUICIO      el producto ES el texto que vuelve   -> NO se comprime.
+                    comprimirlo destruye exactamente        Se acota el ALCANCE, antes.
+                    lo que se fue a buscar
+```
+
+**Acotar un juicio se hace antes —qué se revisa y contra qué— no después recortando la salida.** Un review con alcance abierto y salida recortada es lo peor de las dos cosas: se paga entero y vuelve mutilado.
+
+De ahí la forma general, que es lo que faltaba: **toda ley de compresión de respuesta declara sobre qué tipo de trabajo corre.** Una ley sin dominio declarado se aplica donde no corresponde la primera vez que alguien la respeta.
+
+**Y una tercera cosa que ninguna de las dos ramas cubre.** Un ejecutor que no pudo escribir el archivo —sin permiso, sin la herramienta, sin la ruta— tiene que reportarlo como **fallo**, no como nota al final. En un review se nota porque los hallazgos vuelven igual; en un `EJ` el pedido volvería *cumplido* con el artefacto inexistente. Criterio del Core: `La superficie del ejecutor`.
+
 ---
 
 ## El criterio de reparto

@@ -33,7 +33,7 @@ UXS-XXX.n   (UI/UX)        — pantallas, HUD, jerarquía, feedback de UI · si 
 Ejecutá estas fases en orden, declarando en qué sub-agente estás. El loop no cierra hasta que el Revisor da OK.
 
 1. **Analista Técnico** — entendé el RQ y su paquete de diseño (GDS, y LDS/UXS si existen), **leé el proyecto real** (no asumas arquitectura), detectá sistemas/managers/convenciones existentes, consultá el Core aplicable, marcá riesgos y faltantes. Salida: diagnóstico.
-2. **Diseñador de Solución** — convertí el diagnóstico en una solución técnica validada. Aplicá SOLID y separación estructura/algoritmo/consumidor, elegí patrones del Core, definí parámetros configurables (nada de hardcodear gameplay/balance). La `SOL` lleva **dos tablas obligatorias** — *lo que se hizo* (cada decisión con el `RQ` que la pide) y *lo que deliberadamente no se hizo* (cada omisión con su motivo). Registrala como **SOL-XXX.n** y **terminá pidiendo aprobación del alcance**. ⟵ GATE
+2. **Diseñador de Solución** — convertí el diagnóstico en una solución técnica validada. Aplicá SOLID y separación estructura/algoritmo/consumidor, elegí patrones del Core, definí parámetros configurables (nada de hardcodear gameplay/balance). **La forma de la `SOL` la fija su contrato de salida, `00_Indice_soluciones` — leelo antes de escribir. Acá no se copia.** Lo único que se repite es lo que más se olvida: sin el **`Contrato de ejecución`** (archivos, interfaces, invariantes, prohibido) el `EJ` no se puede rutear a un ejecutor barato, porque quien ejecuta tendría que decidir. Registrala como **SOL-XXX.n** y **terminá pidiendo aprobación del alcance**. ⟵ GATE
 3. **Ejecutor Técnico** — solo tras el OK. Implementá el alcance aprobado, reutilizá sistemas, no toques fuera de alcance, dejá valores configurables. Si hay `LDS`/`UXS`, construilos como están especificados: no reinterpretes layout ni jerarquía de interfaz. Antes de reportar, corré el **gate de existencia en disco** (abajo). Registrá **EJ-XXX.n** con el reporte.
 4. **Revisor Técnico** — validá la EJ contra el checklist. Si cumple, cerrá la revisión técnica del hilo `.n`. Si no, **rebotá** al sub-agente correcto y repetí.
 
@@ -69,7 +69,16 @@ Por la **ley del subagente** (`07_Despacho de ejecucion`), todo pedido lleva las
 
 Un `rescue` sin esas dos líneas es un desvío declarable, no un atajo.
 
-**Y verificá que el ejecutor pueda escribir.** Una corrida en modo lectura devuelve hallazgos y no deja el archivo: el pedido parece cumplido y el artefacto no existe. Es el mismo gate de existencia en disco de abajo, aplicado a lo que hace otro.
+**Y verificá la superficie antes de delegar.** Una corrida en modo lectura devuelve hallazgos y no deja el archivo: el pedido parece cumplido y el artefacto no existe. Cuatro chequeos, segundos cada uno, antes de gastar la ejecución:
+
+```txt
+escritura     escribi un archivo vacio en la ruta destino y borralo
+herramienta   `which` sobre el interprete o el binario que la tarea necesita
+red           ¿alcanza lo que tiene que bajar?
+permiso       ¿puede pisar o borrar lo que la tarea implica?
+```
+
+Y el corolario, que es el que atrapa el caso caro: **un ejecutor que no pudo hacer algo lo reporta como fallo, no como nota al pie.** Criterio del Core: `La superficie del ejecutor`. Es el gate de existencia en disco de abajo, aplicado por adelantado y a lo que hace otro.
 
 ### Los comandos, y cuándo cada uno
 
@@ -172,8 +181,10 @@ Estados posibles al cerrar la revisión: **Cerrado** · **Ajustar** (con el sub-
 
 Todo hilo produce dos artefactos numerados, heredando la numeración del RQ:
 
-- **SOL-XXX.n** — solución técnica (arquitectura, responsabilidades, Core aplicado, configurables, alternativas descartadas, riesgos).
-- **EJ-XXX.n** — ejecución (archivos modificados/creados/no tocados, cambios, sistemas reutilizados, configurables, riesgos, siguiente paso).
+- **SOL-XXX.n** — la solución técnica: dónde vive la arquitectura antes de que exista una línea de código. **Forma, numeración y criterios de cierre: `00_Indice_soluciones`.**
+- **EJ-XXX.n** — la implementación de esa `SOL`, más el reporte de lo que pasó al construirla. **Forma, numeración y criterios de cierre: `00_Indice_ejecuciones`.**
+
+**Los dos contratos mandan y esta skill no los repite.** Es la regla de capas de `02_Indice Agencia`, y hay un motivo medido: hasta el 2026-08-28 esta skill listaba las secciones de la `SOL` y del `EJ` por su cuenta, y **las tres autoridades ya diferían** — la skill no nombraba el `Contrato de ejecución`, así que un Diseñador podía escribir una `SOL` completa sin él y enterarse recién cuando el gate la rechazaba. Dos textos que dicen lo mismo empiezan a diferir en cuanto uno se edita.
 
 Registralas así: Dónde aterriza: `<Proyecto>/05_Programacion/`, según la regla **Dónde aterriza cada salida** de `02_Indice Agencia`. La ruta del proyecto sale del cuaderno; **nunca se escribe adentro de `Vaultrum/`**. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. Actualizá el cuaderno del proyecto. Antes de numerar, revisá los índices. `SOL/EJ` comparten número base y subnumeración con su `RQ` (`RQ-001.2 ↔ SOL-001.2 ↔ EJ-001.2`). Linkeá siempre hacia atrás, incluyendo el `LDS`/`UXS` si existieron.
 
@@ -184,7 +195,7 @@ No repitas teoría: consultala y aplicala. Rutas relativas a la raíz del vault:
 
 Prioridad de reutilización: reutilizar > extender > aplicar criterio del Core > crear nuevo (solo si hay necesidad real).
 
-**Criterios de entrega (obligatorio):** `.../04_Criterios de entrega/` — `Baseline de entregable`, `Verificacion parcial declarada`, `Gates verificables`. Y para decidir si una optimización corresponde antes de medirla: `Cuando NO optimizar`.
+**Criterios de entrega (obligatorio):** `.../04_Criterios de entrega/` — `Baseline de entregable`, `Verificacion parcial declarada`, `Gates verificables`, y `La superficie del ejecutor` cuando el `EJ` se delega. Y para decidir si una optimización corresponde antes de medirla: `Cuando NO optimizar`.
 
 ## Alcance no pedido
 

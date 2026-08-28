@@ -28,6 +28,14 @@ Los tres son criterios de entrega. Ninguno es de optimizacion, de arquitectura n
 
 El cuarto —`Alcance del instrumento`— llego despues y por otra via: no de una entrega de proyecto, sino de dos pasadas sobre las herramientas del propio vault. Confirma la regla de esta seccion en vez de romperla: tambien salio de algo que paso, no de algo que sonaba razonable.
 
+Los tres siguientes entraron el 2026-08-28, de una pasada de cierre sobre el sistema. Los tres traen la evidencia que esta seccion exige —tres apariciones en dominios distintos cada uno— y ninguno sale de una intuicion:
+
+```txt
+Direccion de falla de un guardrail   tres instrumentos rotos hacia el mismo lado
+La superficie del ejecutor           cuatro superficies, la spec correcta en las cuatro
+Conocimiento cargado o archivado     un libro y una seccion entera del Core sin consumidor
+```
+
 Es tambien la unica parte del Core que nacio del uso del propio sistema y no de bibliografia externa. Eso la hace la mas fragil y la que mas evidencia necesita antes de crecer: una nota entra aca cuando una entrega real la produjo, no cuando suena razonable.
 
 ---
@@ -104,20 +112,69 @@ Usar esta nota cuando haya que **escribir o revisar un gate**, no cuando haya qu
 
 ---
 
+## [[Direccion de falla de un guardrail]]
+
+> **Todo guardrail tiene una direccion de falla, y hay que elegirla al escribirlo.**
+
+`Alcance del instrumento` pregunta si la medicion cubre la regla. Esta pregunta de que lado cae el instrumento **cuando se equivoca**, que es una asimetria y no una cobertura.
+
+Responde:
+
+- por que un instrumento que falla hacia *segui* es peor que no tenerlo;
+- como se calcula cual de los dos errores es el caro;
+- por que *"no encontre nada"* y *"no se"* no son la misma respuesta.
+
+Usar esta nota al **escribir un chequeo que le da permiso a alguien** para hacer o no hacer trabajo.
+
+---
+
+## [[La superficie del ejecutor]]
+
+> **Una spec cerrada dice que hacer. Falta la linea que dice donde tiene que poder correr.**
+
+Responde:
+
+- por que una spec completa igual falla cuando la ejecuta otro;
+- que se comprueba antes de delegar, y con que prueba barata;
+- por que un fallo mencionado al final se lee como color y no frena nada.
+
+Usar esta nota antes de **delegar algo que produce un artefacto** a un ejecutor que no es uno mismo.
+
+---
+
+## [[Conocimiento cargado o archivado]]
+
+> **Un cuerpo de conocimiento que ningun consumidor nombra no esta cargado: esta archivado.**
+
+Responde:
+
+- por que el inventario no mide cobertura y la lista de consulta si;
+- como se detecta un area trabajando sin su propio material;
+- por que buscar antes de encargar estudio es el ahorro mas grande y el mas olvidado.
+
+Usar esta nota al **escribir conocimiento nuevo, armar la lista de consulta de un rol, o encargar una mision de estudio**.
+
+---
+
 ## Como se relacionan
 
 Los tres cubren momentos distintos de la misma entrega:
 
 ```txt
-antes de construir   → Baseline de entregable      (que tiene que traer)
-durante              → Verificacion parcial        (que sabemos hasta ahora)
-al disenar el flujo  → Gates verificables          (como se comprueba sin criterio subjetivo)
-al escribir el gate  → Alcance del instrumento     (si la comprobacion prueba lo que dice)
+antes de construir    → Baseline de entregable            (que tiene que traer)
+durante               → Verificacion parcial              (que sabemos hasta ahora)
+al disenar el flujo   → Gates verificables                (como se comprueba sin criterio subjetivo)
+al escribir el gate   → Alcance del instrumento           (si la comprobacion prueba lo que dice)
+                      → Direccion de falla de un guardrail (de que lado cae cuando se equivoca)
+antes de delegar      → La superficie del ejecutor        (si el otro puede, no si sabe)
+antes de escribir     → Conocimiento cargado o archivado  (si lo escrito le va a llegar a alguien)
 ```
 
 El primero define la vara. El segundo define como se habla de una medicion incompleta. El tercero define como se comprueba sin depender del juicio de quien mira. El cuarto cierra el circulo: comprueba la comprobacion.
 
-Los dos ultimos son el mismo criterio en dos tiempos. `Gates verificables` se pregunta si la regla **puede** medirse; `Alcance del instrumento`, si la medicion que existe **la mide de verdad**, y sobre que cosa.
+`Gates verificables` y `Alcance del instrumento` son el mismo criterio en dos tiempos: aquel se pregunta si la regla **puede** medirse; este, si la medicion que existe **la mide de verdad**, y sobre que cosa. `Direccion de falla de un guardrail` agrega el tercer tiempo, que es el unico que sigue valiendo cuando la medicion es correcta: **de que lado se rompe.**
+
+Los dos ultimos cubren los bordes de la entrega en vez de su medio. `La superficie del ejecutor` mira hacia adelante —quien va a hacer esto, ¿puede?— y `Conocimiento cargado o archivado` hacia atras —lo que hace falta para hacerlo bien, ¿le llega a alguien?
 
 ---
 
@@ -131,6 +188,10 @@ Verificacion parcial      → Programacion (EJ), Control de Calidad (QA) y Produ
 Gates verificables        → toda skill que declare un paso obligatorio
 Alcance del instrumento   → Arquitectura, Conocimiento, UI/UX y Control de Calidad
                             (las cuatro areas que miden con herramienta propia)
+Direccion de falla        → las mismas cuatro, mas la Escuela (su dedup autoriza misiones)
+La superficie del ejecutor → Programacion (el SOL y su Contrato de ejecucion) y la capa
+                            de Despacho, que es la que reparte entre ejecutores
+Conocimiento cargado      → Escuela y Conocimiento, y toda skill que declare de que lee
 ```
 
 Si una skill y esta seccion divergen, la seccion es la fuente de criterio y la skill es el procedimiento. Se corrige la skill.

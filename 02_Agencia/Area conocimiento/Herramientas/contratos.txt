@@ -58,8 +58,15 @@ VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos 
 
 # SIN FORMA ESTABLE — medido, no omitido.
 #
-# LDS  0 artefactos. El area nunca corrio. No hay nada que medir, y no se inventa.
+# LDS  1 artefacto (LDS-001.5, de Salto, 2026-08-27). El area corrio por primera vez.
+#      Sigue sin contrato, y la razon cambio: antes no habia nada que medir; ahora hay
+#      una muestra, y una muestra no es una medicion -- daria 1/1 = 100% en todas sus
+#      secciones, incluidas las que ese unico artefacto invento para si mismo.
 #      El gate reporta "sin contrato" para LDS: no lo aprueba ni lo falla.
+#
+#      UMBRAL PARA DESTRABARLO: cuatro LDS reales, que es la muestra con la que se
+#      midieron SOL, EJ y UXS. Con menos, la forma que salga es la forma del primero.
+#      Medido el 2026-08-28 en la pasada de cierre.
 
 # ---------------------------------------------------------------------------
 # TABLA DE EQUIVALENCIAS — como se agrupo por funcion.

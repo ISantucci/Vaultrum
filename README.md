@@ -99,11 +99,11 @@ Los dos son válidos. El segundo es el que deja rastro.
 
 ## Estado actual
 
-Etapa de apertura inicial, con una entrega real completa: la cadena se corrió de punta a punta produciendo un Pong 3D en Unity 6, jugable y jugado.
+Etapa de apertura inicial, con dos entregas reales completas: un Pong 3D en Unity 6 y un plataformero 2D de precisión en web, las dos con la cadena corrida de punta a punta y su validación cerrada. Con la segunda corrieron por primera vez las dos áreas que faltaban, Level Design y Control de Calidad.
 
 Lo que eso probó y lo que no está escrito sin maquillaje en `ARQ-000_Auditoria_de_arquitectura` y en el backlog de `00_Leyes_en_antesala`. Resumen honesto: **la cadena funciona en el medio y falla en los bordes**, y las tres reglas de borde que lo corrigen ya son pasos ejecutables de las skills.
 
-Falta la segunda muestra. Todo lo validado se validó sobre un mismo género.
+Lo que falta ya no es la segunda muestra: es **salir del dominio.** Dos entregas, dos videojuegos. Y la segunda está probada como sistema y sin probar como experiencia — el owner todavía no la jugó, y eso está declarado como deuda en su `VE`, no tapado.
 
 ---
 

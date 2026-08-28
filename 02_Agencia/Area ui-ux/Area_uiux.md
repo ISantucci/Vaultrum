@@ -184,6 +184,28 @@ Un dato que no cumple las dos cosas no es "poco importante": está en el cajón 
 
 El piso no se inventó acá. Está destilado en `14_UI_HUD_y_menus` (`05_Escuela/Biblioteca/Fundamentos/`), con su baseline numérico completo, sus diez antipatrones y sus seis pruebas. El área **lo consulta on-demand** y no lo copia: el libro es la fuente, esto es el contrato.
 
+### El corolario del cero
+
+El piso arregla la mitad de la falla: lo que tiene que existir aunque el HUD esté vacío. La otra mitad es el cero mismo.
+
+> **Un canal presupuestado en cero es una hipótesis, no un hecho, hasta que alguien juega.**
+
+`UXS-001.2` de Merma declaró *HUD numérico permanente = 0 elementos* con un argumento bueno —*"el cuerpo ES el marcador, un número al lado sería decir dos veces lo mismo"*—, `legibilidad.py` dio las seis leyes en verde, y el owner jugó y dijo *"faltan bastantes indicadores"*. El instrumento no lo podía ver: mide que lo declarado se lea, no que alcance.
+
+Un cero es la única cifra del presupuesto que **no se puede refutar leyendo**. Cualquier otra se discute contra la densidad y el techo; el cero no compite con nada, así que ningún cruce lo toca.
+
+Por eso se trata distinto:
+
+```txt
+todo canal presupuestado en CERO se lista aparte en el UXS, con
+  con que se reemplaza      el canal concreto que lleva esa senal en su lugar
+  como se verifica          la observacion que lo confirmaria o lo tumbaria
+
+y entra al VE como item a verificar con el owner jugando.
+```
+
+No es un veto al cero. `UXS-001.2` de Salto declara `HUD permanente: 0` y `texto en juego: 0`, y ese cero está bien puesto: el género vive de que la postura lo diga todo. Lo que la regla arregla es que **el instrumento no distingue un cero pensado de un cero equivocado** — a los dos les da verde. Listarlo aparte es lo que lo pone bajo la mirada del único que puede decidirlo.
+
 ### Lo que el piso todavía no tiene
 
 `legibilidad.py` **no mide el piso**. Los seis ítems se declaran en el `UXS` y los verifica el Validador leyendo, no corriendo. Es deuda declarada, con su motivo: el instrumento se extiende cuando el piso demuestre que la forma sirve en dos proyectos reales. Hasta entonces, el checklist de cierre lo marca como juicio y no como medición.
@@ -276,7 +298,7 @@ Un gate que no se puede verificar mecánicamente no es un gate, es una intenció
 |------|--------|-----------|------------------|
 | Comunicación | antes de que cierre un `GDS` con interfaz | presupuesto entregado y citado en el `GDS` | la mitad A del `UXS` existe y el `GDS` la nombra |
 | Interfaz | todo `RQ` con interfaz | `UXS` abierto antes de que Programación abra el `SOL` | el `SOL` declara su `UXS` |
-| Cierre | todo `UXS` que se cierra | las seis leyes en verde **y los seis ítems del piso declarados** | `legibilidad.py --verificar` devuelve 0 · el piso lo lee el Validador (todavía no se mide) |
+| Cierre | todo `UXS` que se cierra | las seis leyes en verde, **los seis ítems del piso declarados y todo canal en cero listado aparte** | `legibilidad.py --verificar` devuelve 0 · el piso y los ceros los lee el Validador (todavía no se miden) |
 | No aplica | un `GDS` declara que no hay interfaz | qué dimensión de comunicación queda ausente | el test del *no aplica* al cerrar el `VE` |
 
 Corregir el texto de una etiqueta o el valor de un parámetro visual en un `UXS` ya cerrado **no** dispara ningún gate. El área se activa cuando cambia lo que se comunica, no cuando cambia cómo está escrito.

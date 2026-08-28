@@ -43,6 +43,8 @@ Primero misión (gap + presupuesto + barra). Después investigación con citas. 
 
 - Traducí el pedido (gap/idea/ambigüedad) en una **pregunta de estudio verificable**.
 - **Dedup inicial** contra el Core y contra la Biblioteca. No a ojo: `python3 "05_Escuela/Herramientas/biblioteca.py" . --dedup <tema>`. Si ya hay libro/fuente que lo cubre, la misión es *actualización*, no alta.
+  - **Leé el número, no el veredicto.** El dedup es un guardrail que **autoriza trabajo**, así que su modo de fallar caro es contestar *"no hay nada, adelante"* — y ya lo hizo: buscaba la frase entera y `"onboarding tutorial"` no encontraba `09_Onboarding_y_tutorial`, que estaba en el estante. Ahora reporta cuántos términos tocó cada pieza. Un cero se trata como *frená y fijate*, no como absolución. Criterio del Core: `Direccion de falla de un guardrail`.
+  - **Y buscá antes de encargar.** Un tema puede estar escrito y sin consumidor: si ninguna skill lo nombra, el material existe y no llegó. Escribir de nuevo lo que ya está escrito es maquinaria que ningún requerimiento pidió, pagada dos veces. Criterio del Core: `Conocimiento cargado o archivado`.
 - Fijá **presupuesto de tokens** y **barra de calidad**.
 - **AiCare — ANTES:** validá el presupuesto y medí el contexto base. Si falta gap/presupuesto/barra, no arranca.
 - Registrá la misión en `05_Escuela/Salidas/EST-XXX_Mision_<nombre>.md`.

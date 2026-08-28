@@ -216,20 +216,28 @@ Una puerta que abre a un registro fechado le cuenta a quien llega el pasado del 
 
 ## Estado actual
 
-Etapa de apertura inicial, con **una entrega real completa**: la cadena se corrió de punta a punta produciendo un Pong 3D en Unity 6, jugable y jugado por el owner.
+Etapa de apertura inicial, con **dos entregas reales completas**: un Pong 3D en Unity 6 y un plataformero 2D de precisión en web, los dos con la cadena corrida de punta a punta y su validación de entrega cerrada.
+
+```txt
+Pong3D   TL-003 -> VE-003 Cerrado    la primera vuelta entera, jugada por el owner
+Salto    TL-001 -> VE-001 Cerrado    la segunda muestra, con deuda declarada
+```
 
 Lo que eso probó:
 
 - la cadena produce un entregable que se juega, con trazabilidad completa;
 - las table-stakes entran como requerimiento explícito y no como intuición;
-- el ciclo de conocimiento cierra: lo aprendido volvió al Core.
+- el ciclo de conocimiento cierra: lo aprendido volvió al Core;
+- **las seis áreas corrieron.** Con `Salto` entraron las dos que faltaban: `LDS` estrenó su instrumento (`nivel.py`, cinco leyes) y Control de Calidad emitió su primer veredicto (`QA-001`, CONDITIONAL GO). Ninguna de las dos cosas se podía escribir de antemano: **un área nueva necesita un caso, no una spec.**
+- **la cadena se corrige a sí misma.** Dos rebotes hacia arriba en la misma entrega, y los dos salieron de correr un instrumento, no de leerlo.
 
 Lo que no:
 
-- **una sola muestra.** Un género, sin dimensión espacial, sin persistencia ni contenido. `LDS` nunca corrió.
-- **la fricción todavía no está medida.** El instrumento existe (`06_Medicion de friccion`); la primera entrega con número va a ser `TL-004`.
+- **dos muestras, dos videojuegos.** Sigue sin probarse que la cadena sirva fuera de los juegos. Es la pregunta que separa un método de un método para hacer arcades.
+- **`Salto` está probado como sistema y sin probar como experiencia**, porque el owner todavía no lo jugó. Es la deuda mayor de `VE-001` y la que ningún instrumento puede saldar.
+- **la fricción todavía no está medida.** El instrumento existe (`06_Medicion de friccion`) y **ninguna skill lo nombra**, así que cada entrega cierra sin número y nadie lo nota. Es la ley sin medir aplicada al propio sistema.
 
-El foco actual está en la segunda muestra y en medir, no en agregar capas.
+El foco actual está en medir y en salir del dominio, no en agregar capas.
 
 ---
 

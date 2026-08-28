@@ -26,8 +26,17 @@ Dos reglas salieron de eso y estan implementadas aca:
   1. No se destruye el destino antes de saber que la fuente esta bien.
   2. El recorrido EXCLUYE los destinos. Un instalador que se lee a si mismo
      como fuente es una recursion esperando pasar.
+
+Y una tercera, del 2026-08-28, que es de superficie y no de logica:
+  3. Borrar es LIMPIEZA, no parte de la instalacion. Hay superficies donde el
+     proceso no puede borrar -- un montaje remoto, un permiso restringido -- y
+     ahi este script moria con traceback DESPUES de haber sincronizado bien,
+     diciendo que fallo cuando habia terminado. Es la misma mentira que
+     instalar_trace.py ya habia arreglado por otra puerta. Ahora lo que no se
+     puede borrar se aparta a _to_delete/ y se avisa; la instalacion no depende
+     de eso. Ver `La superficie del ejecutor` en el Core.
 """
-import os, sys, shutil, re, hashlib
+import os, sys, shutil, re, hashlib, time
 
 DESTINOS = ['.claude/skills', '.agents/skills']
 EXCLUIR  = {'.git', '.claude', '.agents', 'node_modules', '_to_delete'}
@@ -36,6 +45,33 @@ TOPE_TOTAL, TOPE_UNA = 8000, 1536
 MARCA = ('Generado por instalar_skills.py desde 02_Agencia/Area */Skills/ y las capas 03/04/05.\n'
          'Editar aca no cambia el sistema: se pisa en la proxima corrida.\n'
          'Para cambiar una skill, edita su fuente en el area y volve a correr el instalador.\n')
+PAPELERA = '_to_delete'
+_apartados = []
+
+
+def descartar(ruta):
+    """Saca `ruta` de en medio. Borrarla es lo ideal, no es lo obligatorio.
+
+    Regla 3 del docstring: hay superficies donde el proceso no puede borrar. Un
+    instalador que muere ahi reporta un fallo que no ocurrio. Cuando no se puede,
+    se aparta a _to_delete/ (que esta en EXCLUIR y en el .gitignore) y se avisa
+    al final, una vez, en vez de romper.
+    """
+    if not os.path.isdir(ruta):
+        return
+    try:
+        shutil.rmtree(ruta)
+        return
+    except OSError:
+        pass
+    destino = os.path.join(PAPELERA, 'instalador',
+                           os.path.basename(ruta) + '.' + str(int(time.time() * 1000)))
+    try:
+        os.makedirs(os.path.dirname(destino), exist_ok=True)
+        os.rename(ruta, destino)
+        _apartados.append(destino)
+    except OSError:
+        _apartados.append(ruta + '  (no se pudo ni borrar ni mover)')
 
 
 def fuentes(raiz):
@@ -84,11 +120,10 @@ def sincronizar(origen, destino):
     tmp    = destino + '.nuevo'
     previo = destino + '.previo'
     for x in (tmp, previo):
-        if os.path.isdir(x):
-            shutil.rmtree(x)
+        descartar(x)
     shutil.copytree(origen, tmp)
     if huella(tmp) != huella(origen):
-        shutil.rmtree(tmp)
+        descartar(tmp)
         raise SystemExit(f'  [ERROR] la copia de «{os.path.basename(origen)}» no coincide '
                          f'con su fuente. No se reemplaza nada.')
     if os.path.isdir(destino):
@@ -99,8 +134,7 @@ def sincronizar(origen, destino):
         if os.path.isdir(previo):
             os.rename(previo, destino)     # se restaura la copia que andaba
         raise
-    if os.path.isdir(previo):
-        shutil.rmtree(previo)
+    descartar(previo)
 
 
 def descripcion(ruta):
@@ -154,7 +188,7 @@ def main():
             print(f'    - {h}')
             difiere.append(h)          # F4: una huerfana ES una diferencia
             if not solo_medir:
-                shutil.rmtree(h)
+                descartar(h)
 
     if not solo_medir:
         for d in DESTINOS:
@@ -180,6 +214,12 @@ def main():
     pct = total * 100 // TOPE_TOTAL
     estado = 'AVISO' if total > TOPE_TOTAL else 'ok'
     print(f'    [{estado}] {total} chars / {TOPE_TOTAL} tope de Codex = {pct}%')
+
+    if _apartados:
+        print('\n  [aviso] esta superficie no permite borrar. Se aparto a _to_delete/,')
+        print('          la instalacion quedo completa igual. Borralos a mano:')
+        for a in _apartados:
+            print(f'    - {a}')
 
     if solo_medir and difiere:
         print(f'\n  FUERA DE SINCRONIA: {len(difiere)} copia(s) difieren de su fuente.')

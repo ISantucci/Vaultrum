@@ -93,6 +93,27 @@ Con esa regla, el HUD vacío y el HUD de simulador de vuelo son la misma falla: 
 
 **El piso todavía no se mide.** `legibilidad.py` no lo lee. Se declara en el `UXS` y lo verifica el Validador leyendo. Es deuda declarada, va en el checklist como **juicio**, y no se presenta como medición.
 
+## El corolario del cero
+
+> **Un canal presupuestado en cero es una hipótesis, no un hecho, hasta que alguien juega.**
+
+Es la única cifra del presupuesto que no se puede refutar leyendo: no compite con nada, así que ningún cruce la toca y el instrumento le da verde igual que a un cero pensado. Merma declaró *HUD numérico = 0* con buen argumento, `legibilidad.py` dio las seis leyes en verde, y el owner jugó y dijo *"faltan bastantes indicadores"*.
+
+Al cerrar la mitad B, **listá aparte todo canal presupuestado en cero**:
+
+```txt
+canal            el que quedo en cero
+con que se       el canal concreto que lleva esa senal en su lugar
+  reemplaza
+como se verifica la observacion que lo confirmaria o lo tumbaria
+
+-> y pasalos a Produccion: entran al VE como items a verificar con el owner jugando.
+```
+
+No es un veto al cero. `UXS-001.2` de Salto tiene dos ceros bien puestos. Lo que esto arregla es que el cero **quede bajo la mirada del único que puede decidirlo**, en vez de pasar por medido. Criterio del Core: `Alcance del instrumento`.
+
+Detalle completo, con el caso: `Area_uiux`, *El corolario del cero*.
+
 ## El UXS tiene dos mitades
 
 ```txt
@@ -231,6 +252,8 @@ JUICIO — se declara como juicio, no como medición
 [ ] la cadena de respuesta tiene números, no adjetivos
 [ ] opciones mínimas alcanzables en <= 3 pasos
 [ ] cada elemento en pantalla declara su frecuencia de cambio
+[ ] todo canal presupuestado en CERO esta listado aparte, con que lo reemplaza y como se verifica
+[ ] esos ceros se pasaron a Produccion para que entren al VE
 [ ] la jerarquía dirige la mirada a lo crítico y no compite consigo misma
 [ ] el onboarding enseña de a una habilidad por vez, y no es un muro de texto
 [ ] prueba de la persona: alguien que nunca vio el sistema entiende qué puede hacer
@@ -258,7 +281,7 @@ Un `UXS` cerrado es insumo del `SOL` del Área de Programación, junto al `GDS` 
 |------|--------|-----------|
 | Comunicación | antes de que cierre un `GDS` con interfaz | presupuesto entregado y citado en el `GDS` |
 | Interfaz | todo `RQ` con interfaz | `UXS` abierto antes de que Programación abra el `SOL` |
-| Cierre | todo `UXS` que se cierra | `legibilidad.py --verificar` devuelve 0 **y los seis ítems del piso están declarados** |
+| Cierre | todo `UXS` que se cierra | `legibilidad.py --verificar` devuelve 0, **los seis ítems del piso están declarados y todo canal en cero está listado aparte** |
 | No aplica | un `GDS` declara que no hay interfaz | qué dimensión de comunicación queda ausente |
 
 ## Límites

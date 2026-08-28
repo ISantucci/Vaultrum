@@ -324,6 +324,14 @@ Definición de terminado — checklist ejecutable de este paso:
 [ ] no hay estados muertos ni pantallas sin salida
 ```
 
+**Y los ceros del `UXS`.** Si el hilo tuvo `UXS`, ese `UXS` lista aparte todo canal presupuestado en **cero**. Cada uno entra al `VE` como ítem a verificar con el owner jugando, porque es la única parte del presupuesto de comunicación que ningún instrumento puede refutar leyendo: un cero no compite con nada, así que `legibilidad.py` le da verde igual que a un cero pensado.
+
+```txt
+[ ] cada canal en cero del UXS quedo verificado con el owner jugando, o declarado como deuda
+```
+
+Merma es el caso: *HUD numérico = 0* con buen argumento, las seis leyes en verde, y el owner jugando dijo *"faltan bastantes indicadores"*. Criterio del Core: `Alcance del instrumento`.
+
 > Fuente canónica: el libro `03_Definicion_de_terminado` de la Biblioteca (`05_Escuela/Biblioteca/Fundamentos/`). El checklist de arriba es el mínimo transversal; el libro trae la versión completa y por tipo de entregable. Si el entregable tiene libro de género, su definición de terminado específica **manda sobre** este mínimo (lo extiende, no lo reemplaza).
 
 Registrá **VE-XXX** (cuelga del `TL`, no del `.n`) en `<Proyecto>/01_Produccion/` y actualizá el cuaderno del proyecto. Estados: **Cerrado** / **Ajustar** / **Pausado**.
