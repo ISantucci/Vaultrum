@@ -31,6 +31,7 @@
       2  no hay proyecto declarado, o la ruta declarada no existe
       3  el ejecutor pedido no esta en el PATH de esta consola
       4  no se puede escribir en resultados/
+      5  el ejecutor pedido no tiene perfil de invocacion declarado
 #>
 [CmdletBinding()]
 param(
@@ -132,12 +133,53 @@ if (-not (Test-Path -LiteralPath $Proyecto)) {
 # texto plano que puede escribir cualquiera, y de ahi no sale una ruta ni un
 # argumento suelto. Si el binario no esta, la orden vuelve en FALLO de
 # superficie y no se ejecuta nada -- que es lo correcto, no un bug.
+# CADA EJECUTOR SE INVOCA DISTINTO, Y ESO SE DECLARA ACA
+#
+# La primera version resolvia el ejecutor por nombre y le pasaba SIEMPRE los
+# flags de Claude Code. Con "Ejecutor: codex" eso ejecutaba
+#   codex -p --permission-mode acceptEdits
+# que no es como se invoca codex. El test no lo vio porque el ejecutor falso
+# ignoraba sus argumentos: probaba el ruteo, no la invocacion.
+#
+# Ahora un ejecutor sin perfil NO se despacha, aunque este en el PATH. La lista
+# de perfiles es la unica autoridad de como se llama a cada uno, y agregar un
+# ejecutor es agregar su perfil -- no basta con instalarlo.
+#
+#   claude   claude -p --permission-mode <modo> [--continue]     prompt por stdin
+#   codex    codex exec - --sandbox <read-only|workspace-write>  prompt por stdin
+#            `exec -` es la forma oficial de que stdin SEA el prompt.
+#            Fuente: developers.openai.com/codex -> Non-interactive mode.
+#
+# El modo de permisos se declara una vez en vocabulario de Claude (-Permisos) y
+# se traduce por ejecutor: no se le pide al owner que sepa dos vocabularios.
+function Perfil-Ejecutor([string]$nombre, [string]$permisos, [bool]$continuar) {
+    $escribe = @('acceptEdits', 'bypassPermissions', 'acceptAll') -contains $permisos
+    switch ($nombre) {
+        'claude' {
+            $a = @('-p', '--permission-mode', $permisos)
+            if ($continuar) { $a += '--continue' }
+            return @{ args = $a; continuidad = $true }
+        }
+        'codex' {
+            $caja = if ($escribe) { 'workspace-write' } else { 'read-only' }
+            return @{ args = @('exec', '-', '--sandbox', $caja); continuidad = $false }
+        }
+    }
+    return $null
+}
+
 function Resolver-Ejecutor([string]$nombre) {
     $nombre = $nombre.Trim().Trim('"')
     if ($nombre -notmatch '^[A-Za-z][\w.-]*$') { return $null }
     return Get-Command $nombre -ErrorAction SilentlyContinue
 }
 
+if (-not (Perfil-Ejecutor $Ejecutor $Permisos $Continuar.IsPresent)) {
+    Fallar "No tengo perfil de invocacion para '$Ejecutor'." @(
+        'Un ejecutor sin perfil no se despacha, aunque este instalado: no se',
+        'inventa como se lo llama. Perfiles declarados: claude, codex.'
+    ) 5
+}
 $cmdEjecutor = Resolver-Ejecutor $Ejecutor
 if (-not $cmdEjecutor) {
     Fallar "No encontre '$Ejecutor' en el PATH de esta consola." @(
@@ -198,6 +240,7 @@ while ($true) {
             $nombreEjec = $me.Groups[1].Value.Trim()
             $cmdOrden   = Resolver-Ejecutor $nombreEjec
         }
+        $perfil = Perfil-Ejecutor $nombreEjec $Permisos $Continuar.IsPresent
 
         Write-Host ''
         Write-Host ("[{0}] ejecutando {1}" -f $inicio.ToString('HH:mm:ss'), $orden.Name) -ForegroundColor Green
@@ -214,9 +257,17 @@ while ($true) {
         } elseif (-not $cmdOrden) {
             $salida = "FALLO de superficie: la orden declara el ejecutor '$nombreEjec' y no esta en el PATH de esta consola.`r`nNo se ejecuto nada."
             $codigo = 3
+        } elseif (-not $perfil) {
+            $salida = "FALLO de superficie: no tengo perfil de invocacion para '$nombreEjec'.`r`nEsta en el PATH, pero no se inventa como se lo llama. Perfiles declarados: claude, codex.`r`nNo se ejecuto nada."
+            $codigo = 5
+        } elseif ($Continuar -and -not $perfil.continuidad) {
+            # Declarar y frenar. Correr sin continuidad seria devolver un
+            # resultado distinto del pedido y avisarlo al pie, que es
+            # exactamente el fallo que se disfraza de exito.
+            $salida = "FALLO de superficie: la corrida pide -Continuar y el perfil de '$nombreEjec' no sostiene contexto entre ordenes.`r`nSacale -Continuar, o mandala al ejecutor que si lo sostiene.`r`nNo se ejecuto nada."
+            $codigo = 5
         } else {
-            $argumentos = @('-p', '--permission-mode', $Permisos)
-            if ($Continuar) { $argumentos += '--continue' }
+            $argumentos = $perfil.args
             Push-Location -LiteralPath $destino
             try {
                 $salida = ($texto | & $cmdOrden.Name @argumentos 2>&1 | Out-String)

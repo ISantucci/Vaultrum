@@ -28,7 +28,8 @@ Parametros opcionales (van los dos, al .bat y al .ps1):
     -Proyecto  "C:\ruta\al\proyecto"   pisa proyecto.local.txt en esta corrida
     -Bandeja   "C:\otra\bandeja"       correr el observer sobre otra bandeja
     -Intervalo 5                       segundos entre chequeos
-    -Permisos  acceptEdits             modo de permisos de Claude Code
+    -Permisos  acceptEdits             modo de permisos; el perfil lo traduce
+    -Ejecutor  claude                  ejecutor por defecto (claude | codex)
     -Continuar                         mantiene el contexto entre ordenes
 
 Para cortar: Ctrl+C, o crear el archivo `stop.txt` en esta carpeta.
@@ -40,9 +41,25 @@ Para cortar: Ctrl+C, o crear el archivo `stop.txt` en esta carpeta.
     resultados/  <nombre>.result.md con el estado, el proyecto y la salida completa
     log.txt      una linea por orden: cuando, cual, cuanto tardo, como termino
 
-Una orden puede declarar su propio proyecto con una linea `Proyecto: <ruta>` en las
-primeras diez lineas. Sirve cuando hay mas de un proyecto en vuelo y la orden tiene
-que ir a uno que no es el default de la maquina.
+Una orden puede declarar su propio proyecto con una linea `Proyecto: <ruta>` y su propio
+ejecutor con `Ejecutor: <nombre>`, en las primeras diez lineas. Sirve cuando hay mas de
+un proyecto en vuelo, o cuando esa orden concreta va al ejecutor barato.
+
+## Los perfiles de ejecutor
+
+Cada ejecutor se invoca distinto, y la bandeja no lo adivina:
+
+    claude   claude -p --permission-mode <modo> [--continue]     prompt por stdin
+    codex    codex exec - --sandbox <read-only|workspace-write>  prompt por stdin
+
+**Un ejecutor sin perfil no se despacha, aunque este en el PATH.** Agregar uno es agregar
+su perfil en observer.ps1, no basta con instalarlo. El modo de permisos se escribe una
+sola vez en vocabulario de Claude y el perfil lo traduce: `acceptEdits` es
+`workspace-write` para codex, y cualquier modo de lectura es `read-only`.
+
+Si la corrida pide `-Continuar` y la orden va a un ejecutor que no sostiene contexto, la
+orden frena con FALLO en vez de correr sin continuidad: devolver algo distinto de lo
+pedido y avisarlo al pie es el fallo que se disfraza de exito.
 
 ## La superficie se verifica antes, no despues
 
@@ -52,8 +69,9 @@ esta en el PATH, que la carpeta del proyecto existe, y que puede escribir en
 
     1  la bandeja no esta dentro de un Vaultrum (falta 00_START_HERE.md)
     2  no hay proyecto declarado, o la ruta declarada no existe
-    3  'claude' no esta en el PATH de esta consola
+    3  el ejecutor pedido no esta en el PATH de esta consola
     4  no se puede escribir en resultados/
+    5  el ejecutor pedido no tiene perfil de invocacion declarado
 
 Y lo que falla vuelve como **fallo**, no como nota al pie: el resultado guarda el
 `Estado` con el exit code del ejecutor, y el log tambien. Criterio del Core:

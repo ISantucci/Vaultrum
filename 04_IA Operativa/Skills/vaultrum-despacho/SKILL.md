@@ -89,19 +89,29 @@ Y el corolario que atrapa el caso caro: **un ejecutor que no pudo hacer algo lo 
 
 ## Los dos ejecutores, desde cmd
 
-```txt
-Claude Code    el observer le pasa la orden por stdin: claude -p --permission-mode <modo>
-               parado en el proyecto. Es la ruta por defecto de la bandeja.
+**Cada ejecutor se invoca distinto, y eso está declarado en un perfil.** No es un detalle: un ejecutor sin perfil **no se despacha aunque esté instalado**, porque no se inventa cómo se lo llama. Los perfiles viven en `observer.ps1`, que es quien invoca; acá va cuál elegir.
 
-Codex          hoy se llega desde adentro de Claude Code, con los comandos del plugin
-               (/codex:rescue, /codex:review, /codex:adversarial-review). La tabla de
-               cuál y cuándo vive en `vaultrum-programador`, que es quien ejecuta.
-               `Ejecutor: codex` en la orden lo invoca directo, y solo funciona si el
-               binario está en el PATH: si no está, la orden vuelve en FALLO de
-               superficie y no se ejecuta nada. Eso es correcto, no un bug.
+```txt
+claude   claude -p --permission-mode <modo> [--continue]     prompt por stdin
+         Sostiene contexto entre órdenes con -Continuar.
+
+codex    codex exec - --sandbox <read-only|workspace-write>  prompt por stdin
+         `exec -` es la forma oficial de que stdin SEA el prompt.
+         No sostiene contexto entre órdenes: cada una arranca limpia.
 ```
 
-El esfuerzo por defecto del proyecto se fija una vez en `.codex/config.toml` y no se repite en cada llamada.
+El **modo de permisos se declara una vez** en vocabulario de Claude (`-Permisos`) y el perfil lo traduce: `acceptEdits` → `workspace-write`, cualquier modo de lectura → `read-only`. Al owner no se le pide que sepa dos vocabularios.
+
+De ahí sale una regla de ruteo que no es de costo sino de forma:
+
+```txt
+la tarea necesita el hilo de la anterior   ->  claude, con -Continuar
+la tarea es autocontenida                   ->  cualquiera de los dos, y decide el costo
+```
+
+Si una corrida pide `-Continuar` y la orden va a codex, el observer **frena y lo declara** en vez de correrla sin continuidad. Devolver un resultado distinto del pedido y avisarlo al pie es el fallo que se disfraza de éxito.
+
+Y la tercera ruta, que sigue siendo la más usada: **Codex desde adentro de Claude Code**, con los comandos del plugin (`/codex:rescue`, `/codex:review`, `/codex:adversarial-review`). Sirve cuando el ruteo depende de algo que hay que leer primero — la tabla de cuál y cuándo vive en `vaultrum-programador`, que es quien ejecuta. Ojo con una asimetría real: lo que se dispara así **no deja línea en el log de la bandeja**, y por lo tanto `despacho.py` no lo cuenta.
 
 ## La cosecha
 
