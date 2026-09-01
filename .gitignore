@@ -82,3 +82,11 @@ COMMIT-*.md
 _APLICAR_*.txt
 _AUDITORIA_*.txt
 _DECISIONES_*.txt
+
+# Bandeja de ordenes (capa IA Operativa): runtime, no fuente.
+# La herramienta (observer.ps1 / observer.bat / README.md) SI se versiona.
+04_IA Operativa/Herramientas/bandeja/ordenes/
+04_IA Operativa/Herramientas/bandeja/resultados/
+04_IA Operativa/Herramientas/bandeja/procesadas/
+04_IA Operativa/Herramientas/bandeja/log.txt
+04_IA Operativa/Herramientas/bandeja/stop.txt

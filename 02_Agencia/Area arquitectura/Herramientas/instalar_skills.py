@@ -48,6 +48,9 @@ MARCA = ('Generado por instalar_skills.py desde 02_Agencia/Area */Skills/ y las 
 PAPELERA = '_to_delete'
 _apartados = []
 
+BANDEJA     = os.path.join('04_IA Operativa', 'Herramientas', 'bandeja')
+BANDEJA_SUB = ('ordenes', 'resultados', 'procesadas')
+
 
 def descartar(ruta):
     """Saca `ruta` de en medio. Borrarla es lo ideal, no es lo obligatorio.
@@ -143,6 +146,49 @@ def descripcion(ruta):
     return len(m.group(1)) if m else 0
 
 
+def preparar_bandeja(solo_medir):
+    """Deja lista la bandeja de ordenes de la capa IA Operativa.
+
+    La bandeja es el canal entre el productor -- la conversacion donde se decide --
+    y los ejecutores que tienen manos: el productor deja una orden en ordenes/, el
+    observer la ejecuta parado en el proyecto, y la salida vuelve a resultados/.
+
+    Tres decisiones, para que no se lea como algo que no es:
+      1. NO copia observer.ps1 ni observer.bat. La herramienta vive en su area,
+         igual que cada skill vive en la suya. Aca solo se crea lo que es runtime.
+      2. NO toca el contenido de ordenes/, resultados/ ni procesadas/. Correr el
+         instalador cien veces no puede costar una orden en vuelo.
+      3. NO cuenta como diferencia en --verificar. La bandeja no es una copia
+         generada que pueda quedar fuera de sincronia con una fuente: es
+         infraestructura de ejecucion. Si falta, se avisa; el gate no se rompe.
+    """
+    if not os.path.isdir(BANDEJA):
+        print('\n  [--] bandeja: no instalada (falta %s)' % BANDEJA)
+        return
+
+    faltantes = [s for s in BANDEJA_SUB if not os.path.isdir(os.path.join(BANDEJA, s))]
+
+    if solo_medir:
+        print('\n  [%s] bandeja: %s' % ('ok' if not faltantes else '!!', BANDEJA))
+        for s in faltantes:
+            print('       falta %s/' % s)
+    else:
+        for s in BANDEJA_SUB:
+            os.makedirs(os.path.join(BANDEJA, s), exist_ok=True)
+        print('\n  [ok] bandeja lista: %s' % BANDEJA)
+
+    cola = os.path.join(BANDEJA, 'ordenes')
+    if os.path.isdir(cola):
+        pendientes = len([x for x in os.listdir(cola) if x.endswith('.md')])
+        if pendientes:
+            print('       %d orden(es) esperando al observer' % pendientes)
+
+    if shutil.which('claude') is None:
+        print('       [aviso] "claude" no esta en el PATH: el observer arranca pero no ejecuta')
+    else:
+        print('       arrancalo con %s' % os.path.join(BANDEJA, 'observer.bat'))
+
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     raiz = os.path.abspath(args[0] if args else '.')
@@ -202,6 +248,8 @@ def main():
             except OSError:
                 pass
             print('\n  [ok] gate de cierre instalado en .git/hooks/pre-commit')
+
+    preparar_bandeja(solo_medir)
 
     # presupuesto de contexto residente
     print(f'\n  {len(src)} skills · residente (suma de las descriptions):')
