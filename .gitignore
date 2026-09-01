@@ -90,3 +90,7 @@ _DECISIONES_*.txt
 04_IA Operativa/Herramientas/bandeja/procesadas/
 04_IA Operativa/Herramientas/bandeja/log.txt
 04_IA Operativa/Herramientas/bandeja/stop.txt
+
+# Que proyecto ejecuta el observer es un dato de CADA maquina, no del repo.
+# Misma regla que .owner.local.json: local, y nunca se versiona.
+04_IA Operativa/Herramientas/bandeja/proyecto.local.txt

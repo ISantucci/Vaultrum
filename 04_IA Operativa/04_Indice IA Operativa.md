@@ -44,6 +44,8 @@ El segundo presupuesto de la capa: no qué contexto se carga, sino **dónde corr
 
 `contar_contexto.py` — el contador real de contexto. Mapa del vault por capa, archivos más pesados, costo de una carga concreta contra un presupuesto, y diff antes/después de podar. Es el Profiler de esta capa.
 
+`bandeja/` — el canal entre el productor y los ejecutores que tienen manos: una orden `.md` entra, el observer la ejecuta parado en el proyecto, y el resultado vuelve con su estado. Es `07_Despacho de ejecucion` con una herramienta atrás. Cómo se arranca y qué se versiona: `bandeja/README.md`.
+
 ---
 
 ## Relación con la optimización del Core

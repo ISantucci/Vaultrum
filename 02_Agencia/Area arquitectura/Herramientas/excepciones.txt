@@ -32,3 +32,20 @@ AGENTS.md | inalcanzable | idem CLAUDE.md.
 02_Agencia/Area produccion/Salidas/** | inalcanzable | idem.
 02_Agencia/Area conocimiento/Staging/** | flotando | Staging es zona transitoria de commits al Core: historial, no sistema.
 02_Agencia/Area conocimiento/Staging/** | inalcanzable | idem.
+
+# --- Bandeja de ordenes (capa IA Operativa): runtime, no notas del vault.
+# Una orden es un pedido de una sola vez que entra por ordenes/, se ejecuta y
+# termina en procesadas/ y resultados/. Son .md porque el ejecutor lee texto, no
+# porque sean documentacion: nadie las va a caminar desde un indice, y ninguna
+# vive mas que su corrida. Estan en el .gitignore por lo mismo -- no viajan en el
+# paquete, asi que grafo.py --paquete no las ve nunca; sin esta declaracion el
+# gate de cierre se rompe en la copia de trabajo cada vez que hay una orden en
+# vuelo. La herramienta (observer.ps1 / observer.bat / README.md) NO esta exenta:
+# esa si es documentacion y la declara `04_Indice IA Operativa`.
+# Mismo criterio que 06_Proyectos/**. Declarado el 2026-09-01.
+04_IA Operativa/Herramientas/bandeja/ordenes/** | flotando | orden de una sola vez, no nota: no se versiona y no se camina desde un indice.
+04_IA Operativa/Herramientas/bandeja/ordenes/** | inalcanzable | idem: se entra por la bandeja, no por el grafo.
+04_IA Operativa/Herramientas/bandeja/procesadas/** | flotando | orden ya ejecutada: historial de la corrida, no nota.
+04_IA Operativa/Herramientas/bandeja/procesadas/** | inalcanzable | idem.
+04_IA Operativa/Herramientas/bandeja/resultados/** | flotando | salida de una corrida: historial, no nota.
+04_IA Operativa/Herramientas/bandeja/resultados/** | inalcanzable | idem.
