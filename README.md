@@ -80,8 +80,22 @@ Sirve para estudiar el criterio, revisar patrones y usar la Biblioteca. No hace 
 ### Instalarlo — para que te atienda
 
 1. Clonar el repositorio.
-2. Correr **`skills.bat`** (Windows) o **`skills.sh`** (macOS/Linux) desde la raíz. Sincroniza las once skills a `.claude/skills/` y `.agents/skills/`, que es donde Claude Code, Codex, Cursor, Zed y Copilot las descubren solos.
+2. Correr **`skills.bat`** (Windows) o **`skills.sh`** (macOS/Linux) desde la raíz. No es solo copiar skills: deja el entorno de trabajo armado y **te dice si quedó armado o no**.
 3. Abrir una sesión de IA con esa carpeta como contexto.
+
+Lo que el instalador deja listo, y lo que verifica:
+
+```txt
+sincroniza   las skills a .claude/skills/ y .agents/skills/, que son las rutas
+             que Claude Code y Codex escanean solos en el repo
+instala      el gate de cierre en .git/hooks/pre-commit
+prepara      la bandeja de ordenes de la capa IA Operativa
+verifica     que cada harness pueda usarse de verdad: el binario en el PATH, su
+             puerta (CLAUDE.md / AGENTS.md), su config, y que la bandeja sepa
+             contra que proyecto despachar
+```
+
+Termina con un **veredicto**: entorno listo, o la lista de lo que falta. Nada de lo que falte rompe el vault —son datos de cada máquina— pero el instalador no dice "Listo" sobre un entorno que no puede trabajar.
 
 `CLAUDE.md` y `AGENTS.md` en la raíz son la puerta: declaran el Modo Vaultrum y mandan al Productor. Con eso, el primer mensaje —sea cual sea— abre el seteo del proyecto.
 

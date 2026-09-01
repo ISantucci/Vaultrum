@@ -94,3 +94,8 @@ _DECISIONES_*.txt
 # Que proyecto ejecuta el observer es un dato de CADA maquina, no del repo.
 # Misma regla que .owner.local.json: local, y nunca se versiona.
 04_IA Operativa/Herramientas/bandeja/proyecto.local.txt
+
+# Config de Codex del repo: viaja el archivo, no lo que Codex escriba al lado.
+# Es parte del harness, como CLAUDE.md y AGENTS.md.
+.codex/*
+!.codex/config.toml

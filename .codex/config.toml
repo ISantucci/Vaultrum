@@ -1,0 +1,41 @@
+# ============================================================================
+#  Vaultrum - configuracion de Codex para ESTE repo
+#
+#  QUE ES ESTE ARCHIVO
+#  Codex camina desde la raiz del proyecto hasta el directorio actual y carga
+#  todos los .codex/config.toml que encuentra; si dos definen la misma clave,
+#  gana el mas cercano. La precedencia completa, de menor a mayor:
+#
+#      defaults del sistema
+#      ~/.codex/config.toml                 (nivel usuario)
+#      ~/.codex/<perfil>.config.toml        (solo con --profile)
+#      .codex/config.toml del proyecto      <- este archivo
+#      flags de la linea de comandos y -c
+#
+#  Fuente: developers.openai.com/codex -> Advanced configuration.
+#  Ojo: los configs de proyecto solo se cargan si el proyecto esta CONFIADO.
+#  En uno no confiado, Codex saltea esta capa sin avisar y usa la de usuario.
+#
+#  POR QUE ESTA VERSIONADO Y VACIO
+#  Es parte del harness, como CLAUDE.md y AGENTS.md: viaja en el paquete para
+#  que quien clone Vaultrum tenga el archivo en el lugar correcto, con los
+#  nombres de clave correctos. Pero NO trae decisiones tomadas -- que modelo y
+#  cuanto esfuerzo se gastan es del owner, y un instalador que lo elige por el
+#  esta inventando. Descomenta lo que quieras fijar.
+#
+#  El criterio de CUANDO conviene el esfuerzo bajo no vive aca: vive en
+#  `04_IA Operativa/07_Despacho de ejecucion` y se aplica desde
+#  `02_Agencia/Area programacion/Skills/vaultrum-programador`.
+# ============================================================================
+
+# model = "gpt-5.3-codex"
+# model_reasoning_effort = "low"
+
+# Las skills de Vaultrum NO se configuran aca: Codex las descubre solo en
+# .agents/skills/, que es una de las rutas que escanea en el repo, y las
+# sincroniza ahi el instalador (skills.bat / skills.sh). Si alguna vez hay que
+# desactivar una sin borrarla, eso se hace en ~/.codex/config.toml con:
+#
+#   [[skills.config]]
+#   path = "<ruta al SKILL.md>"
+#   enabled = false

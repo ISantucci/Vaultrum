@@ -1,7 +1,8 @@
 #!/bin/sh
 # ============================================================================
-#  Vaultrum - instalador de skills            RQ-007.7 . Portabilidad
-#  Envoltorio: la logica vive en instalar_skills.py, una sola vez, para las
+#  Vaultrum - instalador del entorno          RQ-007.7 . Portabilidad
+#  Sincroniza las skills, instala el gate, prepara la bandeja y verifica el
+#  entorno. Envoltorio: la logica vive en instalar_skills.py, una sola vez, para las
 #  tres plataformas. Ver el comentario de skills.bat para por que se movio.
 # ============================================================================
 set -e

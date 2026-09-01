@@ -2,7 +2,9 @@
 cd /d "%~dp0"
 
 rem ============================================================================
-rem  Vaultrum - instalador de skills            RQ-007.7 . Portabilidad
+rem  Vaultrum - instalador del entorno          RQ-007.7 . Portabilidad
+rem  Sincroniza las skills a los dos directorios de descubrimiento, instala el
+rem  gate de cierre, prepara la bandeja y VERIFICA que el entorno pueda trabajar.
 rem  Envoltorio. La logica vive en un solo lugar y es la misma en las tres
 rem  plataformas:  02_Agencia\Area arquitectura\Herramientas\instalar_skills.py
 rem  Este .bat solo elige el interprete, PROPAGA EL CODIGO DE SALIDA y espera.

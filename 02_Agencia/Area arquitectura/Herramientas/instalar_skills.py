@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Vaultrum - instalador de skills (RQ-007.7 . Portabilidad).
+"""Vaultrum - instalador del entorno de trabajo (RQ-007.7 . Portabilidad).
+
+Se llama "instalador de skills" por historia y hace mas que eso: deja el entorno
+armado para las dos superficies donde corre Vaultrum, y verifica que se pueda
+trabajar de verdad antes de decir que termino.
 
 Las skills VIVEN en su area. Esto las SINCRONIZA a los dos directorios donde
 los asistentes las descubren solos. No es una mudanza: es una copia, y la
@@ -10,8 +14,14 @@ fuente sigue siendo el area.
             +--> .claude/skills/vaultrum-X/           Claude Code
             +--> .agents/skills/vaultrum-X/           Codex, Cursor, Zed, Copilot
 
-  python3 instalar_skills.py [ruta_del_vault]        sincroniza e instala el hook
+  python3 instalar_skills.py [ruta_del_vault]        sincroniza, instala y verifica
   python3 instalar_skills.py [ruta] --verificar      solo mide, no escribe (exit 1 si difiere)
+
+Cuatro cosas, en este orden:
+  1. sincroniza las skills a los dos directorios de descubrimiento
+  2. instala el gate de cierre en .git/hooks/pre-commit
+  3. prepara la bandeja de ordenes (runtime de la capa IA Operativa)
+  4. verifica el ENTORNO y da un veredicto: se puede trabajar, o que falta
 
 POR QUE EXISTE ESTE ARCHIVO
 Reemplaza la logica que vivia dentro de skills.bat y skills.sh. La version .bat
@@ -36,7 +46,7 @@ Y una tercera, del 2026-08-28, que es de superficie y no de logica:
      puede borrar se aparta a _to_delete/ y se avisa; la instalacion no depende
      de eso. Ver `La superficie del ejecutor` en el Core.
 """
-import os, sys, shutil, re, hashlib, time
+import os, sys, shutil, re, hashlib, time, subprocess
 
 DESTINOS = ['.claude/skills', '.agents/skills']
 EXCLUIR  = {'.git', '.claude', '.agents', 'node_modules', '_to_delete'}
@@ -50,6 +60,17 @@ _apartados = []
 
 BANDEJA     = os.path.join('04_IA Operativa', 'Herramientas', 'bandeja')
 BANDEJA_SUB = ('ordenes', 'resultados', 'procesadas')
+
+# Las dos superficies donde corre Vaultrum, y que necesita cada una para
+# descubrir las skills solo. Las rutas NO son una preferencia nuestra: son las
+# que cada harness escanea. Codex escanea .agents/skills en el repo (y tambien
+# en $HOME y /etc/codex/skills); Claude Code, .claude/skills.
+# Fuente: developers.openai.com/codex -> Build skills, 2026-09-01.
+HARNESS = (
+    # nombre         binario   destino            puerta       config
+    ('Claude Code',  'claude', '.claude/skills',  'CLAUDE.md', None),
+    ('Codex',        'codex',  '.agents/skills',  'AGENTS.md', '.codex/config.toml'),
+)
 
 
 def descartar(ruta):
@@ -189,6 +210,119 @@ def preparar_bandeja(solo_medir):
         print('       arrancalo con %s' % os.path.join(BANDEJA, 'observer.bat'))
 
 
+def version_de(binario):
+    """La version del ejecutor, o vacio. Nunca cuelga y nunca rompe.
+
+    Un instalador que se traba preguntandole la version a un binario es peor que
+    uno que no la sabe. Timeout corto y except ancho a proposito.
+    """
+    try:
+        r = subprocess.run([binario, '--version'], capture_output=True, text=True, timeout=10)
+        linea = (r.stdout or r.stderr or '').strip().splitlines()[0][:40]
+        # Si no tiene un digito no es una version: es un mensaje de error del
+        # binario. Imprimirlo igual seria informar ruido como si fuera un dato.
+        return linea if any(c.isdigit() for c in linea) else ''
+    except Exception:
+        return ''
+
+
+def hermanos_del_vault(raiz):
+    """Carpetas vecinas del vault: los candidatos a proyecto, para no adivinar.
+
+    El observer necesita saber contra que proyecto corre y eso es un dato de cada
+    maquina. No se puede inventar, pero si se puede mostrar la lista para que el
+    owner elija sin salir a buscarla.
+    """
+    padre = os.path.dirname(os.path.abspath(raiz))
+    yo = os.path.basename(os.path.abspath(raiz))
+    try:
+        return sorted(x for x in os.listdir(padre)
+                      if x != yo and not x.startswith('.')
+                      and os.path.isdir(os.path.join(padre, x)))[:8]
+    except OSError:
+        return []
+
+
+def verificar_entorno(raiz):
+    """El chequeo de harness: despues de correr esto, se puede trabajar o no.
+
+    POR QUE EXISTE
+    El instalador sincronizaba las skills a los dos destinos y daba por hecho el
+    resto. Pero una skill copiada a .agents/skills no sirve de nada si codex no
+    esta instalado, y la bandeja no puede despachar nada si no sabe contra que
+    proyecto corre. El resultado era un instalador que decia "Listo" sobre un
+    entorno que no podia trabajar.
+
+    Esto es `La superficie del ejecutor` aplicada al arranque: se comprueba que
+    se PUEDE, antes de que alguien gaste una sesion descubriendo que no.
+
+    NO FALLA NI CUENTA COMO DIFERENCIA. Misma regla que la bandeja: esto no es
+    una copia generada que pueda quedar fuera de sincronia con una fuente, es
+    infraestructura. Se informa; el gate no se rompe. Que falte codex en una
+    maquina es un hecho de esa maquina, no un defecto del vault.
+    """
+    print('\n  ENTORNO - las dos superficies donde corre Vaultrum')
+    print('  ' + '-' * 50)
+    faltan = []
+
+    for nombre, binario, destino, puerta, config in HARNESS:
+        ruta = shutil.which(binario)
+        n = len([x for x in os.listdir(destino)
+                 if os.path.isdir(os.path.join(destino, x))]) if os.path.isdir(destino) else 0
+        marca = 'ok' if ruta else '--'
+        if not ruta:
+            faltan.append("%s no esta en el PATH (%s no se puede usar aca)" % (binario, nombre))
+        print('\n  [%s] %-12s %s' % (marca, nombre, ruta or 'no esta en el PATH'))
+        v = version_de(binario) if ruta else ''
+        if v:
+            print('       version    %s' % v)
+        print('       descubre   %s  (%d skills)' % (destino, n))
+        if not os.path.isfile(puerta):
+            faltan.append('falta la puerta %s' % puerta)
+            print('       puerta     [!!] falta %s' % puerta)
+        else:
+            print('       puerta     %s' % puerta)
+        if config:
+            estado = 'ok' if os.path.isfile(config) else '[!!] falta'
+            print('       config     %s  %s' % (config, estado))
+            if not os.path.isfile(config):
+                faltan.append('falta %s' % config)
+
+    # el gate de cierre
+    hook = os.path.join('.git', 'hooks', 'pre-commit')
+    print('\n  [%s] gate       %s' % ('ok' if os.path.isfile(hook) else '--', hook))
+    if not os.path.isfile(hook):
+        faltan.append('el gate de cierre no esta instalado (corre el instalador sin --verificar)')
+
+    # la bandeja necesita saber contra que proyecto corre
+    cfg = os.path.join(BANDEJA, 'proyecto.local.txt')
+    if os.path.isfile(cfg):
+        try:
+            destino_obs = [l.strip() for l in open(cfg, encoding='utf-8')
+                           if l.strip() and not l.strip().startswith('#')][0]
+        except (IndexError, OSError):
+            destino_obs = '(vacio)'
+        print('  [ok] bandeja    despacha a: %s' % destino_obs)
+    else:
+        print('  [!!] bandeja    falta %s' % cfg)
+        print('       el observer no sabe contra que proyecto correr. Escribi la ruta ahi.')
+        vecinos = hermanos_del_vault(raiz)
+        if vecinos:
+            print('       candidatos vecinos del vault: %s' % ', '.join(vecinos))
+        faltan.append('falta %s' % cfg)
+
+    print('')
+    if faltan:
+        print('  VEREDICTO: el entorno NO esta listo. %d cosa(s):' % len(faltan))
+        for f in faltan:
+            print('    - %s' % f)
+        print('  Nada de esto rompe el vault: son datos de esta maquina.')
+    else:
+        print('  VEREDICTO: entorno listo. Los dos harnesses descubren las skills,')
+        print('             el gate corre y la bandeja sabe a donde despachar.')
+    return len(faltan)
+
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     raiz = os.path.abspath(args[0] if args else '.')
@@ -269,9 +403,20 @@ def main():
         for a in _apartados:
             print(f'    - {a}')
 
+    pendientes_entorno = verificar_entorno(raiz)
+
     if solo_medir and difiere:
         print(f'\n  FUERA DE SINCRONIA: {len(difiere)} copia(s) difieren de su fuente.')
         return 1
+    # El instalador no puede decir "Listo" sobre un entorno que no puede
+    # trabajar: ese es el mismo fallo que se disfraza de exito que el vault
+    # persigue en todos lados. Las skills quedaron sincronizadas igual -- eso es
+    # lo que hace este script -- pero lo que falta se dice en el cierre, no
+    # cincuenta lineas mas arriba donde nadie lo lee.
+    if pendientes_entorno:
+        print('\n  Skills sincronizadas. El entorno NO esta completo: resolve lo de arriba')
+        print('  y volve a correr el instalador para confirmarlo.\n')
+        return 0
     print('\n  Listo. Abri una sesion nueva para que el asistente las descubra.\n')
     return 0
 
