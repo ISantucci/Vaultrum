@@ -141,6 +141,12 @@ La capa proactiva: la Biblioteca y las misiones de estudio que la llenan. El Cor
 
 ---
 
+## [[00_Indice_graficos|graficos]]
+
+Doce diagramas del sistema: uno por área de la Agencia, uno por torre, y uno del conjunto. En `.drawio` editable y en `.svg` para mirar sin instalar nada. Se generan con `python3 graficos/generar_graficos.py`: la fuente es la especificación, el dibujo es una copia.
+
+Sirven para ver de un vistazo lo que este documento cuenta en prosa — y tres de ellos llevan escrita, adentro, una deuda medida del sistema.
+
 ## `06_Proyectos` — los proyectos
 
 Lo que Vaultrum produce **no vive adentro de las areas**. Un area es el edificio donde se trabaja; el proyecto es lo que se produjo, y lo producido no se guarda en la oficina que lo hizo.
