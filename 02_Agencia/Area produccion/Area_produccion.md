@@ -63,6 +63,16 @@ No revisa código ni rediseña reglas: rebota con hallazgos concretos al área q
 
 ---
 
+### [[05_Despachante]]
+
+El Despachante se encarga de decidir **quién corre cada trabajo y dónde**, una vez que el área ya decidió qué se construye.
+
+Su responsabilidad es aplicar el criterio de reparto —modelo fuerte donde se decide, ejecutor barato contra un contrato escrito—, verificar la superficie antes de gastar la ejecución, y devolver el resultado al área dueña con su trazabilidad intacta.
+
+No es un paso del loop progresivo del área: corre de costado y sirve a los cuatro. No decide alcance, arquitectura, calidad ni terminado. Su procedimiento vive en la skill `vaultrum-despacho` de la capa IA Operativa.
+
+---
+
 ## Cómo trabaja el área
 
 El Área de Producción trabaja de forma progresiva.

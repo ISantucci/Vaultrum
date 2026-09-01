@@ -29,7 +29,7 @@
     Codigos de salida:
       1  la bandeja no esta dentro de un Vaultrum (falta 00_START_HERE.md)
       2  no hay proyecto declarado, o la ruta declarada no existe
-      3  'claude' no esta en el PATH de esta consola
+      3  el ejecutor pedido no esta en el PATH de esta consola
       4  no se puede escribir en resultados/
 #>
 [CmdletBinding()]
@@ -38,6 +38,7 @@ param(
     [string]$Proyecto  = '',
     [int]   $Intervalo = 5,
     [string]$Permisos  = 'acceptEdits',
+    [string]$Ejecutor  = 'claude',
     [switch]$Continuar
 )
 
@@ -125,10 +126,22 @@ if (-not (Test-Path -LiteralPath $Proyecto)) {
 }
 
 # --- 3. superficie: puedo ejecutar de verdad? ---------------------------------
-$claude = Get-Command claude -ErrorAction SilentlyContinue
-if (-not $claude) {
-    Fallar "No encontre 'claude' en el PATH de esta consola." @(
-        'Instala Claude Code, o abri la consola donde el comando exista.'
+# El ejecutor se resuelve por nombre y no esta cableado: la bandeja despacha a
+# Claude Code por defecto, y una orden puede pedir otro con "Ejecutor: <nombre>".
+# El nombre se valida contra un patron simple ANTES de buscarlo: una orden es
+# texto plano que puede escribir cualquiera, y de ahi no sale una ruta ni un
+# argumento suelto. Si el binario no esta, la orden vuelve en FALLO de
+# superficie y no se ejecuta nada -- que es lo correcto, no un bug.
+function Resolver-Ejecutor([string]$nombre) {
+    $nombre = $nombre.Trim().Trim('"')
+    if ($nombre -notmatch '^[A-Za-z][\w.-]*$') { return $null }
+    return Get-Command $nombre -ErrorAction SilentlyContinue
+}
+
+$cmdEjecutor = Resolver-Ejecutor $Ejecutor
+if (-not $cmdEjecutor) {
+    Fallar "No encontre '$Ejecutor' en el PATH de esta consola." @(
+        'Instala el ejecutor, o abri la consola donde el comando exista.'
     ) 3
 }
 $prueba = Join-Path $resultados '.superficie.tmp'
@@ -146,7 +159,7 @@ Write-Host '=== Observer Vaultrum ===' -ForegroundColor Cyan
 Write-Host "  vault    : $Raiz"
 Write-Host "  bandeja  : $Bandeja"
 Write-Host "  proyecto : $Proyecto   ($origenProyecto)"
-Write-Host "  claude   : $($claude.Source)"
+Write-Host "  ejecutor : $Ejecutor -> $($cmdEjecutor.Source)"
 Write-Host "  permisos : $Permisos    continuar: $($Continuar.IsPresent)"
 Write-Host '  Ctrl+C para cortar, o crea stop.txt en la bandeja.'
 Write-Host ''
@@ -175,9 +188,21 @@ while ($true) {
         $m = [regex]::Match($cabecera, '(?im)^\s*(?:<!--\s*)?proyecto\s*:\s*(.+?)\s*(?:-->)?\s*$')
         if ($m.Success) { $destino = Resolver-Proyecto $m.Groups[1].Value }
 
+        # ...y su ejecutor. Queda registrado en el log aunque sea el de siempre:
+        # sin esa columna, despacho.py puede contar cuantas ejecuciones hubo
+        # pero no a quien fueron, que es justo la pregunta del criterio.
+        $nombreEjec = $Ejecutor
+        $cmdOrden   = $cmdEjecutor
+        $me = [regex]::Match($cabecera, '(?im)^\s*(?:<!--\s*)?ejecutor\s*:\s*(.+?)\s*(?:-->)?\s*$')
+        if ($me.Success) {
+            $nombreEjec = $me.Groups[1].Value.Trim()
+            $cmdOrden   = Resolver-Ejecutor $nombreEjec
+        }
+
         Write-Host ''
         Write-Host ("[{0}] ejecutando {1}" -f $inicio.ToString('HH:mm:ss'), $orden.Name) -ForegroundColor Green
-        if ($destino -ne $Proyecto) { Write-Host "      proyecto declarado en la orden: $destino" -ForegroundColor DarkGray }
+        if ($destino -ne $Proyecto)   { Write-Host "      proyecto declarado en la orden: $destino" -ForegroundColor DarkGray }
+        if ($nombreEjec -ne $Ejecutor) { Write-Host "      ejecutor declarado en la orden: $nombreEjec" -ForegroundColor DarkGray }
 
         # Se mueve ANTES de ejecutar: una orden no se repite nunca, ni aunque
         # la corrida muera a la mitad.
@@ -186,15 +211,18 @@ while ($true) {
         if (-not (Test-Path -LiteralPath $destino)) {
             $salida = "FALLO de superficie: la orden declara el proyecto '$destino' y esa carpeta no existe.`r`nNo se ejecuto nada."
             $codigo = 2
+        } elseif (-not $cmdOrden) {
+            $salida = "FALLO de superficie: la orden declara el ejecutor '$nombreEjec' y no esta en el PATH de esta consola.`r`nNo se ejecuto nada."
+            $codigo = 3
         } else {
             $argumentos = @('-p', '--permission-mode', $Permisos)
             if ($Continuar) { $argumentos += '--continue' }
             Push-Location -LiteralPath $destino
             try {
-                $salida = ($texto | & claude @argumentos 2>&1 | Out-String)
+                $salida = ($texto | & $cmdOrden.Name @argumentos 2>&1 | Out-String)
                 $codigo = $LASTEXITCODE
             } catch {
-                $salida = "ERROR ejecutando claude: $_"
+                $salida = "ERROR ejecutando ${nombreEjec}: $_"
                 $codigo = 1
             } finally {
                 Pop-Location
@@ -211,13 +239,16 @@ while ($true) {
             '',
             "Estado: $estado  |  Duracion: ${segundos}s  |  Fecha: $((Get-Date).ToString('yyyy-MM-dd HH:mm:ss'))",
             "Proyecto: $destino",
+            "Ejecutor: $nombreEjec",
             '',
             '---',
             '',
             ''
         ) -join "`r`n"
         Set-Content -LiteralPath (Join-Path $resultados "$nombre.result.md") -Value ($encabezado + $salida) -Encoding UTF8
-        Add-Content -LiteralPath (Join-Path $Bandeja 'log.txt') -Value ("{0}  {1}  {2}s  {3}" -f $inicio.ToString('yyyy-MM-dd HH:mm:ss'), $orden.Name, $segundos, $estado)
+        # Formato del log, que es lo que lee despacho.py:
+        #   <fecha> <hora>  <orden>  <ejecutor>  <seg>s  <estado>
+        Add-Content -LiteralPath (Join-Path $Bandeja 'log.txt') -Value ("{0}  {1}  {2}  {3}s  {4}" -f $inicio.ToString('yyyy-MM-dd HH:mm:ss'), $orden.Name, $nombreEjec, $segundos, $estado)
 
         $color = if ($codigo -eq 0) { 'Green' } else { 'Red' }
         Write-Host ("      $estado en ${segundos}s -> resultados\$nombre.result.md") -ForegroundColor $color

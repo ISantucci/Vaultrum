@@ -59,6 +59,8 @@ el artefacto es DONDE SE DECIDE         ->  modelo fuerte, con el vault cargado
 
 De ahí sale un corolario que ordena el trabajo del sistema entero: **un artefacto sin contrato no se puede abaratar.** Mientras el `SOL` no tuvo forma medida, el `EJ` no se podía delegar — no porque faltara una herramienta, sino porque no había spec cerrada contra la cual ejecutar. Escribir contratos no es burocracia: es lo que habilita el ahorro.
 
+**Esta nota es la autoridad del criterio y de la ley de arriba, y desde el 2026-09-01 tiene ejecutable y responsable.** El procedimiento vive en la skill `vaultrum-despacho` de esta capa; quien la usa es el `05_Despachante`, agente del Área de Producción. La nota dicta, la skill ejecuta y el agente responde — y ninguno de los tres repite lo que dice otro.
+
 **Esta nota es la autoridad del criterio y de la ley de arriba.** La tabla concreta de qué fase va a qué ejecutor —y con qué comandos -- vive en la skill del área que ejecuta, `vaultrum-programador`, que la cita en vez de repetirla.
 
 La regla de capas no se cumple sola: la primera versión de estas dos piezas repetía el criterio en las dos, y **las copias ya diferían** —una hablaba de *cualquier ejecutor barato* y la otra fijaba Codex con esfuerzo bajo—. Lo detectó un review adversarial el mismo día que se escribieron. Dos textos que dicen lo mismo empiezan a diferir en cuanto uno se edita, y nadie se entera hasta que chocan.
@@ -78,8 +80,21 @@ Un ahorro que rompe cualquiera de las tres no es un ahorro: es una entrega peor 
 
 ---
 
-## Lo que esta nota todavía no mide
+## Lo que esta nota mide, y lo que todavía no
 
-`contar_contexto.py` mide el material del vault que se carga. **No mide** lo que cuesta una ejecución delegada, ni cuántas veces se delegó, ni si el ahorro fue real. Hoy el despacho es criterio escrito y no medición.
+`contar_contexto.py` mide el material del vault que se carga. Durante un tiempo, de este lado no había nada: el despacho era criterio escrito y no medición, y se declaró como deuda con la misma frase que esta capa ya había usado una vez.
 
-Es la misma deuda que esta capa ya tuvo una vez —decía *medir* y estimaba— y se declara igual: **el reparto se aplica, no se afirma que ahorra.** El día que haya un contador de ejecuciones, se mide y se corrige si difiere.
+**Desde el 2026-09-01 hay instrumento.** `Herramientas/despacho.py` cuenta sobre el log de la bandeja cuántas ejecuciones se delegaron, a qué ejecutor, cuánto tardó cada una y cuántas volvieron en fallo. Es un hecho leído de un archivo, no una estimación.
+
+Lo que sigue sin medirse, declarado para que no se confunda con lo anterior:
+
+```txt
+tokens y plata     haría falta que el ejecutor devuelva su consumo, y hoy no lo devuelve.
+                   Una ejecucion corta pudo ser cara y una larga barata.
+el ahorro real     comparar contra el costo de no haber delegado exige una corrida
+                   gemela que nadie hizo. Se sabe cuanto se delego, no cuanto se ahorro.
+lo que no pasa     un comando disparado a mano dentro de una sesion no deja linea en
+por la bandeja     el log. Si el numero parece bajo, esa es la primera sospecha.
+```
+
+**El reparto se aplica, no se afirma que ahorra.** La regla no cambió: cambió que ahora la mitad contable tiene número, y la mitad que no se puede contar está escrita como lo que es.

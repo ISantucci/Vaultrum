@@ -46,6 +46,16 @@ El segundo presupuesto de la capa: no qué contexto se carga, sino **dónde corr
 
 `bandeja/` — el canal entre el productor y los ejecutores que tienen manos: una orden `.md` entra, el observer la ejecuta parado en el proyecto, y el resultado vuelve con su estado. Es `07_Despacho de ejecucion` con una herramienta atrás. Cómo se arranca y qué se versiona: `bandeja/README.md`.
 
+`despacho.py` — el contador de ejecuciones delegadas: cuántas órdenes corrieron, a qué ejecutor, cuánto tardaron y cuántas volvieron en fallo. Lee el log de la bandeja. Es al costo de ejecución lo que `contar_contexto.py` es al de entrada, y cierra la deuda que `07_Despacho de ejecucion` declaraba por escrito. Declara su propio margen: no mide tokens ni plata, y no ve lo que se ruteó sin pasar por la bandeja.
+
+### Skills/
+
+Las dos skills de la capa, una por presupuesto. Ninguna produce trabajo de proyecto: gobiernan cómo opera la IA mientras las áreas producen.
+
+`AiCare` — el Pass GC de contexto. Mide qué está cargado y poda lo que ya no aporta. Su nota es `01_Cuidado de tokens` y `04_Pass GC de contexto`; su instrumento, `contar_contexto.py`.
+
+`vaultrum-despacho` — el despacho de ejecución. Decide quién corre cada trabajo y dónde, verifica la superficie antes de gastar la ejecución y cosecha el resultado. Su nota es `07_Despacho de ejecucion`; sus instrumentos, la `bandeja/` y `despacho.py`. Quien la usa es el `05_Despachante`, agente del Área de Producción: la capa pone el procedimiento, la Agencia pone al responsable.
+
 ---
 
 ## Relación con la optimización del Core
