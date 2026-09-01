@@ -45,3 +45,14 @@
 06_Proyectos/Pong3D/05_Programacion/EJ-001_Implementacion_Pong.md | contrato | EJ anterior al contrato de EJ (2026-08-28). Del mismo lote legacy que su RQ.
 06_Proyectos/Pong3D/05_Programacion/EJ-002_Implementacion_Pong3D.md | contrato | idem EJ-001.
 06_Proyectos/Pong3D/05_Programacion/EJ-003_Implementacion_Pong3D.md | contrato | idem EJ-001.
+
+# --- TL-009: dos EJ sin SOL, declarados ---------------------------------------
+# La Ley 1 pide que un EJ nombre su SOL, y esta bien que lo pida: sin SOL cerrado
+# no se puede rutear la ejecucion a un ejecutor barato, que es de donde sale la regla.
+# Estos dos no lo tienen y no es un olvido. Repararon bugs acotados en instrumentos
+# existentes, con los criterios de aceptacion del RQ cumpliendo la funcion del
+# contrato, y sin decidir arquitectura. Escribir un SOL despues de implementar seria
+# un artefacto de tramite: diria lo que ya se hizo, no lo que se iba a hacer.
+# Se declara como desvio y NO como costumbre. Decision del owner, TL-009, 2026-09-01.
+06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.1_Los_Instrumentos_Que_Miden_Mal.md | insumo | reparacion de bugs acotados sin decision de arquitectura: los criterios de aceptacion del RQ-009.1 fueron el contrato. Desvio declarado, no costumbre.
+06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.2_Que_El_Paquete_No_Muerda.md | insumo | idem RQ-009.2. Desvio declarado, no costumbre.

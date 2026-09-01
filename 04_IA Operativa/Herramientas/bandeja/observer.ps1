@@ -32,6 +32,7 @@
       3  el ejecutor pedido no esta en el PATH de esta consola
       4  no se puede escribir en resultados/
       5  el ejecutor pedido no tiene perfil de invocacion declarado
+      6  la orden pide un proyecto que no esta declarado en proyecto.local.txt
 #>
 [CmdletBinding()]
 param(
@@ -91,6 +92,13 @@ foreach ($d in @($ordenes, $resultados, $procesadas)) {
 # --- 2. contra que proyecto corro ---------------------------------------------
 # Una ruta relativa se resuelve contra la carpeta que CONTIENE al vault: los
 # proyectos son hermanos del vault, no hijos (nada se escribe adentro de Vaultrum).
+function Dentro-De([string]$hijo, [string]$padre) {
+    $sep = [IO.Path]::DirectorySeparatorChar
+    $h = $hijo.TrimEnd([char]92, [char]47) + $sep
+    $p = $padre.TrimEnd([char]92, [char]47) + $sep
+    return $h.StartsWith($p, [StringComparison]::OrdinalIgnoreCase)
+}
+
 function Resolver-Proyecto([string]$ruta) {
     $ruta = $ruta.Trim().Trim('"')
     if (-not $ruta) { return '' }
@@ -100,16 +108,26 @@ function Resolver-Proyecto([string]$ruta) {
     return [System.IO.Path]::GetFullPath($ruta)
 }
 
+# proyecto.local.txt admite VARIAS rutas, una por linea. La primera es el default
+# y todas son el ANCLAJE: una orden solo puede pedir un proyecto que este
+# declarado ahi, o adentro de uno.
+#
+# POR QUE EL ANCLAJE
+# Hasta hoy, "Proyecto: <ruta>" en el cuerpo de una orden mandaba la ejecucion a
+# cualquier carpeta de la maquina, y lo unico que se validaba era que existiera.
+# Una orden es texto plano que puede escribir cualquiera; de ahi no sale a que
+# carpeta se le da permiso de escritura a un ejecutor. Lo que la orden elige es
+# CUAL de los proyectos declarados, no cual carpeta del disco.
 $configProyecto = Join-Path $Bandeja 'proyecto.local.txt'
 $origenProyecto = 'parametro -Proyecto'
-if (-not $Proyecto -and (Test-Path -LiteralPath $configProyecto)) {
-    $linea = Get-Content -LiteralPath $configProyecto |
-             Where-Object { $_.Trim() -ne '' -and -not $_.TrimStart().StartsWith('#') } |
-             Select-Object -First 1
-    if ($linea) {
-        $Proyecto = $linea
-        $origenProyecto = 'proyecto.local.txt'
-    }
+$declarados = @()
+if (Test-Path -LiteralPath $configProyecto) {
+    $declarados = @(Get-Content -LiteralPath $configProyecto |
+        Where-Object { $_.Trim() -ne '' -and -not $_.TrimStart().StartsWith('#') })
+}
+if (-not $Proyecto -and $declarados.Count) {
+    $Proyecto = $declarados[0]
+    $origenProyecto = 'proyecto.local.txt'
 }
 if (-not $Proyecto) {
     Fallar 'No se contra que proyecto ejecutar las ordenes.' @(
@@ -235,6 +253,16 @@ while ($true) {
         # pero no a quien fueron, que es justo la pregunta del criterio.
         $nombreEjec = $Ejecutor
         $cmdOrden   = $cmdEjecutor
+        # Anclaje: la orden elige entre lo declarado, no una carpeta cualquiera.
+        if ($m.Success -and $declarados.Count) {
+            $permitido = $false
+            foreach ($raizOk in $declarados) {
+                $r = Resolver-Proyecto $raizOk
+                if ($r -and (($destino -eq $r) -or (Dentro-De $destino $r))) { $permitido = $true; break }
+            }
+            if (-not $permitido) { $destino = '::FUERA-DE-ANCLAJE::' }
+        }
+
         $me = [regex]::Match($cabecera, '(?im)^\s*(?:<!--\s*)?ejecutor\s*:\s*(.+?)\s*(?:-->)?\s*$')
         if ($me.Success) {
             $nombreEjec = $me.Groups[1].Value.Trim()
@@ -251,7 +279,10 @@ while ($true) {
         # la corrida muera a la mitad.
         Move-Item -LiteralPath $orden.FullName -Destination (Join-Path $procesadas $orden.Name) -Force
 
-        if (-not (Test-Path -LiteralPath $destino)) {
+        if ($destino -eq '::FUERA-DE-ANCLAJE::') {
+            $salida = "FALLO de superficie: la orden declara un proyecto que no esta en proyecto.local.txt.`r`nUna orden elige entre los proyectos declarados; no abre carpetas nuevas.`r`nNo se ejecuto nada."
+            $codigo = 6
+        } elseif (-not (Test-Path -LiteralPath $destino)) {
             $salida = "FALLO de superficie: la orden declara el proyecto '$destino' y esa carpeta no existe.`r`nNo se ejecuto nada."
             $codigo = 2
         } elseif (-not $cmdOrden) {

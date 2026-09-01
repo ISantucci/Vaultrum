@@ -144,6 +144,33 @@ def prosa(txt):
     return fuera
 
 
+def bases_de(rel, raiz):
+    """Contra que raiz se resuelve una ruta que un artefacto afirma.
+
+    ARQ-024 encontro que la Ley 5 acusaba fantasmas: resolvia SIEMPRE contra la
+    raiz del vault, pero un RQ o un QA de proyecto escribe sus rutas relativas a
+    LA CARPETA DE SU PROYECTO. Los seis "archivos que no estan en disco" existian
+    todos:
+
+        03_LevelDesign/instrumentos/sim.py        existe, dentro del proyecto
+        06_Calidad/harness_mcs/ultimo_build.txt   existe, dentro del proyecto
+
+    Un instrumento que acusa lo que si esta es peor que uno que no mide: enseña a
+    ignorar su salida, y ahi se pierde tambien lo que acusaba bien.
+
+    Se devuelven las dos bases posibles, de la mas especifica a la mas general, y
+    la ruta es fantasma solo si no aparece en NINGUNA. Un artefacto de proyecto
+    puede nombrar legitimamente una ruta del vault -- una herramienta, un indice --
+    y eso tampoco es un fantasma.
+    """
+    bases = []
+    segs = rel.split('/')
+    if len(segs) >= 3 and segs[0] == '06_Proyectos':
+        bases.append(os.path.join(raiz, segs[0], segs[1]))
+    bases.append(raiz)
+    return bases
+
+
 def medir(rel, txt, contratos, raiz):
     m = ART.match(os.path.basename(rel))
     if not m:
@@ -222,13 +249,14 @@ def medir(rel, txt, contratos, raiz):
         if NUMERO.search(l) and not FUENTE.search(l):
             fallas.append(('sin-evidencia', n, l.strip()[:70]))
 
-    # Ley 5 - rutas del vault que no existen
+    # Ley 5 - rutas afirmadas que no existen, contra la raiz que corresponde
+    bases = bases_de(rel, raiz)
     for n, l in lineas:
         for m in RUTA.finditer(l):
             r = m.group(1)
             if '*' in r or '?' in r:
                 continue                      # un patron no es una ruta
-            if not os.path.exists(os.path.join(raiz, r)):
+            if not any(os.path.exists(os.path.join(b, r)) for b in bases):
                 fallas.append(('fantasma', n, r))
 
     # Corolario - estado de cierre.

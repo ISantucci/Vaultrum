@@ -337,6 +337,62 @@ Las decisiones finales de integración, estructura y dirección corresponden a l
 
 ---
 
+## La licencia de lo que aportás
+
+Vaultrum es GPL-3.0 y se queda así. La política de contribución estaba sin escribir hasta el 2026-09-01 — hallazgo de `ARQ-024` — y se escribe **antes** del primer aporte externo a propósito: una política escrita después del primer PR ya no es una política, es una negociación.
+
+> **DCO (Developer Certificate of Origin). No hay cesión de copyright: cada quien conserva el suyo.**
+
+Para aportar, firmá cada commit:
+
+```bash
+git commit -s
+```
+
+Eso agrega `Signed-off-by: Tu Nombre <tu@email>`, con lo que certificás lo que dice el [DCO 1.1](https://developercertificate.org/): que tenés derecho a aportar ese trabajo y que aceptás que se distribuya bajo la licencia del proyecto.
+
+### Qué implica, dicho claro
+
+Es la mitad que las políticas de contribución suelen callar, así que va explícita:
+
+```txt
+Con DCO      cada quien conserva el copyright de lo que escribio. Vaultrum queda
+             GPL-3.0 y NO se puede relicenciar despues sin el consentimiento de
+             todos los que aportaron.
+
+Con CLA      quien aporta le cede al dueño una licencia amplia, y el dueño puede
+             relicenciar el proyecto entero mas adelante -- incluso cerrarlo.
+```
+
+**Se eligió DCO a propósito.** La decisión de mantener Vaultrum abierto ya está tomada, y un CLA en un proyecto GPL de un solo autor comunica lo contrario: *me reservo el derecho de cerrar esto*. Pedir una cesión para una opción que no se va a usar es cobrar un costo por nada.
+
+La contrapartida se acepta con los ojos abiertos: **desde el primer aporte externo, relicenciar deja de depender de una sola persona.** No es un efecto secundario — es la garantía que el proyecto le da a quien aporta.
+
+La marca es otra cosa que la licencia: la GPL licencia el código, no el nombre. Ver `03_Comunidad/Gestion/License_Notice.md`.
+
+---
+
+## El gate de cierre va a medir tu cambio
+
+Vaultrum tiene un gate que corre en cada commit y mide cuatro cosas. Un aporte tiene que pasarlo, o declarar por qué no.
+
+```bash
+skills.bat            # o skills.sh: sincroniza, instala el gate y verifica el entorno
+git commit -s         # el hook corre solo
+```
+
+Las cuatro mediciones son `grafo.py` (las seis leyes del grafo), `grafo.py --paquete` (las mismas, sobre lo que se clona), `gemelos.py` (las copias que deben ser idénticas) y `documentacion.py` (la forma del texto). Si alguna frena, el mensaje dice cuál y cómo correr su informe completo.
+
+**Un desvío deliberado se declara, no se esconde.** El camino es el `excepciones.txt` del área que mide, con la razón escrita. `git commit --no-verify` existe y no deja rastro en ningún lado: si lo usás, decilo en el mensaje del commit.
+
+Tres cosas que el gate mide y conviene saber antes de escribir:
+
+- **Las skills no se editan donde se ven.** `.claude/skills/` y `.agents/skills/` son copias generadas; la fuente vive en el área. Editar la copia se pierde en la próxima corrida del instalador.
+- **Un área declara, no guarda.** Si tu cambio agrega un archivo, el índice de esa carpeta tiene que nombrarlo.
+- **Un número sin instrumento es una estimación.** Si afirmás una medición, decí con qué se midió.
+
+---
+
 ## Antes de contribuir
 
 Antes de abrir una contribución, revisar:

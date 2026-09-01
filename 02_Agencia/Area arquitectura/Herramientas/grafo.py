@@ -188,7 +188,24 @@ def auditar(root, modo_paquete=False):
             sufijos.setdefault('/'.join(segs[-k - 1:]), []).append(p)
         if es_indice(p): dirs_con_indice.setdefault(os.path.dirname(p), []).append(p)
 
-    r = dict(files=files, exc=exc, pkg=pkg, modo_paquete=modo_paquete,
+    # QUE SE AUDITA vs CONTRA QUE SE RESUELVE -- son dos universos distintos y
+    # confundirlos fue el defecto que ARQ-024 encontro en --paquete.
+    #
+    # Se AUDITAN las notas del paquete: son las que alguien va a clonar. Una nota
+    # que no viaja no puede romper el gate del paquete, y hasta hoy lo rompia --
+    # las 4 fallas que frenaban el commit estaban en 06_Proyectos/, que .gitignore
+    # excluye entero. El gate del paquete frenaba por archivos que no estan en el
+    # paquete: el defecto de COMMIT-005, invertido.
+    #
+    # Se RESUELVE contra el disco completo, a proposito. Si el universo de
+    # resolucion tambien se recortara, un link a una nota que existe pero no viaja
+    # resolveria a None y se reportaria como ROTO, y se perderia la distincion que
+    # COMMIT-005 vino a crear: "roto" es que no existe en ningun lado; "no-viaja"
+    # es que existe y no entra al paquete. Son dos defectos distintos y se arreglan
+    # distinto.
+    fuentes = files if pkg is None else {p: t for p, t in files.items() if p in pkg}
+
+    r = dict(files=files, auditadas=fuentes, exc=exc, pkg=pkg, modo_paquete=modo_paquete,
              pos=collections.defaultdict(collections.Counter),
              dirn=collections.defaultdict(collections.Counter),
              kb=collections.Counter(), n=collections.Counter(),
@@ -197,7 +214,7 @@ def auditar(root, modo_paquete=False):
              cruces=collections.defaultdict(lambda: collections.defaultdict(list)),
              laterales=collections.Counter(), adj=collections.defaultdict(list))
 
-    for p, txt in files.items():
+    for p, txt in fuentes.items():
         c = capa(p); r['n'][c] += 1; r['kb'][c] += len(txt) / 1024
         for ln, ps, t, al, h in escanear(txt):
             r['pos'][c][ps] += 1
@@ -228,7 +245,7 @@ def auditar(root, modo_paquete=False):
                 r['adj'][p].append(d)
 
     # nada flota: toda nota cuelga de un indice
-    universo = files if pkg is None else {p: t for p, t in files.items() if p in pkg}
+    universo = fuentes
     r['flotando'] = [p for p in universo if p not in r['colgada']
                      and not p.endswith('SKILL.md')
                      and os.path.basename(p) not in EXENTAS and p != PUERTA]
@@ -282,12 +299,13 @@ def informe(r):
     inal = r['inalcanzables']
     if r.get('modo_paquete'):
         n = '?' if r.get('pkg') is None else len(r['pkg'])
-        print(f"MODO PAQUETE — se mide lo que git entrega: {n} notas versionadas "
-              f"de {len(r['files'])} en disco.")
+        print(f"MODO PAQUETE — se AUDITAN las {n} notas que git entrega, de "
+              f"{len(r['files'])} en disco. Se RESUELVE contra el disco completo, para "
+              f"distinguir un link roto de uno que no viaja.")
         if r.get('pkg') is None:
             print("  (git no respondio: se midio la copia de trabajo)")
         print()
-    print(f"notas {len(r['files'])} | links {tot} | rotos {len(r['rotos'])} | "
+    print(f"notas {len(r.get('auditadas', r['files']))} | links {tot} | rotos {len(r['rotos'])} | "
           f"ambiguos {len(r['ambig'])} | flotando {len(r['flotando'])} | "
           f"inalcanzables {'?' if inal is None else len(inal)}")
     print()

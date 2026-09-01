@@ -99,3 +99,7 @@ _DECISIONES_*.txt
 # Es parte del harness, como CLAUDE.md y AGENTS.md.
 .codex/*
 !.codex/config.toml
+
+# Config de una maquina, no del sistema. Viajaba a todo el que clonaba, con un MCP
+# y un permiso de PowerShell adentro. Misma regla que .owner.local.json.
+.claude/settings.local.json

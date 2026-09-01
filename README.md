@@ -123,6 +123,12 @@ Lo que falta ya no es la segunda muestra: es **salir del dominio.** Dos entregas
 
 ## Licencia
 
-GPL-3.0. El texto oficial está en el archivo `LICENSE` de la raíz.
+Copyright (C) 2026 Ignacio Santucci.
+
+Vaultrum es software libre: podés redistribuirlo y modificarlo bajo los términos de la **GNU General Public License versión 3** publicada por la Free Software Foundation. Se distribuye con la esperanza de que sea útil, pero **SIN NINGUNA GARANTÍA** — ni siquiera la garantía implícita de comerciabilidad o adecuación a un propósito particular. El texto oficial está en el archivo `LICENSE` de la raíz.
+
+La línea de copyright estaba ausente hasta el 2026-09-01: la única aparición era el placeholder `<name of author>` de la propia licencia. No anulaba nada, pero debilitaba la atribución que la GPL existe para sostener. Hallazgo de `ARQ-024`.
+
+Cómo contribuir y qué implica: `03_Comunidad/Contribuciones/CONTRIBUTING.md` (GitHub lo encuentra por `.github/CONTRIBUTING.md`, que solo lo señala). La marca es otra cosa que la licencia y vive en `03_Comunidad`: la GPL licencia el código, no el nombre.
 
 El nombre y la identidad **Vaultrum** tienen su propia política: ver `03_Comunidad/Gestion/Trademark.md`.

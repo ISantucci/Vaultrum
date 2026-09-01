@@ -56,6 +56,11 @@ MARCA = ('Generado por instalar_skills.py desde 02_Agencia/Area */Skills/ y las 
          'Editar aca no cambia el sistema: se pisa en la proxima corrida.\n'
          'Para cambiar una skill, edita su fuente en el area y volve a correr el instalador.\n')
 PAPELERA = '_to_delete'
+# La marca se escribe DENTRO de cada carpeta generada, no solo en la raiz del
+# destino. Es lo unico que distingue una copia nuestra de una skill que el
+# usuario instalo por su cuenta, y sin ese dato el instalador no puede borrar
+# nada sin arriesgarse a borrar lo ajeno.
+SELLO = '_GENERADO_NO_EDITAR.txt'
 _apartados = []
 
 BANDEJA     = os.path.join('04_IA Operativa', 'Herramientas', 'bandeja')
@@ -71,6 +76,18 @@ HARNESS = (
     ('Claude Code',  'claude', '.claude/skills',  'CLAUDE.md', None),
     ('Codex',        'codex',  '.agents/skills',  'AGENTS.md', '.codex/config.toml'),
 )
+
+
+def huella_archivo(ruta):
+    """sha1 de un archivo suelto. La `huella` que ya existe es de arboles."""
+    h = hashlib.sha1()
+    try:
+        with open(ruta, 'rb') as f:
+            for bloque in iter(lambda: f.read(65536), b''):
+                h.update(bloque)
+    except OSError:
+        return None
+    return h.hexdigest()
 
 
 def descartar(ruta):
@@ -159,6 +176,29 @@ def sincronizar(origen, destino):
             os.rename(previo, destino)     # se restaura la copia que andaba
         raise
     descartar(previo)
+    # El sello va DESPUES de validar la huella, no antes: si se escribiera en el
+    # temporal, la copia no coincidiria con su fuente y la validacion de arriba
+    # -- que es la que evita reemplazar con una copia rota -- fallaria siempre.
+    try:
+        with open(os.path.join(destino, SELLO), 'w', encoding='utf-8') as f:
+            f.write(MARCA)
+    except OSError:
+        pass
+
+
+def es_generada(ruta):
+    """¿Esta carpeta la escribio este instalador?
+
+    ARQ-024: hasta hoy, toda carpeta en .claude/skills/ o .agents/skills/ sin
+    fuente en el vault se consideraba huerfana y se borraba. Quien tuviera skills
+    propias ahi las perdia sin que nadie le preguntara. Un instalador puede pisar
+    lo que genero; no puede borrar lo que no instalo.
+
+    En una instalacion vieja no hay sellos por carpeta todavia: la primera corrida
+    despues de este cambio no va a borrar nada y lo va a avisar. Es el lado
+    correcto en el que equivocarse.
+    """
+    return os.path.isfile(os.path.join(ruta, SELLO))
 
 
 def descripcion(ruta):
@@ -353,6 +393,15 @@ def main():
                 estados.append('difiere')
             if not solo_medir and not igual:
                 sincronizar(ruta, dst)
+            if not solo_medir and os.path.isdir(dst) and not os.path.isfile(os.path.join(dst, SELLO)):
+                # Sellar tambien lo que ya estaba al dia: sin esto, una instalacion
+                # existente nunca se sella (nunca pasa por sincronizar) y queda
+                # indistinguible de una skill que el usuario puso a mano.
+                try:
+                    with open(os.path.join(dst, SELLO), 'w', encoding='utf-8') as f:
+                        f.write(MARCA)
+                except OSError:
+                    pass
         print(f'  [{"==" if not estados else "ok" if not solo_medir else "!!"}] {nombre}')
 
     # destinos que ya no tienen fuente
@@ -363,12 +412,21 @@ def main():
                 if os.path.isdir(os.path.join(d, x)) and x not in src:
                     huerfanas.append(os.path.join(d, x))
     if huerfanas:
-        print('\n  Sin fuente en el area (se borran, son copias generadas):')
-        for h in huerfanas:
-            print(f'    - {h}')
-            difiere.append(h)          # F4: una huerfana ES una diferencia
-            if not solo_medir:
-                descartar(h)
+        mias   = [h for h in huerfanas if es_generada(h)]
+        ajenas = [h for h in huerfanas if not es_generada(h)]
+        if mias:
+            print('\n  Sin fuente en el area (se borran: llevan el sello de este instalador):')
+            for h in mias:
+                print(f'    - {h}')
+                difiere.append(h)      # F4: una huerfana ES una diferencia
+                if not solo_medir:
+                    descartar(h)
+        if ajenas:
+            print('\n  [!] Hay carpetas en los destinos que este instalador NO genero.')
+            print('      No se tocan. Si son tuyas, quedan donde estan; si sobraron de una')
+            print('      instalacion vieja, borralas a mano y la proxima corrida no las nombra:')
+            for h in ajenas:
+                print(f'    - {h}')
 
     if not solo_medir:
         for d in DESTINOS:
@@ -376,7 +434,20 @@ def main():
             open(os.path.join(d, '_GENERADO_NO_EDITAR.txt'), 'w', encoding='utf-8').write(MARCA)
         if os.path.isdir('.git') and os.path.isfile(HOOK_SRC):
             os.makedirs(os.path.join('.git', 'hooks'), exist_ok=True)
-            shutil.copyfile(HOOK_SRC, os.path.join('.git', 'hooks', 'pre-commit'))
+            destino_hook = os.path.join('.git', 'hooks', 'pre-commit')
+            # Un hook ajeno no se pisa en silencio: se respalda y se avisa. Perder
+            # el gate de otro proyecto sin decirlo es la misma clase de fallo que
+            # borrar sus skills.
+            if os.path.isfile(destino_hook) and huella_archivo(destino_hook) != huella_archivo(HOOK_SRC):
+                copia = destino_hook + '.previo-' + time.strftime('%Y%m%d-%H%M%S')
+                try:
+                    shutil.copyfile(destino_hook, copia)
+                    print(f'\n  [!] Ya habia un pre-commit distinto. Se respaldo en {copia}')
+                except OSError:
+                    print('\n  [!] Ya habia un pre-commit distinto y no se pudo respaldar.')
+                    print('      No se pisa. Movelo a mano si querias el gate de Vaultrum.')
+                    raise SystemExit(3)
+            shutil.copyfile(HOOK_SRC, destino_hook)
             try:
                 os.chmod(os.path.join('.git', 'hooks', 'pre-commit'), 0o755)
             except OSError:
