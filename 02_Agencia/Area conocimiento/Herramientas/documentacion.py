@@ -145,8 +145,15 @@ def prosa(txt):
 
 
 def medir(rel, txt, contratos, raiz):
-    tipo = ART.match(os.path.basename(rel)).group(1)
-    base = ART.match(os.path.basename(rel)).group(2)
+    m = ART.match(os.path.basename(rel))
+    if not m:
+        # No es un artefacto de la cadena (COMMIT, ARQ, indice, nota del Core).
+        # No hay contrato que medir: se dice, no se rompe. Un instrumento que
+        # revienta con un stack trace no da un veredicto: deja de contestar.
+        cuerpo = '\n'.join(l for _, l in prosa(txt))
+        return '-', [('sin-contrato', 0, 'no es un artefacto de la cadena: no hay contrato que medir')], cuerpo
+    tipo = m.group(1)
+    base = m.group(2)
     fallas = []
     lineas = prosa(txt)
     cuerpo = '\n'.join(l for _, l in lineas)
