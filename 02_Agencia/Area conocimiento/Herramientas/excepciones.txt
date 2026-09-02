@@ -57,3 +57,5 @@
 06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.1_Los_Instrumentos_Que_Miden_Mal.md | insumo | reparacion de bugs acotados sin decision de arquitectura: los criterios de aceptacion del RQ-009.1 fueron el contrato. Desvio declarado, no costumbre.
 06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.2_Que_El_Paquete_No_Muerda.md | insumo | idem RQ-009.2. Desvio declarado, no costumbre.
 06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.4_La_Numeracion_Medida.md | insumo | idem RQ-009.4. Desvio declarado, no costumbre.
+06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.5_El_Primer_Gate_De_Hilo.md | insumo | idem RQ-009.5. Desvio declarado, no costumbre.
+06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.6_La_Casi_Duplicacion_Medida.md | insumo | idem RQ-009.6. Desvio declarado, no costumbre.
