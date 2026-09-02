@@ -283,6 +283,41 @@ def hermanos_del_vault(raiz):
         return []
 
 
+NUMEROS = {'una': 1, 'dos': 2, 'tres': 3, 'cuatro': 4, 'cinco': 5, 'seis': 6,
+           'siete': 7, 'ocho': 8, 'nueve': 9, 'diez': 10, 'once': 11, 'doce': 12,
+           'trece': 13, 'catorce': 14, 'quince': 15, 'dieciseis': 16, 'dieciséis': 16,
+           'diecisiete': 17, 'dieciocho': 18, 'diecinueve': 19, 'veinte': 20}
+
+
+def skills_que_declara_la_puerta(raiz):
+    """Cuantas skills dice el README que hay. None si no lo dice.
+
+    POR QUE SE MIDE ESTO
+    ARQ-024 encontro cinco afirmaciones falsas en las puertas, y tres eran
+    CONTABLES: cuantas skills, cuantas capas, cuantos proyectos. Lo que se puede
+    contar no deberia envejecer a mano -- este instalador ya cuenta las skills en
+    cada corrida, y hasta hoy nadie comparaba ese numero con el que la puerta
+    declara. La puerta es lo primero que ve quien llega y lo ultimo que alguien
+    actualiza; sin un chequeo, vuelve a atrasarse sola.
+
+    No falla el gate: avisa. Misma regla que la bandeja y el resto del entorno.
+    """
+    ruta = os.path.join(raiz, 'README.md')
+    if not os.path.isfile(ruta):
+        return None
+    try:
+        txt = open(ruta, encoding='utf-8', errors='replace').read()
+    except OSError:
+        return None
+    m = re.search(r'([A-Za-zÁÉÍÓÚáéíóú]+|\d+)\s+\*\*skills ejecutables\*\*', txt)
+    if not m:
+        return None
+    crudo = m.group(1)
+    if crudo.isdigit():
+        return int(crudo)
+    return NUMEROS.get(crudo.lower())
+
+
 def verificar_entorno(raiz):
     """El chequeo de harness: despues de correr esto, se puede trabajar o no.
 
@@ -327,6 +362,19 @@ def verificar_entorno(raiz):
             print('       config     %s  %s' % (config, estado))
             if not os.path.isfile(config):
                 faltan.append('falta %s' % config)
+
+    # lo contable de la puerta, contra lo contado
+    reales = len([x for x in os.listdir(DESTINOS[0])
+                  if os.path.isdir(os.path.join(DESTINOS[0], x))]) if os.path.isdir(DESTINOS[0]) else 0
+    dice = skills_que_declara_la_puerta(raiz)
+    if dice is None:
+        print('\n  [--] puerta      el README no declara cuantas skills hay: nada que comparar')
+    elif dice != reales:
+        print('\n  [!!] puerta      el README dice %d skills y hay %d' % (dice, reales))
+        print('       Lo contable no deberia envejecer a mano. Corregi README.md.')
+        faltan.append('el README declara %d skills y hay %d' % (dice, reales))
+    else:
+        print('\n  [ok] puerta      el README declara %d skills, y son %d' % (dice, reales))
 
     # el gate de cierre
     hook = os.path.join('.git', 'hooks', 'pre-commit')

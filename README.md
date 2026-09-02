@@ -42,7 +42,9 @@ Cada artefacto está numerado, linkea hacia atrás a su insumo, y **no existe si
 
 ## Qué hay adentro
 
-Cinco capas:
+**Este README describe el PAQUETE: lo que recibís al clonar.** El vault del owner tiene además `06_Proyectos/`, donde aterriza todo el trabajo real —y por eso `CLAUDE.md` lo nombra— pero no viaja: quien clona recibe el sistema, no los proyectos de otro. La distinción es de `TL-008` y hasta el 2026-09-01 ninguna puerta la declaraba.
+
+Cinco capas viajan, y hay una sexta carpeta que no:
 
 | Capa | Qué es |
 |------|--------|
@@ -51,8 +53,9 @@ Cinco capas:
 | **03_Comunidad** | gobernanza, contribución, licencia y marca — y la preparación de lo que el sistema publica, con su Archivo |
 | **04_IA Operativa** | cómo una IA opera el vault sin inflarlo: tokens, prompteo, el pass GC y sus herramientas de medición |
 | **05_Escuela** | aprendizaje proactivo y la Biblioteca: fundamentos de experiencia y análisis de juegos por género |
+| `06_Proyectos` | **no viaja.** Es el workspace del owner: donde cae `TL → RQ → GDS → SOL → EJ → QA → VE` de cada proyecto. En tu clone lo creás vos, y el sistema te dice dónde va cada salida |
 
-Once **skills ejecutables** (una por área, más la Escuela, la Comunidad y AiCare) son lo que hace que la cadena corra en vez de quedarse en documentación.
+Doce **skills ejecutables** —una por cada una de las ocho áreas, más la Escuela, la Comunidad, AiCare y el Despacho— son lo que hace que la cadena corra en vez de quedarse en documentación.
 
 ---
 
@@ -61,7 +64,7 @@ Once **skills ejecutables** (una por área, más la Escuela, la Comunidad y AiCa
 - **Obsidian**, para abrir y navegar el vault (la navegación usa wikilinks en cascada).
 - **Git**, para clonar o versionar.
 - Cualquier herramienta de IA capaz de leer archivos Markdown y usar el vault como contexto. Las skills están escritas en el formato de skills de Claude, y su contenido es portable a cualquier agente que lea instrucciones en Markdown.
-- **Python 3** (opcional), solo para las herramientas de medición de `04_IA Operativa`.
+- **Python 3**, y no es opcional. Los instrumentos del sistema son scripts, y su salida *es* la evidencia: hay 18 versionados en cuatro capas. El gate de cierre que corre en cada commit son cuatro de ellos (`grafo.py`, `grafo.py --paquete`, `gemelos.py`, `documentacion.py`); sin Python, el vault se puede leer y no se puede medir.
 
 ---
 
@@ -113,9 +116,9 @@ Los dos son válidos. El segundo es el que deja rastro.
 
 ## Estado actual
 
-Etapa de apertura inicial, con dos entregas reales completas: un Pong 3D en Unity 6 y un plataformero 2D de precisión en web, las dos con la cadena corrida de punta a punta y su validación cerrada. Con la segunda corrieron por primera vez las dos áreas que faltaban, Level Design y Control de Calidad.
+Etapa de apertura inicial, con **tres proyectos que corrieron la cadena de punta a punta** y seis validaciones de entrega cerradas: un Pong 3D en Unity 6 (2 `VE`), un plataformero 2D de precisión en web (1 `VE`) y un tower defense (3 `VE`). Con el segundo corrieron por primera vez las dos áreas que faltaban, Level Design y Control de Calidad.
 
-Lo que eso probó y lo que no está escrito sin maquillaje en `ARQ-000_Auditoria_de_arquitectura` y en el backlog de `00_Leyes_en_antesala`. Resumen honesto: **la cadena funciona en el medio y falla en los bordes**, y las tres reglas de borde que lo corrigen ya son pasos ejecutables de las skills.
+Lo que eso probó y lo que no está escrito sin maquillaje en `ARQ-000_Auditoria_de_arquitectura` y en el backlog de `00_Leyes_en_antesala` — dos artefactos del workspace del owner, que **no viajan en el paquete**: se nombran acá para decir dónde vive el juicio, no para que los abras en tu clone. Resumen honesto: **la cadena funciona en el medio y falla en los bordes**, y las tres reglas de borde que lo corrigen ya son pasos ejecutables de las skills.
 
 Lo que falta ya no es la segunda muestra: es **salir del dominio.** Dos entregas, dos videojuegos. Y la segunda está probada como sistema y sin probar como experiencia — el owner todavía no la jugó, y eso está declarado como deuda en su `VE`, no tapado.
 

@@ -222,7 +222,9 @@ Una puerta que abre a un registro fechado le cuenta a quien llega el pasado del 
 
 ## Estado actual
 
-Etapa de apertura inicial, con **dos entregas reales completas**: un Pong 3D en Unity 6 y un plataformero 2D de precisión en web, los dos con la cadena corrida de punta a punta y su validación de entrega cerrada.
+**Esta puerta describe el VAULT del owner**, `06_Proyectos/` incluido. El `README` describe el **paquete**: lo que recibe quien clona, que es el sistema sin los proyectos. Los dos números difieren a propósito, y hasta el 2026-09-01 ninguna de las dos puertas lo decía.
+
+Etapa de apertura inicial, con **tres proyectos que corrieron la cadena de punta a punta** y seis validaciones de entrega cerradas: un Pong 3D en Unity 6 (2 `VE`), un plataformero 2D de precisión en web (1 `VE`) y un tower defense (3 `VE`).
 
 ```txt
 Pong3D   TL-003 -> VE-003 Cerrado    la primera vuelta entera, jugada por el owner
@@ -239,9 +241,9 @@ Lo que eso probó:
 
 Lo que no:
 
-- **dos muestras, dos videojuegos.** Sigue sin probarse que la cadena sirva fuera de los juegos. Es la pregunta que separa un método de un método para hacer arcades.
+- **tres muestras, tres videojuegos.** Sigue sin probarse que la cadena sirva fuera de los juegos, y sumar un tercer juego no la responde: mueve el número, no la pregunta. Es lo que separa un método de un método para hacer arcades.
 - **`Salto` está probado como sistema y sin probar como experiencia**, porque el owner todavía no lo jugó. Es la deuda mayor de `VE-001` y la que ningún instrumento puede saldar.
-- **la fricción todavía no está medida.** El instrumento existe (`06_Medicion de friccion`) y **ninguna skill lo nombra**, así que cada entrega cierra sin número y nadie lo nota. Es la ley sin medir aplicada al propio sistema.
+- **la fricción tiene un número y todavía no tiene serie.** Esta línea decía que el instrumento existía y que ninguna skill lo nombraba: las dos mitades eran falsas al 2026-09-01. `AiCare` lo referencia, y `VE-001_Salto` trae **el primer número de fricción del sistema**. Lo que falta ahora es otra cosa y más difícil: una serie. Un número solo no es una tendencia, y la Ley del baseline se vuelve falsable recién cuando hay con qué comparar.
 
 El foco actual está en medir y en salir del dominio, no en agregar capas.
 
