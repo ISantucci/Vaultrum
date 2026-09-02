@@ -40,6 +40,7 @@ INSUMO  = {'RQ': ('TL',), 'GDS': ('RQ', 'TL'), 'LDS': ('GDS',), 'UXS': ('RQ', 'G
 
 LEY = {
     'insumo'       : 'Ley 1 - un artefacto downstream no existe sin su insumo upstream',
+    'cobertura'    : 'Ley 1b - un RQ de timeline cerrado sin SOL que lo cubra',
     'contrato'     : 'Ley 2 - falta una seccion obligatoria del contrato del tipo',
     'sin-contrato' : 'Ley 2 - el tipo no tiene forma estable medible (no falla: es el hallazgo)',
     'contrato-vacio': 'Ley 2 - una seccion del contrato existe y esta incompleta',
@@ -292,6 +293,78 @@ def recolectar(ruta):
     return out
 
 
+# --------------------------------------------------- Ley 1b: cobertura del hilo
+# La relacion SOL/EJ <-> RQ es 1:N y esta declarada: un SOL es la arquitectura de
+# una epica, y una epica se decide una vez, no una por requerimiento. La eleccion
+# C de RQ-009.4 es que esa relacion deje de ser una convencion y pase a ser un
+# numero: si el SOL cubre varios RQ, tiene que ENUMERARLOS, y algo tiene que
+# comprobar que ninguno se quedo afuera.
+#
+# Es lo que la preocupacion original pedia de verdad. El miedo era que
+# "EJ-00X -> QA-00X.n deja de ser resoluble": no se resuelve con un sufijo, se
+# resuelve con la enumeracion, y recien sirve cuando alguien la verifica.
+#
+# SOLO SOBRE TIMELINES CERRADOS. Un RQ sin SOL en un timeline abierto no es un
+# hueco: es trabajo que todavia no se hizo. Medirlo como falla convertiria a este
+# instrumento en uno que llora cada vez que alguien empieza algo. Un timeline esta
+# cerrado cuando tiene su VE en disco.
+RANGO_RQ = re.compile(r'RQ-(\d+)\.(\d+)`?\s*(?:\.\.\.|…|—|–)\s*`?(?:RQ-\d+\.)?(\d+)')
+SOLO_RQ  = re.compile(r'RQ-(\d+)\.(\d+)')
+
+
+def rq_citados(txt, tl):
+    """Los RQ del timeline `tl` que este texto nombra, rangos incluidos.
+
+    El rango se escribe con backticks -- `RQ-001.1` … `RQ-001.8` -- y por eso el
+    patron los tolera: enumerar ocho requerimientos con un rango sigue siendo
+    enumerarlos, y pedir que se escriban los ocho seria pedir ruido.
+    """
+    s = set()
+    for m in RANGO_RQ.finditer(txt):
+        if m.group(1) == tl:
+            s.update(range(int(m.group(2)), int(m.group(3)) + 1))
+    for m in SOLO_RQ.finditer(txt):
+        if m.group(1) == tl:
+            s.add(int(m.group(2)))
+    return s
+
+
+def cobertura(raiz, ruta):
+    """[(rel_del_SOL_o_del_proyecto, tl, [rq sin cubrir])] por timeline cerrado."""
+    fallas = []
+    base_proy = os.path.join(raiz, '06_Proyectos')
+    if not os.path.isdir(base_proy):
+        return fallas
+    for proy in sorted(os.listdir(base_proy)):
+        base = os.path.join(base_proy, proy)
+        if not os.path.isdir(base):
+            continue
+        rqs, sols, cerrados = collections.defaultdict(set), collections.defaultdict(list), set()
+        for dp, dn, fn in os.walk(base):
+            dn[:] = [d for d in dn if d not in RUIDO]
+            for f in fn:
+                m = re.match(r'RQ-(\d+)\.(\d+)_', f)
+                if m:
+                    rqs[m.group(1)].add(int(m.group(2)))
+                m = re.match(r'SOL-(\d+)', f)
+                if m:
+                    sols[m.group(1)].append(os.path.join(dp, f))
+                m = re.match(r'VE-(\d+)', f)
+                if m:
+                    cerrados.add(m.group(1))
+        for tl in sorted(rqs):
+            if tl not in cerrados or not sols.get(tl):
+                continue                      # abierto, o sin SOL todavia: no es hueco
+            cub = set()
+            for f in sols[tl]:
+                cub |= rq_citados(open(f, encoding='utf-8', errors='replace').read(), tl)
+            falta = sorted(rqs[tl] - cub)
+            if falta:
+                rel = os.path.relpath(sols[tl][0], raiz).replace('\\', '/')
+                fallas.append((rel, tl, falta))
+    return fallas
+
+
 def auditar(ruta):
     raiz = raiz_vault(ruta)
     contratos = cargar_contratos(raiz)
@@ -305,6 +378,12 @@ def auditar(ruta):
         for h, muestra in parrafos(cuerpo):
             huellas[h].append((rel, muestra))
         res.append({'rel': rel, 'tipo': tipo, 'fallas': fallas})
+    for rel, tl, falta in cobertura(raiz, ruta):
+        for r in res:
+            if r['rel'] == rel and (rel, 'cobertura') not in excep:
+                r['fallas'].append(('cobertura', 0,
+                                    'TL-%s cerrado: sin SOL que cubra RQ %s'
+                                    % (tl, ', '.join('.%d' % n for n in falta))))
     for h, donde in huellas.items():
         archivos = sorted(set(d[0] for d in donde))
         if len(archivos) > 1:
@@ -391,7 +470,7 @@ def informe(raiz, res, contratos, excep):
              ', '.join(t for t in TIPOS if t not in contratos) or '—'))
     duros = sum(v for k, v in tot.items() if k != 'sin-contrato')
     print('\nfallas %d (+%d artefactos de tipo sin contrato)\n' % (duros, tot['sin-contrato']))
-    for clave in ('insumo', 'contrato', 'contrato-vacio', 'omision', 'sin-evidencia', 'fantasma', 'duplicado', 'sin-estado', 'sin-contrato'):
+    for clave in ('insumo', 'cobertura', 'contrato', 'contrato-vacio', 'omision', 'sin-evidencia', 'fantasma', 'duplicado', 'sin-estado', 'sin-contrato'):
         filas = [(r['rel'], f) for r in res for f in r['fallas'] if f[0] == clave]
         if not filas:
             continue

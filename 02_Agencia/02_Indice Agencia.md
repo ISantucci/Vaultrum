@@ -95,13 +95,21 @@ Todo cuelga del número base del **timeline**. Cada área agrega su prefijo sobr
 | `GDS-XXX.n` | Game Design Spec | Game Design | RQ-XXX.n |
 | `LDS-XXX.n` | Level Design Spec | Level Design | GDS-XXX.n |
 | `UXS-XXX.n` | UI/UX Spec | UI/UX | RQ-XXX.n (mitad A) + GDS-XXX.n (mitad B) |
-| `SOL-XXX.n` | Solución técnica | Programación | RQ-XXX.n (+ GDS/LDS/UXS-XXX.n) |
-| `EJ-XXX.n` | Ejecución / reporte | Programación | SOL-XXX.n |
+| `SOL-XXX` o `SOL-XXX.n` | Solución técnica | Programación | **uno o varios** RQ-XXX.n del mismo TL |
+| `EJ-XXX` o `EJ-XXX.n` | Ejecución / reporte | Programación | su `SOL` |
 | `QA-XXX.n` | Gate de calidad del hilo | Control de Calidad | EJ-XXX.n |
 | `QA-XXX` | Gate de calidad de la entrega | Control de Calidad | **TL-XXX** (con sus `QA-XXX.n`) |
 | `VE-XXX` | Validación de entrega | Producción | TL-XXX (con su `QA-XXX`) |
 
-La subnumeración `.n` es compartida: `RQ-001.2 ↔ GDS-001.2 ↔ LDS-001.2 ↔ UXS-001.2 ↔ SOL-001.2 ↔ EJ-001.2 ↔ QA-001.2` son el mismo hilo de trabajo visto por cada área. El `QA` de entrega y el `VE` son las excepciones y **no llevan `.n`**: valida la entrega del timeline completo, porque la definición de terminado es del entregable y no de la pieza. `LDS` y `UXS` son **opcionales**: existen solo si el hilo tiene, respectivamente, dimensión espacial o algo que alguien tenga que leer. El `UXS` es el único artefacto que **abre antes que su insumo principal**: su mitad A se escribe contra el `RQ` para que Game Design pueda cerrar el `GDS` contra ella. Por eso declara dos insumos y no uno.
+La subnumeración `.n` es compartida entre las áreas de diseño: `RQ-001.2 ↔ GDS-001.2 ↔ LDS-001.2 ↔ UXS-001.2 ↔ QA-001.2` son el mismo hilo de trabajo visto por cada una.
+
+**`SOL` y `EJ` son la excepción, y es deliberada: su relación con el `RQ` es 1:N.** Un `SOL` es la arquitectura de una épica, y una épica se decide una vez, no una por requerimiento — `Salto/SOL-001` declara en su propio `Insumo` que cubre `RQ-001.1` … `RQ-001.8`. Puede llevar `.n` cuando cubre un solo hilo, y puede no llevarlo cuando cubre el timeline entero. Las dos formas son válidas.
+
+Hasta el 2026-09-01 esta tabla decía 1:1 y el disco hacía 1:N desde siempre. Se corrigió la tabla, no el disco: renombrar habría obligado a partir un `SOL` en ocho artefactos que nunca existieron, que es falsear la historia. Decisión del owner, `RQ-009.4`, opción C.
+
+**Y la relación 1:N tiene un precio que la hace verificable, no una convención:** un `SOL` que cubre varios `RQ` **tiene que enumerarlos en su `Insumo`** —un rango como `` `RQ-001.1` … `RQ-001.8` `` cuenta como enumeración—, y `documentacion.py` comprueba con su **Ley 1b** que ningún `RQ` de un timeline **cerrado** se haya quedado sin `SOL` que lo cubra. En un timeline abierto no mide: un `RQ` sin `SOL` ahí no es un hueco, es trabajo que todavía no se hizo.
+
+Eso es lo que resuelve el riesgo real. El miedo era que `EJ-00X → QA-00X.n` dejara de ser resoluble: no se resuelve con un sufijo, se resuelve con la enumeración — y recién sirve cuando alguien la verifica. El `QA` de entrega y el `VE` son las excepciones y **no llevan `.n`**: valida la entrega del timeline completo, porque la definición de terminado es del entregable y no de la pieza. `LDS` y `UXS` son **opcionales**: existen solo si el hilo tiene, respectivamente, dimensión espacial o algo que alguien tenga que leer. El `UXS` es el único artefacto que **abre antes que su insumo principal**: su mitad A se escribe contra el `RQ` para que Game Design pueda cerrar el `GDS` contra ella. Por eso declara dos insumos y no uno.
 
 Reglas:
 

@@ -38,7 +38,7 @@ Prohibido     lo que no se toca, con el motivo
 
 ## 3 · Cómo se numera
 
-Un `SOL` cuelga siempre de un `RQ` y **hereda su número base y su subnumeración**: `RQ-004.5 → SOL-004.5 → EJ-004.5`. La columna vertebral de numeración vive en `02_Indice Agencia` y este contrato la referencia, no la copia.
+Un `SOL` cuelga siempre de **uno o varios** `RQ` del mismo timeline y hereda su número base. Lleva `.n` si cubre un solo hilo y no lo lleva si cubre el timeline entero; cuando cubre varios, **los enumera en su `Insumo`** y la Ley 1b de `documentacion.py` comprueba que ninguno quede afuera. La columna vertebral de numeración vive en `02_Indice Agencia` y este contrato la referencia, no la copia — hasta el 2026-09-01 esta línea decía 1:1 y era una copia que ya había derivado.
 
 ## 4 · Dónde aterriza
 

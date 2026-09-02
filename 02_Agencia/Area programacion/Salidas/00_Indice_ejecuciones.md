@@ -39,7 +39,7 @@ Una verificación sin alcance declarado se lee como cierre, y produce el falso *
 
 ## 3 · Cómo se numera
 
-Un `EJ` cuelga siempre de un `SOL` y usa **el mismo número base y subnumeración**: `RQ-004.5 → SOL-004.5 → EJ-004.5`. La numeración vive en `02_Indice Agencia`; este contrato la referencia.
+Un `EJ` cuelga siempre de un `SOL` y usa **su mismo número**, con `.n` o sin `.n` según lo tenga el `SOL`. La numeración vive en `02_Indice Agencia`; este contrato la referencia y no la repite — hasta el 2026-09-01 la repetía, diciendo 1:1.
 
 ## 4 · Dónde aterriza
 

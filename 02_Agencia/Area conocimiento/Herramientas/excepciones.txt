@@ -56,3 +56,4 @@
 # Se declara como desvio y NO como costumbre. Decision del owner, TL-009, 2026-09-01.
 06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.1_Los_Instrumentos_Que_Miden_Mal.md | insumo | reparacion de bugs acotados sin decision de arquitectura: los criterios de aceptacion del RQ-009.1 fueron el contrato. Desvio declarado, no costumbre.
 06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.2_Que_El_Paquete_No_Muerda.md | insumo | idem RQ-009.2. Desvio declarado, no costumbre.
+06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.4_La_Numeracion_Medida.md | insumo | idem RQ-009.4. Desvio declarado, no costumbre.
