@@ -30,6 +30,15 @@ AGENTS.md | inalcanzable | idem CLAUDE.md.
 03_Comunidad/Salidas/** | inalcanzable | idem.
 02_Agencia/Area produccion/Salidas/** | flotando | registros y artefactos de Modo Owner: historial de uso. Contratos en 00_Indice_timelines, 00_Indice_requerimientos y 00_Indice_ve.
 02_Agencia/Area produccion/Salidas/** | inalcanzable | idem.
+
+# El resto de la cadena de Modo Owner, emplazada por ARQ-025 (2026-09-07). Misma
+# razon que la fila de Produccion, que ya estaba: son historial de uso y su
+# contrato es el indice del area, que si viaja. La fila faltaba porque hasta
+# TL-009 ningun timeline de Modo Owner habia llegado a producir SOL, EJ ni QA.
+02_Agencia/Area programacion/Salidas/** | flotando | serie SOL y EJ de Modo Owner: historial de uso. Contratos en 00_Indice_soluciones y 00_Indice_ejecuciones.
+02_Agencia/Area programacion/Salidas/** | inalcanzable | idem.
+02_Agencia/Area control de calidad/Salidas/** | flotando | serie QA de Modo Owner: historial de uso. Contrato en 00_Indice_qa.
+02_Agencia/Area control de calidad/Salidas/** | inalcanzable | idem.
 02_Agencia/Area conocimiento/Staging/** | flotando | Staging es zona transitoria de commits al Core: historial, no sistema.
 02_Agencia/Area conocimiento/Staging/** | inalcanzable | idem.
 

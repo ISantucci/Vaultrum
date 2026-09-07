@@ -54,8 +54,12 @@
 # contrato, y sin decidir arquitectura. Escribir un SOL despues de implementar seria
 # un artefacto de tramite: diria lo que ya se hizo, no lo que se iba a hacer.
 # Se declara como desvio y NO como costumbre. Decision del owner, TL-009, 2026-09-01.
-06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.1_Los_Instrumentos_Que_Miden_Mal.md | insumo | reparacion de bugs acotados sin decision de arquitectura: los criterios de aceptacion del RQ-009.1 fueron el contrato. Desvio declarado, no costumbre.
-06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.2_Que_El_Paquete_No_Muerda.md | insumo | idem RQ-009.2. Desvio declarado, no costumbre.
-06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.4_La_Numeracion_Medida.md | insumo | idem RQ-009.4. Desvio declarado, no costumbre.
-06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.5_El_Primer_Gate_De_Hilo.md | insumo | idem RQ-009.5. Desvio declarado, no costumbre.
-06_Proyectos/VaultrumWorld/05_Programacion/EJ-009.6_La_Casi_Duplicacion_Medida.md | insumo | idem RQ-009.6. Desvio declarado, no costumbre.
+# Rutas actualizadas el 2026-09-07 por ARQ-025: los artefactos de Modo Owner se
+# emplazaron en las Salidas de su area. Una excepcion con la ruta vieja no exime
+# nada y ademas no avisa -- el artefacto vuelve a fallar como si nunca se hubiera
+# declarado, que es lo que paso al mover.
+02_Agencia/Area programacion/Salidas/EJ-009.1_Los_Instrumentos_Que_Miden_Mal.md | insumo | reparacion de bugs acotados sin decision de arquitectura: los criterios de aceptacion del RQ-009.1 fueron el contrato. Desvio declarado, no costumbre.
+02_Agencia/Area programacion/Salidas/EJ-009.2_Que_El_Paquete_No_Muerda.md | insumo | idem RQ-009.2. Desvio declarado, no costumbre.
+02_Agencia/Area programacion/Salidas/EJ-009.4_La_Numeracion_Medida.md | insumo | idem RQ-009.4. Desvio declarado, no costumbre.
+02_Agencia/Area programacion/Salidas/EJ-009.5_El_Primer_Gate_De_Hilo.md | insumo | idem RQ-009.5. Desvio declarado, no costumbre.
+02_Agencia/Area programacion/Salidas/EJ-009.6_La_Casi_Duplicacion_Medida.md | insumo | idem RQ-009.6. Desvio declarado, no costumbre.

@@ -161,6 +161,17 @@ La carpeta existe si un área efectivamente escribió algo ahí: **nada se pre-c
 | **Conocimiento** | **el sistema** — Staging y Core | su producto **no** es del proyecto |
 | **Arquitectura** | **el sistema** — `Salidas/ARQ` | interviene el vault, no el proyecto |
 
+**Y el tercer caso, que faltaba: el trabajo de Modo Owner.** Cuando el sujeto es el vault y no un proyecto, cada artefacto aterriza en las `Salidas/` del área que lo produjo, al lado de su contrato. No entra a `06_Proyectos/`: esa es la constelación de proyectos del owner, y el vault no es uno de ellos — meterlo ahí obligaría a inventarle cuaderno, identidad y criterio de éxito que no tiene.
+
+```txt
+Modo Owner   TL · RQ · VE   ->  Area produccion/Salidas/
+             SOL · EJ       ->  Area programacion/Salidas/
+             QA             ->  Area control de calidad/Salidas/
+             ARQ            ->  Area arquitectura/Salidas/
+```
+
+La mitad de Producción ya estaba escrita en `00_Indice_timelines`; el resto de la cadena no, y no se notó porque `TL-007` y `TL-008` no produjeron ningún `SOL` ni `EJ`. `TL-009` fue el primero en llegar hasta ahí y activó el hueco. Emplazamiento: `ARQ-025`.
+
 Las dos últimas no se mudan, y eso es el criterio funcionando: **lo que produce sistema se queda en el sistema; lo que produce proyecto se va al proyecto.**
 
 ### Cómo sabe un área dónde está el proyecto
