@@ -125,6 +125,22 @@ def cargar_excepciones(raiz):
     return ex
 
 
+def excepciones_huerfanas(raiz, ex):
+    """Las excepciones cuya ruta ya no existe en disco.
+
+    Una excepcion declarada por ruta se rompe EN SILENCIO cuando el archivo se
+    mueve: el artefacto vuelve a fallar como si nunca se hubiera declarado, y
+    quien mire el numero va a leer deuda nueva donde hay una ruta vieja. Paso
+    dos veces -- ARQ-025 al emplazar los EJ de Modo Owner, y TL-011 al archivar
+    los RQ entregados, que dejo 7 huerfanas de una sola corrida.
+
+    Esto no repara: avisa. Convertir un fallo silencioso en un aviso es el paso
+    barato que 00_Leyes_en_antesala tenia anotado, y la segunda aparicion es la
+    que lo hizo urgente.
+    """
+    return sorted({p for p, _ in ex if not os.path.exists(os.path.join(raiz, p))})
+
+
 def prosa(txt):
     """Lineas de prosa: sin bloques de codigo, sin tablas, sin frontmatter."""
     fuera, dentro, yaml = [], False, False
@@ -489,6 +505,16 @@ def informe(raiz, res, contratos, excep):
         print()
     if excep:
         print('  Excepciones declaradas (%d) — estan en excepciones.txt, no fallan' % len(excep))
+    huerfanas = excepciones_huerfanas(raiz, excep)
+    if huerfanas:
+        print()
+        print('  AVISO — %d excepcion(es) apuntan a una ruta que ya no existe.' % len(huerfanas))
+        print('  No fallan y no reparan nada: avisan. Una excepcion huerfana deja de')
+        print('  aplicar en silencio, y el artefacto vuelve a fallar como deuda nueva.')
+        for p in huerfanas[:12]:
+            print('      %s' % p)
+        if len(huerfanas) > 12:
+            print('      ... y %d mas' % (len(huerfanas) - 12))
     print('\n  Fuera del alcance de la herramienta (sigue siendo juicio):')
     print('      si el texto se entiende · si el criterio es correcto · si el aprendizaje vale')
     print('      rutas fuera del vault: las prueba el gate de existencia en disco de `vaultrum-programador`')

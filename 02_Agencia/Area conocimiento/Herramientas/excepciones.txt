@@ -8,12 +8,12 @@
 # TL-003 los supersede con la forma nueva (RQ-003.x cumple el contrato entero).
 # Reescribirlos seria falsear la historia del proyecto: se declaran y no fallan.
 # Decision del owner, pasada de documentacion 2026-08-27.
-06_Proyectos/Pong3D/01_Produccion/RQ-001.1_Paletas_Controlables.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
-06_Proyectos/Pong3D/01_Produccion/RQ-001.2_Pelota_Rebote_Aceleracion.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
-06_Proyectos/Pong3D/01_Produccion/RQ-001.3_Score_Victoria.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
-06_Proyectos/Pong3D/01_Produccion/RQ-001.4_Estados_Menu_Pausa_Reinicio.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
-06_Proyectos/Pong3D/01_Produccion/RQ-001.5_Game_Feel_Feedback.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
-06_Proyectos/Pong3D/01_Produccion/RQ-001.6_Setup_Proyecto_Cancha.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/Archivo/RQ-001.1_Paletas_Controlables.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/Archivo/RQ-001.2_Pelota_Rebote_Aceleracion.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/Archivo/RQ-001.3_Score_Victoria.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/Archivo/RQ-001.4_Estados_Menu_Pausa_Reinicio.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/Archivo/RQ-001.5_Game_Feel_Feedback.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
+06_Proyectos/Pong3D/01_Produccion/Archivo/RQ-001.6_Setup_Proyecto_Cancha.md | contrato | RQ de TL-001, anterior al contrato de RQ. Superado por TL-003, que si lo cumple.
 06_Proyectos/Pong3D/01_Produccion/TL-001_Pong_2_Jugadores_Completo.md | sin-estado | timeline abandonado sin cierre formal: TL-002 lo reemplazo. El estado real esta escrito en el cuaderno del proyecto.
 06_Proyectos/Pong3D/05_Programacion/EJ-001_Implementacion_Pong.md | sin-estado | ejecucion de TL-001, del mismo lote sin estado formal. Idem.
 
@@ -25,7 +25,7 @@
 # cinco son conteos de alcance (cuantos RQ, cuantos archivos, que umbral), no
 # afirmaciones sobre algo medido. El instrumento, donde aplica, esta en el mismo
 # documento un parrafo mas arriba o mas abajo.
-02_Agencia/Area produccion/Salidas/Requerimientos/RQ-008.4_Mudanza_De_Lo_Historico.md | sin-evidencia | conteo de alcance de la mudanza; el 0 links rotos lo midio grafo.py y esta citado en el mismo RQ.
+02_Agencia/Area produccion/Salidas/Requerimientos/Archivo/RQ-008.4_Mudanza_De_Lo_Historico.md | sin-evidencia | conteo de alcance de la mudanza; el 0 links rotos lo midio grafo.py y esta citado en el mismo RQ.
 06_Proyectos/Pong3D/05_Programacion/SOL-002_Arquitectura_Pong3D.md | sin-evidencia | 'los seis requerimientos' es un conteo de hilos del TL, no un resultado medido.
 06_Proyectos/Pong3D/01_Produccion/VE-003_Pong3D.md | sin-evidencia | '3 minutos' es la duracion estimada de una checklist, declarada como estimacion.
 06_Proyectos/VaultrumWorld/05_Programacion/SOL-004.1_Registro_De_Operacion.md | sin-evidencia | el umbral de 8 MB es un parametro de diseno declarado en la propia SOL, no una medicion.
@@ -74,3 +74,4 @@
 # lado es papeleo. Declarado tambien en el propio EJ.
 06_Proyectos/TowerDefense/05_Programacion/EJ-004_El_Proyecto_Se_Pone_Al_Dia.md | insumo | completar artefactos contra el contrato vigente y reparar instrumentos con un patron ya decidido: sin decision de arquitectura propia. Los criterios de cierre del TL-004 fueron el contrato. Desvio declarado, no costumbre.
 06_Proyectos/Pong3D/05_Programacion/EJ-004_La_Cobertura_Que_Faltaba.md | insumo | agregar la seccion de insumo a dos SOL cerrados no es una decision de arquitectura: los tres criterios de cierre del TL-004 de Pong3D fueron el contrato. Desvio declarado, no costumbre.
+02_Agencia/Area programacion/Salidas/EJ-011_El_Productor_Cuenta_Lo_Suyo.md | insumo | los cuatro RQ del TL-011 fueron el contrato: un instrumento y una regla de ubicacion, sin decision de arquitectura propia. Desvio declarado, no costumbre.

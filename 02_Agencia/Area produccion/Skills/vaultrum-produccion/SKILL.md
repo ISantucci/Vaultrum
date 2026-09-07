@@ -383,6 +383,21 @@ la intención original estaba mal capturada                      → Consultor E
 **Un `TL` no está entregado sin su `VE` en estado Cerrado, y un `VE` no cierra sin su `QA` en GO o CONDITIONAL GO** (gate definido en `02_Agencia/02_Indice Agencia.md`). Si el resultado es "funciona pero no es bueno", el estado correcto es *Ajustar*.
 
 
+### Archivar los requerimientos que cerraron (se corre acá)
+
+Con el `VE` escrito, los `RQ` de ese timeline dejaron de admitir trabajo. **Archivalos en la misma pasada**, antes del commit:
+
+```txt
+python3 "02_Agencia/Area produccion/Herramientas/requerimientos.py" . --archivar
+```
+
+Lo que queda a la vista es lo que todavía pide algo; lo que ya no, se va a `Archivo/`. La regla completa vive en `00_Indice_requerimientos` y no se repite acá. Dos cosas que sí importan en este paso:
+
+- **Un `RQ` que el `VE` deja en Pausado NO se archiva.** Sigue pendiente: falta poder hacerlo, no falta hacerlo. Para que el instrumento lo vea, el `VE` tiene que declararlo en su tabla *Contra los RQ*, con una celda que **empiece** con `Pausado`. Contarlo en prosa no alcanza: eso es historia, no estado.
+- **Un `TL` que reemplaza a otro lo declara en el timeline reemplazado**, con la línea `Superado por TL-XXX`. Sin eso, los `RQ` del viejo quedan contados como pendientes para siempre.
+
+El gate de cierre corre `requerimientos.py --verificar`, así que si te olvidás, el commit no entra. No es un recordatorio: es una medición.
+
 ### El commit del proyecto
 
 Con el `VE` en **Cerrado**, declarás que la entrega se puede commitear. Es una consecuencia del cierre, no un acto aparte, y es tuya: sos quien verificó que lo entregado es lo prometido.

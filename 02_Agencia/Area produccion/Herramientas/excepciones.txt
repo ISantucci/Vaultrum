@@ -1,0 +1,24 @@
+# Excepciones declaradas del inventario de requerimientos.
+#
+# Una por linea:   <ambito>/RQ-<tl>.<n> | estado declarado | razon
+#
+# Estados validos: entregado · en curso · pausado · superado · ambiguo
+#
+# Regla: lo que no esta declarado aca, falla. Una excepcion sin razon escrita
+# es una falla con mejor redaccion, y una excepcion permanente es una ley mal
+# escrita: si se repite, se corrige la ley o se corrige el proceso.
+#
+# Se declaran por IDENTIDAD y no por ruta, a proposito: este instrumento MUEVE
+# archivos, y una excepcion contra una ruta se rompe en silencio en cuanto el
+# archivo se mueve. Es el fallo que ARQ-025 midio y que 00_Leyes_en_antesala
+# tiene anotado como ley candidata. Un RQ no cambia de identidad al archivarse.
+#
+# Una excepcion PISA el estado derivado: no silencia una falla, declara cual es
+# el estado real cuando la cadena no alcanza a decirlo. El informe las lista.
+
+# --- VE-009 narra una historia donde el instrumento busca un estado ----------
+# VE-009 escribe: "RQ-009.4 -> EJ-009.4  (estuvo Pausado; reabierto con opcion C)".
+# Es historia del hilo, no su estado: RQ-009.4 cerró con EJ-009.4 y entró en la
+# entrega. El instrumento no adivina y lo marca ambiguo, que es lo correcto.
+# Se declara acá en vez de reescribir un VE cerrado.
+MODO OWNER/RQ-009.4 | entregado | VE-009 narra que estuvo Pausado y lo reabrio con la opcion C; el RQ cerro con EJ-009.4 y entro en la entrega.
