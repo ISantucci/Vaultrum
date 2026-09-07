@@ -89,7 +89,8 @@ Responde:
 
 - por que las cadenas de trabajo fallan en los bordes y no en el medio;
 - que diferencia un criterio escrito de un paso ejecutable;
-- como convertir el segundo en el primero.
+- como convertir el segundo en el primero;
+- y la otra mitad, agregada el 2026-09-07 desde el Area de Arte: **el gate que existe, corre, y una inspeccion humana confiada lo saltea igual porque la pieza se ve bien.** Cuatro defectos reales pasaron una inspeccion visual perfecta.
 
 Usar esta nota al **disenar o revisar un flujo de trabajo**, propio o de la Agencia.
 
@@ -156,6 +157,23 @@ Usar esta nota al **escribir conocimiento nuevo, armar la lista de consulta de u
 
 ---
 
+## [[El instrumento en el extremo de su rango]]
+
+> **Un instrumento probado en el medio de su rango no está probado.**
+
+El cuarto criterio sobre instrumentos, y el que pregunta por **dónde deja de valer**. Los otros tres miran la medición; éste mira contra qué se probó la herramienta que la produce.
+
+Responde:
+
+- por qué el modo de falla no es que el instrumento se rompa, sino que siga contestando;
+- por qué probar con los casos que hay es probar con los casos que se parecen;
+- cómo se fabrica el caso extremo en vez de esperarlo;
+- por qué un instrumento que sólo corre dentro de su entorno no se puede probar en ninguna punta — y por qué eso vuelve a la inversión de dependencias una condición de verificación y no una preferencia de diseño.
+
+Usar esta nota al **escribir o revisar cualquier instrumento**, y al leer un veredicto que sorprende.
+
+---
+
 ## [[La declaracion y su sujeto]]
 
 > **Una declaracion sobre algo nombra ese algo, no donde esta guardado.**
@@ -183,6 +201,7 @@ durante               → Verificacion parcial              (que sabemos hasta a
 al disenar el flujo   → Gates verificables                (como se comprueba sin criterio subjetivo)
 al escribir el gate   → Alcance del instrumento           (si la comprobacion prueba lo que dice)
                       → Direccion de falla de un guardrail (de que lado cae cuando se equivoca)
+                      → El instrumento en el extremo       (donde deja de valer la medicion)
                       → La declaracion y su sujeto         (sobre que cosa habla, y si sigue ahi)
 antes de delegar      → La superficie del ejecutor        (si el otro puede, no si sabe)
 antes de escribir     → Conocimiento cargado o archivado  (si lo escrito le va a llegar a alguien)
@@ -208,6 +227,8 @@ Alcance del instrumento   → Arquitectura, Conocimiento, UI/UX y Control de Cal
                             (las cuatro areas que miden con herramienta propia)
 La declaracion y su sujeto → las mismas, mas Produccion: los cuatro instrumentos
                             que leen excepciones o manifiestos
+El instrumento en el extremo → toda area con herramienta propia, y el Area de
+                            Arte, de donde salio (RA-008)
 Direccion de falla        → las mismas cuatro, mas la Escuela (su dedup autoriza misiones)
 La superficie del ejecutor → Programacion (el SOL y su Contrato de ejecucion) y la capa
                             de Despacho, que es la que reparte entre ejecutores

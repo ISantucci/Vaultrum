@@ -99,13 +99,16 @@ nombradas · bbox, caras y las seis leyes declaradas
 ## Herramientas
 
 ```txt
-EL INSTRUMENTO   verificar_malla.py    leyes 1-3, probado en 12 assets
-                 arte.py               el empaquetado de las seis: NO EXISTE
-                                       todavia. Las leyes 4, 5 y 6 no tienen
-                                       instrumento y se declara.
-EL TALLER        primitivas.py         18 piezas
-                 render_vista.py       render a archivo: entregable, no control
+EL INSTRUMENTO   arte.py    malla() leyes 1-3 · presupuesto() ley 4 ·
+                            paleta() ley 5 · entrega() ley 6
+EL TALLER        primitivas.py     18 piezas
+                 render_vista.py   render a archivo: entregable, no control
+LA PRUEBA        probar_arte.py    29 casos, 0 fallas
 ```
+
+**`arte.py` está partido en dos mitades y eso no es prolijidad: es la `D`.** Las leyes no importan `bpy`; sólo `leer_coleccion` sabe de Blender. Por eso **las leyes se prueban fuera del DCC**, que es la única forma de cumplir `RA-008` sobre el propio instrumento.
+
+Adentro de Blender: `exec(open(r"<ruta>/arte.py").read())` una vez por sesión, y después `malla(leer_coleccion("Goblin"))` en una línea.
 
 **La distinción taller / instrumento es la misma que Modelador / Verificador, y por la misma razón.** Si el mismo código construyera y juzgara, el área se verificaría con sus propios supuestos.
 

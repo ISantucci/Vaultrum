@@ -86,6 +86,24 @@ El paso 4 es el que se saltea. Un criterio que vive solo en el documento del are
 
 ---
 
+## La otra mitad: el gate que existe, corre, y alguien lo saltea igual
+
+Todo lo de arriba resuelve el gate que **no se puede** verificar. Falta el caso que el Area de Arte midio cuatro veces, y que es peor porque no se parece a un hueco:
+
+> **El gate existe, corre, y una inspeccion humana confiada lo saltea igual, porque la pieza se ve bien.**
+
+Cuatro defectos reales pasaron una inspeccion visual perfecta: una pieza corrida en tres ejes, dos piezas hundidas mas de cien milimetros, un objeto medido en dos marcos de coordenadas distintos, y un personaje con partes adentro del torso. Los cuatro los encontro el instrumento. Ninguno se veia.
+
+La leccion no es que la vista sea mala: es que **la vista contesta otra pregunta**. Mirar responde *"¿esto parece estar bien?"*, y el instrumento responde *"¿esto cumple la regla?"*. Las dos preguntas coinciden casi siempre, y el "casi" es exactamente donde vive el defecto que va a llegar a la entrega.
+
+```txt
+lo que la vista hace bien    encontrar lo que no se penso: una silueta que no
+                             comunica, un ritmo raro, algo que molesta
+lo que la vista NO hace      confirmar una regla. Para eso esta el numero.
+```
+
+Por eso un gate mecanico **no se aprueba mirando**, ni siquiera cuando quien mira construyo la cosa y esta seguro. Sobre todo entonces: el que construye es el peor juez de lo que construyo, porque revisa contra lo que quiso hacer y no contra lo que hizo.
+
 ## Cuando NO aplica
 
 - **No todo tiene que ser un gate.** Un gate por cada criterio produce una cadena que nadie corre. Los gates van en los bordes —entrada, ramas opcionales, salida— porque ahi es donde falla.

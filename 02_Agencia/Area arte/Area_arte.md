@@ -263,21 +263,38 @@ El registro del contrato de salida del `ART`. Dos cortes —el hilo `ART-XXX.n` 
 El área **nace con el instrumento escrito y probado en 12 assets**.
 
 ```txt
-EL INSTRUMENTO — las seis leyes, cuatro familias, en una sola arte.py
+Herramientas/arte.py         EL INSTRUMENTO — las seis leyes, cuatro familias
 
-  malla()        leyes 1-3   EXISTE hoy como verificar_malla.py, probado en 12
-                             assets. Falta empaquetarlo bajo arte.py.
-  presupuesto()  ley 4       a escribir
-  paleta()       ley 5       a escribir
-  entrega()      ley 6       existe como parseo de .glb, sin empaquetar
+  malla(escena)              leyes 1, 2 y 3
+  presupuesto(escena, fam)   ley 4
+  paleta(materiales, fam)    ley 5
+  entrega(ruta, contrato)    ley 6
 
-EL TALLER — con que se construye, no con que se juzga
-
-  primitivas.py              18 piezas, migradas del registro Arte_Blender
-  render_vista.py            render a archivo. Es un ENTREGABLE, no un control.
+Herramientas/primitivas.py   EL TALLER — 18 piezas
+Herramientas/render_vista.py render a archivo. Es un ENTREGABLE, no un control.
+Herramientas/probar_arte.py  la prueba del instrumento: 29 casos, 0 fallas
 ```
 
-**`arte.py` todavía no existe y se declara.** Las leyes 1-3 se corren hoy con `Herramientas/verificar_malla.py`, y las 4, 5 y 6 no tienen instrumento: son las dos deudas que prueban que el área hacía falta —existían las sillas del trabajo, no las del control— y se cierran cuando el área corra su primer `ART`.
+**El archivo está partido en dos mitades, y esa partición es la `D` de SOLID escrita en un archivo.** La mitad de abajo son las leyes y **no importa `bpy`**; la mitad de arriba es lo único que sabe de Blender: lee la escena y devuelve piezas como diccionarios.
+
+```txt
+lectura del DCC  ->  piezas (dict)  ->  las leyes  ->  veredicto
+```
+
+El instrumento **implementa** las leyes; las leyes no dependen del DCC. Si mañana el área trabaja en otra herramienta, se reescribe `leer_coleccion` y las seis leyes no se mueven.
+
+Y tiene una consecuencia que no es teórica: **las leyes se pueden correr y probar fuera de Blender**, con piezas escritas a mano. El área tiene una regla sobre eso —`RA-008`, *el instrumento también se verifica, y se verifica en el extremo de su rango*— y un instrumento que sólo corre adentro del DCC no se puede verificar en ningún extremo. El anterior no se podía: importaba `bpy` en la primera línea.
+
+```txt
+python3 "02_Agencia/Area arte/Herramientas/probar_arte.py"
+    29 casos, 0 fallas. Entre ellos, los que costaron caro:
+      el volumen negativo de 2.5e-10 que el redondeo del verificador viejo
+      se comia; los 109 mm hundidos de la roca; las 16.340 caras en pantalla
+      del goblin; el rojo y el verde que COLAPSAN en deuteranopia; y el Cube
+      colado en un .glb con la malla EN LEY.
+```
+
+**La trampa de la ley 2 está probada como trampa.** Uno de los 29 casos construye a propósito una pieza casi plana cuya dimensión mínima *es* su espesor: la clase dice `macizo` y el milímetro dice 1.0. Ese caso no está para pasar — está para que quede escrito que la clase miente y el milímetro no.
 
 **La distinción taller / instrumento es la misma que Modelador / Verificador, y por la misma razón.** Si el mismo código construyera y juzgara, el área se verificaría con sus propios supuestos — que es literalmente el defecto que tuvo el verificador.
 
