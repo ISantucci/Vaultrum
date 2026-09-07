@@ -56,11 +56,16 @@ Un `GDS` cerrado **no va siempre directo a Programación**. Decidí explícitame
 ```
 ¿el sistema ocurre en un espacio, un nivel o una pantalla jugable
  con recorrido, encuentros o progresión?      → SÍ: Level Design (vaultrum-leveldesign) → LDS-XXX.n
+¿el sistema pide assets visuales propios,
+ y tu GDS dice qué familias hay que
+ distinguir y cuántas?                        → SÍ: Arte (vaultrum-arte) → ART-XXX.n
 ```
+
+**Arte consume tu `GDS` para saber qué tiene que gritar cada silueta.** Cuando agrupás por familia —arquetipos de disparo, tipos de enemigo— estás fijando lo que el arte tiene que hacer legible, y esa agrupación es tuya y no de Arte. Si el arte no puede distinguir las familias que declaraste, **eso rebota a vos**: o eran demasiadas, o no se distinguían por forma.
 
 **UI/UX ya no se decide acá.** Su mitad A cuelga del `RQ` y corrió **antes** que vos: el presupuesto de comunicación condiciona el sistema, no al revés. Si el `RQ` declaró que aplica, tu `GDS` **consume ese `UXS` mitad A** y habilita la mitad B; si declaró que no, no lo reabras — y si te parece que se equivocó, es un hallazgo que rebota a Producción, no una decisión tuya.
 
-Cuando `LDS` y la mitad B que apliquen estén cerradas, el paquete completo (`GDS` + `LDS` + `UXS`) pasa a Programación.
+Cuando `LDS`, la mitad B y el `ART` que apliquen estén cerrados, el paquete completo (`GDS` + `LDS` + `UXS` + `ART`) pasa a Programación.
 
 Si ninguna aplica, escribilo igual en el `GDS`. Pero **no alcanza con marcar la casilla**: un "no aplica" es una afirmación verificable, no un atajo (ver `Gates verificables` en el Core).
 

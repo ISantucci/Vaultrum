@@ -56,7 +56,9 @@ Al cerrar, declará el estado (vocabulario común de la Agencia — no confundir
 
 Por cada `GDS` con dimensión espacial, un **LDS-XXX.n** con: layout, colocación de desafíos, pacing, dificultad aplicada, checkpoints/progresión, integraciones y criterios de validación.
 
-Registralo así: Dónde aterriza: `<Proyecto>/03_LevelDesign/`, según la regla **Dónde aterriza cada salida** de `02_Indice Agencia`. La ruta del proyecto sale del cuaderno; **nunca se escribe adentro de `Vaultrum/`**. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. Actualizá el cuaderno del proyecto. La numeración se hereda del `GDS` (`GDS-001.2 → LDS-001.2`). Linkeá al `GDS`. Un `LDS` cerrado es insumo del `SOL` del Área de Programación (junto al `GDS` y, si existe, el `UXS`).
+Registralo así: Dónde aterriza: `<Proyecto>/03_LevelDesign/`, según la regla **Dónde aterriza cada salida** de `02_Indice Agencia`. La ruta del proyecto sale del cuaderno; **nunca se escribe adentro de `Vaultrum/`**. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. Actualizá el cuaderno del proyecto. La numeración se hereda del `GDS` (`GDS-001.2 → LDS-001.2`). Linkeá al `GDS`. Un `LDS` cerrado es insumo del `SOL` del Área de Programación (junto al `GDS` y, si existen, el `UXS` y el `ART`).
+
+**Y es el insumo del que sale la escala del arte.** El `01_Director_Escala` del Área de Arte deriva de tu `LDS` la **dimensión maestra** del proyecto —la unidad contra la que se mide cada asset— antes de que se modele el primero. Declará la grilla y la escala del espacio con número: si no está, esa dimensión se decide midiendo los assets ya construidos, que es al revés y ya pasó una vez.
 
 ## Criterio de diseño
 

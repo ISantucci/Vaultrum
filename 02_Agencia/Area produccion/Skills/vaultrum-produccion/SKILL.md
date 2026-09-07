@@ -274,12 +274,29 @@ RQ con interfaz   → UI/UX mitad A (vaultrum-uiux)      → UXS-XXX.n  (presupu
 RQ jugable        → Game Design (vaultrum-gamedesign)  → GDS-XXX.n
   ├── el GDS tiene espacio/niveles/progresión → Level Design (vaultrum-leveldesign) → LDS-XXX.n
   ├── el GDS tiene interfaz                   → UI/UX mitad B (vaultrum-uiux)       → UXS-XXX.n
-  └── con GDS (+ LDS/UXS si existen)          → Programación (vaultrum-programador) → SOL/EJ
+  ├── el entregable tiene assets visuales     → Arte mitad A (vaultrum-arte)        → ART-XXX.n
+  │                                             ANTES del primer asset, y consume el LDS
+  └── con GDS (+ LDS/UXS/ART si existen)      → Programación (vaultrum-programador) → SOL/EJ
 RQ no jugable     → UI/UX mitad A si tiene interfaz, y de ahí a Programación con el RQ.
 falta insumo      → marcá el faltante y no avances ese hilo.
 gap de conocimiento → Escuela (vaultrum-escuela) antes de seguir.
 aprendizaje       → al cerrar, si hay criterio reutilizable, derivá a Conocimiento (vaultrum-conocimiento).
 ```
+
+### Quién declara que Arte aplica: vos, y en el `RQ`
+
+Igual que `UXS`, y por el mismo motivo: **la mitad A de `ART` corre antes que el primer asset**, no después. Fija la dimensión maestra —que sale del `LDS`—, el presupuesto de caras por familia y la paleta. Un proyecto que modela primero y decide la escala después la decide al revés, y eso ya pasó una vez.
+
+```txt
+ART aplica    — el entregable tiene assets visuales propios: <cuáles>
+ART no aplica — <qué dimensión falta> : <por qué falta>
+                (usa assets de terceros, es sólo lógica, es una herramienta
+                 sin representación visual…)
+```
+
+**Tu límite:** declarás **si** el entregable tiene arte propio. No decidís la escala, ni el presupuesto de caras, ni la paleta — eso es del `01_Director_Escala`. Es la misma línea que separa marcar un `RQ` como jugable de diseñar el gameplay.
+
+Y una advertencia que el área trae medida: **`ART` tiene dos cortes**, como `QA`. El `ART-XXX.n` cierra un hilo; el `ART-XXX` cierra la entrega y es el único que puede decir si el set es coherente y si entra en presupuesto, porque **eso son propiedades del conjunto**. No lo saltees: doce assets que pasan individualmente pueden ser un set incoherente.
 
 ### Quién declara que UI/UX aplica: vos
 

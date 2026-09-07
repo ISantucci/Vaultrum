@@ -161,6 +161,50 @@ Dueño de la ley 6. El contrato del cliente le gana a la convención interna, y 
 
 ---
 
+## Las nueve reglas de construcción
+
+Son del `03_Modelador` salvo donde se indica, y **ninguna se dedujo**: cada una salió de un defecto que apareció construyendo. Vivieron en el registro `Arte_Blender` hasta el 2026-09-07, cuando el área pasó a existir y su criterio se mudó con ella (`ARQ-031`).
+
+### [[RA-001_Organizacion_de_assets]]
+
+Una collection por asset, partes separadas y nombradas, numeración de dos dígitos, hijos emparentados a la pieza estructural.
+
+### [[RA-002_Estandar_de_malla]]
+
+Las seis condiciones de la malla y la relajación. Es la regla de la que sale la doctrina del área.
+
+### [[RA-003_Medidas_y_proporcion]]
+
+Metros desde el primer vértice, contrato de exportación, y la proporción fijada contra un asset vecino **con razón funcional**. También del `01` y del `02`.
+
+### [[RA-004_De_blueprint_a_malla]]
+
+Leer las cotas y derivar lo que falta, con la **ley de la junta `s > t`**: el retranqueo tiene que superar al espesor, o los paneles perpendiculares se cruzan en la esquina.
+
+### [[RA-005_Blueprint_sin_cotas]]
+
+El blueprint de IA es aproximado y **sus vistas no coinciden entre sí**. Incluye la trampa del `matrix_world` desactualizado. También del `02`.
+
+### [[RA-006_Relleno_y_espesor]]
+
+Macizo por defecto, la cáscara se justifica, y se lee `espesor_eq_mm` y no la clase.
+
+### [[RA-007_Entrega_verificada]]
+
+El contrato del cliente le gana a la convención interna; una spec medible se **ajusta**, no se afirma; el `.glb` se verifica leyendo el `.glb`. También del `07`.
+
+### [[RA-008_Origen_y_verificacion]]
+
+El origen sigue a la función, y el instrumento se verifica en el extremo de su rango. Su `8.5` —verificar **después** de emparentar— es el corolario de la ley 3. También del `06`.
+
+### [[RA-009_Personaje_y_accesorios]]
+
+El blueprint da formas y **la pose la da la función**; la ropa es un tramo, no una capa; un accesorio se apoya **midiendo**, no calculando.
+
+**Las tres que Conocimiento va a mirar en Cosecha** —y la lectura es del owner, para discutirla y no para aceptarla— son `RA-002`, `RA-007` y `RA-008`: *verificar por instrumento*, *una spec medible se ajusta* y *el instrumento se verifica en el extremo de su rango* **no son de arte**. Son criterio general y valen para cualquier área que mida algo.
+
+---
+
 ## Flujos del área
 
 ### [[01_Flujo_Escala]]

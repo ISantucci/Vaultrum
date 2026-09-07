@@ -130,3 +130,23 @@ VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos 
 # ni "se mide sobre el dibujo". Corregido el patron, dio 9/9. Queda escrito
 # porque es el mismo error que la serie previene: medir el rotulo y no la cosa.
 
+# ---------------------------------------------------------------------------
+# ART — el artefacto del Area de Arte, creada el 2026-09-07 (ARQ-030).
+#
+# NO tiene forma estable medida, y no puede tenerla: hay CERO ART reales. Es
+# exactamente la situacion en la que estuvo QA cuando se escribio este archivo,
+# y se resuelve igual -- el contrato sale del contrato de salida que el area
+# escribio en 00_Indice_art, que es la misma fuente que este archivo dice que
+# va a usar cuando existan artefactos. Cuando haya ART reales, se mide y se
+# corrige si difiere.
+#
+# Lo que 00_Indice_art declara hoy, para cuando toque medirlo:
+#
+#   ART | Contrato de escala | Contrato de lectura | Contrato de integracion
+#       | Contrato de costo  | Las seis leyes | Decisiones | Lo que salio mal
+#
+# Las cuatro primeras son segregacion de interfaz aplicada a un documento: cada
+# consumidor lee la suya y ninguno depende de lo que no usa. La ultima es la que
+# el area declara como la que hace que el defecto no vuelva -- las nueve reglas
+# RA salieron todas de ahi.
+

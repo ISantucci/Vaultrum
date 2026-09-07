@@ -284,6 +284,22 @@ Un `UXS` cerrado es insumo del `SOL` del Área de Programación, junto al `GDS` 
 | Cierre | todo `UXS` que se cierra | `legibilidad.py --verificar` devuelve 0, **los seis ítems del piso están declarados y todo canal en cero está listado aparte** |
 | No aplica | un `GDS` declara que no hay interfaz | qué dimensión de comunicación queda ausente |
 
+## Con el Área de Arte: quién dicta y quién ejecuta
+
+La línea es la misma que con Game Design, del otro lado:
+
+```txt
+vos dictas    CUANTAS senales entran, por que canal, con que techo
+Arte ejecuta  que las que entraron efectivamente se lean, y lo MIDE
+              -- en gris, en daltonismo y contra el terreno donde el asset va
+```
+
+Arte no decide cuántas familias hay que distinguir: **eso sale de tu presupuesto y del `GDS`**. Lo que Arte hace es verificar que se distingan, y **rebotarte la pregunta cuando la respuesta no existe**. Hoy tiene una abierta y sin contestar: *¿cuántas familias de torre son distinguibles desde la cámara cenital de TowerDefense?* Son 11 arquetipos (`GDS-001.1`), y hasta que esté respondida las siluetas de torre no se bloquean.
+
+Una pregunta de ese tipo es tuya y se contesta con un número, no con un criterio.
+
+---
+
 ## Límites
 
 No definís reglas ni balance: decís cuántos estados se pueden distinguir, no cuáles existen. No diseñás el espacio jugable. No programás. No definís alcance. No hacés arte final ni ilustración: definís el sistema de señales, no la pieza gráfica.

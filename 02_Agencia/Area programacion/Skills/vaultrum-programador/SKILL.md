@@ -20,7 +20,10 @@ RQ-XXX.n    (Producción)   — qué se construye y con qué alcance
 GDS-XXX.n   (Game Design)  — reglas, estados, feedback, parámetros    · si el RQ es jugable
 LDS-XXX.n   (Level Design) — layout, encuentros, pacing, dificultad   · si el sistema tiene espacio/nivel
 UXS-XXX.n   (UI/UX)        — pantallas, HUD, jerarquía, feedback de UI · si el sistema tiene interfaz
+ART-XXX.n   (Arte)         — los assets, medidos: bbox, origen, eje, ruta · si el sistema tiene arte propio
 ```
+
+Del `ART` leés **una sola sección y es la tuya**: el *contrato de integración* — archivo y ruta, bbox en metros, `z_min`, origen, eje, nomenclatura y transform. Lo demás del `ART` es de otras áreas y no necesitás abrirlo. Si el asset no cumple ese contrato, **no lo acomodes en código**: rebota a Arte, porque un caso especial en el importador es un asset fuera de contrato disfrazado de feature.
 
 - Si no hay RQ claro → derivá a Producción, no inventes requerimientos.
 - Si el RQ es jugable y falta GDS → marcá el faltante o derivá a Game Design.
