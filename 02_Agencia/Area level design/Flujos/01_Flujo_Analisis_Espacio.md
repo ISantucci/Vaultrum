@@ -13,17 +13,8 @@ Transformar un `GDS` cerrado en un encuadre espacial: qué experiencia de recorr
 - Define la experiencia de recorrido y la curva de ritmo objetivo.
 - Marca riesgos de pacing/dificultad e información faltante.
 
-## Salida esperada / formato
+Forma del `LDS`: su contrato de salida, `00_Indice_lds`. Acá se cita.
 
-```txt
-## Insumo (GDS-XXX.n)
-## Experiencia de recorrido buscada
-## Curva de ritmo objetivo (picos / valles)
-## Desafíos que permite el sistema (del GDS)
-## Riesgos de pacing / dificultad
-## Información faltante
-## Base para el diseño de nivel
-```
 
 ## Criterios de aceptación
 

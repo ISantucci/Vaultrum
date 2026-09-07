@@ -22,17 +22,10 @@ Si el `RQ` no es jugable o está mal definido, el flujo no avanza: se deriva (a 
 
 ---
 
-## Salida esperada / formato
+## Salida esperada
 
-```txt
-## Requerimiento (RQ-XXX.n)
-## Objetivo del sistema (en términos de juego)
-## Experiencia esperada / feeling
-## Qué debe sentir el jugador
-## Riesgos de diseño
-## Información faltante
-## Base para el diseño de sistema
-```
+Forma del `GDS`: su contrato de salida, `00_Indice_gds`. Acá se cita.
+
 
 ---
 

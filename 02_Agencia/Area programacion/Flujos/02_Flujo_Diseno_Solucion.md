@@ -30,21 +30,10 @@ Si el diagnóstico no trae contexto real suficiente, no avanza: vuelve al Analis
 
 ---
 
-## Salida esperada / formato
+## Salida esperada
 
-```txt
-## SOL-XXX.n — Título
-## Requerimiento asociado (RQ-XXX.n / GDS-XXX.n / LDS-XXX.n / UXS-XXX.n)
-## Solución propuesta (arquitectura)
-## Separación de responsabilidades
-## Conocimiento del Core aplicado
-## Parámetros configurables (Unity)
-## Archivos a tocar / crear
-## Alternativas descartadas
-## Riesgos
-## Criterios de validación
-## ¿Apruebo este alcance para ejecutar?
-```
+Forma del `SOL`: su contrato de salida, `00_Indice_soluciones`. Acá se cita.
+
 
 ---
 

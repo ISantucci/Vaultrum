@@ -44,6 +44,18 @@ El segundo presupuesto de la capa: no qué contexto se carga, sino **dónde corr
 
 `contar_contexto.py` — el contador real de contexto. Mapa del vault por capa, archivos más pesados, costo de una carga concreta contra un presupuesto, y diff antes/después de podar. Es el Profiler de esta capa.
 
+`vaultrum_trace.py` — el grabador. Anota qué hizo Vaultrum mientras trabaja **sin gastar contexto en anotarlo**: lo invoca Claude Code como hook de tipo `command`, recibe el evento por stdin y su salida no se re-inyecta al contexto, así que cuesta cero tokens. Su regla dura es que si algo falla sale con código 0 y no escribe nada — un grabador roto no puede romper una sesión de trabajo.
+
+`instalar_trace.py` — lo deja andando. Se corre **una vez**, desde la raíz del vault:
+
+```bash
+python "04_IA Operativa/Herramientas/instalar_trace.py"
+```
+
+Escribe los tres hooks en `.claude/settings.json` sin pisar lo que ya hubiera, corrige el comando si quedó con el intérprete de otra máquina, asegura que `.vaultrum/` esté en el `.gitignore` y corre una prueba real para decir si quedó funcionando.
+
+**Las dos se versionan y viajan en el paquete, y hasta el 2026-09-07 su único manual vivía en `EJ-004.1`, que está en `06_Proyectos/` y no viaja.** Quien clonaba recibía dos herramientas sin instrucciones. Hallazgo de `ARQ-024`; el contrato completo del grabador sigue en su `SOL-004.1`, que es historial de uso y tampoco viaja — por eso lo mínimo para usarlas está acá.
+
 `bandeja/` — el canal entre el productor y los ejecutores que tienen manos: una orden `.md` entra, el observer la ejecuta parado en el proyecto, y el resultado vuelve con su estado. Es `07_Despacho de ejecucion` con una herramienta atrás. Cómo se arranca y qué se versiona: `bandeja/README.md`.
 
 `despacho.py` — el contador de ejecuciones delegadas: cuántas órdenes corrieron, a qué ejecutor, cuánto tardaron y cuántas volvieron en fallo. Lee el log de la bandeja. Es al costo de ejecución lo que `contar_contexto.py` es al de entrada, y cierra la deuda que `07_Despacho de ejecucion` declaraba por escrito. Declara su propio margen: no mide tokens ni plata, y no ve lo que se ruteó sin pasar por la bandeja.

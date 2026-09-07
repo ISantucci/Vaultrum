@@ -36,17 +36,8 @@ No define layout final, encuentros ni curvas numéricas. No cambia reglas ni bal
 
 ---
 
-## Salida esperada / formato
+Forma del `LDS`: su contrato de salida, `00_Indice_lds`. Acá se cita.
 
-```txt
-## Insumo (GDS-XXX.n)
-## Experiencia de recorrido buscada
-## Curva de ritmo objetivo (picos / valles)
-## Desafíos que permite el sistema (del GDS)
-## Riesgos de pacing / dificultad
-## Información faltante
-## Base para el diseño de nivel
-```
 
 ---
 

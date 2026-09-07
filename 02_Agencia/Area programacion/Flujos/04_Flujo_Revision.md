@@ -36,13 +36,10 @@ El checklist operativo vive en la skill del área (`vaultrum-programador`), que 
 
 ---
 
-## Decisión de rebote
+## A dónde rebota
 
-```txt
-falta criterio técnico / mal diagnóstico   → Analista Técnico
-solución mal planteada / no SOLID          → Diseñador de Solución
-implementación desviada / fuera de alcance → Ejecutor Técnico
-```
+A quién le rebota cada hallazgo: lo declara `04_Revisor_Tecnico`, porque la responsabilidad vive en la ficha del agente.
+
 
 El loop se repite hasta que todos los criterios se cumplen.
 

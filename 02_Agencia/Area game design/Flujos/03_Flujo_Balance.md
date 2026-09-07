@@ -23,14 +23,8 @@ Puede omitirse si el sistema no tiene valores que impacten la experiencia.
 
 ## Salida esperada / formato
 
-Completa el `GDS-XXX.n` con:
+Forma del `GDS`: su contrato de salida, `00_Indice_gds`. Acá se cita.
 
-```txt
-## Parámetros configurables (valor inicial + rango sugerido)
-## Curvas (dificultad / progresión / economía)
-## Mecanismo de configuración esperado
-## Cómo se valida el balance (qué medir)
-```
 
 ---
 

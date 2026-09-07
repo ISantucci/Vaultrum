@@ -54,17 +54,8 @@ No rediseña el sistema él mismo. No aprueba un diseño no validable. No agrega
 
 ---
 
-## Salida esperada / formato
+Forma del `GDS`: su contrato de salida, `00_Indice_gds`. Acá se cita.
 
-```txt
-## Validación de GDS-XXX.n
-## Checklist de criterios (resultado)
-## Criterios de validación definidos
-## Integraciones detectadas
-## Desvíos detectados
-## Estado del paso: Cerrado / Ajustar (a qué sub-agente) / Pausado (qué falta)
-## Destino al cerrar: Level Design / UI-UX / Programación (o por qué no aplican)
-```
 
 ---
 

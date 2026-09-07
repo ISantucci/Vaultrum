@@ -39,9 +39,9 @@ Contiene material sobre:
 - experiencia de juego (índice hacia la Biblioteca);
 - estructuras de datos;
 - algoritmos;
-- managers;
-- arquitectura;
-- buenas prácticas.
+- managers.
+
+**Arquitectura y buenas prácticas no son carpetas: son lo que atraviesa a las de arriba.** Hasta el 2026-09-07 esta lista las nombraba como si fueran secciones, y no existía ninguna — `ARQ-024` lo encontró midiendo el índice contra el disco. La arquitectura vive en `01_SOLID` y `02_Patrones de diseno`; las buenas prácticas, repartidas entre `04_Criterios de entrega` y `09_Calidad y testing`. Se corrigió el índice, no el disco: la lista mezclaba dos registros —temas y carpetas— y el que sobraba era el tema.
 
 Esta sección sirve para estudiar conceptos, consultar criterios y aplicar conocimiento en proyectos reales.
 

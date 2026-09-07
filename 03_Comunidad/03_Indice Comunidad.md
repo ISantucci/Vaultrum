@@ -96,6 +96,20 @@ El registro de las publicaciones preparadas. Cada `PUB-XXX` es un post listo par
 
 ---
 
+## Herramientas de la capa
+
+### `post.py`
+
+El instrumento del `PUB`: mide que un post tenga la forma que esta capa exige — los tres tiempos, los dos idiomas en un solo bloque separado por cinco guiones, y cada afirmación con el archivo que la prueba detrás. Corre sobre un `PUB` o sobre la carpeta entera.
+
+```bash
+python3 "03_Comunidad/Herramientas/post.py" .
+```
+
+Es la misma regla que el resto del vault: un área que declara un número sin instrumento está estimando. Acá el número es *"el post no inventa avances"*, y esto es lo que lo comprueba.
+
+---
+
 ## Skill ejecutable
 
 La capa corre como la skill **`vaultrum-contenido`**, con fuente versionada en `03_Comunidad/Skills/vaultrum-contenido/SKILL.md`. Es lo que convierte estos documentos en una máquina: sin ella son el manual.

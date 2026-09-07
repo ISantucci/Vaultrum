@@ -79,8 +79,13 @@ La Escuela es el área con más riesgo de intoxicarse (estudia con libertad, pue
   Biblioteca/              (corazón: libros + trabajo de los agentes)
     Fundamentos/           (loop, game feel, definición de terminado)
     Juegos/                (análisis por juego, por género)
+    Construccion/          (cómo se construye: el estante que abrió ARQ-022)
+    Fuentes/               (de dónde salió cada cosa)
+    Documentos/            (fichas de papers y libros: referencia + URL, no copias)
   Agentes/                 (Bibliotecario, Investigador, Destilador, Validador)
   Flujos/                  (pipeline de misión con gates AiCare)
+  Herramientas/            (biblioteca.py, y los generadores de diagrama de los libros)
+  Skills/                  (vaultrum-escuela, la skill ejecutable de la capa)
   Salidas/                 (candidatos EST + misiones registradas)
 ```
 
@@ -123,7 +128,7 @@ Rol ancla. Convierte un gap/idea/ambigüedad en una **misión de estudio acotada
 Ejecuta la misión dentro del presupuesto. Busca fuentes y trae material bruto **con cita de origen**. No destila ni decide qué entra.
 
 ### [[03_Destilador]]
-Convierte el material bruto en **principios/fundamentos claros y reutilizables + citas**, y los escribe en el libro que corresponde (Fundamentos o Juegos). Nunca copia verbatim con copyright.
+Convierte el material bruto en **principios/fundamentos claros y reutilizables + citas**, y los escribe en el estante que corresponde — `Fundamentos`, `Juegos`, `Construccion`, `Fuentes` o `Documentos`, los cinco. Nunca copia verbatim con copyright.
 
 ### [[04_Validador_Estudio]]
 Verifica la barra antes del handoff: reutilizable, claro, citado, no verbatim, no duplicado. Si pasa, entrega el `EST` a Conocimiento. Si no, vuelve o se descarta.

@@ -63,3 +63,6 @@
 02_Agencia/Area programacion/Salidas/EJ-009.4_La_Numeracion_Medida.md | insumo | idem RQ-009.4. Desvio declarado, no costumbre.
 02_Agencia/Area programacion/Salidas/EJ-009.5_El_Primer_Gate_De_Hilo.md | insumo | idem RQ-009.5. Desvio declarado, no costumbre.
 02_Agencia/Area programacion/Salidas/EJ-009.6_La_Casi_Duplicacion_Medida.md | insumo | idem RQ-009.6. Desvio declarado, no costumbre.
+02_Agencia/Area programacion/Salidas/EJ-010.2_Los_Indices_Declaran.md | insumo | TL-010: correccion de indices, sin decision de arquitectura. Desvio declarado.
+02_Agencia/Area programacion/Salidas/EJ-010.3_Lo_Declarado_Y_No_Existente.md | insumo | idem RQ-010.3. Desvio declarado.
+02_Agencia/Area programacion/Salidas/EJ-010.4_El_Primer_Lote_De_Casi_Duplicacion.md | insumo | idem RQ-010.4. Desvio declarado.

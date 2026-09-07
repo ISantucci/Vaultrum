@@ -50,19 +50,8 @@ Si durante la ejecución detecta que la solución no cierra, no improvisa: rebot
 
 Una ejecución registrable como `EJ-XXX.n`.
 
-Formato recomendado:
+Forma del `EJ`: su contrato de salida, `00_Indice_ejecuciones`. Acá se cita.
 
-```txt
-## EJ-XXX.n — Objetivo realizado
-## Solución asociada (SOL-XXX.n)
-## Archivos modificados / creados / NO tocados
-## Cambios principales
-## Sistemas reutilizados
-## Parámetros configurables en Unity
-## Cómo se integra con lo existente
-## Riesgos / validación pendiente
-## Siguiente paso
-```
 
 ---
 

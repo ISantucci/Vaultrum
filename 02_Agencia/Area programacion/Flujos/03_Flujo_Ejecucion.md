@@ -23,19 +23,10 @@ No arranca sin una SOL aprobada.
 
 ---
 
-## Salida esperada / formato
+## Salida esperada
 
-```txt
-## EJ-XXX.n — Objetivo realizado
-## Solución asociada (SOL-XXX.n)
-## Archivos modificados / creados / NO tocados
-## Cambios principales
-## Sistemas reutilizados
-## Parámetros configurables en Unity
-## Cómo se integra con lo existente
-## Riesgos / validación pendiente
-## Siguiente paso
-```
+Forma del `EJ`: su contrato de salida, `00_Indice_ejecuciones`. Acá se cita.
+
 
 ---
 

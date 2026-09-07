@@ -57,21 +57,8 @@ No debe proponer refactors grandes para problemas chicos.
 
 Una solución técnica registrable como `SOL-XXX.n`, aprobada antes de ejecutar.
 
-Formato recomendado (usar solo lo necesario):
+Forma del `SOL`: su contrato de salida, `00_Indice_soluciones`. Acá se cita.
 
-```txt
-## SOL-XXX.n — Título
-## Requerimiento asociado (RQ-XXX.n / GDS-XXX.n / LDS-XXX.n / UXS-XXX.n)
-## Solución propuesta (arquitectura)
-## Separación de responsabilidades
-## Conocimiento del Core aplicado
-## Parámetros configurables (Unity)
-## Archivos a tocar / crear
-## Alternativas descartadas
-## Riesgos
-## Criterios de validación
-## ¿Apruebo este alcance para ejecutar?
-```
 
 ---
 
