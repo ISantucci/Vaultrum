@@ -137,11 +137,22 @@ def huella(ruta):
 
     F4: comparar solo SKILL.md deja pasar assets, scripts y referencias divergentes,
     y --verificar devuelve 0 sobre una copia que no es igual a su fuente.
+
+    El SELLO se excluye a proposito, y sin eso este instrumento no servia: lo
+    escribe ESTE script en el destino y nunca esta en la fuente, asi que las 26
+    copias --13 skills x 2 destinos-- salian "difieren" en cada corrida, incluso
+    recien sincronizadas. --verificar devolvia 1 SIEMPRE y volvia a copiar las 26
+    sin necesidad. Un guardrail que nunca dice que si no distingue nada.
+    Medido el 2026-09-07 al instalar la skill del Area de Arte, cuando gemelos.py
+    dijo EN NORMA sobre las mismas copias: dos instrumentos que deberian coincidir
+    y dan distinto, eso ya es el hallazgo. Ver ARQ-030.
     """
     h = hashlib.sha256()
     for base, dirs, files in os.walk(ruta):
         dirs.sort()
         for f in sorted(files):
+            if f == SELLO:
+                continue
             rel = os.path.relpath(os.path.join(base, f), ruta).replace('\\', '/')
             h.update(rel.encode())
             with open(os.path.join(base, f), 'rb') as fh:

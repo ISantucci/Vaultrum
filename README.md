@@ -49,13 +49,13 @@ Cinco capas viajan, y hay una sexta carpeta que no:
 | Capa | Qué es |
 |------|--------|
 | **01_VaultrumCore** | la base de conocimiento: SOLID, patrones, optimización, estructuras, algoritmos, managers, IA para juegos, y los criterios de entrega |
-| **02_Agencia** | las ocho áreas que ejecutan y sostienen la cadena, cada una con sus agentes, flujos, salidas y su skill ejecutable |
+| **02_Agencia** | las nueve áreas que ejecutan y sostienen la cadena, cada una con sus agentes, flujos, salidas y su skill ejecutable |
 | **03_Comunidad** | gobernanza, contribución, licencia y marca — y la preparación de lo que el sistema publica, con su Archivo |
 | **04_IA Operativa** | cómo una IA opera el vault sin inflarlo: tokens, prompteo, el pass GC y sus herramientas de medición |
 | **05_Escuela** | aprendizaje proactivo y la Biblioteca: fundamentos de experiencia y análisis de juegos por género |
 | `06_Proyectos` | **no viaja.** Es el workspace del owner: donde cae `TL → RQ → GDS → SOL → EJ → QA → VE` de cada proyecto. En tu clone lo creás vos, y el sistema te dice dónde va cada salida |
 
-Doce **skills ejecutables** —una por cada una de las ocho áreas, más la Escuela, la Comunidad, AiCare y el Despacho— son lo que hace que la cadena corra en vez de quedarse en documentación.
+Trece **skills ejecutables** —una por cada una de las nueve áreas, más la Escuela, la Comunidad, AiCare y el Despacho— son lo que hace que la cadena corra en vez de quedarse en documentación.
 
 ---
 

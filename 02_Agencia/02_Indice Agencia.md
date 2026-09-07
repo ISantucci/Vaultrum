@@ -62,8 +62,11 @@ Intención                                                                  │
                        (+ GDS-XXX.0 marco común, si 3+ GDS comparten base)   │
   ↓ (GDS cerrado)                                                          │
   ├─► Área de Level Design → LDS  (espacio, niveles, encuentros, pacing)   │
-  └─► Área de UI/UX        → UXS mitad B (pantallas, HUD, legibilidad)     │
-  ↓ (RQ + GDS + LDS + UXS)                                                 │
+  ├─► Área de UI/UX        → UXS mitad B (pantallas, HUD, legibilidad)     │
+  └─► Área de Arte         → ART mitad A (escala, presupuesto, paleta)     │
+                                  ↓        ANTES del primer asset          │
+                            ART mitad B (los assets verificados)           │
+  ↓ (RQ + GDS + LDS + UXS + ART)                                           │
 Área de Programación   → SOL + EJ     (solución técnica + implementación)  │
   ↓ (EJ con revisión técnica OK)                                           │
 Área de Control        → QA           (¿se sostiene lo construido?)        │
@@ -95,13 +98,17 @@ Todo cuelga del número base del **timeline**. Cada área agrega su prefijo sobr
 | `GDS-XXX.n` | Game Design Spec | Game Design | RQ-XXX.n |
 | `LDS-XXX.n` | Level Design Spec | Level Design | GDS-XXX.n |
 | `UXS-XXX.n` | UI/UX Spec | UI/UX | RQ-XXX.n (mitad A) + GDS-XXX.n (mitad B) |
+| `ART-XXX.n` | Art Spec | Arte | RQ-XXX.n (mitad A, + LDS-XXX.n) + GDS-XXX.n (mitad B) |
+| `ART-XXX` | Pasada sobre el set de la entrega | Arte | **TL-XXX** (la coherencia es del conjunto) |
 | `SOL-XXX` o `SOL-XXX.n` | Solución técnica | Programación | **uno o varios** RQ-XXX.n del mismo TL |
 | `EJ-XXX` o `EJ-XXX.n` | Ejecución / reporte | Programación | su `SOL` |
 | `QA-XXX.n` | Gate de calidad del hilo | Control de Calidad | EJ-XXX.n |
 | `QA-XXX` | Gate de calidad de la entrega | Control de Calidad | **TL-XXX** (con sus `QA-XXX.n`) |
 | `VE-XXX` | Validación de entrega | Producción | TL-XXX (con su `QA-XXX`) |
 
-La subnumeración `.n` es compartida entre las áreas de diseño: `RQ-001.2 ↔ GDS-001.2 ↔ LDS-001.2 ↔ UXS-001.2 ↔ QA-001.2` son el mismo hilo de trabajo visto por cada una.
+La subnumeración `.n` es compartida entre las áreas de diseño: `RQ-001.2 ↔ GDS-001.2 ↔ LDS-001.2 ↔ UXS-001.2 ↔ ART-001.2 ↔ QA-001.2` son el mismo hilo de trabajo visto por cada una.
+
+`ART` tiene **dos cortes**, como `QA`: el hilo `ART-XXX.n` y la entrega `ART-XXX`. El segundo no es simetría — la coherencia visual y el costo en pantalla son propiedades del conjunto y no se pueden medir asset por asset.
 
 **`SOL` y `EJ` son la excepción, y es deliberada: su relación con el `RQ` es 1:N.** Un `SOL` es la arquitectura de una épica, y una épica se decide una vez, no una por requerimiento — `Salto/SOL-001` declara en su propio `Insumo` que cubre `RQ-001.1` … `RQ-001.8`. Puede llevar `.n` cuando cubre un solo hilo, y puede no llevarlo cuando cubre el timeline entero. Las dos formas son válidas.
 
@@ -145,7 +152,8 @@ El trabajo de un proyecto vive en la carpeta del proyecto. `Vaultrum/` no se esc
 ├── 03_LevelDesign/    LDS
 ├── 04_UI-UX/          UXS
 ├── 05_Programacion/   SOL · EJ
-└── 06_Calidad/        QA
+├── 06_Calidad/        QA
+└── 07_Arte/           ART
 ```
 
 La carpeta existe si un área efectivamente escribió algo ahí: **nada se pre-crea**.
@@ -158,6 +166,7 @@ La carpeta existe si un área efectivamente escribió algo ahí: **nada se pre-c
 | UI/UX | `<Proyecto>/04_UI-UX/` | `UXS` |
 | Programación | `<Proyecto>/05_Programacion/` | `SOL` · `EJ` |
 | Control de Calidad | `<Proyecto>/06_Calidad/` | `QA` |
+| Arte | `<Proyecto>/07_Arte/` | `ART` |
 | **Conocimiento** | **el sistema** — Staging y Core | su producto **no** es del proyecto |
 | **Arquitectura** | **el sistema** — `Salidas/ARQ` | interviene el vault, no el proyecto |
 
@@ -249,6 +258,16 @@ Cuida la **legibilidad del sistema**: que quien lo opera pueda responder qué pa
 Produce `UXS` (UI/UX spec), en dos mitades con dos cierres. Aplica seis leyes de la comunicación con una herramienta real —`Herramientas/legibilidad.py`— que prueba contraste WCAG, simulación de daltonismo, consistencia de mapping, feedback, navegación y densidad. **Un `UXS` no cierra sin estar medido.**
 
 Usabilidad primero, engagement después. No define reglas ni balance —dice cuántos estados se pueden distinguir, no cuáles existen— ni diseña el espacio jugable.
+
+### [[Area_arte]]
+
+Construye los assets del juego y **verifica lo que afirma de ellos con un instrumento, nunca con la vista**. No es preferencia estética: en las dos sesiones que produjeron el área, cuatro defectos reales pasaron una inspección visual perfecta, y el propio verificador tuvo un defecto que sólo destapó el primer asset a escala de milímetros.
+
+**Entra dos veces, como UI/UX.** Antes del primer asset, con el **presupuesto de escala**: dimensión maestra derivada del `LDS`, caras por familia y paleta cerrada. Y después, con los assets verificados. Presta además un tercer servicio, **Pasada**, para medir y mejorar un set que ya existe — optimizar el arte es del área y no se terceriza.
+
+Produce `ART`, en dos cortes. Aplica seis leyes del arte con instrumento propio: solapes y normales, relleno y espesor, medida real verificada **después de emparentar**, costo **en pantalla** y no en el archivo, paleta medida en gris y en daltonismo, y la entrega verificada leyendo el archivo entregado. Siete sillas, y **cada separación tiene un defecto medido que la justifica** — el que construye es el peor juez de lo que construyó, y el que verifica no repara.
+
+No define reglas ni balance, no diseña el espacio jugable y **no dicta cuántas señales entran** —eso es UI/UX—: ejecuta ese presupuesto y verifica que se cumpla. La dirección de arte la trae el owner.
 
 ### [[Area_programacion]]
 
