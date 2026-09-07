@@ -66,3 +66,11 @@
 02_Agencia/Area programacion/Salidas/EJ-010.2_Los_Indices_Declaran.md | insumo | TL-010: correccion de indices, sin decision de arquitectura. Desvio declarado.
 02_Agencia/Area programacion/Salidas/EJ-010.3_Lo_Declarado_Y_No_Existente.md | insumo | idem RQ-010.3. Desvio declarado.
 02_Agencia/Area programacion/Salidas/EJ-010.4_El_Primer_Lote_De_Casi_Duplicacion.md | insumo | idem RQ-010.4. Desvio declarado.
+
+# --- TL-004 de TowerDefense: un EJ sin SOL, por el mismo motivo que los EJ-009.x --
+# El TL completa artefactos contra un contrato que ya existia y repara dos instrumentos
+# con un patron que el sistema ya tiene resuelto (observer.ps1). No hubo decision de
+# arquitectura que documentar; escribir un SOL para citar una decision tomada en otro
+# lado es papeleo. Declarado tambien en el propio EJ.
+06_Proyectos/TowerDefense/05_Programacion/EJ-004_El_Proyecto_Se_Pone_Al_Dia.md | insumo | completar artefactos contra el contrato vigente y reparar instrumentos con un patron ya decidido: sin decision de arquitectura propia. Los criterios de cierre del TL-004 fueron el contrato. Desvio declarado, no costumbre.
+06_Proyectos/Pong3D/05_Programacion/EJ-004_La_Cobertura_Que_Faltaba.md | insumo | agregar la seccion de insumo a dos SOL cerrados no es una decision de arquitectura: los tres criterios de cierre del TL-004 de Pong3D fueron el contrato. Desvio declarado, no costumbre.

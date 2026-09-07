@@ -53,8 +53,17 @@ EXENTAS  = {'README.md','LICENSE.md','CONTRIBUTING.md'}
 DENSIDAD = 0.40          # links por KB; el Core sano vive cerca de 0,15
 
 # ---------------------------------------------------------------- carga
+# Un artefacto de la cadena NUNCA es un indice: es lo que un indice lista. La
+# heuristica de abajo ("el nombre dice Indice o Catalogo") se escribio cuando los
+# catalogos del vault eran indices, y leia TL-001_Catalogo_Supercell_... como el
+# indice padre de su carpeta -- asi que el VE que lo citaba quedaba "volviendo al
+# padre". Falso positivo medido en ARQ-026.
+ARTEFACTO = re.compile(r'^(TL|RQ|GDS|LDS|UXS|SOL|EJ|QA|VE|ARQ|EST|PUB|COMMIT)-\d', re.I)
+
+
 def es_indice(p):
     b = os.path.basename(p)[:-3]
+    if ARTEFACTO.match(b): return False
     if re.match(r'^(00_|0\d_Indice|Area_)', b, re.I): return True
     if 'Indice' in b or 'Catalogo' in b: return True
     d = re.sub(r'^\d+[_\s-]+', '', os.path.basename(os.path.dirname(p)))

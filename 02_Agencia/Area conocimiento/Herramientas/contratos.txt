@@ -90,7 +90,13 @@ VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos 
 #   Insumo               <- insumo · solucion · solucion ejecutada · requerimiento
 #   Lo que se implemento <- ejecucion · que se implemento · que se implemento por
 #                           requerimiento · lo que se implemento por hilo · como se usa
-#   Archivos creados     <- archivos creados · archivos eliminados · instalacion
+#   Archivos creados     <- archivos creados · archivos eliminados · instalacion ·
+#                          archivos nuevos · archivos creados y modificados
+#                          (los tres EJ de TowerDefense escribian "archivos nuevos":
+#                          misma funcion, otro titulo. Se renombraron en TL-004 de ese
+#                          proyecto y la equivalencia queda escrita para que la proxima
+#                          medicion mida lo mismo. El matcheo es por substring, asi que
+#                          esta tabla documenta: no la lee el script.)
 #   Desvios declarados   <- desvios declarados · desvios respecto de la sol
 #   Verificacion         <- verificacion hecha · verificacion ejecutada · verificacion
 #                           parcial declarada · verificacion del instalador · checklist de cierre

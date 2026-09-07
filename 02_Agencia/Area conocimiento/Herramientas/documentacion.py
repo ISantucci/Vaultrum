@@ -220,8 +220,14 @@ def medir(rel, txt, contratos, raiz):
             if not match:
                 fallas.append(('contrato', 0, 'falta la seccion "' + sec + '"'))
                 continue
-            cuerpo = '\n'.join(cuerpos[match[0]]).strip()
-            util = re.sub(r'[\s|`>*_#-]', '', cuerpo)
+            # OJO: variable propia. Hasta el 2026-09-07 esto se llamaba `cuerpo` y
+            # pisaba el cuerpo completo del artefacto, que se calcula arriba y se usa
+            # abajo para el corolario del estado. Resultado: el chequeo de estado
+            # miraba la ULTIMA seccion del contrato en vez del artefacto entero, y un
+            # TL que declaraba Pausado en su seccion Estado fallaba igual. Encontrado
+            # al escribir TL-004 de TowerDefense.
+            cuerpo_sec = '\n'.join(cuerpos[match[0]]).strip()
+            util = re.sub(r'[\s|`>*_#-]', '', cuerpo_sec)
             if len(util) < 3:
                 fallas.append(('contrato-vacio', 0, 'la seccion "' + sec + '" es un encabezado sin cuerpo'))
                 continue
@@ -230,7 +236,7 @@ def medir(rel, txt, contratos, raiz):
             # barato; si le falta cualquiera de sus cuatro bloques, quien ejecuta tiene
             # que DECIDIR, que es justo lo que no se delega.
             for bloque in SUBBLOQUES.get(sec, ()):
-                if bloque not in limpiar(cuerpo):
+                if bloque not in limpiar(cuerpo_sec):
                     fallas.append(('contrato-vacio', 0,
                                    'la seccion "' + sec + '" no declara "' + bloque + '"'))
 
