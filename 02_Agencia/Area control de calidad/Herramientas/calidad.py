@@ -78,6 +78,50 @@ def filas(lineas):
     return [[c.strip() for c in l.split('|')] for l in lineas if '|' in l]
 
 
+def identidad_de(rel):
+    """El nombre de la nota, sin carpeta y sin extension."""
+    b = os.path.basename(rel)
+    return b[:-3] if b.endswith('.md') else b
+
+
+def razon_de(exc, rel, ley, usadas=None):
+    """Excepcion declarada para (QA, ley). Tres formas de nombrar el sujeto:
+
+        ruta exacta   06_Proyectos/X/06_Calidad/QA-001_Gate_De_Entrega.md
+        sufijo        QA-001_Gate_De_Entrega.md
+        IDENTIDAD     QA-001_Gate_De_Entrega        <- sobrevive a una mudanza
+
+    La tercera se agrego en TL-012. Una excepcion por ruta se rompe EN SILENCIO
+    cuando el archivo se mueve: el artefacto vuelve a fallar como si nunca se
+    hubiera declarado. Paso dos veces (ARQ-025 y TL-011) y la ley subio al Core.
+    Un QA no cambia de identidad cuando cambia de carpeta: cambia de lugar."""
+    rel = rel.replace('\\', '/')
+    ident = identidad_de(rel)
+    for k, v in exc.items():
+        if ley not in v:
+            continue
+        if rel == k or rel.endswith('/' + k) or ident == k:
+            if usadas is not None:
+                usadas.add(k)
+            return v[ley]
+    return None
+
+
+def excepciones_huerfanas(raiz_vault, exc, usadas):
+    """Claves declaradas que no aplicaron y cuyo sujeto no esta en disco.
+
+    No fallan y no reparan: avisan. Sin el aviso, el dia que el sujeto se mueve
+    la falla vuelve disfrazada de deuda nueva y nadie mira el excepciones.txt."""
+    fuera = []
+    for clave in exc:
+        if clave in usadas:
+            continue
+        if '/' in clave or clave.endswith('.md'):
+            if not os.path.exists(os.path.join(raiz_vault, clave)):
+                fuera.append(clave)
+    return sorted(fuera)
+
+
 def cargar_excepciones(raiz):
     ruta = os.path.join(raiz, 'excepciones.txt')
     exc = {}
@@ -318,6 +362,7 @@ def main():
         return 1
 
     exc = cargar_excepciones(os.path.dirname(os.path.abspath(__file__)))
+    usadas = set()
     total_fallas = 0
 
     for r in rutas:
@@ -328,9 +373,7 @@ def main():
         m = medir(r, p)
         vivas = []
         for ley, detalle in m['fallas']:
-            rel = r.replace('\\', '/')
-            razon = next((v[ley] for k, v in exc.items()
-                          if ley in v and (rel == k or rel.endswith('/' + k))), None)
+            razon = razon_de(exc, r, ley, usadas)
             if razon:
                 m['notas'].append('excepcion declarada %s: %s' % (ley, razon))
             else:
@@ -359,6 +402,15 @@ def main():
             if vivas:
                 print('%s: %s' % (os.path.basename(r),
                                   ' | '.join('%s (%s)' % (LEYES[l], d) for l, d in vivas)))
+
+    raiz_vault = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..'))
+    huerfanas = excepciones_huerfanas(raiz_vault, exc, usadas)
+    if huerfanas:
+        print('\nAVISO — %d excepcion(es) declaradas no aplican a nada, y su sujeto '
+              'no esta en disco.' % len(huerfanas))
+        print('Una excepcion huerfana no falla y no repara: avisa.')
+        for c in huerfanas[:12]:
+            print('    %s' % c)
 
     if total_fallas:
         print('\nGATE FUERA DE LEY: %d hallazgo(s). El QA no cierra.' % total_fallas)

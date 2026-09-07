@@ -105,19 +105,60 @@ def cargar_excepciones(root):
         exc[partes[0].replace('\\', '/')][partes[1]] = partes[2]
     return exc
 
-def razon_de(exc, ruta, tipo):
-    """Excepcion declarada para (ruta, tipo). Acepta ruta exacta o prefijo 'carpeta/**'.
+def razon_de(exc, ruta, tipo, usadas=None):
+    """Excepcion declarada para (ruta, tipo). Tres formas de nombrar el sujeto:
 
-    El prefijo existe para un caso concreto: un subarbol que no se publica.
-    Las leyes del grafo cuidan el vault publicado; medirlas sobre un workspace
-    local es una categoria equivocada. Igual se declara, con su razon."""
+        ruta exacta      02_Agencia/.../nota.md
+        prefijo          carpeta/**            un subarbol entero
+        IDENTIDAD        nota                  el nombre, sin carpeta y sin .md
+
+    La tercera se agrego en TL-012 y es la que sobrevive a una mudanza. Una
+    excepcion declarada por ruta se rompe EN SILENCIO cuando el archivo se
+    mueve: el artefacto vuelve a fallar como si nunca se hubiera declarado, y
+    quien mire el numero lee deuda nueva donde hay una ruta vieja. Paso dos
+    veces --ARQ-025 y TL-011-- y la ley subio al Core por eso.
+
+    Una nota no cambia de identidad cuando cambia de carpeta. Cambia de lugar.
+
+    `usadas` acumula las claves que efectivamente aplicaron, para poder
+    reportar las que no aplican a nada (ver excepciones_huerfanas)."""
+    def marcar(clave, r):
+        if r is not None and usadas is not None:
+            usadas.add(clave)
+        return r
     r = exc.get(ruta, {}).get(tipo)
-    if r: return r
+    if r: return marcar(ruta, r)
+    ident = os.path.basename(ruta)[:-3] if ruta.endswith('.md') else os.path.basename(ruta)
+    r = exc.get(ident, {}).get(tipo)
+    if r: return marcar(ident, r)
     for patron, tipos in exc.items():
         if patron.endswith('/**') and ruta.startswith(patron[:-2]):
             r = tipos.get(tipo)
-            if r: return r
+            if r: return marcar(patron, r)
     return None
+
+
+def excepciones_huerfanas(root, exc, usadas):
+    """Las claves declaradas que no aplicaron a nada en esta corrida.
+
+    Una excepcion huerfana no falla y no repara: AVISA. Sin el aviso, el dia
+    que su sujeto se mueve o se renombra, la falla vuelve disfrazada de deuda
+    nueva y nadie mira el excepciones.txt."""
+    fuera = []
+    for clave in exc:
+        if clave in usadas:
+            continue
+        if clave.endswith('/**'):
+            base = os.path.join(root, clave[:-3])
+            if os.path.isdir(base):
+                continue                      # el subarbol existe: solo no fallo nada
+        elif '/' in clave or clave.endswith('.md'):
+            if os.path.exists(os.path.join(root, clave)):
+                continue                      # el archivo existe: solo no fallo nada
+        else:
+            continue                          # identidad: no se puede probar por ruta
+        fuera.append(clave)
+    return sorted(fuera)
 
 # ---------------------------------------------------------------- escaneo
 def escanear(txt):
@@ -214,7 +255,7 @@ def auditar(root, modo_paquete=False):
     # distinto.
     fuentes = files if pkg is None else {p: t for p, t in files.items() if p in pkg}
 
-    r = dict(files=files, auditadas=fuentes, exc=exc, pkg=pkg, modo_paquete=modo_paquete,
+    r = dict(files=files, auditadas=fuentes, exc=exc, pkg=pkg, raiz=root, modo_paquete=modo_paquete,
              pos=collections.defaultdict(collections.Counter),
              dirn=collections.defaultdict(collections.Counter),
              kb=collections.Counter(), n=collections.Counter(),
@@ -285,15 +326,16 @@ def fallas(r):
     """Devuelve (lista_de_fallas, lista_de_excepciones_declaradas)."""
     f, ok = [], []
     exc = r['exc']
+    usadas = r.setdefault('exc_usadas', set())
     for p, q in r['viol'].items():
         for tipo, n in q.items():
-            razon = razon_de(exc, p, tipo)
+            razon = razon_de(exc, p, tipo, usadas)
             (ok if razon else f).append((p, tipo, n, razon))
     for p in r['flotando']:
-        razon = razon_de(exc, p, 'flotando')
+        razon = razon_de(exc, p, 'flotando', usadas)
         (ok if razon else f).append((p, 'flotando', 1, razon))
     for p in (r['inalcanzables'] or []):
-        razon = razon_de(exc, p, 'inalcanzable')
+        razon = razon_de(exc, p, 'inalcanzable', usadas)
         (ok if razon else f).append((p, 'inalcanzable', 1, razon))
     for (o, d), (fuentes, declara, aristas) in r['puentes'].items():
         if len(fuentes) > 1 or not declara:
@@ -365,8 +407,24 @@ def informe(r):
             print(f"\n{tit}:")
             for p, t, ln in r[k][:12]: print(f"    {p}:{ln} -> {t}")
 
+def aviso_huerfanas(r):
+    h = excepciones_huerfanas(r.get('raiz', '.'), r['exc'], r.get('exc_usadas', set()))
+    if not h:
+        return
+    print()
+    print(f"AVISO — {len(h)} excepcion(es) declaradas no aplican a nada, y su sujeto "
+          f"no esta en disco.")
+    print("Una excepcion huerfana no falla y no repara: avisa. El dia que su sujeto")
+    print("se mueve, la falla vuelve disfrazada de deuda nueva y nadie mira aca.")
+    for c in h[:12]:
+        print(f"    {c}")
+    if len(h) > 12:
+        print(f"    ... y {len(h) - 12} mas")
+
+
 def veredicto(r):
     f, ok = fallas(r)
+    aviso_huerfanas(r)
     if not f:
         print(f"GRAFO EN LEY: nada flota, nada se esconde, nada se saltea, "
               f"todo se alcanza caminando. ({len(ok)} excepciones declaradas)")

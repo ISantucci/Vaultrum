@@ -125,6 +125,47 @@ def cargar_excepciones(raiz):
     return ex
 
 
+def cubierta(ex, rel, ley):
+    """¿Hay excepcion declarada para (rel, ley)? Ruta exacta o IDENTIDAD.
+
+    La identidad —el nombre de la nota, sin carpeta y sin .md— se agrego en
+    TL-012: una excepcion por ruta se rompe EN SILENCIO cuando el archivo se
+    mueve, y el artefacto vuelve a fallar como si nunca se hubiera declarado.
+    Paso dos veces (ARQ-025 y TL-011) y la ley subio al Core por eso.
+    Un artefacto no cambia de identidad cuando cambia de carpeta.
+    """
+    if (rel, ley) in ex:
+        return True
+    b = os.path.basename(rel)
+    ident = b[:-3] if b.endswith('.md') else b
+    return (ident, ley) in ex
+
+
+def identidades_ambiguas(raiz, ex):
+    """Identidades declaradas que en disco corresponden a MAS de un archivo.
+
+    Es el precio de la identidad: dos proyectos pueden tener un
+    `QA-001_Gate_De_Entrega` cada uno (lo midio ARQ-026). Una excepcion por
+    identidad los cubriria a los dos, y uno de los dos no fue declarado por
+    nadie. No se prohibe: se AVISA, que es lo que convierte un silencio en una
+    decision. Si aparece, se vuelve a la ruta para ese caso.
+    """
+    porname = collections.defaultdict(list)
+    for dp, dn, fn in os.walk(raiz):
+        dn[:] = [d for d in dn if d not in RUIDO]
+        for f in fn:
+            if f.endswith('.md'):
+                porname[f[:-3]].append(
+                    os.path.relpath(os.path.join(dp, f), raiz).replace('\\', '/'))
+    out = {}
+    for clave, _ in ex:
+        if '/' in clave or clave.endswith('.md'):
+            continue
+        if len(porname.get(clave, ())) > 1:
+            out[clave] = porname[clave]
+    return out
+
+
 def excepciones_huerfanas(raiz, ex):
     """Las excepciones cuya ruta ya no existe en disco.
 
@@ -138,7 +179,9 @@ def excepciones_huerfanas(raiz, ex):
     barato que 00_Leyes_en_antesala tenia anotado, y la segunda aparicion es la
     que lo hizo urgente.
     """
-    return sorted({p for p, _ in ex if not os.path.exists(os.path.join(raiz, p))})
+    return sorted({p for p, _ in ex
+                   if ('/' in p or p.endswith('.md'))
+                   and not os.path.exists(os.path.join(raiz, p))})
 
 
 def prosa(txt):
@@ -396,13 +439,13 @@ def auditar(ruta):
         rel = os.path.relpath(path, raiz).replace('\\', '/')
         txt = open(path, encoding='utf-8', errors='replace').read()
         tipo, fallas, cuerpo = medir(rel, txt, contratos, raiz)
-        fallas = [f for f in fallas if (rel, f[0]) not in excep]
+        fallas = [f for f in fallas if not cubierta(excep, rel, f[0])]
         for h, muestra in parrafos(cuerpo):
             huellas[h].append((rel, muestra))
         res.append({'rel': rel, 'tipo': tipo, 'fallas': fallas})
     for rel, tl, falta in cobertura(raiz, ruta):
         for r in res:
-            if r['rel'] == rel and (rel, 'cobertura') not in excep:
+            if r['rel'] == rel and not cubierta(excep, rel, 'cobertura'):
                 r['fallas'].append(('cobertura', 0,
                                     'TL-%s cerrado: sin SOL que cubra RQ %s'
                                     % (tl, ', '.join('.%d' % n for n in falta))))
@@ -505,6 +548,15 @@ def informe(raiz, res, contratos, excep):
         print()
     if excep:
         print('  Excepciones declaradas (%d) — estan en excepciones.txt, no fallan' % len(excep))
+    ambiguas = identidades_ambiguas(raiz, excep)
+    if ambiguas:
+        print()
+        print('  AVISO — %d identidad(es) declaradas corresponden a mas de un archivo.' % len(ambiguas))
+        print('  Una excepcion por identidad las cubre a todas, y solo una fue declarada.')
+        for clave, rutas in list(ambiguas.items())[:8]:
+            print('      %s' % clave)
+            for r in rutas:
+                print('          %s' % r)
     huerfanas = excepciones_huerfanas(raiz, excep)
     if huerfanas:
         print()

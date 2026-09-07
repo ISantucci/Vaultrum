@@ -106,3 +106,27 @@ VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos 
 # Los artefactos viejos usan los nombres de la izquierda y el contrato pide los de
 # la derecha: van a fallar el gate. Eso es deuda declarada, no un error del gate.
 # ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# RA — la serie de arte de Arte_Blender. MEDIDA el 2026-09-07, NO agregada
+# todavia como contrato, y el motivo es el mismo que tuvieron SOL y EJ antes
+# del 2026-08-28: hay forma, falta vocabulario.
+#
+#   RA, sobre 9 reales      Regla 9/9  ·  Verificacion 9/9   |  umbral 7/9
+#
+# Las dos secciones estan en las nueve notas, medido por FUNCION. Ninguna de
+# las nueve las titula igual: "La regla", "Regla 1 - ...", "1. El blueprint da
+# formas", "Como se verifica", "El instrumento", "La prueba del corte", "se
+# mide sobre el dibujo". documentacion.py compara nombres de seccion, asi que
+# escribir el contrato hoy haria fallar a las nueve por como se llaman, no por
+# lo que les falta -- y eso es un instrumento midiendo la palabra en vez del
+# contenido.
+#
+# El contrato entra cuando el owner unifique el vocabulario. Unificarlo es
+# editar contenido de arte y Conocimiento no repara artefacto ajeno.
+#
+# La primera medicion de esta serie dio "regla 8/9, verificacion 8/9" y era
+# MIA la falla: el patron no reconocia una regla numerada ("1. El blueprint...")
+# ni "se mide sobre el dibujo". Corregido el patron, dio 9/9. Queda escrito
+# porque es el mismo error que la serie previene: medir el rotulo y no la cosa.
+

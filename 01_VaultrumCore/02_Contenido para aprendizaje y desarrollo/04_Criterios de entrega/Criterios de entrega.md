@@ -156,6 +156,23 @@ Usar esta nota al **escribir conocimiento nuevo, armar la lista de consulta de u
 
 ---
 
+## [[La declaracion y su sujeto]]
+
+> **Una declaracion sobre algo nombra ese algo, no donde esta guardado.**
+
+El tercer criterio sobre instrumentos, y el unico que no mira la medicion sino **de que habla**. `Alcance del instrumento` pregunta si la medicion cubre la regla; `Direccion de falla` pregunta de que lado cae cuando se equivoca; este pregunta si el sujeto del que habla sigue siendo el que era.
+
+Responde:
+
+- por que una excepcion o un manifiesto atados a una ruta se rompen en silencio cuando el archivo se mueve;
+- por que el sintoma de esa rotura es indistinguible de deuda nueva, y por eso es caro;
+- por que la identidad reduce la rotura pero solo el aviso la convierte en decision;
+- que hacer cuando una identidad corresponde a mas de un sujeto.
+
+Usar esta nota al **escribir cualquier mecanismo que lea declaraciones sobre artefactos**, y al mover, archivar o renombrar algo de lo que otras cosas hablan.
+
+---
+
 ## Como se relacionan
 
 Los tres cubren momentos distintos de la misma entrega:
@@ -166,6 +183,7 @@ durante               → Verificacion parcial              (que sabemos hasta a
 al disenar el flujo   → Gates verificables                (como se comprueba sin criterio subjetivo)
 al escribir el gate   → Alcance del instrumento           (si la comprobacion prueba lo que dice)
                       → Direccion de falla de un guardrail (de que lado cae cuando se equivoca)
+                      → La declaracion y su sujeto         (sobre que cosa habla, y si sigue ahi)
 antes de delegar      → La superficie del ejecutor        (si el otro puede, no si sabe)
 antes de escribir     → Conocimiento cargado o archivado  (si lo escrito le va a llegar a alguien)
 ```
@@ -188,6 +206,8 @@ Verificacion parcial      → Programacion (EJ), Control de Calidad (QA) y Produ
 Gates verificables        → toda skill que declare un paso obligatorio
 Alcance del instrumento   → Arquitectura, Conocimiento, UI/UX y Control de Calidad
                             (las cuatro areas que miden con herramienta propia)
+La declaracion y su sujeto → las mismas, mas Produccion: los cuatro instrumentos
+                            que leen excepciones o manifiestos
 Direccion de falla        → las mismas cuatro, mas la Escuela (su dedup autoriza misiones)
 La superficie del ejecutor → Programacion (el SOL y su Contrato de ejecucion) y la capa
                             de Despacho, que es la que reparte entre ejecutores
