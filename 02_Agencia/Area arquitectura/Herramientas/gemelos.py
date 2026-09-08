@@ -48,6 +48,15 @@ ESPEJOS = [(('CLAUDE.md', 'AGENTS.md'),
             'misma puerta para dos harnesses que leen nombres distintos (RQ-007.2)')]
 DESTINOS = ('.claude/skills', '.agents/skills')
 
+# El reparto de ARQ-033 no se copia aca: se importa de donde esta declarado. Dos
+# instrumentos con la misma lista escrita dos veces es una copia sin gemelo que
+# los vigile -- exactamente lo que este archivo existe para impedir.
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from instalar_skills import REFERENCIADAS
+except Exception:                                  # noqa: BLE001 - se declara, no se adivina
+    REFERENCIADAS = None
+
 
 def sha(p):
     with open(p, 'rb') as f:
@@ -79,10 +88,24 @@ def revisar(raiz):
             fallas.append(f"ESPEJO DERIVADO: {' y '.join(grupo)} difieren, y tienen que "
                           f"decir lo mismo ({razon}). Ninguno es el original: decidí cuál vale.")
 
+    if REFERENCIADAS is None:
+        fallas.append("no pude leer el reparto residente/referenciada de instalar_skills.py. "
+                      "Sin esa declaración no sé qué copia tiene que existir: no adivino.")
+        return fallas, revisados
+
     for nombre, fuente in sorted(fuentes_de_skills(raiz).items()):
         h = sha(fuente)
         for d in DESTINOS:
             copia = os.path.join(raiz, d, nombre, 'SKILL.md')
+            # Una REFERENCIADA no se copia (ARQ-033). Y la comprobacion se da
+            # vuelta: si HAY copia, alguien la registro y esta pagando presupuesto
+            # residente en cada prompt sin que nadie lo haya decidido.
+            if nombre in REFERENCIADAS:
+                if os.path.isfile(copia):
+                    fallas.append(f"REGISTRADA SIN DECIDIRLO: {d}/{nombre}/SKILL.md existe y "
+                                  f"{nombre} está declarada referenciada. Paga presupuesto en "
+                                  f"cada prompt. Corré el instalador para sacarla.")
+                continue
             if not os.path.isfile(copia):
                 fallas.append(f"copia ausente: {d}/{nombre}/SKILL.md — la fuente existe y "
                               f"el harness no la ve. Corré skills.sh / skills.bat.")
@@ -98,6 +121,8 @@ def sincronizar(raiz):
     """Reescribe las COPIAS desde su fuente. Los espejos NO se tocan."""
     n = 0
     for nombre, fuente in sorted(fuentes_de_skills(raiz).items()):
+        if REFERENCIADAS and nombre in REFERENCIADAS:
+            continue                                # no tiene copia que sincronizar
         datos = open(fuente, 'rb').read()
         for d in DESTINOS:
             copia = os.path.join(raiz, d, nombre, 'SKILL.md')

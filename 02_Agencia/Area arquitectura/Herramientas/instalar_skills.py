@@ -14,6 +14,22 @@ fuente sigue siendo el area.
             +--> .claude/skills/vaultrum-X/           Claude Code
             +--> .agents/skills/vaultrum-X/           Codex, Cursor, Zed, Copilot
 
+PERO NO TODAS SE SINCRONIZAN (ARQ-033). Registrar una skill cuesta: el harness
+carga su name+description antes de cada prompt, la use o no, y esa suma tiene un
+tope de 8000 chars que trece entradas pasaron. Abrirla por ruta no cuesta nada.
+
+    RESIDENTE      se copia a los dos destinos. El trabajo entra por ahi en frio.
+    REFERENCIADA   se queda en su area. Se la alcanza leyendo su SKILL.md por la
+                   ruta que el indice de la puerta declara, y a esa area no se
+                   entra en frio: necesita un insumo que otra produjo antes.
+
+    Descubrir cuesta presupuesto. Alcanzar no cuesta nada.
+
+Por eso este script mide dos cosas nuevas: el presupuesto REAL (name+description,
+no solo description -- contar la mitad reportaba 98% con el sistema en 101%) y el
+ALCANCE: que ninguna referenciada quede sin camino en el indice. Una skill sin
+camino existe, esta completa y es invisible; eso ya paso con vaultrum-arte.
+
   python3 instalar_skills.py [ruta_del_vault]        sincroniza, instala y verifica
   python3 instalar_skills.py [ruta] --verificar      solo mide, no escribe (exit 1 si difiere)
 
@@ -51,7 +67,23 @@ import os, sys, shutil, re, hashlib, time, subprocess
 DESTINOS = ['.claude/skills', '.agents/skills']
 EXCLUIR  = {'.git', '.claude', '.agents', 'node_modules', '_to_delete'}
 HOOK_SRC = os.path.join('02_Agencia', 'Area arquitectura', 'Herramientas', 'pre-commit')
-TOPE_TOTAL, TOPE_UNA = 8000, 1536
+TOPE_TOTAL = 8000
+
+# El reparto de ARQ-033, declarado POR IDENTIDAD y no por ruta: una skill que se
+# muda de area no rompe nada; una que se renombra, si -- cambio de sujeto.
+#
+# RESIDENTE   se registra en los destinos. Paga su name+description en cada prompt,
+#             la use o no. Se justifica porque el trabajo ENTRA por ahi en frio.
+# REFERENCIADA vive en su area y se abre por ruta desde el indice de la puerta.
+#             No paga nada. Se justifica porque a esa area no se entra en frio:
+#             ninguna puede correr sin un insumo que otra produjo antes.
+#
+# Descubrir cuesta presupuesto. Alcanzar no cuesta nada.
+REFERENCIADAS = frozenset({
+    'vaultrum-gamedesign', 'vaultrum-leveldesign', 'vaultrum-uiux', 'vaultrum-arte',
+    'vaultrum-programador', 'vaultrum-calidad', 'vaultrum-conocimiento',
+})
+PUERTA = os.path.join('02_Agencia', 'Area produccion', 'Skills', 'vaultrum-produccion')
 MARCA = ('Generado por instalar_skills.py desde 02_Agencia/Area */Skills/ y las capas 03/04/05.\n'
          'Editar aca no cambia el sistema: se pisa en la proxima corrida.\n'
          'Para cambiar una skill, edita su fuente en el area y volve a correr el instalador.\n')
@@ -212,10 +244,48 @@ def es_generada(ruta):
     return os.path.isfile(os.path.join(ruta, SELLO))
 
 
-def descripcion(ruta):
+def entrada(nombre, ruta):
+    """Lo que una skill registrada le cuesta al presupuesto residente: name + description.
+
+    Cuenta el NOMBRE, no solo la description. El harness carga la entrada completa y
+    el nombre es lo que la identifica: medir solo la mitad reportaba 98% cuando el
+    sistema ya estaba en 101%. Es el mismo defecto que sim.py tuvo con las celdas
+    compartidas -- un numero correcto sobre el objeto equivocado. Ver ARQ-033.
+    """
     txt = open(os.path.join(ruta, 'SKILL.md'), encoding='utf-8', errors='replace').read()
     m = re.search(r'^description:\s*"?(.*?)"?\s*$', txt.split('\n---', 1)[0], re.M | re.S)
-    return len(m.group(1)) if m else 0
+    return len(nombre) + (len(m.group(1)) if m else 0)
+
+
+def alcance(raiz, src):
+    """(sin_camino, sin_fuente, rutas_rotas). El grafo de las skills, medido.
+
+    Una REFERENCIADA no esta registrada: se llega a ella leyendo su SKILL.md por la
+    ruta que el indice de la puerta declara. Si el indice no la nombra, la skill
+    existe, esta completa, y ningun asistente puede alcanzarla.
+
+    Eso ya paso: vaultrum-arte se escribio sin description, quedo instalada en las
+    dos superficies, gemelos.py la conto sincronizada y el instalador la listo entre
+    las trece mientras era operativamente invisible. Ningun instrumento lo dijo.
+    Esta funcion existe para que la proxima vez no sea un silencio.
+
+    No decide: reporta. Las tres listas son hallazgos distintos y no se mezclan.
+    """
+    idx = os.path.join(raiz, PUERTA, 'SKILL.md')
+    txt = ''
+    if os.path.isfile(idx):
+        txt = open(idx, encoding='utf-8', errors='replace').read()
+    sin_camino, rutas_rotas = [], []
+    for n in sorted(REFERENCIADAS):
+        if n not in src:
+            continue                      # eso lo reporta sin_fuente, no esto
+        m = re.search(r'^[ \t]*' + re.escape(n) + r'[ \t]+(\S.*?)[ \t]*$', txt, re.M)
+        if not m:
+            sin_camino.append(n)
+        elif not os.path.isfile(os.path.join(raiz, m.group(1))):
+            rutas_rotas.append((n, m.group(1)))
+    sin_fuente = sorted(n for n in REFERENCIADAS if n not in src)
+    return sin_camino, sin_fuente, rutas_rotas
 
 
 def preparar_bandeja(solo_medir):
@@ -329,7 +399,7 @@ def skills_que_declara_la_puerta(raiz):
     return NUMEROS.get(crudo.lower())
 
 
-def verificar_entorno(raiz):
+def verificar_entorno(raiz, src):
     """El chequeo de harness: despues de correr esto, se puede trabajar o no.
 
     POR QUE EXISTE
@@ -375,8 +445,10 @@ def verificar_entorno(raiz):
                 faltan.append('falta %s' % config)
 
     # lo contable de la puerta, contra lo contado
-    reales = len([x for x in os.listdir(DESTINOS[0])
-                  if os.path.isdir(os.path.join(DESTINOS[0], x))]) if os.path.isdir(DESTINOS[0]) else 0
+    # Cuantas skills HAY, no cuantas se registran. Desde ARQ-033 son numeros
+    # distintos, y el que la puerta declara es el primero: una skill referenciada
+    # existe y se usa, solo que se llega a ella por otro camino.
+    reales = len(src)
     dice = skills_que_declara_la_puerta(raiz)
     if dice is None:
         print('\n  [--] puerta      el README no declara cuantas skills hay: nada que comparar')
@@ -440,8 +512,13 @@ def main():
         print('  [ERROR] no se encontro ninguna SKILL.md. No se toca nada.')
         return 2
 
+    # Solo las residentes se registran. Las referenciadas se quedan en su area:
+    # no se copian, no se borran de la fuente, y salen de los destinos por la via
+    # de siempre (huerfana con sello -> descartar). ARQ-033.
+    residentes = {n: r for n, r in src.items() if n not in REFERENCIADAS}
+
     difiere = []
-    for nombre, ruta in sorted(src.items()):
+    for nombre, ruta in sorted(residentes.items()):
         h_src = huella(ruta)
         estados = []
         for d in DESTINOS:
@@ -468,7 +545,7 @@ def main():
     for d in DESTINOS:
         if os.path.isdir(d):
             for x in os.listdir(d):
-                if os.path.isdir(os.path.join(d, x)) and x not in src:
+                if os.path.isdir(os.path.join(d, x)) and x not in residentes:
                     huerfanas.append(os.path.join(d, x))
     if huerfanas:
         mias   = [h for h in huerfanas if es_generada(h)]
@@ -515,17 +592,46 @@ def main():
 
     preparar_bandeja(solo_medir)
 
-    # presupuesto de contexto residente
-    print(f'\n  {len(src)} skills · residente (suma de las descriptions):')
-    total = 0
-    for nombre, ruta in sorted(src.items()):
-        n = descripcion(ruta)
-        total += n
-        if n > TOPE_UNA:
-            print(f'    [AVISO] {nombre}: {n} chars, pasa el tope de {TOPE_UNA} por entrada')
+    pendientes = []
+
+    # presupuesto de contexto residente (ARQ-033)
+    # Se cuenta name + description, y SOLO de las residentes: son las unicas que
+    # el harness carga por adelantado. TOPE_UNA se retiro -- 1536 por entrada por
+    # 13 entradas eran 19.968 chars, dos veces y media el tope total: ese aviso no
+    # podia dispararse nunca sin que el total ya hubiera explotado antes.
+    print(f'\n  presupuesto residente · {len(residentes)} registradas de {len(src)} skills:')
+    costos = sorted(((entrada(n, r), n) for n, r in residentes.items()), reverse=True)
+    total = sum(c for c, _ in costos)
     pct = total * 100 // TOPE_TOTAL
     estado = 'AVISO' if total > TOPE_TOTAL else 'ok'
     print(f'    [{estado}] {total} chars / {TOPE_TOTAL} tope de Codex = {pct}%')
+    if costos:
+        caro, quien = costos[0]
+        margen = TOPE_TOTAL - total
+        print(f'    [--] la mas cara: {quien} con {caro}. Margen: {margen} chars '
+              f'({margen // caro if caro else 0} entradas de ese tamano).')
+    if total > TOPE_TOTAL:
+        print('    Pasarse no rompe con estruendo: el harness recorta la lista y')
+        print('    algunas skills dejan de existir para el, sin avisar. Ver ARQ-033.')
+
+    # alcance: ninguna referenciada puede quedar sin camino
+    sin_camino, sin_fuente, rutas_rotas = alcance(raiz, src)
+    if not (sin_camino or sin_fuente or rutas_rotas):
+        print(f'    [ok] alcance: las {len(REFERENCIADAS)} referenciadas estan nombradas '
+              f'en el indice de la puerta, y sus rutas existen.')
+    for n in sin_camino:
+        print(f'    [!!] {n} es referenciada y el indice de la puerta NO la nombra.')
+        print( '         Existe, esta completa, y nadie puede llegar a ella.')
+        pendientes.append(f'{n} sin camino en el indice de la puerta')
+    for n, r in rutas_rotas:
+        print(f'    [!!] {n}: el indice declara «{r}» y ahi no hay nada.')
+        pendientes.append(f'la ruta de {n} en el indice no existe')
+    for n in sin_fuente:
+        print(f'    [!] {n} esta declarada REFERENCIADA y no existe en el repo.')
+        print( '        O se renombro, o se fue. El reparto quedo apuntando al vacio.')
+    sin_clasificar = [n for n in sorted(src) if n not in REFERENCIADAS and n not in residentes]
+    for n in sin_clasificar:
+        print(f'    [!] {n} no esta clasificada. Decidi de que lado cae.')
 
     if _apartados:
         print('\n  [aviso] esta superficie no permite borrar. Se aparto a _to_delete/,')
@@ -533,8 +639,15 @@ def main():
         for a in _apartados:
             print(f'    - {a}')
 
-    pendientes_entorno = verificar_entorno(raiz)
+    pendientes_entorno = verificar_entorno(raiz, src) + len(pendientes)
 
+    # Una skill sin camino NO es un hecho de esta maquina: es un defecto del vault,
+    # y por eso si rompe --verificar, a diferencia de que falte un binario. ARQ-033.
+    if pendientes:
+        print(f'\n  SKILLS SIN CAMINO: {len(pendientes)} referenciada(s) que nadie puede alcanzar.')
+        print('  Nombralas en el indice de la puerta (Paso 3 de vaultrum-produccion).')
+        if solo_medir:
+            return 1
     if solo_medir and difiere:
         print(f'\n  FUERA DE SINCRONIA: {len(difiere)} copia(s) difieren de su fuente.')
         return 1

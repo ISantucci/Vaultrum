@@ -57,6 +57,8 @@ Cinco capas viajan, y hay una sexta carpeta que no:
 
 Trece **skills ejecutables** —una por cada una de las nueve áreas, más la Escuela, la Comunidad, AiCare y el Despacho— son lo que hace que la cadena corra en vez de quedarse en documentación.
 
+**Seis se registran y siete se alcanzan.** Un asistente carga por adelantado el nombre y la descripción de cada skill registrada —la use o no— y ese presupuesto tiene tope. Vaultrum registra las áreas por donde el trabajo entra en frío (Producción, Arquitectura, Escuela, Comunidad, AiCare, Despacho) y deja las siete de la cadena —Game Design, Level Design, UI/UX, Arte, Programación, Calidad y Conocimiento— viviendo en su área, alcanzables por ruta desde el índice de la puerta. Existen igual y se usan igual: **descubrir cuesta presupuesto, alcanzar no cuesta nada**. La ley y el reparto están en `ARQ-033`, y el instalador verifica que ninguna quede sin camino.
+
 ---
 
 ## Entorno recomendado
@@ -89,8 +91,12 @@ Sirve para estudiar el criterio, revisar patrones y usar la Biblioteca. No hace 
 Lo que el instalador deja listo, y lo que verifica:
 
 ```txt
-sincroniza   las skills a .claude/skills/ y .agents/skills/, que son las rutas
-             que Claude Code y Codex escanean solos en el repo
+sincroniza   las skills RESIDENTES a .claude/skills/ y .agents/skills/, que son
+             las rutas que Claude Code y Codex escanean solos en el repo. Las
+             referenciadas se quedan en su area: se abren por ruta, no se copian
+mide         el presupuesto residente (name + description, contra el tope de
+             8000 de Codex) y el ALCANCE: que ninguna referenciada quede sin
+             camino en el indice de la puerta
 instala      el gate de cierre en .git/hooks/pre-commit
 prepara      la bandeja de ordenes de la capa IA Operativa
 verifica     que cada harness pueda usarse de verdad: el binario en el PATH, su

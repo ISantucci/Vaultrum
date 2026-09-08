@@ -84,6 +84,13 @@ de Calidad               QA-XXX.n por hilo · QA-XXX por entrega            │
 
 El Área de Conocimiento no es una etapa de producción: es la capa de control de versiones que gestiona qué vuelve al Core, con criterio y aprobación.
 
+### Cómo se abre cada área (residentes y referenciadas)
+
+**No todas las áreas se descubren solas, y es a propósito.** Un asistente carga por adelantado el nombre y la descripción de cada skill registrada —las use o no—, y ese presupuesto tiene un tope. Por eso Vaultrum separa lo que se **descubre** de lo que se **alcanza**: se registran las áreas por donde entra el trabajo en frío, y las siete de la cadena —Game Design, Level Design, UI/UX, Arte, Programación, Control de Calidad y Conocimiento— se abren por ruta desde el índice de la puerta, porque ninguna puede correr sin un insumo que otra produjo antes.
+
+El índice con las rutas lo declara Producción, en `Paso 3 — Pivotear entre áreas` de `vaultrum-produccion`. Acá no se copia: se nombra. La ley y el reparto están en `ARQ-033`, y `instalar_skills.py` verifica que ninguna área quede sin camino.
+
+
 ---
 
 ## Columna vertebral de numeración

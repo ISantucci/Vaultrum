@@ -1,6 +1,6 @@
 ---
 name: "vaultrum-produccion"
-description: "Área de Producción de Vaultrum y puerta de entrada del Modo Vaultrum. Úsala cuando el owner quiera crear o desarrollar un proyecto (videojuego/software), de cero o ya empezado. Es el Productor y dueño de la entrega: recibe la intención, detecta si es nuevo o existente, releva lo mínimo (incluida versión de motor instalada elegida por el owner), produce Timeline (TL) + Requerimientos (RQ), pivotea entre áreas (Game Design, Level Design, UI/UX, Programación, Control de Calidad, Conocimiento) y cierra la entrega validándola (VE). No diseña gameplay en profundidad ni escribe código."
+description: "Puerta de entrada del Modo Vaultrum y Área de Producción. Úsala para cualquier trabajo sobre un proyecto de videojuego o software —de cero o ya empezado—: alcance, Timeline (TL) y Requerimientos (RQ), y el cierre validado de la entrega (VE). También para lo que la cadena resuelve adentro, derivando al área que corresponde: mecánicas, reglas, balance, economía, progresión y dificultad; niveles, escenarios, pacing, encuentros y checkpoints; HUD, menús, pantallas, navegación, accesibilidad, contraste y daltonismo; assets 3D, modelado, escala, presupuesto de polígonos, paleta y entrega .glb/.fbx; código Unity/C#, scripts, arquitectura técnica, bugs y optimización; control de calidad, build, regresión y GO/NO-GO; y la verificación documental de cada artefacto. El índice de áreas está en el Paso 3 de esta skill. No usar para ordenar el vault (Arquitectura), estudiar (Escuela) ni publicar (Comunidad)."
 ---
 
 # Área de Producción — Productor / Orquestador del Modo Vaultrum
@@ -277,11 +277,32 @@ RQ jugable        → Game Design (vaultrum-gamedesign)  → GDS-XXX.n
   ├── el entregable tiene assets visuales     → Arte mitad A (vaultrum-arte)        → ART-XXX.n
   │                                             ANTES del primer asset, y consume el LDS
   └── con GDS (+ LDS/UXS/ART si existen)      → Programación (vaultrum-programador) → SOL/EJ
+hilo cerrado      → Control de Calidad (vaultrum-calidad) → QA-XXX.n antes del VE
 RQ no jugable     → UI/UX mitad A si tiene interfaz, y de ahí a Programación con el RQ.
 falta insumo      → marcá el faltante y no avances ese hilo.
 gap de conocimiento → Escuela (vaultrum-escuela) antes de seguir.
 aprendizaje       → al cerrar, si hay criterio reutilizable, derivá a Conocimiento (vaultrum-conocimiento).
 ```
+
+### Índice de áreas — cómo se abre cada una
+
+**Estas siete áreas no están registradas como skills.** No aparecen en la lista que el asistente carga sola: se abren leyendo su `SKILL.md` por ruta, desde acá. No es una degradación — es la ley de `ARQ-033`: **descubrir cuesta presupuesto residente y alcanzar no cuesta nada**, y a ninguna de las siete se entra en frío, porque ninguna puede correr sin un insumo que otra produjo antes.
+
+Cuando derivás a un área, **leé su `SKILL.md` completo antes de trabajar con ella**. Las rutas son relativas a la raíz del vault:
+
+```txt
+vaultrum-gamedesign     02_Agencia/Area game design/Skills/vaultrum-gamedesign/SKILL.md
+vaultrum-leveldesign    02_Agencia/Area level design/Skills/vaultrum-leveldesign/SKILL.md
+vaultrum-uiux           02_Agencia/Area ui-ux/Skills/vaultrum-uiux/SKILL.md
+vaultrum-arte           02_Agencia/Area arte/Skills/vaultrum-arte/SKILL.md
+vaultrum-programador    02_Agencia/Area programacion/Skills/vaultrum-programador/SKILL.md
+vaultrum-calidad        02_Agencia/Area control de calidad/Skills/vaultrum-calidad/SKILL.md
+vaultrum-conocimiento   02_Agencia/Area conocimiento/Skills/vaultrum-conocimiento/SKILL.md
+```
+
+Las que **sí** están registradas y se descubren solas —no hace falta abrirlas por ruta— son `vaultrum-arquitecto`, `vaultrum-escuela`, `vaultrum-contenido`, `AiCare` y `vaultrum-despacho`. Nombralas y ya.
+
+**Si agregás un área nueva**, decidí primero de qué lado cae: ¿el owner la va a nombrar en frío, o se llega a ella con un insumo? Si es lo segundo, entra en esta tabla y no en el registro. `instalar_skills.py` verifica que toda skill referenciada esté nombrada acá y que su ruta exista: una que falte es un hallazgo del gate, no un silencio.
 
 ### Quién declara que Arte aplica: vos, y en el `RQ`
 
