@@ -81,8 +81,11 @@ TOPE_TOTAL = 8000
 # Descubrir cuesta presupuesto. Alcanzar no cuesta nada.
 REFERENCIADAS = frozenset({
     'vaultrum-gamedesign', 'vaultrum-leveldesign', 'vaultrum-uiux', 'vaultrum-arte',
-    'vaultrum-programador', 'vaultrum-calidad', 'vaultrum-conocimiento',
+    'vaultrum-metricas', 'vaultrum-programador', 'vaultrum-calidad', 'vaultrum-conocimiento',
 })
+# vaultrum-metricas entra REFERENCIADA el 2026-09-25 (ARQ-034): necesita un RQ con
+# objetivo, un GDS con comportamiento esperado y la fase del cuaderno -- o datos de
+# una build jugada. Nunca es lo primero que el owner nombra en frio.
 PUERTA = os.path.join('02_Agencia', 'Area produccion', 'Skills', 'vaultrum-produccion')
 MARCA = ('Generado por instalar_skills.py desde 02_Agencia/Area */Skills/ y las capas 03/04/05.\n'
          'Editar aca no cambia el sistema: se pisa en la proxima corrida.\n'

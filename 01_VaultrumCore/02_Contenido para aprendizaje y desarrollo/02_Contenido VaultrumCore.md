@@ -237,6 +237,34 @@ No define **cuándo algo está terminado** —eso es `Criterios de entrega`— n
 
 ---
 
+## [[Metricas y analytics]]
+
+Sección dedicada a la pregunta que aparece cuando alguien juega: **el jugador real se comporta como esperaba el diseño, y qué evidencia hace falta para decidir qué cambiar**.
+
+Incluye:
+
+- objetivo antes que métrica: métrica contra KPI, árbol de métricas y guardrails;
+- qué pregunta hace cada fase del producto y qué se mide en cada una, y los modelos de negocio;
+- el Player Journey, los funnels, el FTUE y el drop-off;
+- actividad, retención y engagement, y los sistemas de retorno con sus riesgos;
+- cómo se mide una progresión y una feature;
+- monetización, suscripción y economía virtual medidas;
+- instrumentación y telemetría: eventos, cardinalidad, verificación del dato y privacidad;
+- segmentos, cohortes, experimentos y Live Ops;
+- cómo se pasa del dato a la decisión sin inventar causas, y las fórmulas canónicas.
+
+Usar esta sección cuando el problema esté relacionado con:
+
+- saber si una feature, un nivel o un sistema está funcionando;
+- elegir qué medir en un playtest, un soft launch o un evento;
+- pedir eventos de telemetría a Programación;
+- leer un número sin interpretarlo a favor de quien lo mira;
+- decidir si un cambio causó algo o solo coincidió con algo.
+
+No es QA —`Calidad y testing` dice si lo construido falla; esta dice qué hace la gente con lo que funciona— ni playtesting, cuyo protocolo y tope de telemetría son de la Biblioteca. Cómo se mide un proyecto concreto es operativo y vive en el Área de Métricas de la Agencia.
+
+---
+
 ## Cómo usar esta sección
 
 Esta sección puede recorrerse de forma libre.

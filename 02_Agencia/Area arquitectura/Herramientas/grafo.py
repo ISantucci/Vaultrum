@@ -58,7 +58,10 @@ DENSIDAD = 0.40          # links por KB; el Core sano vive cerca de 0,15
 # catalogos del vault eran indices, y leia TL-001_Catalogo_Supercell_... como el
 # indice padre de su carpeta -- asi que el VE que lo citaba quedaba "volviendo al
 # padre". Falso positivo medido en ARQ-026.
-ARTEFACTO = re.compile(r'^(TL|RQ|GDS|LDS|UXS|SOL|EJ|QA|VE|ARQ|EST|PUB|COMMIT)-\d', re.I)
+# ART y MET se suman el 2026-09-25 (ARQ-034): ART faltaba desde ARQ-030 y nadie lo
+# noto porque todavia no hay ningun ART escrito. Un MET-001_Catalogo... habria sido
+# leido como indice, igual que el TL de ARQ-026.
+ARTEFACTO = re.compile(r'^(TL|RQ|GDS|LDS|UXS|ART|MET|SOL|EJ|QA|VE|ARQ|EST|PUB|COMMIT)-\d', re.I)
 
 
 def es_indice(p):

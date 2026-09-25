@@ -34,11 +34,13 @@ TL + RQ      (Producción)      qué se hace, con qué alcance
   ↓
 GDS          (Game Design)     reglas, estados, feedback, balance
   ↓
-LDS / UXS    (Level Design / UI-UX, si aplican)
+LDS / UXS / ART / MET   (Level Design / UI-UX / Arte / Métricas, si aplican)
   ↓
 SOL + EJ     (Programación)    solución técnica + implementación
   ↓
 QA           (Control de Calidad)  ¿lo construido se sostiene? con evidencia
+  ↓
+MET          (Métricas, si hubo datos)  ¿el jugador hizo lo que el diseño esperaba?
   ↓
 VE           (Producción)      ¿lo entregado es lo prometido?
   ↓
@@ -100,7 +102,7 @@ Entrada: `01_Indice VaultrumCore`
 
 ## [[02_Indice Agencia|02_Agencia]]
 
-La capa operativa. **Ocho áreas** —seis en la cadena, y Conocimiento y Arquitectura debajo de ella—, cada una autocontenida: trae sus sub-agentes, su método, su producto y su skill ejecutable. La salida de una es la entrada de la siguiente.
+La capa operativa. **Diez áreas** —ocho en la cadena, y Conocimiento y Arquitectura debajo de ella—, cada una autocontenida: trae sus sub-agentes, su método, su producto y su skill ejecutable. La salida de una es la entrada de la siguiente.
 
 | Área | Produce | Responde |
 |------|---------|----------|
@@ -108,8 +110,10 @@ La capa operativa. **Ocho áreas** —seis en la cadena, y Conocimiento y Arquit
 | Game Design | `GDS` | reglas, estados, feedback, balance |
 | Level Design | `LDS` | espacio, encuentros, pacing, dificultad aplicada |
 | UI/UX | `UXS` | pantallas, HUD, navegación, legibilidad |
+| Arte | `ART` | los assets y las animaciones, medidos por instrumento y no por la vista |
 | Programación | `SOL` + `EJ` | cómo se implementa y qué se implementó |
 | Control de Calidad | `QA` | si lo construido se sostiene: GO / CONDITIONAL GO / NO-GO |
+| Métricas | `MET` | si el jugador real se comporta como esperaba el diseño, con el KPI fijado antes del dato |
 | Conocimiento | documentación medida + commits al Core | si lo escrito se entiende, y qué aprendizaje vuelve a `main` |
 | Arquitectura | `ARQ` | dónde vive cada nota y si el vault se puede recorrer |
 
@@ -143,7 +147,7 @@ La capa proactiva: la Biblioteca y las misiones de estudio que la llenan. El Cor
 
 ## [[00_Indice_graficos|graficos]]
 
-Doce diagramas del sistema: uno por área de la Agencia, uno por torre, y uno del conjunto. En `.drawio` editable y en `.svg` para mirar sin instalar nada. Se generan con `python3 graficos/generar_graficos.py`: la fuente es la especificación, el dibujo es una copia.
+Catorce diagramas del sistema: uno por área de la Agencia, uno por torre, y uno del conjunto. En `.drawio` editable y en `.svg` para mirar sin instalar nada. Se generan con `python3 graficos/generar_graficos.py`: la fuente es la especificación, el dibujo es una copia.
 
 Sirven para ver de un vistazo lo que este documento cuenta en prosa — y tres de ellos llevan escrita, adentro, una deuda medida del sistema.
 

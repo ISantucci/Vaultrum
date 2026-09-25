@@ -133,9 +133,13 @@ interfaz       navegación, foco, escalado, estados vacíos y de error, texto, a
 contenido      colisiones, atascos, disparadores, secuencia de objetivos, recorrido extremo
 build          instalación, arranque, integridad, guardado compatible, permisos, plataforma
 datos          tablas y configuraciones: completitud, unidades, referencias rotas, contradicciones
+telemetría     los eventos del MET-XXX.n: disparan, una sola vez, a tiempo, con sus parámetros,
+               en el entorno correcto y con el signo correcto
 ```
 
-El último importa más de lo que parece: una tabla de balance con una referencia rota produce una falla igual de real que una línea de código mal escrita, y no la ve ninguna prueba de gameplay.
+El de datos importa más de lo que parece: una tabla de balance con una referencia rota produce una falla igual de real que una línea de código mal escrita, y no la ve ninguna prueba de gameplay.
+
+Y el de telemetría, por la misma razón: un evento duplicado o con el signo invertido no rompe ninguna partida, y produce una lectura perfectamente coherente y perfectamente falsa. **Los criterios los escribe el Área de Métricas en su `MET-XXX.n`; este área los ejecuta sobre la build**, como ejecuta cualquier otro criterio de aceptación que no escribió.
 
 ---
 

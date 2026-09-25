@@ -37,6 +37,8 @@ Un área está escribiendo su artefacto y Conocimiento la acompaña: qué falta,
 
 **Asiste, no firma.** El `GDS` sigue siendo de Game Design aunque Conocimiento lo haya ayudado a escribir. Si Conocimiento firmara, la trazabilidad diría que el diseño lo hizo el bibliotecario.
 
+Cuando el documento tiene **decisiones abiertas** —una visión todavía sin alcance, un sistema con excepciones sin resolver—, el Copiloto no se limita a decir qué falta: lo convierte en **una pregunta con opciones, consecuencias y una recomendada**, y registra la respuesta con su estado. Es el método de `07_Flujo_Documentacion_De_Diseno`. Quien responde es el owner; quien escribe la regla es el área dueña.
+
 ### Modo Gate — al cerrar un artefacto
 
 Verificación **mecánica** contra el contrato de salida del tipo: `documentacion.py` corre solo y devuelve un número. Si pasa, el artefacto cierra. Si falla, y solo entonces, se llama al Copiloto.
@@ -152,6 +154,10 @@ Caso 2 — hubo conocimiento nuevo real: detectar, escribir, ubicar, presentar e
 ### [[06_Flujo_Experimento]]
 
 Caso 3 — una idea que quizás sirve: se evalúa, y si no sirve se descarta sin tocar el Core.
+
+### [[07_Flujo_Documentacion_De_Diseno]]
+
+El método para documentar un diseño por decisiones: leer antes de preguntar, una decisión por vez con opciones y consecuencias, cada respuesta con su estado, un propietario por tema, propagar al aprobar, y dejar de documentar cuando probar informa más. Vino del trabajo del owner con ChatGPT Cowork sobre su próximo tower defense. Lo corren el Documentador y el Copiloto; el documento lo firma el área dueña del tema.
 
 ---
 

@@ -67,6 +67,45 @@ La regla de capas no se cumple sola: la primera versión de estas dos piezas rep
 
 ---
 
+## El mapa: qué superficie corre cada proceso, hoy
+
+El criterio de reparto decide entre un modelo fuerte y un ejecutor barato. En la práctica el owner trabaja con más de dos superficies, y cada una entró por un caso, no por preferencia. Este es el mapa **observado** al 2026-09-25: qué corrió dónde, y qué lo prueba.
+
+```txt
+PROCESO                              SUPERFICIE                 POR QUE AHI                      LO QUE LO PRUEBA
+orquestar la cadena, decidir,        Claude: Claude Code,       es donde se decide: modelo       las tres entregas de TowerDefense
+editar el sistema (Modo Owner)       Cowork, claude.ai          fuerte con el vault cargado      (Cosecha IA TowerDefense)
+modelar 3D en Blender                Claude + MCP de Blender    necesita el DCC, y el            Arte_Blender: 12 assets, 9 reglas
+                                                                instrumento corre adentro        (AiCare_Blender)
+ejecutar un EJ con contrato cerrado  Codex, por la bandeja      contrato escrito: ejecutar es    la bandeja todavia no corrio
+                                                                mecanico                         (RQ-010.1): es criterio, no dato
+review adversarial                   Codex                      no es mas barato: es AJENO       REVIEW_Codex_20260828:
+                                                                                                 7 hallazgos, los 7 reales
+imagen: portada, key art, concept,   ChatGPT / OpenAI           el area escribe el encargo       portada de Miles, a la primera;
+hoja de referencia                                              y el owner lo corre              hoja del mortero (RA-005)
+animacion 2D: sprites, ciclos,       Codex                      genera los cuadros y arma el     las animaciones de Miles
+estados de UI                                                   GIF; se mide con animacion.py    (RA-010 a RA-012)
+documentar un diseño por             ChatGPT Cowork             el metodo viajo; la herramienta  los documentos del proximo
+decisiones                                                      no importa                       tower defense (07_Flujo_
+                                                                                                 Documentacion_De_Diseno)
+```
+
+**Cómo encajan las piezas.** Ninguna superficie es la autoridad. Lo que hace que el trabajo de cinco herramientas distintas se pueda juntar sin perder nada son tres cosas que ya son del sistema:
+
+```txt
+el contrato     lo que se pide está escrito antes: un SOL cerrado, un encargo de siete
+                partes, un encargo de animación de doce líneas, un MET con su KPI
+el instrumento  lo que vuelve se mide igual, venga de donde venga: arte.py, animacion.py,
+                metricas.py, documentacion.py. Que lo haya hecho otra IA no lo exime
+la autoría      firma el área dueña. El taller externo no se juzga a sí mismo
+```
+
+Una herramienta nueva entra al mapa cuando un caso la usa y el instrumento del área mide lo que devolvió. No antes.
+
+**Lo que este mapa no dice.** No compara costos entre superficies —ninguna devuelve su consumo de forma comparable— ni afirma que otra herramienta no lo haría mejor. Es un registro de lo que funcionó, con su evidencia, y se corrige cuando un caso lo contradiga.
+
+---
+
 ## Lo que el ahorro no puede costar
 
 ```txt

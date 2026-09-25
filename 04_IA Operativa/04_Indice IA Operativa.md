@@ -38,7 +38,7 @@ Los dos modos en que la IA opera el vault: **Modo Vaultrum** (usar el sistema pa
 El instrumento que mide el **costo del owner en prompts** y lo separa en visión / aclaración / remedial. Es lo que vuelve falsable la Ley del baseline. No confundir con el conteo de tokens: son dos presupuestos distintos.
 
 ### [[07_Despacho de ejecucion]]
-El segundo presupuesto de la capa: no qué contexto se carga, sino **dónde corre el trabajo y qué cuesta**. La ley del subagente —escribe el archivo, devuelve un resumen— con su contraejemplo medido, y el criterio de reparto entre ejecutor barato y modelo fuerte.
+El segundo presupuesto de la capa: no qué contexto se carga, sino **dónde corre el trabajo y qué cuesta**. La ley del subagente —escribe el archivo, devuelve un resumen— con su contraejemplo medido, el criterio de reparto entre ejecutor barato y modelo fuerte, y **el mapa de qué superficie corre cada proceso hoy** —Claude, Codex, ChatGPT— con la evidencia de cada fila.
 
 ### Herramientas/
 

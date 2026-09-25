@@ -63,15 +63,20 @@ Intención                                                                  │
   ↓ (GDS cerrado)                                                          │
   ├─► Área de Level Design → LDS  (espacio, niveles, encuentros, pacing)   │
   ├─► Área de UI/UX        → UXS mitad B (pantallas, HUD, legibilidad)     │
-  └─► Área de Arte         → ART mitad A (escala, presupuesto, paleta)     │
-                                  ↓        ANTES del primer asset          │
-                            ART mitad B (los assets verificados)           │
-  ↓ (RQ + GDS + LDS + UXS + ART)                                           │
+  ├─► Área de Arte         → ART mitad A (escala, presupuesto, paleta)     │
+  │                               ↓        ANTES del primer asset          │
+  │                         ART mitad B (los assets verificados)           │
+  └─► Área de Métricas     → MET mitad A (plan de medición, si aplica)     │
+                                           KPI · guardrails · eventos      │
+  ↓ (RQ + GDS + LDS + UXS + ART + MET)                                     │
 Área de Programación   → SOL + EJ     (solución técnica + implementación)  │
   ↓ (EJ con revisión técnica OK)                                           │
 Área de Control        → QA           (¿se sostiene lo construido?)        │
 de Calidad               QA-XXX.n por hilo · QA-XXX por entrega            │
   ↓ (QA en GO o CONDITIONAL GO)                                            │
+Área de Métricas       → MET mitad B  (¿el jugador hizo lo esperado?)      │
+                         la lectura de la entrega, si hubo datos           │
+  ↓                                                                        │
 Área de Producción     → VE           (validación de entrega del TL)       │
   │                                                                        │
   └──── aprendizaje reutilizable ──► Área de Conocimiento ─── merge ───────┘
@@ -86,7 +91,7 @@ El Área de Conocimiento no es una etapa de producción: es la capa de control d
 
 ### Cómo se abre cada área (residentes y referenciadas)
 
-**No todas las áreas se descubren solas, y es a propósito.** Un asistente carga por adelantado el nombre y la descripción de cada skill registrada —las use o no—, y ese presupuesto tiene un tope. Por eso Vaultrum separa lo que se **descubre** de lo que se **alcanza**: se registran las áreas por donde entra el trabajo en frío, y las siete de la cadena —Game Design, Level Design, UI/UX, Arte, Programación, Control de Calidad y Conocimiento— se abren por ruta desde el índice de la puerta, porque ninguna puede correr sin un insumo que otra produjo antes.
+**No todas las áreas se descubren solas, y es a propósito.** Un asistente carga por adelantado el nombre y la descripción de cada skill registrada —las use o no—, y ese presupuesto tiene un tope. Por eso Vaultrum separa lo que se **descubre** de lo que se **alcanza**: se registran las áreas por donde entra el trabajo en frío, y las ocho de la cadena —Game Design, Level Design, UI/UX, Arte, Métricas, Programación, Control de Calidad y Conocimiento— se abren por ruta desde el índice de la puerta, porque ninguna puede correr sin un insumo que otra produjo antes.
 
 El índice con las rutas lo declara Producción, en `Paso 3 — Pivotear entre áreas` de `vaultrum-produccion`. Acá no se copia: se nombra. La ley y el reparto están en `ARQ-033`, y `instalar_skills.py` verifica que ninguna área quede sin camino.
 
@@ -107,15 +112,19 @@ Todo cuelga del número base del **timeline**. Cada área agrega su prefijo sobr
 | `UXS-XXX.n` | UI/UX Spec | UI/UX | RQ-XXX.n (mitad A) + GDS-XXX.n (mitad B) |
 | `ART-XXX.n` | Art Spec | Arte | RQ-XXX.n (mitad A, + LDS-XXX.n) + GDS-XXX.n (mitad B) |
 | `ART-XXX` | Pasada sobre el set de la entrega | Arte | **TL-XXX** (la coherencia es del conjunto) |
+| `MET-XXX.n` | Plan de medición del hilo | Métricas | RQ-XXX.n + GDS-XXX.n |
+| `MET-XXX` | Lectura de la entrega | Métricas | **TL-XXX** (con sus `MET-XXX.n`) |
 | `SOL-XXX` o `SOL-XXX.n` | Solución técnica | Programación | **uno o varios** RQ-XXX.n del mismo TL |
 | `EJ-XXX` o `EJ-XXX.n` | Ejecución / reporte | Programación | su `SOL` |
 | `QA-XXX.n` | Gate de calidad del hilo | Control de Calidad | EJ-XXX.n |
 | `QA-XXX` | Gate de calidad de la entrega | Control de Calidad | **TL-XXX** (con sus `QA-XXX.n`) |
 | `VE-XXX` | Validación de entrega | Producción | TL-XXX (con su `QA-XXX`) |
 
-La subnumeración `.n` es compartida entre las áreas de diseño: `RQ-001.2 ↔ GDS-001.2 ↔ LDS-001.2 ↔ UXS-001.2 ↔ ART-001.2 ↔ QA-001.2` son el mismo hilo de trabajo visto por cada una.
+La subnumeración `.n` es compartida entre las áreas de diseño: `RQ-001.2 ↔ GDS-001.2 ↔ LDS-001.2 ↔ UXS-001.2 ↔ ART-001.2 ↔ MET-001.2 ↔ QA-001.2` son el mismo hilo de trabajo visto por cada una.
 
 `ART` tiene **dos cortes**, como `QA`: el hilo `ART-XXX.n` y la entrega `ART-XXX`. El segundo no es simetría — la coherencia visual y el costo en pantalla son propiedades del conjunto y no se pueden medir asset por asset.
+
+`MET` también tiene dos cortes, y por una razón propia: el **plan** se escribe por pregunta —un hilo— y la **lectura** se hace sobre la build que se jugó, que es la entrega entera. Un playtest no juega un hilo. Es opcional como `LDS`, `UXS` y `ART`: Producción declara en el `RQ` si aplica, y un "no aplica" dice qué dimensión falta.
 
 **`SOL` y `EJ` son la excepción, y es deliberada: su relación con el `RQ` es 1:N.** Un `SOL` es la arquitectura de una épica, y una épica se decide una vez, no una por requerimiento — `Salto/SOL-001` declara en su propio `Insumo` que cubre `RQ-001.1` … `RQ-001.8`. Puede llevar `.n` cuando cubre un solo hilo, y puede no llevarlo cuando cubre el timeline entero. Las dos formas son válidas.
 
@@ -160,7 +169,8 @@ El trabajo de un proyecto vive en la carpeta del proyecto. `Vaultrum/` no se esc
 ├── 04_UI-UX/          UXS
 ├── 05_Programacion/   SOL · EJ
 ├── 06_Calidad/        QA
-└── 07_Arte/           ART
+├── 07_Arte/           ART
+└── 08_Metricas/       MET
 ```
 
 La carpeta existe si un área efectivamente escribió algo ahí: **nada se pre-crea**.
@@ -174,6 +184,7 @@ La carpeta existe si un área efectivamente escribió algo ahí: **nada se pre-c
 | Programación | `<Proyecto>/05_Programacion/` | `SOL` · `EJ` |
 | Control de Calidad | `<Proyecto>/06_Calidad/` | `QA` |
 | Arte | `<Proyecto>/07_Arte/` | `ART` |
+| Métricas | `<Proyecto>/08_Metricas/` | `MET` |
 | **Conocimiento** | **el sistema** — Staging y Core | su producto **no** es del proyecto |
 | **Arquitectura** | **el sistema** — `Salidas/ARQ` | interviene el vault, no el proyecto |
 
@@ -291,6 +302,16 @@ Entra **dos veces**, como UI/UX y por la misma razón: antes, con el presupuesto
 Aplica seis leyes de la verificación con una herramienta real —`Herramientas/calidad.py`— que mide versión congelada, verificación de build, trazabilidad del defecto, reverificación, cobertura sin huecos y riesgo con dueño, y compara el veredicto declarado contra el medido. **Un `QA` no cierra sin estar medido.**
 
 No arregla lo que encuentra, no revisa arquitectura ni estilo de código, y no valida la experiencia: eso sigue siendo del `VE` y del playtest.
+
+### [[Area_metricas]]
+
+**La que mide lo que hace la gente con lo que funciona.** Game Design escribe lo que espera que pase, Control de Calidad verifica que lo construido no se caiga y Producción valida que sea lo prometido; ninguna responde si **el jugador real se comporta como esperaba el diseño**. Esa pregunta es de esta área.
+
+**Entra dos veces**, como UI/UX, Arte y Calidad. Con el `GDS` cerrado y antes del `SOL`, con el **plan de medición**: un KPI definido entero —fórmula, población, ventana, fuente, baseline—, sus guardrails y el tracking plan mínimo que Programación implementa y Calidad verifica. Y con datos en la mano, antes del `VE`, con la **lectura**: el dato validado antes de leerse y leído contra el plan congelado, con hechos, interpretaciones, hipótesis y recomendación separados. Presta un tercer servicio, **Salud**, para un producto con jugadores.
+
+Produce `MET`, en dos cortes. Aplica seis leyes de la medición con `Herramientas/metricas.py` —objetivo antes que métrica, KPI entero y congelado, guardrails, cada evento justificado, la fase decide, el dato dice qué y no por qué—. **La fase del producto la declara Producción; el área la respeta y no la adivina.**
+
+Mide y lee; **no decide ni diseña**. Nació sin caso, y lo declara: sus cuatro sillas atacan anti-patrones de la disciplina, no defectos medidos en Vaultrum, y el primer `MET` real es el que las confirma o las funde.
 
 ### [[Area_conocimiento]]
 

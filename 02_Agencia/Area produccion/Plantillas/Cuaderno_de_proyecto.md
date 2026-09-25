@@ -34,6 +34,10 @@ motor · version elegida · plataforma · ruta del proyecto del motor
 
 ## 3. Estado
 
+fase del producto: <Planning · Pre-Production · Production · Testing ·
+                   Pre-Launch · Launch · Post-Launch · Live Ops>
+modelo de negocio: <premium · free-to-play · híbrido · suscripción · ads · no aplica>
+
 En qué punto de la cadena está el proyecto **hoy**, en dos o tres frases.
 Qué está entregado, qué está abierto, qué está pausado y por qué.
 
@@ -46,6 +50,14 @@ Es la única sección que crece con el trabajo.
 
 Qué se decidió, por qué, y **qué se descartó**. Una línea cada una.
 Lo descartado vale tanto como lo elegido: evita rediscutirlo en la sesión doce.
+
+| ID | Fecha | Tema | Estado | Decisión | Reemplaza a |
+|----|-------|------|--------|----------|-------------|
+| PRJ-001 | AAAA-MM-DD | … | Confirmado | la regla, verificable | — |
+
+Estados: Confirmado · Delegado · Provisional · Supuesto · Pendiente · Reemplazado.
+El ID no cambia nunca; una decisión nueva que deja sin vigencia a otra la nombra
+en "Reemplaza a" y la vieja pasa a Reemplazado — no se borra.
 
 ## 6. Pendientes
 

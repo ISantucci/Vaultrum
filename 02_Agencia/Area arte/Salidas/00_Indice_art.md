@@ -68,6 +68,23 @@ La última no es autocrítica: **es lo que hace que el defecto no vuelva.** Las 
 
 ---
 
+## Si el `ART` es una animación
+
+Una secuencia no tiene malla, así que tres de las cuatro secciones cambian de contenido y ninguna desaparece:
+
+```txt
+Contrato de escala        -> la referencia maestra y su version, alto de la silueta,
+                             linea de suelo, lienzo y pivot
+Contrato de lectura       -> la accion en silueta, a la escala y sobre el fondo reales
+Contrato de integracion   -> el manifiesto: orden, duracion por cuadro, loop, eventos,
+                             entrada y salida, in-place o root motion
+Contrato de costo         -> cuadros, lienzo y atlas
+```
+
+Y una sección más, obligatoria: **el nivel de validación alcanzado** —propuesta visual, secuencia validada, exportación validada o integración comprobada— con la salida de `animacion.py` que lo sostiene. Detalle en `RA-012`.
+
+---
+
 ## Dónde aterriza
 
 ```txt

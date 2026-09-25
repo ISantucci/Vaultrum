@@ -150,3 +150,22 @@ VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos 
 # el area declara como la que hace que el defecto no vuelva -- las nueve reglas
 # RA salieron todas de ahi.
 
+# ---------------------------------------------------------------------------
+# MET — el artefacto del Area de Metricas, creada el 2026-09-25 (ARQ-034).
+#
+# Misma situacion que ART y que QA cuando nacieron: CERO MET reales, asi que no
+# hay forma medida. NO entra como contrato de documentacion.py todavia, y ademas
+# no hace falta que entre: el area nacio con su propio instrumento, metricas.py,
+# que ya mide el plan y la lectura contra las seis leyes de la medicion. Duplicar
+# esas secciones aca seria la segunda autoridad que gemelos.py existe para vigilar.
+#
+# Lo que 00_Indice_met declara hoy, para cuando toque medirlo por funcion:
+#
+#   MET-XXX.n | Insumo | Fase y modelo | Objetivo | Comportamiento esperado
+#             | KPI primario | Guardrails | Tracking plan | QA de eventos | Estado
+#   MET-XXX   | Insumo | KPI primario | Calidad del dato | Hechos | Interpretaciones
+#             | Hipotesis | Recomendacion | Proxima medicion | Estado
+#
+# Cuando haya cuatro MET reales de cada corte, se mide y se decide si el contrato
+# pasa aca o se queda en metricas.py.
+

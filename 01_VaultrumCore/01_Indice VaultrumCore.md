@@ -36,6 +36,7 @@ Contiene material sobre:
 - optimización;
 - criterios de entrega;
 - calidad y testing;
+- métricas y analytics;
 - experiencia de juego (índice hacia la Biblioteca);
 - estructuras de datos;
 - algoritmos;

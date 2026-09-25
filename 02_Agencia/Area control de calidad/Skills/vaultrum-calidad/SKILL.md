@@ -91,6 +91,8 @@ Congelá la versión y fijá el alcance **antes** de probar nada. Corré la defi
 
 Si falta algo imprescindible: **NO LISTO PARA QA**, con lo que falta y a quién se le pide. No empieces igual "para ir adelantando".
 
+**Si el hilo tiene un `MET-XXX.n`**, su sección *QA de eventos* son criterios de aceptación como cualquier otro, y entran al pase con el perfil de entrada **telemetría**: cada evento dispara, una sola vez, a tiempo, con sus parámetros y tipos, en el entorno correcto y con el signo correcto. Los escribió Métricas; los ejecutás vos sobre la build congelada. Un evento que no pasa es un defecto con dueño —Programación—, no un detalle: el `MET-XXX` que lo lea después va a medir el bug en vez del jugador.
+
 Si el proyecto todavía no tiene planilla, copiá `Herramientas/Vaultrum_QA_Operations.xlsx` a `06_Proyectos/<Proyecto>/06_Calidad/` y borrá las filas de ejemplo. Esa copia es acumulativa: se usa en todos los `QA` del proyecto.
 
 ## Paso 2 — Análisis de riesgo (Analista de Riesgo)

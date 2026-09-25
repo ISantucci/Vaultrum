@@ -502,14 +502,14 @@ def specs_d():
     d.n('arqui', 'Arquitectura — la forma del vault', 'rol', 0, 1)
     d.n('prod', 'Producción — TL + RQ, dueña de la entrega', 'rol', 2, 1, 220)
     d.n('cono', 'Conocimiento — qué vuelve al Core', 'rol', 4, 1)
-    d.n('diseno', 'Game Design · Level Design · UI/UX → GDS · LDS · UXS', 'rol', 1, 2, 230, 62)
+    d.n('diseno', 'Game Design · Level Design · UI/UX · Arte · Métricas → GDS · LDS · UXS · ART · MET', 'rol', 1, 2, 250, 76)
     d.n('prog', 'Programación — SOL + EJ', 'rol', 2, 2)
     d.n('cal', 'Calidad — QA', 'rol', 3, 2)
     d.n('proy', '06_Proyectos — el trabajo real: TL → RQ → GDS → SOL → EJ → QA → VE', 'artefacto', 2, 3, 300, 62)
     d.n('esc', '05_Escuela — Biblioteca + misiones EST', 'capa', 0, 3)
     d.n('com', '03_Comunidad — PUB + Archivo', 'capa', 4, 3)
     d.n('ia', '04_IA Operativa — AiCare + Despacho', 'capa', 0, 4)
-    d.n('gate', 'Gate de cierre en cada commit: grafo · grafo --paquete · gemelos · documentacion', 'gate', 2, 4, 300, 62)
+    d.n('gate', 'Gate de cierre en cada commit: grafo · grafo --paquete · gemelos · documentacion · requerimientos', 'gate', 2, 4, 300, 62)
     d.n('puertas', 'CLAUDE.md · AGENTS.md — las dos puertas, idénticas', 'externo', 4, 4)
     d.a('core', 'prod', 'alimenta el arranque').a('prod', 'diseno').a('prod', 'prog')
     d.a('diseno', 'prog', 'paquete de diseno').a('prog', 'cal').a('cal', 'prod', 'QA → VE')
@@ -525,8 +525,55 @@ def specs_d():
     return D
 
 
+def specs_e():
+    """Arte y Metricas: las dos areas que entraron despues de los doce primeros."""
+    D = []
+
+    d = Diagrama('agencia-09-arte', 'Área de Arte',
+                 'Cuatro modos. Construye los assets y verifica lo que afirma de ellos con un instrumento, nunca con la vista.')
+    d.n('lds', 'LDS + GDS cerrados · la dirección de arte del owner', 'insumo', 0, 0, 220, 76)
+    d.n('escala', 'Modo Escala — dimensión maestra, presupuesto, paleta. ANTES del primer asset', 'rol', 1, 0, 220, 88)
+    d.n('arta', 'ART-XXX.n mitad A', 'artefacto', 2, 0)
+    d.n('prod', 'Modo Producción — 02 → 03 → 06 → (04 · 05) → 06 → (07)', 'rol', 1, 1, 220, 88)
+    d.n('artb', 'ART-XXX.n el asset verificado', 'artefacto', 2, 1)
+    d.n('pasada', 'Modo Pasada — el set completo: coherencia y costo en pantalla, medidos', 'rol', 1, 2, 220, 88)
+    d.n('artx', 'ART-XXX la entrega', 'artefacto', 2, 2)
+    d.n('encargo', 'Modo Encargo — el prompt al generador: pieza · hoja · animación', 'rol', 1, 3, 220, 88)
+    d.n('gen', 'Generador externo (ChatGPT · Codex): no se juzga a sí mismo', 'externo', 2, 3, 200, 76)
+    d.n('inst', 'arte.py — malla · presupuesto · paleta · entrega', 'instrumento', 3, 1, 210, 76)
+    d.n('anim', 'animacion.py — cuadros · alfa · pivot · loop · GIF', 'instrumento', 3, 3, 210, 76)
+    d.n('prog', 'Programación → integra', 'externo', 4, 1)
+    d.n('nota', 'El que construye (03) no se verifica a sí mismo, y el que verifica (06) no repara. Fuera de ley, rebota al 03 con el hallazgo.', 'nota', 0, 4, 860, 20)
+    d.a('lds', 'escala').a('escala', 'arta').a('arta', 'prod', 'habilita')
+    d.a('prod', 'artb').a('artb', 'inst').a('inst', 'prog')
+    d.a('pasada', 'artx')
+    d.a('encargo', 'gen').a('gen', 'anim')
+    D.append(d)
+
+    d = Diagrama('agencia-10-metricas', 'Área de Métricas',
+                 '¿El jugador real se comporta como esperaba el diseño? Mide y lee; no decide ni diseña. La fase la declara Producción.')
+    d.n('ins', 'RQ con objetivo (MET aplica) · GDS cerrado · fase del cuaderno', 'insumo', 0, 0, 220, 88)
+    d.n('obj', '01 Analista de Objetivo — un KPI entero + guardrails', 'rol', 1, 0, 210, 76)
+    d.n('dis', '02 Diseñador de Medición — tracking plan mínimo + QA de eventos', 'rol', 2, 0, 210, 88)
+    d.n('metn', 'MET-XXX.n plan de medición — el KPI queda congelado', 'artefacto', 3, 0, 210, 76)
+    d.n('prog', 'Programación implementa los eventos · Calidad los verifica', 'externo', 4, 0, 200, 88)
+    d.n('datos', 'Datos de la build jugada (CSV de eventos)', 'insumo', 0, 2, 200, 76)
+    d.n('val', '04 Validador — el dato se valida ANTES de leerse', 'rol', 1, 2, 210, 76)
+    d.n('lec', '03 Lector — contra el plan congelado: hecho · interpretación · hipótesis · recomendación', 'rol', 2, 2, 220, 100)
+    d.n('met', 'MET-XXX lectura de la entrega', 'artefacto', 3, 2)
+    d.n('ve', 'Producción → VE (decide)', 'externo', 4, 2)
+    d.n('inst', 'metricas.py — plan · lectura · datos', 'instrumento', 2, 1, 210, 62)
+    d.n('nota', 'La lectura usa el MISMO KPI que congeló el plan: si no, es metric shopping y rebota al 03. Nace sin caso: el primer MET real confirma o funde las cuatro sillas.', 'nota', 0, 3, 860, 20)
+    d.a('ins', 'obj').a('obj', 'dis').a('dis', 'metn').a('metn', 'prog')
+    d.a('datos', 'val').a('val', 'lec').a('lec', 'met').a('met', 've')
+    d.a('metn', 'inst', 'se mide', 'punteada').a('met', 'inst', '', 'punteada')
+    d.a('inst', 'lec', 'otro KPI: rebota', 'rebote')
+    D.append(d)
+    return D
+
+
 def specs():
-    return specs_a() + specs_b() + specs_c() + specs_d()
+    return specs_a() + specs_b() + specs_c() + specs_d() + specs_e()
 
 
 if __name__ == '__main__':

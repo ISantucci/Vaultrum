@@ -48,16 +48,16 @@ Cinco capas viajan, y hay una sexta carpeta que no:
 
 | Capa | Qué es |
 |------|--------|
-| **01_VaultrumCore** | la base de conocimiento: SOLID, patrones, optimización, estructuras, algoritmos, managers, IA para juegos, y los criterios de entrega |
-| **02_Agencia** | las nueve áreas que ejecutan y sostienen la cadena, cada una con sus agentes, flujos, salidas y su skill ejecutable |
+| **01_VaultrumCore** | la base de conocimiento: SOLID, patrones, optimización, estructuras, algoritmos, managers, IA para juegos, calidad y testing, métricas de producto, y los criterios de entrega |
+| **02_Agencia** | las diez áreas que ejecutan y sostienen la cadena, cada una con sus agentes, flujos, salidas y su skill ejecutable |
 | **03_Comunidad** | gobernanza, contribución, licencia y marca — y la preparación de lo que el sistema publica, con su Archivo |
 | **04_IA Operativa** | cómo una IA opera el vault sin inflarlo: tokens, prompteo, el pass GC y sus herramientas de medición |
 | **05_Escuela** | aprendizaje proactivo y la Biblioteca: fundamentos de experiencia y análisis de juegos por género |
 | `06_Proyectos` | **no viaja.** Es el workspace del owner: donde cae `TL → RQ → GDS → SOL → EJ → QA → VE` de cada proyecto. En tu clone lo creás vos, y el sistema te dice dónde va cada salida |
 
-Trece **skills ejecutables** —una por cada una de las nueve áreas, más la Escuela, la Comunidad, AiCare y el Despacho— son lo que hace que la cadena corra en vez de quedarse en documentación.
+Catorce **skills ejecutables** —una por cada una de las diez áreas, más la Escuela, la Comunidad, AiCare y el Despacho— son lo que hace que la cadena corra en vez de quedarse en documentación.
 
-**Seis se registran y siete se alcanzan.** Un asistente carga por adelantado el nombre y la descripción de cada skill registrada —la use o no— y ese presupuesto tiene tope. Vaultrum registra las áreas por donde el trabajo entra en frío (Producción, Arquitectura, Escuela, Comunidad, AiCare, Despacho) y deja las siete de la cadena —Game Design, Level Design, UI/UX, Arte, Programación, Calidad y Conocimiento— viviendo en su área, alcanzables por ruta desde el índice de la puerta. Existen igual y se usan igual: **descubrir cuesta presupuesto, alcanzar no cuesta nada**. La ley y el reparto están en `ARQ-033`, y el instalador verifica que ninguna quede sin camino.
+**Seis se registran y ocho se alcanzan.** Un asistente carga por adelantado el nombre y la descripción de cada skill registrada —la use o no— y ese presupuesto tiene tope. Vaultrum registra las áreas por donde el trabajo entra en frío (Producción, Arquitectura, Escuela, Comunidad, AiCare, Despacho) y deja las ocho de la cadena —Game Design, Level Design, UI/UX, Arte, Métricas, Programación, Calidad y Conocimiento— viviendo en su área, alcanzables por ruta desde el índice de la puerta. Existen igual y se usan igual: **descubrir cuesta presupuesto, alcanzar no cuesta nada**. La ley y el reparto están en `ARQ-033`, y el instalador verifica que ninguna quede sin camino.
 
 ---
 
@@ -66,7 +66,7 @@ Trece **skills ejecutables** —una por cada una de las nueve áreas, más la Es
 - **Obsidian**, para abrir y navegar el vault (la navegación usa wikilinks en cascada).
 - **Git**, para clonar o versionar.
 - Cualquier herramienta de IA capaz de leer archivos Markdown y usar el vault como contexto. Las skills están escritas en el formato de skills de Claude, y su contenido es portable a cualquier agente que lea instrucciones en Markdown.
-- **Python 3**, y no es opcional. Los instrumentos del sistema son scripts, y su salida *es* la evidencia: hay 18 versionados en cuatro capas. El gate de cierre que corre en cada commit son cuatro de ellos (`grafo.py`, `grafo.py --paquete`, `gemelos.py`, `documentacion.py`); sin Python, el vault se puede leer y no se puede medir.
+- **Python 3**, y no es opcional. Los instrumentos del sistema son scripts, y su salida *es* la evidencia: hay 28 versionados. El gate de cierre que corre en cada commit son cinco mediciones hechas con cuatro de ellos (`grafo.py`, `grafo.py --paquete`, `gemelos.py`, `documentacion.py`, `requerimientos.py`); sin Python, el vault se puede leer y no se puede medir.
 
 ---
 

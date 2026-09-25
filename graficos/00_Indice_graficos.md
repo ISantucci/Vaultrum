@@ -1,6 +1,6 @@
 # Gráficos del sistema
 
-Doce diagramas: uno por cada área de la Agencia, uno por cada torre, y uno del sistema entero. Existen para poder **mirar** Vaultrum en vez de leerlo — y para que una incoherencia se vea antes de que cueste.
+Catorce diagramas: uno por cada área de la Agencia, uno por cada torre, y uno del sistema entero. Existen para poder **mirar** Vaultrum en vez de leerlo — y para que una incoherencia se vea antes de que cueste.
 
 Se entra por `00_START_HERE`, que los nombra.
 
@@ -21,11 +21,11 @@ Los dos son **copias generadas**. La fuente es `generar_graficos.py`, en esta mi
 python3 graficos/generar_graficos.py
 ```
 
-Es la misma regla que las skills: doce diagramas dibujados a mano divergen igual que doce textos que dicen lo mismo. Editar un `.drawio` a mano se pierde en la próxima corrida.
+Es la misma regla que las skills: catorce diagramas dibujados a mano divergen igual que catorce textos que dicen lo mismo. Editar un `.drawio` a mano se pierde en la próxima corrida.
 
 ## El lenguaje visual
 
-Es el mismo en los doce, para que se puedan leer en serie.
+Es el mismo en los catorce, para que se puedan leer en serie.
 
 ```txt
 insumo        lo que entra al área, y lo produjo otro
@@ -38,7 +38,7 @@ flecha roja   un rebote: vuelve hacia atrás con un hallazgo
 flecha punteada  una relación transversal, no un paso de la cadena
 ```
 
-## Los doce
+## Los catorce
 
 | Archivo | Qué muestra |
 |---|---|
@@ -50,6 +50,8 @@ flecha punteada  una relación transversal, no un paso de la cadena
 | `agencia-06-control-de-calidad` | Gate de hilo y gate de entrega. Incluye la deuda: el de hilo nunca corrió. |
 | `agencia-07-conocimiento` | Copiloto, Gate y Cosecha, y el merge al Core con aprobación del owner. |
 | `agencia-08-arquitectura` | Plano, Emplazamiento y Pasada, y los instrumentos que alimentan el gate de cierre. |
+| `agencia-09-arte` | Los cuatro modos —Escala, Producción, Pasada y Encargo— y sus dos instrumentos: el de la malla y el de las secuencias de animación. Faltaba desde que el área existe. |
+| `agencia-10-metricas` | El plan que congela el KPI antes del dato, la lectura que no lo puede cambiar, y el instrumento que compara los dos. |
 | `torre-01-comunidad` | Disparadores, los tres tiempos del post, y la verificación contra el archivo. |
 | `torre-02-ia-operativa` | Los dos presupuestos: entrada (AiCare) y ejecución (Despacho). |
 | `torre-03-escuela` | La misión de cuatro roles, la Biblioteca y la frontera con el Core. |

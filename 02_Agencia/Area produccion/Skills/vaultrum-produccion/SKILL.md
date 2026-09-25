@@ -1,6 +1,6 @@
 ---
 name: "vaultrum-produccion"
-description: "Puerta de entrada del Modo Vaultrum y Área de Producción. Úsala para cualquier trabajo sobre un proyecto de videojuego o software —de cero o ya empezado—: alcance, Timeline (TL) y Requerimientos (RQ), y el cierre validado de la entrega (VE). También para lo que la cadena resuelve adentro, derivando al área que corresponde: mecánicas, reglas, balance, economía, progresión y dificultad; niveles, escenarios, pacing, encuentros y checkpoints; HUD, menús, pantallas, navegación, accesibilidad, contraste y daltonismo; assets 3D, modelado, escala, presupuesto de polígonos, paleta y entrega .glb/.fbx; código Unity/C#, scripts, arquitectura técnica, bugs y optimización; control de calidad, build, regresión y GO/NO-GO; y la verificación documental de cada artefacto. El índice de áreas está en el Paso 3 de esta skill. No usar para ordenar el vault (Arquitectura), estudiar (Escuela) ni publicar (Comunidad)."
+description: "Puerta de entrada del Modo Vaultrum y Área de Producción. Úsala para cualquier trabajo sobre un proyecto de videojuego o software —de cero o ya empezado—: alcance, Timeline (TL) y Requerimientos (RQ), y el cierre validado de la entrega (VE). También para lo que la cadena resuelve adentro, derivando al área que corresponde: mecánicas, reglas, balance, economía, progresión y dificultad; niveles, escenarios, pacing, encuentros y checkpoints; HUD, menús, pantallas, navegación, accesibilidad, contraste y daltonismo; assets 3D, modelado, escala, presupuesto de polígonos, paleta y entrega .glb/.fbx, animación de sprites y encargos a generadores de imagen; métricas, KPIs, telemetría, retención, funnels y lectura de playtests; código Unity/C#, scripts, arquitectura técnica, bugs y optimización; control de calidad, build, regresión y GO/NO-GO; y la verificación documental de cada artefacto. El índice de áreas está en el Paso 3 de esta skill. No usar para ordenar el vault (Arquitectura), estudiar (Escuela) ni publicar (Comunidad)."
 ---
 
 # Área de Producción — Productor / Orquestador del Modo Vaultrum
@@ -247,6 +247,7 @@ Plantilla y reglas completas: `Cuaderno_de_proyecto` (en `Plantillas/`). Lo mín
 
 - Las quince respuestas, **cada una marcada** `declarado` / `inferido` / `faltante`.
 - El entorno, con la versión de motor que eligió el owner.
+- **La fase del producto** —una de las ocho: Planning, Pre-Production, Production, Testing, Pre-Launch, Launch, Post-Launch, Live Ops— y el **modelo de negocio**. Salen de las preguntas 8, 13 y 15; si no alcanzan, se marcan como faltante. Detalle abajo, en *Quién declara la fase*.
 - El estado, en dos o tres frases.
 - Lo pendiente, incluido lo que dejó la palabra de salteo.
 
@@ -258,10 +259,10 @@ Plantilla y reglas completas: `Cuaderno_de_proyecto` (en `Plantillas/`). Lo mín
 
 Con lo mínimo reunido, formalizá:
 
-- **TL-XXX** — timeline/roadmap del proyecto o de la iteración.
+- **TL-XXX** — timeline/roadmap del proyecto o de la iteración. Declara la **fase del producto** en su `Objetivo`, copiada del cuaderno.
 - **RQ-XXX.n** — un requerimiento por bloque de trabajo, incluyendo explícitamente los básicos de juego (menú, estados, victoria, reinicio) como RQ propios y la restricción de entorno.
 
-Numeración: revisá los índices antes de numerar; mantené relación 1:1 `TL ↔ RQ`. Dónde aterriza: `<Proyecto>/01_Produccion/`, según la regla **Dónde aterriza cada salida** de `02_Indice Agencia`. La ruta del proyecto sale del cuaderno; **nunca se escribe adentro de `Vaultrum/`**. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. Actualizá el índice **del proyecto** (el cuaderno). Cada RQ marca si es **jugable** (necesita GDS) o no.
+Numeración: revisá los índices antes de numerar; mantené relación 1:1 `TL ↔ RQ`. Dónde aterriza: `<Proyecto>/01_Produccion/`, según la regla **Dónde aterriza cada salida** de `02_Indice Agencia`. La ruta del proyecto sale del cuaderno; **nunca se escribe adentro de `Vaultrum/`**. Si no hay carpeta de proyecto, no la inventes: devolvé a Producción. Actualizá el índice **del proyecto** (el cuaderno). Cada RQ marca si es **jugable** (necesita GDS) o no, y si **Métricas aplica**.
 
 ## Paso 3 — Pivotear entre áreas (orquestación) hasta comienzo de desarrollo
 
@@ -276,8 +277,11 @@ RQ jugable        → Game Design (vaultrum-gamedesign)  → GDS-XXX.n
   ├── el GDS tiene interfaz                   → UI/UX mitad B (vaultrum-uiux)       → UXS-XXX.n
   ├── el entregable tiene assets visuales     → Arte mitad A (vaultrum-arte)        → ART-XXX.n
   │                                             ANTES del primer asset, y consume el LDS
-  └── con GDS (+ LDS/UXS/ART si existen)      → Programación (vaultrum-programador) → SOL/EJ
+  ├── hay una pregunta sobre lo que el        → Métricas mitad A (vaultrum-metricas) → MET-XXX.n
+  │   jugador va a hacer, y decide algo         ANTES del SOL: el plan trae los eventos
+  └── con GDS (+ LDS/UXS/ART/MET si existen)  → Programación (vaultrum-programador) → SOL/EJ
 hilo cerrado      → Control de Calidad (vaultrum-calidad) → QA-XXX.n antes del VE
+hubo datos        → Métricas mitad B (vaultrum-metricas) → MET-XXX, la lectura, antes del VE
 RQ no jugable     → UI/UX mitad A si tiene interfaz, y de ahí a Programación con el RQ.
 falta insumo      → marcá el faltante y no avances ese hilo.
 gap de conocimiento → Escuela (vaultrum-escuela) antes de seguir.
@@ -286,7 +290,7 @@ aprendizaje       → al cerrar, si hay criterio reutilizable, derivá a Conocim
 
 ### Índice de áreas — cómo se abre cada una
 
-**Estas siete áreas no están registradas como skills.** No aparecen en la lista que el asistente carga sola: se abren leyendo su `SKILL.md` por ruta, desde acá. No es una degradación — es la ley de `ARQ-033`: **descubrir cuesta presupuesto residente y alcanzar no cuesta nada**, y a ninguna de las siete se entra en frío, porque ninguna puede correr sin un insumo que otra produjo antes.
+**Estas ocho áreas no están registradas como skills.** No aparecen en la lista que el asistente carga sola: se abren leyendo su `SKILL.md` por ruta, desde acá. No es una degradación — es la ley de `ARQ-033`: **descubrir cuesta presupuesto residente y alcanzar no cuesta nada**, y a ninguna de las ocho se entra en frío, porque ninguna puede correr sin un insumo que otra produjo antes.
 
 Cuando derivás a un área, **leé su `SKILL.md` completo antes de trabajar con ella**. Las rutas son relativas a la raíz del vault:
 
@@ -295,6 +299,7 @@ vaultrum-gamedesign     02_Agencia/Area game design/Skills/vaultrum-gamedesign/S
 vaultrum-leveldesign    02_Agencia/Area level design/Skills/vaultrum-leveldesign/SKILL.md
 vaultrum-uiux           02_Agencia/Area ui-ux/Skills/vaultrum-uiux/SKILL.md
 vaultrum-arte           02_Agencia/Area arte/Skills/vaultrum-arte/SKILL.md
+vaultrum-metricas       02_Agencia/Area metricas/Skills/vaultrum-metricas/SKILL.md
 vaultrum-programador    02_Agencia/Area programacion/Skills/vaultrum-programador/SKILL.md
 vaultrum-calidad        02_Agencia/Area control de calidad/Skills/vaultrum-calidad/SKILL.md
 vaultrum-conocimiento   02_Agencia/Area conocimiento/Skills/vaultrum-conocimiento/SKILL.md
@@ -318,6 +323,33 @@ ART no aplica — <qué dimensión falta> : <por qué falta>
 **Tu límite:** declarás **si** el entregable tiene arte propio. No decidís la escala, ni el presupuesto de caras, ni la paleta — eso es del `01_Director_Escala`. Es la misma línea que separa marcar un `RQ` como jugable de diseñar el gameplay.
 
 Y una advertencia que el área trae medida: **`ART` tiene dos cortes**, como `QA`. El `ART-XXX.n` cierra un hilo; el `ART-XXX` cierra la entrega y es el único que puede decir si el set es coherente y si entra en presupuesto, porque **eso son propiedades del conjunto**. No lo saltees: doce assets que pasan individualmente pueden ser un set incoherente.
+
+### Quién declara la fase del producto, y si Métricas aplica: vos
+
+Cada fase hace una pregunta distinta —¿vale la pena construirlo? ¿funciona el núcleo? ¿el jugador se comporta como esperaba el diseño? ¿funciona a escala?— y la métrica correcta es la que responde la pregunta de la fase. Sin fase declarada, cualquier área que mida termina contestando la pregunta de otra fase: medir ARPPU en un prototipo que todavía no sabe si su loop funciona.
+
+```txt
+Planning         ¿vale la pena construirlo?
+Pre-Production   ¿funciona el núcleo?
+Production       ¿los sistemas funcionan como deberían?
+Testing          ¿el jugador real se comporta como esperaba el diseño?
+Pre-Launch       ¿funciona como producto completo antes de escalar?
+Launch           ¿qué pasa con el mercado real, a escala?
+Post-Launch      ¿cómo evoluciona?
+Live Ops         ¿cómo se mantiene y mejora un producto vivo?
+```
+
+La fase es **tuya**: la escribís en el cuaderno y la copiás en el `Objetivo` de cada `TL`. Cambia cuando el proyecto cambia de pregunta, no por entrega. El detalle de qué se mide en cada una vive en el Core, en `Fases del producto y que medir`.
+
+Y en cada `RQ`, igual que con `UXS` y `ART`:
+
+```txt
+MET aplica    — hay una pregunta sobre lo que el jugador va a hacer, y su respuesta decide algo: <cuál>
+MET no aplica — <qué dimensión falta> : <por qué>
+                (no juega nadie más que el owner, es infraestructura, es una herramienta sin usuarios…)
+```
+
+**Tu límite:** declarás la fase, el objetivo y **si** se mide. No elegís el KPI ni diseñás eventos — eso es del `01_Analista_Objetivo` y el `02_Disenador_Medicion`. Y cuando la lectura vuelve, **decidís vos**: Métricas mide y lee, no decide.
 
 ### Quién declara que UI/UX aplica: vos
 
@@ -347,7 +379,9 @@ El Productor decide **qué área toca y en qué orden**, según el RQ. No ejecut
 
 Cuando **todos los hilos `.n` de un timeline** tienen su `EJ` con revisión técnica en OK, el timeline pasa por el **Área de Control de Calidad** (skill `vaultrum-calidad`), que corre el gate y devuelve un `QA-XXX` con veredicto. Recién entonces **vuelve a Producción**. No termina en Programación.
 
-**El `QA` es insumo, no trámite:** leelo antes de validar —veredicto, riesgo residual, desviaciones aceptadas— y no vuelvas a probar lo que ya se verificó. Con un `QA` en NO-GO la entrega no se valida: queda en *Ajustar* o *Pausado*.
+**El `QA` es insumo, no trámite:** leelo antes de validar —veredicto, riesgo residual, desviaciones aceptadas— y no vuelvas a probar lo que ya se verificó.
+
+**Si el timeline tuvo `MET-XXX.n`, la lectura `MET-XXX` también es insumo del `VE`.** Leela antes de validar: dice si el jugador hizo lo que el diseño esperaba, con los hechos separados de las hipótesis. Un plan de medición sin su lectura —porque nadie jugó todavía— no frena el `VE`: entra como deuda declarada, con la pregunta que quedó sin contestar. Con un `QA` en NO-GO la entrega no se valida: queda en *Ajustar* o *Pausado*.
 
 Corré el **Validador de Entrega** siguiendo su flujo (`Agentes/04_Validador_Entrega.md` y `Flujos/04_Flujo_Validacion_Entrega.md`): verificá la entrega contra los `RQ`, contra los `GDS` y contra la definición de terminado. Jalá `05_Fundamentos_de_experiencia_ludica` y hacé la lectura contra lo que **se puede jugar**, no contra el papel.
 
@@ -415,6 +449,7 @@ falta funcionalidad pedida / definición de terminado incompleta → Programaci�
 no se siente como fue diseñado                                  → Game Design
 recorrido o pacing del nivel                                    → Level Design
 el jugador no entiende qué hacer                                → UI/UX
+el jugador no hace lo que el diseño esperaba (lo dice el MET)   → Game Design
 la intención original estaba mal capturada                      → Consultor Estratégico
 ```
 
@@ -465,4 +500,4 @@ No diseña gameplay en profundidad (Game Design). No escribe código ni decide a
 
 ## Señales de mala respuesta
 
-Salta a programar sin TL/RQ · asume o fija una versión de motor no elegida por el owner · deja menú/estados/victoria/reinicio implícitos · planifica sin consultar el baseline de la Biblioteca · **sigue de largo con un libro de género vacío en vez de derivar a Escuela** · no deja escrita la prueba de cobertura table-stake → RQ · cierra un VE sin declarar en qué modo lo cerró · se saltea Level Design o UI/UX sin declarar por qué no aplican · da la entrega por terminada en el `EJ` sin pasar por el gate de calidad ni correr la validación de entrega · cierra en falso en vez de pausar · cierra el seteo sin relevar ni declarar lo que falta · pregunta lo que un escaneo del proyecto ya podía responder · numera sin revisar índices · rompe la trazabilidad `TL → RQ → GDS → LDS/UXS → SOL → EJ → QA` + `TL → QA` + `TL → VE`.
+Salta a programar sin TL/RQ · asume o fija una versión de motor no elegida por el owner · deja menú/estados/victoria/reinicio implícitos · planifica sin consultar el baseline de la Biblioteca · **sigue de largo con un libro de género vacío en vez de derivar a Escuela** · no deja escrita la prueba de cobertura table-stake → RQ · cierra un VE sin declarar en qué modo lo cerró · se saltea Level Design o UI/UX sin declarar por qué no aplican · no declara la fase del producto, o deja que otra área la adivine · pide métricas de escala en un prototipo · da la entrega por terminada en el `EJ` sin pasar por el gate de calidad ni correr la validación de entrega · cierra en falso en vez de pausar · cierra el seteo sin relevar ni declarar lo que falta · pregunta lo que un escaneo del proyecto ya podía responder · numera sin revisar índices · rompe la trazabilidad `TL → RQ → GDS → LDS/UXS → SOL → EJ → QA` + `TL → QA` + `TL → VE`.

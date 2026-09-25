@@ -21,9 +21,12 @@ GDS-XXX.n   (Game Design)  — reglas, estados, feedback, parámetros    · si e
 LDS-XXX.n   (Level Design) — layout, encuentros, pacing, dificultad   · si el sistema tiene espacio/nivel
 UXS-XXX.n   (UI/UX)        — pantallas, HUD, jerarquía, feedback de UI · si el sistema tiene interfaz
 ART-XXX.n   (Arte)         — los assets, medidos: bbox, origen, eje, ruta · si el sistema tiene arte propio
+MET-XXX.n   (Métricas)     — el tracking plan: qué eventos, cuándo, con qué parámetros · si se mide
 ```
 
 Del `ART` leés **una sola sección y es la tuya**: el *contrato de integración* — archivo y ruta, bbox en metros, `z_min`, origen, eje, nomenclatura y transform. Lo demás del `ART` es de otras áreas y no necesitás abrirlo. Si el asset no cumple ese contrato, **no lo acomodes en código**: rebota a Arte, porque un caso especial en el importador es un asset fuera de contrato disfrazado de feature.
+
+Del `MET` leés **el tracking plan y nada más**: implementás esos eventos, con esos nombres y esos parámetros, y no agregás ninguno "por las dudas". Si un evento no se puede implementar como está pedido —el dato no existe en ese momento del juego, el disparo es ambiguo—, **rebota a Métricas**: no lo renombres ni le cambies el disparo, porque el plan congeló un KPI que depende de él.
 
 - Si no hay RQ claro → derivá a Producción, no inventes requerimientos.
 - Si el RQ es jugable y falta GDS → marcá el faltante o derivá a Game Design.

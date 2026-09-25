@@ -92,9 +92,9 @@ Evidencia de que funciona: el contrato del kit de terreno —*todo apoya en `z=0
 
 ---
 
-## Los tres modos
+## Los cuatro modos
 
-Se entra **por el modo que corresponde al estado del trabajo**, no por todos.
+Se entra **por el modo que corresponde al estado del trabajo**, no por todos. El cuarto, **Encargo**, entró con la skill después de que el área existía; esta ficha lo sigue, porque ante divergencia manda la skill.
 
 ### Modo Escala
 
@@ -113,6 +113,19 @@ Los assets. `02` deriva la proporción de la referencia, `03` construye, `06` ve
 El área mejora su propio arte: `06` mide **todo el set**, `05` mira la coherencia del conjunto —la única medición que no se puede hacer asset por asset—, `04` calcula el costo en pantalla del set completo, `03` repara y `06` cierra. Produce un `ART-XXX` sin `.n`.
 
 Una pasada de este tipo ya encontró algo real sin buscarlo: `Kit_Arbusto` estaba **422 mm hundido bajo el piso**, violando el contrato de su propio kit, y llevaba una sesión entera así.
+
+### Modo Encargo
+
+El área no genera la imagen ni la animación: **escribe el encargo** para el generador externo —ChatGPT/OpenAI para una pieza o una hoja de referencia, Codex para una secuencia animada— y mide lo que vuelve. El generador es un taller externo y, como todo taller, no se juzga a sí mismo: por eso el Encargo no suma silla.
+
+```txt
+PIEZA       portada, key art, concept, avatar      un entregable: el gusto es del owner
+HOJA        referencia para modelar                una referencia, no una medida (RA-005)
+MALLA       si el generador devuelve 3D            un asset como cualquier otro: entra por 06
+ANIMACION   cuadros PNG + GIF de revision          una secuencia: animacion.py, RA-010 a RA-012
+```
+
+El procedimiento —las siete partes de una pieza, las doce líneas de una animación y la lista de lectura de lo que vuelve— vive en la skill.
 
 ---
 
@@ -205,6 +218,24 @@ El blueprint da formas y **la pose la da la función**; la ropa es un tramo, no 
 
 ---
 
+## Las tres reglas de animación
+
+Salieron del trabajo de animación de Miles con Codex: una caminata que repetía la misma pierna, otra que parecía correr, un ciclo correcto que estilizó de más al personaje, transparencias y desapariciones, y un tutorial que se iba a usar sobre violeta. Cada regla dice qué se mide con `animacion.py` y qué se juzga a mano contra la referencia maestra.
+
+### [[RA-010_Animacion_identidad_y_movimiento]]
+
+Identidad y movimiento son dos criterios: la referencia maestra se fija antes de animar, una corrección es local, los adjetivos se traducen a condiciones visibles, y los doce principios se aplican con su control de juego.
+
+### [[RA-011_Locomocion_por_apoyos]]
+
+Cada pierna se sigue por separado, nombrada por anatomía. El ciclo se aprueba por contactos, el enlace del loop se revisa, y in-place o root motion se decide con quien mueve al personaje.
+
+### [[RA-012_Secuencia_alfa_y_entrega_de_animacion]]
+
+Una vista previa no es un recurso listo: lienzo y pivot constantes, transparencia real revisada sobre el fondo real, el GIF sale de los PNG y no al revés, y cuatro niveles de validación que se declaran.
+
+---
+
 ## Flujos del área
 
 ### [[01_Flujo_Escala]]
@@ -273,6 +304,11 @@ Herramientas/arte.py         EL INSTRUMENTO — las seis leyes, cuatro familias
 Herramientas/primitivas.py   EL TALLER — 18 piezas
 Herramientas/render_vista.py render a archivo. Es un ENTREGABLE, no un control.
 Herramientas/probar_arte.py  la prueba del instrumento: 29 casos, 0 fallas
+
+Herramientas/animacion.py    LAS SECUENCIAS 2D — lo que vuelve de un encargo de
+                             animacion: cuadros, alfa, vacio, recorte, escala,
+                             paleta, suelo, loop y GIF
+Herramientas/probar_animacion.py   31 casos, 0 fallas, con Pillow y sin el
 ```
 
 **El archivo está partido en dos mitades, y esa partición es la `D` de SOLID escrita en un archivo.** La mitad de abajo son las leyes y **no importa `bpy`**; la mitad de arriba es lo único que sabe de Blender: lee la escena y devuelve piezas como diccionarios.

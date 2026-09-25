@@ -114,6 +114,14 @@ Cada agente del área implementa la parte que corresponde a su responsabilidad, 
 
 ---
 
+## La fase del producto
+
+Producción declara en qué **fase** está el proyecto —Planning, Pre-Production, Production, Testing, Pre-Launch, Launch, Post-Launch o Live Ops— y con qué **modelo de negocio**. Vive en el cuaderno y se copia en el `Objetivo` de cada `TL`.
+
+No es un rótulo: cada fase hace una pregunta distinta —¿vale la pena? ¿funciona el núcleo? ¿el jugador hace lo esperado? ¿funciona a escala?— y lo que se le puede exigir a una entrega, lo que conviene medir y lo que todavía no tiene sentido pedir dependen de esa pregunta. Es el dato que el Área de Métricas lee y no adivina. El criterio de cada fase vive en el Core, en `Fases del producto y que medir`.
+
+---
+
 ## El commit del proyecto
 
 El `VE` en **Cerrado** es lo que habilita el commit de la entrega. Es una consecuencia del cierre y es de esta área: es la que verificó que lo entregado sea lo prometido.

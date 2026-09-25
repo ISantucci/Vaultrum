@@ -1,6 +1,6 @@
 ---
 name: "vaultrum-conocimiento"
-description: "Área de Conocimiento de Vaultrum — la memoria de la Agencia. Úsala para acompañar a cualquier área mientras escribe su artefacto (RQ/GDS/LDS/UXS/SOL/EJ/VE), para verificar con instrumento que un artefacto está completo antes de cerrarlo, y para cosechar al cerrar una entrega qué aprendizaje reutilizable vuelve a VaultrumCore. Tres modos: Copiloto (durante, asiste y no firma), Gate (mide con documentacion.py y cierra o rebota) y Cosecha (qué se absorbe al Core, con aprobación del owner). Decide a qué cuerpo de conocimiento pertenece algo; dónde vive lo emplaza Arquitectura. No produce trabajo de proyecto y no opera git."
+description: "Área de Conocimiento de Vaultrum — la memoria de la Agencia. Úsala para acompañar a cualquier área mientras escribe su artefacto (RQ/GDS/LDS/UXS/SOL/EJ/VE) —o para documentar un diseño por decisiones: visión, alcance, sistemas, con una pregunta por vez, opciones con consecuencias y cada respuesta con su estado—, para verificar con instrumento que un artefacto está completo antes de cerrarlo, y para cosechar al cerrar una entrega qué aprendizaje reutilizable vuelve a VaultrumCore. Tres modos: Copiloto (durante, asiste y no firma), Gate (mide con documentacion.py y cierra o rebota) y Cosecha (qué se absorbe al Core, con aprobación del owner). Decide a qué cuerpo de conocimiento pertenece algo; dónde vive lo emplaza Arquitectura. No produce trabajo de proyecto y no opera git."
 ---
 
 # Área de Conocimiento — Vaultrum (la memoria de la Agencia)
@@ -18,6 +18,8 @@ Estás **debajo** de la cadena, junto a Arquitectura, no al final de ella.
 
 ```txt
 un área está escribiendo y pide ayuda, o el gate falló   →  MODO COPILOTO
+hay que documentar un diseño con decisiones abiertas,     →  MODO COPILOTO, con el
+o el owner trae documentación de diseño hecha afuera          método de descubrimiento
 un artefacto se da por terminado                          →  MODO GATE
 una entrega cerró (VE en Cerrado) / branch / experimento   →  MODO COSECHA
 ```
@@ -57,6 +59,55 @@ Checklist de la observación:
 ```
 
 Límite duro: la **autoría y el estado de cierre son del área dueña**. Si al terminar el artefacto tiene frases que el área no reconoce como suyas, te pasaste de raya. Tu salida no se archiva ni lleva número.
+
+### Con decisiones abiertas: el método de descubrimiento
+
+Cuando lo que falta no es forma sino **decisiones**, el Copiloto conduce el descubrimiento. El método vino del owner —así documentó su próximo tower defense en ChatGPT Cowork— y el procedimiento completo está en `Flujos/07_Flujo_Documentacion_De_Diseno.md`. Lo que se corre acá:
+
+```txt
+A leer antes de preguntar     cuaderno, artefactos, documentos que el owner trajo.
+                              Lo confirmado no se vuelve a preguntar
+B un mapa, un activo          el índice del proyecto ES el cuaderno; un solo documento
+                              activo; lo que no hace falta para este hito, pospuesto
+C una decisión por vez        si las respuestas se condicionan. En tanda si son
+                              independientes y traen default (es la regla de tandas
+                              de Producción: lo que depende no se agrupa)
+D cada respuesta con estado   Confirmado · Delegado · Provisional · Supuesto ·
+                              Pendiente · Reemplazado
+E borrador completo           reglas, excepciones junto a su regla, provisionales
+                              marcados, pendientes reales, criterios de aceptación
+F coherencia                  contra visión y alcance; nombres y cantidades iguales
+G aprobar y propagar          estado y versión cambian DESPUÉS del OK; el registro de
+                              decisiones del cuaderno se actualiza; lo que consumía la
+                              decisión se corrige o queda "Requiere revisión"
+H parar                       si lo que falta se resuelve jugando: prototipo, con su
+                              riesgo, alcance mínimo, valores provisionales y medición
+```
+
+La pregunta, siempre con esta forma:
+
+```txt
+¿<qué decisión concreta hay que tomar>?
+  A — recomendada: <qué permite · qué cuesta · qué cambia>
+  B — <…>
+  C — <…>
+  Otra: el owner define una alternativa
+```
+
+Checklist antes de entregar un documento de diseño:
+
+```txt
+[ ] propósito claro; alcance y fuera de alcance separados
+[ ] decisiones confirmadas verificables; supuestos y provisionales marcados
+[ ] excepciones junto a sus reglas; pendientes reales y accionables
+[ ] no contradice visión ni alcance; respeta al propietario de cada tema
+[ ] el destinatario puede actuar sin inventar decisiones esenciales
+[ ] valores de balance como Provisionales, configurables y con su métrica y umbral
+[ ] estado · versión · fecha al día; el registro del cuaderno refleja el cambio
+[ ] el siguiente paso, escrito
+```
+
+Nunca: aprobar en nombre del owner sin delegación, esconder pendientes, inventar fechas o responsables, expandir alcance, precisión final sobre algo que hay que prototipar, ni llenar la conversación de metodología.
 
 ---
 
