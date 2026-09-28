@@ -78,6 +78,11 @@ de Calidad               QA-XXX.n por hilo · QA-XXX por entrega            │
                          la lectura de la entrega, si hubo datos           │
   ↓                                                                        │
 Área de Producción     → VE           (validación de entrega del TL)       │
+  ↓                                                                        │
+Área de Producción     → revisión de fase (¿la fase respondió su pregunta?)│
+                         avanzar · seguir · volver · cortar — el owner     │
+  ↓ (señales de parada en cero, o aceptadas por escrito)                   │
+  el próximo TL                                                            │
   │                                                                        │
   └──── aprendizaje reutilizable ──► Área de Conocimiento ─── merge ───────┘
                                      (control de versiones del Core)
@@ -232,6 +237,7 @@ Los tres fallos fueron de borde, y las tres reglas que los cubren viven ahora **
 | **Entrada** | el insumo se verifica antes de consumirlo: un libro de género vacío dispara una misión de Escuela, no se suple con intuición | `vaultrum-produccion`, gate de insumo de Biblioteca |
 | **Ramas opcionales** | un "no aplica" declara qué dimensión falta, y se comprueba a posteriori con el test del "no aplica" | `vaultrum-gamedesign` (declara) + `vaultrum-produccion` (comprueba en el `VE`) |
 | **Salida** | existir en disco es parte del cierre: un `EJ` no está reportado si el artefacto no está donde el `TL` dice | `vaultrum-programador`, gate de existencia en disco |
+| **Fase** | una fase no se cierra por inercia, y no se abre trabajo nuevo sobre deuda que nadie mira: después de cada `VE`, revisión de fase con criterio de salida; antes de cada `TL`, las señales de parada | `vaultrum-produccion` + `fase.py`, con la evidencia de Calidad y Métricas |
 
 Criterio de fondo en el Core: `Gates verificables` — *un gate que no se puede verificar mecánicamente no es un gate, es una intención.*
 
@@ -257,7 +263,7 @@ Si una skill y el Core divergen, el Core es el criterio y la skill es el procedi
 
 ### [[Area_produccion]]
 
-Convierte una intención en roadmap y requerimientos, y es **dueña del hilo de trabajo**. Produce `TL` (timeline) + `RQ` (requerimientos) al abrir, y `VE` (validación de entrega) al cerrar. Define qué se hace, por qué, con qué alcance y prioridad — y verifica al final que lo entregado sea lo prometido.
+Convierte una intención en roadmap y requerimientos, y es **dueña del hilo de trabajo**. Produce `TL` (timeline) + `RQ` (requerimientos) al abrir, y `VE` (validación de entrega) al cerrar. Define qué se hace, por qué, con qué alcance y prioridad — y verifica al final que lo entregado sea lo prometido. Después de cada `VE` corre la **revisión de fase** —¿la fase respondió su pregunta?—, y antes de cada `TL`, las **señales de parada**: las dos las mide `fase.py`, y la decisión de avanzar, seguir, volver o cortar es del owner.
 
 ### [[Area_gamedesign]]
 

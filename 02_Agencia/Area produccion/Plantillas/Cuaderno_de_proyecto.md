@@ -59,6 +59,15 @@ Estados: Confirmado · Delegado · Provisional · Supuesto · Pendiente · Reemp
 El ID no cambia nunca; una decisión nueva que deja sin vigencia a otra la nombra
 en "Reemplaza a" y la vieja pasa a Reemplazado — no se borra.
 
+Dos clases de fila las lee fase.py, así que su Tema tiene forma fija:
+
+| PRJ-0NN | … | fase: revision tras VE-XXX | Confirmado | SEGUIR en <fase> — por qué | — |
+| PRJ-0NN | … | parada S<n> tras VE-XXX    | Confirmado | por qué se sigue igual | — |
+
+La primera cierra la revisión de fase de esa entrega (sin ella, señal S9).
+La segunda acepta una señal de parada solo para esa entrega: con el VE siguiente,
+se vuelve a decidir.
+
 ## 6. Pendientes
 
 Faltantes declarados, incluidos los que dejó la palabra de salteo.
@@ -80,7 +89,12 @@ Por eso:
    NO es la fuente: se corrige primero y se responde despues.
 3. Un cuaderno mas viejo que su ultimo artefacto es un hallazgo,
    no un detalle.
+4. La fecha sola no alcanza: un cuaderno editado por otro motivo tiene
+   fecha nueva y contenido viejo. fase.py compara el TEXTO: el ultimo TL
+   y el ultimo VE tienen que estar nombrados (senal S2).
 ```
+
+El caso que agregó la regla 4: un cuaderno se editó para sumarle una sección de arte, quedó con fecha más nueva que su último timeline, y seguía sin nombrarlo. El chequeo por fecha lo daba por al día.
 
 **El cuaderno es memoria, no autoridad.** Ante divergencia manda el disco.
 

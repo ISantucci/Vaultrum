@@ -39,6 +39,8 @@ Se usa especialmente cuando hay que:
 - validar una dirección antes de planificar,
 - decidir si una idea debe avanzar al siguiente agente.
 
+Y vuelve a activarse **al cierre de cada entrega**, para la revisión de fase. Es la misma pregunta que le hace a una idea nueva —¿conviene avanzar, ajustar o frenar?— hecha sobre un proyecto que ya tiene evidencia: el `VE`, el `QA` de entrega, la lectura de Métricas si hubo playtest, y la salida de `fase.py`. Recomienda una de cuatro salidas —avanzar, seguir, volver o cortar— y dice por qué. **No decide**: decide el owner.
+
 ---
 
 ## Qué debe hacer
@@ -117,8 +119,11 @@ Formato recomendado:
 El Consultor Estratégico implementa principalmente:
 
 - `01_Flujo_Analisis_Estrategico`
+- `05_Flujo_Revision_De_Fase`
 
-Este flujo se utiliza cuando el usuario llega con una idea, problema, objetivo o posibilidad que todavía necesita ser entendida, cuestionada y validada antes de avanzar.
+El primero se utiliza cuando el usuario llega con una idea, problema, objetivo o posibilidad que todavía necesita ser entendida, cuestionada y validada antes de avanzar. El segundo, cuando una entrega cerró y hay que decidir si la fase respondió su pregunta.
+
+En la revisión de fase, lo que el instrumento mide en falta no se discute: se ataca o se acepta por escrito. Lo que el Consultor aporta es el juicio sobre lo que el instrumento no puede medir —si el prototipo se siente bien, si la slice es honesta— y la recomendación. Un AVANZAR con un criterio medido en falta no es una recomendación: es una aceptación de riesgo, y se escribe como tal.
 
 El Consultor Estratégico debe usar este flujo para dejar la idea en un formato transferible al Traductor Operativo.
 

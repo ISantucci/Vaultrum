@@ -33,10 +33,11 @@ Intención
   → SOL + EJ     (Programación)    solución técnica + implementación
   → QA           (Control de Calidad)  ¿se sostiene? GO / CONDITIONAL GO / NO-GO
   → VE           (Producción)      ¿lo entregado es lo prometido?
+  → revisión de fase (Producción)  ¿la fase respondió su pregunta? avanzar · seguir · volver · cortar
   → commit al Core (Conocimiento)  ¿qué aprendizaje vuelve al sistema?
 ```
 
-Cada artefacto está numerado, linkea hacia atrás a su insumo, y **no existe si su insumo no existe**. Eso es lo que impide que la IA se saltee pasos y que una entrega se dé por terminada porque compila.
+Cada artefacto está numerado, linkea hacia atrás a su insumo, y **no existe si su insumo no existe**. Eso es lo que impide que la IA se saltee pasos y que una entrega se dé por terminada porque compila. Y antes de abrir cada timeline, nueve **señales de parada** —fase sin declarar, deuda arrastrada entre entregas, dos entregas sin que el juego arranque, código sin diseño, entre otras— impiden apilar trabajo nuevo sobre deuda que nadie mira.
 
 ---
 
@@ -66,7 +67,7 @@ Catorce **skills ejecutables** —una por cada una de las diez áreas, más la E
 - **Obsidian**, para abrir y navegar el vault (la navegación usa wikilinks en cascada).
 - **Git**, para clonar o versionar.
 - Cualquier herramienta de IA capaz de leer archivos Markdown y usar el vault como contexto. Las skills están escritas en el formato de skills de Claude, y su contenido es portable a cualquier agente que lea instrucciones en Markdown.
-- **Python 3**, y no es opcional. Los instrumentos del sistema son scripts, y su salida *es* la evidencia: hay 28 versionados. El gate de cierre que corre en cada commit son cinco mediciones hechas con cuatro de ellos (`grafo.py`, `grafo.py --paquete`, `gemelos.py`, `documentacion.py`, `requerimientos.py`); sin Python, el vault se puede leer y no se puede medir.
+- **Python 3**, y no es opcional. Los instrumentos del sistema son scripts, y su salida *es* la evidencia: hay 30 versionados. El gate de cierre que corre en cada commit son cinco mediciones hechas con cuatro de ellos (`grafo.py`, `grafo.py --paquete`, `gemelos.py`, `documentacion.py`, `requerimientos.py`); sin Python, el vault se puede leer y no se puede medir.
 
 ---
 

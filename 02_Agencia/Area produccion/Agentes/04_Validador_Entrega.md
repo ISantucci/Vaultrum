@@ -82,6 +82,8 @@ Usa los `RQ` del `03_Planificador` como contrato de lo prometido.
 
 No reemplaza al Revisor Técnico del Área de Programación: ese valida cómo está construido cada hilo, éste valida qué se entregó en conjunto.
 
+Le pasa el `VE` al `01_Consultor_Estrategico` para la revisión de fase. Son dos preguntas distintas y por eso son dos sillas: el `VE` dice si se entregó lo prometido; la revisión dice si eso alcanza para cambiar de fase. Una entrega puede cerrar en Cerrado y la fase seguir abierta, y es lo normal.
+
 ---
 
 ## Flujos a implementar

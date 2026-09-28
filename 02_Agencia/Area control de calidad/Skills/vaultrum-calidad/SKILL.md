@@ -93,6 +93,8 @@ Si falta algo imprescindible: **NO LISTO PARA QA**, con lo que falta y a quién 
 
 **Si el hilo tiene un `MET-XXX.n`**, su sección *QA de eventos* son criterios de aceptación como cualquier otro, y entran al pase con el perfil de entrada **telemetría**: cada evento dispara, una sola vez, a tiempo, con sus parámetros y tipos, en el entorno correcto y con el signo correcto. Los escribió Métricas; los ejecutás vos sobre la build congelada. Un evento que no pasa es un defecto con dueño —Programación—, no un detalle: el `MET-XXX` que lo lea después va a medir el bug en vez del jugador.
 
+**Un defecto no desaparece.** Si hay un `QA` de entrega anterior, sus defectos abiertos y diferidos entran a este: cada uno vuelve a aparecer en `qa-defectos` —cerrado con su reverificación, todavía abierto o diferido, o no reproducible con evidencia—. Uno que se cae de la lista sin cerrarse es deuda escondida, y Producción la ve: `fase.py` la marca como señal S5, y si es mayor o peor, no deja abrir el timeline siguiente. Pasó: tres defectos mayores listados en un `QA` y ausentes del siguiente, que había cambiado de alcance.
+
 Si el proyecto todavía no tiene planilla, copiá `Herramientas/Vaultrum_QA_Operations.xlsx` a `06_Proyectos/<Proyecto>/06_Calidad/` y borrá las filas de ejemplo. Esa copia es acumulativa: se usa en todos los `QA` del proyecto.
 
 ## Paso 2 — Análisis de riesgo (Analista de Riesgo)
@@ -243,6 +245,19 @@ JUICIO — se declara como juicio, no como medición
 [ ] lo que no se ejecutó está dicho, y se entiende qué queda sin mirar
 [ ] la evidencia alcanza para que otro repita el juicio dentro de seis meses
 ```
+
+## Lo que la revisión de fase lee de este gate
+
+Después de cada `VE`, Producción revisa si la fase respondió su pregunta, y la evidencia de que el juego se sostiene sale de acá. `fase.py` lee dos bloques del `QA` de entrega, y nada más:
+
+```txt
+qa-humo      "arranque ok" -- el juego arranco en el gate. Dos entregas seguidas sin
+             esa linea son la senal S6: ninguna fase se revisa sin el juego corriendo
+qa-defectos  cuantos mayores, criticos y bloqueantes quedan abiertos o diferidos, y si
+             alguno viene arrastrado de la entrega anterior (S4) o desaparecio (S5)
+```
+
+Por eso: **la entrega que propone cerrar una fase corre en perfil Completo**, e intenta arrancar la build aunque el alcance del timeline haya sido otro. Un gate de documentos sin arranque es válido y se declara; dos seguidos frenan el proyecto, y así tiene que ser.
 
 ## Estado del paso
 

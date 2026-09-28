@@ -100,6 +100,11 @@ Validación de entrega       (Validador de Entrega) → VE   ⟵ gate de cierre
         ├── Cerrado  → la entrega del TL termina
         ├── Ajustar  → rebota al área con el hallazgo
         └── Pausado  → se declara qué falta (principio 9)
+  ↓
+Revisión de fase            (Consultor Estratégico) ⟵ ¿la fase respondió su pregunta?
+        avanzar · seguir · volver · cortar — decide el owner
+  ↓
+señales de parada (fase.py) antes de abrir el próximo TL
 ```
 
 Las salidas productivas se registran como:
@@ -119,6 +124,12 @@ Cada agente del área implementa la parte que corresponde a su responsabilidad, 
 Producción declara en qué **fase** está el proyecto —Planning, Pre-Production, Production, Testing, Pre-Launch, Launch, Post-Launch o Live Ops— y con qué **modelo de negocio**. Vive en el cuaderno y se copia en el `Objetivo` de cada `TL`.
 
 No es un rótulo: cada fase hace una pregunta distinta —¿vale la pena? ¿funciona el núcleo? ¿el jugador hace lo esperado? ¿funciona a escala?— y lo que se le puede exigir a una entrega, lo que conviene medir y lo que todavía no tiene sentido pedir dependen de esa pregunta. Es el dato que el Área de Métricas lee y no adivina. El criterio de cada fase vive en el Core, en `Fases del producto y que medir`.
+
+**Y una fase no se cierra por inercia.** El `VE` dice si se entregó lo prometido; no dice si el proyecto ya sabe lo que la fase tenía que averiguar. Por eso, después de cada `VE`, el área corre la **revisión de fase**: con la evidencia de Calidad —¿el juego arrancó?, ¿cuánta deuda queda?— y la de Métricas —¿la lectura del playtest contesta la pregunta de la fase?—, el Consultor Estratégico recomienda una de cuatro salidas —avanzar, seguir, volver o cortar— y **decide el owner**. La decisión queda en el registro del cuaderno.
+
+Antes de la pregunta, las **señales de parada**: nueve condiciones mecánicas —fase sin declarar, cuaderno atrasado, deuda arrastrada entre entregas, un defecto que desaparece de un `QA` al siguiente, dos entregas sin que el juego arranque, código sin diseño, entre otras— que no dejan abrir un timeline nuevo como si no pasara nada. Se atacan, o el owner las acepta por escrito para esa entrega.
+
+Las dos cosas las mide `Herramientas/fase.py`, y el criterio de salida de cada fase lo lee del flujo de revisión: un criterio, un solo lugar. Nació de un caso real: cuatro entregas seguidas de un proyecto cerraron en CONDITIONAL GO, ninguna con el juego corriendo, y nada en el sistema lo frenaba.
 
 ---
 
@@ -226,6 +237,10 @@ Cada flujo es un paso del loop del área. Se entra por el flujo que corresponde 
 ### [[03_Flujo_Planificacion_Requerimientos|Flujo Planificacion Requerimientos]]
 
 ### [[04_Flujo_Validacion_Entrega|Flujo Validacion Entrega]]
+
+### [[05_Flujo_Revision_De_Fase|Flujo Revision De Fase]]
+
+Corre después de cada `VE` y antes de abrir cada timeline: las señales de parada, el criterio de salida de cada fase y las cuatro salidas. Lo conduce el Consultor Estratégico; decide el owner.
 
 ---
 

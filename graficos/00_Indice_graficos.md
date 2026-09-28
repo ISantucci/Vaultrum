@@ -42,7 +42,7 @@ flecha punteada  una relación transversal, no un paso de la cadena
 
 | Archivo | Qué muestra |
 |---|---|
-| `agencia-01-produccion` | Los cuatro agentes en cadena, el pivoteo entre áreas y el cierre por `VE`. El Despachante, de costado. |
+| `agencia-01-produccion` | Los cuatro agentes en cadena, el pivoteo entre áreas y el cierre por `VE`, seguido de la revisión de fase y las señales de parada antes del próximo timeline. El Despachante, de costado. |
 | `agencia-02-game-design` | `RQ` + mitad A del `UXS` → `GDS`, con el marco común opcional. |
 | `agencia-03-level-design` | `GDS` cerrado → `LDS`. Incluye la deuda: `LDS` no tiene contrato. |
 | `agencia-04-ui-ux` | Los tres modos, y por qué el `UXS` abre antes que su insumo principal. |

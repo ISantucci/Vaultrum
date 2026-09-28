@@ -285,7 +285,11 @@ def specs_a():
     d.n('validador', '04 Validador de Entrega', 'rol', 2, 3)
     d.n('ve', 'VE-XXX  Validación', 'artefacto', 1, 3)
     d.n('estado', 'Cerrado · Ajustar · Pausado', 'gate', 0, 3)
-    d.n('nota', 'El Despachante no es un paso del loop: corre de costado y sirve a los cuatro.', 'nota', 0, 4, 700, 20)
+    d.n('met', 'MET-XXX lectura del playtest (Métricas)', 'externo', 1, 2)
+    d.n('revision', 'Revisión de fase — ¿la fase respondió su pregunta? (01 Consultor)', 'gate', 0, 4, 200, 88)
+    d.n('salidas', 'avanzar · seguir · volver · cortar — decide el owner', 'gate', 1, 4)
+    d.n('senales', 'fase.py — señales de parada antes del próximo TL', 'gate', 2, 4)
+    d.n('nota', 'El Despachante no es un paso del loop: corre de costado y sirve a los cuatro.', 'nota', 0, 5, 700, 20)
     d.a('intencion', 'consultor').a('consultor', 'traductor', 'idea validada')
     d.a('traductor', 'planificador', 'alcance').a('planificador', 'tl')
     d.a('tl', 'rq', 'cuelga').a('rq', 'areas', 'insumo de cada area')
@@ -293,6 +297,9 @@ def specs_a():
     d.a('validador', 've').a('ve', 'estado')
     d.a('despachante', 'areas', 'rutea la ejecucion', 'punteada')
     d.a('validador', 'consultor', 'Ajustar', 'rebote')
+    d.a('met', 've', 'si hubo datos')
+    d.a('estado', 'revision', 'después del VE')
+    d.a('revision', 'salidas').a('salidas', 'senales')
     D.append(d)
 
     d = Diagrama('agencia-02-game-design', 'Área de Game Design (Technical)',

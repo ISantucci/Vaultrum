@@ -267,6 +267,18 @@ Recibe de: **Programación** (el `EJ` con su revisión técnica en OK y la build
 
 Entrega a: **Producción** (el veredicto, insumo del `VE`), **Programación** (los defectos con su evidencia), **Conocimiento** (lo aprendido que merece volver al Core).
 
+Y a **Producción** otra vez, después del `VE`: la **revisión de fase** lee de este área la evidencia de que el juego se sostiene. `fase.py` toma del `QA` de entrega el `qa-humo` —¿arrancó el juego?— y el `qa-defectos` —¿cuánta deuda grave queda, y viene arrastrada de la entrega anterior?—. De ahí salen dos reglas del área:
+
+```txt
+un defecto no desaparece   todo defecto abierto o diferido de un QA de entrega vuelve a
+                           aparecer en el siguiente: cerrado con reverificacion, todavia
+                           abierto, o no reproducible con evidencia
+la entrega que propone     corre en perfil Completo, e intenta arrancar la build aunque el
+cerrar una fase            alcance del timeline haya sido otro
+```
+
+Las dos nacieron del mismo proyecto: cuatro gates de entrega seguidos en CONDITIONAL GO, ninguno con el juego arrancado, y tres defectos mayores que pasaron de un `QA` al siguiente sin cerrarse y sin volver a nombrarse.
+
 Consulta on-demand: la sección `Calidad y testing` del Core para el criterio, y la Biblioteca de la Escuela cuando el baseline del género define qué es un comportamiento esperado.
 
 La numeración `.n` se hereda del hilo: `RQ-004.2 → GDS-004.2 → SOL-004.2 → EJ-004.2 → QA-004.2`. El `QA` de entrega cuelga del `TL` sin `.n`, igual que el `VE`.

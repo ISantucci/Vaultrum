@@ -139,6 +139,8 @@ Con el `GDS` cerrado y antes del `SOL`. `01` convierte el objetivo del `RQ` y el
 
 Con datos en la mano: un playtest, una build de prueba, un soft launch. `04` corre `metricas.py datos` y decide si el dato es legible; `03` lee contra el plan congelado; `04` corre `metricas.py lectura` y cierra el **`MET-XXX`**, que es insumo del `VE`.
 
+Y de la **revisión de fase** que Producción corre después del `VE`: de Pre-Production en adelante, la pregunta de la fase se contesta con gente jugando, y la lectura es esa evidencia. Cuando va a revisión, abre contestando la pregunta de la fase —sí, no o todavía no se sabe, con el hecho que lo sostiene— antes que cualquier KPI. De Testing en adelante, un proyecto sin lectura no puede revisar su fase: `fase.py` lo marca como señal S7.
+
 ### Modo Salud — un producto con jugadores
 
 Sin problema específico, sobre un producto lanzado. Las cinco preguntas del Core en orden —¿entra gente? ¿vuelve? ¿qué hace? ¿paga? ¿la economía sostiene valor?— más la salud técnica. Produce un `MET-XXX` de salud, que cuelga del `TL` de operación que Producción abra para eso. **Hasta hoy no hay ningún proyecto del vault en esa fase**, y el modo queda escrito para cuando lo haya.
@@ -261,6 +263,8 @@ MÉTRICAS mitad B   → MET-XXX     ─► Producción: insumo del VE
 ```
 
 **Recibe de:** Producción (objetivo, fase, modelo, y si aplica) · Game Design (`GDS`, sección *Experiencia esperada*) · Control de Calidad (la build verificada) · el juego (el CSV de eventos).
+
+**Entrega a:** Producción, dos veces: el `MET-XXX` como insumo del `VE`, y la misma lectura como evidencia de la revisión de fase.
 
 **Deriva a:** Producción si falta objetivo o fase · Game Design si el comportamiento esperado no está escrito · Programación si un evento no se puede implementar como se pidió · Arquitectura antes de crear cualquier nota.
 

@@ -172,6 +172,19 @@ python3 "02_Agencia/Area metricas/Herramientas/metricas.py" datos <csv> \
 
 **Correlación no es causalidad.** Un antes/después sin control no prueba nada: se escribe como hipótesis y la próxima medición dice cómo probarla.
 
+### Cuando la lectura es evidencia de una revisión de fase
+
+Después de cada `VE`, Producción revisa si la fase respondió su pregunta, y de Pre-Production en adelante la respuesta sale de gente jugando: **tu lectura es esa evidencia**. `fase.py` verifica que exista un `MET-XXX`; lo que dice lo lee el owner. Por eso, cuando la entrega va a revisión de fase, la sección de hechos **abre contestando la pregunta de la fase**, antes que cualquier KPI:
+
+```txt
+fase            Pre-Production -- funciona el nucleo?
+respuesta       si · no · todavia no se sabe
+por que         el hecho que lo sostiene, con su numero y su poblacion
+lo que falta    la medicion que cambiaria la respuesta
+```
+
+"Todavía no se sabe" es una respuesta válida y la más honesta con 5 testers. Lo que no vale es contestar otra pregunta: una lectura de retención no dice si el núcleo se entiende. Y de Testing en adelante, sin una lectura no hay revisión posible: es la señal S7.
+
 ## Modo Salud
 
 Sin problema específico, sobre un producto con jugadores. Las cinco preguntas, en orden, más la salud técnica:
