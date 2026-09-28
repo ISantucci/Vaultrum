@@ -12,7 +12,7 @@ archivo, y busca la raiz del vault hacia arriba por `00_START_HERE.md`, igual qu
 eso es un dato de cada maquina.
 
 Una sola vez por maquina, crear `proyecto.local.txt` en esta carpeta con la ruta
-adentro (no se versiona, igual que `.owner.local.json`):
+adentro (no se versiona: es un dato de cada maquina):
 
     C:\Users\<vos>\Documents\GitHub\Project-Forge
 
