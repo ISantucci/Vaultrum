@@ -15,7 +15,7 @@ El Analista Técnico debe responder:
 Trabaja sobre cuatro responsabilidades:
 
 - entender el `RQ` y sus specs de diseño (`GDS`, y `LDS`/`UXS` si existen) en términos técnicos,
-- leer el proyecto real y detectar sistemas, managers y convenciones existentes,
+- leer el proyecto real y detectar sistemas, managers y convenciones existentes. En un proyecto con código son dos lecturas: qué hace y cómo se trabaja en el motor; rechazar la primera no rechaza la segunda,
 - consultar el Core (SOLID, patrones, managers, optimización, estructuras, algoritmos, IA),
 - marcar riesgos, dependencias e información faltante.
 
@@ -61,7 +61,7 @@ Formato recomendado:
 ```txt
 ## Requerimiento y specs (RQ / GDS / LDS / UXS)
 ## Sistema existente relevante
-## Reutilizable / extensible
+## Reutilizable / extensible     por convención: reutilizo / extiendo / reemplazo, y por qué
 ## Conocimiento del Core aplicable
 ## Riesgos y dependencias
 ## Información faltante

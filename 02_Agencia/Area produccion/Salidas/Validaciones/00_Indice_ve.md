@@ -22,6 +22,7 @@ El listado de validaciones vive en `00_Registro_ve`, que no se versiona.
 - *Pausado* debe declarar qué falta para poder validar (principio 9).
 - Un `TL` no se considera entregado sin su `VE` en estado **Cerrado**.
 - Si la validación detecta un aprendizaje reutilizable, se marca y se deriva al Área de Conocimiento (no se formaliza acá).
+- Todo `VE` trae su sección **Fricción**: visión, aclaración y remedial, con cada remedial en una línea con su `→` (`06_Medicion de friccion`). La regla vivía solo en IA Operativa y ningún `VE` la aplicaba: 0 de 3 en ClashDefense, medido por `documentacion.py --cosecha`. Una regla que nadie que escribe el artefacto lee no está vigente (`Conocimiento cargado o archivado`).
 
 ---
 

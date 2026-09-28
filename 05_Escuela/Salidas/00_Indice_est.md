@@ -34,11 +34,12 @@ EST-005 → 05_Fundamentos_de_experiencia_ludica
 EST-006 → los 12 Fundamentos 06–17  +  52 documentos
 EST-010 → 02_Game_feel  +  02_Plataformero_2D
 EST-012/013/014 → el estante de Construccion entero, por una tercera tabla del puente
+EST-017 → 04_Proyecto_editable_en_Unity, cuarta fila de esa tabla
 ```
 
 **El puente estuvo atrasado tres misiones y nadie lo medía.** Al abrir esta pasada, `Experiencia de juego` indexaba **5 de 17** Fundamentos y **1 de 2** Juegos, mientras su propia regla decía que *"lo único que puede crecer en esta sección es la tabla"*. Un libro escrito, promovido y no indexado **no está disponible**: Producción parte del Core, y lo que el Core no nombra, para Producción no existe. El faltante nunca fue de la Escuela — era del handoff, que se daba por hecho al escribir el libro.
 
-Hoy el puente indexa las tres tablas completas: 17 Fundamentos, 2 Juegos, 3 de Construcción.
+Hoy el puente indexa las tres tablas completas: 17 Fundamentos, 2 Juegos, 4 de Construcción (el cuarto desde `EST-017`).
 
 Efecto secundario del handoff: `03_Definicion_de_terminado` pasó de *Reservado* a escrito, sintetizando 01/02/05 y el uso real en `VE-003`. La skill `vaultrum-produccion` ya no lleva el checklist inline como pendiente declarado: apunta al libro.
 

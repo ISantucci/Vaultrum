@@ -43,6 +43,7 @@ El checklist operativo y la tabla de rebote de este paso viven en la skill del �
 ## Definición de terminado → checklist, con lo que falta explícito
 ## Experiencia           → lectura contra los pilares que aplican
 ## Hallazgos             → qué rebota y a qué área
+## Fricción              → visión / aclaración / remedial, cada remedial en su línea
 ## Aprendizaje para el Core (si hay)
 ## Estado de la entrega  → Cerrado / Ajustar / Pausado
 ```
@@ -60,6 +61,7 @@ El flujo puede darse por cerrado cuando:
 - el `QA` de entrega está citado, con su veredicto y su riesgo residual,
 - la definición de terminado está tildada o tiene lo faltante escrito,
 - cada hallazgo tiene un área destino concreta, no una queja general,
+- la fricción está contada: los pedidos del owner durante la entrega, clasificados en visión, aclaración y remedial, con cada remedial escrito en una línea (`06_Medicion de friccion`). La IA propone la clasificación y el owner la corrige,
 - el estado de la entrega está declarado.
 
 ---

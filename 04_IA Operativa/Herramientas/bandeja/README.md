@@ -83,5 +83,12 @@ Y lo que falla vuelve como **fallo**, no como nota al pie: el resultado guarda e
 - El productor no escribe ordenes destructivas (push, delete, reset) sin acuerdo previo
   en el chat. La bandeja es texto plano: siempre se puede leer antes de que corra.
 - Si el observer no esta corriendo, las ordenes se acumulan y se ejecutan al arrancarlo.
+- Una orden no lanza procesos externos desde el motor (git, shells, instaladores): el editor
+  espera al proceso y se congela. Git se opera desde afuera del motor. Precedente: ClashDefense,
+  orden 043, Unity congelado 45 minutos.
+- Sobre una carpeta montada, git se commitea con plumbing y un indice temporal
+  (`GIT_INDEX_FILE` + `read-tree` + `add` + `write-tree` + `commit-tree` + `update-ref`):
+  `status` y `commit` refrescan el indice, se cuelgan en un repo grande y dejan locks que el
+  montaje no deja borrar. Criterio del Core: `La superficie del ejecutor` (caso 4).
 - `ordenes/`, `procesadas/`, `resultados/`, `log.txt` y `proyecto.local.txt` son runtime:
   no se versionan. La herramienta si. Las carpetas las crea `instalar_skills.py`.

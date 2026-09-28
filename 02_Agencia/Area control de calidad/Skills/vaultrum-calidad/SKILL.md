@@ -135,7 +135,7 @@ Tres capas, y ninguna reemplaza a las otras:
 
 1. **Casos dirigidos** contra los criterios de aceptación, con la técnica que corresponde: límites (`n-1, n, n+1`), particiones, tabla de decisión, transición de estados, pares para configuraciones.
 2. **Exploratorio con charter**: misión escrita, 45 a 90 minutos, notas. Explorar no es jugar sin método.
-3. **Automatizado** si existe: lo repetible, lo masivo, lo sensible a regresión.
+3. **Automatizado** si existe: lo repetible, lo masivo, lo sensible a regresión. **Su primera aserción es que el juego arrancó**: la raíz habilitada y las excepciones contadas desde antes del primer cuadro. Un piloto que cuenta resultados sin esa aserción puede dar verde, o un rojo mal atribuido, sobre un juego que no arrancó. Pasó en ClashDefense `BUG-042`: el contador de excepciones del piloto se enganchaba después del arranque. Y un piloto que usa guardado trabaja con **uno propio, atado a la corrida**, nunca con el del owner ni con una clave global que restaura al final: el cierre de la aplicación corre después y lo pisa (ClashDefense `BUG-022`).
 
 Cada defecto se escribe para que **otro** pueda reproducirlo:
 
@@ -154,7 +154,7 @@ Llená la matriz de cobertura mientras ejecutás, no al final: `sí` / `no` / `n
 ## Paso 5 — Gate (Validador de Gate)
 
 1. **Confirmación** — cada defecto que dice estar arreglado, verificado exactamente ese, sobre la build que lo arregla.
-2. **Regresión** — el sistema afectado, sus integraciones cercanas y el camino crítico. La profundidad la fija el perfil.
+2. **Regresión** — el sistema afectado, sus integraciones cercanas y el camino crítico. La profundidad la fija el perfil. Si la entrega promete **no cambiar comportamiento** (refactor, migración, reorganización), la regresión central es de **equivalencia**: se exporta desde lo nuevo y se compara por contenido contra lo viejo. *No cambió nada* se mide, no se afirma.
 3. **Medición** — corré la herramienta. No estimes el veredicto.
 4. **Veredicto** — con fundamento escrito.
 5. **Captura** — qué entra a regresión, qué modelo de prueba reusable se crea o actualiza, qué se deriva a Conocimiento.
@@ -295,4 +295,4 @@ Regla de capas: ver `02_Agencia/02_Indice Agencia.md`.
 
 ## Anti-patrones
 
-Prueba sobre una build que se puede recompilar · pase profundo sobre una build que no arranca · defecto sin pasos ni evidencia · ticket cerrado porque alguien cambió código · severidad mezclada con urgencia · cobertura con celdas vacías · "no aplica" sin razón · riesgo aceptado sin dueño · CONDITIONAL GO usado como GO cómodo · exploratorio sin charter ni notas · verificación en el editor presentada como verificación de la build · veredicto declarado sin correr la medición · encontrar y arreglar en el mismo paso · un `QA` que repite los `QA` de sus hilos en vez de citarlos.
+Prueba sobre una build que se puede recompilar · pase profundo sobre una build que no arranca · defecto sin pasos ni evidencia · ticket cerrado porque alguien cambió código · severidad mezclada con urgencia · cobertura con celdas vacías · "no aplica" sin razón · riesgo aceptado sin dueño · CONDITIONAL GO usado como GO cómodo · exploratorio sin charter ni notas · verificación en el editor presentada como verificación de la build · veredicto declarado sin correr la medición · encontrar y arreglar en el mismo paso · un `QA` que repite los `QA` de sus hilos en vez de citarlos · un piloto automatizado que no verifica primero el arranque · un refactor dado por bueno sin prueba de equivalencia · un defecto diferido que desaparece del `QA` siguiente sin decir qué pasó con él.

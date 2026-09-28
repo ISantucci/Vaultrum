@@ -18,8 +18,13 @@ UXS | Insumo | Encuadre de UX | Validacion de UX | Instrumento
 SOL | Insumo | Diagnostico | Decisiones | Lo que deliberadamente no se hizo | Arquitectura | Contrato de ejecucion | Verificacion | Estado
 EJ  | Insumo | Lo que se implemento | Archivos creados | Desvios declarados | Verificacion | Riesgos abiertos | Estado
 QA  | Insumo | Alcance y perfil | Version | Defectos | Cobertura | Medicion | Veredicto
-VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos | Aprendizaje para el Core | Estado de la entrega
+VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos | Friccion | Aprendizaje para el Core | Estado de la entrega
 
+# VE: la seccion Friccion NO sale de medir (0 de 3 VE reales la tenian). Sale de
+# 06_Medicion de friccion, que la pedia "en el VE de cada entrega" sin que ningun
+# contrato ni ninguna skill que escribe el VE la nombrara, y de --cosecha, que la
+# lee y la encontraba vacia. Entra el 2026-09-28 (EST-017 / ClashDefense).
+#
 # QA es el unico contrato que NO sale de medir artefactos reales: el area se creo
 # despues de este archivo y todavia no produjo ninguno. Sale del contrato de salida
 # escrito en `00_Indice_qa`, que es exactamente la fuente que este archivo dice que

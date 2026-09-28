@@ -15,7 +15,7 @@ Ocho secciones, en este orden. Las cinco primeras salen de **medir los `SOL` rea
 | # | Sección | Qué tiene que decir | Origen |
 |---|---------|---------------------|--------|
 | 1 | **Insumo** | el `RQ`, y el `GDS` / `LDS` / `UXS` si aplican, cada uno en su línea rotulada | medido 4/5 |
-| 2 | **Diagnóstico** | qué problema técnico hay que resolver, leído del insumo y no del gusto | medido 4/5 |
+| 2 | **Diagnóstico** | qué problema técnico hay que resolver, leído del insumo y no del gusto. Si el proyecto ya tiene código: qué existe, en comportamiento **y** en forma de trabajo en el motor, y si se reutiliza, se extiende o se reemplaza | medido 4/5; la segunda frase, diseñada |
 | 3 | **Decisiones** | cada decisión contra **su** `RQ` o su presupuesto, con las alternativas descartadas y por qué | medido 5/5 |
 | 4 | **Lo que deliberadamente NO se hizo** | tabla de dos columnas: qué no se hizo, y el motivo | ley del Core |
 | 5 | **Arquitectura** | componentes, responsabilidades y flujo de datos. La forma, no el código | medido 5/5 |
@@ -33,6 +33,8 @@ Interfaces    firmas publicas: que llama a que, y con que
 Invariantes   lo que tiene que seguir siendo cierto despues del cambio
 Prohibido     lo que no se toca, con el motivo
 ```
+
+**Sección 2 — lo que ya existe, diseñado.** La segunda frase del `Diagnóstico` no sale de medir: sale de ClashDefense, donde `SOL-001` contrastó las **reglas** del proyecto previo contra el diseño (nueve choques, bien resueltos) y no contrastó su **forma de trabajo**. Descartó ScriptableObjects, prefabs y caminos en escena sin decirlo, y `TL-003` tuvo que volver a ellos. No suma una sección: dice qué más tiene que contestar la que ya está. El instrumento no lo mide (no sabe si el proyecto tenía código antes); lo verifica el Revisor Técnico con su checklist, y eso es juicio.
 
 **Punto de quiebre** —*a qué carga se rompe esta arquitectura*— **no entra al contrato todavía**, a propósito. Sin presupuesto de rendimiento declarado en el `RQ`, la sección se llenaría de `n/a` — que es exactamente el defecto que QA arrastró en dos entregas. Entra el día que exista la pregunta de plataforma y rendimiento en el relevamiento; hasta entonces se escribe **solo cuando hay presupuesto contra el cual medirla**.
 

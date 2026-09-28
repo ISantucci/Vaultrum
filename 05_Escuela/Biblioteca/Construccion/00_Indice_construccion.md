@@ -35,12 +35,14 @@ Regla de carga: se jala el libro puntual, nunca el estante entero. Medido, no su
 
 ```txt
 el puente del Core + UN libro          9.6k  =  24% de un presupuesto de 40k   COMODO
-el puente + el estante entero         20.3k  =  51%                            COMODO
+el puente + el estante entero         20.3k  =  51%                            COMODO   (tres libros)
+el puente + el estante entero         24.6k  =  62%                            AJUSTADO (cuatro libros, 2026-09-28)
+el puente + el libro 04                9.2k  =  23%                            COMODO
 (para comparar: los 12 Fundamentos del lote EST-006, juntos, dan 53.2k = 133%  EXCEDIDO)
 conteo: aproximado (heuristica es-markdown, +-12%)
 ```
 
-Este estante entra entero y el de Fundamentos no, y la razón es aritmética: tres libros contra diecisiete. **Eso deja de ser cierto alrededor del séptimo libro** — cuando el estante crezca, la regla del libro puntual pasa a ser obligatoria acá también. Se vuelve a medir antes de agregar el cuarto.
+Con tres libros el estante entraba entero; con el cuarto ya no entra cómodo. **La predicción decía "alrededor del séptimo libro" y la medición dijo el cuarto**: el libro 04 es el más largo del estante (5.9k). Desde `EST-017` la regla del libro puntual es **obligatoria también acá**: se carga el puente y el libro del mecanismo que el `SOL` decide, nunca el estante. Se vuelve a medir antes de agregar el quinto.
 
 ---
 
@@ -58,6 +60,10 @@ por qué se resuelve por eje, barrido contra tunneling, la relación velocidad�
 
 vectores como intención, normalización y sus trampas, lerp y su dependencia del framerate, easing, curvas, ruido con semilla · EST-014 Mision Matematica del movimiento · En la Biblioteca
 
+### [[04_Proyecto_editable_en_Unity|Proyecto editable en Unity]]
+
+dónde vive cada contenido para que se edite sin código (escena, prefab, ScriptableObject), un valor en un solo lugar, la partida sobre copias, dependencias en `Start`, el canal de ejecución no decide la forma, generadores de una sola vez, las dos lecturas de un proyecto que ya existe · EST-017 Mision Proyecto editable en Unity · En la Biblioteca
+
 ---
 
 ## Regla
@@ -73,4 +79,4 @@ vectores como intención, normalización y sus trampas, lerp y su dependencia de
 
 ## Territorio pendiente
 
-El mapa completo del territorio faltante, con su prioridad y lo que desbloquea cada pieza, vive en `EST-011_Mision_Mapa_Territorio_Tecnico`. Lo que sigue, en orden medido: animación (cero notas en todo el vault), datos y saves, herramientas de editor, netcode, arte técnico del lado del mecanismo, audio técnico, build y release, y las fichas de manuales oficiales.
+El mapa completo del territorio faltante, con su prioridad y lo que desbloquea cada pieza, vive en `EST-011_Mision_Mapa_Territorio_Tecnico`. Lo que sigue, en orden medido: animación (cero notas en todo el vault), guardado de partida (los datos de autoría ya los cubre el libro 04), herramientas de editor más allá del mínimo que trae el libro 04, netcode, arte técnico del lado del mecanismo, audio técnico, build y release, y las fichas de manuales oficiales.
