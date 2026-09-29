@@ -75,6 +75,7 @@ Los cinco primeros son el marco; los doce siguientes profundizan un pilar de `05
 |--------|------|-------|
 | Arcade | Paleta-y-pelota | 01_Pong |
 | Plataformas | Plataformero 2D de precision | 02_Plataformero_2D |
+| Estrategia | Tower defense de colocacion libre y camara fija, con la economia de la partida y el balance medido con bots | 04_Tower_Defense |
 
 El estante crece de a un libro por genero, por mision de la Escuela.
 

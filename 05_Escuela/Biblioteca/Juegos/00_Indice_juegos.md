@@ -18,7 +18,7 @@ Plataformas · Plataformero 2D de precision · EST-010 Mision Plataformero 2D ·
 
 ### [[04_Tower_Defense|Tower Defense]]
 
-Estrategia · Tower defense de colocación libre y cámara fija · EST-016 Mision Tower Defense · En validación
+Estrategia · Tower defense de colocación libre y cámara fija; economía de la partida y balance con bots (EST-018) · EST-018 Mision Balance Tower Defense · En la Biblioteca
 
 ---
 
