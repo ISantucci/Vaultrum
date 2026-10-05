@@ -29,5 +29,6 @@ url: https://github.com/NoelFB/Celeste
   - El prototipo PICO-8 completo dentro del juego final: se puede comparar **la versión de 4 días contra la de 3 años** de la misma mecánica.
   - Máquina de estados del jugador con transiciones explícitas — patrón directamente portable a Unity.
   - Cómo un prototipo de game jam se convierte en producto comercial sin traicionar el core.
+  - **El changelog oficial** (https://www.celestegame.com/changelog.html) es la historia del reloj de speedrun: qué se cuenta y qué no, el buffer de pausa, la precisión de los milisegundos y la marca de modo asistido en el récord. Un cambio de regla en la v1.2.1.0 obligó a borrar los tiempos guardados. Citado por `06_Contrarreloj` (`EST-019`).
 - **Gap de Vaultrum que cubre:** referencia técnica número uno de game feel en plataformas, con el par prototipo/producto visible.
 - **Prioridad:** **Alta**

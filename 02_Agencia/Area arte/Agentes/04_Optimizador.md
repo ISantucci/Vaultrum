@@ -46,6 +46,22 @@ Lo que hoy está abierto:
 
 ---
 
+## De dónde parte
+
+Desde `TL-012` el precio está escrito: la rama `Arte` de `Optimizacion`, con sus dos mitades. Consulta **on-demand** la ficha del costo que está midiendo:
+
+```txt
+Modelado     Caras en pantalla · Vertices partidos · Materiales por asset ·
+             Densidad de textura
+Animacion    Huesos e influencias · Claves por tipo de animacion ·
+             Sprites en memoria · Animacion fuera de camara
+GPU          Costo de vertices y geometria · LOD · Draw calls y batching
+```
+
+La animación entra a su ley 4 por primera vez: huesos por personaje animado, claves guardadas y memoria de sprites también tienen familia y techo.
+
+---
+
 ## Qué NO hace
 
 No cambia el lenguaje visual: la silueta que comunica, el color y los materiales no son suyos.

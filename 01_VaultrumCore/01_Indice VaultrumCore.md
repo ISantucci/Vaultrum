@@ -37,6 +37,7 @@ Contiene material sobre:
 - criterios de entrega;
 - calidad y testing;
 - métricas y analytics;
+- principios de arte: objetos 3D, modelado, animación, color, personaje y dirección de arte;
 - experiencia de juego (índice hacia la Biblioteca);
 - estructuras de datos;
 - algoritmos;

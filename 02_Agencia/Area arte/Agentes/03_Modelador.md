@@ -58,6 +58,20 @@ El asset se ve bien, casi todas las piezas aguantan, y falla el subconjunto más
 
 ---
 
+## De dónde parte
+
+Construye con el criterio del Core y opera con el de IA Operativa, **on-demand**:
+
+```txt
+Core · Principios de arte     la hoja de Objetos 3D y de Modelado que toque:
+                              Topologia y flujo de aristas · Topologia para deformar
+                              (si se deforma) · Low poly · Hard surface y organico
+IA Operativa · 08             Blender por MCP · Rigging y skinning ·
+                              Texturizado UV y materiales
+```
+
+---
+
 ## Qué NO hace
 
 No decide escala ni altura de referencia (`01_Director_Escala`). No fija ni negocia presupuesto de caras (`04_Optimizador`).

@@ -37,6 +37,17 @@ Los cuatro se veían bien. Ninguno lo estaba.
 
 ---
 
+## De dónde parte
+
+Las leyes que mide tienen su porqué en el Core, y lo consulta **on-demand** cuando un rebote necesita explicarse:
+
+```txt
+Core · Principios de arte     Normales y orientacion de caras ·
+                              Malla cerrada y sin solapes · Transform origen y unidades
+```
+
+---
+
 ## Qué NO hace
 
 **No toca geometría, nunca.** Si arreglara lo que encuentra, nadie revisaría el arreglo: quien mide y repara termina aprobándose a sí mismo. Devuelve el hallazgo a `03_Modelador` y vuelve a medir sobre lo que le devuelvan.

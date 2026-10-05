@@ -265,6 +265,31 @@ No es QA —`Calidad y testing` dice si lo construido falla; esta dice qué hace
 
 ---
 
+## [[Principios de arte]]
+
+Sección dedicada al **criterio de oficio del arte**: qué se le exige a una malla, a un modelo, a una animación, a una paleta, a un personaje y a un set, y cómo se juzga.
+
+Incluye:
+
+- objetos 3D: la anatomía de una malla, normales, cierre, transform, origen y unidades;
+- modelado: del bloqueo al detalle, topología, topología para deformar, low poly, superficie dura y orgánica;
+- los doce principios de la animación, cada uno con su especificación para videojuegos, y las curvas de interpolación;
+- color: valor antes que tono, paleta cerrada, color que distingue y color en contexto;
+- diseño de personaje y forma: silueta, lenguaje de formas, proporción y estilización, personalidad en el movimiento;
+- dirección de arte: pilares visuales, guía de estilo y coherencia del conjunto.
+
+Usar esta sección cuando el problema esté relacionado con:
+
+- construir, pedir o aprobar un asset o una animación;
+- escribir un encargo para un generador de imagen o de animación;
+- decidir cuántas poses lleva una acción, qué curva usar o cuánto exagerar;
+- distinguir familias que el jugador confunde;
+- sumar un asset a un set que ya existe.
+
+No es el costo del arte —eso es la rama `Arte` de `Optimizacion`— ni la operación de las herramientas, que vive en IA Operativa. Las leyes medidas y las reglas de uso siguen siendo del Área de Arte de la Agencia: esta sección es de donde parten.
+
+---
+
 ## Cómo usar esta sección
 
 Esta sección puede recorrerse de forma libre.

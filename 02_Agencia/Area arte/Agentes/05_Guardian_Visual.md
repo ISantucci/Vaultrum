@@ -48,6 +48,20 @@ Hasta que esté respondida, **las siluetas de torre no se bloquean**. Bloquear o
 
 ---
 
+## De dónde parte
+
+Mide con `arte.paleta()` y juzga con el criterio del Core, **on-demand**:
+
+```txt
+Core · Principios de arte     Valor antes que tono · Paleta cerrada ·
+                              Color que distingue · Color en contexto ·
+                              Coherencia del conjunto · Silueta legible
+IA Operativa · 08             Legibilidad: el procedimiento de silueta, valor y
+                              daltonismo a escala real
+```
+
+---
+
 ## Qué NO hace
 
 No dicta cuántas señales entran. Eso es de UI/UX, que fija el presupuesto de comunicación. El Guardián verifica que las que entraron se lean.

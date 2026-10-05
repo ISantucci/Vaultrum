@@ -50,6 +50,20 @@ Un asset que no entra es trabajo de `04_Optimizador`. Mover la escala para acomo
 
 ---
 
+## De dónde parte
+
+La mitad A no se decide de memoria. Consulta **on-demand**, y solo lo que la decisión pide:
+
+```txt
+Core · Principios de arte     Pilares visuales · Guia de estilo · Paleta cerrada
+Core · Optimizacion · Arte    Caras en pantalla · Huesos e influencias ·
+                              Densidad de textura · Sprites en memoria
+```
+
+El presupuesto de cada familia sale del precio escrito ahí y de la plataforma que declara el proyecto. Si el proyecto no declaró plataforma ni tasa de cuadros, el presupuesto queda **faltante declarado**, no estimado.
+
+---
+
 ## Qué NO hace
 
 No modela ni abre el `ART-XXX.n` de ningún asset.

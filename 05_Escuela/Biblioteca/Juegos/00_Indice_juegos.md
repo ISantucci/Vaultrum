@@ -20,6 +20,15 @@ Plataformas · Plataformero 2D de precision · EST-010 Mision Plataformero 2D ·
 
 Estrategia · Tower defense de colocación libre y cámara fija; economía de la partida y balance con bots (EST-018) · EST-018 Mision Balance Tower Defense · En la Biblioteca
 
+### [[05_Endless_runner|Endless runner]]
+
+Arcade · Endless runner lateral (auto-run, un carril, un golpe); la curva de velocidad como curva de dificultad, huecos derivados del salto y alturas por verbo · EST-019 Mision Endless runner y contrarreloj · En validación
+
+### [[06_Contrarreloj|Contrarreloj]]
+
+Arcade · Contrarreloj — el reloj como rival: cuenta regresiva, time trial y duración fija; medallas, splits y ghosts · EST-019 Mision Endless runner y contrarreloj · En validación
+
+
 ---
 
 ## Regla

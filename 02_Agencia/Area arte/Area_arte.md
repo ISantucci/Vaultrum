@@ -220,7 +220,7 @@ El blueprint da formas y **la pose la da la función**; la ropa es un tramo, no 
 
 ## Las tres reglas de animación
 
-Salieron del trabajo de animación de Miles con Codex: una caminata que repetía la misma pierna, otra que parecía correr, un ciclo correcto que estilizó de más al personaje, transparencias y desapariciones, y un tutorial que se iba a usar sobre violeta. Cada regla dice qué se mide con `animacion.py` y qué se juzga a mano contra la referencia maestra.
+Los doce principios con su control de juego viven en el Core (`Principios de animacion`); estas tres reglas son lo que el caso Miles agregó. Salieron del trabajo de animación de Miles con Codex: una caminata que repetía la misma pierna, otra que parecía correr, un ciclo correcto que estilizó de más al personaje, transparencias y desapariciones, y un tutorial que se iba a usar sobre violeta. Cada regla dice qué se mide con `animacion.py` y qué se juzga a mano contra la referencia maestra.
 
 ### [[RA-010_Animacion_identidad_y_movimiento]]
 
@@ -347,6 +347,31 @@ Modelar por MCP tiene un costo medible y el área lo administra. Las mediciones 
 
 ---
 
+## De dónde sale el criterio
+
+El área nació de casos, y eso le dio leyes medidas y reglas de uso. El **criterio de oficio** no sale de ahí ni de la memoria del modelo: sale del Core desde `TL-012`. Cada silla consulta **on-demand** solo lo que su decisión pide, y su ficha lo dice.
+
+```txt
+Core · Principios de arte          el oficio: Objetos 3D · Modelado · Principios de
+                                   animacion · Color · Diseno de personaje y forma ·
+                                   Direccion de arte
+Core · Optimizacion · Arte         el precio: Modelado y Animacion
+IA Operativa · 08_Operar el arte   la operacion: Blender, Unreal, legibilidad, rigging,
+                                   texturizado, sprites, motion graphics y UI, VFX
+```
+
+```txt
+las leyes      dicen si el asset esta EN LEY             se miden con arte.py y animacion.py
+el Core        dice si esta BIEN HECHO                   se mide lo medible, se juzga el resto
+las reglas RA  dicen que se corrigio en un caso real     y como no repetirlo
+```
+
+Una decisión de oficio que no tiene nota que la sostenga se dice como **hueco** —*el Core no lo cubre*— y no se contesta de memoria como si fuera criterio.
+
+**La silla de animación.** Se evaluó en `TL-012` y no se crea. Las seis sillas del área existen porque un defecto medido justifica cada separación, y en animación el único juez independiente que hace falta ya existe: el generador anima, `animacion.py` mide y el owner juzga contra la referencia maestra. Cuando una animación producida **adentro** del área —un rig animado en Blender, no un encargo— muestre que quien anima se aprueba a sí mismo, la silla tiene su defecto y entra.
+
+---
+
 ## Límites del área
 
 No define reglas ni balance (Game Design). No diseña el espacio jugable (Level Design). No define **cuántas** señales entran ni por qué canal (UI/UX: Arte ejecuta el presupuesto y verifica que se cumpla, no lo dicta). No programa ni integra en el motor (Programación). No define alcance ni prioridad (Producción). No decide dónde vive una nota (Arquitectura). No mergea al Core (Conocimiento).
@@ -369,6 +394,8 @@ GDS cerrado
   ↓
 Programacion (SOL + EJ) integra el arte
 ```
+
+**Parte de:** el Core (`Principios de arte`, la rama `Arte` de `Optimizacion`) e IA Operativa (`08_Operar el arte`), on-demand.
 
 **Recibe de:** Level Design (`LDS`, la escala del espacio) · Game Design (`GDS`, qué tiene que distinguirse y en cuántas familias) · UI/UX (`UXS` mitad A, el presupuesto de comunicación) · el owner (la referencia y la dirección de arte).
 

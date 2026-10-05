@@ -73,7 +73,7 @@ El objetivo es que sirva tanto para estudiar como para aplicar en proyectos real
 
 ## El principio que organiza esta seccion
 
-Esta seccion esta separada por recurso: CPU, GPU, memoria, carga y UI tienen cada uno su rama.
+Esta seccion esta separada por recurso: CPU, GPU, memoria, carga y UI tienen cada uno su rama. UI y Arte son ramas por dominio, porque cuestan en mas de un recurso a la vez.
 
 Pero la separacion no es la puerta de entrada.
 
@@ -124,7 +124,8 @@ Memoria, carga y UI no se meten adentro de CPU o de GPU para conseguir una arqui
 ├── 05_Memoria/                    allocations, GC, retencion y lifecycle
 ├── 06_Carga e IO/                 startup, transiciones, streaming, freezes
 ├── 07_UI/                         cuesta en CPU y en GPU a la vez
-└── 08_Patrones transversales/     lo que aplica en mas de una rama
+├── 08_Patrones transversales/     lo que aplica en mas de una rama
+└── 09_Arte/                       el precio de mallas, materiales, texturas, esqueletos y clips
 ```
 
 El recorrido esperado es:
@@ -272,6 +273,22 @@ Usar esta rama cuando el costo aparezca al abrir una pantalla, al actualizar el 
 
 ---
 
+## [[Arte]]
+
+El precio del arte: lo que cuesta en el juego corriendo una malla, un material, una textura, un esqueleto, un clip o una hoja de sprites.
+
+```txt
+modelado     caras en pantalla, vertices partidos, materiales por asset, densidad de textura
+animacion    huesos e influencias, claves por tipo de animacion, sprites en memoria,
+             animacion fuera de camara
+```
+
+Usar esta rama cuando el diagnostico apunte a muchos personajes o props en pantalla, a mas vertices en el motor que en el DCC, a la memoria de texturas o de animacion, o al CPU animando lo que nadie ve. Y antes del primer asset de un proyecto, para fijar el presupuesto de cada familia.
+
+Separa tres cosas que se preguntan juntas: las caras bien orientadas son correccion y no costo (`Principios de arte`); los poligonos son costo; las claves de animacion son oficio y costo a la vez.
+
+---
+
 ## [[Patrones transversales]]
 
 Lo que no pertenece a un solo recurso: patrones que aplican en CPU, en GPU, en fisica, en IA y en rendering, mas la arquitectura que permite optimizar sin romper comportamiento.
@@ -341,6 +358,7 @@ SOLID                    → 01_SOLID
 Estructuras de datos     → 06_Estructuras de datos
 Algoritmos               → 07_Algoritmos
 Criterios de entrega     → 04_Criterios de entrega
+Principios de arte       → 11_Principios de arte
 ```
 
 Se nombran, no se enlazan desde aca, salvo que haya una necesidad operativa concreta.
@@ -380,6 +398,9 @@ El costo aparece al abrir una pantalla o mover el HUD
 
 La misma idea me sirve en dos ramas
 → Patrones transversales
+
+El costo crece con los personajes, los props o las animaciones
+→ Diagnostico, despues Arte
 ```
 
 ---

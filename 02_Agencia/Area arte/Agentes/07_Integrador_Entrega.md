@@ -42,6 +42,18 @@ Declararla no es un trámite. Deja escrito que ese asset nunca se leyó fuera de
 
 ---
 
+## De dónde parte
+
+```txt
+Core · Principios de arte     Transform origen y unidades: los ejes de cada motor
+IA Operativa · 08             Blender por MCP (la exportacion) · Sprites y animacion 2D
+                              (el paquete y el motor)
+```
+
+Consulta **on-demand**; el contrato del cliente le sigue ganando a cualquier convención.
+
+---
+
 ## Qué NO hace
 
 No modela, no reduce caras y no toca materiales. No corrige la malla: si el parseo del entregado encuentra un problema de geometría, vuelve a `06_Verificador_Malla`, que es quien lo mide, y a `03_Modelador`, que es quien lo arregla.

@@ -43,3 +43,20 @@ EJ-010.4_El_Primer_Lote_De_Casi_Duplicacion | insumo | idem RQ-010.4. Desvio dec
 EJ-004_El_Proyecto_Se_Pone_Al_Dia | insumo | completar artefactos contra el contrato vigente y reparar instrumentos con un patron ya decidido: sin decision de arquitectura propia. Los criterios de cierre del TL-004 fueron el contrato. Desvio declarado, no costumbre.
 EJ-004_La_Cobertura_Que_Faltaba | insumo | agregar la seccion de insumo a dos SOL cerrados no es una decision de arquitectura: los tres criterios de cierre del TL-004 de Pong3D fueron el contrato. Desvio declarado, no costumbre.
 EJ-011_El_Productor_Cuenta_Lo_Suyo | insumo | los cuatro RQ del TL-011 fueron el contrato: un instrumento y una regla de ubicacion, sin decision de arquitectura propia. Desvio declarado, no costumbre.
+
+# --- Legacy pre-contrato: la seccion Friccion de los VE ------------------------
+# La seccion Friccion entro al contrato del VE el 2026-09-28 (EST-017 / ClashDefense).
+# Estos nueve VE son anteriores y solo les falta esa seccion. Reconstruir un numero
+# de friccion que nadie midio seria inventarlo: se declaran y no fallan.
+# Decision del owner, cierre de TL-012 (2026-10-04).
+VE-007_Apertura_De_Vaultrum | contrato | VE anterior al contrato de Friccion (2026-09-28). Solo falta esa seccion; no se reconstruye un numero que no se midio.
+VE-008_La_Agencia_Es_La_Empresa | contrato | idem VE-007.
+VE-009_La_Deuda_Del_Parate | contrato | idem VE-007.
+VE-010_La_Casa_En_Orden | contrato | idem VE-007.
+VE-011_El_Productor_Cuenta_Lo_Suyo | contrato | idem VE-007.
+VE-002_Pong3D | contrato | idem VE-007.
+VE-003_Pong3D | contrato | idem VE-007.
+VE-004_Pong3D | contrato | idem VE-007.
+VE-004_TowerDefense | contrato | idem VE-007.
+# --- Historia archivada que nombra un archivo retirado -------------------------
+RQ-007.2_La_Puerta | fantasma | RQ archivado: nombra 04_IA Operativa/.owner.local.json, el verificador por maquina que owner.json reemplazo el 2026-09-28. Un RQ cerrado es historia y no se edita. Decision del owner, cierre de TL-012.

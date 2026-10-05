@@ -47,6 +47,19 @@ Una medida leída de un dato viejo es idéntica a una buena: mismo formato, mism
 
 ---
 
+## De dónde parte
+
+Lee la referencia con el criterio del Core, **on-demand**:
+
+```txt
+Core · Principios de arte     Proporcion y estilizacion · Silueta legible ·
+                              Lenguaje de formas · Del bloqueo al detalle
+```
+
+La proporción se escribe en medidas, nunca en adjetivos: *bajito y rellenito* salió obeso (`RA-010`).
+
+---
+
 ## Qué NO hace
 
 No modela. No toca geometría.

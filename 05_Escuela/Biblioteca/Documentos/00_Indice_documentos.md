@@ -251,6 +251,14 @@ Código fuente (decompilación) · Clownacy y colaboradores, decompilación de C
 
 Código fuente · proyecto comunitario OpenRA, activo desde, 2007 · licencia explícita · prioridad media
 
+### [[66_Chrome_Dino_codigo_fuente|Chrome Dino (T-Rex Runner) — código fuente]]
+
+Código fuente · The Chromium Authors, 2014 (TypeScript, commit 9b4a144) · licencia nivel A · prioridad alta · **Estudiado** — destilado en `05_Endless_runner`
+
+### [[69_LiveSplit_core|LiveSplit (livesplit-core)]]
+
+Código fuente · comunidad LiveSplit, vivo · licencia nivel A · prioridad media · **Estudiado** — destilado en `06_Contrarreloj`
+
 
 ## Registro — Documentación oficial de motor
 
@@ -291,6 +299,43 @@ Artículo técnico de referencia · Glenn Fiedler, 2004 rev. 2018 · licencia ni
 ### [[56_Valve_Developer_Community_Level_Design|Valve Developer Community — Level design]]
 
 Wiki oficial de desarrollo · Valve Corporation y comunidad, desde 2005 · licencia nivel B · prioridad media
+
+
+## Registro — Documentación oficial de herramientas de arte (lote EST-020)
+
+Entraron juntas en `EST-020_Mision_Mapa_Territorio_Arte`. Son de la misma familia que la sección anterior —documentación oficial—, separadas porque cumplen otra función: no enseñan a diseñar un juego, sirven para **operar la herramienta**, de modo que Vaultrum pueda manejar Blender y Unreal por MCP, por Python o por API remota. No son tutoriales: se consultan para saber qué hace una opción, qué versión hace falta y qué riesgo se asume.
+
+### [[71_Blender_Manual|Blender Manual]]
+
+Manual de referencia oficial · Blender Foundation, documentación viva (5.2 LTS) · licencia nivel A · prioridad alta · Catalogado
+
+### [[72_Blender_Python_API|Blender Python API]]
+
+Referencia de API oficial · Blender Foundation, documentación viva · licencia nivel B · prioridad alta · Catalogado
+
+### [[73_Blender_Lab_MCP_Server|Blender Lab — MCP Server]]
+
+Proyecto oficial experimental · Blender Foundation (Blender Lab), 2026 · requiere Blender 5.1 o posterior; ejecuta código generado sin resguardos · licencia nivel B · prioridad alta · Catalogado
+
+### [[74_Unreal_Animating_UMG_Widgets|Unreal — Animating UMG Widgets]]
+
+Doc técnica oficial · Epic Games, documentación viva (5.8) · licencia nivel B · prioridad media · Catalogado
+
+### [[75_Unreal_Motion_Design|Unreal — Motion Design]]
+
+Doc técnica oficial · Epic Games, experimental desde 5.4, documentación de 5.8 · licencia nivel B · prioridad alta · Catalogado
+
+### [[76_Unreal_MCP_Plugin|Unreal — plugin MCP del editor]]
+
+Doc técnica oficial · Epic Games, plugin experimental de 5.8 · licencia nivel B · prioridad alta · Catalogado
+
+### [[77_Unreal_Python_Editor_Scripting|Unreal — scripting del editor con Python]]
+
+Doc técnica oficial · Epic Games, documentación viva (5.8) · licencia nivel B · prioridad alta · Catalogado
+
+### [[78_Unreal_Remote_Control_API|Unreal — Remote Control API]]
+
+Doc técnica oficial con referencia HTTP · Epic Games, Beta (5.8) · licencia nivel B · prioridad media · Catalogado
 
 
 ## Registro — Postmortems técnicos y registros de proceso
@@ -341,6 +386,14 @@ Charla técnica con slides en PDF · Squirrel Eiserloh, 2016 · licencia nivel B
 
 Libro completo publicado por su autor · David Sirlin, 2000-2006 · licencia nivel A · prioridad media
 
+### [[67_Tuning_Canabalt|Tuning Canabalt — Adam Saltsman]]
+
+Artículo de diseño · Adam Saltsman, 2010 · licencia nivel B · prioridad alta · **Estudiado** — destilado en `05_Endless_runner`
+
+### [[68_Depth_in_Simplicity_Jetpack_Joyride|Depth in Simplicity — the making of Jetpack Joyride]]
+
+Charla de GDC · Luke Muscat, 2012 · licencia nivel B · prioridad media · **Estudiado** — destilado en `05_Endless_runner`
+
 
 ## Registro — Hallazgos del relevamiento
 
@@ -387,6 +440,10 @@ Análisis de estructura con notación de grafo · Mark Brown (GMTK), 2016-2020 �
 
 Definición de género por factores · International Roguelike Development Conference, 2008 · licencia nivel B · prioridad media
 
+### [[70_TrackMania2_Stadium_medal_times|TrackMania² Stadium — tiempos de medalla]]
+
+Tabla de datos reconstruida · gamers.org, ~2011–2017 · licencia nivel B · prioridad media · **Estudiado** — destilado en `06_Contrarreloj`
+
 
 ---
 
@@ -429,4 +486,4 @@ Estante abierto en la misión `EST-006_Mision_Lote_Biblioteca_Agosto26` con 52 d
 
 Tres de esos doce entraron juntos y por un motivo declarado: `59`, `60` y `61` son el material que le faltaba a `02_Game_feel`, el libro de Fundamentos que sigue *Reservado*. Con ellos, escribirlo deja de estar bloqueado por falta de material y pasa a ser una decisión del owner.
 
-64 documentos catalogados, ninguno destilado. Declarado como cuarto estante en `00_Biblioteca`. El conteo y el estado del estante se calculan con `Herramientas/biblioteca.py`.
+78 documentos en el estante: 72 catalogados y 6 estudiados (conteo calculado del disco el 2026-10-04, con el lote `EST-020` incluido). Declarado como cuarto estante en `00_Biblioteca`. El conteo y el estado del estante se calculan con `Herramientas/biblioteca.py`.

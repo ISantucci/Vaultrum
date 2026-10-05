@@ -31,6 +31,29 @@ El Encargo de una pieza 2D no espera mitad A. El de una hoja de referencia se pu
 
 **Si no hay mitad A cerrada, el modo Producción no arranca.** La dimensión maestra se decide una vez, antes del primer asset, y sale del `LDS`. La primera vez salió al revés: la celda de 3.00 m se eligió midiendo cuántos de los 8 assets ya construidos entraban. Salió bien y salió al revés.
 
+## Antes de trabajar: de dónde sale el criterio
+
+Las leyes dicen si un asset está **en ley**. Si está **bien hecho** lo dice el Core, y cuánto **cuesta**, Optimización. Jalá **on-demand** solo las notas que pide el modo —nunca la sección entera— y citá en el `ART` cuál sostuvo cada decisión.
+
+```txt
+MODO              CORE · Principios de arte          PRECIO · Optimizacion/Arte    OPERACION · IA Operativa/08
+Escala            Pilares visuales · Guia de estilo  Caras en pantalla ·          —
+                  · Paleta cerrada                   Huesos e influencias ·
+                                                     Densidad de textura
+Produccion        la hoja de Objetos 3D y de         Vertices partidos ·          Blender por MCP · Rigging y
+                  Modelado que toque                 Materiales por asset         skinning · Texturizado UV y
+                                                                                  materiales
+Pasada            Coherencia del conjunto · Color    la rama entera, sobre el set Legibilidad
+Encargo (pieza    Pilares visuales · Proporcion y    —                            —
+u hoja)           estilizacion · Silueta legible
+Encargo de        Principios de animacion (la tabla  Claves por tipo de           Sprites y animacion 2D ·
+animacion         de control y el principio en       animacion o Sprites en       Motion graphics y UI si es
+                  juego) · Curvas e interpolacion ·  memoria                      interfaz
+                  Personalidad en el movimiento
+```
+
+Una decisión de oficio sin nota que la sostenga se dice como **hueco** —*el Core no lo cubre*— y no se contesta de memoria como si fuera criterio.
+
 ## Las seis leyes
 
 ```txt
@@ -167,7 +190,7 @@ etiquetas   solo el nombre de cada vista. SIN cotas, sin numeros, sin barra
 
 ### Si es una ANIMACIÓN
 
-La animación de Miles la hizo Codex, y las correcciones del owner dejaron tres reglas: `RA-010` (identidad y movimiento son dos criterios), `RA-011` (locomoción por apoyos) y `RA-012` (secuencia, alfa y entrega). El encargo no se escribe con las siete partes de una pieza: se escribe con estas doce líneas, porque lo que vuelve no es una imagen sino un recurso que el juego va a mover.
+Los doce principios con su control de juego viven en el Core (`Principios de animacion`): la preparación corta en la acción del jugador y larga en el aviso del enemigo, el collider que no se deforma, los cuadros de animación que no son de simulación. La animación de Miles la hizo Codex, y las correcciones del owner dejaron tres reglas: `RA-010` (identidad y movimiento son dos criterios), `RA-011` (locomoción por apoyos) y `RA-012` (secuencia, alfa y entrega). El encargo no se escribe con las siete partes de una pieza: se escribe con estas doce líneas, porque lo que vuelve no es una imagen sino un recurso que el juego va a mover.
 
 ```txt
 PERSONAJE Y REFERENCIA   archivo y version aprobada: el canon (RA-010.1)
@@ -305,4 +328,4 @@ No define reglas ni balance (Game Design). No diseña el espacio jugable (Level 
 
 ## Señales de mala respuesta
 
-Aprueba un asset mirándolo · verifica antes de emparentar · deja que el modelador se verifique a sí mismo · deja que el verificador repare lo que encontró · declara caras del archivo como si fueran caras en pantalla · salta un paso condicional sin declarar la omisión · afirma una medida en vez de ajustarla hasta que dé · arranca a modelar sin mitad A cerrada · usa un render como prueba · escribe un encargo sin leer el proyecto · mete en la escena un elemento que no sostiene ningún hecho · deja el texto abierto · rediseña el personaje en vez de anclarlo · le pide cotas a una hoja generada, o usa una como medida · corrige tres cosas en una sola vuelta · aprueba una animación mirando el GIF · nombra las piernas por cerca/lejos en vez de izquierda/derecha · acepta un damero como transparencia · hace el GIF primero y los PNG desde el GIF · dice "listo para juego" con solo la vista previa comprobada.
+Aprueba un asset mirándolo · verifica antes de emparentar · deja que el modelador se verifique a sí mismo · deja que el verificador repare lo que encontró · declara caras del archivo como si fueran caras en pantalla · salta un paso condicional sin declarar la omisión · afirma una medida en vez de ajustarla hasta que dé · arranca a modelar sin mitad A cerrada · usa un render como prueba · escribe un encargo sin leer el proyecto · mete en la escena un elemento que no sostiene ningún hecho · deja el texto abierto · rediseña el personaje en vez de anclarlo · le pide cotas a una hoja generada, o usa una como medida · corrige tres cosas en una sola vuelta · aprueba una animación mirando el GIF · nombra las piernas por cerca/lejos en vez de izquierda/derecha · acepta un damero como transparencia · hace el GIF primero y los PNG desde el GIF · dice "listo para juego" con solo la vista previa comprobada · contesta de memoria una decisión de oficio que el Core tiene escrita · cita un principio sin su especificación de juego.

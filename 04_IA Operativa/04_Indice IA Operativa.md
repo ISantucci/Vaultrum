@@ -40,6 +40,9 @@ El instrumento que mide el **costo del owner en prompts** y lo separa en visión
 ### [[07_Despacho de ejecucion]]
 El segundo presupuesto de la capa: no qué contexto se carga, sino **dónde corre el trabajo y qué cuesta**. La ley del subagente —escribe el archivo, devuelve un resumen— con su contraejemplo medido, el criterio de reparto entre ejecutor barato y modelo fuerte, y **el mapa de qué superficie corre cada proceso hoy** —Claude, Codex, ChatGPT— con la evidencia de cada fila.
 
+### [[08_Operar el arte]]
+Cómo opera la IA las herramientas de arte —Blender, Unreal— y **cómo se le pide** a Vaultrum un trabajo de arte: legibilidad, rigging, texturizado, sprites, motion graphics y UI, VFX. No decide dónde corre el trabajo (eso es `07`): contesta cómo se opera una vez que corre ahí.
+
 ### Herramientas/
 
 `contar_contexto.py` — el contador real de contexto. Mapa del vault por capa, archivos más pesados, costo de una carga concreta contra un presupuesto, y diff antes/después de podar. Es el Profiler de esta capa.

@@ -53,30 +53,17 @@ donde + que ocurre + que deberia ocurrir + que conservar
 
 ## Regla 4 — Los doce principios, con su control de juego
 
-Nomenclatura segun la introduccion de Adobe a los doce principios. Los usos y los controles son de este registro, no citas de esa fuente.
+Viven en el Core desde `TL-012`: `Principios de animacion`, una nota por principio, cada una con su especificación de videojuego, su fuente y cómo se juzga.
+
+La tabla de control que estaba acá **se mudó** a esa sección, y su origen quedó citado en cada nota. La versión de esta regla con la tabla queda en el historial del repositorio. Esta regla deja de ser la segunda autoridad sobre los doce: lo que sigue siendo suyo es el caso —qué se corrigió en Miles y cómo se pide la corrección—, que es lo que dicen las reglas 1 a 3.
 
 ```txt
-compresion y estiramiento   aterrizaje, rebote, UI. CONTROL: la cabeza no cambia de tamano
-                            para siempre; deformar el dibujo no obliga a deformar el collider
-anticipacion                aviso de ataque enemigo, carga, salto. CONTROL: una preparacion
-                            larga en el salto del JUGADOR se siente como retraso
-puesta en escena            la pose se entiende en silueta, a la camara y escala reales.
-                            En UI, una sola tecla reclama atencion por vez
-pose a pose / directa       locomocion y contactos: pose a pose. Primero contacto I y D
-                            aprobados; ocho dibujos sueltos no aseguran continuidad
-continuacion y superposicion   pelo, mangas, equipo. CONTROL: lo accesorio no oculta que
-                            el jugador ya puede volver a actuar
-entradas y salidas suaves   CONTROL: no suavizar todo; un impacto puede llegar abrupto, y
-                            suavizar el dibujo no cambia la fisica del controlador
-arcos                       CONTROL: un arco lindo no justifica atravesar el suelo o el boton
-accion secundaria           mirar el boton antes de tocarlo. CONTROL: no se vuelve protagonista
-timing                      CONTROL: cuadros de animacion no son cuadros de simulacion.
-                            Ocho imagenes pueden durar 0.8 s en un juego a 60 FPS
-exageracion                 CONTROL: exagerar la rodilla no obliga a alargar la zancada.
-                            Se exagera lo que comunica, sin cambiar la categoria de la accion
-dibujo solido               seguir articulaciones y masas aunque una pierna quede oculta.
-                            No reasignar la identidad de las piernas al cruzarse
-atractivo                   CONTROL: no es embellecer ni adelgazar. Sigue siendo el mismo personaje
+antes     la tabla de los doce, con nomenclatura de una pagina web y los controles
+          sacados de las correcciones de Miles, sin fuente
+ahora     Core · Principios de animacion   (Thomas y Johnston, Williams, Cooper, y la
+          catedra del owner)
+          esta regla                        el caso Miles, y como se corrige sin romper
+                                            lo aprobado
 ```
 
 ## Verificacion
@@ -87,5 +74,6 @@ Lo que no es mecanico se juzga **contra la referencia maestra**, con los cuadros
 
 ## Fuentes
 
-- [Adobe: 12 Principles of Animation](https://www.adobe.com/creativecloud/animation/discover/principles-of-animation.html) — nomenclatura de los principios.
+- `Principios de animacion` (Core) — los doce principios y su control de juego, con fuente, desde `TL-012`.
+- [Adobe: 12 Principles of Animation](https://www.adobe.com/creativecloud/animation/discover/principles-of-animation.html) — la nomenclatura de la primera versión de esta regla.
 - Historial de trabajo de Miles: pedidos y correcciones del owner sobre caminata, proporciones, salto, saludo, interaccion, transparencia y tutorial WASD.

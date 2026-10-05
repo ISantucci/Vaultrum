@@ -232,6 +232,53 @@ Steve Rabin (ed.) · 2013-2021 · casos de IA escritos por practicantes · **lib
 
 Winifred Phillips · 2014 · música adaptativa por capas y por secuencia; que un loop no canse · Catalogada
 
+### [[57_Rhythm_Based_Level_Generation|Rhythm-Based Level Generation for 2D Platformers]]
+
+Smith, Treanor, Whitehead y Mateas · 2009 · grupos rítmicos y verificación física de que todo patrón generado es jugable · **Estudiado** — destilada en `05_Endless_runner`
+
+### [[58_Time_Pressure_Yildirim|Time Pressure as Video Game Design Element]]
+
+İ. G. Yıldırım · 2015 · la única medición directa de presión de tiempo en un juego que tiene el estante · **Estudiado** — destilada en `06_Contrarreloj`
+
+### [[59_The_Illusion_of_Life|The Illusion of Life]]
+
+Thomas & Johnston · 1981/1995 · los doce principios en su origen; cine, sin control del jugador · Catalogada
+
+### [[60_The_Animators_Survival_Kit|The Animator's Survival Kit]]
+
+Richard Williams · 2001/2009 · timing y espaciado, claves y breakdowns, mecánica de la caminata · Catalogada
+
+### [[61_Game_Anim|Game Anim: Video Game Animation Explained]]
+
+Jonathan Cooper · 2019/2021 · la especificación de juego: respuesta vs fidelidad, cancelación, root motion · Catalogada
+
+### [[62_Color_and_Light|Color and Light]]
+
+James Gurney · 2010 · valor antes que tono, temperatura, luz en contexto, mapeo de gama · Catalogada
+
+### [[63_Interaction_of_Color|Interaction of Color]]
+
+Josef Albers · 1963/2013 · la relatividad del color: un color depende de su vecino · Catalogada
+
+### [[64_Creating_Characters_with_Personality|Creating Characters with Personality]]
+
+Tom Bancroft · 2006 · lenguaje de formas, silueta, rango de estilo, proporción como carácter · Catalogada
+
+### [[65_Digital_Modeling|Digital Modeling]]
+
+William Vaughan · 2012 · topología, flujo de aristas, polos, modelar para deformar · Catalogada
+
+### [[66_Elemental_Magic|Elemental Magic (Vol. I)]]
+
+Joseph Gilland · 2009 · efectos como diseño de energía: fuego, agua, humo, explosiones · Catalogada
+
+### [[67_Pixel_Logic|Pixel Logic]]
+
+Michael Azzi · 2019/2022 · legibilidad a baja resolución, paleta corta, desplazamiento de tono · autoeditado, sin ISBN · Catalogada
+
+### [[68_Apuntes_de_catedra_Animacion_2D_3D|Apuntes de cátedra: Animación 2D/3D]]
+
+Apuntes propios del owner, materia Animación 2D/3D (cursada 2026). Fuente propia. **Estudiado**: destilada entera en `TL-012`, con la tabla de qué idea fue a qué nota.
 
 
 ---
@@ -302,3 +349,28 @@ Cada alta tapa un hueco nombrado:
 4. 37 y 38   dan método y ciencia a dos libros que hoy recombinan
 5. el resto
 ```
+
+---
+
+## Lote EST-020 — Mapa del territorio de Arte (octubre 2026)
+
+Las fuentes `59`–`67` entraron juntas en `EST-020_Mision_Mapa_Territorio_Arte`. El hueco: el **Área de Arte** y la IA Operativa producían y encargaban modelos, animación, color y efectos **sin una sola fuente de arte** en el estante. Sobre 58 fuentes, ninguna estaba dedicada a animación, color, diseño de personaje ni modelado.
+
+Reparto interno del lote, para que la destilación no las lea como nueve versiones de lo mismo:
+
+```txt
+59  el principio de animación   (cine; origen de los doce)
+60  el oficio cuadro a cuadro    (timing, espaciado, caminata)
+61  la especificación de juego   (respuesta, cancelación, root motion)
+62  la luz y el valor            (pintura realista)
+63  la percepción del color      (relatividad; sin números)
+64  el personaje como forma      (silueta, proporción, estilo)
+65  la malla                     (topología, flujo, deformación)
+66  los efectos                  (energía y timing de FX)
+67  el píxel                     (baja resolución, paleta corta)
+68  fuente propia                (apuntes de cátedra del owner)
+```
+
+**Estado: `Catalogada` las nueve externas.** La `68` es fuente propia del owner y entra destilada en `TL-012`. Catalogar no es destilar, y **ninguna de las nueve es insumo válido de un `RQ`** — una fuente nunca lo es; lo es la nota que salga de ella.
+
+**`59`, `60` y `61` se leen como una unidad.** El principio de cine sin su especificación de juego da animaciones lindas que no responden; la especificación sin el principio da animaciones que responden y no dicen nada.
