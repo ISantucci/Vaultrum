@@ -238,6 +238,7 @@ MEDIDO — lo corre la herramienta, no vos
 [ ] la cobertura no tiene celdas vacías ni "no aplica" sin razón
 [ ] todo defecto que queda abierto o diferido tiene dueño y aceptación escrita
 [ ] el veredicto declarado coincide con el medido
+[ ] documentacion.py sobre el QA da EN LEY (gate de forma en la fuente)
 
 JUICIO — se declara como juicio, no como medición
 [ ] el riesgo residual está escrito en palabras, no solo en tickets
@@ -245,6 +246,14 @@ JUICIO — se declara como juicio, no como medición
 [ ] lo que no se ejecutó está dicho, y se entiende qué queda sin mirar
 [ ] la evidencia alcanza para que otro repita el juicio dentro de seis meses
 ```
+
+**Gate de forma en la fuente.** Antes de cerrar, medí lo que escribiste:
+
+```bash
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" "<ruta del QA>" --verificar
+```
+
+Si no da **EN LEY**, el paso cierra en **Ajustar** y el `QA` no se entrega: Conocimiento entra por el gate (`01_Copiloto_Documentacion`). El `pre-commit` mide lo mismo, pero `06_Proyectos/` no se commitea, así que ahí llega tarde y frena a quien no lo escribió. Regla de borde **Forma**, en `02_Indice Agencia`. `calidad.py` mide el contenido del `QA`; este mide su forma.
 
 ## Lo que la revisión de fase lee de este gate
 

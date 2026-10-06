@@ -41,7 +41,16 @@ regla o balance mal definido            → deriva a Game Design
 [ ] Decisiones espaciales significativas donde aplica (pilar 9)
 [ ] Integraciones con otros niveles/sistemas identificadas
 [ ] Construible por Programación sin ambigüedad
+[ ] documentacion.py sobre el LDS da EN LEY (gate de forma en la fuente)
 ```
+
+**Gate de forma en la fuente.** Antes de cerrar, medí lo que escribiste:
+
+```bash
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" "<ruta del LDS>" --verificar
+```
+
+Si no da **EN LEY**, el paso cierra en **Ajustar** y el `LDS` no se entrega: Conocimiento entra por el gate (`01_Copiloto_Documentacion`). El `pre-commit` mide lo mismo, pero `06_Proyectos/` no se commitea, así que ahí llega tarde y frena a quien no lo escribió. Regla de borde **Forma**, en `02_Indice Agencia`. El `LDS` todavía no tiene contrato de secciones: el instrumento mide su insumo, sus números y sus rutas, y lo que no mide lo dice.
 
 
 ## Estado del paso

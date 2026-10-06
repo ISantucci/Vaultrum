@@ -253,7 +253,7 @@ Código fuente · proyecto comunitario OpenRA, activo desde, 2007 · licencia ex
 
 ### [[66_Chrome_Dino_codigo_fuente|Chrome Dino (T-Rex Runner) — código fuente]]
 
-Código fuente · The Chromium Authors, 2014 (TypeScript, commit 9b4a144) · licencia nivel A · prioridad alta · **Estudiado** — destilado en `05_Endless_runner`
+Código fuente · The Chromium Authors, 2014 (TypeScript, commit 9b4a144) · licencia nivel A · prioridad alta · **Estudiado** — destilado en `05_Endless_runner`; medido corriendo en `EST-021` con `banco_dino`
 
 ### [[69_LiveSplit_core|LiveSplit (livesplit-core)]]
 

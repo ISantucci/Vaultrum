@@ -315,6 +315,34 @@ gap de conocimiento → Escuela (vaultrum-escuela) antes de seguir.
 aprendizaje       → al cerrar, si hay criterio reutilizable, derivá a Conocimiento (vaultrum-conocimiento).
 ```
 
+### Al recibir un artefacto, y antes de devolverle el turno al owner
+
+Cada vez que un área te devuelve un artefacto, y siempre antes de cerrar un turno en el que se escribió alguno, medí la carpeta del proyecto:
+
+```bash
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" "06_Proyectos/<Proyecto>" --verificar
+```
+
+Si no da **EN LEY**, lo que falló no está entregado: vuelve al área que lo escribió, en **Ajustar**, y Conocimiento entra por el gate (`01_Copiloto_Documentacion`). No le devuelvas el turno al owner con el proyecto fuera de ley sin decírselo. El `pre-commit` mide lo mismo, pero `06_Proyectos/` no se commitea: si el control queda solo ahí, salta horas después sobre el commit de otra cosa. Regla de borde **Forma**, en `02_Indice Agencia`.
+
+### Pedidos del owner a mitad de hito (pasadas)
+
+Con un hito en curso, el owner pide ajustes: *"más lenta"*, *"a la izquierda"*, *"que la E salga"*. Cada pedido entra por vos y se clasifica **antes de tocar código**:
+
+```txt
+dentro del SOL    toca solo archivos e interfaces que el Contrato de ejecucion del SOL nombra,
+                  en un hilo que el SOL cubre, y no cambia una regla del GDS ni del UXS
+                  -> es una pasada: Programacion la hace y la registra en el EJ, bajo su hilo
+cambia el diseno  cambia una regla, un estado o una tecla del GDS o del UXS del hilo
+                  -> primero la spec (y la decision en el cuaderno), despues el codigo
+alcance nuevo     toca un hilo que el SOL no cubre, un RQ Pausado o un archivo fuera del contrato
+                  -> no es una pasada: entra a la cadena (specs, SOL extendida) antes que al codigo
+```
+
+Antes de cada pasada que toca código, corré `fase.py` sobre el proyecto: una parada activa sobre el hilo que se va a tocar —S8, código sin diseño— la frena. Decíselo al owner en una línea: qué caso es y qué falta. El tercer caso le cuesta un prompt, y es el prompt que evita reescribir después. Al terminar la pasada, el gate de forma de arriba.
+
+Precedente: Portfolio, `TL-001`, 2026-10-05. Nueve pasadas en un día; las dos últimas implementaron el modo juego sin `UXS` ni `GDS`, con un `RQ` pausado y la parada S8 anotada en el propio cuaderno. Cada pedido era chico, y ninguno se clasificó.
+
 ### Índice de áreas — cómo se abre cada una
 
 **Estas ocho áreas no están registradas como skills.** No aparecen en la lista que el asistente carga sola: se abren leyendo su `SKILL.md` por ruta, desde acá. No es una degradación — es la ley de `ARQ-033`: **descubrir cuesta presupuesto residente y alcanzar no cuesta nada**, y a ninguna de las ocho se entra en frío, porque ninguna puede correr sin un insumo que otra produjo antes.
@@ -538,7 +566,7 @@ VE Ajustar   → no se commitea la entrega; sí se puede pushear la branch de tr
 VE Pausado   → no se commitea: se declara qué falta
 ```
 
-La política del repositorio —quién integra a `main`, qué no se hace sobre `main`— vive en `04_IA Operativa/03_Operar Vaultrum` y no se repite acá. El gate de forma corre solo en el `pre-commit` y es de Arquitectura. La verificación técnica previa es del **Área de Control de Calidad**, y llega como el `QA` que este `VE` cita.
+La política del repositorio —quién integra a `main`, qué no se hace sobre `main`— vive en `04_IA Operativa/03_Operar Vaultrum` y no se repite acá. El gate de forma corre en dos lugares: en la fuente —cada área sobre lo que escribe, y vos al recibirlo (Paso 3)— y en el `pre-commit`, que es de Arquitectura y queda como red. La verificación técnica previa es del **Área de Control de Calidad**, y llega como el `QA` que este `VE` cita.
 
 ## Sub-agentes del área (mentalidades internas)
 

@@ -22,7 +22,7 @@ Estrategia · Tower defense de colocación libre y cámara fija; economía de la
 
 ### [[05_Endless_runner|Endless runner]]
 
-Arcade · Endless runner lateral (auto-run, un carril, un golpe); la curva de velocidad como curva de dificultad, huecos derivados del salto y alturas por verbo · EST-019 Mision Endless runner y contrarreloj · En validación
+Arcade · Endless runner lateral (auto-run, un carril, un golpe); la curva de velocidad como curva de dificultad, huecos derivados del salto y alturas por verbo; calibrado contra el Dino corriendo, con la síncopa legible (EST-021) · EST-021 Mision Chrome Dino jugado · En validación
 
 ### [[06_Contrarreloj|Contrarreloj]]
 

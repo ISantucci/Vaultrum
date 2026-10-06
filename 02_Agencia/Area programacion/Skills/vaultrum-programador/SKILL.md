@@ -41,7 +41,7 @@ Ejecutá estas fases en orden, declarando en qué sub-agente estás. El loop no 
 1. **Analista Técnico** — entendé el RQ y su paquete de diseño (GDS, y LDS/UXS si existen), **leé el proyecto real** (no asumas arquitectura), detectá sistemas/managers/convenciones existentes, consultá el Core aplicable, marcá riesgos y faltantes. Salida: diagnóstico.
    **Si el proyecto ya tiene código, son dos lecturas y no una:** *qué hace* (reglas, comportamiento) y *cómo se trabaja* (dónde viven los valores, cómo se crea una entidad, cómo se arman un nivel y una pantalla). Rechazar lo primero no rechaza lo segundo. Por cada convención, el diagnóstico dice **reutilizo / extiendo / reemplazo**, y por qué. Precedente: ClashDefense rechazó las reglas del proyecto previo del owner por nueve choques con el diseño, y con razón. Pero con ellas descartó también sus ScriptableObjects, sus prefabs y sus caminos en escena, y dos entregas después hubo que volver a lo mismo reconstruido desde cero. Mecanismo: `04_Proyecto_editable_en_Unity`.
 2. **Diseñador de Solución** — convertí el diagnóstico en una solución técnica validada. Aplicá SOLID y separación estructura/algoritmo/consumidor, elegí patrones del Core, definí parámetros configurables (nada de hardcodear gameplay/balance). **La forma de la `SOL` la fija su contrato de salida, `00_Indice_soluciones` — leelo antes de escribir. Acá no se copia.** Lo único que se repite es lo que más se olvida: sin el **`Contrato de ejecución`** (archivos, interfaces, invariantes, prohibido) el `EJ` no se puede rutear a un ejecutor barato, porque quien ejecuta tendría que decidir. Registrala como **SOL-XXX.n** y **terminá pidiendo aprobación del alcance**. ⟵ GATE
-3. **Ejecutor Técnico** — solo tras el OK. Implementá el alcance aprobado, reutilizá sistemas, no toques fuera de alcance, dejá valores configurables. Si hay `LDS`/`UXS`, construilos como están especificados: no reinterpretes layout ni jerarquía de interfaz. Antes de reportar, corré el **gate de existencia en disco** (abajo). Registrá **EJ-XXX.n** con el reporte.
+3. **Ejecutor Técnico** — solo tras el OK. Implementá el alcance aprobado, reutilizá sistemas, no toques fuera de alcance, dejá valores configurables. Si hay `LDS`/`UXS`, construilos como están especificados: no reinterpretes layout ni jerarquía de interfaz. Antes de reportar, corré el **gate de existencia en disco** (abajo) y el **gate de forma** sobre la `SOL` y el `EJ` (`documentacion.py <ruta> --verificar`, ver el checklist). Registrá **EJ-XXX.n** con el reporte.
 4. **Revisor Técnico** — validá la EJ contra el checklist. Si cumple, cerrá la revisión técnica del hilo `.n`. Si no, **rebotá** al sub-agente correcto y repetí.
 
 ```
@@ -173,11 +173,22 @@ Ejemplo real (`EJ-003`): compilar 17 scripts fuera del motor contra un stub de l
 [ ] Las herramientas de una sola vez (migraciones, generadores) se retiraron o quedaron marcadas como destructivas
 [ ] Si había LDS/UXS, se construyeron como fueron especificados
 [ ] Cada archivo del reporte existe en su ruta destino (gate de existencia en disco)
+[ ] documentacion.py sobre la SOL y el EJ da EN LEY (gate de forma en la fuente)
+[ ] Nada fuera del Contrato de ejecucion de la SOL: lo que excede volvio a Produccion
 [ ] Si la verificación fue parcial, declara qué cubre y qué no
 [ ] Cada decisión técnica se justifica contra un RQ, no contra un principio
 [ ] Está escrita la columna de lo que deliberadamente NO se hizo
 [ ] Trazable: RQ → GDS → LDS/UXS → SOL → EJ
 ```
+
+**Gate de forma en la fuente.** Antes de cerrar, medí la `SOL` y el `EJ`:
+
+```bash
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" "<ruta de la SOL>" --verificar
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" "<ruta del EJ>" --verificar
+```
+
+Si alguno no da **EN LEY**, el paso cierra en **Ajustar** y el hilo no pasa a Calidad: Conocimiento entra por el gate (`01_Copiloto_Documentacion`). El `pre-commit` mide lo mismo, pero `06_Proyectos/` no se commitea, así que ahí llega tarde y frena a quien no lo escribió. Regla de borde **Forma**, en `02_Indice Agencia`.
 
 Estados posibles al cerrar la revisión: **Cerrado** · **Ajustar** (con el sub-agente destino) · **Pausado** (falta una decisión o un insumo; se declara qué falta y no se fuerza el cierre — principio 9).
 
@@ -218,6 +229,12 @@ La regla **no** es "no optimices": es que la justificación apunte a un `RQ`, no
 Precedente: una corrida técnica del mismo Pong hecha fuera de la cadena produjo ocho decisiones de ingeniería excelentes —accumulator a 120 Hz, CCD propio, cero asignaciones, batching ajustado— para un juego de veinte objetos donde nadie pidió rendimiento. No tenía menú ni condición de fin. Ver `Cuando NO optimizar`.
 
 **Las herramientas de una sola vez se retiran.** Una migración, o un generador de escenas, prefabs o datos, se corre, se verifica por equivalencia y **sale del proyecto**, o queda marcada como destructiva y fuera del menú de uso diario. Un generador que sigue vivo es maquinaria que nadie pidió, y además una trampa: la segunda corrida pisa lo que el owner editó a mano. Precedente: ClashDefense cerró `TL-003` con 1.579 líneas de migración de una sola vez todavía dentro del proyecto.
+
+### El `EJ` no crece fuera de su `SOL`
+
+Un pedido del owner que llega con el `EJ` abierto no se implementa directo: lo clasifica Producción (*Pedidos del owner a mitad de hito*, en `vaultrum-produccion`). Lo tuyo es el chequeo mecánico: si el cambio toca un archivo, una interfaz o un hilo que el `Contrato de ejecución` de la `SOL` no nombra, **no es una pasada**, y vuelve a Producción antes de la primera línea. Una pasada que sí cabe entra al `EJ` en *Lo que se implementó*, bajo su hilo, y el `EJ` nunca se entrega sin *Riesgos abiertos* ni *Estado*.
+
+Un `EJ` que crece por fecha —una sección por pasada, sin cierre— es una bitácora, no un reporte. Precedente: `EJ-001` de Portfolio (`TL-001`), nueve pasadas en un día, las dos últimas fuera de su `SOL`.
 
 ## Criterios técnicos que protegés
 

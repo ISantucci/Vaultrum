@@ -47,7 +47,16 @@ balance/curvas sin cerrar     → Balanceador
 [ ] LDS decidido: el "no aplica" dice qué dimensión falta y por qué
 [ ] Si el `RQ` declaró que UXS aplica, este GDS lo consume; no lo vuelve a decidir
 [ ] Si hay GDS-XXX.0: este GDS lo referencia y no lo duplica
+[ ] documentacion.py sobre el GDS da EN LEY (gate de forma en la fuente)
 ```
+
+**Gate de forma en la fuente.** Antes de cerrar, medí lo que escribiste:
+
+```bash
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" "<ruta del GDS>" --verificar
+```
+
+Si no da **EN LEY**, el paso cierra en **Ajustar** y el `GDS` no se entrega: Conocimiento entra por el gate (`01_Copiloto_Documentacion`). El `pre-commit` mide lo mismo, pero `06_Proyectos/` no se commitea, así que ahí llega tarde y frena a quien no lo escribió. Regla de borde **Forma**, en `02_Indice Agencia`.
 
 ## Al cerrar el GDS — a dónde va
 

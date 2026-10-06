@@ -84,7 +84,7 @@ La Escuela es el área con más riesgo de intoxicarse (estudia con libertad, pue
     Documentos/            (fichas de papers y libros: referencia + URL, no copias)
   Agentes/                 (Bibliotecario, Investigador, Destilador, Validador)
   Flujos/                  (pipeline de misión con gates AiCare)
-  Herramientas/            (biblioteca.py, y los generadores de diagrama de los libros)
+  Herramientas/            (biblioteca.py, los generadores de diagrama de los libros y banco_dino, que mide el Dino corriendo)
   Skills/                  (vaultrum-escuela, la skill ejecutable de la capa)
   Salidas/                 (candidatos EST + misiones registradas)
 ```

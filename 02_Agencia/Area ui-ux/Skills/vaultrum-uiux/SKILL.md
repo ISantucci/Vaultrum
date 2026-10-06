@@ -244,6 +244,7 @@ MEDIDO — lo corre la herramienta, no vos
 [ ] toda acción disponible está escrita en pantalla
 [ ] ningún estado muerto ni inalcanzable
 [ ] ninguna pantalla por encima del techo
+[ ] documentacion.py sobre el UXS da EN LEY (gate de forma en la fuente)
 
 JUICIO — se declara como juicio, no como medición
 [ ] los cinco estados de pantalla están declarados, o su no-aplica está escrito
@@ -260,6 +261,14 @@ JUICIO — se declara como juicio, no como medición
 [ ] nada de lo agregado tapa una falla ni vuelve ambiguo un estado
 [ ] construible por Programación sin ambigüedad
 ```
+
+**Gate de forma en la fuente.** Antes de cerrar, medí lo que escribiste:
+
+```bash
+python3 "02_Agencia/Area conocimiento/Herramientas/documentacion.py" "<ruta del UXS>" --verificar
+```
+
+Si no da **EN LEY**, el paso cierra en **Ajustar** y el `UXS` no se entrega: Conocimiento entra por el gate (`01_Copiloto_Documentacion`). El `pre-commit` mide lo mismo, pero `06_Proyectos/` no se commitea, así que ahí llega tarde y frena a quien no lo escribió. Regla de borde **Forma**, en `02_Indice Agencia`.
 
 ## Estado del paso
 
