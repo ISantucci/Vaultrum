@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="715" viewBox="0 0 1120 715" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1120" height="715" fill="#FFFFFF"/>
+<defs><marker id="f" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5A5A5A"/></marker><marker id="fr" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#C0504D"/></marker></defs>
+<text x="75" y="42" font-size="21" font-weight="600" fill="#1A1A1A">Capa de IA Operativa — los dos presupuestos</text>
+<text x="75" y="66" font-size="12.5" fill="#6A6A6A">No produce trabajo: gobierna cómo opera la IA. Dos presupuestos que bajan la misma factura por caminos que no se tocan.</text>
+<path d="M 275,131 L 325,131" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 525,131 L 575,138" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 795,138 L 825,131" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 325,256 L 295,256 L 295,131 L 325,131" fill="none" stroke="#5A5A5A" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#f)"/>
+<path d="M 275,381 L 325,381" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 525,381 L 575,388" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 795,388 L 825,394" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 685,426 L 685,475" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<rect x="659" y="442" width="51" height="16" rx="3" fill="#FFFFFF" opacity="0.94"/>
+<text x="685" y="454" font-size="10.5" fill="#5A5A5A" text-anchor="middle">log.txt</text>
+<path d="M 325,506 L 267,506 L 267,381 L 325,381" fill="none" stroke="#5A5A5A" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#f)"/>
+<rect x="244" y="434" width="46" height="16" rx="3" fill="#FFFFFF" opacity="0.94"/>
+<text x="267" y="446" font-size="10.5" fill="#5A5A5A" text-anchor="middle">la usa</text>
+<rect x="75" y="100" width="200" height="62" rx="14" fill="#EDE7F6" stroke="#6A4FA3" stroke-width="1.6"/>
+<text x="175" y="128" font-size="11.5" fill="#2E1A5C" font-weight="600" text-anchor="middle">Costo de ENTRADA — qué</text>
+<text x="175" y="142" font-size="11.5" fill="#2E1A5C" font-weight="600" text-anchor="middle">contexto se carga</text>
+<rect x="325" y="100" width="200" height="62" rx="3" fill="#FFFFFF" stroke="#3D3D3D" stroke-width="1.6"/>
+<text x="425" y="135" font-size="11.5" fill="#1A1A1A" font-weight="600" text-anchor="middle">AiCare — Pass GC de contexto</text>
+<polygon points="589,100 781,100 795,138.0 781,176 589,176 575,138.0" fill="#EAF6EC" stroke="#3F8A4E" stroke-width="1.6"/>
+<text x="685" y="135" font-size="11.5" fill="#14401E" font-weight="400" text-anchor="middle">contar_contexto.py — mapa ·</text>
+<text x="685" y="149" font-size="11.5" fill="#14401E" font-weight="400" text-anchor="middle">pesados · carga · diff</text>
+<rect x="825" y="100" width="200" height="62" rx="3" fill="#FFF4E0" stroke="#C98A2B" stroke-width="1.6"/>
+<text x="925" y="128" font-size="11.5" fill="#5C3B08" font-weight="400" text-anchor="middle">Podado + delta medido (antes →</text>
+<text x="925" y="142" font-size="11.5" fill="#5C3B08" font-weight="400" text-anchor="middle">después)</text>
+<rect x="325" y="225" width="200" height="62" rx="14" fill="#FDE9E9" stroke="#C0504D" stroke-width="1.6"/>
+<text x="425" y="260" font-size="11.5" fill="#5C1A18" font-weight="600" text-anchor="middle">Corre en cada commit</text>
+<rect x="75" y="350" width="200" height="62" rx="14" fill="#EDE7F6" stroke="#6A4FA3" stroke-width="1.6"/>
+<text x="175" y="378" font-size="11.5" fill="#2E1A5C" font-weight="600" text-anchor="middle">Costo de EJECUCIÓN — dónde</text>
+<text x="175" y="392" font-size="11.5" fill="#2E1A5C" font-weight="600" text-anchor="middle">corre y qué cuesta</text>
+<rect x="325" y="350" width="200" height="62" rx="3" fill="#FFFFFF" stroke="#3D3D3D" stroke-width="1.6"/>
+<text x="425" y="378" font-size="11.5" fill="#1A1A1A" font-weight="600" text-anchor="middle">05 Despachante (agente de la</text>
+<text x="425" y="392" font-size="11.5" fill="#1A1A1A" font-weight="600" text-anchor="middle">Agencia)</text>
+<rect x="325" y="475" width="200" height="62" rx="3" fill="#F2F2F2" stroke="#9A9A9A" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="425" y="503" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">vaultrum-despacho — el</text>
+<text x="425" y="517" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">procedimiento</text>
+<polygon points="589,350 781,350 795,388.0 781,426 589,426 575,388.0" fill="#EAF6EC" stroke="#3F8A4E" stroke-width="1.6"/>
+<text x="685" y="385" font-size="11.5" fill="#14401E" font-weight="400" text-anchor="middle">bandeja/ — ordenes → procesadas →</text>
+<text x="685" y="399" font-size="11.5" fill="#14401E" font-weight="400" text-anchor="middle">resultados</text>
+<rect x="825" y="350" width="220" height="88" rx="3" fill="#F2F2F2" stroke="#9A9A9A" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="935" y="384" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">Ejecutores desde cmd: claude -p</text>
+<text x="935" y="398" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">--permission-mode · codex exec -</text>
+<text x="935" y="411" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">--sandbox</text>
+<polygon points="589,475 781,475 795,513.0 781,551 589,551 575,513.0" fill="#EAF6EC" stroke="#3F8A4E" stroke-width="1.6"/>
+<text x="685" y="510" font-size="11.5" fill="#14401E" font-weight="400" text-anchor="middle">despacho.py — cuántas · a quién ·</text>
+<text x="685" y="524" font-size="11.5" fill="#14401E" font-weight="400" text-anchor="middle">cuánto · fallos</text>
+
+<text x="75" y="614" font-size="11" fill="#6A6A6A" font-weight="400" text-anchor="start">Ley del subagente: escribe el archivo y devuelve un resumen corto. Corre sobre EJECUCIÓN, no sobre juicio.</text>
+</svg>

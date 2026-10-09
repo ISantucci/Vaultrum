@@ -1,0 +1,62 @@
+# Excepciones declaradas del grafo de Vaultrum
+#
+# Una por linea:   ruta relativa al vault | ley | razon
+#
+# Leyes validas: TABLA  YAML  MEDIO  titulo-mixto  salto  sube  flotando  inalcanzable
+#
+# Regla: lo que no esta declarado aca, falla. Una capa entera fuera del veredicto
+# no es una excepcion, es un agujero. El Core no esta exento por ser el Core:
+# esta exento nota por nota, con la razon escrita, y la decide el owner.
+#
+# --- ejemplo de formato (comentado; borrar el # para activar) ---
+# 01_VaultrumCore/.../Experiencia de juego.md | TABLA | nota puente del Core, decision del owner (ARQ-001)
+
+06_Proyectos/** | flotando | workspace local no versionado: 00_Proyectos es el indice de la constelacion y vive fuera del paquete publicado. START_HERE lo nombra con backticks para no dejar un link colgado en una copia recien clonada. Decision del owner, TL-008.
+06_Proyectos/** | inalcanzable | workspace local no versionado: las leyes del grafo cuidan el vault PUBLICADO, y este subarbol no se publica. Cada artefacto si se alcanza desde el cuaderno de su proyecto. Hallazgo para el Arquitecto: grafo.py no distingue vault publicado de workspace local. Decision del owner, TL-008.
+CLAUDE.md | flotando | puerta de maquina, no nota del vault: la lee el harness antes del primer mensaje, no un humano caminando el grafo. Enlazarla desde START_HERE seria invitar a leerla como documentacion, que es justo lo que no es. Decision del owner, RQ-007.2.
+CLAUDE.md | inalcanzable | idem: no se entra por un indice porque no se entra, se carga sola.
+AGENTS.md | flotando | misma puerta, para Codex y las superficies que leen AGENTS.md. Es identico a CLAUDE.md a proposito y desde 2026-08-28 eso lo VERIFICA gemelos.py en el gate de cierre: una copia que nadie compara deriva. Decision del owner, RQ-007.2.
+AGENTS.md | inalcanzable | idem CLAUDE.md.
+
+# --- Historial de uso: el indice publica su contrato y NOMBRA su registro con
+# backticks; el registro y su serie no viajan en el paquete. En la copia de
+# trabajo siguen siendo navegables desde el registro, pero no desde la puerta.
+# Decision del owner, pasada del paquete 2026-08-27.
+02_Agencia/Area arquitectura/Salidas/** | flotando | registro y serie ARQ: historial de uso, no viaja en el paquete. Su contrato es 00_Indice_arq, que si viaja y lo nombra con backticks.
+02_Agencia/Area arquitectura/Salidas/** | inalcanzable | idem: no se camina desde la puerta a proposito. Se llega desde 00_Registro_arq.
+05_Escuela/Salidas/** | flotando | registro y serie EST: historial de uso. Contrato en 00_Indice_est.
+05_Escuela/Salidas/** | inalcanzable | idem.
+03_Comunidad/Salidas/** | flotando | registro y serie PUB: historial de uso. Contrato en 00_Indice_pub.
+03_Comunidad/Salidas/** | inalcanzable | idem.
+03_Comunidad/Archivo/Publicaciones/** | flotando | fichas y registro de lo publicado: historial de uso, no viaja (v1.0). Contrato en 00_Indice_publicaciones, que lo nombra con backticks.
+03_Comunidad/Archivo/Publicaciones/** | inalcanzable | idem: se llega desde 00_Registro_publicaciones, que es local.
+02_Agencia/Area produccion/Salidas/** | flotando | registros y artefactos de Modo Owner: historial de uso. Contratos en 00_Indice_timelines, 00_Indice_requerimientos y 00_Indice_ve.
+02_Agencia/Area produccion/Salidas/** | inalcanzable | idem.
+
+# El resto de la cadena de Modo Owner, emplazada por ARQ-025 (2026-09-07). Misma
+# razon que la fila de Produccion, que ya estaba: son historial de uso y su
+# contrato es el indice del area, que si viaja. La fila faltaba porque hasta
+# TL-009 ningun timeline de Modo Owner habia llegado a producir SOL, EJ ni QA.
+02_Agencia/Area programacion/Salidas/** | flotando | serie SOL y EJ de Modo Owner: historial de uso. Contratos en 00_Indice_soluciones y 00_Indice_ejecuciones.
+02_Agencia/Area programacion/Salidas/** | inalcanzable | idem.
+02_Agencia/Area control de calidad/Salidas/** | flotando | serie QA de Modo Owner: historial de uso. Contrato en 00_Indice_qa.
+02_Agencia/Area control de calidad/Salidas/** | inalcanzable | idem.
+02_Agencia/Area conocimiento/Staging/** | flotando | Staging es zona transitoria de commits al Core: historial, no sistema.
+02_Agencia/Area conocimiento/Staging/** | inalcanzable | idem.
+
+# --- Bandeja de ordenes (capa IA Operativa): runtime, no notas del vault.
+# Una orden es un pedido de una sola vez que entra por ordenes/, se ejecuta y
+# termina en procesadas/ y resultados/. Son .md porque el ejecutor lee texto, no
+# porque sean documentacion: nadie las va a caminar desde un indice, y ninguna
+# vive mas que su corrida. Estan en el .gitignore por lo mismo -- no viajan en el
+# paquete, asi que grafo.py --paquete no las ve nunca; sin esta declaracion el
+# gate de cierre se rompe en la copia de trabajo cada vez que hay una orden en
+# vuelo. La herramienta (observer.ps1 / observer.bat / README.md) NO esta exenta:
+# esa si es documentacion y la declara `04_Indice IA Operativa`.
+# Mismo criterio que 06_Proyectos/**. Declarado el 2026-09-01.
+04_IA Operativa/Herramientas/bandeja/ordenes/** | flotando | orden de una sola vez, no nota: no se versiona y no se camina desde un indice.
+04_IA Operativa/Herramientas/bandeja/ordenes/** | inalcanzable | idem: se entra por la bandeja, no por el grafo.
+04_IA Operativa/Herramientas/bandeja/procesadas/** | flotando | orden ya ejecutada: historial de la corrida, no nota.
+04_IA Operativa/Herramientas/bandeja/procesadas/** | inalcanzable | idem.
+04_IA Operativa/Herramientas/bandeja/resultados/** | flotando | salida de una corrida: historial, no nota.
+04_IA Operativa/Herramientas/bandeja/resultados/** | inalcanzable | idem.

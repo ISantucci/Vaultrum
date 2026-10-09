@@ -1,0 +1,118 @@
+# Obsidian personal workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Local/private folders
+cosas viejas/
+Cosas viejas/
+_old/
+_private/
+backup/
+backups/
+
+# Estado de sesion de AiCare (manifiestos de carga) — no es contenido del vault
+.aicare/
+
+# Python
+__pycache__/
+*.pyc
+
+# Zona de descarte: se borra a mano desde el explorador
+_to_delete/
+
+# Trace de operacion (RQ-004.1) — lo escribe el hook, no es contenido del vault
+.vaultrum/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PUBLICACION — se publica el SISTEMA, no el historial de uso (TL-008, 2026-08-25)
+#
+# Quien clona Vaultrum recibe el criterio, las areas, los flujos, las skills, las
+# herramientas y la Biblioteca. NO recibe los proyectos de otro ni su historial.
+# Los indices de cada area (00_*) SI se versionan: son el contrato de salida.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Proyectos — las estrellas. Viven en el mundo, no en el paquete.
+06_Proyectos/
+
+# Artefactos de la cadena, esten donde esten (los indices 00_* quedan fuera)
+TL-*.md
+RQ-*.md
+GDS-*.md
+LDS-*.md
+UXS-*.md
+SOL-*.md
+EJ-*.md
+QA-*.md
+VE-*.md
+ART-*.md
+MET-*.md
+BUG-*.md
+
+# Historial de uso del propio sistema — auditorias, misiones, publicaciones,
+# leyes en antesala. Vive en el area que lo produjo; no viaja en el paquete.
+#
+# Los 00_Registro_* son el LISTADO de cada serie: el contrato queda en su
+# 00_Indice_* y si viaja; el listado es historial de uso y no. Misma regla que
+# TL-008 aplico a las Salidas de proyecto: un area declara, no guarda.
+00_Registro_*.md
+ARQ-*.md
+EST-*.md
+PUB-*.md
+COMMIT-*.md
+02_Agencia/Area conocimiento/Staging/
+
+# Skills instaladas — son COPIAS generadas por skills.bat desde su area.
+# La fuente versionada es 02_Agencia/Area */Skills/ y las capas 03/04/05.
+# Versionarlas duplicaria el repo y abriria la puerta a editarlas a mano.
+.claude/skills/
+.agents/skills/
+
+# Instructivos de una sola vez
+_APLICAR_*.txt
+_AUDITORIA_*.txt
+_DECISIONES_*.txt
+
+# Bandeja de ordenes (capa IA Operativa): runtime, no fuente.
+# La herramienta (observer.ps1 / observer.bat / README.md) SI se versiona.
+04_IA Operativa/Herramientas/bandeja/ordenes/
+04_IA Operativa/Herramientas/bandeja/resultados/
+04_IA Operativa/Herramientas/bandeja/procesadas/
+04_IA Operativa/Herramientas/bandeja/log.txt
+04_IA Operativa/Herramientas/bandeja/stop.txt
+
+# Que proyecto ejecuta el observer es un dato de CADA maquina, no del repo.
+# Local, y nunca se versiona.
+04_IA Operativa/Herramientas/bandeja/proyecto.local.txt
+
+# Config de Codex del repo: viaja el archivo, no lo que Codex escriba al lado.
+# Es parte del harness, como CLAUDE.md y AGENTS.md.
+.codex/*
+!.codex/config.toml
+
+# Config de una maquina, no del sistema. Viajaba a todo el que clonaba, con un MCP
+# y un permiso de PowerShell adentro. Misma regla que proyecto.local.txt.
+.claude/settings.local.json
+
+# La passphrase de Modo Owner de ESTA copia (v1.0). owner.json es la del
+# maintainer y viaja; owner.local.json es la tuya, la crea owner.py, y no viaja.
+04_IA Operativa/owner.local.json
+
+# Excepciones sobre artefactos de TUS proyectos (v1.0). Cada instrumento lee su
+# excepciones.txt, que viaja, y su excepciones.local.txt, que no: las excepciones
+# que nombran un TL, un VE o un archivo de 06_Proyectos son historial de uso.
+excepciones.local.txt
+
+# El Archivo de Comunidad: viaja el formato, no lo que publicaste (v1.0). Quien
+# clona arranca con su propio piso, no con el tuyo.
+03_Comunidad/Archivo/Publicaciones/*
+!03_Comunidad/Archivo/Publicaciones/00_Indice_publicaciones.md

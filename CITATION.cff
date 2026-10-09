@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: >-
+  Si usaste Vaultrum, nombralo: "Hecho con Vaultrum — github.com/ISantucci/Vaultrum".
+  If you used Vaultrum, please credit it: "Made with Vaultrum — github.com/ISantucci/Vaultrum".
+title: Vaultrum
+type: software
+authors:
+  - family-names: Santucci
+    given-names: Ignacio
+version: "1.0"
+date-released: "2026-10-09"
+license: GPL-3.0-or-later
+repository-code: "https://github.com/ISantucci/Vaultrum"
+abstract: >-
+  Sistema de desarrollo asistido por IA con trazabilidad obligatoria, orientado a
+  videojuegos y software: una cadena de áreas con gates verificables, operada por
+  un asistente de IA sobre un vault de Obsidian.
+keywords:
+  - game development
+  - AI-assisted development
+  - Obsidian
+  - Claude Code
+  - traceability

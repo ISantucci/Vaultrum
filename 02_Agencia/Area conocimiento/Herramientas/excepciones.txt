@@ -1,0 +1,9 @@
+# Excepciones declaradas del gate de documentacion.
+# Una por linea:  ruta | ley | razon
+# Una excepcion sin razon escrita no es una excepcion: es un agujero.
+# Una capa entera fuera del veredicto tampoco.
+#
+# Las excepciones sobre artefactos de TUS proyectos no van aca: van en
+# excepciones.local.txt, al lado de este archivo, con el mismo formato.
+# Ese archivo no se versiona: es historial de uso, no sistema. El instrumento
+# lee los dos.

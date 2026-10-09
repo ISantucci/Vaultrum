@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1350" height="533" viewBox="0 0 1350 533" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1350" height="533" fill="#FFFFFF"/>
+<defs><marker id="f" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5A5A5A"/></marker><marker id="fr" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#C0504D"/></marker></defs>
+<text x="75" y="42" font-size="21" font-weight="600" fill="#1A1A1A">Área de Control de Calidad</text>
+<text x="75" y="66" font-size="12.5" fill="#6A6A6A">El gate que corre al terminar, antes del VE. No arregla lo que encuentra ni decide la entrega.</text>
+<path d="M 275,131 L 325,131" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 525,131 L 575,131" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 275,256 L 325,256" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 675,162 L 675,188 L 425,188 L 425,225" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<rect x="527" y="179" width="46" height="16" rx="3" fill="#FFFFFF" opacity="0.94"/>
+<text x="550" y="191" font-size="10.5" fill="#5A5A5A" text-anchor="middle">insumo</text>
+<path d="M 525,256 L 575,256" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 775,256 L 825,256" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<path d="M 1025,256 L 1075,256" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<rect x="991" y="247" width="118" height="16" rx="3" fill="#FFFFFF" opacity="0.94"/>
+<text x="1050" y="259" font-size="10.5" fill="#5A5A5A" text-anchor="middle">GO / CONDITIONAL GO</text>
+<path d="M 675,287 L 675,350" fill="none" stroke="#5A5A5A" stroke-width="1.5" marker-end="url(#f)"/>
+<rect x="649" y="310" width="51" height="16" rx="3" fill="#FFFFFF" opacity="0.94"/>
+<text x="675" y="322" font-size="10.5" fill="#5A5A5A" text-anchor="middle">se mide</text>
+<path d="M 925,287 L 925,329 L 1175,329 L 1175,350" fill="none" stroke="#C0504D" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#fr)"/>
+<rect x="1008" y="320" width="85" height="16" rx="3" fill="#FFFFFF" opacity="0.94"/>
+<text x="1050" y="332" font-size="10.5" fill="#C0504D" text-anchor="middle">NO-GO: rebota</text>
+<path d="M 75,394 L 45,394 L 45,131 L 325,131" fill="none" stroke="#5A5A5A" stroke-width="1.5" stroke-dasharray="7 5" marker-end="url(#f)"/>
+<rect x="75" y="100" width="200" height="62" rx="14" fill="#EAF2FB" stroke="#4A7EBB" stroke-width="1.6"/>
+<text x="175" y="135" font-size="11.5" fill="#1B3A5C" font-weight="400" text-anchor="middle">EJ-XXX.n con revisión OK</text>
+<rect x="325" y="100" width="200" height="62" rx="3" fill="#FFFFFF" stroke="#3D3D3D" stroke-width="1.6"/>
+<text x="425" y="135" font-size="11.5" fill="#1A1A1A" font-weight="600" text-anchor="middle">Gate de HILO — pase por riesgo</text>
+<rect x="575" y="100" width="200" height="62" rx="3" fill="#FFF4E0" stroke="#C98A2B" stroke-width="1.6"/>
+<text x="675" y="135" font-size="11.5" fill="#5C3B08" font-weight="400" text-anchor="middle">QA-XXX.n</text>
+<rect x="75" y="225" width="200" height="62" rx="14" fill="#EAF2FB" stroke="#4A7EBB" stroke-width="1.6"/>
+<text x="175" y="260" font-size="11.5" fill="#1B3A5C" font-weight="400" text-anchor="middle">TL con sus hilos cerrados</text>
+<rect x="325" y="225" width="200" height="62" rx="3" fill="#FFFFFF" stroke="#3D3D3D" stroke-width="1.6"/>
+<text x="425" y="253" font-size="11.5" fill="#1A1A1A" font-weight="600" text-anchor="middle">Gate de ENTREGA — regresión +</text>
+<text x="425" y="267" font-size="11.5" fill="#1A1A1A" font-weight="600" text-anchor="middle">cobertura</text>
+<rect x="575" y="225" width="200" height="62" rx="3" fill="#FFF4E0" stroke="#C98A2B" stroke-width="1.6"/>
+<text x="675" y="260" font-size="11.5" fill="#5C3B08" font-weight="400" text-anchor="middle">QA-XXX</text>
+<rect x="825" y="225" width="200" height="62" rx="14" fill="#FDE9E9" stroke="#C0504D" stroke-width="1.6"/>
+<text x="925" y="260" font-size="11.5" fill="#5C1A18" font-weight="600" text-anchor="middle">GO · CONDITIONAL GO · NO-GO</text>
+<polygon points="589,350 761,350 775,381.0 761,412 589,412 575,381.0" fill="#EAF6EC" stroke="#3F8A4E" stroke-width="1.6"/>
+<text x="675" y="385" font-size="11.5" fill="#14401E" font-weight="400" text-anchor="middle">calidad.py — las leyes del QA</text>
+<rect x="1075" y="225" width="200" height="62" rx="3" fill="#F2F2F2" stroke="#9A9A9A" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="1175" y="260" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">Producción → VE</text>
+<rect x="1075" y="350" width="200" height="62" rx="3" fill="#F2F2F2" stroke="#9A9A9A" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="1175" y="378" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">Programación: defecto</text>
+<text x="1175" y="392" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">reproducible</text>
+<rect x="75" y="350" width="300" height="88" rx="3" fill="#F2F2F2" stroke="#9A9A9A" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="225" y="384" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">HALLAZGO: el QA-XXX.n existe en papel. 0</text>
+<text x="225" y="398" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">archivos QA-*.n en disco; todo cierra por gate</text>
+<text x="225" y="411" font-size="11.5" fill="#4A4A4A" font-weight="400" text-anchor="middle">de entrega.</text>
+</svg>

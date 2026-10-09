@@ -1,0 +1,48 @@
+## Estante de Juegos
+
+Un libro por juego/tipo, guardado por **género**. Cada libro son los fundamentos destilados de ese juego (table-stakes + juice + definición de terminado específicos), citados y reutilizables como baseline al pedir un juego de ese género.
+
+Se apoya siempre en los `Fundamentos` transversales: el libro de Juego agrega lo *específico*, los Fundamentos aportan lo *común*.
+
+---
+
+## Registro (por género)
+
+### [[01_Pong|Pong]]
+
+Arcade · Paleta-y-pelota · EST-001 Mision Pong · En la Biblioteca
+
+### [[02_Plataformero_2D|Plataformero 2D]]
+
+Plataformas · Plataformero 2D de precision · EST-010 Mision Plataformero 2D · En la Biblioteca
+
+### [[04_Tower_Defense|Tower Defense]]
+
+Estrategia · Tower defense de colocación libre y cámara fija; economía de la partida y balance con bots (EST-018) · EST-018 Mision Balance Tower Defense · En la Biblioteca
+
+### [[05_Endless_runner|Endless runner]]
+
+Arcade · Endless runner lateral (auto-run, un carril, un golpe); la curva de velocidad como curva de dificultad, huecos derivados del salto y alturas por verbo; calibrado contra el Dino corriendo, con la síncopa legible (EST-021) · EST-021 Mision Chrome Dino jugado · En validación
+
+### [[06_Contrarreloj|Contrarreloj]]
+
+Arcade · Contrarreloj — el reloj como rival: cuenta regresiva, time trial y duración fija; medallas, splits y ghosts · EST-019 Mision Endless runner y contrarreloj · En validación
+
+
+---
+
+## Regla
+
+- Se numera correlativo por estante (01, 02, ...).
+- **Género y tipo son obligatorios**: es la clave por la que Producción/Game Design encuentran el libro.
+- Estados: En estudio / En destilación / En validación / En la Biblioteca / A actualizar.
+- Un libro se **actualiza**, no se duplica. Si un nuevo estudio toca uno existente, edita el libro.
+- Un libro pasa a "En la Biblioteca" tras handoff a Conocimiento + aprobación del owner.
+
+---
+
+## Nota de gobernanza (cerrada)
+
+`01_Pong` estuvo *En validación* mientras ya se usaba como insumo de producción en `TL-003` — un libro sin aprobar alimentando una entrega real. El hueco se cerró: handoff a Conocimiento hecho, aprobación del owner registrada, y el libro pasó a **En la Biblioteca**.
+
+Regla que queda: **si un libro se usa como insumo de un `RQ`, tiene que estar en estado *En la Biblioteca*.** Un libro *En estudio* o *En validación* no es insumo válido — es material en curso. Producción lo verifica en su gate de insumo.

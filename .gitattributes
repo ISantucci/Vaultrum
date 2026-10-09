@@ -1,0 +1,40 @@
+# ============================================================================
+#  Vaultrum - normalizacion de fin de linea
+#
+#  POR QUE EXISTE
+#  El repo se edita desde mas de una maquina y desde asistentes distintos.
+#  Sin esta declaracion, un archivo tocado en Windows vuelve con CRLF y git
+#  lo muestra como REESCRITURA COMPLETA: el diff deja de decir que cambio, y
+#  una revision no puede leer un cambio de dos lineas escondido en 92.
+#  Paso el 2026-09-01 con .gitignore y toda la bandeja.
+#
+#  La regla: en el repo siempre LF (todos los archivos ya estaban asi).
+#  En el disco tambien LF, salvo los scripts que Windows ejecuta.
+# ============================================================================
+
+* text=auto eol=lf
+
+# cmd.exe y PowerShell quieren CRLF en disco. En el repo viajan igual: LF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binarios: git no los toca ni intenta adivinar.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.xlsx binary
+*.docx binary
+*.pptx binary
+*.zip  binary
+*.ttf  binary
+*.otf  binary
+*.woff  binary
+*.woff2 binary
+
+# LICENSE entro al repo con CRLF y no lo escribe nadie: normalizarlo son 1348
+# lineas de ruido en un commit que no lo toca. Se lo deja como esta.
+LICENSE -text

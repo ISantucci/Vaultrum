@@ -1,0 +1,15 @@
+# Excepciones a las seis leyes de la comunicacion.
+# Una por linea:  ruta | ley | razon
+#
+# Las claves de ley son las que imprime  legibilidad.py --leyes
+#   preguntas  preguntas-falta  contraste  distincion  color-suelto
+#   mapping  tecla-suelta  feedback  visible  muerto  inalcanzable
+#   densidad  sin-medir  sin-instrumentar  falta-bloque
+#
+# Una excepcion sin razon escrita es una falla con mejor redaccion.
+# Una capa entera fuera del veredicto no es una excepcion, es un agujero.
+#
+# Las excepciones sobre artefactos de TUS proyectos no van aca: van en
+# excepciones.local.txt, al lado de este archivo, con el mismo formato.
+# Ese archivo no se versiona: es historial de uso, no sistema. El instrumento
+# lee los dos.

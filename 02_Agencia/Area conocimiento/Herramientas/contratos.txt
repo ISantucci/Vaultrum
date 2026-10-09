@@ -1,0 +1,176 @@
+# Contratos de seccion por tipo de artefacto — semilla medida, no inventada.
+#
+# Origen: conteo sobre los artefactos REALES del vault. Una seccion entra al
+# contrato si aparece en el 75% o mas de los artefactos de su tipo.
+# Es la unica fuente honesta de que forma tiene un artefacto hoy.
+#
+# Este archivo es PROVISORIO. Cuando RQ-008.1 termine de escribir los contratos
+# de salida en el indice de cada area, este archivo pasa a leerlos de ahi y deja
+# de decidir. SOL y EJ ya estan escritos alla y esta linea los copia.
+#
+# formato:  TIPO | seccion | seccion | ...
+# una seccion se compara sin acentos, sin mayusculas y sin lo que va entre parentesis.
+
+TL  | Objetivo | Area afectada | Criticidad | Dependencias | Riesgos | Criterios de cierre
+RQ  | Titulo | Timeline | Area afectada | Criticidad | Descripcion | Subtasks | Criterios de aceptacion
+GDS | Reglas | Entradas | Salidas | Parametros configurables | Integraciones | Experiencia esperada
+UXS | Insumo | Encuadre de UX | Validacion de UX | Instrumento
+SOL | Insumo | Diagnostico | Decisiones | Lo que deliberadamente no se hizo | Arquitectura | Contrato de ejecucion | Verificacion | Estado
+EJ  | Insumo | Lo que se implemento | Archivos creados | Desvios declarados | Verificacion | Riesgos abiertos | Estado
+QA  | Insumo | Alcance y perfil | Version | Defectos | Cobertura | Medicion | Veredicto
+VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos | Friccion | Aprendizaje para el Core | Estado de la entrega
+
+# VE: la seccion Friccion NO sale de medir (0 de 3 VE reales la tenian). Sale de
+# 06_Medicion de friccion, que la pedia "en el VE de cada entrega" sin que ningun
+# contrato ni ninguna skill que escribe el VE la nombrara, y de --cosecha, que la
+# lee y la encontraba vacia. Entra el 2026-09-28 (EST-017).
+#
+# QA es el unico contrato que NO sale de medir artefactos reales: el area se creo
+# despues de este archivo y todavia no produjo ninguno. Sale del contrato de salida
+# escrito en `00_Indice_qa`, que es exactamente la fuente que este archivo dice que
+# va a usar cuando exista. Cuando haya QA reales, se mide y se corrige si difiere.
+
+# ---------------------------------------------------------------------------
+# SOL y EJ — resueltos el 2026-08-28. Antes decian "sin forma estable".
+#
+# El diagnostico viejo era correcto y la conclusion era falsa. Medido literal,
+# los 5 SOL no compartian NINGUNA seccion. Medido por FUNCION, comparten cinco:
+# los cinco decian las mismas cosas con titulos distintos. La arquitectura
+# aparecia como "Arquitectura", "Estructura", "Componentes propuestos" y
+# "Decision de arquitectura". No era falta de forma: era falta de vocabulario.
+#
+#   SOL, sobre 5 reales     Decisiones 5/5 · Arquitectura 5/5 · Verificacion 5/5
+#                           Diagnostico 4/5 · Insumo 4/5   |  umbral 4/5
+#   EJ,  sobre 5 reales     Lo que se implemento 5/5 · Archivos creados 5/5
+#                           Verificacion 5/5 · Insumo 4/5 · Desvios 4/5
+#                           Riesgos abiertos 4/5 · Estado 4/5
+#
+# Dos secciones del SOL NO salen de medir, y se declaran:
+#   "Lo que deliberadamente no se hizo"  ley del Core (Baseline de entregable,
+#        mitad 2), obligatoria en toda SOL. Medida 2/5, siempre como ### colgando
+#        de otra seccion. Sube a ## para que el gate la vea.
+#   "Contrato de ejecucion"  disenada, con su requerimiento detras: el owner pidio
+#        poder rutear la ejecucion a un ejecutor barato, y un EJ solo se delega si
+#        el SOL cerro la spec (archivos, interfaces, invariantes, prohibido).
+#
+# "Estado" entra al SOL con 2/5 por el corolario de la documentacion: todo
+# artefacto declara su estado. No es una excepcion al umbral, es otra ley.
+#
+# "Punto de quiebre" quedo FUERA a proposito: sin presupuesto de rendimiento
+# declarado en el RQ se llenaria de "n/a", que es el defecto que QA arrastro en
+# dos entregas. Entra cuando exista la pregunta de plataforma y rendimiento.
+# ---------------------------------------------------------------------------
+
+# SIN FORMA ESTABLE — medido, no omitido.
+#
+# LDS  1 artefacto (LDS-001.5, 2026-08-27). El area corrio por primera vez.
+#      Sigue sin contrato, y la razon cambio: antes no habia nada que medir; ahora hay
+#      una muestra, y una muestra no es una medicion -- daria 1/1 = 100% en todas sus
+#      secciones, incluidas las que ese unico artefacto invento para si mismo.
+#      El gate reporta "sin contrato" para LDS: no lo aprueba ni lo falla.
+#
+#      UMBRAL PARA DESTRABARLO: cuatro LDS reales, que es la muestra con la que se
+#      midieron SOL, EJ y UXS. Con menos, la forma que salga es la forma del primero.
+#      Medido el 2026-08-28 en la pasada de cierre.
+
+# ---------------------------------------------------------------------------
+# TABLA DE EQUIVALENCIAS — como se agrupo por funcion.
+#
+# Se escribe para que la proxima medicion mida lo mismo y no otra cosa. Sin esto,
+# "agrupar por funcion" es una opinion distinta cada vez que alguien la corre.
+#
+# SOL
+#   Insumo        <- insumo · requerimiento · requerimientos · requerimiento y specs · entorno
+#   Diagnostico   <- diagnostico · criterio que ordena todas las decisiones
+#   Decisiones    <- decisiones · decisiones tecnicas y alternativas descartadas ·
+#                    alternativas descartadas · la decision que define todo lo demas ·
+#                    decision de arquitectura
+#   Arquitectura  <- arquitectura · estructura · componentes propuestos · flujo de datos ·
+#                    contrato de trace · regla dura de implementacion
+#   Verificacion  <- verificacion · criterios de aceptacion tecnicos · gate de aprobacion ·
+#                    alcance a aprobar · alcance declarado
+#   Estado        <- estado
+#
+# EJ
+#   Insumo               <- insumo · solucion · solucion ejecutada · requerimiento
+#   Lo que se implemento <- ejecucion · que se implemento · que se implemento por
+#                           requerimiento · lo que se implemento por hilo · como se usa
+#   Archivos creados     <- archivos creados · archivos eliminados · instalacion ·
+#                          archivos nuevos · archivos creados y modificados
+#                          (los tres EJ de un proyecto real escribian "archivos nuevos":
+#                          misma funcion, otro titulo. Se renombraron en TL-004 de ese
+#                          proyecto y la equivalencia queda escrita para que la proxima
+#                          medicion mida lo mismo. El matcheo es por substring, asi que
+#                          esta tabla documenta: no la lee el script.)
+#   Desvios declarados   <- desvios declarados · desvios respecto de la sol
+#   Verificacion         <- verificacion hecha · verificacion ejecutada · verificacion
+#                           parcial declarada · verificacion del instalador · checklist de cierre
+#   Riesgos abiertos     <- riesgos abiertos · pendiente / riesgo · pendiente que bloquea el cierre
+#   Estado               <- estado · estado del paso
+#
+# Los artefactos viejos usan los nombres de la izquierda y el contrato pide los de
+# la derecha: van a fallar el gate. Eso es deuda declarada, no un error del gate.
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# RA — la serie de reglas del Area de Arte. MEDIDA el 2026-09-07, NO agregada
+# todavia como contrato, y el motivo es el mismo que tuvieron SOL y EJ antes
+# del 2026-08-28: hay forma, falta vocabulario.
+#
+#   RA, sobre 9 reales      Regla 9/9  ·  Verificacion 9/9   |  umbral 7/9
+#
+# Las dos secciones estan en las nueve notas, medido por FUNCION. Ninguna de
+# las nueve las titula igual: "La regla", "Regla 1 - ...", "1. El blueprint da
+# formas", "Como se verifica", "El instrumento", "La prueba del corte", "se
+# mide sobre el dibujo". documentacion.py compara nombres de seccion, asi que
+# escribir el contrato hoy haria fallar a las nueve por como se llaman, no por
+# lo que les falta -- y eso es un instrumento midiendo la palabra en vez del
+# contenido.
+#
+# El contrato entra cuando el owner unifique el vocabulario. Unificarlo es
+# editar contenido de arte y Conocimiento no repara artefacto ajeno.
+#
+# La primera medicion de esta serie dio "regla 8/9, verificacion 8/9" y era
+# MIA la falla: el patron no reconocia una regla numerada ("1. El blueprint...")
+# ni "se mide sobre el dibujo". Corregido el patron, dio 9/9. Queda escrito
+# porque es el mismo error que la serie previene: medir el rotulo y no la cosa.
+
+# ---------------------------------------------------------------------------
+# ART — el artefacto del Area de Arte, creada el 2026-09-07 (ARQ-030).
+#
+# NO tiene forma estable medida, y no puede tenerla: hay CERO ART reales. Es
+# exactamente la situacion en la que estuvo QA cuando se escribio este archivo,
+# y se resuelve igual -- el contrato sale del contrato de salida que el area
+# escribio en 00_Indice_art, que es la misma fuente que este archivo dice que
+# va a usar cuando existan artefactos. Cuando haya ART reales, se mide y se
+# corrige si difiere.
+#
+# Lo que 00_Indice_art declara hoy, para cuando toque medirlo:
+#
+#   ART | Contrato de escala | Contrato de lectura | Contrato de integracion
+#       | Contrato de costo  | Las seis leyes | Decisiones | Lo que salio mal
+#
+# Las cuatro primeras son segregacion de interfaz aplicada a un documento: cada
+# consumidor lee la suya y ninguno depende de lo que no usa. La ultima es la que
+# el area declara como la que hace que el defecto no vuelva -- las nueve reglas
+# RA salieron todas de ahi.
+
+# ---------------------------------------------------------------------------
+# MET — el artefacto del Area de Metricas, creada el 2026-09-25 (ARQ-034).
+#
+# Misma situacion que ART y que QA cuando nacieron: CERO MET reales, asi que no
+# hay forma medida. NO entra como contrato de documentacion.py todavia, y ademas
+# no hace falta que entre: el area nacio con su propio instrumento, metricas.py,
+# que ya mide el plan y la lectura contra las seis leyes de la medicion. Duplicar
+# esas secciones aca seria la segunda autoridad que gemelos.py existe para vigilar.
+#
+# Lo que 00_Indice_met declara hoy, para cuando toque medirlo por funcion:
+#
+#   MET-XXX.n | Insumo | Fase y modelo | Objetivo | Comportamiento esperado
+#             | KPI primario | Guardrails | Tracking plan | QA de eventos | Estado
+#   MET-XXX   | Insumo | KPI primario | Calidad del dato | Hechos | Interpretaciones
+#             | Hipotesis | Recomendacion | Proxima medicion | Estado
+#
+# Cuando haya cuatro MET reales de cada corte, se mide y se decide si el contrato
+# pasa aca o se queda en metricas.py.
+

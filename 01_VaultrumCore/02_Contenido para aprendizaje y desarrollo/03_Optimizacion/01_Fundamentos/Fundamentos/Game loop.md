@@ -1,0 +1,418 @@
+## Definicion
+
+El Game Loop es el ciclo principal que mantiene vivo a un videojuego.
+
+Es la secuencia que se repite constantemente mientras el juego corre.
+
+En cada iteracion, el juego procesa informacion, actualiza sistemas y genera una nueva imagen.
+
+La idea principal es:
+
+```txt
+Game Loop
+→ ciclo que actualiza y renderiza el juego
+```
+
+Ejemplo conceptual:
+
+```txt
+Leer input
+→ actualizar logica
+→ actualizar fisica
+→ actualizar IA
+→ actualizar animaciones
+→ actualizar UI
+→ renderizar frame
+→ repetir
+```
+
+En Unity, este ciclo se manifiesta a traves de callbacks como:
+
+```txt
+Update
+FixedUpdate
+LateUpdate
+```
+
+---
+
+## Responsabilidad de esta nota
+
+Esta nota no existe para documentar el orden interno del motor.
+
+No existe para enumerar callbacks.
+
+No existe para decidir donde va cada script.
+
+No existe para sostener que Update es malo.
+
+Existe para dar el mapa mental del frame: que subsistemas compiten por el presupuesto, en que momento del ciclo se paga cada cosa, y donde ubicar un costo cuando el profiler lo muestra.
+
+```txt
+El ciclo no se optimiza.
+Se optimiza lo que se metio adentro del ciclo.
+```
+
+---
+
+## Que problema ayuda a entender
+
+Entender el Game Loop ayuda a entender por que ciertas operaciones son peligrosas si se ejecutan todo el tiempo.
+
+El problema no es que una funcion exista.
+
+El problema puede ser que se ejecute:
+
+```txt
+cada frame
+× muchos objetos
+× durante mucho tiempo
+```
+
+Ejemplo:
+
+```txt
+Un enemigo ejecuta Update.
+No hay problema.
+
+500 enemigos ejecutan Update.
+Puede haber problema.
+
+500 enemigos ejecutan Update
++ buscan jugador
++ recalculan pathfinding
++ actualizan UI
+→ problema probable.
+```
+
+El Game Loop ayuda a responder:
+
+- ¿Que se ejecuta cada frame?
+- ¿Que se ejecuta en fisica?
+- ¿Que deberia ejecutarse menos seguido?
+- ¿Que logica no deberia estar en Update?
+- ¿Que sistemas compiten por el Frame Budget?
+- ¿Como organizo actualizaciones?
+- ¿Cuando conviene usar Update Manager?
+
+---
+
+## Como funciona
+
+Antes de mirar los callbacks conviene mirar el frame entero.
+
+Unity ejecuta sus subsistemas dentro de un ciclo, en un orden conceptual:
+
+```txt
+Input
+→ Scripts
+→ Physics
+→ Animation
+→ Gameplay
+→ preparacion del rendering
+→ Render
+```
+
+Eso no es una secuencia literal exacta del motor. Es un modelo mental.
+
+Lo que importa es que cada subsistema consume una porcion del presupuesto del frame, y que todos consumen del mismo presupuesto.
+
+```txt
+Cada etapa del ciclo
+→ paga su parte del frame budget
+```
+
+Por eso un frame caro no siempre se explica mirando scripts. El costo puede estar en fisica, en animacion o en la preparacion del render, y el codigo propio ser solo una parte de la cuenta.
+
+Dentro de ese ciclo, el codigo del juego entra por los callbacks de Unity, que se dividen en distintos momentos.
+
+### Update
+
+```txt
+Update
+→ se ejecuta una vez por frame
+```
+
+Se usa para logica general, input, timers, decisiones, movimiento no fisico y sistemas que dependen del frame.
+
+Riesgo:
+
+```txt
+Muchos Update activos
+→ mas costo de CPU por frame
+```
+
+---
+
+### FixedUpdate
+
+```txt
+FixedUpdate
+→ se ejecuta a intervalos fijos
+```
+
+Se usa principalmente para fisica.
+
+Riesgo:
+
+```txt
+Meter logica general en FixedUpdate
+→ puede generar comportamiento innecesario o costo extra
+```
+
+---
+
+### LateUpdate
+
+```txt
+LateUpdate
+→ se ejecuta despues de Update
+```
+
+Suele usarse para camaras o logica que necesita ocurrir despues del movimiento principal.
+
+Ejemplo:
+
+```txt
+Jugador se mueve en Update.
+Camara sigue al jugador en LateUpdate.
+```
+
+---
+
+## Como aplicarlo en videojuegos
+
+Entender Game Loop permite decidir donde y cuando ejecutar logica.
+
+Ejemplos:
+
+```txt
+Input
+→ Update
+
+Fisica con Rigidbody
+→ FixedUpdate
+
+Camara que sigue al jugador
+→ LateUpdate
+
+IA pesada
+→ no necesariamente cada frame
+
+UI
+→ cuando cambia el dato
+
+Pathfinding
+→ cuando cambia destino o ruta
+
+Percepcion
+→ por intervalo o evento
+```
+
+Ejemplo inspirado en Tower Defense:
+
+```txt
+Torres
+→ no necesariamente deben buscar objetivo cada frame.
+
+Enemigos
+→ pueden moverse cada frame, pero decidir ruta menos seguido.
+
+UI
+→ deberia actualizar dinero/vida cuando cambian.
+
+Spawner
+→ puede trabajar con timers.
+
+Proyectiles
+→ pueden moverse, pero creacion/destruccion deberia estar controlada.
+```
+
+La idea es no meter todo en Update por costumbre.
+
+---
+
+## Como guia el diagnostico
+
+Game Loop se relaciona directamente con Frame Budget.
+
+```txt
+Game Loop
+→ define que se ejecuta en el frame.
+
+Frame Budget
+→ limita cuanto puede tardar.
+```
+
+Se relaciona con Muchos update activos.
+
+```txt
+Muchos objetos con Update
+→ mas callbacks por frame
+```
+
+Se relaciona con Update Manager como optimizacion.
+
+```txt
+Update Manager como optimizacion
+→ controla quien se actualiza, cuando y con que frecuencia.
+```
+
+Se relaciona con Reducir frecuencia de actualizacion.
+
+```txt
+No todo necesita correr en cada vuelta del Game Loop.
+```
+
+Tambien se relaciona con MonoBehaviour como puente y Clases puras.
+
+```txt
+MonoBehaviour
+→ recibe callbacks de Unity.
+
+Clase pura
+→ ejecuta logica cuando alguien la llama.
+```
+
+---
+
+## Cuando conviene consultarlo
+
+Conviene analizar Game Loop cuando:
+
+```txt
+Hay muchos objetos activos.
+Hay muchos MonoBehaviours con Update.
+El costo de scripts sube.
+Hay logica pesada por frame.
+Hay IA o pathfinding frecuente.
+La UI se actualiza constantemente.
+Aparecen spikes o stuttering.
+```
+
+Tambien es clave cuando se diseña arquitectura de managers o sistemas centralizados.
+
+---
+
+## Cuando NO conviene forzarlo
+
+No conviene crear un sistema complejo de actualizacion si el proyecto es muy simple o todavia esta en prototipo temprano.
+
+Ejemplo:
+
+```txt
+Tres objetos con Update liviano
+→ no justifican un Update Manager complejo.
+```
+
+Primero se mide o se anticipa una escala clara.
+
+---
+
+## Errores que ayuda a evitar
+
+Entender Game Loop ayuda a evitar:
+
+- Meter todo en Update.
+- Ejecutar logica pesada cada frame.
+- Usar FixedUpdate para logica no fisica.
+- Actualizar UI sin cambios.
+- Recalcular pathfinding constantemente.
+- Tener cientos de MonoBehaviours activos sin control.
+- No distinguir entre movimiento, decision y render.
+- Llamar manualmente callbacks de Unity como si fueran metodos comunes.
+- No controlar orden de ejecucion.
+
+---
+
+## Riesgos de interpretarlo mal
+
+El primer riesgo es pensar que todo debe vivir en un MonoBehaviour.
+
+```txt
+Toda clase con Update
+→ mas callbacks
+→ mas acoplamiento a Unity
+```
+
+Otro riesgo es centralizar todo en un manager gigante.
+
+```txt
+Update Manager
+→ util
+
+Update Manager que contiene toda la logica del juego
+→ problema
+```
+
+Tambien puede ser un riesgo reducir frecuencia sin entender la experiencia.
+
+```txt
+IA actualiza menos
+→ mejora CPU
+→ pero se vuelve torpe si se reduce demasiado
+```
+
+---
+
+## Hacia donde seguir
+
+Si hace falta saber cuanto tiempo hay disponible en cada iteracion del ciclo:
+
+```txt
+→ Frame Budget
+→ Frame time y estabilidad
+```
+
+Si hace falta saber cual de los sistemas del ciclo esta pagando:
+
+→ [[Diagnostico]]
+
+Si el costo es de simulacion, scripts, fisica o IA:
+
+→ [[CPU]]
+
+Si el costo aparece en la parte de render del ciclo:
+
+→ [[GPU]]
+
+Si el costo aparece al actualizar la interfaz:
+
+→ [[UI]]
+
+Si la pregunta es que trabajo no deberia estar dentro del ciclo:
+
+→ [[Patrones transversales]]
+
+---
+
+## Checklist de diagnostico
+
+```txt
+¿Que sistemas se ejecutan cada frame?
+¿Cuantos objetos tienen Update?
+¿Cada Update hace trabajo necesario?
+¿Hay logica que podria ser por evento?
+¿Hay logica que podria actualizarse por intervalo?
+¿Hay fisica en FixedUpdate?
+¿Hay UI actualizada sin cambios?
+¿Hay pathfinding o IA corriendo demasiado seguido?
+¿El orden de ejecucion importa?
+¿Conviene centralizar parte del update?
+```
+
+---
+
+## Regla final
+
+El Game Loop es el corazon del runtime.
+
+Cada cosa que se ejecuta dentro de el compite por tiempo.
+
+```txt
+No todo necesita actualizarse cada frame.
+No todo necesita ser MonoBehaviour.
+No todo necesita vivir en Update.
+```
+
+La optimizacion empieza entendiendo que entra al ciclo y por que.
