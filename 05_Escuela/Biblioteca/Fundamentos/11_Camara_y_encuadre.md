@@ -53,7 +53,9 @@ PIPELINE DE CÁMARA — orden fijo, una pasada por frame
     SALIDA A RENDER
 
  ⚠  Invertir 4 y 5 (amortiguar antes de la zona muerta) = temblor clásico.
- ⚠  Aplicar 9 antes de 6 = el shake deja ver fuera del nivel.
+ ⚠  Aplicar 9 antes de 6 = el confiner se come la sacudida en los bordes. Con el orden
+    correcto, el confiner se achica en la amplitud maxima del shake (techo 3%), o el
+    shake deja ver fuera del nivel.
  ⚠  Aplicar 3 sin damping propio = oscilación en cada cambio de dirección.
 ```
 
@@ -86,7 +88,7 @@ El punto donde el smoothing se vuelve mareo: tiempo de asentamiento por encima d
 | Evento | Amplitud (% alto de pantalla) | Duración | Nota |
 |---|---|---|---|
 | Golpe liviano | 0.2–0.4% | 60–100 ms | Casi subliminal |
-| Golpe pesado / muerte de enemigo | 0.8–1.5% | 150–250 ms | Con hitstop de 2–5 f |
+| Golpe pesado / muerte de enemigo | 0.8–1.5% | 150–250 ms | Con hitstop de 2–5 f si es raro; si es frecuente, 0–2 f (`02_Game_feel`) |
 | Explosión cercana | 2–3% | 300–450 ms | Único evento que pisa el techo |
 | Techo global (clamp) | **3% del alto** | — | No negociable |
 

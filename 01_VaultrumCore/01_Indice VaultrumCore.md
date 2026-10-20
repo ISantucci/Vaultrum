@@ -64,6 +64,16 @@ Contiene material relacionado con:
 
 ---
 
+## [[04_Principios de juego]]
+
+Los principios que todo juego de Vaultrum cumple para **jugarse bien**, dominio por dominio, ordenados por el momento de la cadena en que se deciden.
+
+Es la mitad que el Core no tenía como criterio propio: `02_Contenido` dice si algo está bien construido; esta parte, si se juega bien. Sale de lo que la Escuela estudia y Conocimiento promueve, con aprobación del owner.
+
+Hoy tiene una sección: game feel.
+
+---
+
 ## Qué vive en el Core y qué vive en la Biblioteca
 
 Los **fundamentos de experiencia**, los **análisis de juegos por género** y el **mecanismo técnico** —cómo funciona un paso fijo, una colisión, un shader— no viven en el Core: viven en la Biblioteca de la Escuela (`05_Escuela/Biblioteca/`) y se consultan **on-demand**.
@@ -86,6 +96,8 @@ la Biblioteca    → el peso, se carga solo cuando hace falta
 Esa es la única dirección en la que el Core enlaza hacia otra capa, y es deliberada: el Core sigue siendo la fuente de criterio, y parte del criterio es saber dónde está el resto. Lo que el Core **no** hace es depender de la Biblioteca para existir — si un libro falta, el Core lo dice y eso dispara una misión de Escuela.
 
 Qué se promueve de la Biblioteca a criterio propio del Core lo decide el Área de Conocimiento con aprobación del owner.
+
+La primera promoción de ese tipo es `04_Principios de juego`: los principios de game feel dejaron de ser sólo referencia el 2026-10-20 (`EST-023`). El libro sigue en la Biblioteca como su cómo; el Core no lo copia, lo exige.
 
 ---
 

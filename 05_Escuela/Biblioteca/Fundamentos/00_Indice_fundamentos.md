@@ -12,7 +12,7 @@ input → feedback → objetivo → victoria/derrota; loops anidados; juego vs j
 
 ### [[02_Game_feel|Game feel]]
 
-profundiza Pilar 3 — las tres capas del feel, vocabulario de efectos con sus ventanas de tiempo, juice que informa vs juice que decora · EST-010 Mision Plataformero 2D · En la Biblioteca
+profundiza Pilar 3 — las tres capas del feel y el modelo de Swink del que salen (seis componentes, umbrales de percepción, sobre ADSR, ocho principios), vocabulario de efectos con sus ventanas de tiempo, juice que informa vs juice que decora · EST-010 Mision Plataformero 2D, actualizado por EST-023 · En la Biblioteca
 
 ### [[03_Definicion_de_terminado|Definicion de terminado]]
 

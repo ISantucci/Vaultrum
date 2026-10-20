@@ -25,7 +25,9 @@ El listado de misiones vive en `00_Registro_est`, que no se versiona.
 
 ## Handoff a Conocimiento — resultado
 
-**Todos los handoff se resolvieron por indexación, no por copia**: el Core guarda el puntero en `Experiencia de juego` y el contenido queda en la Biblioteca, cargándose on-demand. Ningún libro fue copiado al Core y **ninguno fue promovido a criterio propio** — promover es una decisión aparte del owner, caso por caso.
+**Excepción, 2026-10-20:** `EST-023` (Swink) se resolvió por **promoción**: los principios de game feel pasaron a ser criterio propio del Core en `04_Principios de juego`, con aprobación del owner. El libro siguió en la Biblioteca y el Core no lo copia.
+
+**Hasta entonces, todos los handoff se resolvieron por indexación, no por copia**: el Core guarda el puntero en `Experiencia de juego` y el contenido queda en la Biblioteca, cargándose on-demand. Ningún libro fue copiado al Core y **ninguno fue promovido a criterio propio** — promover es una decisión aparte del owner, caso por caso.
 
 ```txt
 EST-001 → 01_Pong  +  primer contenido de 01_Loop_de_experiencia

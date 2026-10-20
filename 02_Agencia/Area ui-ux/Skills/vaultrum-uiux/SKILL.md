@@ -38,6 +38,8 @@ Antes de diseñar, jalá **on-demand** dos libros de `05_Escuela/Biblioteca/Fund
 
 Y **solo si el caso lo pide**, uno más: `09_Onboarding_y_tutorial` si la interfaz enseña · `10_Input_y_respuesta` si hay que fijar la cadena de respuesta · `11_Camara_y_encuadre` si la cámara transporta señal · `16_Audio_como_gameplay` si el sonido es el canal redundante del color.
 
+Los efectos de game feel también son señal y entran al presupuesto de comunicación: un efecto que no cabe en su canal no entra, por mucho que guste (`06 - Cada efecto afirma algo`, en `Principios de game feel` del Core).
+
 No cargues la Biblioteca entera. Si el entregable no es un juego, el pilar 4 aplica entero y los otros tres se leen como feedback, control y progreso visible **del sistema**.
 
 ## Dónde vive todo

@@ -9,7 +9,25 @@ Sos el **Área de Game Design** de Vaultrum, desde el **Technical Game Design**:
 
 ## Baseline de experiencia (consulta obligatoria)
 
-Antes de diseñar, jalá **on-demand** el libro de Fundamentos `05_Fundamentos_de_experiencia_ludica` (Biblioteca de la Escuela, en `05_Escuela/Biblioteca/Fundamentos/`). Son los **9 pilares** de que un sistema se *sienta bien de jugar*, no solo funcione: core loop/objetivos, victoria/derrota/fin, feedback/game feel, claridad/legibilidad, justicia/control, dificultad/tensión/flow, recompensa/motivación, ritmo/pacing, agencia/decisiones. El Analista los usa como grilla de encuadre y el Validador corre su **CHECKLIST por-GDS** al cerrar. No cargues la Biblioteca entera: solo este libro (y el `04_Playbook_de_diseno` si necesitás el "cómo").
+Antes de diseñar, jalá **on-demand** el libro de Fundamentos `05_Fundamentos_de_experiencia_ludica` (Biblioteca de la Escuela, en `05_Escuela/Biblioteca/Fundamentos/`). Son los **9 pilares** de que un sistema se *sienta bien de jugar*, no solo funcione: core loop/objetivos, victoria/derrota/fin, feedback/game feel, claridad/legibilidad, justicia/control, dificultad/tensión/flow, recompensa/motivación, ritmo/pacing, agencia/decisiones. El Analista los usa como grilla de encuadre y el Validador corre su **CHECKLIST por-GDS** al cerrar. No cargues la Biblioteca entera: solo este libro (y el `04_Playbook_de_diseno` si necesitás el "cómo", y `02_Game_feel` si hay tiempo real: ver abajo).
+
+## Game feel — sos el dueño (regla del Core)
+
+Si el sistema tiene **interacción en tiempo real** —algo que el jugador maneja y que se mueve o reacciona mientras lo maneja—, el feel es diseño y es tuyo; si no la tiene, igual declarás el acuse y los efectos (ver abajo). Aplicá los ocho principios de `Principios de game feel` (Core, `01_VaultrumCore/04_Principios de juego/`) y jalá entero `02_Game_feel` (Fundamentos): es el cómo, con los números.
+
+El `GDS` lleva una **sección de feel** con cinco partes; ninguna se omite sin decir por qué no aplica:
+
+```
+metáfora      qué es lo que se mueve: real / icónico / abstracto
+reglas bajas  lo que cambia el movimiento: daño, estados, invulnerabilidad, tiempos
+sobre         ataque, sostenido y liberación en segundos; velocidad máxima
+perdón        coyote, buffer, asistencias, en cuadros o ms (10_Input_y_respuesta)
+efectos       evento | efecto | qué afirma | ventana | techo | eventos por minuto
+```
+
+Quién la escribe: el **Analista** fija metáfora y reglas bajas; el **Diseñador** declara qué se perdona y qué afirma cada efecto; el **Balanceador** pone los números: cuánto se perdona, el sobre, las ventanas, los techos y los eventos por minuto. Un sistema sin tiempo real (por turnos, menús) marca **N/A** la metáfora, el sobre y el perdón —no hay capa 2— y sigue declarando el acuse y la tabla de efectos.
+
+**`documentacion.py` no mide esta sección todavía.** La verifica el Validador leyendo, contra el checklist de `02_Game_feel`, y lo declara como juicio.
 
 ## Entrada del área
 
@@ -44,6 +62,7 @@ balance/curvas sin cerrar     → Balanceador
 [ ] Integraciones con otros sistemas identificadas
 [ ] Aporta a la experiencia (sin complejidad de más)
 [ ] Los 9 pilares de experiencia cubiertos o marcados N/A con justificación (CHECKLIST por-GDS de 05_Fundamentos_de_experiencia_ludica)
+[ ] Sección de feel: con tiempo real, sus cinco partes; sin tiempo real, acuse y tabla de efectos (metáfora, sobre y perdón N/A). Checklist de 02_Game_feel corrido (Principios de game feel, en el Core)
 [ ] LDS decidido: el "no aplica" dice qué dimensión falta y por qué
 [ ] Si el `RQ` declaró que UXS aplica, este GDS lo consume; no lo vuelve a decidir
 [ ] Si hay GDS-XXX.0: este GDS lo referencia y no lo duplica

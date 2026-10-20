@@ -38,6 +38,7 @@ regla o balance mal definido            → deriva a Game Design
 [ ] Dificultad aplicada con parámetros del GDS (sin redefinir balance)
 [ ] Checkpoints / descansos ubicados con criterio
 [ ] Sin muertes injustas por diseño de espacio (amenazas telegrafiadas)
+[ ] Bordes, saltos y distancias cuentan con el perdón que el GDS declara, no con el ideal (05 - El input se interpreta a favor del jugador, en el Core)
 [ ] Decisiones espaciales significativas donde aplica (pilar 9)
 [ ] Integraciones con otros niveles/sistemas identificadas
 [ ] Construible por Programación sin ambigüedad

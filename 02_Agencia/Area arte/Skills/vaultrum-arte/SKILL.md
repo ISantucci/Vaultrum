@@ -54,6 +54,8 @@ animacion         de control y el principio en       animacion o Sprites en     
 
 Una decisión de oficio sin nota que la sostenga se dice como **hueco** —*el Core no lo cubre*— y no se contesta de memoria como si fuera criterio.
 
+**Y lo que el jugador maneja responde al feel del `GDS`.** Una animación de una acción del jugador o un efecto de juego afirma lo que dice su fila en la sección de feel, y su peso es el de la simulación: no lo agranda ni lo achica. Criterio: `Principios de game feel` (Core, `04_Principios de juego`), sobre todo `02 - El orden de las capas` y `06 - Cada efecto afirma algo`.
+
 ## Las seis leyes
 
 ```txt

@@ -149,6 +149,8 @@ Lo que no se reproduce siempre **no se descarta**: se declara intermitente con s
 
 Triage de cada hallazgo: validez · severidad (la fijás vos, sale del comportamiento) · urgencia propuesta (la confirma Producción) · dueño · se arregla / se difiere / no se arregla · bloquea o no · necesita regresión · necesita análisis de causa raíz.
 
+**Si el hilo tiene interacción en tiempo real, el feel entra al pase** (`08 - El feel se prueba en gris y se cierra jugando`, en el Core): sin audio, sin capa 3, la pregunta de las tres, video a 1/4 y eventos por minuto, más el peor caso de acumulación en el Profiler. Leer el código no verifica el feel. Si nadie pudo jugar la build, el feel va al `QA` como **no verificado**, con esas palabras.
+
 Llená la matriz de cobertura mientras ejecutás, no al final: `sí` / `no` / `na:razón`, sin celdas vacías.
 
 ## Paso 5 — Gate (Validador de Gate)

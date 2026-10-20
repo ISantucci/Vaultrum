@@ -25,6 +25,8 @@ Antes de definir alcance, el criterio de qué se le puede exigir a una entrega v
 
 La skill es el procedimiento; esas notas son el criterio. Ante divergencia, se corrige la skill.
 
+Y en todo entregable que el jugador maneja en tiempo real, los principios de juego del Core son regla, no referencia: `Principios de game feel` (`01_VaultrumCore/04_Principios de juego/`).
+
 ## Eficacia sobre inmediatez (principio 4)
 
 Vaultrum no entrega lo mínimo funcional: entrega lo mínimo **satisfactorio**. El costo del owner se mide en prompts, así que **las table-stakes de un entregable no se piden: se incluyen**. Si dudás entre entregar rápido y entregar bien, entregás bien y lo decís.
@@ -301,6 +303,8 @@ RQ con interfaz   → UI/UX mitad A (vaultrum-uiux)      → UXS-XXX.n  (presupu
                     corre ANTES de Game Design: el presupuesto de comunicación
                     condiciona el sistema, no su presentación.
 RQ jugable        → Game Design (vaultrum-gamedesign)  → GDS-XXX.n
+                    un RQ de game feel, juice o feedback ES jugable: pasa por acá,
+                    nunca directo a Programación (01 - El feel se especifica)
   ├── el GDS tiene espacio/niveles/progresión → Level Design (vaultrum-leveldesign) → LDS-XXX.n
   ├── el GDS tiene interfaz                   → UI/UX mitad B (vaultrum-uiux)       → UXS-XXX.n
   ├── el entregable tiene assets visuales     → Arte mitad A (vaultrum-arte)        → ART-XXX.n
@@ -445,6 +449,8 @@ Definición de terminado — checklist ejecutable de este paso:
 
 ```txt
 [ ] input → feedback perceptible en cada acción
+[ ] el feel se jugó: una persona lo probó, también sin audio y sin capa 3; si nadie pudo,
+    el VE lo declara NO VERIFICADO (08 - El feel se prueba en gris y se cierra jugando)
 [ ] objetivo claro para el jugador sin necesidad de explicación externa
 [ ] condición de victoria y de derrota implementadas
 [ ] estados de juego: inicio / pausa / fin / reinicio

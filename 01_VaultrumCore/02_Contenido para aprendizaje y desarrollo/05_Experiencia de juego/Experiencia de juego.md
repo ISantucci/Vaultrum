@@ -48,7 +48,7 @@ Los cinco primeros son el marco; los doce siguientes profundizan un pilar de `05
 | 04_Playbook_de_diseno | principios accionables ordenados **por funcion** (mostrar, guiar, feel, decisiones, retener, sistemas, emocion, marco, produccion, restricciones) | cuando se sabe *que se quiere lograr* y falta como |
 | 05_Fundamentos_de_experiencia_ludica | los 9 pilares de por que algo **se siente bien**, con checklist verificable por especificacion | al disenar o revisar un sistema jugable |
 | 01_Loop_de_experiencia | input → feedback → objetivo → victoria/derrota; loops anidados | cuando hay dudas de si lo que hay es un juego o un juguete |
-| 02_Game_feel | las tres capas del feel, vocabulario de efectos con sus ventanas, juice que informa vs juice que decora | cuando el sistema funciona y no se siente |
+| 02_Game_feel | las tres capas del feel y el modelo de Swink (seis componentes, umbrales de percepción, sobre ADSR), vocabulario de efectos con sus ventanas, juice que informa vs juice que decora | en todo GDS con tiempo real, y cuando el sistema funciona y no se siente. Sus principios ya son regla del Core: `Principios de game feel` |
 | 03_Definicion_de_terminado | la checklist que separa *compila* de *esta hecho* | antes de dar cualquier entregable por terminado |
 | 06_Dificultad_y_curva | cuatro ejes de dificultad, curva escalonada, DDA, asistencias | al fijar dificultad, o cuando el playtest dice "facil" y "dificil" a la vez |
 | 07_Economia_y_balance | fuentes, sumideros y stocks; bola de nieve y catch-up; balance sin datos | cuando hay recursos que entran y salen |

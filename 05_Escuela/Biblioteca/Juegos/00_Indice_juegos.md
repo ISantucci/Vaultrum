@@ -29,6 +29,30 @@ Arcade · Endless runner lateral (auto-run, un carril, un golpe); la curva de ve
 Arcade · Contrarreloj — el reloj como rival: cuenta regresiva, time trial y duración fija; medallas, splits y ghosts · EST-019 Mision Endless runner y contrarreloj · En validación
 
 
+### [[07_Stealth|Stealth]]
+
+Sigilo · Sigilo top-down 2D con conos de visión, estados de alerta y evasión; detección gradual y legibilidad del sistema (Metal Gear) · EST-022 Mision Lote Juegos Web y Sigilo · En validación
+
+### [[08_Rhythm_tap|Rhythm tap]]
+
+Ritmo · Rhythm tap de carriles (Piano Tiles): ventanas de acierto, relación entre velocidad de caída y cadencia, latencia de audio en la web · EST-022 Mision Lote Juegos Web y Sigilo · En validación
+
+### [[09_Snake|Snake]]
+
+Arcade · Snake de grilla por ticks: input buffering y giro de 180°, comida, muros o wrap, desgaste; densidad y largo como dificultad · EST-022 Mision Lote Juegos Web y Sigilo · En validación
+
+### [[10_2048|2048]]
+
+Puzzle · Puzzle de fusión por deslizamiento en grilla (2048, Threes): reglas de movimiento y fusión, spawn, victoria y game over · EST-022 Mision Lote Juegos Web y Sigilo · En validación
+
+### [[11_Wordle|Wordle]]
+
+Puzzle · Puzzle de palabras diario con feedback por letra: regla de colores con letras repetidas, un intento por día, compartir sin spoilers · EST-022 Mision Lote Juegos Web y Sigilo · En validación
+
+### [[12_Tetris|Tetris]]
+
+Puzzle · Puzzle de piezas que caen: aleatorizador por bolsa, gravedad por nivel, lock delay, rotación, DAS · EST-022 Mision Lote Juegos Web y Sigilo · En validación
+
 ---
 
 ## Regla

@@ -78,6 +78,8 @@ Después definir el sistema (reglas, feedback, estados, parámetros).
 Después validar que sea implementable y testeable.
 Nunca diseñar reglas imposibles de validar ni sistemas que no aportan a la experiencia.
 
+Si el sistema tiene interacción en tiempo real, el feel es de esta área: el `GDS` lleva su sección de feel, según `Principios de game feel` en el Core. El feel no es un retoque que se le deja a Programación.
+
 ---
 
 ## Límites del área

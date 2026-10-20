@@ -126,7 +126,7 @@ las leyes medidas y las       Area de Arte: Area_arte y sus reglas RA
 reglas de uso
 cuantas senales entran        UI/UX: el arte ejecuta ese presupuesto, no lo dicta
 y por que canal
-como se siente el juego       Biblioteca: 02_Game_feel
+como se siente el juego       Core: Principios de game feel · Biblioteca: 02_Game_feel
 ```
 
 Se nombran, no se enlazan.

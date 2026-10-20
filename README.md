@@ -138,11 +138,11 @@ No es una obligación legal: la licencia cubre a Vaultrum, no lo que hacés con 
 
 | Capa | Qué es |
 |------|--------|
-| **01_VaultrumCore** | la base de conocimiento: SOLID, patrones, optimización, estructuras, algoritmos, managers, IA para juegos, calidad y testing, métricas de producto, y los criterios de entrega |
+| **01_VaultrumCore** | la base de conocimiento: SOLID, patrones, optimización, estructuras, algoritmos, managers, IA para juegos, calidad y testing, métricas de producto, principios de arte, los criterios de entrega y los **principios de juego** —lo que todo juego cumple para jugarse bien, empezando por el game feel— |
 | **02_Agencia** | las diez áreas que ejecutan y sostienen la cadena, cada una con sus agentes, flujos, salidas y su skill ejecutable |
 | **03_Comunidad** | gobernanza, contribución, licencia y marca, y la preparación de lo que el sistema publica |
 | **04_IA Operativa** | cómo una IA opera el vault sin inflarlo: tokens, prompteo, el pass GC y sus herramientas de medición |
-| **05_Escuela** | aprendizaje proactivo y la Biblioteca: fundamentos de experiencia y análisis de juegos por género |
+| **05_Escuela** | aprendizaje proactivo y la Biblioteca: fundamentos de experiencia, análisis de juegos por género, el mecanismo técnico (Construcción) y las fuentes que los sostienen |
 | `06_Proyectos` | **no viaja.** Es tu workspace: lo crea Producción al cerrar el seteo de tu primer proyecto |
 
 Catorce **skills ejecutables** —una por cada una de las diez áreas, más la Escuela, la Comunidad, AiCare y el Despacho— son lo que hace que la cadena corra en vez de quedarse en documentación.
@@ -205,7 +205,7 @@ Si solo querés estudiar el criterio, revisar patrones o usar la Biblioteca, no 
 
 **Un commit frenado por el gate.** El mensaje dice qué medición falló y cómo ver su informe completo. Si fue `privacidad.py`, una nota del sistema nombra uno de tus proyectos: reescribila sin el nombre, o, si es una palabra común que coincide, declarala en `06_Proyectos/privado.txt` con la forma `ruta | término | razón`.
 
-**El asistente me pide una passphrase.** Es el Modo Owner: ver *Modificar el sistema en tu copia*, más abajo.
+**El asistente me pide una passphrase.** Es el Modo Owner: ver *Modificar el sistema en tu copia*, más arriba.
 
 **Bajé el .zip en vez de clonar.** Funciona, pero sin git no hay gate de cierre. El instalador te lo avisa como opcional.
 

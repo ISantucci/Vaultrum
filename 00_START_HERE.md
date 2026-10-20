@@ -93,6 +93,7 @@ Y desde el primer ciclo completo, dos secciones que antes no tenía:
 
 - **Criterios de entrega** — cuándo algo está terminado: `Baseline de entregable`, `Verificacion parcial declarada`, `Gates verificables`. Es la única parte del Core que nació del uso del propio sistema.
 - **Experiencia de juego** — el índice liviano hacia la Biblioteca de la Escuela: `Experiencia de juego`.
+- **Principios de juego** — lo que todo juego de Vaultrum cumple para jugarse bien, dominio por dominio. La primera sección es game feel: `04_Principios de juego`.
 
 VaultrumCore no ejecuta y no resuelve proyectos: **alimenta**. Se puede usar directo, sin pasar por ningún flujo.
 

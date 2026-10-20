@@ -216,6 +216,8 @@ No repitas teoría: consultala y aplicala. Rutas relativas a la raíz del vault:
 
 Prioridad de reutilización: reutilizar > extender > aplicar criterio del Core > crear nuevo (solo si hay necesidad real). Vale para los sistemas **y para las convenciones** del proyecto.
 
+**Principios de juego (obligatorio si el jugador maneja algo en tiempo real):** `01_VaultrumCore/04_Principios de juego/` — `Principios de game feel`. La capa 2 se implementa como el `GDS` la escribe: sobre, perdón y parámetros en datos (ScriptableObject), nunca literales; los efectos suscriptos a eventos de resultado, con techo, desde un pool. Si el `GDS` no trae sección de feel o un efecto llega sin ventana o sin techo, no se inventa: se devuelve a Game Design.
+
 **Criterios de entrega (obligatorio):** `.../04_Criterios de entrega/` — `Baseline de entregable`, `Verificacion parcial declarada`, `Gates verificables`, y `La superficie del ejecutor` cuando el `EJ` se delega. Y para decidir si una optimización corresponde antes de medirla: `Cuando NO optimizar`.
 
 ## Alcance no pedido

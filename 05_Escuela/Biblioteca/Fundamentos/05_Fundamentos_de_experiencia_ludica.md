@@ -85,7 +85,7 @@ Los nueve pilares son **transversales**: aplican a cualquier género. El balance
 
 **Baseline.**
 - Toda acción del jugador produce feedback inmediato y discernible (al menos visual + sonoro). Nada de acciones "mudas".
-- El control tiene peso diseñado: curvas de aceleración/frenado, inercia, y perdón donde corresponde (coyote time, input buffering). `05_Game_Feel`
+- El control tiene peso diseñado: curvas de aceleración/frenado, inercia, y perdón donde corresponde (coyote time, input buffering). `05_Game_Feel` · `69_Designing_Game_Feel_Survey`
 - El juice amplifica lo que importa (hit-stop, screenshake con criterio, partículas, tweening), sin tapar el estado ni saturar.
 - El feel se validó con el prototipo gris: se siente bien *antes* de sumar arte.
 

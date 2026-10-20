@@ -26,7 +26,7 @@ Raph Koster · 2004/2013 · diversión como aprendizaje, patrones, curva de domi
 
 ### [[05_Game_Feel|Game Feel]]
 
-Steve Swink · game feel, control en tiempo real, juice · Catalogada
+Steve Swink · game feel, control en tiempo real, umbrales de percepción, sobre ADSR, metáfora y reglas · Estudiado (destilada en EST-023 → 02_Game_feel)
 
 ### [[06_Half_Real|Half Real]]
 
@@ -280,6 +280,14 @@ Michael Azzi · 2019/2022 · legibilidad a baja resolución, paleta corta, despl
 
 Apuntes propios del owner, materia Animación 2D/3D (cursada 2026). Fuente propia. **Estudiado**: destilada entera en `TL-012`, con la tabla de qué idea fue a qué nota.
 
+### [[69_Designing_Game_Feel_Survey|Designing Game Feel. A Survey]]
+
+Pichlmair & Johansen · 2021 · la práctica del game feel en tres dominios: tuning, juicing, streamlining · Estudiado (destilada en EST-023 → 02_Game_feel)
+
+### [[70_Measuring_Game_Feel_Acceleration|Measuring How Game Feel Is Influenced by Acceleration and Deceleration]]
+
+Dahl & Kraus · 2015 · el sobre ADSR medido con 274 jugadores · Estudiado (destilada en EST-023 → 02_Game_feel)
+
 
 ---
 
@@ -374,3 +382,15 @@ Reparto interno del lote, para que la destilación no las lea como nueve version
 **Estado: `Catalogada` las nueve externas.** La `68` es fuente propia del owner y entra destilada en `TL-012`. Catalogar no es destilar, y **ninguna de las nueve es insumo válido de un `RQ`** — una fuente nunca lo es; lo es la nota que salga de ella.
 
 **`59`, `60` y `61` se leen como una unidad.** El principio de cine sin su especificación de juego da animaciones lindas que no responden; la especificación sin el principio da animaciones que responden y no dicen nada.
+
+---
+
+## Lote EST-023 — game feel (octubre 2026)
+
+La `05` se destiló y entraron `69` y `70` en `EST-023_Mision_Swink_Game_Feel`. El hueco: `02_Game_feel` era el fundamento más citado del estante y su fuente primaria seguía *Catalogada* desde `EST-003`; el libro usaba el marco de Swink sin haberlo destilado.
+
+```txt
+05  el modelo       bloques, componentes, umbrales, sobre ADSR, principios
+69  la practica     tres dominios: tuning, juicing, streamlining
+70  la medicion     el sobre ADSR medido con jugadores
+```
