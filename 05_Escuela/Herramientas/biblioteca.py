@@ -13,7 +13,7 @@ de que mision salio -- se calcula. Un dato calculado no puede derivar.
 import os, re, sys, collections
 
 ESTANTES = [('Fundamentos', 'Fundamentos'), ('Juegos', 'Juegos'),
-            ('Construccion', 'Construcción'),
+            ('Construccion', 'Construcción'), ('Medicina', 'Medicina'),
             ('Fuentes', 'Fuentes'), ('Documentos', 'Documentación real')]
 BASE = '05_Escuela/Biblioteca'
 VOCABULARIO = ['En estudio', 'En destilación', 'En validación', 'En la Biblioteca', 'A actualizar',

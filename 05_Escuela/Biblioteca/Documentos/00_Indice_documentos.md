@@ -445,6 +445,43 @@ Definición de género por factores · International Roguelike Development Confe
 Tabla de datos reconstruida · gamers.org, ~2011–2017 · licencia nivel B · prioridad media · **Estudiado** — destilado en `06_Contrarreloj`
 
 
+## Registro — El cuerpo humano y su movimiento (lote EST-024)
+
+Entraron juntos en `EST-024_Mision_Morfologia_del_movimiento`. Son los datos primarios detrás de los libros de **Medicina**: mediciones del cuerpo real y, en `84` y `85`, el lado del juego que esos datos tienen que respetar. Para un encargo que necesite un número que los libros no dan, la referencia es esta, no la memoria.
+
+### [[79_Joint_Range_of_Motion_Study_CDC|Joint Range of Motion Study (CDC)]]
+
+Base de datos de referencia · CDC y Hemophilia Treatment Center Network (Soucie et al.), 2011 · licencia nivel B · prioridad alta · **Estudiado** — destilado en `01_Anatomia_del_movimiento`
+
+### [[80_ANSUR_II|ANSUR II]]
+
+Base de datos antropométrica · U.S. Army Natick (Gordon et al.), 2012 · licencia nivel B · prioridad alta · **Estudiado** — destilado en `02_Proporciones_del_cuerpo`
+
+### [[81_Datasets_de_marcha_y_carrera_Fukuchi|Datasets de marcha y carrera (Fukuchi y Duarte)]]
+
+Base de datos de captura de movimiento · Fukuchi, Fukuchi y Duarte, 2017 y 2018 · licencia nivel A · prioridad alta · **Estudiado** — destilado en `05_Carrera`; referencia primaria de `04_Marcha_humana`
+
+### [[82_CMU_Motion_Capture_Database|CMU Motion Capture Database]]
+
+Base de datos de captura de movimiento · Carnegie Mellon University, desde 2003 · licencia nivel A, condiciones de portada a confirmar · prioridad media · **Estudiado** — referencia primaria de `04_Marcha_humana` y `05_Carrera`
+
+### [[83_Muybridge_Animal_Locomotion|Animal Locomotion (Muybridge)]]
+
+Fotografía secuencial histórica · Eadweard Muybridge, 1887 · licencia nivel A, dominio público · prioridad media · **Estudiado** — referencia visual de `04` a `07`
+
+### [[84_Building_a_Better_Jump|Building a Better Jump]]
+
+Charla de GDC · Kyle Pittman, 2016 · licencia nivel B · prioridad media · **Estudiado** — destilado en `06_Salto_y_aterrizaje`
+
+### [[85_Sakurai_Hitstop|Thoughts on hitstop (Sakurai)]]
+
+Columna de diseño de un director · Masahiro Sakurai, Famitsu 490–491; traducción de Source Gaming, 2015 · licencia nivel B · prioridad media · **Estudiado** — destilado en `07_Cadena_cinetica`
+
+### [[86_OpenBiomechanics_Driveline|The OpenBiomechanics Project]]
+
+Base de datos de captura de movimiento · Driveline Baseball, desde 2022 · licencia nivel A, **datos CC BY-NC-SA: no apto como insumo de un producto comercial** · prioridad baja · **Estudiado** — referencia de `07_Cadena_cinetica`
+
+
 ---
 
 ## Regla del estante
@@ -486,4 +523,4 @@ Estante abierto en la misión `EST-006_Mision_Lote_Biblioteca_Agosto26` con 52 d
 
 Tres de esos doce entraron juntos y por un motivo declarado: `59`, `60` y `61` son el material que le faltaba a `02_Game_feel`, el libro de Fundamentos que sigue *Reservado*. Con ellos, escribirlo deja de estar bloqueado por falta de material y pasa a ser una decisión del owner.
 
-78 documentos en el estante: 72 catalogados y 6 estudiados (conteo calculado del disco el 2026-10-04, con el lote `EST-020` incluido). Declarado como cuarto estante en `00_Biblioteca`. El conteo y el estado del estante se calculan con `Herramientas/biblioteca.py`.
+86 documentos en el estante: 72 catalogados y 14 estudiados (conteo calculado del disco el 2026-10-05, con el lote `EST-024` incluido). Declarado como cuarto estante en `00_Biblioteca`. El conteo y el estado del estante se calculan con `Herramientas/biblioteca.py`.

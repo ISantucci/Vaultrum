@@ -20,6 +20,51 @@ EJ  | Insumo | Lo que se implemento | Archivos creados | Desvios declarados | Ve
 QA  | Insumo | Alcance y perfil | Version | Defectos | Cobertura | Medicion | Veredicto
 VE  | Entrega validada | Trazabilidad | Contra los RQ | Experiencia | Hallazgos | Friccion | Aprendizaje para el Core | Estado de la entrega
 
+# ---------------------------------------------------------------------------
+# LA BIBLIOTECA — tres tipos, 2026-10-05 (ARQ-036, EST-024).
+#
+# Hasta hoy ninguna pieza de la Biblioteca tenia contrato: documentacion.py
+# reconoce artefactos por prefijo y un libro no tiene prefijo. La forma de un
+# libro vivia en prosa dentro de 00_Biblioteca, escrita por quien lo llenaba.
+# Reparto desde ARQ-036:
+#
+#   Arquitecto    el ORDEN       que indice existe y de quien cuelga cada cosa
+#   Documentador  la ESCRITURA   este archivo: que secciones lleva cada tipo y
+#                                como se escribe la entrada de un indice
+#   Escuela       el CONTENIDO   llena la forma en el lugar que fijo el Arquitecto
+#
+# Los tres tipos se reconocen por DONDE viven (tipo_biblioteca, documentacion.py):
+#   SALA     05_Escuela/Biblioteca/00_Sala_*.md
+#   ESTANTE  05_Escuela/Biblioteca/<estante>/00_Indice_*.md
+#   MED      05_Escuela/Biblioteca/Medicina/NN_*.md
+#
+# ESTANTE  MEDIDO sobre los 5 indices de estante reales del 2026-10-05:
+#          "Estante de X" 5/5 · "Registro" 5/5 (con o sin calificador: "Registro
+#          (por genero)", "Registro — GDD...") · "Regla" 5/5 ("Regla del estante"
+#          y "Regla de licencia" incluidas). Umbral 4/5. Pasan los cinco.
+# SALA     DISEÑADO, no medido: las salas nacen hoy. Mismo caso que QA. Se mide
+#          contra las salas reales cuando haya cambios en las tres.
+# MED      DISEÑADO, no medido: el estante nace hoy con su primer lote. Cada
+#          seccion sale de lo que el consumidor tiene que poder HACER con el
+#          libro (la razon de cada una esta en 03_Documentador). Se remide contra
+#          los libros reales al cerrar EST-024 y se corrige si difiere.
+#
+# La ENTRADA de un indice se escribe siempre igual, en sala y en estante:
+#
+#     ### [[NN_Nombre|Nombre]]
+#     que responde, en una linea · mision · estado
+#
+# El estado lo declara la ficha; la linea lo repite; biblioteca.py --verificar
+# cruza las dos. La ficha no enlaza de vuelta al indice (Ley 2 del grafo).
+#
+# Ley 4 en MED mide tambien las FILAS DE TABLA (en la cadena solo mide prosa):
+# en un libro de dominio el numero vive en la tabla de parametros. Una cita de
+# autor y anio, "(Winter 2009)", cuenta como fuente.
+
+ESTANTE | Estante | Registro | Regla
+SALA    | Sala | Que guarda | Quien la consulta | Estantes | Que no va aca
+MED     | Que decision sostiene | Modelo | Parametros | Relaciones | Estilizacion | Medible y juicio | Al encargo | Limites | Fuentes
+
 # VE: la seccion Friccion NO sale de medir (0 de 3 VE reales la tenian). Sale de
 # 06_Medicion de friccion, que la pedia "en el VE de cada entrega" sin que ningun
 # contrato ni ninguna skill que escribe el VE la nombrara, y de --cosecha, que la

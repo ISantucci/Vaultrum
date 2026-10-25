@@ -6,7 +6,7 @@ La Biblioteca es el **corazón de la Escuela**: el espacio donde se guardan los 
 
 No es un catálogo de juegos ni una lista de 500 títulos. Es una colección de **libros** curados, cada uno con índice y metadata, indexados para consultarse por categoría.
 
-Esta nota es la portada. Los cinco estantes de abajo son el registro: cada uno enlaza sus piezas y las describe.
+Esta nota es la portada. Se ordena como una biblioteca real: **salas por tema**, y en cada sala sus **estantes**. La portada enlaza las salas, cada sala enlaza sus estantes y cada estante enlaza sus piezas y las describe.
 
 ---
 
@@ -26,22 +26,18 @@ Un dato calculado no puede derivar del original, porque no tiene copia. La Bibli
 
 ---
 
-## Estantes
+## Salas
 
-### [[00_Indice_fundamentos|Fundamentos]]
-Lo **transversal**: lo que hace que algo *sea* una experiencia y se *sienta* bien, sirva para el género que sirva. El loop de experiencia (input → feedback → objetivo → victoria/derrota), el game feel / juice, la definición de terminado. Un plataformero y un shmup comparten estos fundamentos.
+### [[00_Sala_diseno_de_juegos|Sala de Diseño de juegos]]
+La experiencia del jugador: lo transversal (Fundamentos) y lo de cada género (Juegos). La abren Producción y las áreas de diseño antes de cerrar el `GDS`.
 
-### [[00_Indice_juegos|Juegos]]
-Análisis **por juego/tipo**, guardados por **género**. Qué hace bien un Pong, un breakout, un roguelike: sus table-stakes y su juice específicos. Cuando se pide un juego de ese género, su libro (y los Fundamentos que aplican) están al alcance.
+### [[00_Sala_ciencias_aplicadas|Sala de Ciencias aplicadas]]
+El mecanismo: cómo se construye un juego (Construcción) y cómo es y se mueve el cuerpo humano que el juego anima (Medicina). La abren los agentes que operan herramientas, solo cuando la tarea lo pide.
 
-### [[00_Indice_construccion|Construcción]]
-**Cómo se construye técnicamente** un juego: el paso fijo, la colisión, el quaternion, el shader. Los otros estantes responden por la experiencia; este por el mecanismo. La frontera con el Core es una línea: **el Core ya tiene el precio de todo y el mecanismo de nada** — `Física costosa` dice cuánto sale la física por frame y ninguna nota dice qué es un integrador. Lo consulta Programación al escribir el `SOL`, después de que el `GDS` cerró. Emplazamiento en `ARQ-022_La_frontera_del_material_tecnico`.
+### [[00_Sala_de_referencia|Sala de Referencia]]
+La materia prima: fuentes externas catalogadas (Fuentes) y evidencia primaria de la industria (Documentación real). Se consulta en sala: la usa la Escuela, no la producción.
 
-### [[00_Indice_fuentes|Fuentes]]
-Libros, papers y referencias **externas** que la Escuela estudia — la materia prima. No son libros destilados de Vaultrum: se catalogan (cita + resumen aprendido, sin verbatim) y luego, en una misión de destilación, alimentan los Fundamentos o Juegos. Separar la fuente del libro destilado evita meter texto ajeno en el activo propio.
-
-### [[00_Indice_documentos|Documentación real]]
-**Artefactos** de la industria: documentos de diseño que se usaron de verdad (GDD, design bibles, pitches), código fuente liberado, documentación oficial de motor y registros de proceso. No son teoría (eso es Fuentes) ni destilado propio (eso son Fundamentos y Juegos): son **evidencia primaria**, para que Producción y Game Design vean cómo lo resolvió alguien que ya lo hizo en vez de discutirlo en abstracto. La Biblioteca **no aloja** estos documentos: guarda ficha, referencia y URL, con el nivel de licencia declarado.
+El orden de las salas es del Arquitecto (`ARQ-036`); la forma en que se escribe cada sala, cada estante y cada libro es del Documentador (`contratos.txt`).
 
 ---
 
@@ -68,6 +64,8 @@ mision: [[EST-XXX_...]]
 ```
 
 Los libros de **Fundamentos** no llevan `genero`; los de **Juegos**, sí.
+
+Los libros de **Medicina** no siguen esta anatomía: siguen el contrato `MED` del Documentador, porque no se leen para diseñar sino que se cargan para operar una herramienta (ver `00_Indice_medicina`).
 
 Los **documentos** del cuarto estante no siguen esta anatomía: son fichas de artefacto, con su propia metadata (`familia`, `autor`, `anio`, `formato`, `acceso`, `licencia`, `prioridad`, `url`). Ver `00_Indice_documentos`.
 

@@ -52,12 +52,57 @@ saber cuándo parar             si lo que falta solo se resuelve jugando, se rec
 
 ---
 
+## La forma de la Biblioteca
+
+Tercer caso, desde el 2026-10-05 (`ARQ-036`): **el Documentador es dueño de cómo se escribe la Biblioteca.** No de dónde vive cada cosa —eso es del Arquitecto— ni de lo que dice —eso es de la Escuela—, sino de la forma: qué secciones lleva cada tipo de pieza y cómo se escribe la entrada de un índice.
+
+```txt
+Arquitecto    el ORDEN       qué índice existe, de quién cuelga cada pieza
+Documentador  la ESCRITURA   las secciones de cada tipo y la línea de cada entrada
+Escuela       el CONTENIDO   llena la forma en el lugar que fijó el Arquitecto
+```
+
+La forma no se escribe en prosa: se escribe como contrato en `Herramientas/contratos.txt`, porque un contrato lo mide `documentacion.py` y una prosa no la mide nadie. Hoy hay tres tipos: `SALA`, `ESTANTE` (medido sobre los cinco estantes reales) y `MED`, el libro del estante de Medicina.
+
+La entrada de un índice, en sala y en estante, siempre igual:
+
+```txt
+### [[NN_Nombre|Nombre]]
+que responde, en una línea · misión · estado
+```
+
+### Por qué el libro de Medicina tiene estas secciones
+
+Un libro de dominio no se lee para diseñar: se carga para **hacer** algo con una herramienta. Cada sección existe porque el consumidor la necesita para eso, y ninguna está para que el libro se parezca a los otros.
+
+```txt
+Qué decisión sostiene   qué área, qué silla, y qué contestaba hasta hoy de memoria.
+                        Si no hay decisión, el libro no hace falta
+Modelo                  el mecanismo mínimo que explica los números. Nada más
+Parámetros              tabla: parámetro · valor · rango · condición · fuente.
+                        Cada fila con su fuente en la misma fila (Ley 4)
+Relaciones              la fórmula, no el resultado: un número suelto es un lugar
+                        donde dos secciones se contradicen sin que nadie lo vea
+Estilización            qué pasa con el modelo cuando las proporciones no son
+                        humanas reales. Sin esto, el número real rompe al
+                        personaje estilizado
+Medible y juicio        qué chequea un instrumento y qué queda para la plancha
+Al encargo              las líneas exactas que entran al encargo, al rig o al
+                        chequeo. Es lo que el consumidor copia
+Límites · Fuentes       cuándo no aplica; de dónde sale cada número
+```
+
+**La barra contra el relleno:** cada párrafo termina en un parámetro con fuente, una relación, un chequeo o una línea de encargo. El que no se puede rastrear hasta una decisión de un consumidor, sale.
+
+---
+
 ## Qué debe evitar
 
 No inventa fuera del Core ni sin base real.
 No aprueba decisiones en nombre del responsable sin delegación explícita, ni marca un documento como Aprobado sin aprobación.
 No oculta pendientes para que un documento parezca completo, ni convierte una recomendación en evidencia.
 No decide si el aprendizaje merece entrar: eso es el Cosechador.
+No decide dónde vive una pieza de la Biblioteca ni abre índices: eso es el Arquitecto. No escribe el contenido de un libro: eso es la Escuela.
 No decide la pertenencia ni resuelve duplicaciones: eso es el Bibliotecario.
 No escribe historial del proyecto: escribe criterio reutilizable.
 No escribe un número sin decir de dónde salió.

@@ -45,6 +45,7 @@ LEY = {'TABLA':'Ley 6 — cero aristas invisibles',
        'puente':'Ley 5 — un puente por capa, y declarado',
        'no-viaja':'Ley 7 — el paquete no enlaza lo que no viaja',
        'flotando':'Corolario — nada flota',
+       'dos-padres':'Corolario — un padre por nota (el puente declarado no cuenta)',
        'inalcanzable':'Pregunta fundacional — se entra por un indice y se llega caminando',
        'roto':'link roto','ambiguo':'link ambiguo (nombre repetido)'}
 
@@ -266,7 +267,8 @@ def auditar(root, modo_paquete=False):
              rotos=[], ambig=[], viol=collections.defaultdict(collections.Counter),
              detalle=collections.defaultdict(list), colgada=set(),
              cruces=collections.defaultdict(lambda: collections.defaultdict(list)),
-             laterales=collections.Counter(), adj=collections.defaultdict(list))
+             laterales=collections.Counter(), adj=collections.defaultdict(list),
+             padres=collections.defaultdict(set))
 
     for p, txt in fuentes.items():
         c = capa(p); r['n'][c] += 1; r['kb'][c] += len(txt) / 1024
@@ -297,6 +299,16 @@ def auditar(root, modo_paquete=False):
                 r['colgada'].add(d)
             if ps in ('TITULO', 'LISTA', 'LINEA') and dr != 'sube':
                 r['adj'][p].append(d)
+            # Corolario: un padre por nota. Se cuenta solo la CONTENCION dentro de la
+            # capa (cascada); el puente cruza de capa y no es padre. Nacio de ARQ-036:
+            # al meter las salas entre la Biblioteca y sus estantes, un link directo
+            # que quedara olvidado en 00_Biblioteca daba EN LEY, porque la cascada se
+            # mide por carpeta y las salas no agregan carpeta. Un escalon que el
+            # instrumento no ve es un escalon que nadie protege.
+            if ps in ('TITULO', 'LISTA', 'LINEA') and dr == 'cascada':
+                r['padres'][d].add(p)
+
+    r['dos_padres'] = sorted((d, sorted(q)) for d, q in r['padres'].items() if len(q) > 1)
 
     # nada flota: toda nota cuelga de un indice
     universo = fuentes
@@ -341,6 +353,9 @@ def fallas(r):
     for p in (r['inalcanzables'] or []):
         razon = razon_de(exc, p, 'inalcanzable', usadas)
         (ok if razon else f).append((p, 'inalcanzable', 1, razon))
+    for d, q in r.get('dos_padres', []):
+        razon = razon_de(exc, d, 'dos-padres', usadas)
+        (ok if razon else f).append((d, 'dos-padres', len(q), razon))
     for (o, d), (fuentes, declara, aristas) in r['puentes'].items():
         if len(fuentes) > 1 or not declara:
             f.append((f'{o} -> {d}', 'puente', len(fuentes), None))
@@ -390,6 +405,8 @@ def informe(r):
                             'titulo-mixto', 'no-viaja'):
                     ej = [d for l, t2, d in r['detalle'].get(p, []) if t2 == tipo][:1]
                     if ej: extra = f"   ej: -> {ej[0]}"
+                if tipo == 'dos-padres':
+                    extra = "   <- " + ' + '.join(dict(r.get('dos_padres', [])).get(p, []))
                 print(f"    {n:>3}  {p}{extra}")
     if ok:
         print(f"\nExcepciones declaradas ({len(ok)}) — estan en excepciones.txt, no fallan:")

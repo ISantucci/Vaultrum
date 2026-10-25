@@ -115,7 +115,7 @@ Decide **con criterio qué merece volver al Core**, sobre la evidencia que junta
 
 ### [[03_Documentador]]
 
-Escribe cada aprendizaje candidato como un `.md` claro en Staging, útil para humanos e IAs: qué es, cuándo aplica, qué NO es, cómo se usa.
+Escribe cada aprendizaje candidato como un `.md` claro en Staging, útil para humanos e IAs: qué es, cuándo aplica, qué NO es, cómo se usa. Y es dueño de **cómo se escribe la Biblioteca**: los contratos de sala, de estante y de libro de Medicina en `contratos.txt`, y la línea de cada entrada de índice (`ARQ-036`).
 
 ### [[04_Bibliotecario_Pertenencia]]
 

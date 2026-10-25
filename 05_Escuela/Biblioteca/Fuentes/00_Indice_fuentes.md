@@ -288,6 +288,42 @@ Pichlmair & Johansen · 2021 · la práctica del game feel en tres dominios: tun
 
 Dahl & Kraus · 2015 · el sobre ADSR medido con 274 jugadores · Estudiado (destilada en EST-023 → 02_Game_feel)
 
+### [[71_Dynamic_Principles_of_Gait|Dynamic Principles of Gait]]
+
+Kuo y Donelan · 2010 · la marcha como péndulo invertido; lo caro es pasar de un pie al otro · **Estudiado** — destilada en `04_Marcha_humana`
+
+### [[72_Body_Segment_Parameters|Body Segment Parameters]]
+
+Marcos Duarte (BMClab) · cuaderno vivo · las tablas de Dempster/Winter y de de Leva: masa y centro de cada segmento · **Estudiado** — destilada en `03_Masa_centro_de_masa_y_equilibrio`
+
+### [[73_Condition_for_Dynamic_Stability|The Condition for Dynamic Stability]]
+
+Hof, Gazendam y Sinke · 2005 · el centro de masa extrapolado y los márgenes de estabilidad medidos · **Estudiado** — destilada en `03_Masa_centro_de_masa_y_equilibrio`
+
+### [[74_Predicting_Segment_Lengths_from_Stature|Predicting Segment Lengths from Stature]]
+
+Fromuth y Parkinson · 2008 · alturas y largos como fracción de la estatura, percentiles 5–95 (ANSUR 1988) · **Estudiado** — destilada en `02_Proporciones_del_cuerpo`; la usan `03` y `04`
+
+### [[75_Countermovement_Jump_Phases|Countermovement Jump Phases]]
+
+McMahon, Rej y Comfort; McMahon, Suchomel, Lake y Comfort · 2017 y 2018 · fases, tiempos y velocidades del salto con contramovimiento · **Estudiado** — destilada en `06_Salto_y_aterrizaje`
+
+### [[76_Standing_Vertical_Jump|Standing Vertical Jump]]
+
+Nicholas Linthorne · 2001 · la física del salto vertical medido en plataforma de fuerza · **Estudiado** — destilada en `06_Salto_y_aterrizaje`
+
+### [[77_Kinetic_Chain_in_Overhand_Pitching|Kinetic Chain in Overhand Pitching]]
+
+Seroyer y otros · 2010 · el orden y el momento de cada eslabón en el lanzamiento · **Estudiado** — destilada en `07_Cadena_cinetica`
+
+### [[78_Instep_Soccer_Kick|Instep Soccer Kick]]
+
+Kellis y Katis · 2007 · la patada de empeine: secuencia y velocidades de muslo y pierna · **Estudiado** — destilada en `07_Cadena_cinetica`
+
+### [[79_Figure_Drawing_for_All_Its_Worth|Figure Drawing for All It's Worth]]
+
+Andrew Loomis · 1943 · cánones de proporción en cabezas y proporciones por edad · **Estudiado** — destilada en `02_Proporciones_del_cuerpo`, solo como referencia de estilización
+
 
 ---
 
@@ -394,3 +430,23 @@ La `05` se destiló y entraron `69` y `70` en `EST-023_Mision_Swink_Game_Feel`. 
 69  la practica     tres dominios: tuning, juicing, streamlining
 70  la medicion     el sobre ADSR medido con jugadores
 ```
+
+## Lote EST-024 — Morfología del movimiento (octubre 2026)
+
+Las fuentes `71`–`79` entraron juntas en `EST-024_Mision_Morfologia_del_movimiento`, que abrió el estante de **Medicina** en la sala de Ciencias aplicadas. El hueco: Arte encargaba, riggeaba y revisaba personas con una regla de oficio (`RA-011_Locomocion_por_apoyos`) y sin un solo dato del cuerpo real; el dedup de la misión encontró 18 piezas que rozaban el tema y ninguna que lo cubriera.
+
+Reparto interno del lote:
+
+```txt
+71  la marcha como péndulo      (04)
+72  masa por segmento          (03)
+73  equilibrio en movimiento   (03)
+74  largos por estatura        (02; la usan 03 y 04)
+75  fases del salto            (06)
+76  física del salto           (06)
+77  cadena del lanzamiento     (07)
+78  cadena de la patada        (07)
+79  canon de dibujo            (02, solo para estilizar)
+```
+
+**Estado: `Estudiado` las nueve.** Entraron leídas y destiladas en los libros de Medicina, no solo catalogadas. Las bases de datos y tablas primarias del mismo lote están en `Documentación real` (`79`–`86`).

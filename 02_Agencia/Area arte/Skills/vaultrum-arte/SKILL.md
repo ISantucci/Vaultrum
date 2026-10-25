@@ -56,6 +56,23 @@ Una decisión de oficio sin nota que la sostenga se dice como **hueco** —*el C
 
 **Y lo que el jugador maneja responde al feel del `GDS`.** Una animación de una acción del jugador o un efecto de juego afirma lo que dice su fila en la sección de feel, y su peso es el de la simulación: no lo agranda ni lo achica. Criterio: `Principios de game feel` (Core, `04_Principios de juego`), sobre todo `02 - El orden de las capas` y `06 - Cada efecto afirma algo`.
 
+**Una cuarta fuente, condicional: el estante de Medicina** (`05_Escuela/Biblioteca/Medicina/`, abierto en `ARQ-036`). El cuerpo humano real: proporciones, rangos de articulación, peso, marcha, carrera, salto y golpe. **Se abre solo cuando lo que se hace es una persona o un humanoide, y solo el libro de lo que se está haciendo.** Para todo lo demás no se abre: es contexto que no aporta y se paga en cada vuelta.
+
+```txt
+SE ABRE SI                                        EL LIBRO
+encargo de una caminata                           04_Marcha_humana
+encargo de una carrera                            05_Carrera
+salto, caida o aterrizaje                         06_Salto_y_aterrizaje
+golpe, lanzamiento, patada                        07_Cadena_cinetica
+hoja de referencia, escala o modelado de persona  02_Proporciones_del_cuerpo
+rig, limites de articulacion, skinning            01_Anatomia_del_movimiento
+pose con peso: idle, cargar, empujar              03_Masa_centro_de_masa_y_equilibrio
+
+NO SE ABRE   un objeto, un arma, un vehiculo, un efecto, una interfaz, un cuadrupedo
+```
+
+Del libro se toma su sección **Al encargo** —las líneas que van al encargo, al rig o al chequeo— y se cita el libro en el `ART`. El libro sostiene a `RA-011` y a los principios del Core, no los reemplaza: si un libro y una regla del área dicen distinto, es un hallazgo para el owner, no una elección del área.
+
 ## Las seis leyes
 
 ```txt
@@ -330,4 +347,4 @@ No define reglas ni balance (Game Design). No diseña el espacio jugable (Level 
 
 ## Señales de mala respuesta
 
-Aprueba un asset mirándolo · verifica antes de emparentar · deja que el modelador se verifique a sí mismo · deja que el verificador repare lo que encontró · declara caras del archivo como si fueran caras en pantalla · salta un paso condicional sin declarar la omisión · afirma una medida en vez de ajustarla hasta que dé · arranca a modelar sin mitad A cerrada · usa un render como prueba · escribe un encargo sin leer el proyecto · mete en la escena un elemento que no sostiene ningún hecho · deja el texto abierto · rediseña el personaje en vez de anclarlo · le pide cotas a una hoja generada, o usa una como medida · corrige tres cosas en una sola vuelta · aprueba una animación mirando el GIF · nombra las piernas por cerca/lejos en vez de izquierda/derecha · acepta un damero como transparencia · hace el GIF primero y los PNG desde el GIF · dice "listo para juego" con solo la vista previa comprobada · contesta de memoria una decisión de oficio que el Core tiene escrita · cita un principio sin su especificación de juego.
+Aprueba un asset mirándolo · verifica antes de emparentar · deja que el modelador se verifique a sí mismo · deja que el verificador repare lo que encontró · declara caras del archivo como si fueran caras en pantalla · salta un paso condicional sin declarar la omisión · afirma una medida en vez de ajustarla hasta que dé · arranca a modelar sin mitad A cerrada · usa un render como prueba · escribe un encargo sin leer el proyecto · mete en la escena un elemento que no sostiene ningún hecho · deja el texto abierto · rediseña el personaje en vez de anclarlo · le pide cotas a una hoja generada, o usa una como medida · corrige tres cosas en una sola vuelta · aprueba una animación mirando el GIF · nombra las piernas por cerca/lejos en vez de izquierda/derecha · acepta un damero como transparencia · hace el GIF primero y los PNG desde el GIF · dice "listo para juego" con solo la vista previa comprobada · contesta de memoria una decisión de oficio que el Core tiene escrita · cita un principio sin su especificación de juego · abre el estante de Medicina para algo que no es una persona, o lo carga entero en vez del libro de lo que se anima.

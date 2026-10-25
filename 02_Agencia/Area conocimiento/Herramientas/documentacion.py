@@ -72,6 +72,64 @@ FUENTE   = re.compile(r'(`[^`]+`|\bmedid|\bmedic|\bsegun\b|\bfuente\b|\bconteo\b
 NOAPLICA = re.compile(r'\b(no aplica|no corresponde|n/?a|sin (?:lds|uxs|nivel|interfaz))\b', re.I)
 RUTA     = re.compile(r'`((?:0\d_|00_)[^`]*?\.(?:md|py|txt|json|csv))`')
 
+# ------------------------------------------------------------ la Biblioteca
+# Desde ARQ-036 (2026-10-05). Hasta ese dia este instrumento no media ninguna pieza
+# de la Biblioteca: reconoce artefactos por prefijo (TL-, RQ-...) y un libro no tiene
+# prefijo, asi que contestaba "no es un artefacto de la cadena" y la forma de un libro
+# vivia en prosa, escrita por quien lo llenaba. Ahora el orden es del Arquitecto, la
+# forma de escribirlo es del Documentador (contratos.txt) y el contenido es de la
+# Escuela. Las piezas se reconocen por DONDE viven.
+#
+# Solo se miden los estantes cuyo libro tiene contrato escrito. Fundamentos, Juegos,
+# Construccion, Fuentes y Documentos siguen sin contrato de libro: medirlos es una
+# mision aparte, no este cambio.
+BIBLIOTECA  = '05_Escuela/Biblioteca/'
+LIBROS      = {'Medicina': 'MED'}             # carpeta del estante -> tipo de libro
+LIBRO_TIPOS = set(LIBROS.values())
+# Un libro de dominio vive de numeros con unidad fisica (m, s, grados, kg) y de
+# fracciones sin unidad (0.245 de la altura, Froude 0.5). La lista UNIDADES de arriba
+# es la de la cadena y no los ve. Se amplia solo para los libros: ampliarla para todo
+# el vault cambiaria el gate de artefactos que nadie toco.
+NUMERO_LIB  = re.compile(r'(?<![\w.,-])(\d+[.,]\d+|\d+\s*(?:°|%|grados|m/s|km/h|pasos/min|Hz|kg|cm|mm|ms|m|s)(?![\w/]))', re.I)
+# Una cita de autor y anio es una fuente: "(Winter 2009)", "(Perry y Burnfield 2010, cap. 4)".
+CITA        = re.compile(r'\([^()]*\b(?:1[89]\d\d|20\d\d)[a-z]?\b[^()]*\)')
+
+
+def tipo_biblioteca(rel):
+    """SALA / ESTANTE / tipo de libro, o None si la nota no es una pieza medible."""
+    if not rel.startswith(BIBLIOTECA):
+        return None
+    resto = rel[len(BIBLIOTECA):].split('/')
+    if len(resto) == 1 and resto[0].startswith('00_Sala_'):
+        return 'SALA'
+    if len(resto) == 2 and resto[1].startswith('00_Indice_'):
+        return 'ESTANTE'
+    if len(resto) == 2 and resto[0] in LIBROS and re.match(r'^\d\d_', resto[1]):
+        return LIBROS[resto[0]]
+    return None
+
+
+def filas_de_tabla(txt):
+    """Filas de tabla fuera de codigo y de frontmatter, sin la fila separadora."""
+    out, dentro, yaml = [], False, False
+    for i, l in enumerate(txt.splitlines(), 1):
+        if i == 1 and l.strip() == '---':
+            yaml = True
+            continue
+        if yaml:
+            if l.strip() == '---':
+                yaml = False
+            continue
+        if FENCE.match(l.strip()):
+            dentro = not dentro
+            continue
+        if dentro or not l.lstrip().startswith('|'):
+            continue
+        if re.match(r'^\s*\|[\s:|-]+\|?\s*$', l):
+            continue
+        out.append((i, l))
+    return out
+
 
 def limpiar(s):
     s = unicodedata.normalize('NFKD', s)
@@ -235,14 +293,15 @@ def bases_de(rel, raiz):
 
 def medir(rel, txt, contratos, raiz):
     m = ART.match(os.path.basename(rel))
-    if not m:
+    tb = None if m else tipo_biblioteca(rel)
+    if not m and not tb:
         # No es un artefacto de la cadena (COMMIT, ARQ, indice, nota del Core).
         # No hay contrato que medir: se dice, no se rompe. Un instrumento que
         # revienta con un stack trace no da un veredicto: deja de contestar.
         cuerpo = '\n'.join(l for _, l in prosa(txt))
         return '-', [('sin-contrato', 0, 'no es un artefacto de la cadena: no hay contrato que medir')], cuerpo
-    tipo = m.group(1)
-    base = m.group(2)
+    tipo = m.group(1) if m else tb
+    base = m.group(2) if m else None
     fallas = []
     lineas = prosa(txt)
     cuerpo = '\n'.join(l for _, l in lineas)
@@ -313,9 +372,19 @@ def medir(rel, txt, contratos, raiz):
                 fallas.append(('omision', n, l.strip()[:70]))
 
     # Ley 4 - numero sin fuente
-    for n, l in lineas:
-        if NUMERO.search(l) and not FUENTE.search(l):
-            fallas.append(('sin-evidencia', n, l.strip()[:70]))
+    if tipo in LIBRO_TIPOS:
+        # En un libro de dominio el numero vive en la TABLA de parametros, que la
+        # prosa de la cadena no mira. Se mide prosa y tabla, fila por fila: cada fila
+        # con un valor trae su fuente en la misma fila.
+        for n, l in sorted(lineas + filas_de_tabla(txt)):
+            if l.lstrip().startswith('#'):
+                continue
+            if (NUMERO.search(l) or NUMERO_LIB.search(l)) and not (FUENTE.search(l) or CITA.search(l)):
+                fallas.append(('sin-evidencia', n, l.strip()[:70]))
+    else:
+        for n, l in lineas:
+            if NUMERO.search(l) and not FUENTE.search(l):
+                fallas.append(('sin-evidencia', n, l.strip()[:70]))
 
     # Ley 5 - rutas afirmadas que no existen, contra la raiz que corresponde
     bases = bases_de(rel, raiz)
@@ -351,11 +420,15 @@ def recolectar(ruta):
     ruta = os.path.abspath(ruta)
     if os.path.isfile(ruta):
         return [ruta]
+    raiz = raiz_vault(ruta)
     out = []
     for r, d, fs in os.walk(ruta):
         d[:] = [x for x in d if x not in RUIDO and not x.startswith('.')]
         for f in sorted(fs):
-            if f.endswith('.md') and ART.match(f):
+            if not f.endswith('.md'):
+                continue
+            rel = os.path.relpath(os.path.join(r, f), raiz).replace('\\', '/')
+            if ART.match(f) or tipo_biblioteca(rel):
                 out.append(os.path.join(r, f))
     return out
 

@@ -11,17 +11,19 @@ Esa division es deliberada. Un Core que absorbiera los libros seria un Core que 
 
 ### Alcance de esta seccion, y su nombre
 
-Esta nota se llama `Experiencia de juego` porque cuando nacio la Biblioteca guardaba solo eso. Hoy indexa **dos mitades**, y conviene decirlo aca antes que descubrirlo abajo:
+Esta nota se llama `Experiencia de juego` porque cuando nacio la Biblioteca guardaba solo eso. Hoy indexa **dos salas** de la Biblioteca (`ARQ-036`), y conviene decirlo aca antes que descubrirlo abajo:
 
 ```txt
-EXPERIENCIA    que hace que algo se SIENTA bien       → Fundamentos · Juegos
-               lo consultan Produccion, Game Design, Level Design, UI/UX
-               ANTES de cerrar el GDS
+SALA DE DISENO DE JUEGOS     que hace que algo se SIENTA bien   → Fundamentos · Juegos
+                             lo consultan Produccion, Game Design, Level Design, UI/UX
+                             ANTES de cerrar el GDS
 
-CONSTRUCCION   COMO se construye tecnicamente         → Construccion
-               lo consulta Programacion
-               DESPUES, al escribir el SOL
+SALA DE CIENCIAS APLICADAS   COMO funciona por dentro           → Construccion · Medicina
+                             Construccion: Programacion, DESPUES, al escribir el SOL
+                             Medicina: Arte, SOLO al animar, riggear o modelar una persona
 ```
+
+La tercera sala, `Sala de Referencia`, no se indexa aca: es materia prima (fuentes y documentos) y ningun area de produccion la carga. Una fuente nunca es insumo de un `RQ`.
 
 El nombre quedo mas angosto que el contenido y **no se renombra**: la Ley 5 pide *un puente por par de capas, y declarado*, y lo que hace de esta nota el puente es su declaracion, no su titulo. Renombrarla dejaria a doce registros `ARQ` nombrando una nota que ya no existe — se rompen doce historias para arreglar una etiqueta. Lo que corresponde es que el alcance este escrito, y esta escrito aca.
 
@@ -39,7 +41,11 @@ Esta nota es el **puente** del Core hacia la Biblioteca: la unica seccion del Co
 
 ---
 
-## [[00_Indice_fundamentos|Estante de Fundamentos (transversal a todo genero)]]
+## [[00_Sala_diseno_de_juegos|Sala de Diseno de juegos]]
+
+La experiencia: lo que el Core no sabia y la Escuela destila. Dos estantes, y de cada uno se carga el libro puntual.
+
+### Estante de Fundamentos (transversal a todo genero)
 
 Los cinco primeros son el marco; los doce siguientes profundizan un pilar de `05` cada uno. Se carga **el que hace falta**, no el estante.
 
@@ -67,9 +73,7 @@ Los cinco primeros son el marco; los doce siguientes profundizan un pilar de `05
 
 **Regla de carga, medida:** los doce libros `06`–`17` juntos pesan **53.2k tokens = 133% de un presupuesto de 40k**. Un `GDS` real —`05` mas los dos o tres pilares que toca— pesa 19.5k, el 49%. Jalar el estante entero **no entra**. No es una recomendacion de estilo.
 
----
-
-## [[00_Indice_juegos|Estante de Juegos (por genero)]]
+### Estante de Juegos (por genero)
 
 | Genero | Tipo | Libro |
 |--------|------|-------|
@@ -83,9 +87,13 @@ El estante crece de a un libro por genero, por mision de la Escuela.
 
 ---
 
-## [[00_Indice_construccion|Estante de Construccion (el mecanismo)]]
+## [[00_Sala_ciencias_aplicadas|Sala de Ciencias aplicadas]]
 
-La otra mitad. Estante abierto en `ARQ-022` porque la Biblioteca era una escuela de juegos y tenia que ser una escuela de **desarrollo** de videojuegos. Los libros de aca no dicen que se siente bien: dicen como funciona la cosa que el Core ya sabe cuanto cuesta.
+La otra mitad: el mecanismo. Dos estantes, y ninguno se abre por las dudas: se carga el libro que la tarea pide, cuando la tarea lo pide.
+
+### Estante de Construccion (el mecanismo)
+
+Estante abierto en `ARQ-022` porque la Biblioteca era una escuela de juegos y tenia que ser una escuela de **desarrollo** de videojuegos. Los libros de aca no dicen que se siente bien: dicen como funciona la cosa que el Core ya sabe cuanto cuesta.
 
 | Libro | Que responde | Cuando cargarlo | Que del Core supone sabido |
 |-------|--------------|-----------------|-----------------------------|
@@ -97,6 +105,22 @@ La otra mitad. Estante abierto en `ARQ-022` porque la Biblioteca era una escuela
 **La direccion del remite es una sola:** el libro nombra al Core con backticks; el Core no aprende del libro. Un libro de Construccion que empiece a legislar sobre costo esta fuera de su territorio.
 
 **Territorio que el estante todavia no cubre**, ordenado por lo que desbloquea en `EST-011_Mision_Mapa_Territorio_Tecnico`: guardado de partida, herramientas de editor mas alla del minimo del libro 04, fichas de manuales oficiales, audio tecnico, build y release, animacion, arte tecnico, netcode. Si Programacion necesita uno de esos y no esta, **no se suple con criterio propio**: se declara el faltante y se deriva a la Escuela.
+
+### Estante de Medicina (el cuerpo que se anima)
+
+Abierto en `ARQ-036`. El cuerpo humano real que Arte anima, riggea y modela: lo que una herramienta necesita para no inventar una caminata, una proporcion o un rango de articulacion. **Se carga solo cuando se trabaja una persona o un humanoide**, y solo el libro de lo que se esta haciendo.
+
+| Libro | Que responde | Cuando cargarlo |
+|---|---|---|
+| 01_Anatomia_del_movimiento | cuanto gira cada articulacion y sobre que eje; limites de rig desde la pose de reposo; prueba de poses | al riggear o fijar limites de una persona |
+| 02_Proporciones_del_cuerpo | alturas y largos por estatura y sexo; donde va cada articulacion; que se conserva al estilizar | hoja de referencia, escala, modelado |
+| 03_Masa_centro_de_masa_y_equilibrio | donde esta el peso y cuando una pose se cae; empujar, cargar, caer | poses con peso: idle, un pie, cargar, empujar |
+| 04_Marcha_humana | el ciclo de caminata en porcentajes y cuadros; doble apoyo, rebote, tamano | encargo de caminata |
+| 05_Carrera | vuelo, apoyo corto, zancada contra cadencia, cuadros por velocidad, arranque | encargo de carrera |
+| 06_Salto_y_aterrizaje | fases reales, la fisica que el juego invierte, clips separados, aterrizaje | encargo de salto, caida o aterrizaje |
+| 07_Cadena_cinetica | el orden de la cadena al lanzar, golpear y patear, en cuadros; el dano es un evento | encargo de golpe, lanzamiento o patada |
+
+**La direccion del remite es la misma que en Construccion:** el libro sostiene la regla de oficio del area (`RA-011_Locomocion_por_apoyos`) y los principios del Core (`Principios de animacion`) y los nombra con backticks; no los re-legisla.
 
 ---
 
@@ -113,13 +137,17 @@ DISENO (antes de cerrar el GDS)
 CONSTRUCCION (al escribir el SOL)
 4. Cargar de Construccion solo el libro del mecanismo que el SOL decide.
 
-EN LOS DOS CASOS
-5. Si el libro NO existe o esta vacio:
+MEDICINA (solo al animar, riggear o modelar una persona)
+5. Cargar de Medicina solo el libro de lo que se esta haciendo: una caminata
+   carga Marcha, no el estante. Un objeto, un efecto o una interfaz no lo abren.
+
+EN TODOS LOS CASOS
+6. Si el libro NO existe o esta vacio:
      no se suple con criterio propio
      se declara el faltante y se deriva a la Escuela
 ```
 
-El paso 5 no es opcional. Es la regla de borde de `Gates verificables`: el insumo se verifica antes de consumirlo. Un libro vacio consumido como si tuviera contenido fue exactamente lo que hundio una entrega.
+El paso 6 no es opcional. Es la regla de borde de `Gates verificables`: el insumo se verifica antes de consumirlo. Un libro vacio consumido como si tuviera contenido fue exactamente lo que hundio una entrega.
 
 **Un libro solo es insumo valido cuando esta *En la Biblioteca*.** Un libro *En estudio* o *En validacion* es material en curso: Produccion lo rechaza en su gate de insumo y deriva a Escuela.
 
@@ -133,6 +161,7 @@ Game Design     → al disenar el sistema y al correr el checklist por especific
 Level Design    → pacing y curva, cuando aplica
 UI/UX           → claridad, legibilidad, feedback
 Programacion    → al escribir el SOL: el estante de Construccion
+Arte            → solo al animar, riggear o modelar una persona: el estante de Medicina
 Conocimiento    → para decidir que de la Biblioteca se promueve a criterio indexado
 ```
 

@@ -30,13 +30,17 @@ Gap del Core / idea / ambigüedad
 
 ## [[00_Biblioteca|La Biblioteca (el corazón)]]
 
-Todo el activo vive en la `00_Biblioteca`: una librería real y navegable con **cinco estantes**:
+Todo el activo vive en la `00_Biblioteca`: una librería real y navegable, ordenada como una biblioteca de verdad — **salas por tema** y, en cada sala, sus **estantes** (`ARQ-036`):
 
-- **Fundamentos** (`00_Indice_fundamentos`) — lo transversal de la *experiencia*: el loop, el game feel, la definición de terminado.
-- **Juegos** (`00_Indice_juegos`) — análisis por juego/tipo, guardados por **género** (Pong → arcade, etc.).
-- **Construcción** (`00_Indice_construccion`) — el *mecanismo*: cómo se construye técnicamente un juego. La Biblioteca no es una escuela de juegos: es una escuela de desarrollo de videojuegos.
-- **Fuentes** (`00_Indice_fuentes`) — libros, papers y referencias externas: la materia prima.
-- **Documentación real** (`00_Indice_documentos`) — evidencia primaria de la industria: ficha + URL + licencia, nunca alojada.
+- **Sala de Diseño de juegos** (`00_Sala_diseno_de_juegos`)
+  - **Fundamentos** (`00_Indice_fundamentos`) — lo transversal de la *experiencia*: el loop, el game feel, la definición de terminado.
+  - **Juegos** (`00_Indice_juegos`) — análisis por juego/tipo, guardados por **género** (Pong → arcade, etc.).
+- **Sala de Ciencias aplicadas** (`00_Sala_ciencias_aplicadas`)
+  - **Construcción** (`00_Indice_construccion`) — el *mecanismo*: cómo se construye técnicamente un juego. La Biblioteca no es una escuela de juegos: es una escuela de desarrollo de videojuegos.
+  - **Medicina** (`00_Indice_medicina`) — el cuerpo humano que el juego anima, modela y riggea; primera rama, la morfología del movimiento.
+- **Sala de Referencia** (`00_Sala_de_referencia`)
+  - **Fuentes** (`00_Indice_fuentes`) — libros, papers y referencias externas: la materia prima.
+  - **Documentación real** (`00_Indice_documentos`) — evidencia primaria de la industria: ficha + URL + licencia, nunca alojada.
 
 Cada libro tiene índice y metadata (género, tipo), para que se encuentre por categoría. Los libros no se escriben a mano de una: son el resultado de las **misiones de estudio** de la Escuela, y se **actualizan**, no se duplican.
 
@@ -44,10 +48,11 @@ Cada libro tiene índice y metadata (género, tipo), para que se encuentre por c
 
 ## Quién consulta la Biblioteca
 
-Dos consumidores, siempre **on-demand** (se jala el libro puntual, no la biblioteca entera):
+Tres consumidores, siempre **on-demand** (se jala el libro puntual, no la biblioteca entera):
 
 1. **Producción (RQ) y Game Design base** — en tiempo de diseño, consultan por género para que la **primera entrega sea sólida y firme, a la altura de un juego divertido** — no un MVP apurado (Ley #1). Parten del Core, cuyo índice por género los rutea al libro.
-2. **Conocimiento** — como puente de gobernanza: decide qué de la Biblioteca se vuelve criterio indexado del Core, y qué se actualiza.
+2. **Los agentes que operan herramientas** — Programación al escribir el `SOL` (Construcción) y Arte **solo** cuando anima, riggea o modela una persona (Medicina). Siempre el libro puntual.
+3. **Conocimiento** — como puente de gobernanza: decide qué de la Biblioteca se vuelve criterio indexado del Core, y qué se actualiza.
 
 El Core guarda el **índice por género** (liviano); el contenido pesado vive en la Biblioteca y se carga solo cuando hace falta. Eso mantiene el Core y las áreas livianas (criterio de IA Operativa / AiCare).
 
@@ -76,10 +81,11 @@ La Escuela es el área con más riesgo de intoxicarse (estudia con libertad, pue
 ```
 05_Escuela/
   00_Escuela.md            (este documento)
-  Biblioteca/              (corazón: libros + trabajo de los agentes)
+  Biblioteca/              (corazón: libros + trabajo de los agentes; 00_Sala_* agrupa los estantes)
     Fundamentos/           (loop, game feel, definición de terminado)
     Juegos/                (análisis por juego, por género)
     Construccion/          (cómo se construye: el estante que abrió ARQ-022)
+    Medicina/              (el cuerpo que se anima: el estante que abrió ARQ-036)
     Fuentes/               (de dónde salió cada cosa)
     Documentos/            (fichas de papers y libros: referencia + URL, no copias)
   Agentes/                 (Bibliotecario, Investigador, Destilador, Validador)

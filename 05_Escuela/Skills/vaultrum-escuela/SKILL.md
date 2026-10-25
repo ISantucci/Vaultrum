@@ -1,6 +1,6 @@
 ---
 name: "vaultrum-escuela"
-description: "Escuela Vaultrum — aprendizaje proactivo. Úsala cuando el owner quiera sumar un libro/contenido a la Biblioteca, estudiar o analizar un juego, cazar ideas, o reforzar un concepto que falla o es ambiguo (en Vaultrum o en un juego en curso). Corre una misión de estudio acotada (gap + presupuesto + barra) con cuatro roles (Bibliotecario, Investigador, Destilador, Validador), cuidada por AiCare, escribe el libro/fuente en la Biblioteca (Fundamentos, Juegos por género, Construcción, Fuentes o Documentación real) y lo registra en el catálogo. NO mergea al Core. No usar para producción."
+description: "Escuela Vaultrum — aprendizaje proactivo. Úsala cuando el owner quiera sumar un libro/contenido a la Biblioteca, estudiar o analizar un juego, cazar ideas, o reforzar un concepto que falla o es ambiguo (en Vaultrum o en un juego en curso). Corre una misión de estudio acotada (gap + presupuesto + barra) con cuatro roles (Bibliotecario, Investigador, Destilador, Validador), cuidada por AiCare, escribe el libro/fuente en la Biblioteca (Fundamentos, Juegos por género, Construcción, Medicina, Fuentes o Documentación real) y lo registra en el catálogo. NO mergea al Core. No usar para producción."
 ---
 
 # Escuela Vaultrum — aprendizaje proactivo (llena la Biblioteca)
@@ -14,13 +14,21 @@ Trabajás como **una sola IA que se pone cuatro sombreros en secuencia**. Corré
 ```
 05_Escuela/
   00_Escuela.md               → contexto del área (leelo antes de arrancar)
-  Biblioteca/00_Biblioteca.md → formato de libro (leelo antes de escribir)
+  Biblioteca/00_Biblioteca.md → la portada: tres salas temáticas (ARQ-036)
   Herramientas/biblioteca.py  → la vista de conjunto: conteos, misiones, dedup (calculada)
-  Biblioteca/Fundamentos/     → lo transversal de la EXPERIENCIA (loop, game feel, terminado)
-  Biblioteca/Juegos/          → análisis por juego, con metadata de género/tipo
-  Biblioteca/Construccion/    → el MECANISMO técnico: cómo se construye un juego
-  Biblioteca/Fuentes/         → libros/papers/referencias externas (materia prima)
-  Biblioteca/Documentos/      → evidencia primaria: ficha + URL + licencia, nunca alojada
+
+  Sala de Diseño de juegos
+    Biblioteca/Fundamentos/   → lo transversal de la EXPERIENCIA (loop, game feel, terminado)
+    Biblioteca/Juegos/        → análisis por juego, con metadata de género/tipo
+  Sala de Ciencias aplicadas
+    Biblioteca/Construccion/  → el MECANISMO técnico: cómo se construye un juego
+    Biblioteca/Medicina/      → el CUERPO humano que el juego anima, modela y riggea
+  Sala de Referencia
+    Biblioteca/Fuentes/       → libros/papers/referencias externas (materia prima)
+    Biblioteca/Documentos/    → evidencia primaria: ficha + URL + licencia, nunca alojada
+
+  La forma de cada pieza es del Documentador: 02_Agencia/Area conocimiento/Herramientas/contratos.txt
+  (SALA, ESTANTE, MED). El orden —qué índice existe y de quién cuelga— es de Arquitectura.
   Salidas/                    → candidatos EST + misiones (EST-XXX)
 ```
 
@@ -67,11 +75,12 @@ Primero misión (gap + presupuesto + barra). Después investigación con citas. 
   - **mecanismo técnico** (cómo funciona, no cuánto cuesta) → `Biblioteca/Construccion/` (con `remite:`).
     La frontera con el Core, medida en `ARQ-022`: **el Core tiene el precio de todo y el
     mecanismo de nada.** Si tu libro dice cuánto cuesta algo, es del Core y lo remitís.
+  - **el cuerpo humano real** (anatomía, proporciones, marcha, carrera, salto…) → `Biblioteca/Medicina/` (contrato `MED`, con `consume:`, `remite:` y `cruza:`). Lo carga Arte solo cuando anima, riggea o modela una persona.
   - **fuente externa** (libro/paper/referencia) → `Biblioteca/Fuentes/` (cita + resumen aprendido, sin verbatim).
   - **artefacto de la industria o manual de fabricante** → `Biblioteca/Documentos/` (ficha + URL + licencia).
   - **Actualizá** el existente antes de crear uno nuevo.
 - Respetá la anatomía de libro (frontmatter + índice + loop / table-stakes / juice / definición de terminado / aplicación / límites / fuentes).
-- Actualizá el índice del estante (`00_Indice_fundamentos` / `00_Indice_juegos` / `00_Indice_construccion` / `00_Indice_fuentes` / `00_Indice_documentos`) con estado y metadata.
+- Actualizá el índice del estante (`00_Indice_fundamentos` / `00_Indice_juegos` / `00_Indice_construccion` / `00_Indice_medicina` / `00_Indice_fuentes` / `00_Indice_documentos`) con estado y metadata. La sala no se toca: enlaza estantes, no libros.
 
 ### 4. Validador de Estudio — valida y hace handoff
 
@@ -85,7 +94,7 @@ Primero misión (gap + presupuesto + barra). Después investigación con citas. 
 Antes de cerrar cualquier corrida, tres pasos y ninguno es opcional:
 
 1. **Escribí estado y misión en el frontmatter de la ficha.** La ficha es la fuente de verdad; todo lo demás se deriva de ella.
-2. **Registrá la pieza en su estante** — `00_Indice_fundamentos`, `00_Indice_juegos`, `00_Indice_construccion`, `00_Indice_fuentes` o `00_Indice_documentos` — con `### [[Hijo]]` y su línea de descripción. Si ya existe, **actualizá su entrada**; no dupliques.
+2. **Registrá la pieza en su estante** — `00_Indice_fundamentos`, `00_Indice_juegos`, `00_Indice_construccion`, `00_Indice_medicina`, `00_Indice_fuentes` o `00_Indice_documentos` — con `### [[Hijo]]` y su línea de descripción. Si ya existe, **actualizá su entrada**; no dupliques.
 3. **La ficha no devuelve la arista.** El estante la enlaza; ella no enlaza al estante. Una ficha termina donde termina su contenido: sin `## Hacia donde seguir`, sin "para volver al estante", sin link al índice padre. Para volver está la carpeta (Ley 2 del grafo).
 
 ```txt

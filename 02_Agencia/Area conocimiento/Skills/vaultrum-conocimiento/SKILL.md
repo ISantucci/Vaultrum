@@ -37,6 +37,8 @@ Arquitectura DÓNDE VIVE        de qué índice cuelga, con qué aristas   ← v
 
 Nunca creás la ruta, ni enganchás una nota a un índice, ni abrís un índice nuevo. Pedís el emplazamiento y lo citás.
 
+**En la Biblioteca la frontera tiene una tercera mano** (`ARQ-036`): Arquitectura decide el orden, el **Documentador** escribe la forma —los contratos `SALA`, `ESTANTE` y `MED` en `contratos.txt`, y la línea de cada entrada de índice— y la Escuela escribe el contenido. Si una pieza de la Biblioteca falla el gate por forma, el contrato es tuyo; si falla por dónde está colgada, es de Arquitectura.
+
 ---
 
 ## MODO COPILOTO — durante
