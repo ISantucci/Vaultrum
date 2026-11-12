@@ -89,7 +89,7 @@ Existe además un **Modo Owner**, protegido, para modificar el sistema mismo. Am
 
 Es el corazón. Contiene principios, criterios, patrones de diseño, arquitectura, optimización, IA para juegos, estructuras de datos, algoritmos, managers y material reutilizable.
 
-Y desde el primer ciclo completo, dos secciones que antes no tenía:
+Y desde el primer ciclo completo, tres secciones que antes no tenía:
 
 - **Criterios de entrega** — cuándo algo está terminado: `Baseline de entregable`, `Verificacion parcial declarada`, `Gates verificables`. Es la única parte del Core que nació del uso del propio sistema.
 - **Experiencia de juego** — el índice liviano hacia la Biblioteca de la Escuela: `Experiencia de juego`.
@@ -199,7 +199,7 @@ Un entregable de software que no sea un juego recorre la misma cadena sin `GDS` 
 
 Lo que **sí** cambia es el baseline: las *table-stakes* de una herramienta no son las de un juego. En ese caso Producción declara de dónde sale el mínimo —de un libro de la Biblioteca, o fijado por el owner para esa entrega— en vez de improvisarlo.
 
-Advertencia honesta: **esto todavía no se probó.** Todo lo validado se validó sobre un mismo género. Ver `ARQ-000_Auditoria_de_arquitectura`.
+Advertencia honesta: **esto todavía no se probó.** Lo validado son tres videojuegos, de tres géneros distintos; lo que falta probar es justamente salir de los juegos (*Estado actual*, más abajo).
 
 ---
 
@@ -224,6 +224,8 @@ lo publicado hacia afuera → Comunidad, sus salidas PUB
 ```
 
 Una puerta que abre a un registro fechado le cuenta a quien llega el pasado del dueño en vez de lo que el sistema hace.
+
+**Por eso las notas citan códigos que no se abren.** `TL-008`, `RQ-007.7`, `ARQ-033`, `EST-024`, `COMMIT-005`: cada uno es la **procedencia** de una regla, el timeline, la auditoría o la misión donde se decidió o se midió. Ese archivo vive en la máquina de quien lo produjo y no viaja (sus patrones están en `.gitignore`), así que en tu copia no existe. Leelo como una cita de origen: dice de dónde salió la regla, no adónde ir a buscarla.
 
 ---
 

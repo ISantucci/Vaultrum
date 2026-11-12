@@ -6,6 +6,8 @@ Está orientado al desarrollo de videojuegos, software y sistemas creativos, y s
 
 **Versión 1.0** — la primera pensada para que la use alguien que no es su autor.
 
+> **In English.** Vaultrum is an AI-assisted development system with mandatory traceability for video games, software and creative systems: an Obsidian vault operated by an AI assistant. One rule, *complete in experience, minimal in machinery*, and one chain: intent → scope and requirements → design → implementation → QA → delivery validation, where no step exists without the written document of the step before it. You need an assistant that reads `CLAUDE.md` or `AGENTS.md` (Claude Code or Codex), Python 3.10+ and Git; Obsidian is recommended. To start, clone the repo, run `skills.bat` (Windows) or `sh skills.sh` (macOS/Linux) and check that it ends with `LISTO PARA TRABAJAR` (ready to work), then open the folder with your assistant and say hello. Version 1.0 has been tested by its author on three video games; it is untested outside games and by anyone else. **All vault content, including notes, skills and tool output, is in Spanish.**
+
 ---
 
 ## Qué problema resuelve
@@ -50,6 +52,8 @@ QA   control de calidad: ¿se sostiene?             MET  métricas: ¿el jugador
 VE   validación de entrega: ¿es lo prometido?
 ```
 
+Una sigla con número —`TL-008`, `ARQ-033` (auditoría), `EST-024` (misión de estudio)— nombra un artefacto concreto, y en una nota es **procedencia**: de dónde salió la regla. Ese archivo no viaja en el paquete, así que en tu copia no se abre (ver *Lo que no está acá* en `00_START_HERE.md`).
+
 **Productor** es como se presenta el asistente al arrancar: la puerta de entrada, que pivotea entre las diez áreas. Las **table-stakes** son lo que un entregable trae sin que se lo pidan (en un juego: menú, pausa, fin de partida, volver a jugar). El **gate de cierre** es el conjunto de mediciones que corre antes de cada commit.
 
 Cada artefacto está numerado, linkea hacia atrás a su insumo, y **no existe si su insumo no existe**. Eso es lo que impide que la IA se saltee pasos y que una entrega se dé por terminada porque compila. Y antes de abrir cada timeline, nueve **señales de parada** —fase sin declarar, deuda arrastrada entre entregas, dos entregas sin que el juego arranque, código sin diseño, entre otras— impiden apilar trabajo nuevo sobre deuda que nadie mira.
@@ -70,7 +74,7 @@ Por eso, antes de clonar, tené armado esto:
 | Recomendado | **Obsidian** | para navegar el vault y ver el grafo |
 | Según tu proyecto | el motor (Unity, Godot, web…) | Vaultrum no lo trae ni lo elige por vos: te pregunta cuál usás |
 | Según tu proyecto | Blender con su MCP | solo si vas a usar el Área de Arte |
-| Opcional | Codex en el PATH y la bandeja de órdenes | solo si querés despachar ejecución a Codex (`04_IA Operativa`) |
+| Opcional | Codex en el PATH y la bandeja de órdenes | solo si querés despachar ejecución a Codex (`04_IA Operativa`). La bandeja corre **solo en Windows**: se arranca con `observer.bat` |
 
 ---
 
@@ -209,7 +213,7 @@ Si solo querés estudiar el criterio, revisar patrones o usar la Biblioteca, no 
 
 **Bajé el .zip en vez de clonar.** Funciona, pero sin git no hay gate de cierre. El instalador te lo avisa como opcional.
 
-**El veredicto dice "opcional" sobre Codex o la bandeja.** Si no usás Codex, ignoralo.
+**El veredicto dice "opcional" sobre Codex o la bandeja.** Si no usás Codex, ignoralo. En macOS y Linux la bandeja no corre: es solo para Windows.
 
 ---
 

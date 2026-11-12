@@ -4,6 +4,10 @@ Canal entre el productor (chat de Cowork) y los ejecutores (Claude Code en Windo
 Patron observer: el productor publica una orden, el observer la escucha y la ejecuta,
 el resultado vuelve al buzon.
 
+**Solo Windows.** El observer es PowerShell (`observer.ps1`) y se arranca con
+`observer.bat`; no hay lanzador para macOS ni Linux. El instalador crea las carpetas
+de la bandeja en cualquier sistema, pero solo en Windows hay quien ejecute las ordenes.
+
 ## Como se arranca
 
 El observer se ubica solo: no hay rutas escritas adentro. Sale de donde vive el

@@ -328,7 +328,11 @@ def preparar_bandeja(solo_medir):
         if pendientes:
             print('       %d orden(es) esperando al observer' % pendientes)
 
-    if shutil.which('claude') is None:
+    # observer.ps1 / observer.bat son de Windows: en macOS y Linux no hay con que
+    # arrancar la bandeja, y mandar a correr un .bat ahi es una instruccion falsa.
+    if os.name != 'nt':
+        print('       la bandeja es solo para Windows (observer.bat): en este sistema no arranca')
+    elif shutil.which('claude') is None:
         print('       [aviso] "claude" no esta en el PATH: el observer arranca pero no ejecuta')
     else:
         print('       si la vas a usar: configura el proyecto y arrancala con %s'
@@ -499,6 +503,10 @@ def verificar_entorno(raiz, src):
         except (IndexError, OSError):
             destino_obs = '(vacio)'
         print('  [ok] bandeja    despacha a: %s' % destino_obs)
+    elif os.name != 'nt':
+        # Sin observer en este sistema, pedir que se configure el proyecto seria
+        # mandar a preparar algo que nada va a correr.
+        print('  [--] bandeja    solo Windows: en este sistema no se usa (opcional)')
     else:
         print('  [--] bandeja    sin proyecto configurado (opcional)')
         opcional.append('la bandeja no sabe contra que proyecto correr: solo hace falta si vas a '
